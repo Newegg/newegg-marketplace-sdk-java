@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <OperationType>GetSellerIndustryResponse</OperationType>
+    <SellerID>A006</SellerID>
+    <ResponseBody>
+        <IndustryList>
+            <Industry>
+                <IndustryCode>AP</IndustryCode>
+                <IndustryName>Apparel</IndustryName>
+            </Industry>
+            <Industry>
+                <IndustryCode>AL</IndustryCode>
+                <IndustryName>Appliance</IndustryName>
+            </Industry>
+        </IndustryList>
+    </ResponseBody>
+</NeweggAPIResponse>

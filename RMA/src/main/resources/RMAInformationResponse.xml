@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <OperationType>IssueRMAResponse</OperationType>
+    <SellerID>A006</SellerID>
+    <ResponseDate>2012-02-22 20:59:50</ResponseDate>
+    <Memo />
+    <ResponseBody>
+        <RMAInfo>
+            <RMANumber>20103389</RMANumber>
+            <RMAType>2</RMAType>
+            <RMATypeDescription>Refund</RMATypeDescription>
+            <IssueUser>A004</IssueUser>
+            <RMADate>2012-02-22</RMADate>
+            <RMAStatus>6</RMAStatus>
+            <RMAStatusDescription>Processing</RMAStatusDescription>
+            <RMAShipMethod />
+            <RMAShipMethodDescription />
+            <OrderNumber>41473422</OrderNumber>
+            <OrderDate>2012-01-11</OrderDate>
+            <InvoiceNumber>82868509</InvoiceNumber>
+            <OrderAmount>15.00</OrderAmount>
+            <AvailableRefundAmount>12000</AvailableRefundAmount>
+            <RMAProcessedBy>newegg</RMAProcessedBy>
+            <RMAReceiveDate />
+            <RMANote>This is a test RMA</RMANote>
+            <PriorRefundAmount>2.00</PriorRefundAmount>
+            <CustomerName>abc Roosevelt</CustomerName>
+            <CustomerPhoneNumber>626-271-9700</CustomerPhoneNumber>
+            <CustomerEmailAddress>gdv6l0viwo4l7j1d@marketplace.newegg.com</CustomerEmailAddress>
+            <ShipToAddress1>1941 E. Cedar Loop Drive</ShipToAddress1>
+            <ShipToAddress2>9A</ShipToAddress2>
+            <ShipToCityName>South Weber</ShipToCityName>
+            <ShipToStateCode>UT</ShipToStateCode>
+            <ShipToZipCode>884405</ShipToZipCode>
+            <ShipToLastName>Roosevelt</ShipToLastName>
+            <ShipToFirstName>abc</ShipToFirstName>
+            <ShipToCompany />
+            <RMATransactionList>
+                <RMATransaction>
+                    <SellerPartNumber>201112310900</SellerPartNumber>
+                    <MfrPartNumber>201112310900</MfrPartNumber>
+                    <NeweggItemNumber>9SIA0040286987</NeweggItemNumber>
+                    <Description>ICYTEST201112310900</Description>
+                    <UnitPrice>600.00</UnitPrice>
+                    <ReturnQuantity>1</ReturnQuantity>
+                    <ReturnUnitPrice>1.00</ReturnUnitPrice>
+                    <RefundShippingPrice>1.00</RefundShippingPrice>
+                    <RMAReason>2</RMAReason>
+                    <RMAReasonDescription>Defective</RMAReasonDescription>
+                </RMATransaction>
+            </RMATransactionList>
+        </RMAInfo>
+    </ResponseBody>
+</NeweggAPIResponse>

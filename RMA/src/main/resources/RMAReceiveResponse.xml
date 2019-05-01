@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <OperationType>ReceiveRMAResponse</OperationType>
+    <SellerID>A006</SellerID>
+    <Memo />
+    <ResponseDate>2011-09-28 09:02:00</ResponseDate>
+    <ResponseBody>
+        <RMAInfo>
+            <RMANumber>38875640</RMANumber>
+            <RMAType>2</RMAType>
+            <RMATypeDescription>Refund</RMATypeDescription>
+            <SourceSONumber>88219202</SourceSONumber>
+            <SellerRMANumber>E12345678</SellerRMANumber>
+            <RMAShipMethod />
+            <RMAShipMethodDescription />
+            <RMANote>your note here</RMANote>
+            <IssueUser>test@newegg.com</IssueUser>
+            <RMATransactionList>
+                <RMATransaction>
+                    <SellerPartNumber>Ben_item_12</SellerPartNumber>
+                    <ReturnQuantity>1</ReturnQuantity>
+                    <ReturnUnitPrice>200.00</ReturnUnitPrice>
+                    <RefundShippingPrice>10.00</RefundShippingPrice>
+                    <RMAReason>1</RMAReason>
+                    <RMAReasonDescription>Carrier damage</RMAReasonDescription>
+                </RMATransaction>
+            </RMATransactionList>
+        </RMAInfo>
+    </ResponseBody>
+</NeweggAPIResponse>

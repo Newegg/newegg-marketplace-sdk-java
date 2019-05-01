@@ -1,0 +1,14 @@
+{
+  "IsSuccess": true,
+  "OperationType": "GetShipmentStatusResponse",
+  "ResponseBody": {
+    "ResponseList": [
+      {
+        "RequestId": "24UQBFFT2NE9A",
+        "ActionCode": 1,
+        "RequestDate": "11/01/2018 00:30:45",
+        "RequestStatus": "IN_PROGRESS"
+      }
+    ]
+  }
+}

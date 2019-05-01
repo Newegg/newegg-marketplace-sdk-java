@@ -1,0 +1,23 @@
+{
+  "ResponseDate": "02/19/2019 01:30:09",
+  "IsSuccess": true,
+  "OperationType": "SubmitItemWarrantyResponse",
+  "SellerID": "A006",
+  "ResponseBody": {
+    "ItemWarrantyList": [
+      {
+        "IsSuccess": false,
+        "ErrorList": [
+          {
+            "ErrorCode": "CT504",
+            "ErrorMessage": "'Parts Day' and 'Labor Day' should not be equal to 0 at the same time."
+          },
+          {
+            "ErrorCode": "CT508",
+            "ErrorMessage": "SellerPartNumber: bg9h2016042003 does not exist."
+          }
+        ]
+      }
+    ]
+  }
+}

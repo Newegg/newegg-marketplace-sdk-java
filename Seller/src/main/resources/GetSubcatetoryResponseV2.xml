@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+	<IsSuccess>true</IsSuccess>
+	<OperationType>GetSellerSubcategoryResponse</OperationType>
+	<SellerID>A006</SellerID>
+	<ResponseBody>
+		<CountryCode>USA</CountryCode>
+		<SubcategoryList>
+			<Subcategory>
+				<IndustryCode>CP</IndustryCode>
+				<IndustryName><![CDATA[Camera & Photo]]></IndustryName>
+				<SubcategoryID>397</SubcategoryID>
+				<SubcategoryName><![CDATA[Accessories - Camera Other                                  ]]></SubcategoryName>
+				<Enabled>1</Enabled>
+			</Subcategory>
+		</SubcategoryList>
+	</ResponseBody>
+</NeweggAPIResponse>

@@ -1,0 +1,82 @@
+{
+  "ResponseDate": "02/18/2019 19:30:49",
+  "Memo": "",
+  "IsSuccess": true,
+  "OperationType": "GetManufacturerResponse",
+  "SellerID": "A006",
+  "ResponseBody": {
+    "PageInfo": {
+      "TotalCount": 1,
+      "TotalPageCount": 1,
+      "PageIndex": 1,
+      "PageSize": 10
+    },
+    "ManufacturerList": [
+      {
+        "Name": "Panasonic",
+        "IsRestricted": 1,
+        "CountryCode": "USA",
+        "RestrictedSubcategoryList": [
+          {
+            "SubcategoryID": 147,
+            "SubcategoryName": "Memory (Desktop Memory)"
+          },
+          {
+            "SubcategoryID": 381,
+            "SubcategoryName": "Memory (Notebook Memory)"
+          },
+          {
+            "SubcategoryID": 541,
+            "SubcategoryName": "Memory (Server Memory)"
+          },
+          {
+            "SubcategoryID": 636,
+            "SubcategoryName": "Solid State Disk"
+          },
+          {
+            "SubcategoryID": 3225,
+            "SubcategoryName": "Printer - Ink Cartridges - Aftermarket"
+          },
+          {
+            "SubcategoryID": 3224,
+            "SubcategoryName": "Printer / Fax - Toners - Aftermarket"
+          }
+        ],
+        "MappedNameList": [
+          "Panasonic Consumer",
+          "PANASONIC CORPORATION",
+          "PANASONIC DIGITAL COMMUNICATION",
+          "PANASONIC DIGITAL COMMUNICATION",
+          "PANASONIC SYSTEM",
+          "PANASONIC TELEPHONE",
+          "PANASONIC TELEPHONE-KXTDE",
+          "PANASONIC VIDEO",
+          "Panasonic Ew/Aromat",
+          "Te Connectivity / Kilovac Brand",
+          "Panasonic Business Telephones",
+          "Panasonic Imaging",
+          "Panasonic Consumer Phones",
+          "Panasonic Battery",
+          "Panasonic Industrial Devices",
+          "Panasonic Na (Bath Fans Only)",
+          "Panasonic Parts Division",
+          "Panasonic Solutionspany",
+          "Panasonic Accessories",
+          "Panasonic Business Systems",
+          "Panasonic Consumer Products",
+          "Panasonic Consumer Retail",
+          "Panasonic Physical Security",
+          "Panasonic Projectors - Pro Av",
+          "Panasonic Projectors-Pro Av",
+          "Panasonic Scanners",
+          "Panasonic Security Systems Group",
+          "PANASONIC SOLUTIONS COMPANY",
+          "PANASONIC TOUGH BOOKS",
+          "Panasonic-Headphones",
+          "PANASONIC-SMALL APPLIANCES",
+          "PANASN"
+        ]
+      }
+    ]
+  }
+}

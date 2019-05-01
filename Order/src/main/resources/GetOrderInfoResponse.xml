@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <OperationType>GetOrderInfoResponse</OperationType>
+    <SellerID>A2GS</SellerID>
+    <ResponseBody>
+        <PageInfo>
+            <TotalCount>1</TotalCount>
+            <TotalPageCount>1</TotalPageCount>
+            <PageIndex>1</PageIndex>
+            <PageSize>100</PageSize>
+        </PageInfo>
+        <OrderInfoList>
+            <OrderInfo>
+                <SellerID>A2GS</SellerID>
+                <OrderNumber>126239540</OrderNumber>
+                <InvoiceNumber>0</InvoiceNumber>
+                <OrderDownloaded>false</OrderDownloaded>
+                <OrderDate>01/22/2019 18:30:20</OrderDate>
+                <OrderStatus>4</OrderStatus>
+                <OrderStatusDescription>Voided</OrderStatusDescription>
+                <CustomerName>
+                    <![CDATA[Daniel Chang]]>
+                </CustomerName>
+                <CustomerPhoneNumber>770-517-7019</CustomerPhoneNumber>
+                <CustomerEmailAddress>cusa.q2sw1pler2vt958m@marketplace.newegg.com</CustomerEmailAddress>
+                <ShipToAddress1>
+                    <![CDATA[3846 Lakeland Dr]]>
+                </ShipToAddress1>
+                <ShipToAddress2/>
+                <ShipToCityName>Flowood</ShipToCityName>
+                <ShipToStateCode>MS</ShipToStateCode>
+                <ShipToZipCode>39232</ShipToZipCode>
+                <ShipToCountryCode>UNITED STATES</ShipToCountryCode>
+                <ShipService>Standard Shipping (5-7 business days)</ShipService>
+                <ShipToFirstName>
+                    <![CDATA[Daniel]]>
+                </ShipToFirstName>
+                <ShipToLastName>
+                    <![CDATA[Chang]]>
+                </ShipToLastName>
+                <ShipToCompany/>
+                <OrderItemAmount>0.05</OrderItemAmount>
+                <ShippingAmount>0.00</ShippingAmount>
+                <DiscountAmount>0.00</DiscountAmount>
+                <RefundAmount>0</RefundAmount>
+                <OrderTotalAmount>0.05</OrderTotalAmount>
+                <OrderQty>1</OrderQty>
+                <IsAutoVoid>false</IsAutoVoid>
+                <SalesChannel>0</SalesChannel>
+                <FulfillmentOption>0</FulfillmentOption>
+                <ItemInfoList>
+                    <ItemInfo>
+                        <SellerPartNumber>
+                            <![CDATA[Test_SP#A2GS_2019\01\05+00011]]>
+                        </SellerPartNumber>
+                        <NeweggItemNumber>9SIA2GS8KY1880</NeweggItemNumber>
+                        <MfrPartNumber>
+                            <![CDATA[Test_MP#A2GS010511]]>
+                        </MfrPartNumber>
+                        <UPCCode/>
+                        <Description>
+                            <![CDATA[Test_Item Website Short Title A2GS_2019\01\05_00011 Update A2GS 2019\01\09_00021]]>
+                        </Description>
+                        <OrderedQty>1</OrderedQty>
+                        <ShippedQty>0</ShippedQty>
+                        <UnitPrice>0.05</UnitPrice>
+                        <ExtendUnitPrice>0.05</ExtendUnitPrice>
+                        <ExtendShippingCharge>0.00</ExtendShippingCharge>
+                        <Status>3</Status>
+                        <StatusDescription>Cancelled</StatusDescription>
+                    </ItemInfo>
+                </ItemInfoList>
+                <PackageInfoList/>
+            </OrderInfo>
+        </OrderInfoList>
+    </ResponseBody>
+    <ResponseDate>03/07/2019 17:46:41</ResponseDate>
+    <Memo/>
+</NeweggAPIResponse>

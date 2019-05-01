@@ -1,0 +1,14 @@
+{
+  "SellerID": "A006",
+  "ItemNumber": "9SIA0062TT3677",
+  "SellerPartNumber": "Group-By test Item A",
+  "FulfillmentOption": "0",
+  "Active": "0",
+  "AvailableQuantity": 99,
+  "WarehouseAllocation": [
+    {
+      "WarehouseCode": "SBS",
+      "Quantity": 99
+    }
+  ]
+}

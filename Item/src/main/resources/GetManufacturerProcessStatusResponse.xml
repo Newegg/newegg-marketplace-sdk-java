@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+	<IsSuccess>true</IsSuccess>
+	<OperationType>GetManufacturerStatusResponse</OperationType>
+	<SellerID>A006</SellerID>
+	<ResponseBody>
+		<ManufacturerList>
+			<Manufacturer>
+				<RequestName><![CDATA[sony & wonder]]></RequestName>
+				<ApprovedName></ApprovedName>
+				<RequestDate>10/16/2012 15:05:21</RequestDate>
+				<Status>Declined</Status>
+				<ProcessDate>10/16/2012 22:08:49</ProcessDate>
+				<DeclineReason><![CDATA[Other:for A006 test]]></DeclineReason>
+			</Manufacturer>
+		</ManufacturerList>
+	</ResponseBody>
+	<ResponseDate>02/18/2019 23:38:35</ResponseDate>
+</NeweggAPIResponse>

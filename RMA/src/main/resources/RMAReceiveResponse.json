@@ -1,0 +1,27 @@
+{
+    "IsSuccess": "true",
+    "OperationType": "ReceiveRMAResponse",
+    "SellerID": "A006",
+    "ResponseDate": "2011-09-28 09:02:00",
+    "ResponseBody": {
+        "RMAInfo": {
+            "RMANumber": "38875640",
+            "RMAType": "2",
+            "RMATypeDescription": "Refund",
+            "SourceSONumber": "88219202",
+            "SellerRMANumber": "E12345678",
+            "RMANote": "your note here",
+            "IssueUser": "test@newegg.com",
+            "RMATransactionList": {
+                "RMATransaction": {
+                    "SellerPartNumber": "Ben_item_12",
+                    "ReturnQuantity": "1",
+                    "ReturnUnitPrice": "200.00",
+                    "RefundShippingPrice": "10.00",
+                    "RMAReason": "1",
+                    "RMAReasonDescription": "Carrier damage"
+                }
+            }
+        }
+    }
+}

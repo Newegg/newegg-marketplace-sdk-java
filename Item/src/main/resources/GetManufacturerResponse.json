@@ -1,0 +1,42 @@
+{
+  "ResponseDate": "02/17/2019 23:13:01",
+  "Memo": "",
+  "IsSuccess": true,
+  "OperationType": "GetManufacturerResponse",
+  "SellerID": "A006",
+  "ResponseBody": {
+    "PageInfo": {
+      "TotalCount": 1,
+      "TotalPageCount": 1,
+      "PageIndex": 1,
+      "PageSize": 10
+    },
+    "ManufacturerList": [
+      {
+        "Name": "D-Link",
+        "IsRestricted": 0,
+        "RestrictedSubcategoryList": [],
+        "MappedNameList": [
+          "D-Link Systems",
+          "D-Link Systems, Inc.",
+          "DLink",
+          "D-link systems, inc",
+          "D-Link Systems Inc.",
+          "D-Link Business Etail",
+          "D-Link Business Products Solutions",
+          "D-Link Physical Security",
+          "D- LINK SYSTEMS, INC.",
+          "D-LINK SYSTEMS INC",
+          "D- LINK SYSTEMS  INC.",
+          "D- Link Systems Inc.",
+          "D-Link Ps Etail",
+          "D link Systems",
+          "D-Link Building Networks",
+          "D-Link Business",
+          "D-Link Consumer",
+          "DLink Systems"
+        ]
+      }
+    ]
+  }
+}

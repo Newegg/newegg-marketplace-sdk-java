@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <SellerID>A09D</SellerID>
+    <OperationType>GetSettlementSummaryInfoResponse</OperationType>
+    <ResponseBody>
+        <PageInfo>
+            <TotalCount>1</TotalCount>
+            <TotalPageCount>1</TotalPageCount>
+            <PageSize>10</PageSize>
+            <PageIndex>1</PageIndex>
+        </PageInfo>
+        <RequestID>2PQBZMZTL3DYF</RequestID>
+        <RequestDate>2/21/2012 15:12:55</RequestDate>
+        <SettlementSummaryList>
+            <SettlementSummary>
+                <SettlementDate>2/21/2012 12:00:00</SettlementDate>
+                <SettlementDateFrom>8/5/2011 12:00:00</SettlementDateFrom>
+                <SettlementDateTo>2/21/2012 12:00:00</SettlementDateTo>
+                <SettlementID>0</SettlementID>
+                <CheckNumber />
+                <ItemPrice>71.00</ItemPrice>
+                <Shipping>31.95</Shipping>
+                <Other>0.00</Other>
+                <TotalOrderAmount>102.95</TotalOrderAmount>
+                <Refunds>-1.98</Refunds>
+                <ChargeBack>0.00</ChargeBack>
+                <MiscellaneousAdjustment>-182.53</MiscellaneousAdjustment>
+                <TotalRefunds>-184.51</TotalRefunds>
+                <NeweggCommissionFee>-7.71</NeweggCommissionFee>
+                <NeweggTransactionFee>0.00</NeweggTransactionFee>
+                <NeweggRefundCommissionFee>0.15</NeweggRefundCommissionFee>
+                <NeweggMonthlyFee>0.00</NeweggMonthlyFee>
+                <NeweggStorageFee>-59.05</NeweggStorageFee>
+                <NeweggRMABuyoutFee>-0.72</NeweggRMABuyoutFee>
+                <NeweggPremierFee>0.00</NeweggPremierFee>
+                <NeweggShippingLabelFee>0.00</NeweggShippingLabelFee>
+                <TotalNeweggFee>-638.63</TotalNeweggFee>
+                <TotalSettlement>-720.19</TotalSettlement>
+            </SettlementSummary>
+        </SettlementSummaryList>
+    </ResponseBody>
+    <Memo />
+</NeweggAPIResponse>

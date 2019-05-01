@@ -1,0 +1,22 @@
+{
+    "IsSuccess": "true",
+    "OperationType": "GetVolumeDiscountResponse",
+    "SellerID": "a001",
+    "ResponseBody": {
+        "ItemVolumeDiscountInfo": {
+            "SellerPartNumber": "B0147001",
+            "NeweggItemNumber": "9SIA0010287920",
+            "DiscountSetting": [{
+                    "Priority": "1",
+                    "Quantity": "10",
+                    "SellingPrice": "10",
+                    "EnableFreeShipping": "0"
+             },{
+                    "Priority": "2",
+                    "Quantity": "20",
+                    "SellingPrice": "105",
+                    "EnableFreeShipping": "0"
+             }]
+        }
+    }
+}

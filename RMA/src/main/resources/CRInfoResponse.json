@@ -1,0 +1,34 @@
+{
+    "NeweggAPIResponse": {
+        "IsSuccess": "true",
+        "OperationType": "GetCourtesyRefundResponse",
+        "SellerID": "A006",
+        "ResponseDate": "2012-02-17 15:12:00",
+        "ResponseBody": {
+            "PageInfo": {
+                "TotalCount": "1",
+                "TotalPageCount": "1",
+                "PageSize": "1",
+                "PageIndex": "10"
+            },
+            "CourtesyRefundInfoList": {
+                "CourtesyrefundInfo": [{
+                    "CourtesyRefundID": "8a9501f2-495a-4b4f-b921-966a40969aa8",
+                    "SONumber": "88251262",
+                    "SOAmount": "890.40",
+                    "InvoiceNumber": "48799955",
+                    "RefundAmount": "2.01",
+                    "ReasonCode": "1",
+                    "Reason": "Negative Customer Feedback",
+                    "NoteToCustomer": "This is a test note",
+                    "Status": "Close",
+                    "IsNeweggRefund": "false",
+                    "InUserName": "A006",
+                    "InDate": "2012-02-17 12:10:00",
+                    "EditUserName": "EDI",
+                    "EditDate": "2012-02-17 12:10:00"
+                }]
+            }
+        }
+    }
+}

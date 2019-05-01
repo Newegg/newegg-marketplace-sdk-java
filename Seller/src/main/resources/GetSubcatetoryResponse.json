@@ -1,0 +1,16 @@
+{
+  "IsSuccess": true,
+  "OperationType": "GetSellerSubcategoryResponse",
+  "SellerID": "A006",
+  "ResponseBody": {
+    "SubcategoryList": [
+      {
+        "IndustryCode": "SW",
+        "IndustryName": "Software           ",
+        "SubcategoryID": 379,
+        "SubcategoryName": "Software - Licenses                                         ",
+        "Enabled": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "IsSuccess": true,
+  "OperationType": "GetWarehouseResponse",
+  "SellerID": "A006",
+  "ResponseBody": {
+    "WarehouseList": [
+      {
+        "WarehouseCode": "06",
+        "AllowBulkItem": 1,
+        "AllowSmallItem": 0,
+        "ShipToAddress1": "6100 East Holmes Road, Suite 103-104",
+        "ShipToCityName": "Memphis",
+        "ShipToStateCode": "TN",
+        "ShipToZipCode": "38141",
+        "ShipToCountryCode": "USA"
+      }
+    ]
+  }
+}

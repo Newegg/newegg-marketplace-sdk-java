@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+	<IsSuccess>true</IsSuccess>
+	<OperationType>GetManufacturerResponse</OperationType>
+	<SellerID>A006</SellerID>
+	<ResponseBody>
+		<PageInfo>
+			<TotalCount>1</TotalCount>
+			<TotalPageCount>1</TotalPageCount>
+			<PageIndex>1</PageIndex>
+			<PageSize>10</PageSize>
+		</PageInfo>
+		<ManufacturerList>
+			<Manufacturer>
+				<Name><![CDATA[Panasonic]]></Name>
+				<IsRestricted>1</IsRestricted>
+				<CountryCode>USA</CountryCode>
+				<RestrictedSubcategoryList>
+					<Subcategory>
+						<SubcategoryID>147</SubcategoryID>
+						<SubcategoryName><![CDATA[Memory (Desktop Memory)]]></SubcategoryName>
+					</Subcategory>
+					<Subcategory>
+						<SubcategoryID>381</SubcategoryID>
+						<SubcategoryName><![CDATA[Memory (Notebook Memory)]]></SubcategoryName>
+					</Subcategory>
+					<Subcategory>
+						<SubcategoryID>541</SubcategoryID>
+						<SubcategoryName><![CDATA[Memory (Server Memory)]]></SubcategoryName>
+					</Subcategory>
+					<Subcategory>
+						<SubcategoryID>636</SubcategoryID>
+						<SubcategoryName><![CDATA[Solid State Disk]]></SubcategoryName>
+					</Subcategory>
+					<Subcategory>
+						<SubcategoryID>3225</SubcategoryID>
+						<SubcategoryName><![CDATA[Printer - Ink Cartridges - Aftermarket]]></SubcategoryName>
+					</Subcategory>
+					<Subcategory>
+						<SubcategoryID>3224</SubcategoryID>
+						<SubcategoryName><![CDATA[Printer / Fax - Toners - Aftermarket]]></SubcategoryName>
+					</Subcategory>
+				</RestrictedSubcategoryList>
+				<MappedNameList>
+					<MappedName>Panasonic Consumer</MappedName>
+					<MappedName>PANASONIC CORPORATION</MappedName>
+					<MappedName>PANASONIC DIGITAL COMMUNICATION</MappedName>
+					<MappedName>PANASONIC DIGITAL COMMUNICATION</MappedName>
+					<MappedName>PANASONIC SYSTEM</MappedName>
+					<MappedName>PANASONIC TELEPHONE</MappedName>
+					<MappedName>PANASONIC TELEPHONE-KXTDE</MappedName>
+					<MappedName>PANASONIC VIDEO</MappedName>
+					<MappedName>Panasonic Ew/Aromat</MappedName>
+					<MappedName>Te Connectivity / Kilovac Brand</MappedName>
+					<MappedName>Panasonic Business Telephones</MappedName>
+					<MappedName>Panasonic Imaging</MappedName>
+					<MappedName>Panasonic Consumer Phones</MappedName>
+					<MappedName>Panasonic Battery</MappedName>
+					<MappedName>Panasonic Industrial Devices</MappedName>
+					<MappedName>Panasonic Na (Bath Fans Only)</MappedName>
+					<MappedName>Panasonic Parts Division</MappedName>
+					<MappedName>Panasonic Solutionspany</MappedName>
+					<MappedName>Panasonic Accessories</MappedName>
+					<MappedName>Panasonic Business Systems</MappedName>
+					<MappedName>Panasonic Consumer Products</MappedName>
+					<MappedName>Panasonic Consumer Retail</MappedName>
+					<MappedName>Panasonic Physical Security</MappedName>
+					<MappedName>Panasonic Projectors - Pro Av</MappedName>
+					<MappedName>Panasonic Projectors-Pro Av</MappedName>
+					<MappedName>Panasonic Scanners</MappedName>
+					<MappedName>Panasonic Security Systems Group</MappedName>
+					<MappedName>PANASONIC SOLUTIONS COMPANY</MappedName>
+					<MappedName>PANASONIC TOUGH BOOKS</MappedName>
+					<MappedName>Panasonic-Headphones</MappedName>
+					<MappedName>PANASONIC-SMALL APPLIANCES</MappedName>
+					<MappedName>PANASN</MappedName>
+				</MappedNameList>
+			</Manufacturer>
+		</ManufacturerList>
+	</ResponseBody>
+	<ResponseDate>02/18/2019 19:45:51</ResponseDate>
+	<Memo></Memo>
+</NeweggAPIResponse>

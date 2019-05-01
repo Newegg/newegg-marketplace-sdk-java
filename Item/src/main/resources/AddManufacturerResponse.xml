@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <SellerID>A006</SellerID>
+    <OperationType>SubmitManufacturerResponse</OperationType>
+    <ResponseBody>
+        <ManufacturerRequest>
+            <Name>
+                <![CDATA[sony & wonder]]>
+            </Name>
+            <RequestDate>2/22/2012 16:50:03</RequestDate>
+        </ManufacturerRequest>
+    </ResponseBody>
+    <ResponseDate>2/22/2012 16:51:03</ResponseDate>
+</NeweggAPIResponse>

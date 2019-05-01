@@ -1,0 +1,16 @@
+{
+  "IsSuccess": true,
+  "OperationType": "GetShippingLabelResponse",
+  "SellerID": "A2EU",
+  "ResponseBody": {
+    "OrderNumber": "252426189",
+    "RequestList": [
+      {
+        "RequestID": "282Q5AUAMQKIE",
+        "PdfFileList": [
+          "http://images10.newegg.com/SBNInbound/UPSShippingLabel/e8cdf45e-d58c-458b-a3fe-0bc7a3b30fb5.pdf"
+        ]
+      }
+    ]
+  }
+}

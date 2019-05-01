@@ -1,0 +1,48 @@
+    {
+        "IsSuccess": "true",
+        "OperationType": "IssueRMAResponse",
+        "SellerID": "A006",
+        "ResponseDate": "2012-02-22 20:59:50",
+        "ResponseBody": {
+            "RMAInfo": {
+                "RMANumber": "20103389",
+                "RMAType": "2",
+                "RMATypeDescription": "Refund",
+                "IssueUser": "A004",
+                "RMADate": "2012-02-22",
+                "RMAStatus": "6",
+                "RMAStatusDescription": "Processing",
+                "OrderNumber": "41473422",
+                "OrderDate": "2012-01-11",
+                "InvoiceNumber": "82868509",
+                "OrderAmount": "15.00",
+                "AvailableRefundAmount": "12000",
+                "RMANote": "This is a test RMA",
+                "PriorRefundAmount": "2.00",
+                "CustomerName": "abc Roosevelt",
+                "CustomerPhoneNumber": "626-271-9700",
+                "CustomerEmailAddress": "gdv6l0viwo4l7j1d@marketplace.newegg.com",
+                "ShipToAddress1": "1941 E. Cedar Loop Drive",
+                "ShipToAddress2": "9A",
+                "ShipToCityName": "South Weber",
+                "ShipToStateCode": "UT",
+                "ShipToZipCode": "884405",
+                "ShipToLastName": "Roosevelt",
+                "ShipToFirstName": "abc",
+                "RMATransactionList": {
+                    "RMATransaction": {
+                        "SellerPartNumber": "201112310900",
+                        "MfrPartNumber": "201112310900",
+                        "NeweggItemNumber": "9SIA0040286987",
+                        "Description": "ICYTEST201112310900",
+                        "UnitPrice": "600.00",
+                        "ReturnQuantity": "1",
+                        "ReturnUnitPrice": "1.00",
+                        "RefundShippingPrice": "1.00",
+                        "RMAReason": "2",
+                        "RMAReasonDescription": "Defective"
+                    }
+                }
+            }
+        }
+    }

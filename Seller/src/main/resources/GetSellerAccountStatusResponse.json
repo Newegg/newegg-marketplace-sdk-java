@@ -1,0 +1,10 @@
+{
+    "IsSuccess": true,
+    "OperationType": "GetSellerAccountStatusResponse",
+    "SellerID": "A006",
+    "ResponseBody": {
+        "Membership": 0,
+        "SellerName": "Test_MKTPLS",
+        "Status": "Active"
+    }
+}

@@ -1,0 +1,15 @@
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <OperationType>InternationalInventoryReportResponse</OperationType>
+    <SellerID>a001</SellerID>
+    <ResponseBody>
+        <ResponseList>
+            <ResponseInfo>
+                <RequestId>270Z8Y3SYIGQV</RequestId>
+                <RequestType>INTERNATIONAL_INVENTORY_REPORT</RequestType>
+                <RequestDate>07/12/2014 11:02:35</RequestDate>
+                <RequestStatus>SUBMITTED</RequestStatus>
+            </ResponseInfo>
+        </ResponseList>
+    </ResponseBody>
+</NeweggAPIResponse>

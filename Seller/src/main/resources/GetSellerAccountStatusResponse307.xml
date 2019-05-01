@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <OperationType>GetSellerAccountStatusResponse</OperationType>
+    <SellerID>A006</SellerID>
+    <ResponseBody>
+        <SellerName>
+            <![CDATA[Test_MKTPLS]]>
+        </SellerName>
+        <Status>Active</Status>
+        <Membership>0</Membership>
+        <FufillmentCenterList>
+            <FufillmentCenter>
+                <WarehouseLocation>TUR</WarehouseLocation>
+                <WarehouseType>0</WarehouseType>
+                <ShippingDestinationList>
+                    <ShipToCountry>TUR</ShipToCountry>
+                    <ShipToCountry>USA</ShipToCountry>
+                </ShippingDestinationList>
+            </FufillmentCenter>
+            <FufillmentCenter>
+                <WarehouseLocation>USA</WarehouseLocation>
+                <WarehouseType>0</WarehouseType>
+                <ShippingDestinationList>
+                    <ShipToCountry>USA</ShipToCountry>
+                    <ShipToCountry>NZL</ShipToCountry>
+                </ShippingDestinationList>
+            </FufillmentCenter>
+            <FufillmentCenter>
+                <WarehouseLocation>USA</WarehouseLocation>
+                <WarehouseType>1</WarehouseType>
+                <ShippingDestinationList>
+                    <ShipToCountry>AUS</ShipToCountry>
+                    <ShipToCountry>USA</ShipToCountry>
+                    <ShipToCountry>SGP</ShipToCountry>
+                </ShippingDestinationList>
+            </FufillmentCenter>
+        </FufillmentCenterList>
+    </ResponseBody>
+</NeweggAPIResponse>

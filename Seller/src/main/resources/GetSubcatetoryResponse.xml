@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+	<IsSuccess>true</IsSuccess>
+	<OperationType>GetSellerSubcategoryResponse</OperationType>
+	<SellerID>A006</SellerID>
+	<ResponseBody>
+		<SubcategoryList>
+			<Subcategory>
+				<IndustryCode>SW</IndustryCode>
+				<IndustryName><![CDATA[Software           ]]></IndustryName>
+				<SubcategoryID>379</SubcategoryID>
+				<SubcategoryName><![CDATA[Software - Licenses                                         ]]></SubcategoryName>
+				<Enabled>0</Enabled>
+			</Subcategory>
+		</SubcategoryList>
+	</ResponseBody>
+</NeweggAPIResponse>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <sellerID>A006</sellerID>
+    <OperationType>InternationalInventoryReportResponse</OperationType>
+    <ResponseBody>
+        <RequestID>2PQC13C7UYDPQ</RequestID>
+        <RequestType>INTERNATIONAL_INVENTORY_REPORT</RequestType>
+        <RequestDate>2/21/2012 15:32:57</RequestDate>
+        <ReportFileURL>ftp://APIe6Cl2FfE:M9RUtm2s@ftp03.newegg.com/InternationalInventoryReport_2PQC13C7UYDPQ.xls</ReportFileURL>
+    </ResponseBody>
+    <Memo />
+</NeweggAPIResponse>

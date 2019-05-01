@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <OperationType>GetSellerAccountStatusResponse</OperationType>
+    <SellerID>A006</SellerID>
+    <ResponseBody>
+        <SellerName>
+            <![CDATA[Test_MKTPLS]]>
+        </SellerName>
+        <Status>Active</Status>
+        <Membership>0</Membership>        
+    </ResponseBody>
+</NeweggAPIResponse>

@@ -1,0 +1,60 @@
+{
+   "NeweggAPIResponse":{
+      "IsSuccess":"true",
+      "OperationType":"GetRMAInfo",
+      "SellerID":"A006",
+      "ResponseDate":"05/16/2013 14:57:25",
+      "ResponseBody":{
+         "PageInfo":{
+            "TotalCount":"1",
+            "TotalPageCount":"1",
+            "PageIndex":"1",
+            "PageSize":"50"
+         },
+         "RMAInfoList":{
+            "RMAInfo":{
+               "RMANumber":"53424440",
+               "RMAType":"2",
+               "RMATypeDescription":"Refund",
+               "SellerRMANumber":"E12345678",
+               "IssueUser":"A006",
+               "RMADate":"12/19/2012 00:06:30",
+               "RMAStatus":"5",
+               "RMAStatusDescription":"Closed",
+               "OrderNumber":"153985075",
+               "OrderDate":"12/18/2012 23:00:09",
+               "InvoiceNumber":"95843690",
+               "OrderAmount":"3.99",
+               "AvailableRefundAmount":"0.00",
+               "RMAProcessedBy":"Seller",
+               "RMAReceiveDate":"01/09/2013 18:40:28",
+               "PriorRefundAmount":"0.00",
+               "CustomerName":"Fiona Test",
+               "CustomerPhoneNumber":"626-271-1420",
+               "CustomerEmailAddress":"cq2sw1pler2vt958m@marketplace.newegg.com",
+               "ShipToAddress1":"17708 Rowland St",
+               "ShipToCityName":"Rowland Heights",
+               "ShipToStateCode":"CA",
+               "ShipToZipCode":"91748-1119",
+               "ShipToCountryCode":"UNITED STATES",
+               "ShipToLastName":"Test",
+               "ShipToFirstName":"Fiona",
+               "RMATransactionList":{
+                  "RMATransaction":{
+                     "SellerPartNumber":"nz-tst-123",
+                     "MfrPartNumber":"nz-tst-123",
+                     "NeweggItemNumber":"9SIA0060BB9157",
+                     "Description":"Nazi Power Flag",
+                     "UnitPrice":"3.99",
+                     "ReturnQuantity":"1",
+                     "ReturnUnitPrice":"3.99",
+                     "RefundShippingPrice":"0.00",
+                     "RMAReason":"4",
+                     "RMAReasonDescription":"No longer needed"
+                  }
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,17 @@
+﻿{
+  "ResponseDate": "02/18/2019 23:45:40",
+  "IsSuccess": true,
+  "OperationType": "GetManufacturerStatusResponse",
+  "SellerID": "A006",
+  "ResponseBody": {
+    "ManufacturerList": [
+      {
+        "RequestName": "sony & wonder",
+        "RequestDate": "10/16/2012 15:05:21",
+        "Status": "Declined",
+        "ProcessDate": "10/16/2012 22:08:49",
+        "DeclineReason": "Other:for A006 test"
+      }
+    ]
+  }
+}

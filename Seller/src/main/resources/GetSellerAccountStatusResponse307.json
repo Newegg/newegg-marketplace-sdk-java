@@ -1,0 +1,37 @@
+{
+    "IsSuccess": true,
+    "OperationType": "GetSellerAccountStatusResponse",
+    "SellerID": "A006",
+    "ResponseBody": {
+        "Membership": 0,
+        "FufillmentCenterList": [
+            {
+                "WarehouseLocation": "TUR",
+                "WarehouseType": 0,
+                "ShippingDestinationList": [
+                    "TUR",
+                    "USA"
+                ]
+            },
+            {
+                "WarehouseLocation": "USA",
+                "WarehouseType": 0,
+                "ShippingDestinationList": [
+                    "USA",
+                    "NZL"
+                ]
+            },
+            {
+                "WarehouseLocation": "USA",
+                "WarehouseType": 1,
+                "ShippingDestinationList": [
+                    "AUS",
+                    "USA",
+                    "SGP"
+                ]
+            }
+        ],
+        "SellerName": "Test_MKTPLS",
+        "Status": "Active"
+    }
+}

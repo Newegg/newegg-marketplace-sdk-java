@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UpdatePriceResult>
+	<SellerID>A006</SellerID>
+	<ItemNumber>9SIA0062TT3677</ItemNumber>
+	<SellerPartNumber>Group-By test Item A</SellerPartNumber>
+	<PriceList>
+		<Price>
+			<CountryCode>USA</CountryCode>
+			<Currency>USD</Currency>
+			<Active>0</Active>
+			<MSRP>99.77</MSRP>
+			<MAP></MAP>
+			<CheckoutMAP>0</CheckoutMAP>
+			<SellingPrice>99.77</SellingPrice>
+			<EnableFreeShipping>0</EnableFreeShipping>
+		</Price>
+	</PriceList>
+</UpdatePriceResult>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+	<IsSuccess>true</IsSuccess>
+	<OperationType>SubmitItemWarrantyResponse</OperationType>
+	<SellerID>A006</SellerID>
+	<ResponseBody>
+		<ItemWarrantyList>
+			<ItemWarranty>
+				<IsSuccess>false</IsSuccess>
+				<ErrorList>
+					<Error>
+						<ErrorCode>CT504</ErrorCode>
+						<ErrorMessage>'Parts Day' and 'Labor Day' should not be equal to 0
+							at the same time.</ErrorMessage>
+					</Error>
+					<Error>
+						<ErrorCode>CT508</ErrorCode>
+						<ErrorMessage>SellerPartNumber: bg9h2016042003 does not exist.
+						</ErrorMessage>
+					</Error>
+				</ErrorList>
+			</ItemWarranty>
+		</ItemWarrantyList>
+	</ResponseBody>
+	<ResponseDate>02/19/2019 01:22:09</ResponseDate>
+</NeweggAPIResponse>

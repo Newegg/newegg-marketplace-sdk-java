@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <OperationType>GetCourtesyRefundRequestStatusResponse</OperationType>
+    <SellerID>A006</SellerID>
+    <ResponseBody>
+        <ResponseList>
+            <ResponseInfo>
+                <RequestId>cb0c9123-b7ac-454d-84d7-3fab9bf7e1f8</RequestId>
+                <RequestType>COURTESYREFUND</RequestType>
+                <RequestDate>2012-03-07 12:37:09</RequestDate>
+                <RequestStatus>FINISHED</RequestStatus>
+                <Result>
+                    <CourtesyRefundInfo>
+                        <CourtesyRefundID>cb0c9123-b7ac-454d-84d7-3fab9bf7e1f8</CourtesyRefundID>
+                        <SONumber>164878278</SONumber>
+                        <SOAmount>1.00</SOAmount>
+                        <InvoiceNumber>84724946</InvoiceNumber>
+                        <RefundAmount>1.00</RefundAmount>
+                        <ReasonCode>1</ReasonCode>
+                        <Reason>Negative Customer Feedback</Reason>
+                        <NoteToCustomer>this is a test note</NoteToCustomer>
+                        <Status>Close</Status>
+                        <IsNeweggRefund>false</IsNeweggRefund>
+                        <InUserName>A006</InUserName>
+                        <InDate>2012-03-07 12:38:00</InDate>
+                        <EditUserName>EDI</EditUserName>
+                        <EditDate>2012-03-07 13:07:02</EditDate>
+                    </CourtesyRefundInfo>
+                </Result>
+            </ResponseInfo>
+        </ResponseList>
+    </ResponseBody>
+</NeweggAPIResponse>

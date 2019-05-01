@@ -1,0 +1,14 @@
+{
+    "IsSuccess": "true",
+    "OperationType": "CourtesyRefundResponse",
+    "SellerID": "A006",
+    "ResponseBody": {
+        "ResponseList": {
+            "ResponseInfo": [{
+                "RequestId": "cb0c9123-b7ac-454d-84d7-3fab9bf7e1f8",
+                "RequestDate": "2/17/2012 19:15:00",
+                "RequestStatus": "SUBMITTED"
+            }]
+        }
+    }
+}

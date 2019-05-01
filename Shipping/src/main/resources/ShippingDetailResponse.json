@@ -1,0 +1,52 @@
+{
+  "IsSuccess": true,
+  "OperationType": "GetShippingDetailResponse",
+  "SellerID": "A2GS",
+  "ResponseBody": {
+    "OrderNumber": 257760329,
+    "RequestList": [
+      {
+        "Shipment": {
+          "ShippingCarrierCode": 100,
+          "ShipFromFirstName": "TEST3",
+          "ShipFromLastName": "TEST6",
+          "ShipFromPhoneNumber": "854-125-4152",
+          "ShipFromAddress1": "Hacettepe, TalatpaSa Blv No:82",
+          "ShipFromCityName": "TalatpaSa",
+          "ShipFromStateCode": "CA",
+          "ShipFromZipCode": "91748",
+          "ShipFromCountryCode": "USA",
+          "CustomerName": "TEST3 TEST6",
+          "CustomerPhoneNumber": "854-125-4152",
+          "CustomerEmailAddress": "cusa.q7zw1u4erbgt9e@marketplace.newegg.com",
+          "ShipToAddress1": "Hacettepe, TalatpaSa Blv No:82,",
+          "ShipToAddress2": "",
+          "ShipToCityName": "TalatpaSa",
+          "ShipToZipCode": "91748",
+          "ShipToCountryCode": "UNITED STATES",
+          "ShipmentStatus": "ERROR_ESTIMATING",
+          "ShipDate": "",
+          "ErrorMessage": "An error was encountered when communicating with Newegg partnered carrier service: Your ship from address is not valid for Newegg partnered carriers.The followings are the recommended addresses provided by Newegg partnered carries: \nROWLAND HEIGHTS CA 91748, USA \nCITY INDUSTRY CA 91748, USA \nCITY OF INDUSTRY CA 91748, USA \n\nYour ship to address is not valid for Newegg partnered carriers.The followings are the recommended addresses provided by Newegg partnered carries: \nROWLAND HEIGHTS CA 91748, USA \nCITY INDUSTRY CA 91748, USA \nCITY OF INDUSTRY CA 91748, USA \n. For further assistance, please contact Newegg Integration Team via Datafeeds@newegg.com.",
+          "PartneredEstimate": {
+            "BillableWeight": 0.00,
+            "EstimatedDeliveryDay": "",
+            "EstimatedChargeAmount": 0.00
+          },
+          "PackageList": [
+            {
+              "ItemList": [
+                {
+                  "SellerPartNumber": "fortestestsisisisi",
+                  "Quantity": 1
+                }
+              ]
+            }
+          ],
+          "ShipToStateCode": "CA"
+        },
+        "RequestDate": "09/25/2018 22:33:31",
+        "RequestID": "245BWZ383S93Y"
+      }
+    ]
+  }
+}

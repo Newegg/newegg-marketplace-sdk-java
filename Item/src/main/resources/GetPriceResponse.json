@@ -1,0 +1,95 @@
+{
+  "SellerID": "A006",
+  "ItemNumber": "9SIA0062TT3677",
+  "SellerPartNumber": "Group-By test Item A",
+  "PriceList": [
+    {
+      "CountryCode": "AUS",
+      "Currency": "AUD",
+      "Active": 0,
+      "MSRP": 0.99,
+      "MAP": 0.99,
+      "CheckoutMAP": 0,
+      "SellingPrice": 0.99,
+      "EnableFreeShipping": 0,
+      "OnPromotion": "0"
+    },
+    {
+      "CountryCode": "CHL",
+      "Currency": "USD",
+      "Active": 0,
+      "MSRP": 0.99,
+      "MAP": 0.99,
+      "CheckoutMAP": 0,
+      "SellingPrice": 0.99,
+      "EnableFreeShipping": 0,
+      "OnPromotion": "0"
+    },
+    {
+      "CountryCode": "HKG",
+      "Currency": "HKD",
+      "Active": 0,
+      "MSRP": 0.99,
+      "MAP": 0.99,
+      "CheckoutMAP": 0,
+      "SellingPrice": 0.99,
+      "EnableFreeShipping": 0,
+      "OnPromotion": "0"
+    },
+    {
+      "CountryCode": "IDN",
+      "Currency": "IDR",
+      "Active": 0,
+      "MSRP": 0.99,
+      "MAP": 0.99,
+      "CheckoutMAP": 0,
+      "SellingPrice": 0.99,
+      "EnableFreeShipping": 0,
+      "OnPromotion": "0"
+    },
+    {
+      "CountryCode": "IND",
+      "Currency": "INR",
+      "Active": 0,
+      "MSRP": 0.99,
+      "MAP": 0.99,
+      "CheckoutMAP": 0,
+      "SellingPrice": 0.99,
+      "EnableFreeShipping": 0,
+      "OnPromotion": "0"
+    },
+    {
+      "CountryCode": "KOR",
+      "Currency": "KRW",
+      "Active": 0,
+      "MSRP": 0.99,
+      "MAP": 0.99,
+      "CheckoutMAP": 0,
+      "SellingPrice": 0.99,
+      "EnableFreeShipping": 0,
+      "OnPromotion": "0"
+    },
+    {
+      "CountryCode": "PHL",
+      "Currency": "PHP",
+      "Active": 0,
+      "MSRP": 0.99,
+      "MAP": 0.99,
+      "CheckoutMAP": 0,
+      "SellingPrice": 0.99,
+      "EnableFreeShipping": 0,
+      "OnPromotion": "0"
+    },
+    {
+      "CountryCode": "USA",
+      "Currency": "USD",
+      "Active": 0,
+      "MSRP": 99.77,
+      "MAP": 0.0,
+      "CheckoutMAP": 0,
+      "SellingPrice": 99.77,
+      "EnableFreeShipping": 0,
+      "OnPromotion": "0"
+    }
+  ]
+}

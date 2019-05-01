@@ -1,0 +1,12 @@
+{
+  "SellerID": "A006",
+  "ItemNumber": "9SIA0062TT3677",
+  "SellerPartNumber": "Group-By test Item A",
+  "InventoryAllocation": [
+    {
+      "WarehouseLocation": "USA",
+      "FulfillmentOption": "0",
+      "AvailableQuantity": 99
+    }
+  ]
+}

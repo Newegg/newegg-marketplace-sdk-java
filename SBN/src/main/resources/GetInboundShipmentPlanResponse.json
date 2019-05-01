@@ -1,0 +1,47 @@
+{
+  "IsSuccess": true,
+  "OperationType": "GetPlanSuggestionResponse",
+  "SellerID": "A006",
+  "ResponseBody": {
+    "ShipmentList": [
+      {
+        "ShipToWarehouseCode": "07",
+        "ShipToAddress1": "17708 Rowland St.",
+        "ShipToCityName": "City of Industry",
+        "ShipToStateCode": "CA",
+        "ShipToZipCode": "91748",
+        "ShipToCountryCode": "USA",
+        "ItemList": [
+          {
+            "SellerPartNumber": "380026",
+            "NeweggItemNumber": "9SIA0068P31016",
+            "Quantity": 10,
+            "NumberofCartons": 1
+          }
+        ]
+      },
+      {
+        "ShipToWarehouseCode": "14",
+        "ShipToAddress1": "45 Patrick Ave., Dock 9-17",
+        "ShipToCityName": "Edison",
+        "ShipToStateCode": "NJ",
+        "ShipToZipCode": "08837",
+        "ShipToCountryCode": "USA",
+        "ItemList": [
+          {
+            "SellerPartNumber": "423440",
+            "NeweggItemNumber": "9SIA0068P31027",
+            "Quantity": 20,
+            "NumberofCartons": 2
+          },
+          {
+            "SellerPartNumber": "380026",
+            "NeweggItemNumber": "9SIA0068P31016",
+            "Quantity": 20,
+            "NumberofCartons": 2
+          }
+        ]
+      }
+    ]
+  }
+}

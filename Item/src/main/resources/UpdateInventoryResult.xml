@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UpdateInventoryResult>
+	<SellerID>A006</SellerID>
+	<ItemNumber>9SIA0062TT3677</ItemNumber>
+	<SellerPartNumber>Group-By test Item A</SellerPartNumber>
+	<InventoryList>
+		<Inventory>
+			<WarehouseLocation>USA</WarehouseLocation>
+			<AvailableQuantity>99</AvailableQuantity>
+		</Inventory>
+	</InventoryList>
+</UpdateInventoryResult>

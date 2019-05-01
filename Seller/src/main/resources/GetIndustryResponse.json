@@ -1,0 +1,17 @@
+{
+    "IsSuccess": "true",
+    "OperationType": "GetSellerIndustryResponse",
+    "SellerID": "A006",
+    "ResponseBody": {
+        "IndustryList": [
+            {
+                "IndustryCode": "AP",
+                "IndustryName": "Apparel"
+            },
+            {
+                "IndustryCode": "AL",
+                "IndustryName": "Appliance"
+            }
+        ]
+    }
+}

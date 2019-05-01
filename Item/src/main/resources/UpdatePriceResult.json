@@ -1,0 +1,17 @@
+{
+  "SellerID": "A006",
+  "ItemNumber": "9SIA0062TT3677",
+  "SellerPartNumber": "Group-By test Item A",
+  "PriceList": [
+    {
+      "CountryCode": "USA",
+      "Currency": "USD",
+      "Active": 0,
+      "MSRP": "99.77",
+      "MAP": "",
+      "CheckoutMAP": 0,
+      "SellingPrice": "99.77",
+      "EnableFreeShipping": 0
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "IsSuccess": true,
+  "OperationType": "GetSellerSubcategoryResponse",
+  "SellerID": "A006",
+  "ResponseBody": {
+    "CountryCode": "USA",
+    "SubcategoryList": [
+      {
+        "IndustryCode": "CP",
+        "IndustryName": "Camera & Photo",
+        "SubcategoryID": 397,
+        "SubcategoryName": "Accessories - Camera Other                                  ",
+        "Enabled": 1
+      }
+    ]
+  }
+}

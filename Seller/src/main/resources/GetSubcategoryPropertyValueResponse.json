@@ -1,0 +1,25 @@
+{
+  "IsSuccess": true,
+  "OperationType": "GetSellerPropertyValueResponse",
+  "SellerID": "A006",
+  "ResponseBody": {
+    "PropertyInfoList": [
+      {
+        "SubcategoryID": 1045,
+        "SubcategoryName": "Costumes",
+        "PropertyName": "Costume_Gender",
+        "IsAdvancedSearch": 1,
+        "IsGroupBy": 0,
+        "IsRequired": 1,
+        "PropertyValueList": [
+          "Boys",
+          "Female",
+          "Girls",
+          "Male",
+          "Unisex",
+          "Women"
+        ]
+      }
+    ]
+  }
+}
