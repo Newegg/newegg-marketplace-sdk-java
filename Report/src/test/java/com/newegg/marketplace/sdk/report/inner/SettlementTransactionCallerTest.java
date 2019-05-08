@@ -13,10 +13,10 @@ import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.report.ReportConfig;
 import com.newegg.marketplace.sdk.report.RequireSetting;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.model.get.SettlementTransactionRequest;
-import com.newegg.marketplace.sdk.report.model.get.SettlementTransactionResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementTransactionRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementTransactionResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementTransactionReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementTransactionReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementTransactionRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementTransactionResponse;
 
 public class SettlementTransactionCallerTest {
 
@@ -25,10 +25,10 @@ public class SettlementTransactionCallerTest {
 		APIConfig.load(ReportConfig.class);
 	}
 	
-	private SettlementTransactionRequest buildGetSettlementTransactionRequest(PLATFORM p) {
-		SettlementTransactionRequest request = new SettlementTransactionRequest();
-		SettlementTransactionRequest.RequestBody body = new SettlementTransactionRequest.RequestBody();
-		SettlementTransactionRequest.RequestBody.PageInfo page = new SettlementTransactionRequest.RequestBody.PageInfo();
+	private GetSettlementTransactionReportRequest buildGetSettlementTransactionRequest(PLATFORM p) {
+		GetSettlementTransactionReportRequest request = new GetSettlementTransactionReportRequest();
+		GetSettlementTransactionReportRequest.RequestBody body = new GetSettlementTransactionReportRequest.RequestBody();
+		GetSettlementTransactionReportRequest.RequestBody.PageInfo page = new GetSettlementTransactionReportRequest.RequestBody.PageInfo();
 		
 		switch (p) {
 		case USA:
@@ -61,11 +61,11 @@ public class SettlementTransactionCallerTest {
 		return request;
 	}
 	
-	private SSettlementTransactionRequest buildSubmitSettlementTransactionRequest(PLATFORM p) {
-		SSettlementTransactionRequest submitRequest = new SSettlementTransactionRequest();
-		SSettlementTransactionRequest.RequestBody submitBody = new SSettlementTransactionRequest.RequestBody();
-		SSettlementTransactionRequest.RequestBody.SettlementTransactionReportCriteria criteria = 
-				new SSettlementTransactionRequest.RequestBody.SettlementTransactionReportCriteria();
+	private SettlementTransactionRequest buildSubmitSettlementTransactionRequest(PLATFORM p) {
+		SettlementTransactionRequest submitRequest = new SettlementTransactionRequest();
+		SettlementTransactionRequest.RequestBody submitBody = new SettlementTransactionRequest.RequestBody();
+		SettlementTransactionRequest.RequestBody.SettlementTransactionReportCriteria criteria = 
+				new SettlementTransactionRequest.RequestBody.SettlementTransactionReportCriteria();
 		
 		switch (p) {
 		case USA:
@@ -102,8 +102,8 @@ public class SettlementTransactionCallerTest {
 	}
 	
 	private void sendGetSettlementTransaction(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		SettlementTransactionResponse response = null;
-		SettlementTransactionRequest request = null;
+		GetSettlementTransactionReportResponse response = null;
+		GetSettlementTransactionReportRequest request = null;
 		SettlementTransactionCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -130,8 +130,8 @@ public class SettlementTransactionCallerTest {
 	}
 	
 	private void sendSubmitSettlementTransaction(boolean mock, MEDIA_TYPE type, PLATFORM flatform) {
-		SSettlementTransactionResponse response = null;
-		SSettlementTransactionRequest request = null;
+		SettlementTransactionResponse response = null;
+		SettlementTransactionRequest request = null;
 		SettlementTransactionCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		

@@ -2,8 +2,6 @@ package com.newegg.marketplace.sdk.order.inner;
 
 import static org.junit.Assert.assertTrue;
 
-import org.apache.commons.logging.Log;
-import org.apache.logging.log4j.LogManager;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -50,7 +48,7 @@ public class CancelOrderCallerTest {
 		return request;
 	}
 	
-	private void sendCancelOrder(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
+	private void sendCancelOrder(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm,String orderNumber) {
 		CancelOrderResponse response = null;
 		CancelOrderRequest request = null;
 		CancelOrderCaller sender = null;
@@ -70,7 +68,7 @@ public class CancelOrderCallerTest {
 			else
 				sender = CancelOrderCaller.buildJSON();
 			
-			response = sender.sendCancelOrderRequest(request);
+			response = sender.sendCancelOrderRequest(request,orderNumber,null);
 			assertTrue("true".equals(response.getIsSuccess()));
 		} catch(NeweggException e) {
 			RequireSetting.log.info("Zack-Test NeweggException happened");
@@ -81,57 +79,45 @@ public class CancelOrderCallerTest {
 	}
 	
 	@Test
-	public void testSendCancelOrderReques_XML() {
-		Variables.version = "304"; // fixed for cancel order command
+	public void testSendCancelOrderReques_XML() {	
 		
-		Variables.orderNumber = "336754663"; // fake data will throw exception
 		RequireSetting.authKeySetting("A2EU");
-		sendCancelOrder(false, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendCancelOrder(false, MEDIA_TYPE.XML, PLATFORM.USA,"336754663");
 		
 		// can
-		Variables.orderNumber = "292242424"; // fake data will throw exception
 		RequireSetting.authKeySetting("A3TV");
-		sendCancelOrder(false, MEDIA_TYPE.XML, PLATFORM.CAN);
+		sendCancelOrder(false, MEDIA_TYPE.XML, PLATFORM.CAN,"292242424");
 		
 		// b2b
-		Variables.orderNumber = "1230247460"; // fake data will throw exception
 		RequireSetting.authKeySetting("A44S");
-		sendCancelOrder(false, MEDIA_TYPE.XML, PLATFORM.USB);
+		sendCancelOrder(false, MEDIA_TYPE.XML, PLATFORM.USB,"1230247460");
 	}
 	
 	@Test
 	public void testSendCancelOrderReques_XML_MOCK() {
-		Variables.version = "304"; // fixed for cancel order command
-		Variables.orderNumber = "127237320";
 		RequireSetting.authKeySetting("A2EU");
-		sendCancelOrder(true, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendCancelOrder(true, MEDIA_TYPE.XML, PLATFORM.USA,"127237320");
 	}
 	
 	//@Test
 	public void testSendCancelOrderReques_JSON() {
-		Variables.version = "304"; // fixed for cancel order command
 		
-		Variables.orderNumber = "336754663"; // fake data will throw exception
 		RequireSetting.authKeySetting("A2EU");
-		sendCancelOrder(false, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendCancelOrder(false, MEDIA_TYPE.JSON, PLATFORM.USA,"336754663");
 		
 		// can
-		Variables.orderNumber = "292242424"; // fake data will throw exception
 		RequireSetting.authKeySetting("A3TV");
-		sendCancelOrder(false, MEDIA_TYPE.JSON, PLATFORM.CAN);
+		sendCancelOrder(false, MEDIA_TYPE.JSON, PLATFORM.CAN,"292242424");
 		
 		// b2b
-		Variables.orderNumber = "1230247460"; // fake data will throw exception
 		RequireSetting.authKeySetting("A44S");
-		sendCancelOrder(false, MEDIA_TYPE.JSON, PLATFORM.USB);
+		sendCancelOrder(false, MEDIA_TYPE.JSON, PLATFORM.USB,"1230247460");
 		
 	}
 	
 	//@Test
 	public void testSendCancelOrderReques_JSON_MOCK() {
-		Variables.version = "304"; // fixed for cancel order command
-		Variables.orderNumber = "127237320";
 		RequireSetting.authKeySetting("A2EU");
-		sendCancelOrder(true, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendCancelOrder(true, MEDIA_TYPE.JSON, PLATFORM.USA,"127237320");
 	}
 }

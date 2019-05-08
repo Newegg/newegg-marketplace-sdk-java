@@ -2,7 +2,6 @@ package com.newegg.marketplace.sdk.report.inner;
 
 import static org.junit.Assert.assertTrue;
 
-import org.apache.logging.log4j.LogManager;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -14,10 +13,10 @@ import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.report.ReportConfig;
 import com.newegg.marketplace.sdk.report.RequireSetting;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.model.get.CAPropSixtyFiveReportRequest;
-import com.newegg.marketplace.sdk.report.model.get.CAPropSixtyFiveReportResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SCAPropSixtyFiveRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SCAPropSixtyFiveResponse;
+import com.newegg.marketplace.sdk.report.model.get.CAProp65WarningReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.CAProp65WarningReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.CAProp65ReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.CAProp65ReportResponse;
 
 public class CAPropSixtyFiveReportCallerTest {
 	/*private org.apache.logging.log4j.Logger log = LogManager.getLogger(ReportConfig.class);
@@ -38,10 +37,10 @@ public class CAPropSixtyFiveReportCallerTest {
 		APIConfig.load(ReportConfig.class);
 	}
 	
-	private CAPropSixtyFiveReportRequest buildGetCAProp65Request(PLATFORM p) {
-		CAPropSixtyFiveReportRequest request = new CAPropSixtyFiveReportRequest();
-		CAPropSixtyFiveReportRequest.RequestBody body = new CAPropSixtyFiveReportRequest.RequestBody();
-		CAPropSixtyFiveReportRequest.RequestBody.PageInfo page = new CAPropSixtyFiveReportRequest.RequestBody.PageInfo();
+	private CAProp65WarningReportRequest buildGetCAProp65Request(PLATFORM p) {
+		CAProp65WarningReportRequest request = new CAProp65WarningReportRequest();
+		CAProp65WarningReportRequest.RequestBody body = new CAProp65WarningReportRequest.RequestBody();
+		CAProp65WarningReportRequest.RequestBody.PageInfo page = new CAProp65WarningReportRequest.RequestBody.PageInfo();
 		
 		switch (p) {
 		case USA:
@@ -71,11 +70,11 @@ public class CAPropSixtyFiveReportCallerTest {
 		return request;
 	}
 	
-	private SCAPropSixtyFiveRequest buildSubmitCAProp65Request(PLATFORM p) {
-		SCAPropSixtyFiveRequest submitRequest = new SCAPropSixtyFiveRequest();
-		SCAPropSixtyFiveRequest.RequestBody submitBody = new SCAPropSixtyFiveRequest.RequestBody();
-		SCAPropSixtyFiveRequest.RequestBody.ItemCAProp65ReportCriteria criteria = 
-				new SCAPropSixtyFiveRequest.RequestBody.ItemCAProp65ReportCriteria();
+	private CAProp65ReportRequest buildSubmitCAProp65Request(PLATFORM p) {
+		CAProp65ReportRequest submitRequest = new CAProp65ReportRequest();
+		CAProp65ReportRequest.RequestBody submitBody = new CAProp65ReportRequest.RequestBody();
+		CAProp65ReportRequest.RequestBody.ItemCAProp65ReportCriteria criteria = 
+				new CAProp65ReportRequest.RequestBody.ItemCAProp65ReportCriteria();
 		
 		switch (p) {
 		case USA:
@@ -103,8 +102,8 @@ public class CAPropSixtyFiveReportCallerTest {
 	}
 	
 	private void sendGetCAProp65(boolean mock, MEDIA_TYPE type, PLATFORM flatform) {
-		CAPropSixtyFiveReportResponse response = null;
-		CAPropSixtyFiveReportRequest request = null;
+		CAProp65WarningReportResponse response = null;
+		CAProp65WarningReportRequest request = null;
 		CAPropSixtyFiveReportCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -131,8 +130,8 @@ public class CAPropSixtyFiveReportCallerTest {
 	}
 	
 	private void sendSubmitCAProp65(boolean mock, MEDIA_TYPE type, PLATFORM flatform) {
-		SCAPropSixtyFiveResponse response = null;
-		SCAPropSixtyFiveRequest request = null;
+		CAProp65ReportResponse response = null;
+		CAProp65ReportRequest request = null;
 		CAPropSixtyFiveReportCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		

@@ -5,10 +5,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.SettlementTransactionRequest;
-import com.newegg.marketplace.sdk.report.model.get.SettlementTransactionResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementTransactionRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementTransactionResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementTransactionReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementTransactionReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementTransactionRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementTransactionResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -41,14 +41,14 @@ public interface SettlementTransactionCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	SettlementTransactionResponse sendSettlementTransactionRequestJSON(@Param("sellerid") String sellerID, SettlementTransactionRequest body);
+	GetSettlementTransactionReportResponse sendSettlementTransactionRequestJSON(@Param("sellerid") String sellerID, GetSettlementTransactionReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	SettlementTransactionResponse sendSettlementTransactionRequestXML(@Param("sellerid") String sellerID, SettlementTransactionRequest body);
+	GetSettlementTransactionReportResponse sendSettlementTransactionRequestXML(@Param("sellerid") String sellerID, GetSettlementTransactionReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SettlementTransactionResponse sendSettlementTransactionRequest(SettlementTransactionRequest body) {
+	default GetSettlementTransactionReportResponse sendSettlementTransactionRequest(GetSettlementTransactionReportRequest body) {
 		switch(Variables.MediaType) { 
 		case JSON:			
 			return sendSettlementTransactionRequestJSON(Content.SellerID, body);
@@ -65,14 +65,14 @@ public interface SettlementTransactionCaller {
 	// submit command
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SSettlementTransactionResponse sendSubmitSettlementTransactionRequestJSON(@Param("sellerid") String sellerID, SSettlementTransactionRequest body);
+	SettlementTransactionResponse sendSubmitSettlementTransactionRequestJSON(@Param("sellerid") String sellerID, SettlementTransactionRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SSettlementTransactionResponse sendSubmitSettlementTransactionRequestXML(@Param("sellerid") String sellerID, SSettlementTransactionRequest body);
+	SettlementTransactionResponse sendSubmitSettlementTransactionRequestXML(@Param("sellerid") String sellerID, SettlementTransactionRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SSettlementTransactionResponse sendSubmitSettlementTransactionRequest(SSettlementTransactionRequest body) {
+	default SettlementTransactionResponse sendSubmitSettlementTransactionRequest(SettlementTransactionRequest body) {
 		switch(Variables.MediaType) { 
 		case JSON:			
 			return sendSubmitSettlementTransactionRequestJSON(Content.SellerID, body);

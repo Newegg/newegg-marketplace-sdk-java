@@ -140,9 +140,9 @@ public class GetReportStatusRequest {
     @XmlElement(name = "IssueUser")
     @JsonProperty("IssueUser")
     protected String issueUser;
-    @XmlElement(name = "OperationType", required = true)
+    @XmlElement(name = "OperationType", defaultValue = "GetReportStatusRequest", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "GetReportStatusRequest";
     @XmlElement(name = "RequestBody", required = true)
     @JsonProperty("RequestBody")
     protected GetReportStatusRequest.RequestBody requestBody;

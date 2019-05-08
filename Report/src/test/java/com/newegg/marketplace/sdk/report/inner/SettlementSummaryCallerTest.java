@@ -13,10 +13,10 @@ import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.report.ReportConfig;
 import com.newegg.marketplace.sdk.report.RequireSetting;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.model.get.SettlementSummaryRequest;
-import com.newegg.marketplace.sdk.report.model.get.SettlementSummaryResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementSummaryRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementSummaryResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementSummaryReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementSummaryInfoResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementSummaryReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementSummaryReportResponse;
 
 public class SettlementSummaryCallerTest {
 	
@@ -25,10 +25,10 @@ public class SettlementSummaryCallerTest {
 		APIConfig.load(ReportConfig.class);
 	}
 	
-	private SettlementSummaryRequest buildGetSettlementSummaryRequest(PLATFORM p) {
-		SettlementSummaryRequest request = new SettlementSummaryRequest();
-		SettlementSummaryRequest.RequestBody body = new SettlementSummaryRequest.RequestBody();
-		SettlementSummaryRequest.RequestBody.PageInfo page = new SettlementSummaryRequest.RequestBody.PageInfo();
+	private GetSettlementSummaryReportRequest buildGetSettlementSummaryRequest(PLATFORM p) {
+		GetSettlementSummaryReportRequest request = new GetSettlementSummaryReportRequest();
+		GetSettlementSummaryReportRequest.RequestBody body = new GetSettlementSummaryReportRequest.RequestBody();
+		GetSettlementSummaryReportRequest.RequestBody.PageInfo page = new GetSettlementSummaryReportRequest.RequestBody.PageInfo();
 		
 		switch (p) {
 		case USA:
@@ -60,11 +60,11 @@ public class SettlementSummaryCallerTest {
 		return request;
 	}
 	
-	private SSettlementSummaryRequest buildSubmitSettlementSummaryRequest(PLATFORM p) {
-		SSettlementSummaryRequest submitRequest = new SSettlementSummaryRequest();
-		SSettlementSummaryRequest.RequestBody submitBody = new SSettlementSummaryRequest.RequestBody();
-		SSettlementSummaryRequest.RequestBody.SettlementSummaryReportCriteria criteria = 
-				new SSettlementSummaryRequest.RequestBody.SettlementSummaryReportCriteria();
+	private SettlementSummaryReportRequest buildSubmitSettlementSummaryRequest(PLATFORM p) {
+		SettlementSummaryReportRequest submitRequest = new SettlementSummaryReportRequest();
+		SettlementSummaryReportRequest.RequestBody submitBody = new SettlementSummaryReportRequest.RequestBody();
+		SettlementSummaryReportRequest.RequestBody.SettlementSummaryReportCriteria criteria = 
+				new SettlementSummaryReportRequest.RequestBody.SettlementSummaryReportCriteria();
 		
 		switch (p) {
 		case USA:
@@ -95,8 +95,8 @@ public class SettlementSummaryCallerTest {
 	}
 	
 	private void sendGetSettlementSummary(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		SettlementSummaryResponse response = null;
-		SettlementSummaryRequest request = null;
+		GetSettlementSummaryInfoResponse response = null;
+		GetSettlementSummaryReportRequest request = null;
 		SettlementSummaryCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -123,8 +123,8 @@ public class SettlementSummaryCallerTest {
 	}
 	 
 	private void sendSubmitSettlementSummary(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		SSettlementSummaryResponse response = null;
-		SSettlementSummaryRequest request = null;
+		SettlementSummaryReportResponse response = null;
+		SettlementSummaryReportRequest request = null;
 		SettlementSummaryCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		

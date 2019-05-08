@@ -5,8 +5,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.rma.Variables;
 import com.newegg.marketplace.sdk.rma.Variables.UpdateRMARequestType;
-import com.newegg.marketplace.sdk.rma.model.RMAVoidRequest;
-import com.newegg.marketplace.sdk.rma.model.RMAVoidResponse;
+import com.newegg.marketplace.sdk.rma.model.VoidRMARequest;
+import com.newegg.marketplace.sdk.rma.model.VoidRMAResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -40,14 +40,17 @@ public interface RMAVoidCaller {
 	 */
 	@Headers({ "Accept: application/json", "Content-Type: application/json" })
 	@RequestLine("POST /servicemgmt/rma/updaterma?sellerid={sellerid}&version={version}")
-	RMAVoidResponse sendRMAVoidRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version, RMAVoidRequest body);
+	VoidRMAResponse sendRMAVoidRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version,
+			VoidRMARequest body);
 
 	@Headers({ "Accept: application/xml", "Content-Type: application/xml" })
 	@RequestLine("POST /servicemgmt/rma/updaterma?sellerid={sellerid}&version={version}")
-	RMAVoidResponse sendRMAVoidRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, RMAVoidRequest body);
+	VoidRMAResponse sendRMAVoidRequestXML(@Param("sellerid") String sellerID, @Param("version") String version,
+			VoidRMARequest body);
 
-	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default RMAVoidResponse sendRMAVoidRequest(String version, RMAVoidRequest body) {
+	// Implement default method of interface class that according to
+	// Variables.MediaType to run at JSON or XML request.
+	default VoidRMAResponse sendRMAVoidRequest(VoidRMARequest body, String version) {
 		switch (Variables.MediaType) {
 		case JSON:
 			if (Variables.SimulationEnabled)
@@ -72,8 +75,8 @@ public interface RMAVoidCaller {
 
 		Variables.UpdateRequestType = UpdateRMARequestType.Void;
 
-		return new CallerFactory<RMAVoidCaller>()
-				.jsonBuild(RMAVoidCaller.class, Variables.LogLevel, Variables.Retryer, RMAClient.genClient());
+		return new CallerFactory<RMAVoidCaller>().jsonBuild(RMAVoidCaller.class, Variables.LogLevel, Variables.Retryer,
+				RMAClient.genClient());
 	}
 
 	static RMAVoidCaller buildXML() {
@@ -81,8 +84,8 @@ public interface RMAVoidCaller {
 
 		Variables.UpdateRequestType = UpdateRMARequestType.Void;
 
-		return new CallerFactory<RMAVoidCaller>()
-				.xmlBuild(RMAVoidCaller.class, Variables.LogLevel, Variables.Retryer, RMAClient.genClient());
+		return new CallerFactory<RMAVoidCaller>().xmlBuild(RMAVoidCaller.class, Variables.LogLevel, Variables.Retryer,
+				RMAClient.genClient());
 	}
 
 }

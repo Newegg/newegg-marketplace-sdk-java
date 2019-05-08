@@ -4,8 +4,8 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.order.Variables;
-import com.newegg.marketplace.sdk.order.model.OrderConfirmRequest;
-import com.newegg.marketplace.sdk.order.model.OrderConfirmResponse;
+import com.newegg.marketplace.sdk.order.model.OrderConfirmationRequest;
+import com.newegg.marketplace.sdk.order.model.OrderConfirmationResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -38,14 +38,14 @@ public interface OrderConfirmCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /ordermgmt/orderstatus/orders/confirmation?sellerid={sellerid}")
-	OrderConfirmResponse sendOrderConfirmRequestJSON(@Param("sellerid") String sellerID, OrderConfirmRequest body);
+	OrderConfirmationResponse sendOrderConfirmRequestJSON(@Param("sellerid") String sellerID, OrderConfirmationRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /ordermgmt/orderstatus/orders/confirmation?sellerid={sellerid}")
-	OrderConfirmResponse sendOrderConfirmRequestXML(@Param("sellerid") String sellerID, OrderConfirmRequest body);
+	OrderConfirmationResponse sendOrderConfirmRequestXML(@Param("sellerid") String sellerID, OrderConfirmationRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default OrderConfirmResponse sendOrderConfirmRequest(OrderConfirmRequest body) {
+	default OrderConfirmationResponse sendOrderConfirmRequest(OrderConfirmationRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendOrderConfirmRequestJSON(Content.SellerID, body);

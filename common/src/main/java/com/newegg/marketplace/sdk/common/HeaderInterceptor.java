@@ -29,8 +29,8 @@ public class HeaderInterceptor implements RequestInterceptor {
 	public void apply(RequestTemplate template) {		
 		template.header(Content.AUTHORIZATION_NAME, Content.Authorization)
 		.header(Content.SECRET_KEY_NAME, Content.SecretKey)
-		.header("APIVersion","Java 1.0")
+		.header("User-Agent","Java SDK 0.1.0")
 		.header(Content.VERSION_NAME, "0.1.0");
 	}
 
-}
+}f

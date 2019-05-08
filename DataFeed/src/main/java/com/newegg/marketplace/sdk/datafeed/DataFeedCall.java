@@ -1,32 +1,46 @@
 package com.newegg.marketplace.sdk.datafeed;
 
 import com.newegg.marketplace.sdk.common.Content;
-import com.newegg.marketplace.sdk.common.PlatformException;
 import com.newegg.marketplace.sdk.common.Content.PLATFORM;
+import com.newegg.marketplace.sdk.common.PlatformException;
 import com.newegg.marketplace.sdk.datafeed.inner.DataFeedCaller;
 import com.newegg.marketplace.sdk.datafeed.inner.SubmitActivityCaller;
 import com.newegg.marketplace.sdk.datafeed.inner.SubmitCreationCaller;
 import com.newegg.marketplace.sdk.datafeed.inner.SubmitIAPCaller;
 import com.newegg.marketplace.sdk.datafeed.inner.SubmitOrderCaller;
 import com.newegg.marketplace.sdk.datafeed.inner.SubmitOtherCaller;
-import com.newegg.marketplace.sdk.datafeed.model.AddingCAProp65;
-import com.newegg.marketplace.sdk.datafeed.model.ExistingFeed;
+import com.newegg.marketplace.sdk.datafeed.model.ExistingItemCreationFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ExistingItemCreationFeedResponse;
 import com.newegg.marketplace.sdk.datafeed.model.GetFeedStatusRequest;
 import com.newegg.marketplace.sdk.datafeed.model.GetFeedStatusResponse;
-import com.newegg.marketplace.sdk.datafeed.model.InventoryAndPrice;
-import com.newegg.marketplace.sdk.datafeed.model.InventoryUpdate;
-import com.newegg.marketplace.sdk.datafeed.model.ItemChinaTaxSetting;
-import com.newegg.marketplace.sdk.datafeed.model.ItemPromotion;
-import com.newegg.marketplace.sdk.datafeed.model.ItemSubscription;
-import com.newegg.marketplace.sdk.datafeed.model.ItemUpdate;
-import com.newegg.marketplace.sdk.datafeed.model.ItemfeedRequest;
-import com.newegg.marketplace.sdk.datafeed.model.MultiChannelOrderRequest;
-import com.newegg.marketplace.sdk.datafeed.model.PremierItemMark;
-import com.newegg.marketplace.sdk.datafeed.model.PriceUpdate;
+import com.newegg.marketplace.sdk.datafeed.model.InventoryAndPriceFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.InventoryAndPriceFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.InventoryUpdateFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.InventoryUpdateFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemBasicInformationFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemBasicInformationFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemCAProp65FeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemCAProp65FeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemChinaTaxSettingFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemChinaTaxSettingFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemCreationOrUpdateFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemCreationOrUpdateFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemPremierMarkFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemPremierMarkFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemPromotionFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemPromotionFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemSubscriptionFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemSubscriptionFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.MultiChannelOrderFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.MultiChannelOrderFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.OrderShipNoticeFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.OrderShipNoticeFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.PriceUpdateFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.PriceUpdateFeedResponse;
 import com.newegg.marketplace.sdk.datafeed.model.ProcessingReportResponse;
-import com.newegg.marketplace.sdk.datafeed.model.ShipNoticeRequest;
 import com.newegg.marketplace.sdk.datafeed.model.SubmitFeedResponse;
-import com.newegg.marketplace.sdk.datafeed.model.VolumeDiscount;
+import com.newegg.marketplace.sdk.datafeed.model.VolumeDiscountFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.VolumeDiscountFeedResponse;
 
 
 /**
@@ -113,10 +127,10 @@ public class DataFeedCall {
 	 * Batch set the tax type of items that is enabled for shipping to China.
 	 * Only for USA
 	 * </pre>
-	 * @param body {@linkplain ItemChinaTaxSetting} 
+	 * @param body {@linkplain ItemChinaTaxSettingFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_ItemChinaTaxSettingFeed(ItemChinaTaxSetting body) {
+	public ItemChinaTaxSettingFeedResponse submitFeed_ItemChinaTaxSettingFeed(ItemChinaTaxSettingFeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB||Content.Platform==Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
 		else
@@ -128,10 +142,10 @@ public class DataFeedCall {
 	 * Batch add California’s Proposition 65 (“Prop 65”) Warnings for Items.
 	 * Only for USA,USB
 	 * </pre>
-	 * @param body {@linkplain AddingCAProp65} 
+	 * @param body {@linkplain ItemCAProp65FeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_ItemCAProp65Feed(AddingCAProp65 body) {
+	public ItemCAProp65FeedResponse submitFeed_ItemCAProp65Feed(ItemCAProp65FeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.CAN.name());
 		else
@@ -142,10 +156,10 @@ public class DataFeedCall {
 	 * <pre>
 	 * Batch add/update/remove items for Volume Discount program.
 	 * </pre>
-	 * @param body {@linkplain VolumeDiscount} 
+	 * @param body {@linkplain VolumeDiscountFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_VolumeDiscountFeed(VolumeDiscount body){
+	public VolumeDiscountFeedResponse submitFeed_VolumeDiscountFeed(VolumeDiscountFeedRequest body){
 		return submitActivityCaller.volumeDiscountFeed(body);
 	}
 
@@ -154,10 +168,10 @@ public class DataFeedCall {
 	 * Batch add/update/remove items for Volume Discount program.
 	 * Only for USA
 	 * </pre>
-	 * @param body {@linkplain ItemPromotion} 
+	 * @param body {@linkplain ItemPromotionFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_ItemPromotionFeed(ItemPromotion body) {
+	public ItemPromotionFeedResponse submitFeed_ItemPromotionFeed(ItemPromotionFeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB||Content.Platform==Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
 		else
@@ -171,10 +185,10 @@ public class DataFeedCall {
 	 * go to Newegg Seller Portal > Add-on Services to enroll.
 	 * Only for USA
 	 * </pre>
-	 * @param body {@linkplain PremierItemMark} 
+	 * @param body {@linkplain ItemPremierMarkFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_ItemPremierMarkFeed(PremierItemMark body) {
+	public ItemPremierMarkFeedResponse submitFeed_ItemPremierMarkFeed(ItemPremierMarkFeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB||Content.Platform==Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
 		else
@@ -191,10 +205,10 @@ public class DataFeedCall {
 	 * 
 	 * Note: By submitting seller’s item, all listed items will automatically join/leave for all the ongoing Newegg’s subscription programs.
 	 * </pre>
-	 * @param body {@linkplain ItemSubscription} 
+	 * @param body {@linkplain ItemSubscriptionFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_ItemSubscriptionFeed(ItemSubscription body) {
+	public ItemSubscriptionFeedResponse submitFeed_ItemSubscriptionFeed(ItemSubscriptionFeedRequest body) {
 		return submitOtherCaller.itemSubscriptionFeed(body);
 	}
 	
@@ -204,10 +218,10 @@ public class DataFeedCall {
 	 * This request will allow seller’s to update shipment of one or all items in an order. 
 	 * When the order has been completely fulfilled (i.e. all the item(s) in order shipped), the order process is completed.
 	 * </pre>
-	 * @param body {@linkplain ShipNoticeRequest} 
+	 * @param body {@linkplain OrderShipNoticeFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_OrderShipNoticeFeed(ShipNoticeRequest body) {
+	public OrderShipNoticeFeedResponse submitFeed_OrderShipNoticeFeed(OrderShipNoticeFeedRequest body) {
 		return submitOrderCaller.orderShipNoticeFeed(body);
 	}
 		
@@ -216,10 +230,10 @@ public class DataFeedCall {
 	 * Batch create multi-channel orders that are not placed on Newegg.com.  
 	 * Seller’s may fulfill orders from other channels, if and only If the items is fulfilled by SBN (Shipped by Newegg).
 	 * </pre>
-	 * @param body {@linkplain MultiChannelOrderRequest} 
+	 * @param body {@linkplain MultiChannelOrderFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_MultiChannelOrderFeed(MultiChannelOrderRequest body) {
+	public MultiChannelOrderFeedResponse submitFeed_MultiChannelOrderFeed(MultiChannelOrderFeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB)
 			throw new PlatformException(PLATFORM.USB.name());
 		else
@@ -234,10 +248,10 @@ public class DataFeedCall {
 	 * You may update price and inventory again when you re-activate your item.
 	 * Only for USB,CAN
 	 * </pre>
-	 * @param body {@linkplain InventoryAndPrice} 
+	 * @param body {@linkplain InventoryAndPriceFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_InventoryAndPriceFeed(InventoryAndPrice body) {
+	public InventoryAndPriceFeedResponse submitFeed_InventoryAndPriceFeed(InventoryAndPriceFeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.USA)
 			throw new PlatformException(PLATFORM.USA.name());
 		else
@@ -254,10 +268,10 @@ public class DataFeedCall {
 	 * please refer to our <a href="https://www.newegg.com/sellers/index.php/global-seller-program/"> Newegg Global Program </a> for more details. 
 	 * Only for USA
 	 * </pre>
-	 * @param body {@linkplain PriceUpdate} 
+	 * @param body {@linkplain PriceUpdateFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_PriceUpdateFeed(PriceUpdate body) {
+	public PriceUpdateFeedResponse submitFeed_PriceUpdateFeed(PriceUpdateFeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB||Content.Platform==Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
 		else
@@ -273,10 +287,10 @@ public class DataFeedCall {
 	 * Newegg Seller Portal > Manage Account > Shipping Settings. 
 	 * Only for USA
 	 * </pre>
-	 * @param body {@linkplain InventoryUpdate} 
+	 * @param body {@linkplain InventoryUpdateFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_InventoryUpdateFeed(InventoryUpdate body) {
+	public InventoryUpdateFeedResponse submitFeed_InventoryUpdateFeed(InventoryUpdateFeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB||Content.Platform==Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
 		else
@@ -290,10 +304,10 @@ public class DataFeedCall {
 	 * This template can only be used to update common item fields such as “Website Short Title”, 
 	 * Product Description”, “Item Images”, etc.
 	 * </pre>
-	 * @param body {@linkplain ItemUpdate} 
+	 * @param body {@linkplain ItemBasicInformationFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_ItemBasicInformationFeed(ItemUpdate body) {
+	public ItemBasicInformationFeedResponse submitFeed_ItemBasicInformationFeed(ItemBasicInformationFeedRequest body) {
 		return submitCreationCaller.itemBasicInformationFeed(body);
 	}	
 	
@@ -305,10 +319,10 @@ public class DataFeedCall {
 	 * or Newegg Item Number without specifying sub-category related information. 
 	 * This helps sellers creating the items more quickly.
 	 * </pre>
-	 * @param body {@linkplain ExistingFeed} 
+	 * @param body {@linkplain ExistingItemCreationFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_ExistingItemCreationFeed(ExistingFeed body) {
+	public ExistingItemCreationFeedResponse submitFeed_ExistingItemCreationFeed(ExistingItemCreationFeedRequest body) {
 		return submitCreationCaller.existingItemCreationFeed(body);
 	}
 
@@ -318,10 +332,10 @@ public class DataFeedCall {
 	 * Each subcategory, there’s a category schema that needs to be followed (different subcategory requires different property input per item). 
 	 * 
 	 * </pre>
-	 * @param body {@linkplain ItemfeedRequest} 
+	 * @param body {@linkplain ItemCreationOrUpdateFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
-	public SubmitFeedResponse submitFeed_ItemCreationOrUpdateFeed(ItemfeedRequest body) {
+	public ItemCreationOrUpdateFeedResponse submitFeed_ItemCreationOrUpdateFeed(ItemCreationOrUpdateFeedRequest body) {
 		return submitCreationCaller.itemCreationFeed(body);
 	}
 	

@@ -14,9 +14,10 @@ import com.newegg.marketplace.sdk.sbn.model.GetShipmentStatusRequest;
 import com.newegg.marketplace.sdk.sbn.model.GetShipmentStatusResponse;
 import com.newegg.marketplace.sdk.sbn.model.GetWarehouseListRequest;
 import com.newegg.marketplace.sdk.sbn.model.GetWarehouseListResponse;
-import com.newegg.marketplace.sdk.sbn.model.SubmitInboundShipmentCreateRequest;
-import com.newegg.marketplace.sdk.sbn.model.SubmitInboundShipmentCreateResponse;
-
+import com.newegg.marketplace.sdk.sbn.model.SubmitInboundShipmentRequest;
+import com.newegg.marketplace.sdk.sbn.model.SubmitInboundShipmentResponse;
+import com.newegg.marketplace.sdk.sbn.model.SubmitVoidInboundShipmentRequest;
+import com.newegg.marketplace.sdk.sbn.model.SubmitVoidInboundShipmentResponse;
 
 /**
 Copyright (c) 2000-present, Newegg Inc.
@@ -36,6 +37,7 @@ limitations under the License.
 
 /**
  * Only for USA
+ * 
  * @author QB
  *
  */
@@ -43,21 +45,21 @@ public class SBNCall {
 
 	private SbnOPCaller sbnOPCaller;
 	private SbnOTCaller sbnOTCaller;
-	
+
 	public SBNCall() {
 		this(Content.MEDIA_TYPE.XML);
 	}
-	
+
 	private SBNCall(Content.MEDIA_TYPE mrdiaType) {
-		switch(mrdiaType){
+		switch (mrdiaType) {
 		case JSON:
-			sbnOPCaller=SbnOPCaller.buildJSON();
-			sbnOTCaller=SbnOTCaller.buildJSON();
-			break;			
+			sbnOPCaller = SbnOPCaller.buildJSON();
+			sbnOTCaller = SbnOTCaller.buildJSON();
+			break;
 		case XML:
-			sbnOPCaller=SbnOPCaller.buildXML();
-			sbnOTCaller=SbnOTCaller.buildXML();
-			break;			
+			sbnOPCaller = SbnOPCaller.buildXML();
+			sbnOTCaller = SbnOTCaller.buildXML();
+			break;
 		default:
 			throw new RuntimeException("Never Happened!");
 		}
@@ -68,96 +70,110 @@ public class SBNCall {
 	 * Get an inbound shipment plan suggestion to identify the shipments of the items that you want to send to Newegg warehouse. 
 	 * By submitting the inbound shipment plan suggestion request, Newegg will provide the appropriate ship arrangement based on Newegg’s business intelligence. 
 	 * This will make your items allocation more reasonable and competitive.
-	 * </pre> 
-	 * @param body {@linkplain GetInboundShipmentPlanRequest} 
-	 * @return {@linkplain GetInboundShipmentPlanResponse}  
+	 * </pre>
+	 * 
+	 * @param body
+	 *            {@linkplain GetInboundShipmentPlanRequest}
+	 * @return {@linkplain GetInboundShipmentPlanResponse}
 	 */
 	public GetInboundShipmentPlanResponse getInboundShipmentPlanSuggestion(GetInboundShipmentPlanRequest body) {
-		if(Content.Platform==Content.PLATFORM.CAN)
+		if (Content.Platform == Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.CAN.name());
 		else
 			return sbnOPCaller.getInboundShipmentPlanSuggestion(body);
 	}
-	
+
 	/**
 	 * <pre>
 	 * Submit a new inbound shipment request based on the information that was returned by Get Inbound Shipment Plan Suggestion.
-	 * </pre> 
-	 * @param body {@linkplain SubmitInboundShipmentCreateRequest}  
-	 * @return {@linkplain SubmitInboundShipmentCreateResponse}  
+	 * </pre>
+	 * 
+	 * @param body
+	 *            {@linkplain SubmitInboundShipmentRequest}
+	 * @return {@linkplain SubmitInboundShipmentResponse}
 	 */
-	public SubmitInboundShipmentCreateResponse submitCreateInboundShipmentPlanSuggestion(SubmitInboundShipmentCreateRequest body) {
-		if(Content.Platform==Content.PLATFORM.CAN)
+	public SubmitInboundShipmentResponse submitCreateInboundShipmentRequest(SubmitInboundShipmentRequest body) {
+		if (Content.Platform == Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.CAN.name());
 		else
-			return sbnOPCaller.submitCreateInboundShipmentPlanSuggestion(body);
+			return sbnOPCaller.submitCreateInboundShipmentRequest(body);
 	}
-	
+
 	/**
 	 * <pre>
 	 * Submit a request to Newegg for voiding existing shipment.
-	 * </pre> 
-	 * @param body {@linkplain SubmitInboundShipmentCreateRequest}  
-	 * @return {@linkplain SubmitInboundShipmentCreateResponse}  
+	 * </pre>
+	 * 
+	 * @param body
+	 *            {@linkplain SubmitInboundShipmentRequest}
+	 * @return {@linkplain SubmitInboundShipmentResponse}
 	 */
-	public SubmitInboundShipmentCreateResponse submitVoidInboundShipmentRequest(SubmitInboundShipmentCreateRequest body) {
-		if(Content.Platform==Content.PLATFORM.CAN)
+	public SubmitVoidInboundShipmentResponse submitVoidInboundShipmentRequest(SubmitVoidInboundShipmentRequest body) {
+		if (Content.Platform == Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.CAN.name());
 		else
-			return sbnOPCaller.submitCreateInboundShipmentPlanSuggestion(body);
+			return sbnOPCaller.submitVoidInboundShipmentRequest(body);
 	}
-	
+
 	/**
 	 * <pre>
 	 * Get the status of specified inbound shipment.
-	 * </pre> 
-	 * @param body {@linkplain GetShipmentStatusRequest}  
-	 * @return {@linkplain GetShipmentStatusResponse}  
+	 * </pre>
+	 * 
+	 * @param body
+	 *            {@linkplain GetShipmentStatusRequest}
+	 * @return {@linkplain GetShipmentStatusResponse}
 	 */
 	public GetShipmentStatusResponse getInboundShipmentStatusRequest(GetShipmentStatusRequest body) {
-		if(Content.Platform==Content.PLATFORM.CAN)
+		if (Content.Platform == Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.CAN.name());
 		else
 			return sbnOPCaller.getInboundShipmentStatusRequest(body);
 	}
-	
+
 	/**
 	 * <pre>
 	 * Get the processing result of a specified inbound shipment request.
-	 * </pre> 
-	 * @param requestID  request ID
-	 * @return {@linkplain GetInboundShipmentResultResponse}  
+	 * </pre>
+	 * 
+	 * @param requestID
+	 *            request ID
+	 * @return {@linkplain GetInboundShipmentResultResponse}
 	 */
 	public GetInboundShipmentResultResponse getInboundShipmentRequestResult(String requestID) {
-		if(Content.Platform==Content.PLATFORM.CAN)
+		if (Content.Platform == Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.CAN.name());
 		else
 			return sbnOPCaller.getInboundShipmentRequestResult(requestID);
 	}
-	
+
 	/**
 	 * <pre>
 	 * Get the inbound shipment list of a specified Shipment ID or certain time period.
-	 * </pre> 
-	 * @param body {@linkplain GetShipmentListRequest} 
-	 * @return {@linkplain GetShipmentListResponse}  
+	 * </pre>
+	 * 
+	 * @param body
+	 *            {@linkplain GetShipmentListRequest}
+	 * @return {@linkplain GetShipmentListResponse}
 	 */
 	public GetShipmentListResponse getInboundShipmentList(GetShipmentListRequest body) {
-		if(Content.Platform==Content.PLATFORM.CAN)
+		if (Content.Platform == Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.CAN.name());
 		else
 			return sbnOTCaller.getInboundShipmentList(body);
 	}
-	
+
 	/**
 	 * <pre>
 	 * Get the available information of Newegg’s warehouses.
-	 * </pre> 
-	 * @param body {@linkplain GetWarehouseListRequest} 
-	 * @return {@linkplain GetWarehouseListResponse}  
+	 * </pre>
+	 * 
+	 * @param body
+	 *            {@linkplain GetWarehouseListRequest}
+	 * @return {@linkplain GetWarehouseListResponse}
 	 */
 	public GetWarehouseListResponse getWarehouseList(GetWarehouseListRequest body) {
-		if(Content.Platform==Content.PLATFORM.CAN)
+		if (Content.Platform == Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.CAN.name());
 		else
 			return sbnOTCaller.getWarehouseList(body);

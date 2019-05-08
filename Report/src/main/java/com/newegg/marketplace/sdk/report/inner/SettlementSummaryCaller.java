@@ -5,10 +5,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.SettlementSummaryRequest;
-import com.newegg.marketplace.sdk.report.model.get.SettlementSummaryResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementSummaryRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementSummaryResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementSummaryReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementSummaryInfoResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementSummaryReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementSummaryReportResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -41,14 +41,14 @@ public interface SettlementSummaryCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	SettlementSummaryResponse sendSettlementSummaryRequestJSON(@Param("sellerid") String sellerID, SettlementSummaryRequest body);
+	GetSettlementSummaryInfoResponse sendSettlementSummaryRequestJSON(@Param("sellerid") String sellerID, GetSettlementSummaryReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	SettlementSummaryResponse sendSettlementSummaryRequestXML(@Param("sellerid") String sellerID, SettlementSummaryRequest body);
+	GetSettlementSummaryInfoResponse sendSettlementSummaryRequestXML(@Param("sellerid") String sellerID, GetSettlementSummaryReportRequest body);
 	
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SettlementSummaryResponse sendSettlementSummaryRequest(SettlementSummaryRequest body) {
+	default GetSettlementSummaryInfoResponse sendSettlementSummaryRequest(GetSettlementSummaryReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendSettlementSummaryRequestJSON(Content.SellerID, body);
@@ -65,14 +65,14 @@ public interface SettlementSummaryCaller {
 	// submit command
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SSettlementSummaryResponse sendSubmitSettlementSummaryRequestJSON(@Param("sellerid") String sellerID, SSettlementSummaryRequest body);
+	SettlementSummaryReportResponse sendSubmitSettlementSummaryRequestJSON(@Param("sellerid") String sellerID, SettlementSummaryReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SSettlementSummaryResponse sendSubmitSettlementSummaryRequestXML(@Param("sellerid") String sellerID, SSettlementSummaryRequest body);
+	SettlementSummaryReportResponse sendSubmitSettlementSummaryRequestXML(@Param("sellerid") String sellerID, SettlementSummaryReportRequest body);
 	
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SSettlementSummaryResponse sendSubmitSettlementSummaryRequest(SSettlementSummaryRequest body) {
+	default SettlementSummaryReportResponse sendSubmitSettlementSummaryRequest(SettlementSummaryReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendSubmitSettlementSummaryRequestJSON(Content.SellerID, body);

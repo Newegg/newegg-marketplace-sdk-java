@@ -4,8 +4,8 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.item.Variables;
-import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequest;
-import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountResponse;
+import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequestResultRequest;
+import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequestResultResponse;
 import com.newegg.marketplace.sdk.item.model.SubmitVolumeDiscountRequest;
 import com.newegg.marketplace.sdk.item.model.SubmitVolumeDiscountResponse;
 
@@ -37,13 +37,13 @@ public interface VolumeDiscountCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /contentmgmt/item/volumediscount?sellerid={sellerid}")
-	GetVolumeDiscountResponse getVolumeDiscountRequestResultJSON(@Param("sellerid") String sellerID,GetVolumeDiscountRequest body);
+	GetVolumeDiscountRequestResultResponse getVolumeDiscountRequestResultJSON(@Param("sellerid") String sellerID,GetVolumeDiscountRequestResultRequest body);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /contentmgmt/item/volumediscount?sellerid={sellerid}")
-	GetVolumeDiscountResponse getVolumeDiscountRequestResultXML(@Param("sellerid") String sellerID,GetVolumeDiscountRequest body);
+	GetVolumeDiscountRequestResultResponse getVolumeDiscountRequestResultXML(@Param("sellerid") String sellerID,GetVolumeDiscountRequestResultRequest body);
 	
-	default GetVolumeDiscountResponse getVolumeDiscountRequestResult(GetVolumeDiscountRequest body) {
+	default GetVolumeDiscountRequestResultResponse getVolumeDiscountRequestResult(GetVolumeDiscountRequestResultRequest body) {
 		switch(Variables.MediaType){
 		case JSON:
 			return getVolumeDiscountRequestResultJSON(Content.SellerID,body);			

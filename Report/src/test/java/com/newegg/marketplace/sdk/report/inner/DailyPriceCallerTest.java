@@ -13,10 +13,10 @@ import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.report.ReportConfig;
 import com.newegg.marketplace.sdk.report.RequireSetting;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.model.get.DailyPriceRequest;
-import com.newegg.marketplace.sdk.report.model.get.DailyPriceResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyPriceRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyPriceResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyPriceReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyPriceReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.DailyPriceReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.DailyPriceReportResponse;
 
 public class DailyPriceCallerTest {
 	/*DailyPriceCaller sender = null;
@@ -39,10 +39,10 @@ public class DailyPriceCallerTest {
 		APIConfig.load(ReportConfig.class);
 	}
 	
-	private DailyPriceRequest buildGetDailyInventoryRequest(PLATFORM p) {
-		DailyPriceRequest request = new DailyPriceRequest();
-		DailyPriceRequest.RequestBody body = new DailyPriceRequest.RequestBody();
-		DailyPriceRequest.RequestBody.PageInfo page = new DailyPriceRequest.RequestBody.PageInfo();
+	private GetDailyPriceReportRequest buildGetDailyInventoryRequest(PLATFORM p) {
+		GetDailyPriceReportRequest request = new GetDailyPriceReportRequest();
+		GetDailyPriceReportRequest.RequestBody body = new GetDailyPriceReportRequest.RequestBody();
+		GetDailyPriceReportRequest.RequestBody.PageInfo page = new GetDailyPriceReportRequest.RequestBody.PageInfo();
 		
 		// only USA
 		switch (p) {
@@ -71,14 +71,14 @@ public class DailyPriceCallerTest {
 		return request;
 	}
 	
-	private SDailyPriceRequest buildSubmitDailyInventoryRequest(PLATFORM p) {
-		SDailyPriceRequest submitRequest = new SDailyPriceRequest();
-		SDailyPriceRequest.RequestBody submitBody = new SDailyPriceRequest.RequestBody();
-		SDailyPriceRequest.RequestBody.DailyPriceReportCriteria criteria =
-				new SDailyPriceRequest.RequestBody.DailyPriceReportCriteria();
+	private DailyPriceReportRequest buildSubmitDailyInventoryRequest(PLATFORM p) {
+		DailyPriceReportRequest submitRequest = new DailyPriceReportRequest();
+		DailyPriceReportRequest.RequestBody submitBody = new DailyPriceReportRequest.RequestBody();
+		DailyPriceReportRequest.RequestBody.DailyPriceReportCriteria criteria =
+				new DailyPriceReportRequest.RequestBody.DailyPriceReportCriteria();
 		
-		SDailyPriceRequest.RequestBody.DailyPriceReportCriteria.CountryList countryList = 
-				new SDailyPriceRequest.RequestBody.DailyPriceReportCriteria.CountryList();
+		DailyPriceReportRequest.RequestBody.DailyPriceReportCriteria.CountryList countryList = 
+				new DailyPriceReportRequest.RequestBody.DailyPriceReportCriteria.CountryList();
 		
 		switch (p) {
 		case USA:
@@ -109,8 +109,8 @@ public class DailyPriceCallerTest {
 	}
 	
 	private void sendGetDailyInventory(boolean mock, MEDIA_TYPE type, PLATFORM flatform) {
-		DailyPriceResponse response = null;
-		DailyPriceRequest request = null;
+		GetDailyPriceReportResponse response = null;
+		GetDailyPriceReportRequest request = null;
 		DailyPriceCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -136,9 +136,9 @@ public class DailyPriceCallerTest {
 		Variables.SimulationEnabled = sim;
 	}
 	
-	private void sendSubmitDailyInventory(boolean mock, MEDIA_TYPE type, PLATFORM flatform) {
-		SDailyPriceResponse response = null;
-		SDailyPriceRequest request = null;
+	private void sendSubmitDailyInventory(boolean mock, MEDIA_TYPE type, PLATFORM flatform,String version) {
+		DailyPriceReportResponse response = null;
+		DailyPriceReportRequest request = null;
 		DailyPriceCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -154,7 +154,7 @@ public class DailyPriceCallerTest {
 			else
 				sender = DailyPriceCaller.buildJSON();
 			
-			response = sender.sendSubmitDailyPriceRequest(request);
+			response = sender.sendSubmitDailyPriceRequest(request,version);
 			assertTrue("true".equals(response.getIsSuccess()));
 		} catch(NeweggException e) {
 			RequireSetting.log.info("Zack-Test NeweggException happened");
@@ -218,9 +218,9 @@ public class DailyPriceCallerTest {
 		
 		// only USA
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "310";	// only 310
+		//Variables.version = "310";	// only 310
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendSubmitDailyInventory(false, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendSubmitDailyInventory(false, MEDIA_TYPE.XML, PLATFORM.USA,"310");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -229,9 +229,9 @@ public class DailyPriceCallerTest {
 	public void testSendSubmitDailyPriceRequest_XML_MOCK() {
 		// only USA
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "310";	// only 310
+		//Variables.version = "310";	// only 310
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendSubmitDailyInventory(true, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendSubmitDailyInventory(true, MEDIA_TYPE.XML, PLATFORM.USA,"310");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -261,9 +261,9 @@ public class DailyPriceCallerTest {
 	public void testSendSubmitDailyPriceRequest_JSON() {
 		// only USA
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "310";	// only 310
+		//Variables.version = "310";	// only 310
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendSubmitDailyInventory(false, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendSubmitDailyInventory(false, MEDIA_TYPE.JSON, PLATFORM.USA,"310");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -272,9 +272,9 @@ public class DailyPriceCallerTest {
 	public void testSendSubmitDailyPriceRequest_JSON_MOCK() {
 		// only USA
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "310";	// only 310
+		//Variables.version = "310";	// only 310
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendSubmitDailyInventory(true, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendSubmitDailyInventory(true, MEDIA_TYPE.JSON, PLATFORM.USA,"310");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}

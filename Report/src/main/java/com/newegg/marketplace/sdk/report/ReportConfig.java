@@ -47,7 +47,5 @@ public class ReportConfig extends APIConfig {
 		Variables.Retryer = new Retryer.Default(config.getInt("newegg.report.retry.period"),
 				config.getInt("newegg.report.retry.maxperiod"), config.getInt("newegg.report.retry.maxattempts"));
 		Variables.LogLevel = Logger.Level.valueOf(config.getString("newegg.report.loglevel"));
-		Variables.orderNumber = config.getString("newegg.report.ordernumber");
-		Variables.version = config.getString("newegg.report.version");
 	}
 }

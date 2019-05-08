@@ -6,8 +6,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.newegg.marketplace.sdk.common.APIConfig;
-import com.newegg.marketplace.sdk.other.model.Domain;
-import com.newegg.marketplace.sdk.other.model.GetServiceStatusResponse;
+import com.newegg.marketplace.sdk.other.model.ServiceDomain;
+import com.newegg.marketplace.sdk.other.model.VerifyServiceStatusResponse;
 
 public class OtherCallTest {
 
@@ -19,7 +19,7 @@ public class OtherCallTest {
 	@Test
 	public void testVerifyServiceStatus() {
 		OtherCall s=new OtherCall();
-		GetServiceStatusResponse r=s.verifyServiceStatus(Domain.datafeedmgmt);
+		VerifyServiceStatusResponse r=s.verifyServiceStatus(ServiceDomain.datafeedmgmt);
 		assertTrue(r.getIsSuccess());
 		assertTrue(r.getResponseBody().getTimestamp().length()>0);
 	}

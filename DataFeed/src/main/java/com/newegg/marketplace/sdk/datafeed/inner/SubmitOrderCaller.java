@@ -4,9 +4,10 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.datafeed.Variables;
-import com.newegg.marketplace.sdk.datafeed.model.MultiChannelOrderRequest;
-import com.newegg.marketplace.sdk.datafeed.model.ShipNoticeRequest;
-import com.newegg.marketplace.sdk.datafeed.model.SubmitFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.MultiChannelOrderFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.MultiChannelOrderFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.OrderShipNoticeFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.OrderShipNoticeFeedResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -37,12 +38,12 @@ public interface SubmitOrderCaller {
 
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ORDER_SHIP_NOTICE_DATA")
-	SubmitFeedResponse orderShipNoticeFeedJSON(@Param("sellerid") String sellerID,ShipNoticeRequest body);	
+	OrderShipNoticeFeedResponse orderShipNoticeFeedJSON(@Param("sellerid") String sellerID,OrderShipNoticeFeedRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ORDER_SHIP_NOTICE_DATA")
-	SubmitFeedResponse orderShipNoticeFeedXML(@Param("sellerid") String sellerID,ShipNoticeRequest body);
+	OrderShipNoticeFeedResponse orderShipNoticeFeedXML(@Param("sellerid") String sellerID,OrderShipNoticeFeedRequest body);
 	
-	default SubmitFeedResponse orderShipNoticeFeed(ShipNoticeRequest body) {
+	default OrderShipNoticeFeedResponse orderShipNoticeFeed(OrderShipNoticeFeedRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return orderShipNoticeFeedJSON(Content.SellerID,body);
@@ -56,12 +57,12 @@ public interface SubmitOrderCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=MULTICHANNEL_ORDER_DATA")
-	SubmitFeedResponse multiChannelOrderFeedJSON(@Param("sellerid") String sellerID,MultiChannelOrderRequest body);	
+	MultiChannelOrderFeedResponse multiChannelOrderFeedJSON(@Param("sellerid") String sellerID,MultiChannelOrderFeedRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=MULTICHANNEL_ORDER_DATA")
-	SubmitFeedResponse multiChannelOrderFeedXML(@Param("sellerid") String sellerID,MultiChannelOrderRequest body);
+	MultiChannelOrderFeedResponse multiChannelOrderFeedXML(@Param("sellerid") String sellerID,MultiChannelOrderFeedRequest body);
 	
-	default SubmitFeedResponse multiChannelOrderFeed(MultiChannelOrderRequest body) {
+	default MultiChannelOrderFeedResponse multiChannelOrderFeed(MultiChannelOrderFeedRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return multiChannelOrderFeedJSON(Content.SellerID,body);

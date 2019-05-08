@@ -6,7 +6,6 @@
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>SDK</artifactId>
     <version>0.0.1</version>
-    <relativePath>../</relativePath>
   </parent>
   <artifactId>Seller</artifactId>
   <name>Seller</name>

@@ -17,9 +17,9 @@ import com.newegg.marketplace.sdk.common.Errors;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.common.PlatformException;
 import com.newegg.marketplace.sdk.item.ItemConfig;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerRequestV2;
-import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequest;
-import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountResponse;
+import com.newegg.marketplace.sdk.item.model.ManufacturerLookupForInternationalCountryRequest;
+import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequestResultRequest;
+import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequestResultResponse;
 import com.newegg.marketplace.sdk.item.model.SubmitVolumeDiscountRequest;
 import com.newegg.marketplace.sdk.item.model.SubmitVolumeDiscountRequest.RequestBody.ItemVolumeDiscountInfo;
 import com.newegg.marketplace.sdk.item.model.SubmitVolumeDiscountRequest.RequestBody.ItemVolumeDiscountInfo.DiscountSetting;
@@ -45,9 +45,9 @@ public class ItemCallTest {
 		Content.HostURL="https://xxx.newegg.xbh/marketplace";
 		ItemCall call=new ItemCall();
 		Content.HostURL=tmp;
-		GetVolumeDiscountRequest obj=new GetVolumeDiscountRequest();
+		GetVolumeDiscountRequestResultRequest obj=new GetVolumeDiscountRequestResultRequest();
 		obj.setOperationType("GetVolumeDiscountRequest");
-		GetVolumeDiscountRequest.RequestBody body=new GetVolumeDiscountRequest.RequestBody();
+		GetVolumeDiscountRequestResultRequest.RequestBody body=new GetVolumeDiscountRequestResultRequest.RequestBody();
 		body.setNeweggItemNumber("9SIA0062TT3677");
 		obj.setRequestBody(body);	
 		thrown.expect(feign.RetryableException.class);
@@ -58,12 +58,12 @@ public class ItemCallTest {
 	@Test
 	public void testGetVolumeDiscount() {
 		ItemCall call=new ItemCall();
-		GetVolumeDiscountRequest request=new GetVolumeDiscountRequest();
+		GetVolumeDiscountRequestResultRequest request=new GetVolumeDiscountRequestResultRequest();
 		request.setOperationType("GetVolumeDiscountRequest");
-		GetVolumeDiscountRequest.RequestBody body=new GetVolumeDiscountRequest.RequestBody();
+		GetVolumeDiscountRequestResultRequest.RequestBody body=new GetVolumeDiscountRequestResultRequest.RequestBody();
 		body.setNeweggItemNumber("9SIA0062TT3677");
 		request.setRequestBody(body);		
-		GetVolumeDiscountResponse r=call.getVolumeDiscountRequestResult(request);				
+		GetVolumeDiscountRequestResultResponse r=call.getVolumeDiscountRequestResult(request);				
 		assertTrue("Group-By test Item A".equals(r.getResponseBody().getItemVolumeDiscountInfo().getSellerPartNumber()));
 		assertTrue(r.getIsSuccess());
 	}
@@ -105,7 +105,7 @@ public class ItemCallTest {
 		Content.PLATFORM tmp=Content.Platform;		
 		Content.Platform=Content.PLATFORM.CAN;
 		ItemCall call=new ItemCall();
-		GetManufacturerRequestV2 request=new GetManufacturerRequestV2();
+		ManufacturerLookupForInternationalCountryRequest request=new ManufacturerLookupForInternationalCountryRequest();
 		//thrown.expect(PlatformException.class);
 		try {
 			call.ManufacturerLookupForInternationalCountry(request);
@@ -140,14 +140,14 @@ public class ItemCallTest {
 	@Test
 	public void testErrorResponse_XML() {
 		ItemCall call=new ItemCall();
-		GetVolumeDiscountRequest request=new GetVolumeDiscountRequest();
+		GetVolumeDiscountRequestResultRequest request=new GetVolumeDiscountRequestResultRequest();
 		request.setOperationType("GetVolumeDiscountRequest");
-		GetVolumeDiscountRequest.RequestBody body=new GetVolumeDiscountRequest.RequestBody();
+		GetVolumeDiscountRequestResultRequest.RequestBody body=new GetVolumeDiscountRequestResultRequest.RequestBody();
 		body.setNeweggItemNumber("9SIA0677");
 		request.setRequestBody(body);
 		boolean assertFlag=false;
 		try {
-		GetVolumeDiscountResponse r=call.getVolumeDiscountRequestResult(request);		
+		GetVolumeDiscountRequestResultResponse r=call.getVolumeDiscountRequestResult(request);		
 		}catch(NeweggException e) {
 			Errors err=e.genErors();
 			err.getError().forEach( o ->{

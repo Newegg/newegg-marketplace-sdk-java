@@ -97,9 +97,9 @@ public class SDailyInventBtoBCANRequest {
     @XmlElement(name = "IssueUser")
     @JsonProperty("IssueUser")
     protected String issueUser;
-    @XmlElement(name = "OperationType", required = true)
+    @XmlElement(name = "OperationType", defaultValue = "DailyInventoryReportRequest", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "DailyInventoryReportRequest";
     @XmlElement(name = "RequestBody", required = true)
     @JsonProperty("RequestBody")
     protected SDailyInventBtoBCANRequest.RequestBody requestBody;
@@ -316,7 +316,7 @@ public class SDailyInventBtoBCANRequest {
 
             @XmlElement(name = "RequestType", required = true)
             @JsonProperty("RequestType")
-            protected String requestType;
+            protected String requestType = "DAILY_INVENTORY_REPORT";
             @XmlElement(name = "FulfillType")
             @JsonProperty("FulfillType")
             protected Integer fulfillType;

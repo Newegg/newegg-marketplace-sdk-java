@@ -5,10 +5,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.DailyPriceRequest;
-import com.newegg.marketplace.sdk.report.model.get.DailyPriceResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyPriceRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyPriceResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyPriceReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyPriceReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.DailyPriceReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.DailyPriceReportResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -42,14 +42,14 @@ public interface DailyPriceCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	DailyPriceResponse sendDailyPriceRequestJSON(@Param("sellerid") String sellerID, DailyPriceRequest body);
+	GetDailyPriceReportResponse sendDailyPriceRequestJSON(@Param("sellerid") String sellerID, GetDailyPriceReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	DailyPriceResponse sendDailyPriceRequestXML(@Param("sellerid") String sellerID, DailyPriceRequest body);
+	GetDailyPriceReportResponse sendDailyPriceRequestXML(@Param("sellerid") String sellerID, GetDailyPriceReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default DailyPriceResponse sendDailyPriceRequest(DailyPriceRequest body) {
+	default GetDailyPriceReportResponse sendDailyPriceRequest(GetDailyPriceReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendDailyPriceRequestJSON(Content.SellerID, body);
@@ -66,20 +66,20 @@ public interface DailyPriceCaller {
 	// submit command
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}&version={version}")
-	SDailyPriceResponse sendSubmitDailyPriceRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version, SDailyPriceRequest body);
+	DailyPriceReportResponse sendSubmitDailyPriceRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version, DailyPriceReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}&version={version}")
-	SDailyPriceResponse sendSubmitDailyPriceRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, SDailyPriceRequest body);
+	DailyPriceReportResponse sendSubmitDailyPriceRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, DailyPriceReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SDailyPriceResponse sendSubmitDailyPriceRequest(SDailyPriceRequest body) {
+	default DailyPriceReportResponse sendSubmitDailyPriceRequest(DailyPriceReportRequest body,String version) {
 		switch(Variables.MediaType) {
 		case JSON:			
-			return sendSubmitDailyPriceRequestJSON(Content.SellerID, Variables.version, body);
+			return sendSubmitDailyPriceRequestJSON(Content.SellerID, version, body);
 			
 		case XML:			
-			return sendSubmitDailyPriceRequestXML(Content.SellerID, Variables.version, body);	
+			return sendSubmitDailyPriceRequestXML(Content.SellerID, version, body);	
 			
 		default:
 			throw new RuntimeException("Never Happened!");

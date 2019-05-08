@@ -142,7 +142,7 @@ public class GetInboundShipmentResultResponse {
     protected boolean isSuccess;
     @XmlElement(name = "OperationType", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "GetShipmentResultResponse";
     @XmlElement(name = "SellerID", required = true)
     @JsonProperty("SellerID")
     protected String sellerID;

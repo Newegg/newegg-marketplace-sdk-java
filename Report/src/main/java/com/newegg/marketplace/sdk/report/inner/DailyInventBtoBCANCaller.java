@@ -1,12 +1,13 @@
 package com.newegg.marketplace.sdk.report.inner;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.DailyInventBtoBCANRequest;
-import com.newegg.marketplace.sdk.report.model.get.DailyInventBtoBCANResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportB2bCanRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportB2bCanResponse;
 import com.newegg.marketplace.sdk.report.model.submit.SDailyInventBtoBCANRequest;
 import com.newegg.marketplace.sdk.report.model.submit.SDailyInventBtoBCANResponse;
 
@@ -40,18 +41,21 @@ public interface DailyInventBtoBCANCaller {
 	 * JSON and XML format
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
-	@RequestLine("POST /reportmgmt/report/result?sellerid={sellerid}")
-	DailyInventBtoBCANResponse sendDailyInventBtoBCANRequestJSON(@Param("sellerid") String sellerID, DailyInventBtoBCANRequest body);
+	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
+	GetDailyInventoryReportB2bCanResponse sendDailyInventBtoBCANRequestJSON(@Param("sellerid") String sellerID, GetDailyInventoryReportB2bCanRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
-	@RequestLine("POST /reportmgmt/report/result?sellerid={sellerid}")
-	DailyInventBtoBCANResponse sendDailyInventBtoBCANRequestXML(@Param("sellerid") String sellerID, DailyInventBtoBCANRequest body);
+	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
+	GetDailyInventoryReportB2bCanResponse sendDailyInventBtoBCANRequestXML(@Param("sellerid") String sellerID, GetDailyInventoryReportB2bCanRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default DailyInventBtoBCANResponse sendDailyInventBtoBCANRequest(DailyInventBtoBCANRequest body) {
+	default GetDailyInventoryReportB2bCanResponse sendDailyInventBtoBCANRequest(GetDailyInventoryReportB2bCanRequest body) {
 		switch(Variables.MediaType) {
-		case JSON:			
-			return sendDailyInventBtoBCANRequestJSON(Content.SellerID, body);
+		case JSON:	
+			Content.JSON_MAPPER.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true);
+			GetDailyInventoryReportB2bCanResponse r = sendDailyInventBtoBCANRequestJSON(Content.SellerID, body);
+			Content.JSON_MAPPER.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, false);
+			return r;
 			
 		case XML:			
 			return sendDailyInventBtoBCANRequestXML(Content.SellerID, body);	
@@ -72,13 +76,19 @@ public interface DailyInventBtoBCANCaller {
 	SDailyInventBtoBCANResponse sendSubmitDailyInventBtoBCANRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, SDailyInventBtoBCANRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SDailyInventBtoBCANResponse sendSubmitDailyInventBtoBCANRequest(SDailyInventBtoBCANRequest body) {
+	default SDailyInventBtoBCANResponse sendSubmitDailyInventBtoBCANRequest(SDailyInventBtoBCANRequest body,String version) {
 		switch(Variables.MediaType) {
-		case JSON:			
-			return sendSubmitDailyInventBtoBCANRequestJSON(Content.SellerID, Variables.version, body);
+		case JSON:		
+			if(Variables.SimulationEnabled)
+				return sendSubmitDailyInventBtoBCANRequestJSON(Content.SellerID, "310", body);
+			else
+				return sendSubmitDailyInventBtoBCANRequestJSON(Content.SellerID, version, body);
 			
-		case XML:			
-			return sendSubmitDailyInventBtoBCANRequestXML(Content.SellerID, Variables.version, body);	
+		case XML:
+			if(Variables.SimulationEnabled)
+				return sendSubmitDailyInventBtoBCANRequestXML(Content.SellerID, "310", body);	
+			else
+				return sendSubmitDailyInventBtoBCANRequestXML(Content.SellerID, version, body);	
 			
 		default:
 			throw new RuntimeException("Never Happened!");

@@ -13,8 +13,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.rma.RMAConfig;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.RMASubmitRequest;
-import com.newegg.marketplace.sdk.rma.model.RMASubmitResponse;
+import com.newegg.marketplace.sdk.rma.model.SubmitRMARequest;
+import com.newegg.marketplace.sdk.rma.model.SubmitRMAResponse;
 
 public class RMASubmitCallerTest {
 
@@ -23,12 +23,12 @@ public class RMASubmitCallerTest {
 		APIConfig.load(RMAConfig.class);
 	}
 
-	//@Test
+	// @Test
 	public void sendRMASubmitRequest_XML() {
 		initailRMACaller(Content.MEDIA_TYPE.XML);
 	}
 
-	//@Test
+	// @Test
 	public void sendRMASubmitRequest_JSON() {
 		initailRMACaller(Content.MEDIA_TYPE.JSON);
 	}
@@ -56,14 +56,14 @@ public class RMASubmitCallerTest {
 			call = RMASubmitCaller.buildJSON();
 		}
 
-		RMASubmitRequest request = new RMASubmitRequest();
-		request.setOperationType("IssueRMARequest");
+		SubmitRMARequest request = new SubmitRMARequest();
+		// request.setOperationType("IssueRMARequest");
 		request.setRequestBody(getBody());
 
 		int rsStatus = 200;
-		RMASubmitResponse response = new RMASubmitResponse();
+		SubmitRMAResponse response = new SubmitRMAResponse();
 		try {
-			response = call.sendRMASubmitRequest("307", request);
+			response = call.sendRMASubmitRequest(request, "307");
 		} catch (NeweggException e) {
 			rsStatus = e.status();
 
@@ -77,15 +77,17 @@ public class RMASubmitCallerTest {
 
 		} finally {
 			if (Variables.SimulationEnabled)
-				assertTrue("RMASubmitCaller.SendRMASubmitRequest [" + type + "] command fail (Status:" + rsStatus + ").", "true".equals(response.getIsSuccess()));
+				assertTrue(
+						"RMASubmitCaller.SendRMASubmitRequest [" + type + "] command fail (Status:" + rsStatus + ").",
+						"true".equals(response.getIsSuccess()));
 		}
 	}
 
-	private RMASubmitRequest.RequestBody getBody() {
-		RMASubmitRequest.RequestBody body = new RMASubmitRequest.RequestBody();
-		RMASubmitRequest.RequestBody.IssueRMA issueRMA = new RMASubmitRequest.RequestBody.IssueRMA();
-		RMASubmitRequest.RequestBody.IssueRMA.RMATransactionList.RMATransaction rmaTrans = new RMASubmitRequest.RequestBody.IssueRMA.RMATransactionList.RMATransaction();
-		RMASubmitRequest.RequestBody.IssueRMA.RMATransactionList list = new RMASubmitRequest.RequestBody.IssueRMA.RMATransactionList();
+	private SubmitRMARequest.RequestBody getBody() {
+		SubmitRMARequest.RequestBody body = new SubmitRMARequest.RequestBody();
+		SubmitRMARequest.RequestBody.IssueRMA issueRMA = new SubmitRMARequest.RequestBody.IssueRMA();
+		SubmitRMARequest.RequestBody.IssueRMA.RMATransactionList.RMATransaction rmaTrans = new SubmitRMARequest.RequestBody.IssueRMA.RMATransactionList.RMATransaction();
+		SubmitRMARequest.RequestBody.IssueRMA.RMATransactionList list = new SubmitRMARequest.RequestBody.IssueRMA.RMATransactionList();
 
 		rmaTrans.setSellerPartNumber("test001");
 		rmaTrans.setReturnQuantity(BigInteger.valueOf(1));

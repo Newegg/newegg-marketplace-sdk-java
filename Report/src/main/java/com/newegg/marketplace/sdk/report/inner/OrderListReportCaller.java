@@ -5,10 +5,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.OrderListRequest;
-import com.newegg.marketplace.sdk.report.model.get.OrderListResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SOrderListRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SOrderListResponse;
+import com.newegg.marketplace.sdk.report.model.get.OrderListReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.OrderListReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitOrderListReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitOrderListReportResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -42,22 +42,28 @@ public interface OrderListReportCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}&version={version}")
-	OrderListResponse sendOrderListReportRequestJSON(@Param("sellerid") String sellerID, 
-			@Param("version") String version, OrderListRequest body);
+	OrderListReportResponse sendOrderListReportRequestJSON(@Param("sellerid") String sellerID, 
+			@Param("version") String version, OrderListReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}&version={version}")
-	OrderListResponse sendOrderListReportRequestXML(@Param("sellerid") String sellerID, 
-			@Param("version") String version, OrderListRequest body);
+	OrderListReportResponse sendOrderListReportRequestXML(@Param("sellerid") String sellerID, 
+			@Param("version") String version, OrderListReportRequest body);
 	
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default OrderListResponse sendOrderListReportRequest(OrderListRequest body) {
+	default OrderListReportResponse sendOrderListReportRequest(OrderListReportRequest body,String version) {
 		switch(Variables.MediaType) {
-		case JSON:			 
-			return sendOrderListReportRequestJSON(Content.SellerID, Variables.version, body);
+		case JSON:
+			if(Variables.SimulationEnabled)
+				return sendOrderListReportRequestJSON(Content.SellerID, "309", body);
+			else
+				return sendOrderListReportRequestJSON(Content.SellerID, version, body);
 			
-		case XML:			
-			return sendOrderListReportRequestXML(Content.SellerID, Variables.version, body);
+		case XML:
+			if(Variables.SimulationEnabled)
+				return sendOrderListReportRequestXML(Content.SellerID, "309", body);
+			else
+				return sendOrderListReportRequestXML(Content.SellerID, version, body);
 			
 		default:
 			throw new RuntimeException("Never Happened!");
@@ -68,13 +74,13 @@ public interface OrderListReportCaller {
 	// submit commands
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SOrderListResponse sendSubmitOrderListReportRequestJSON(@Param("sellerid") String sellerID, SOrderListRequest body);
+	SubmitOrderListReportResponse sendSubmitOrderListReportRequestJSON(@Param("sellerid") String sellerID, SubmitOrderListReportRequest body);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SOrderListResponse sendSubmitOrderListReportRequestXML(@Param("sellerid") String sellerID, SOrderListRequest body);
+	SubmitOrderListReportResponse sendSubmitOrderListReportRequestXML(@Param("sellerid") String sellerID, SubmitOrderListReportRequest body);
 	
-	default SOrderListResponse sendSubmitOrderListReportRequest(SOrderListRequest body) {
+	default SubmitOrderListReportResponse sendSubmitOrderListReportRequest(SubmitOrderListReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			 
 			return sendSubmitOrderListReportRequestJSON(Content.SellerID, body);

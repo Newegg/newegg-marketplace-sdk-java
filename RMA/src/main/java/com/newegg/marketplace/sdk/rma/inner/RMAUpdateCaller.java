@@ -5,8 +5,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.rma.Variables;
 import com.newegg.marketplace.sdk.rma.Variables.UpdateRMARequestType;
-import com.newegg.marketplace.sdk.rma.model.RMAUpdateRequest;
-import com.newegg.marketplace.sdk.rma.model.RMAUpdateResponse;
+import com.newegg.marketplace.sdk.rma.model.EditRMARequest;
+import com.newegg.marketplace.sdk.rma.model.EditRMAResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -40,14 +40,17 @@ public interface RMAUpdateCaller {
 	 */
 	@Headers({ "Accept: application/json", "Content-Type: application/json" })
 	@RequestLine("POST /servicemgmt/rma/updaterma?sellerid={sellerid}&version={version}")
-	RMAUpdateResponse sendRMAUpdateRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version, RMAUpdateRequest body);
+	EditRMAResponse sendRMAUpdateRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version,
+			EditRMARequest body);
 
 	@Headers({ "Accept: application/xml", "Content-Type: application/xml" })
 	@RequestLine("POST /servicemgmt/rma/updaterma?sellerid={sellerid}&version={version}")
-	RMAUpdateResponse sendRMAUpdateRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, RMAUpdateRequest body);
+	EditRMAResponse sendRMAUpdateRequestXML(@Param("sellerid") String sellerID, @Param("version") String version,
+			EditRMARequest body);
 
-	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default RMAUpdateResponse sendRMAUpdateRequest(String version, RMAUpdateRequest body) {
+	// Implement default method of interface class that according to
+	// Variables.MediaType to run at JSON or XML request.
+	default EditRMAResponse sendRMAUpdateRequest(EditRMARequest body, String version) {
 		switch (Variables.MediaType) {
 		case JSON:
 			if (Variables.SimulationEnabled)
@@ -72,8 +75,8 @@ public interface RMAUpdateCaller {
 
 		Variables.UpdateRequestType = UpdateRMARequestType.Update;
 
-		return new CallerFactory<RMAUpdateCaller>()
-				.jsonBuild(RMAUpdateCaller.class, Variables.LogLevel, Variables.Retryer, RMAClient.genClient());
+		return new CallerFactory<RMAUpdateCaller>().jsonBuild(RMAUpdateCaller.class, Variables.LogLevel,
+				Variables.Retryer, RMAClient.genClient());
 	}
 
 	static RMAUpdateCaller buildXML() {
@@ -81,8 +84,8 @@ public interface RMAUpdateCaller {
 
 		Variables.UpdateRequestType = UpdateRMARequestType.Update;
 
-		return new CallerFactory<RMAUpdateCaller>()
-				.xmlBuild(RMAUpdateCaller.class, Variables.LogLevel, Variables.Retryer, RMAClient.genClient());
+		return new CallerFactory<RMAUpdateCaller>().xmlBuild(RMAUpdateCaller.class, Variables.LogLevel,
+				Variables.Retryer, RMAClient.genClient());
 	}
 
 }

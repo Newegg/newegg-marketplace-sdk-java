@@ -11,24 +11,24 @@ import com.newegg.marketplace.sdk.rma.inner.RMARejectCaller;
 import com.newegg.marketplace.sdk.rma.inner.RMASubmitCaller;
 import com.newegg.marketplace.sdk.rma.inner.RMAUpdateCaller;
 import com.newegg.marketplace.sdk.rma.inner.RMAVoidCaller;
-import com.newegg.marketplace.sdk.rma.model.CRInfoRequest;
-import com.newegg.marketplace.sdk.rma.model.CRInfoResponse;
-import com.newegg.marketplace.sdk.rma.model.CRIssueRequest;
-import com.newegg.marketplace.sdk.rma.model.CRIssueResponse;
-import com.newegg.marketplace.sdk.rma.model.CRStatusRequest;
-import com.newegg.marketplace.sdk.rma.model.CRStatusResponse;
-import com.newegg.marketplace.sdk.rma.model.RMAInformationRequest;
-import com.newegg.marketplace.sdk.rma.model.RMAInformationResponse;
-import com.newegg.marketplace.sdk.rma.model.RMAReceiveRequest;
-import com.newegg.marketplace.sdk.rma.model.RMAReceiveResponse;
-import com.newegg.marketplace.sdk.rma.model.RMARejectRequest;
-import com.newegg.marketplace.sdk.rma.model.RMARejectResponse;
-import com.newegg.marketplace.sdk.rma.model.RMASubmitRequest;
-import com.newegg.marketplace.sdk.rma.model.RMASubmitResponse;
-import com.newegg.marketplace.sdk.rma.model.RMAUpdateRequest;
-import com.newegg.marketplace.sdk.rma.model.RMAUpdateResponse;
-import com.newegg.marketplace.sdk.rma.model.RMAVoidRequest;
-import com.newegg.marketplace.sdk.rma.model.RMAVoidResponse;
+import com.newegg.marketplace.sdk.rma.model.EditRMARequest;
+import com.newegg.marketplace.sdk.rma.model.EditRMAResponse;
+import com.newegg.marketplace.sdk.rma.model.GetCourtesyRefundInformationRequest;
+import com.newegg.marketplace.sdk.rma.model.GetCourtesyRefundInformationResponse;
+import com.newegg.marketplace.sdk.rma.model.GetCourtesyRefundRequestStatusRequest;
+import com.newegg.marketplace.sdk.rma.model.GetCourtesyRefundRequestStatusResponse;
+import com.newegg.marketplace.sdk.rma.model.GetRMAInformationRequest;
+import com.newegg.marketplace.sdk.rma.model.GetRMAInformationResponse;
+import com.newegg.marketplace.sdk.rma.model.IssueCourtesyRefundRequest;
+import com.newegg.marketplace.sdk.rma.model.IssueCourtesyRefundResponse;
+import com.newegg.marketplace.sdk.rma.model.ReceiveRMARequest;
+import com.newegg.marketplace.sdk.rma.model.ReceiveRMAResponse;
+import com.newegg.marketplace.sdk.rma.model.RejectRMARequest;
+import com.newegg.marketplace.sdk.rma.model.RejectRMAResponse;
+import com.newegg.marketplace.sdk.rma.model.SubmitRMARequest;
+import com.newegg.marketplace.sdk.rma.model.SubmitRMAResponse;
+import com.newegg.marketplace.sdk.rma.model.VoidRMARequest;
+import com.newegg.marketplace.sdk.rma.model.VoidRMAResponse;
 
 /**
 Copyright (c) 2000-present, Newegg Inc.
@@ -97,50 +97,52 @@ public class RMACall {
 		}
 	}
 
-	// Redefine method of interface class of com.newegg.marketplace.sdk.rma.inner package
+	// Redefine method of interface class of com.newegg.marketplace.sdk.rma.inner
+	// package
 	// request command
-	public RMASubmitResponse submitRMA(String version, RMASubmitRequest body) {
-		return rmaSubmitCaller.sendRMASubmitRequest(version, body);
+	public SubmitRMAResponse submitRMA(SubmitRMARequest body, String version) {
+		return rmaSubmitCaller.sendRMASubmitRequest(body, version);
 	}
 
-	public RMAInformationResponse getRMAInformation(String version, RMAInformationRequest body) {
+	public GetRMAInformationResponse getRMAInformation(GetRMAInformationRequest body, String version) {
 		Content.JSON_MAPPER.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true);
-		RMAInformationResponse r = rmaInfoCaller.getRMAInformationRequest(version, body);
+		GetRMAInformationResponse r = rmaInfoCaller.getRMAInformationRequest(body, version);
 		Content.JSON_MAPPER.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, false);
 		return r;
 	}
 
-	public RMAUpdateResponse editRMA(String version, RMAUpdateRequest body) {
-		return rmaUpdateCaller.sendRMAUpdateRequest(version, body);
+	public EditRMAResponse editRMA(EditRMARequest body, String version) {
+		return rmaUpdateCaller.sendRMAUpdateRequest(body, version);
 	}
 
-	public RMARejectResponse rejectRMA(String version, RMARejectRequest body) {
-		return rmaRejectCaller.sendRMARejectRequest(version, body);
+	public RejectRMAResponse rejectRMA(RejectRMARequest body, String version) {
+		return rmaRejectCaller.sendRMARejectRequest(body, version);
 	}
 
-	public RMAVoidResponse voidRMA(String version, RMAVoidRequest body) {
-		return rmaVoidCaller.sendRMAVoidRequest(version, body);
+	public VoidRMAResponse voidRMA(VoidRMARequest body, String version) {
+		return rmaVoidCaller.sendRMAVoidRequest(body, version);
 	}
 
-	public RMAReceiveResponse receiveRMA(String version, RMAReceiveRequest body) {
-		return rmaReceiveCaller.sendRMAReceiveRequest(version, body);
+	public ReceiveRMAResponse receiveRMA(ReceiveRMARequest body, String version) {
+		return rmaReceiveCaller.sendRMAReceiveRequest(body, version);
 	}
 
-	public CRStatusResponse getCourtesyRefundRequestStatus(CRStatusRequest body) {
+	public GetCourtesyRefundRequestStatusResponse getCourtesyRefundRequestStatus(
+			GetCourtesyRefundRequestStatusRequest body) {
 		Content.JSON_MAPPER.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true);
-		CRStatusResponse r = crStatusCaller.getCourtesyRefundStatusRequest(body);
+		GetCourtesyRefundRequestStatusResponse r = crStatusCaller.getCourtesyRefundStatusRequest(body);
 		Content.JSON_MAPPER.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, false);
 		return r;
 	}
 
-	public CRInfoResponse getCourtesyRefundInformation(CRInfoRequest body) {
+	public GetCourtesyRefundInformationResponse getCourtesyRefundInformation(GetCourtesyRefundInformationRequest body) {
 		Content.JSON_MAPPER.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true);
-		CRInfoResponse r = crInfoCaller.getCourtesyRefundInfoRequest(body);
+		GetCourtesyRefundInformationResponse r = crInfoCaller.getCourtesyRefundInfoRequest(body);
 		Content.JSON_MAPPER.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, false);
 		return r;
 	}
 
-	public CRIssueResponse issueCourtesyRefund(CRIssueRequest body) {
+	public IssueCourtesyRefundResponse issueCourtesyRefund(IssueCourtesyRefundRequest body) {
 		return crIssueCaller.getCourtesyRefundIssueRequest(body);
 	}
 

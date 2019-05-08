@@ -4,8 +4,8 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.RMASubmitRequest;
-import com.newegg.marketplace.sdk.rma.model.RMASubmitResponse;
+import com.newegg.marketplace.sdk.rma.model.SubmitRMARequest;
+import com.newegg.marketplace.sdk.rma.model.SubmitRMAResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -39,14 +39,17 @@ public interface RMASubmitCaller {
 	 */
 	@Headers({ "Accept: application/json", "Content-Type: application/json" })
 	@RequestLine("POST /servicemgmt/rma/newrma?sellerid={sellerid}&version={version}")
-	RMASubmitResponse sendRMASubmitRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version, RMASubmitRequest body);
+	SubmitRMAResponse sendRMASubmitRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version,
+			SubmitRMARequest body);
 
 	@Headers({ "Accept: application/xml", "Content-Type: application/xml" })
 	@RequestLine("POST /servicemgmt/rma/newrma?sellerid={sellerid}&version={version}")
-	RMASubmitResponse sendRMASubmitRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, RMASubmitRequest body);
+	SubmitRMAResponse sendRMASubmitRequestXML(@Param("sellerid") String sellerID, @Param("version") String version,
+			SubmitRMARequest body);
 
-	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default RMASubmitResponse sendRMASubmitRequest(String version, RMASubmitRequest body) {
+	// Implement default method of interface class that according to
+	// Variables.MediaType to run at JSON or XML request.
+	default SubmitRMAResponse sendRMASubmitRequest(SubmitRMARequest body, String version) {
 		switch (Variables.MediaType) {
 		case JSON:
 			if (Variables.SimulationEnabled)
@@ -69,15 +72,15 @@ public interface RMASubmitCaller {
 	static RMASubmitCaller buildJSON() {
 		Variables.MediaType = MEDIA_TYPE.JSON;
 
-		return new CallerFactory<RMASubmitCaller>()
-				.jsonBuild(RMASubmitCaller.class, Variables.LogLevel, Variables.Retryer, RMAClient.genClient());
+		return new CallerFactory<RMASubmitCaller>().jsonBuild(RMASubmitCaller.class, Variables.LogLevel,
+				Variables.Retryer, RMAClient.genClient());
 	}
 
 	static RMASubmitCaller buildXML() {
 		Variables.MediaType = MEDIA_TYPE.XML;
 
-		return new CallerFactory<RMASubmitCaller>()
-				.xmlBuild(RMASubmitCaller.class, Variables.LogLevel, Variables.Retryer, RMAClient.genClient());
+		return new CallerFactory<RMASubmitCaller>().xmlBuild(RMASubmitCaller.class, Variables.LogLevel,
+				Variables.Retryer, RMAClient.genClient());
 	}
 
 }

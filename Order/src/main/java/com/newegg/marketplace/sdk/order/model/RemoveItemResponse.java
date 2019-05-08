@@ -120,9 +120,9 @@ public class RemoveItemResponse {
     @XmlElement(name = "IsSuccess", required = true)
     @JsonProperty("IsSuccess")
     protected String isSuccess;
-    @XmlElement(name = "OperationType", required = true)
+    @XmlElement(name = "OperationType", defaultValue = "KillItemResponse", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "KillItemResponse";
     @XmlElement(name = "SellerID", required = true)
     @JsonProperty("SellerID")
     protected String sellerID;

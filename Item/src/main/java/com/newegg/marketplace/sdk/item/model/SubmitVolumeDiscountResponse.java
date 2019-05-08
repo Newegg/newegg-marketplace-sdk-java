@@ -136,7 +136,7 @@ public class SubmitVolumeDiscountResponse {
     protected boolean isSuccess;
     @XmlElement(name = "OperationType", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "SubmitVolumeDiscountRespons";
     @XmlElement(name = "SellerID", required = true)
     @JsonProperty("SellerID")
     protected String sellerID;

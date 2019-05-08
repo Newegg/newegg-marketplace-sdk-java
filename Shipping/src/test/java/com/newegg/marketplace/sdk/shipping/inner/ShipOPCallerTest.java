@@ -11,17 +11,17 @@ import com.newegg.marketplace.sdk.common.APIConfig;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.shipping.ShipConfig;
 import com.newegg.marketplace.sdk.shipping.Variables;
-import com.newegg.marketplace.sdk.shipping.model.ShippingComfirmRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingComfirmResponse;
-import com.newegg.marketplace.sdk.shipping.model.ShippingDetailRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingDetailResponse;
-import com.newegg.marketplace.sdk.shipping.model.ShippingSubmitRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingSubmitRequest.RequestBody.Shipment;
+import com.newegg.marketplace.sdk.shipping.model.ConfirmShipRequest;
+import com.newegg.marketplace.sdk.shipping.model.ConfirmShipResponse;
+import com.newegg.marketplace.sdk.shipping.model.GetShippingDetailRequest;
+import com.newegg.marketplace.sdk.shipping.model.GetShippingDetailResponse;
+import com.newegg.marketplace.sdk.shipping.model.SubmitShippingRequest;
+import com.newegg.marketplace.sdk.shipping.model.SubmitShippingRequest.RequestBody.Shipment;
 
 
-import com.newegg.marketplace.sdk.shipping.model.ShippingSubmitResponse;
-import com.newegg.marketplace.sdk.shipping.model.ShippingVoidRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingVoidResponse;
+import com.newegg.marketplace.sdk.shipping.model.SubmitShippingResponse;
+import com.newegg.marketplace.sdk.shipping.model.VoidShippingRequest;
+import com.newegg.marketplace.sdk.shipping.model.VoidShippingResponse;
 
 public class ShipOPCallerTest {
 
@@ -35,8 +35,8 @@ public class ShipOPCallerTest {
 
 	//@Test
 	public void testSubmitShippingRequest_XML() {ShipOPCaller call=ShipOPCaller.buildXML();
-	ShippingSubmitRequest request=new ShippingSubmitRequest();
-	ShippingSubmitRequest.RequestBody body=new ShippingSubmitRequest.RequestBody();
+	SubmitShippingRequest request=new SubmitShippingRequest();
+	SubmitShippingRequest.RequestBody body=new SubmitShippingRequest.RequestBody();
 	Shipment sm=new Shipment();
 	sm.setOrderNumber(299945004);
 	sm.setShippingCarrierCode(200);
@@ -50,14 +50,14 @@ public class ShipOPCallerTest {
 	sm.setShipFromStateCode("CA");
 	sm.setShipFromZipCode("91748");
 	sm.setShipFromCountryCode("USA");
-	ShippingSubmitRequest.RequestBody.Shipment.PackageList pl=new ShippingSubmitRequest.RequestBody.Shipment.PackageList();
-	ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package p=new ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package();
+	SubmitShippingRequest.RequestBody.Shipment.PackageList pl=new SubmitShippingRequest.RequestBody.Shipment.PackageList();
+	SubmitShippingRequest.RequestBody.Shipment.PackageList.Package p=new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package();
 	p.setPackageWeight(new BigDecimal("28.26"));
 	p.setPackageLength(new BigDecimal("12"));
 	p.setPackageWidth(new BigDecimal("12"));
 	p.setPackageHeight(new BigDecimal("12"));
-	ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList il=new ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList();
-	ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item i=new ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item();
+	SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList il=new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList();
+	SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item i=new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item();
 	i.setQuantity(2);
 	i.setSellerPartNumber("TestSP#A2EU_20181030_0001");
 	il.getItem().add(i);
@@ -66,7 +66,7 @@ public class ShipOPCallerTest {
 	sm.setPackageList(pl);
 	body.setShipment(sm);
 	request.setRequestBody(body);
-	ShippingSubmitResponse r=call.submitShippingRequest(request);
+	SubmitShippingResponse r=call.submitShippingRequest(request);
 	Variables.SimulationEnabled=false;
 	assertTrue(r.isIsSuccess());
 	assertEquals("26JI88ODVOVBA",r.getResponseBody().getRequestID());}
@@ -77,11 +77,11 @@ public class ShipOPCallerTest {
 		Content.Authorization="****************************************";
 		Content.SecretKey="********-****-****-****-************";
 		ShipOPCaller call=ShipOPCaller.buildXML();
-		ShippingDetailRequest request=new ShippingDetailRequest();
-		ShippingDetailRequest.RequestBody body=new ShippingDetailRequest.RequestBody();		
+		GetShippingDetailRequest request=new GetShippingDetailRequest();
+		GetShippingDetailRequest.RequestBody body=new GetShippingDetailRequest.RequestBody();		
 		body.setRequestID("245BWZ383S93Y");
 		request.setRequestBody(body);
-		ShippingDetailResponse r=call.getShippingRequestDetail(request);
+		GetShippingDetailResponse r=call.getShippingRequestDetail(request);
 		b.restore();
 		assertTrue(r.isIsSuccess());
 		assertEquals(257760329,r.getResponseBody().getOrderNumber());
@@ -93,11 +93,11 @@ public class ShipOPCallerTest {
 		Content.Authorization="****************************************";
 		Content.SecretKey="********-****-****-****-************";
 		ShipOPCaller call=ShipOPCaller.buildJSON();
-		ShippingDetailRequest request=new ShippingDetailRequest();
-		ShippingDetailRequest.RequestBody body=new ShippingDetailRequest.RequestBody();		
+		GetShippingDetailRequest request=new GetShippingDetailRequest();
+		GetShippingDetailRequest.RequestBody body=new GetShippingDetailRequest.RequestBody();		
 		body.setRequestID("245BWZ383S93Y");
 		request.setRequestBody(body);
-		ShippingDetailResponse r=call.getShippingRequestDetail(request);
+		GetShippingDetailResponse r=call.getShippingRequestDetail(request);
 		b.restore();
 		assertTrue(r.isIsSuccess());
 		assertEquals(257760329,r.getResponseBody().getOrderNumber());
@@ -107,30 +107,30 @@ public class ShipOPCallerTest {
 	public void testMockConfirmShippingRequest_XML() {
 		Variables.SimulationEnabled=true;
 		ShipOPCaller call=ShipOPCaller.buildXML();
-		ShippingComfirmRequest request=new ShippingComfirmRequest();
-		ShippingComfirmRequest.RequestBody  body=new ShippingComfirmRequest.RequestBody();
-		ShippingComfirmRequest.RequestBody.RequestIDList list=new ShippingComfirmRequest.RequestBody.RequestIDList();
+		ConfirmShipRequest request=new ConfirmShipRequest();
+		ConfirmShipRequest.RequestBody  body=new ConfirmShipRequest.RequestBody();
+		ConfirmShipRequest.RequestBody.RequestIDList list=new ConfirmShipRequest.RequestBody.RequestIDList();
 		list.getRequestID().add("245BWZ383S93Y");
 		//list.getRequestID().add("2PQCX3SPZ3QBF");
 		body.setRequestIDList(list);
 		request.setRequestBody(body);
-		ShippingComfirmResponse r=call.confirmShippingRequest(request);
+		ConfirmShipResponse r=call.confirmShippingRequest(request);
 		Variables.SimulationEnabled=false;
 		assertTrue(r.getIsSuccess());
 	}
 	
 	@Test
-	public void testVoidShippingRequest_XML() {
+	public void testMockVoidShippingRequest_XML() {
 		Variables.SimulationEnabled=true;
 		ShipOPCaller call=ShipOPCaller.buildXML();
-		ShippingVoidRequest request=new ShippingVoidRequest();
-		ShippingVoidRequest.RequestBody body=new ShippingVoidRequest.RequestBody();
-		ShippingVoidRequest.RequestBody.RequestIDList  list=new ShippingVoidRequest.RequestBody.RequestIDList();
+		VoidShippingRequest request=new VoidShippingRequest();
+		VoidShippingRequest.RequestBody body=new VoidShippingRequest.RequestBody();
+		VoidShippingRequest.RequestBody.RequestIDList  list=new VoidShippingRequest.RequestBody.RequestIDList();
 		list.getRequestID().add("2PQBYWH4V68ZP");
 		list.getRequestID().add("2PQCX3SPZ3QBF");
 		body.setRequestIDList(list);
 		request.setRequestBody(body);
-		ShippingVoidResponse r=call.voidShippingRequest(request);
+		VoidShippingResponse r=call.voidShippingRequest(request);
 		Variables.SimulationEnabled=false;
 		assertTrue(r.getIsSuccess());
 	}
@@ -141,8 +141,8 @@ public class ShipOPCallerTest {
 	public void testMockSubmitShippingRequest_XML() {
 		Variables.SimulationEnabled=true;
 		ShipOPCaller call=ShipOPCaller.buildXML();
-		ShippingSubmitRequest request=new ShippingSubmitRequest();
-		ShippingSubmitRequest.RequestBody body=new ShippingSubmitRequest.RequestBody();
+		SubmitShippingRequest request=new SubmitShippingRequest();
+		SubmitShippingRequest.RequestBody body=new SubmitShippingRequest.RequestBody();
 		Shipment sm=new Shipment();
 		sm.setOrderNumber(299945004);
 		sm.setShippingCarrierCode(200);
@@ -156,14 +156,14 @@ public class ShipOPCallerTest {
 		sm.setShipFromStateCode("CA");
 		sm.setShipFromZipCode("91748");
 		sm.setShipFromCountryCode("USA");
-		ShippingSubmitRequest.RequestBody.Shipment.PackageList pl=new ShippingSubmitRequest.RequestBody.Shipment.PackageList();
-		ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package p=new ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package();
+		SubmitShippingRequest.RequestBody.Shipment.PackageList pl=new SubmitShippingRequest.RequestBody.Shipment.PackageList();
+		SubmitShippingRequest.RequestBody.Shipment.PackageList.Package p=new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package();
 		p.setPackageWeight(new BigDecimal("28.26"));
 		p.setPackageLength(new BigDecimal("12"));
 		p.setPackageWidth(new BigDecimal("12"));
 		p.setPackageHeight(new BigDecimal("12"));
-		ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList il=new ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList();
-		ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item i=new ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item();
+		SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList il=new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList();
+		SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item i=new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item();
 		i.setQuantity(2);
 		i.setSellerPartNumber("TestSP#A2EU_20181030_0001");
 		il.getItem().add(i);
@@ -172,7 +172,7 @@ public class ShipOPCallerTest {
 		sm.setPackageList(pl);
 		body.setShipment(sm);
 		request.setRequestBody(body);
-		ShippingSubmitResponse r=call.submitShippingRequest(request);
+		SubmitShippingResponse r=call.submitShippingRequest(request);
 		Variables.SimulationEnabled=false;
 		assertTrue(r.isIsSuccess());
 		assertEquals("26JI88ODVOVBA",r.getResponseBody().getRequestID());
@@ -182,8 +182,8 @@ public class ShipOPCallerTest {
 	public void testMockSubmitShippingRequest_JSON() {
 		Variables.SimulationEnabled=true;
 		ShipOPCaller call=ShipOPCaller.buildJSON();
-		ShippingSubmitRequest request=new ShippingSubmitRequest();
-		ShippingSubmitRequest.RequestBody body=new ShippingSubmitRequest.RequestBody();
+		SubmitShippingRequest request=new SubmitShippingRequest();
+		SubmitShippingRequest.RequestBody body=new SubmitShippingRequest.RequestBody();
 		Shipment sm=new Shipment();
 		sm.setOrderNumber(299945004);
 		sm.setShippingCarrierCode(200);
@@ -197,14 +197,14 @@ public class ShipOPCallerTest {
 		sm.setShipFromStateCode("CA");
 		sm.setShipFromZipCode("91748");
 		sm.setShipFromCountryCode("USA");
-		ShippingSubmitRequest.RequestBody.Shipment.PackageList pl=new ShippingSubmitRequest.RequestBody.Shipment.PackageList();
-		ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package p=new ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package();
+		SubmitShippingRequest.RequestBody.Shipment.PackageList pl=new SubmitShippingRequest.RequestBody.Shipment.PackageList();
+		SubmitShippingRequest.RequestBody.Shipment.PackageList.Package p=new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package();
 		p.setPackageWeight(new BigDecimal("28.26"));
 		p.setPackageLength(new BigDecimal("12"));
 		p.setPackageWidth(new BigDecimal("12"));
 		p.setPackageHeight(new BigDecimal("12"));
-		ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList il=new ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList();
-		ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item i=new ShippingSubmitRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item();
+		SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList il=new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList();
+		SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item i=new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item();
 		i.setQuantity(2);
 		i.setSellerPartNumber("TestSP#A2EU_20181030_0001");
 		il.getItem().add(i);
@@ -213,7 +213,7 @@ public class ShipOPCallerTest {
 		sm.setPackageList(pl);
 		body.setShipment(sm);
 		request.setRequestBody(body);
-		ShippingSubmitResponse r=call.submitShippingRequest(request);
+		SubmitShippingResponse r=call.submitShippingRequest(request);
 		Variables.SimulationEnabled=false;
 		assertTrue(r.isIsSuccess());
 		assertEquals("26JI88ODVOVBA",r.getResponseBody().getRequestID());
@@ -226,11 +226,11 @@ public class ShipOPCallerTest {
 		Content.Authorization="****************************************";
 		Content.SecretKey="********-****-****-****-************";
 		ShipOPCaller call=ShipOPCaller.buildXML();
-		ShippingDetailRequest request=new ShippingDetailRequest();
-		ShippingDetailRequest.RequestBody body=new ShippingDetailRequest.RequestBody();		
+		GetShippingDetailRequest request=new GetShippingDetailRequest();
+		GetShippingDetailRequest.RequestBody body=new GetShippingDetailRequest.RequestBody();		
 		body.setRequestID("245BWZ383S93Y");
 		request.setRequestBody(body);
-		ShippingDetailResponse r=call.getShippingRequestDetail(request);
+		GetShippingDetailResponse r=call.getShippingRequestDetail(request);
 		b.restore();
 		Variables.SimulationEnabled=false;;
 		assertTrue(r.isIsSuccess());
@@ -244,11 +244,11 @@ public class ShipOPCallerTest {
 		Content.Authorization="****************************************";
 		Content.SecretKey="********-****-****-****-************";
 		ShipOPCaller call=ShipOPCaller.buildJSON();
-		ShippingDetailRequest request=new ShippingDetailRequest();
-		ShippingDetailRequest.RequestBody body=new ShippingDetailRequest.RequestBody();		
+		GetShippingDetailRequest request=new GetShippingDetailRequest();
+		GetShippingDetailRequest.RequestBody body=new GetShippingDetailRequest.RequestBody();		
 		body.setRequestID("245BWZ383S93Y");
 		request.setRequestBody(body);
-		ShippingDetailResponse r=call.getShippingRequestDetail(request);
+		GetShippingDetailResponse r=call.getShippingRequestDetail(request);
 		b.restore();
 		Variables.SimulationEnabled=false;
 		assertTrue(r.isIsSuccess());

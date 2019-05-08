@@ -3,6 +3,7 @@ package com.newegg.marketplace.sdk.report;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.PlatformException;
 import com.newegg.marketplace.sdk.report.inner.CAPropSixtyFiveReportCaller;
+import com.newegg.marketplace.sdk.report.inner.DailyInventBtoBCANCaller;
 import com.newegg.marketplace.sdk.report.inner.DailyInventoryCaller;
 import com.newegg.marketplace.sdk.report.inner.DailyPriceCaller;
 import com.newegg.marketplace.sdk.report.inner.ItemChinaTaxSettingCaller;
@@ -13,48 +14,50 @@ import com.newegg.marketplace.sdk.report.inner.RMAListCaller;
 import com.newegg.marketplace.sdk.report.inner.ReportStatusCaller;
 import com.newegg.marketplace.sdk.report.inner.SettlementSummaryCaller;
 import com.newegg.marketplace.sdk.report.inner.SettlementTransactionCaller;
-import com.newegg.marketplace.sdk.report.model.get.CAPropSixtyFiveReportRequest;
-import com.newegg.marketplace.sdk.report.model.get.CAPropSixtyFiveReportResponse;
-import com.newegg.marketplace.sdk.report.model.get.DailyInventoryRequest;
-import com.newegg.marketplace.sdk.report.model.get.DailyInventoryResponse;
-import com.newegg.marketplace.sdk.report.model.get.DailyPriceRequest;
-import com.newegg.marketplace.sdk.report.model.get.DailyPriceResponse;
+import com.newegg.marketplace.sdk.report.model.get.CAProp65WarningReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.CAProp65WarningReportResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportB2bCanRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportB2bCanResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyPriceReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyPriceReportResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetItemLookupReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetItemLookupReportResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetNeweggPremierItemReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetNeweggPremierItemReportResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetRMAListReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetRMAListReportResponse;
 import com.newegg.marketplace.sdk.report.model.get.GetReportStatusRequest;
 import com.newegg.marketplace.sdk.report.model.get.GetReportStatusResponse;
-import com.newegg.marketplace.sdk.report.model.get.ItemChinaTaxSettingRequest;
-import com.newegg.marketplace.sdk.report.model.get.ItemChinaTaxSettingResponse;
-import com.newegg.marketplace.sdk.report.model.get.ItemLookupRequest;
-import com.newegg.marketplace.sdk.report.model.get.ItemLookupResponse;
-import com.newegg.marketplace.sdk.report.model.get.OrderListRequest;
-import com.newegg.marketplace.sdk.report.model.get.OrderListResponse;
-import com.newegg.marketplace.sdk.report.model.get.PremierItemRequest;
-import com.newegg.marketplace.sdk.report.model.get.PremierItemResponse;
-import com.newegg.marketplace.sdk.report.model.get.RMAListRequest;
-import com.newegg.marketplace.sdk.report.model.get.RMAListResponse;
-import com.newegg.marketplace.sdk.report.model.get.SettlementSummaryRequest;
-import com.newegg.marketplace.sdk.report.model.get.SettlementSummaryResponse;
-import com.newegg.marketplace.sdk.report.model.get.SettlementTransactionRequest;
-import com.newegg.marketplace.sdk.report.model.get.SettlementTransactionResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SCAPropSixtyFiveRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SCAPropSixtyFiveResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyInventoryRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyInventoryResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyPriceRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyPriceResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SItemChinaTaxSettingRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SItemChinaTaxSettingResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SItemLookupRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SItemLookupResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SOrderListRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SOrderListResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SPremierItemRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SPremierItemResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SRMAListRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SRMAListResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementSummaryRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementSummaryResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementTransactionRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SSettlementTransactionResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementSummaryInfoResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementSummaryReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementTransactionReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetSettlementTransactionReportResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetTaxSettingReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetTaxSettingReportResponse;
+import com.newegg.marketplace.sdk.report.model.get.OrderListReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.OrderListReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.CAProp65ReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.CAProp65ReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.DailyInventoryReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.DailyInventoryReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.DailyPriceReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.DailyPriceReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.ItemChinaTaxSettingReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.ItemChinaTaxSettingReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.ItemLookupRequest;
+import com.newegg.marketplace.sdk.report.model.submit.ItemLookupResponse;
+import com.newegg.marketplace.sdk.report.model.submit.PremierItemReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.PremierItemReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementSummaryReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementSummaryReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementTransactionRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SettlementTransactionResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitOrderListReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitOrderListReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitRMAListReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitRMAListReportResponse;
 
 /**
 Copyright (c) 2000-present, Newegg Inc.
@@ -86,7 +89,7 @@ public class ReportCall {
 	private ItemLookupCaller itemLookupCaller = null;
 	private DailyInventoryCaller dailyInventoryCaller = null;
 	private DailyPriceCaller dailyPriceCaller = null;
-	//private DailyInventBtoBCANCaller InventoryBtoBCANCaller = null;
+	private DailyInventBtoBCANCaller InventoryBtoBCANCaller = null;
 	private PremierItemCaller premierItemCaller = null;
 	private CAPropSixtyFiveReportCaller CAPSFCaller = null;
 	private ItemChinaTaxSettingCaller itemChinaTaxSetCaller = null;
@@ -107,7 +110,7 @@ public class ReportCall {
 			itemLookupCaller = ItemLookupCaller.buildXML();
 			dailyInventoryCaller = DailyInventoryCaller.buildXML();
 			dailyPriceCaller = DailyPriceCaller.buildXML();
-			//InventoryBtoBCANCaller = DailyInventBtoBCANCaller.buildXML();
+			InventoryBtoBCANCaller = DailyInventBtoBCANCaller.buildXML();
 			premierItemCaller = PremierItemCaller.buildXML();
 			CAPSFCaller = CAPropSixtyFiveReportCaller.buildXML();
 			itemChinaTaxSetCaller = ItemChinaTaxSettingCaller.buildXML();
@@ -122,7 +125,7 @@ public class ReportCall {
 			itemLookupCaller = ItemLookupCaller.buildJSON();
 			dailyInventoryCaller = DailyInventoryCaller.buildJSON();
 			dailyPriceCaller = DailyPriceCaller.buildJSON();
-			//InventoryBtoBCANCaller = DailyInventBtoBCANCaller.buildJSON();
+			InventoryBtoBCANCaller = DailyInventBtoBCANCaller.buildJSON();
 			premierItemCaller = PremierItemCaller.buildJSON();
 			CAPSFCaller = CAPropSixtyFiveReportCaller.buildJSON();
 			itemChinaTaxSetCaller = ItemChinaTaxSettingCaller.buildJSON();
@@ -147,27 +150,27 @@ public class ReportCall {
 		return r;
 	}
 	
-	public OrderListResponse getOrderListReport(OrderListRequest body) {
-		return orderListCaller.sendOrderListReportRequest(body);
+	public OrderListReportResponse getOrderListReport(OrderListReportRequest body,String version) {
+		return orderListCaller.sendOrderListReportRequest(body,version);
 	}
 	
-	public SettlementSummaryResponse getSettlementSummaryReport(SettlementSummaryRequest body) {
+	public GetSettlementSummaryInfoResponse getSettlementSummaryReport(GetSettlementSummaryReportRequest body) {
 		return ssCaller.sendSettlementSummaryRequest(body);
 	}
 	
-	public SettlementTransactionResponse getSettlementTransactionReport(SettlementTransactionRequest body) {
+	public GetSettlementTransactionReportResponse getSettlementTransactionReport(GetSettlementTransactionReportRequest body) {
 		return stCaller.sendSettlementTransactionRequest(body);
 	}
 	
-	public RMAListResponse getRMAListReport(RMAListRequest body) {
-		return RMACaller.sendRMAListRequest(body);
+	public GetRMAListReportResponse getRMAListReport(GetRMAListReportRequest body,String version) {
+		return RMACaller.sendRMAListRequest(body,version);
 	}
 	
-	public ItemLookupResponse getItemLookupReport(ItemLookupRequest body) {
+	public GetItemLookupReportResponse getItemLookupReport(GetItemLookupReportRequest body) {
 		return itemLookupCaller.sendItemLookupRequest(body);
 	}
 	
-	public DailyInventoryResponse getDailyInventoryReport(DailyInventoryRequest body) {
+	public GetDailyInventoryReportResponse getDailyInventoryReport(GetDailyInventoryReportRequest body) {
 		if (Content.Platform ==  Content.PLATFORM.USA) {
 			return dailyInventoryCaller.sendDailyInventoryRequest(body);
 		} else {
@@ -175,15 +178,17 @@ public class ReportCall {
 		}
 	}
 	
-	public DailyInventoryResponse getDailyInventoryReportB2bCan(DailyInventoryRequest body) {
+	//public GetDailyInventoryReportResponse getDailyInventoryReportB2bCan(GetDailyInventoryReportRequest body) {
+	public GetDailyInventoryReportB2bCanResponse getDailyInventoryReportB2bCan(GetDailyInventoryReportB2bCanRequest body) {
 		if (Content.Platform ==  Content.PLATFORM.USA) {
 			throw new PlatformException(Content.PLATFORM.USA.name());
 		} else {
-			return dailyInventoryCaller.sendDailyInventoryRequest(body);
+			//return dailyInventoryCaller.sendDailyInventoryRequest(body);
+			return InventoryBtoBCANCaller.sendDailyInventBtoBCANRequest(body);
 		}
 	}
 	
-	public DailyPriceResponse getDailyPriceReport(DailyPriceRequest body) {
+	public GetDailyPriceReportResponse getDailyPriceReport(GetDailyPriceReportRequest body) {
 		if (Content.Platform ==  Content.PLATFORM.USA) {
 			return dailyPriceCaller.sendDailyPriceRequest(body);
 		} else {
@@ -191,11 +196,7 @@ public class ReportCall {
 		}
 	}
 	
-	/*public DailyInventBtoBCANResponse sendDailyInventBtoBCANRequest(DailyInventBtoBCANRequest body) {
-		return InventoryBtoBCANCaller.sendDailyInventBtoBCANRequest(body);
-	}*/
-	
-	public PremierItemResponse getNeweggPremierItemReport(PremierItemRequest body) {
+	public GetNeweggPremierItemReportResponse getNeweggPremierItemReport(GetNeweggPremierItemReportRequest body) {
 		if (Content.Platform ==  Content.PLATFORM.USA) {
 			return premierItemCaller.sendPremierItemRequest(body);
 		} else {
@@ -203,7 +204,7 @@ public class ReportCall {
 		}
 	}
 	
-	public CAPropSixtyFiveReportResponse getCaliforniasProposition65WarningReport(CAPropSixtyFiveReportRequest body) {
+	public CAProp65WarningReportResponse getCaliforniasProposition65WarningReport(CAProp65WarningReportRequest body) {
 		if (Content.Platform ==  Content.PLATFORM.CAN) {
 			throw new PlatformException(Content.PLATFORM.CAN.name());
 		} else {
@@ -211,7 +212,7 @@ public class ReportCall {
 		}
 	}
 	
-	public ItemChinaTaxSettingResponse getTaxSettingReportforItemsEnabledforChina(ItemChinaTaxSettingRequest body) {
+	public GetTaxSettingReportResponse getTaxSettingReportforItemsEnabledforChina(GetTaxSettingReportRequest body) {
 		if (Content.Platform ==  Content.PLATFORM.USA) {
 			return itemChinaTaxSetCaller.sendItemChinaTaxSettingRequest(body);
 		} else {
@@ -221,55 +222,51 @@ public class ReportCall {
 	
 	
 	// submit
-	public SOrderListResponse submitOrderListReport(SOrderListRequest body) {
+	public SubmitOrderListReportResponse submitOrderListReport(SubmitOrderListReportRequest body) {
 		return orderListCaller.sendSubmitOrderListReportRequest(body);
 	}
 	
-	public SSettlementSummaryResponse submitSettlementSummaryReport(SSettlementSummaryRequest body) {
+	public SettlementSummaryReportResponse submitSettlementSummaryReport(SettlementSummaryReportRequest body) {
 		return ssCaller.sendSubmitSettlementSummaryRequest(body);
 	}
 	
-	public SSettlementTransactionResponse submitSettlementTransactionReport(SSettlementTransactionRequest body) {
+	public SettlementTransactionResponse submitSettlementTransactionReport(SettlementTransactionRequest body) {
 		return stCaller.sendSubmitSettlementTransactionRequest(body);
 	}
 	
-	public SRMAListResponse submitRMAListReport(SRMAListRequest body) {
+	public SubmitRMAListReportResponse submitRMAListReport(SubmitRMAListReportRequest body) {
 		return RMACaller.sendSubmitRMAListRequest(body);
 	}
 	
-	public SItemLookupResponse submitItemLookupReport(SItemLookupRequest body) {
+	public ItemLookupResponse submitItemLookupReport(ItemLookupRequest body) {
 		return itemLookupCaller.sendSubmitItemLookupRequest(body);
 	}
 	
-	public SDailyInventoryResponse submitDailyInventoryReport(SDailyInventoryRequest body) {
+	public DailyInventoryReportResponse submitDailyInventoryReport(DailyInventoryReportRequest body,String version) {
 		if (Content.Platform == Content.PLATFORM.USA) {
-			return dailyInventoryCaller.sendSubmitDailyInventoryRequest(body);
+			return dailyInventoryCaller.sendSubmitDailyInventoryRequest(body,version);
 		} else {
 			throw new PlatformException(Content.PLATFORM.CAN.name() + ", " + Content.PLATFORM.USB.name());
 		}
 	}
 	
-	public SDailyInventoryResponse submitDailyInventoryReportB2BCAN(SDailyInventoryRequest body) {
+	public DailyInventoryReportResponse submitDailyInventoryReportB2BCAN(DailyInventoryReportRequest body,String version) {
 		if (Content.Platform == Content.PLATFORM.USA) {
 			throw new PlatformException(Content.PLATFORM.USA.name());
 		} else {
-			return dailyInventoryCaller.sendSubmitDailyInventoryRequest(body);
+			return dailyInventoryCaller.sendSubmitDailyInventoryRequest(body,version);
 		}
 	}
 	
-	public SDailyPriceResponse submitDailyPriceReport(SDailyPriceRequest body) {
+	public DailyPriceReportResponse submitDailyPriceReport(DailyPriceReportRequest body,String version) {
 		if (Content.Platform == Content.PLATFORM.USA) {
-			return dailyPriceCaller.sendSubmitDailyPriceRequest(body);
+			return dailyPriceCaller.sendSubmitDailyPriceRequest(body,version);
 		} else {
 			throw new PlatformException(Content.PLATFORM.CAN.name() + ", " + Content.PLATFORM.USB.name());
 		}
 	}
 	
-	/*public SDailyInventBtoBCANResponse sendSubmitDailyInventBtoBCANRequest(SDailyInventBtoBCANRequest body) {
-		return InventoryBtoBCANCaller.sendSubmitDailyInventBtoBCANRequest(body);
-	}*/
-	
-	public SPremierItemResponse submitNeweggPremierItemReport(SPremierItemRequest body) {
+	public PremierItemReportResponse submitNeweggPremierItemReport(PremierItemReportRequest body) {
 		if (Content.Platform == Content.PLATFORM.USA) {
 			return premierItemCaller.sendSubmitPremierItemRequest(body);
 		} else {
@@ -277,7 +274,7 @@ public class ReportCall {
 		}
 	}
 	
-	public SCAPropSixtyFiveResponse submitCaliforniasProposition65WarningReport(SCAPropSixtyFiveRequest body) {
+	public CAProp65ReportResponse submitCaliforniasProposition65WarningReport(CAProp65ReportRequest body) {
 		if (Content.Platform == Content.PLATFORM.CAN) {
 			throw new PlatformException(Content.PLATFORM.CAN.name());
 		} else {
@@ -285,7 +282,7 @@ public class ReportCall {
 		}
 	}
 	
-	public SItemChinaTaxSettingResponse submitTaxSettingReportforItemsEnabledforChina(SItemChinaTaxSettingRequest body) {
+	public ItemChinaTaxSettingReportResponse submitTaxSettingReportforItemsEnabledforChina(ItemChinaTaxSettingReportRequest body) {
 		if (Content.Platform == Content.PLATFORM.USA) {
 			return itemChinaTaxSetCaller.sendSubmitItemChinaTaxSettingRequest(body);
 		} else {

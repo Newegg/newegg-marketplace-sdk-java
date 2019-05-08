@@ -5,8 +5,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.rma.Variables;
 import com.newegg.marketplace.sdk.rma.Variables.UpdateRMARequestType;
-import com.newegg.marketplace.sdk.rma.model.RMARejectRequest;
-import com.newegg.marketplace.sdk.rma.model.RMARejectResponse;
+import com.newegg.marketplace.sdk.rma.model.RejectRMARequest;
+import com.newegg.marketplace.sdk.rma.model.RejectRMAResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -40,14 +40,17 @@ public interface RMARejectCaller {
 	 */
 	@Headers({ "Accept: application/json", "Content-Type: application/json" })
 	@RequestLine("POST /servicemgmt/rma/updaterma?sellerid={sellerid}&version={version}")
-	RMARejectResponse sendRMARejectRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version, RMARejectRequest body);
+	RejectRMAResponse sendRMARejectRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version,
+			RejectRMARequest body);
 
 	@Headers({ "Accept: application/xml", "Content-Type: application/xml" })
 	@RequestLine("POST /servicemgmt/rma/updaterma?sellerid={sellerid}&version={version}")
-	RMARejectResponse sendRMARejectRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, RMARejectRequest body);
+	RejectRMAResponse sendRMARejectRequestXML(@Param("sellerid") String sellerID, @Param("version") String version,
+			RejectRMARequest body);
 
-	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default RMARejectResponse sendRMARejectRequest(String version, RMARejectRequest body) {
+	// Implement default method of interface class that according to
+	// Variables.MediaType to run at JSON or XML request.
+	default RejectRMAResponse sendRMARejectRequest(RejectRMARequest body, String version) {
 		switch (Variables.MediaType) {
 		case JSON:
 			if (Variables.SimulationEnabled)
@@ -72,8 +75,8 @@ public interface RMARejectCaller {
 
 		Variables.UpdateRequestType = UpdateRMARequestType.Reject;
 
-		return new CallerFactory<RMARejectCaller>()
-				.jsonBuild(RMARejectCaller.class, Variables.LogLevel, Variables.Retryer, RMAClient.genClient());
+		return new CallerFactory<RMARejectCaller>().jsonBuild(RMARejectCaller.class, Variables.LogLevel,
+				Variables.Retryer, RMAClient.genClient());
 	}
 
 	static RMARejectCaller buildXML() {
@@ -81,8 +84,8 @@ public interface RMARejectCaller {
 
 		Variables.UpdateRequestType = UpdateRMARequestType.Reject;
 
-		return new CallerFactory<RMARejectCaller>()
-				.xmlBuild(RMARejectCaller.class, Variables.LogLevel, Variables.Retryer, RMAClient.genClient());
+		return new CallerFactory<RMARejectCaller>().xmlBuild(RMARejectCaller.class, Variables.LogLevel,
+				Variables.Retryer, RMAClient.genClient());
 	}
 
 }

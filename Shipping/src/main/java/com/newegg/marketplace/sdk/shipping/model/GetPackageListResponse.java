@@ -106,7 +106,7 @@ public class GetPackageListResponse {
     protected String sellerID;
     @XmlElement(name = "OperationType", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "GetPackageListResponse";
     @XmlElement(name = "ResponseBody", required = true)
     @JsonProperty("ResponseBody")
     protected GetPackageListResponse.ResponseBody responseBody;

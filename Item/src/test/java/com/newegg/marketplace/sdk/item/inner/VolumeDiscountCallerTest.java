@@ -15,8 +15,8 @@ import com.newegg.marketplace.sdk.common.APIConfig;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.item.ItemConfig;
 import com.newegg.marketplace.sdk.item.Variables;
-import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequest;
-import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountResponse;
+import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequestResultRequest;
+import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequestResultResponse;
 import com.newegg.marketplace.sdk.item.model.SubmitVolumeDiscountRequest;
 import com.newegg.marketplace.sdk.item.model.SubmitVolumeDiscountResponse;
 import com.newegg.marketplace.sdk.item.model.SubmitVolumeDiscountRequest.RequestBody.ItemVolumeDiscountInfo;
@@ -34,13 +34,13 @@ public class VolumeDiscountCallerTest {
 	@Test
 	public void testJSONGetVolumeDiscountRequestResult() {			
 		VolumeDiscountCaller call=VolumeDiscountCaller.buildJSON();
-		GetVolumeDiscountRequest obj=new GetVolumeDiscountRequest();
+		GetVolumeDiscountRequestResultRequest obj=new GetVolumeDiscountRequestResultRequest();
 		obj.setOperationType("GetVolumeDiscountRequest");
-		GetVolumeDiscountRequest.RequestBody body=new GetVolumeDiscountRequest.RequestBody();
+		GetVolumeDiscountRequestResultRequest.RequestBody body=new GetVolumeDiscountRequestResultRequest.RequestBody();
 		body.setNeweggItemNumber("9SIA0062TT3677");
 		obj.setRequestBody(body);
 		
-		GetVolumeDiscountResponse r=call.getVolumeDiscountRequestResult(obj);
+		GetVolumeDiscountRequestResultResponse r=call.getVolumeDiscountRequestResult(obj);
 		
 		assertTrue("Group-By test Item A".equals(r.getResponseBody().getItemVolumeDiscountInfo().getSellerPartNumber()));
 		assertTrue(r.getIsSuccess());
@@ -49,13 +49,13 @@ public class VolumeDiscountCallerTest {
 	@Test
 	public void testXMLGetVolumeDiscountRequestResult() {			
 		VolumeDiscountCaller call=VolumeDiscountCaller.buildXML();
-		GetVolumeDiscountRequest obj=new GetVolumeDiscountRequest();
+		GetVolumeDiscountRequestResultRequest obj=new GetVolumeDiscountRequestResultRequest();
 		obj.setOperationType("GetVolumeDiscountRequest");
-		GetVolumeDiscountRequest.RequestBody body=new GetVolumeDiscountRequest.RequestBody();
+		GetVolumeDiscountRequestResultRequest.RequestBody body=new GetVolumeDiscountRequestResultRequest.RequestBody();
 		body.setNeweggItemNumber("9SIA0062TT3677");
 		obj.setRequestBody(body);
 		
-		GetVolumeDiscountResponse r=call.getVolumeDiscountRequestResult(obj);
+		GetVolumeDiscountRequestResultResponse r=call.getVolumeDiscountRequestResult(obj);
 		
 		assertTrue("Group-By test Item A".equals(r.getResponseBody().getItemVolumeDiscountInfo().getSellerPartNumber()));
 		assertTrue(r.getIsSuccess());
@@ -127,12 +127,12 @@ public class VolumeDiscountCallerTest {
 	public void testMockGetVolumeDiscountRequestResult() {			
 		Variables.SimulationEnabled=true;
 		VolumeDiscountCaller call=VolumeDiscountCaller.buildJSON();
-		GetVolumeDiscountRequest obj=new GetVolumeDiscountRequest();				
+		GetVolumeDiscountRequestResultRequest obj=new GetVolumeDiscountRequestResultRequest();				
 		obj.setOperationType("GetVolumeDiscountRequest");
-		GetVolumeDiscountRequest.RequestBody body=new GetVolumeDiscountRequest.RequestBody();
+		GetVolumeDiscountRequestResultRequest.RequestBody body=new GetVolumeDiscountRequestResultRequest.RequestBody();
 		body.setNeweggItemNumber("9SIA2EU6M00666");
 		obj.setRequestBody(body);		
-		GetVolumeDiscountResponse r=call.getVolumeDiscountRequestResult(obj);
+		GetVolumeDiscountRequestResultResponse r=call.getVolumeDiscountRequestResult(obj);
 		Variables.SimulationEnabled=false;
 		assertTrue("B0147001".equals(r.getResponseBody().getItemVolumeDiscountInfo().getSellerPartNumber()));
 		assertTrue(r.getIsSuccess());

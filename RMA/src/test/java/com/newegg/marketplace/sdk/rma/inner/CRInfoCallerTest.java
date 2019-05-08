@@ -11,8 +11,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.rma.RMAConfig;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.CRInfoRequest;
-import com.newegg.marketplace.sdk.rma.model.CRInfoResponse;
+import com.newegg.marketplace.sdk.rma.model.GetCourtesyRefundInformationRequest;
+import com.newegg.marketplace.sdk.rma.model.GetCourtesyRefundInformationResponse;
 
 public class CRInfoCallerTest {
 
@@ -21,12 +21,12 @@ public class CRInfoCallerTest {
 		APIConfig.load(RMAConfig.class);
 	}
 
-	@Test
+	//@Test
 	public void getCourtesyRefundStatusRequest_XML() {
 		initailCRCaller(Content.MEDIA_TYPE.XML);
 	}
 
-	@Test
+	//@Test
 	public void getCourtesyRefundStatusRequest_JSON() {
 		initailCRCaller(Content.MEDIA_TYPE.JSON);
 	}
@@ -56,12 +56,12 @@ public class CRInfoCallerTest {
 			call = CRInfoCaller.buildJSON();
 		}
 
-		CRInfoRequest request = new CRInfoRequest();
-		request.setOperationType("GetCourtesyRefundInfo");
+		GetCourtesyRefundInformationRequest request = new GetCourtesyRefundInformationRequest();
+		//request.setOperationType("GetCourtesyRefundInfo");
 		request.setRequestBody(getBody());
 
 		int rsStatus = 200;
-		CRInfoResponse response = new CRInfoResponse();
+		GetCourtesyRefundInformationResponse response = new GetCourtesyRefundInformationResponse();
 		try {
 			response = call.getCourtesyRefundInfoRequest(request);
 		} catch (NeweggException e) {
@@ -84,9 +84,9 @@ public class CRInfoCallerTest {
 
 	}
 
-	private CRInfoRequest.RequestBody getBody() {
-		CRInfoRequest.RequestBody body = new CRInfoRequest.RequestBody();
-		CRInfoRequest.RequestBody.PageInfo pageInfo = new CRInfoRequest.RequestBody.PageInfo();
+	private GetCourtesyRefundInformationRequest.RequestBody getBody() {
+		GetCourtesyRefundInformationRequest.RequestBody body = new GetCourtesyRefundInformationRequest.RequestBody();
+		GetCourtesyRefundInformationRequest.RequestBody.PageInfo pageInfo = new GetCourtesyRefundInformationRequest.RequestBody.PageInfo();
 		pageInfo.setPageIndex(1);
 		pageInfo.setPageSize(10);
 

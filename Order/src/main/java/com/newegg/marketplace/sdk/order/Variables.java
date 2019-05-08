@@ -34,8 +34,6 @@ public class Variables {
 	public static Retryer Retryer = Content.RETRYER;
 	public static MEDIA_TYPE MediaType = MEDIA_TYPE.XML;
 	public static boolean SimulationEnabled = Content.SIMULATION_ENABLED;
-	public static String orderNumber;
-	public static String version;
 	public static URILock URIHash;
 	public enum URILock {
 		CANCEL_ORDER,

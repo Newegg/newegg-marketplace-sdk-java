@@ -12,8 +12,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.rma.RMAConfig;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.RMAUpdateRequest;
-import com.newegg.marketplace.sdk.rma.model.RMAUpdateResponse;
+import com.newegg.marketplace.sdk.rma.model.EditRMARequest;
+import com.newegg.marketplace.sdk.rma.model.EditRMAResponse;
 import com.newegg.marketplace.sdk.rma.model.bean.EditRMAInfo;
 
 public class RMAUpdateCallerTest {
@@ -23,12 +23,12 @@ public class RMAUpdateCallerTest {
 		APIConfig.load(RMAConfig.class);
 	}
 
-	//@Test
+	// @Test
 	public void sendRMAUpdateRequest_XML() {
 		initailRMACaller(Content.MEDIA_TYPE.XML);
 	}
 
-	//@Test
+	// @Test
 	public void sendRMAUpdateRequest_JSON() {
 		initailRMACaller(Content.MEDIA_TYPE.JSON);
 	}
@@ -56,14 +56,14 @@ public class RMAUpdateCallerTest {
 			call = RMAUpdateCaller.buildJSON();
 		}
 
-		RMAUpdateRequest request = new RMAUpdateRequest();
-		request.setOperationType("EditRMARequest");
+		EditRMARequest request = new EditRMARequest();
+		// request.setOperationType("EditRMARequest");
 		request.setRequestBody(getBody());
 
 		int rsStatus = 200;
-		RMAUpdateResponse response = new RMAUpdateResponse();
+		EditRMAResponse response = new EditRMAResponse();
 		try {
-			response = call.sendRMAUpdateRequest("309", request);
+			response = call.sendRMAUpdateRequest(request, "309");
 		} catch (NeweggException e) {
 			rsStatus = e.status();
 
@@ -77,13 +77,15 @@ public class RMAUpdateCallerTest {
 
 		} finally {
 			if (Variables.SimulationEnabled)
-				assertTrue("RMAUpdateCaller.sendRMAUpdateRequest [" + type + "] command fail  (Status:" + rsStatus + ").", "true".equals(response.getIsSuccess()));
+				assertTrue(
+						"RMAUpdateCaller.sendRMAUpdateRequest [" + type + "] command fail  (Status:" + rsStatus + ").",
+						"true".equals(response.getIsSuccess()));
 		}
 
 	}
 
-	private RMAUpdateRequest.RequestBody getBody() {
-		RMAUpdateRequest.RequestBody body = new RMAUpdateRequest.RequestBody();
+	private EditRMARequest.RequestBody getBody() {
+		EditRMARequest.RequestBody body = new EditRMARequest.RequestBody();
 
 		EditRMAInfo editInfo = new EditRMAInfo();
 		EditRMAInfo.RMATransactionList transList = new EditRMAInfo.RMATransactionList();

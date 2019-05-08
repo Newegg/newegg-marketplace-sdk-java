@@ -6,10 +6,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.DailyInventoryRequest;
-import com.newegg.marketplace.sdk.report.model.get.DailyInventoryResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyInventoryRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyInventoryResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.DailyInventoryReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.DailyInventoryReportResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -42,18 +42,18 @@ public interface DailyInventoryCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	DailyInventoryResponse sendDailyInventoryRequestJSON(@Param("sellerid") String sellerID, DailyInventoryRequest body);
+	GetDailyInventoryReportResponse sendDailyInventoryRequestJSON(@Param("sellerid") String sellerID, GetDailyInventoryReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	DailyInventoryResponse sendDailyInventoryRequestXML(@Param("sellerid") String sellerID, DailyInventoryRequest body);
+	GetDailyInventoryReportResponse sendDailyInventoryRequestXML(@Param("sellerid") String sellerID, GetDailyInventoryReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default DailyInventoryResponse sendDailyInventoryRequest(DailyInventoryRequest body) {
+	default GetDailyInventoryReportResponse sendDailyInventoryRequest(GetDailyInventoryReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:		
 			Content.JSON_MAPPER.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true);
-			DailyInventoryResponse r = sendDailyInventoryRequestJSON(Content.SellerID, body);
+			GetDailyInventoryReportResponse r = sendDailyInventoryRequestJSON(Content.SellerID, body);
 			Content.JSON_MAPPER.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, false);
 			return r;
 			
@@ -69,20 +69,26 @@ public interface DailyInventoryCaller {
 	// submit command
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}&version={version}")
-	SDailyInventoryResponse sendSubmitDailyInventoryRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version,  SDailyInventoryRequest body);
+	DailyInventoryReportResponse sendSubmitDailyInventoryRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version,  DailyInventoryReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}&version={version}")
-	SDailyInventoryResponse sendSubmitDailyInventoryRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, SDailyInventoryRequest body);
+	DailyInventoryReportResponse sendSubmitDailyInventoryRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, DailyInventoryReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SDailyInventoryResponse sendSubmitDailyInventoryRequest(SDailyInventoryRequest body) {
+	default DailyInventoryReportResponse sendSubmitDailyInventoryRequest(DailyInventoryReportRequest body,String version) {
 		switch(Variables.MediaType) {
-		case JSON:			
-			return sendSubmitDailyInventoryRequestJSON(Content.SellerID, Variables.version, body);
+		case JSON:	
+			if(Variables.SimulationEnabled)
+				return sendSubmitDailyInventoryRequestJSON(Content.SellerID, "310", body);
+			else
+				return sendSubmitDailyInventoryRequestJSON(Content.SellerID, version, body);
 			
-		case XML:			
-			return sendSubmitDailyInventoryRequestXML(Content.SellerID, Variables.version, body);	
+		case XML:	
+			if(Variables.SimulationEnabled)
+				return sendSubmitDailyInventoryRequestXML(Content.SellerID, "310", body);
+			else
+				return sendSubmitDailyInventoryRequestXML(Content.SellerID, version, body);	
 			
 		default:
 			throw new RuntimeException("Never Happened!");

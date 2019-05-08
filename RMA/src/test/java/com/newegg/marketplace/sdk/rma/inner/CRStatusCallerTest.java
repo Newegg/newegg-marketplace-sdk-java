@@ -11,8 +11,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.rma.RMAConfig;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.CRStatusRequest;
-import com.newegg.marketplace.sdk.rma.model.CRStatusResponse;
+import com.newegg.marketplace.sdk.rma.model.GetCourtesyRefundRequestStatusRequest;
+import com.newegg.marketplace.sdk.rma.model.GetCourtesyRefundRequestStatusResponse;
 
 public class CRStatusCallerTest {
 
@@ -21,7 +21,7 @@ public class CRStatusCallerTest {
 		APIConfig.load(RMAConfig.class);
 	}
 
-	@Test
+	//@Test
 	public void getCourtesyRefundStatusRequest_XML() {
 		initailCRCaller(Content.MEDIA_TYPE.XML);
 	}
@@ -56,12 +56,12 @@ public class CRStatusCallerTest {
 			call = CRStatusCaller.buildJSON();
 		}
 
-		CRStatusRequest request = new CRStatusRequest();
-		request.setOperationType("GetCourtesyRefundStatusRequest");
+		GetCourtesyRefundRequestStatusRequest request = new GetCourtesyRefundRequestStatusRequest();
+		//request.setOperationType("GetCourtesyRefundStatusRequest");
 		request.setRequestBody(getBody());
 
 		int rsStatus = 200;
-		CRStatusResponse response = new CRStatusResponse();
+		GetCourtesyRefundRequestStatusResponse response = new GetCourtesyRefundRequestStatusResponse();
 		try {
 			response = call.getCourtesyRefundStatusRequest(request);
 
@@ -87,10 +87,10 @@ public class CRStatusCallerTest {
 
 	}
 
-	private CRStatusRequest.RequestBody getBody() {
-		CRStatusRequest.RequestBody body = new CRStatusRequest.RequestBody();
-		CRStatusRequest.RequestBody.GetRequestStatus crStatus = new CRStatusRequest.RequestBody.GetRequestStatus();
-		CRStatusRequest.RequestBody.GetRequestStatus.RequestIDList idList = new CRStatusRequest.RequestBody.GetRequestStatus.RequestIDList();
+	private GetCourtesyRefundRequestStatusRequest.RequestBody getBody() {
+		GetCourtesyRefundRequestStatusRequest.RequestBody body = new GetCourtesyRefundRequestStatusRequest.RequestBody();
+		GetCourtesyRefundRequestStatusRequest.RequestBody.GetRequestStatus crStatus = new GetCourtesyRefundRequestStatusRequest.RequestBody.GetRequestStatus();
+		GetCourtesyRefundRequestStatusRequest.RequestBody.GetRequestStatus.RequestIDList idList = new GetCourtesyRefundRequestStatusRequest.RequestBody.GetRequestStatus.RequestIDList();
 
 		idList.getRequestID().add("8f8648da-7d92-4086-bbe5-e399e07895e6");
 		crStatus.setRequestIDList(idList);

@@ -7,16 +7,15 @@ import com.newegg.marketplace.sdk.shipping.inner.ShipOTCaller;
 import com.newegg.marketplace.sdk.shipping.model.GetPackageListRequest;
 import com.newegg.marketplace.sdk.shipping.model.GetPackageListResponse;
 import com.newegg.marketplace.sdk.shipping.model.GetShippingLabelRequest;
-import com.newegg.marketplace.sdk.shipping.model.GetShippingLabelResponse;
-import com.newegg.marketplace.sdk.shipping.model.ShippingComfirmRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingComfirmResponse;
-import com.newegg.marketplace.sdk.shipping.model.ShippingDetailRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingDetailResponse;
-import com.newegg.marketplace.sdk.shipping.model.ShippingSubmitRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingSubmitResponse;
-import com.newegg.marketplace.sdk.shipping.model.ShippingVoidRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingVoidResponse;
-
+import com.newegg.marketplace.sdk.shipping.model.GetShippinLabelResponse;
+import com.newegg.marketplace.sdk.shipping.model.ConfirmShipRequest;
+import com.newegg.marketplace.sdk.shipping.model.ConfirmShipResponse;
+import com.newegg.marketplace.sdk.shipping.model.GetShippingDetailRequest;
+import com.newegg.marketplace.sdk.shipping.model.GetShippingDetailResponse;
+import com.newegg.marketplace.sdk.shipping.model.SubmitShippingRequest;
+import com.newegg.marketplace.sdk.shipping.model.SubmitShippingResponse;
+import com.newegg.marketplace.sdk.shipping.model.VoidShippingRequest;
+import com.newegg.marketplace.sdk.shipping.model.VoidShippingResponse;
 
 import com.newegg.marketplace.sdk.common.Content.PLATFORM;
 
@@ -38,6 +37,7 @@ limitations under the License.
 
 /**
  * Only for USA,USB
+ * 
  * @author QB
  *
  */
@@ -45,53 +45,59 @@ public class ShippingCall {
 
 	private ShipOPCaller shipOPCaller;
 	private ShipOTCaller shipOTCaller;
-	
+
 	public ShippingCall() {
 		this(Content.MEDIA_TYPE.XML);
 	}
-	
+
 	private ShippingCall(Content.MEDIA_TYPE mrdiaType) {
-		switch(mrdiaType){
+		switch (mrdiaType) {
 		case JSON:
-			shipOPCaller=ShipOPCaller.buildJSON();
-			shipOTCaller=ShipOTCaller.buildJSON();
-			break;			
+			shipOPCaller = ShipOPCaller.buildJSON();
+			shipOTCaller = ShipOTCaller.buildJSON();
+			break;
 		case XML:
-			shipOPCaller=ShipOPCaller.buildXML();
-			shipOTCaller=ShipOTCaller.buildXML();
-			break;			
+			shipOPCaller = ShipOPCaller.buildXML();
+			shipOTCaller = ShipOTCaller.buildXML();
+			break;
 		default:
 			throw new RuntimeException("Never Happened!");
 		}
 	}
-	
+
 	/**
 	 * <pre>
 	 * Submit the shipping request for your Newegg order to receive the estimation of shipping cost using Newegg Shipping Label Service.
 	 * Note: Unconfirmed shipping request will void automatically within 15 days after submitting the request.
 	 * </pre>
-	 * @param body {@linkplain ShippingSubmitRequest}
-	 * @return {@linkplain ShippingSubmitResponse}
+	 * 
+	 * @param body
+	 *            {@linkplain SubmitShippingRequest}
+	 * @return {@linkplain SubmitShippingResponse}
 	 */
-	public ShippingSubmitResponse submitShippingRequest(ShippingSubmitRequest body) {
-		if(Content.Platform==Content.PLATFORM.USB || Content.Platform==Content.PLATFORM.USA)
+	public SubmitShippingResponse submitShippingRequest(SubmitShippingRequest body) {
+		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOPCaller.submitShippingRequest(body);
-		else throw new PlatformException(PLATFORM.CAN.name());
+		else
+			throw new PlatformException(PLATFORM.CAN.name());
 	}
-	
+
 	/**
 	 * <pre>
 	 * Retrieving the processing result of Submit Shipping Request.
 	 * </pre>
-	 * @param body {@linkplain ShippingDetailRequest}
-	 * @return {@linkplain ShippingDetailResponse}
+	 * 
+	 * @param body
+	 *            {@linkplain GetShippingDetailRequest}
+	 * @return {@linkplain GetShippingDetailResponse}
 	 */
-	public ShippingDetailResponse getShippingRequestDetail(ShippingDetailRequest body) {
-		if(Content.Platform==Content.PLATFORM.USB || Content.Platform==Content.PLATFORM.USA)
+	public GetShippingDetailResponse getShippingRequestDetail(GetShippingDetailRequest body) {
+		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOPCaller.getShippingRequestDetail(body);
-		else throw new PlatformException(PLATFORM.CAN.name());
+		else
+			throw new PlatformException(PLATFORM.CAN.name());
 	}
-	
+
 	/**
 	 * <pre>
 	 * Once shipping estimate is available, you must confirm it when you are ready to ship.
@@ -99,54 +105,66 @@ public class ShippingCall {
 	 * Once a shipping request is confirmed, Newegg will continue to process the order and the status of order will soon become “Shipped”.
 	 * Also, the shipping information will be displayed in Order Detail under the customer’s My Account section, 
 	 * and Newegg will send the customer an email notification with all of the shipping information.
-	 * When shipping request is confirmed, the revoke of the operation is not available. 
+	 * When shipping request is confirmed, the revoke of the operation is not available.
 	 * </pre>
-	 * @param body {@linkplain ShippingComfirmRequest}
-	 * @return {@linkplain ShippingComfirmResponse}
+	 * 
+	 * @param body
+	 *            {@linkplain ConfirmShipRequest}
+	 * @return {@linkplain ConfirmShipResponse}
 	 */
-	public ShippingComfirmResponse confirmShippingRequest(ShippingComfirmRequest body) {
-		if(Content.Platform==Content.PLATFORM.USB || Content.Platform==Content.PLATFORM.USA)
+	public ConfirmShipResponse confirmShippingRequest(ConfirmShipRequest body) {
+		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOPCaller.confirmShippingRequest(body);
-		else throw new PlatformException(PLATFORM.CAN.name());
+		else
+			throw new PlatformException(PLATFORM.CAN.name());
 	}
-	
+
 	/**
 	 * <pre>
 	 * An unconfirmed shipping request is applicable for void using this function.
 	 * </pre>
-	 * @param body {@linkplain ShippingVoidRequest}
-	 * @return {@linkplain ShippingVoidResponse}
+	 * 
+	 * @param body
+	 *            {@linkplain VoidShippingRequest}
+	 * @return {@linkplain VoidShippingResponse}
 	 */
-	public  ShippingVoidResponse voidShippingRequest(ShippingVoidRequest body) {
-		if(Content.Platform==Content.PLATFORM.USB || Content.Platform==Content.PLATFORM.USA)
+	public VoidShippingResponse voidShippingRequest(VoidShippingRequest body) {// TODO
+		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOPCaller.voidShippingRequest(body);
-		else throw new PlatformException(PLATFORM.CAN.name());
+		else
+			throw new PlatformException(PLATFORM.CAN.name());
 	}
-	
+
 	/**
 	 * <pre>
 	 * When you are ready to ship an order, you can request a package list using this function.
 	 * </pre>
-	 * @param body {@linkplain GetPackageListRequest}
+	 * 
+	 * @param body
+	 *            {@linkplain GetPackageListRequest}
 	 * @return {@linkplain GetPackageListResponse}
 	 */
 	public GetPackageListResponse getPackageLis(GetPackageListRequest body) {
-		if(Content.Platform==Content.PLATFORM.USB || Content.Platform==Content.PLATFORM.USA)
+		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOTCaller.getPackageLis(body);
-		else throw new PlatformException(PLATFORM.CAN.name());
+		else
+			throw new PlatformException(PLATFORM.CAN.name());
 	}
-	
+
 	/**
 	 * <pre>
 	 * When you are ready to ship an order, you can request a shipping label for a confirmed shipping request.
 	 * </pre>
-	 * @param body {@linkplain GetShippingLabelRequest}
-	 * @return {@linkplain GetShippingLabelResponse}
+	 * 
+	 * @param body
+	 *            {@linkplain GetShippingLabelRequest}
+	 * @return {@linkplain GetShippinLabelResponse}
 	 */
-	public GetShippingLabelResponse getShippingLabel(GetShippingLabelRequest body) {
-		if(Content.Platform==Content.PLATFORM.USB || Content.Platform==Content.PLATFORM.USA)
+	public GetShippinLabelResponse getShippingLabel(GetShippingLabelRequest body) {
+		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOTCaller.getShippingLabel(body);
-		else throw new PlatformException(PLATFORM.CAN.name());
+		else
+			throw new PlatformException(PLATFORM.CAN.name());
 	}
-	
+
 }

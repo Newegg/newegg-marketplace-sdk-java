@@ -10,8 +10,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.rma.RMAConfig;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.RMAReceiveRequest;
-import com.newegg.marketplace.sdk.rma.model.RMAReceiveResponse;
+import com.newegg.marketplace.sdk.rma.model.ReceiveRMARequest;
+import com.newegg.marketplace.sdk.rma.model.ReceiveRMAResponse;
 import com.newegg.marketplace.sdk.rma.model.bean.ReceiveRMAInfo;
 
 public class RMAReceiveCallerTest {
@@ -21,12 +21,12 @@ public class RMAReceiveCallerTest {
 		APIConfig.load(RMAConfig.class);
 	}
 
-	//@Test
+	// @Test
 	public void sendRMAReceiveRequest_XML() {
 		initailRMACaller(Content.MEDIA_TYPE.XML);
 	}
 
-	//@Test
+	// @Test
 	public void sendRMAReceiveRequest_JSON() {
 		initailRMACaller(Content.MEDIA_TYPE.JSON);
 	}
@@ -54,14 +54,14 @@ public class RMAReceiveCallerTest {
 			call = RMAReceiveCaller.buildJSON();
 		}
 
-		RMAReceiveRequest request = new RMAReceiveRequest();
-		request.setOperationType("ReceiveRMARequest");
+		ReceiveRMARequest request = new ReceiveRMARequest();
+		// request.setOperationType("ReceiveRMARequest");
 		request.setRequestBody(getBody());
 
 		int rsStatus = 200;
-		RMAReceiveResponse response = new RMAReceiveResponse();
+		ReceiveRMAResponse response = new ReceiveRMAResponse();
 		try {
-			response = call.sendRMAReceiveRequest("307", request);
+			response = call.sendRMAReceiveRequest(request, "307");
 		} catch (NeweggException e) {
 			rsStatus = e.status();
 
@@ -75,12 +75,14 @@ public class RMAReceiveCallerTest {
 
 		} finally {
 			if (Variables.SimulationEnabled)
-				assertTrue("RMAReceiveCaller.sendRMAReceiveRequest [" + type + "] command fail (Status:" + rsStatus + ").", "true".equals(response.getIsSuccess()));
+				assertTrue(
+						"RMAReceiveCaller.sendRMAReceiveRequest [" + type + "] command fail (Status:" + rsStatus + ").",
+						"true".equals(response.getIsSuccess()));
 		}
 	}
 
-	private RMAReceiveRequest.RequestBody getBody() {
-		RMAReceiveRequest.RequestBody body = new RMAReceiveRequest.RequestBody();
+	private ReceiveRMARequest.RequestBody getBody() {
+		ReceiveRMARequest.RequestBody body = new ReceiveRMARequest.RequestBody();
 
 		ReceiveRMAInfo receiveInfo = new ReceiveRMAInfo();
 		receiveInfo.setRmaNumber(38873480);

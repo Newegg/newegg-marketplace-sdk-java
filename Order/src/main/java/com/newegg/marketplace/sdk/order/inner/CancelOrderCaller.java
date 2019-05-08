@@ -54,14 +54,23 @@ public interface CancelOrderCaller {
 			CancelOrderRequest body);
 	
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default CancelOrderResponse sendCancelOrderRequest(CancelOrderRequest body) {
+	default CancelOrderResponse sendCancelOrderRequest(CancelOrderRequest body,String orderNumber,String version) {
 		switch(Variables.MediaType) {
-		case JSON:			
-			return sendCancelOrderRequestJSON(Variables.orderNumber, Content.SellerID, Variables.version, body);
+		case JSON:		
+			if(Variables.SimulationEnabled) {
+				
+				return sendCancelOrderRequestJSON("123456", Content.SellerID, null, body);
+			}else {
+				return sendCancelOrderRequestJSON(orderNumber, Content.SellerID, version, body);
+			}
 			
-		case XML:			
-			return sendCancelOrderRequestXML(Variables.orderNumber, Content.SellerID, Variables.version, body);	
-			
+		case XML:
+			if(Variables.SimulationEnabled) {
+				
+				return sendCancelOrderRequestXML("123456", Content.SellerID, null, body);
+			}else {
+				return sendCancelOrderRequestXML(orderNumber, Content.SellerID, version, body);	
+			}
 		default:
 			throw new RuntimeException("Never Happened!");
 		}

@@ -13,8 +13,8 @@ import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.order.OrderConfig;
 import com.newegg.marketplace.sdk.order.RequireSetting;
 import com.newegg.marketplace.sdk.order.Variables;
-import com.newegg.marketplace.sdk.order.model.GetAddOrderInfoRequest;
-import com.newegg.marketplace.sdk.order.model.GetAddOrderInfoResponse;
+import com.newegg.marketplace.sdk.order.model.GetAdditionalOrderInformationRequest;
+import com.newegg.marketplace.sdk.order.model.GetAdditionalOrderInformationResponse;
 
 public class AdditionalOrderInforCallerTest {
 
@@ -23,12 +23,12 @@ public class AdditionalOrderInforCallerTest {
 		APIConfig.load(OrderConfig.class);
 	}
 	
-	private GetAddOrderInfoRequest buildAdditionalOrderInforRequest(PLATFORM p) {
-		GetAddOrderInfoRequest request = new GetAddOrderInfoRequest();
-		GetAddOrderInfoRequest.RequestBody body =  new GetAddOrderInfoRequest.RequestBody();
-		GetAddOrderInfoRequest.RequestBody.RequestCriteria criteria = new GetAddOrderInfoRequest.RequestBody.RequestCriteria();
-		GetAddOrderInfoRequest.RequestBody.RequestCriteria.OrderNumberList list =
-				new GetAddOrderInfoRequest.RequestBody.RequestCriteria.OrderNumberList();
+	private GetAdditionalOrderInformationRequest buildAdditionalOrderInforRequest(PLATFORM p) {
+		GetAdditionalOrderInformationRequest request = new GetAdditionalOrderInformationRequest();
+		GetAdditionalOrderInformationRequest.RequestBody body =  new GetAdditionalOrderInformationRequest.RequestBody();
+		GetAdditionalOrderInformationRequest.RequestBody.RequestCriteria criteria = new GetAdditionalOrderInformationRequest.RequestBody.RequestCriteria();
+		GetAdditionalOrderInformationRequest.RequestBody.RequestCriteria.OrderNumberList list =
+				new GetAdditionalOrderInformationRequest.RequestBody.RequestCriteria.OrderNumberList();
 		
 		switch (p) {
 		case USA:
@@ -62,9 +62,9 @@ public class AdditionalOrderInforCallerTest {
 	}
 	
 	private void sendAdditionalOrderInfo(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		GetAddOrderInfoResponse response = null;
+		GetAdditionalOrderInformationResponse response = null;
 		AdditionalOrderInforCaller sender = null;
-		GetAddOrderInfoRequest request = null;
+		GetAdditionalOrderInformationRequest request = null;
 		
 		boolean sim = Variables.SimulationEnabled;
 		

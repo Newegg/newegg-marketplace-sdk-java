@@ -13,10 +13,10 @@ import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.report.ReportConfig;
 import com.newegg.marketplace.sdk.report.RequireSetting;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.model.get.ItemLookupRequest;
-import com.newegg.marketplace.sdk.report.model.get.ItemLookupResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SItemLookupRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SItemLookupResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetItemLookupReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetItemLookupReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.ItemLookupRequest;
+import com.newegg.marketplace.sdk.report.model.submit.ItemLookupResponse;
 
 public class ItemLookupCallerTest {
 	
@@ -25,10 +25,10 @@ public class ItemLookupCallerTest {
 		APIConfig.load(ReportConfig.class);
 	}
 	
-	private ItemLookupRequest buildGetItemLookupRequest(PLATFORM p) {
-		ItemLookupRequest request = new ItemLookupRequest();
-		ItemLookupRequest.RequestBody body = new ItemLookupRequest.RequestBody();
-		ItemLookupRequest.RequestBody.PageInfo page = new ItemLookupRequest.RequestBody.PageInfo();
+	private GetItemLookupReportRequest buildGetItemLookupRequest(PLATFORM p) {
+		GetItemLookupReportRequest request = new GetItemLookupReportRequest();
+		GetItemLookupReportRequest.RequestBody body = new GetItemLookupReportRequest.RequestBody();
+		GetItemLookupReportRequest.RequestBody.PageInfo page = new GetItemLookupReportRequest.RequestBody.PageInfo();
 		
 		switch (p) {
 		case USA:
@@ -60,14 +60,14 @@ public class ItemLookupCallerTest {
 		return request;
 	}
 	
-	private SItemLookupRequest buildSubmitItemLookupRequest(PLATFORM p) {
-		SItemLookupRequest submitRequest = new SItemLookupRequest();
-		SItemLookupRequest.RequestBody submitBody = new SItemLookupRequest.RequestBody();
-		SItemLookupRequest.RequestBody.RequestCriteria critera = 
-				new SItemLookupRequest.RequestBody.RequestCriteria();
+	private ItemLookupRequest buildSubmitItemLookupRequest(PLATFORM p) {
+		ItemLookupRequest submitRequest = new ItemLookupRequest();
+		ItemLookupRequest.RequestBody submitBody = new ItemLookupRequest.RequestBody();
+		ItemLookupRequest.RequestBody.RequestCriteria critera = 
+				new ItemLookupRequest.RequestBody.RequestCriteria();
 		
-		SItemLookupRequest.RequestBody.RequestCriteria.Item items = 
-				new SItemLookupRequest.RequestBody.RequestCriteria.Item();
+		ItemLookupRequest.RequestBody.RequestCriteria.Item items = 
+				new ItemLookupRequest.RequestBody.RequestCriteria.Item();
 		
 		switch (p) {
 		case USA:
@@ -101,8 +101,8 @@ public class ItemLookupCallerTest {
 	}
 	
 	private void sendGetItemLookup(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		ItemLookupResponse response = null;
-		ItemLookupRequest request = null;
+		GetItemLookupReportResponse response = null;
+		GetItemLookupReportRequest request = null;
 		ItemLookupCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -129,8 +129,8 @@ public class ItemLookupCallerTest {
 	}
 	
 	private void sendSubmitItemLookup(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		SItemLookupResponse response = null;
-		SItemLookupRequest request = null;
+		ItemLookupResponse response = null;
+		ItemLookupRequest request = null;
 		ItemLookupCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		

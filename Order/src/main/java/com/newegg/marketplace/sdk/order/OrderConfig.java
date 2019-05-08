@@ -48,8 +48,6 @@ public class OrderConfig extends APIConfig {
 		Variables.Retryer = new Retryer.Default(config.getInt("newegg.order.retry.period"),
 				config.getInt("newegg.order.retry.maxperiod"), config.getInt("newegg.order.retry.maxattempts"));
 		Variables.LogLevel = Logger.Level.valueOf(config.getString("newegg.order.loglevel"));
-		Variables.orderNumber = config.getString("newegg.order.ordernumber");
-		Variables.version = config.getString("newegg.order.version");
 	}
 	
 	

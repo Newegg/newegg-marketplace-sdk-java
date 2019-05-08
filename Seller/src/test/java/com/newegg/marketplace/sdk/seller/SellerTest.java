@@ -13,9 +13,9 @@ import org.junit.Test;
 import com.newegg.marketplace.sdk.common.APIConfig;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.PlatformException;
-import com.newegg.marketplace.sdk.seller.model.GetIndustryResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSellerAccountStatusResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryRequestV2;
+import com.newegg.marketplace.sdk.seller.model.GetIndustryListResponse;
+import com.newegg.marketplace.sdk.seller.model.SellerStatusCheckResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryRequest;
 
 public class SellerTest {
 
@@ -28,7 +28,7 @@ public class SellerTest {
 	@Test
 	public void testGetSellerAccountStatus() {
 		SellerCall s=new SellerCall();
-		GetSellerAccountStatusResponse r=s.sellerStatusCheck();
+		SellerStatusCheckResponse r=s.sellerStatusCheck();
 		assertTrue(r.getIsSuccess());
 		assertTrue("Test_SandBox_MKTPLS".equals(r.getResponseBody().getSellerName()));
 	}
@@ -36,9 +36,8 @@ public class SellerTest {
 	
 	@Test
 	public void testGetIndustryList(){
-		Variables.SimulationEnabled=true;
 		SellerCall s=new SellerCall();
-		GetIndustryResponse r=s.getIndustryList(Optional.empty());
+		GetIndustryListResponse r=s.getIndustryList(Optional.empty());
 		//GetIndustryResponse r=s.GetIndustryList(Optional.of("MI"));
 		assertTrue(r.getIsSuccess());
 	}
@@ -49,7 +48,7 @@ public class SellerTest {
 		Content.PLATFORM tmp=Content.Platform;		
 		Content.Platform=Content.PLATFORM.CAN;
 		SellerCall s=new SellerCall();
-		GetSubcatetoryRequestV2 body =new GetSubcatetoryRequestV2();
+		GetSubcategoryStatusForInternationalCountryRequest body =new GetSubcategoryStatusForInternationalCountryRequest();
 		try {
 			s.getSubcategoryStatusForInternationalCountry(body);
 		}catch(PlatformException ex) {

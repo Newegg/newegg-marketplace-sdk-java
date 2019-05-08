@@ -13,7 +13,7 @@ import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.order.OrderConfig;
 import com.newegg.marketplace.sdk.order.RequireSetting;
 import com.newegg.marketplace.sdk.order.Variables;
-import com.newegg.marketplace.sdk.order.model.SBNOrderCancellationResponse;
+import com.newegg.marketplace.sdk.order.model.GetSBNOrderCancellationRequestResultResponse;
 
 public class SBNOrderCancellationCallerTest {
 	@BeforeClass
@@ -21,8 +21,8 @@ public class SBNOrderCancellationCallerTest {
 		APIConfig.load(OrderConfig.class);
 	}
 	
-	private void sendSBNOrderCancellation(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		SBNOrderCancellationResponse response = null;
+	private void sendSBNOrderCancellation(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm,String orderNumber) {
+		GetSBNOrderCancellationRequestResultResponse response = null;
 		SBNOrderCancellationCaller sender = null;
 		
 		boolean sim = Variables.SimulationEnabled;
@@ -39,7 +39,7 @@ public class SBNOrderCancellationCallerTest {
 			else
 				sender = SBNOrderCancellationCaller.buildJSON();
 			
-			response = sender.sendSBNOrderCancellationCallerRequest();
+			response = sender.sendSBNOrderCancellationCallerRequest(orderNumber);
 			assertTrue("true".equals(response.getIsSuccess()));
 		} catch(NeweggException e) {
 			RequireSetting.log.info("Zack-Test NeweggException happened");
@@ -54,27 +54,23 @@ public class SBNOrderCancellationCallerTest {
 		/*SBNOrderCancellationCaller call = SBNOrderCancellationCaller.buildXML();
 		SBNOrderCancellationResponse response = call.sendSBNOrderCancellationCallerRequest();
 		assertTrue("true".equals(response.getIsSuccess()));*/
-		
-		Variables.orderNumber = "138120116"; 
+				
 		RequireSetting.authKeySetting("A006");
-		sendSBNOrderCancellation(false, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendSBNOrderCancellation(false, MEDIA_TYPE.XML, PLATFORM.USA,"138120116");
 		
-		// CAN
-		Variables.orderNumber = "279176564"; 
+		// CAN		
 		RequireSetting.authKeySetting("A3TV");
-		sendSBNOrderCancellation(false, MEDIA_TYPE.XML, PLATFORM.CAN);
+		sendSBNOrderCancellation(false, MEDIA_TYPE.XML, PLATFORM.CAN,"279176564");
 		
 		// B2B
-		Variables.orderNumber = "1233511920"; 
 		RequireSetting.authKeySetting("V047");
-		sendSBNOrderCancellation(false, MEDIA_TYPE.XML, PLATFORM.USB);
+		sendSBNOrderCancellation(false, MEDIA_TYPE.XML, PLATFORM.USB,"1233511920");
 	}
 	
 	@Test
-	public void testSendSBNOrderCancellationCallerRequest_XML_MOCK() {
-		Variables.orderNumber = "138120116"; 
+	public void testSendSBNOrderCancellationCallerRequest_XML_MOCK() {		
 		RequireSetting.authKeySetting("A006");
-		sendSBNOrderCancellation(true, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendSBNOrderCancellation(true, MEDIA_TYPE.XML, PLATFORM.USA,"138120116");
 	}
 	
 	//@Test
@@ -83,26 +79,24 @@ public class SBNOrderCancellationCallerTest {
 		SBNOrderCancellationResponse response = call.sendSBNOrderCancellationCallerRequest();
 		assertTrue("true".equals(response.getIsSuccess()));*/
 		
-		Variables.orderNumber = "138120116"; 
+	
 		RequireSetting.authKeySetting("A006");
-		sendSBNOrderCancellation(false, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendSBNOrderCancellation(false, MEDIA_TYPE.JSON, PLATFORM.USA,"138120116");
 		
 		// CAN
-		Variables.orderNumber = "279176564"; 
 		RequireSetting.authKeySetting("A3TV");
-		sendSBNOrderCancellation(false, MEDIA_TYPE.JSON, PLATFORM.CAN);
+		sendSBNOrderCancellation(false, MEDIA_TYPE.JSON, PLATFORM.CAN,"279176564");
 		
 		// B2B
-		Variables.orderNumber = "1233511920"; 
 		RequireSetting.authKeySetting("V047");
-		sendSBNOrderCancellation(false, MEDIA_TYPE.JSON, PLATFORM.USB);
+		sendSBNOrderCancellation(false, MEDIA_TYPE.JSON, PLATFORM.USB,"1233511920");
 	}
 	
 	//@Test
 	public void testSendSBNOrderCancellationCallerRequest_JSON_MOCK() {
-		Variables.orderNumber = "138120116"; 
+	
 		RequireSetting.authKeySetting("A006");
-		sendSBNOrderCancellation(false, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendSBNOrderCancellation(false, MEDIA_TYPE.JSON, PLATFORM.USA,"138120116");
 	}
 
 }

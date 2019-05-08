@@ -8,17 +8,17 @@ import com.newegg.marketplace.sdk.common.PlatformException;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.seller.inner.SellerCaller;
 import com.newegg.marketplace.sdk.seller.inner.SubcategoryCaller;
-import com.newegg.marketplace.sdk.seller.model.GetIndustryResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSchemaRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSellerAccountStatusResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValueRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValueResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryPropertiesRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryPropertiesResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryRequestV2;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryResponseV2;
+import com.newegg.marketplace.sdk.seller.model.GetIndustryListResponse;
+import com.newegg.marketplace.sdk.seller.model.DownloadFeedSchemaRequest;
+import com.newegg.marketplace.sdk.seller.model.SellerStatusCheckResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertiesRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertiesResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryResponse;
 
 /**
 Copyright (c) 2000-present, Newegg Inc.
@@ -74,9 +74,9 @@ public class SellerCall {
 	 * Additional for Newegg.com, it includes the seller’s warehouse location and shipping destination information.
 	 * Only for USA,CAN
 	 * </pre>
-	 * @return {@linkplain GetSellerAccountStatusResponse}
+	 * @return {@linkplain SellerStatusCheckResponse}
 	 */
-	public GetSellerAccountStatusResponse sellerStatusCheck() {
+	public SellerStatusCheckResponse sellerStatusCheck() {
 		return caller.sellerStatus();
 	}
 	
@@ -86,9 +86,9 @@ public class SellerCall {
 	 * Response contains Industry Code and Industry Name.
 	 * </pre> 
 	 * @param industryCode Optional.empty() for none,or  Optional.of("XX") 
-	 * @return {@linkplain GetIndustryResponse}  
+	 * @return {@linkplain GetIndustryListResponse}  
 	 */
-	public GetIndustryResponse getIndustryList(Optional<String> industryCode) {
+	public GetIndustryListResponse getIndustryList(Optional<String> industryCode) {
 		return caller.getIndustryList(industryCode.isPresent()? industryCode.get():"");
 	}
 	
@@ -97,10 +97,10 @@ public class SellerCall {
 	 * Download the schema of specified feed type. 
 	 * You can download schema files for Item Creation, Inventory Update or Order Shipping.
 	 * </pre>
-	 * @param body {@linkplain GetSchemaRequest} 
+	 * @param body {@linkplain DownloadFeedSchemaRequest} 
 	 * @return {@linkplain File}  nullable
 	 */
-	public File downloadFeedSchema(GetSchemaRequest body) {
+	public File downloadFeedSchema(DownloadFeedSchemaRequest body) {
 		return downloadCaller.downloadFeedSchema(body);
 	}
 	
@@ -109,10 +109,10 @@ public class SellerCall {
 	 * Get the subcategory status for the specified seller account. 
 	 * Subcategory is either enabled or not enabled for a seller.
 	 * </pre>
-	 * @param body {@linkplain GetSubcatetoryRequest} 
-	 * @return {@linkplain GetSubcatetoryResponse} 
+	 * @param body {@linkplain GetSubcategoryStatusRequest} 
+	 * @return {@linkplain GetSubcategoryStatusResponse} 
 	 */
-	public GetSubcatetoryResponse getSubcategoryStatus(GetSubcatetoryRequest body) {
+	public GetSubcategoryStatusResponse getSubcategoryStatus(GetSubcategoryStatusRequest body) {
 		return subcategoryCaller.getSubcategoryStatus(body);
 	}
 
@@ -123,10 +123,10 @@ public class SellerCall {
 	 * 
 	 * Only for USA.
 	 * </pre>
-	 * @param body {@linkplain GetSubcatetoryRequestV2} 
-	 * @return {@linkplain GetSubcatetoryResponseV2} 
+	 * @param body {@linkplain GetSubcategoryStatusForInternationalCountryRequest} 
+	 * @return {@linkplain GetSubcategoryStatusForInternationalCountryResponse} 
 	 */
-	public GetSubcatetoryResponseV2 getSubcategoryStatusForInternationalCountry(GetSubcatetoryRequestV2 body) {
+	public GetSubcategoryStatusForInternationalCountryResponse getSubcategoryStatusForInternationalCountry(GetSubcategoryStatusForInternationalCountryRequest body) {
 		if(Content.Platform==Content.PLATFORM.USA)
 			return subcategoryCaller.getSubcategory4InternationalCountry(body);
 		else throw new PlatformException();
@@ -134,19 +134,19 @@ public class SellerCall {
 	
 	/**
 	 * Get the subcategory properties for the specified subcategory.
-	 * @param body {@linkplain GetSubcatetoryPropertiesRequest}
-	 * @return {@linkplain GetSubcatetoryPropertiesResponse} 
+	 * @param body {@linkplain GetSubcategoryPropertiesRequest}
+	 * @return {@linkplain GetSubcategoryPropertiesResponse} 
 	 */
-	public GetSubcatetoryPropertiesResponse getSubcategoryProperties(GetSubcatetoryPropertiesRequest body) {
+	public GetSubcategoryPropertiesResponse getSubcategoryProperties(GetSubcategoryPropertiesRequest body) {
 		return subcategoryCaller.getSubcategoryProperties(body);
 	}
 	
 	/**
 	 * Get the subcategory property value for the specified property.
-	 * @param body {@linkplain GetSubcategoryPropertyValueRequest}
-	 * @return {@linkplain GetSubcategoryPropertyValueResponse} 
+	 * @param body {@linkplain GetSubcategoryPropertyValuesRequest}
+	 * @return {@linkplain GetSubcategoryPropertyValuesResponse} 
 	 */
-	public GetSubcategoryPropertyValueResponse getSubcategoryPropertyValues(GetSubcategoryPropertyValueRequest body) {
+	public GetSubcategoryPropertyValuesResponse getSubcategoryPropertyValues(GetSubcategoryPropertyValuesRequest body) {
 		return subcategoryCaller.getSubcategoryPropertyValues(body);
 	}
 }

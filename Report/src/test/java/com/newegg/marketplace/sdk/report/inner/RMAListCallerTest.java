@@ -13,10 +13,10 @@ import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.report.ReportConfig;
 import com.newegg.marketplace.sdk.report.RequireSetting;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.model.get.RMAListRequest;
-import com.newegg.marketplace.sdk.report.model.get.RMAListResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SRMAListRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SRMAListResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetRMAListReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetRMAListReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitRMAListReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitRMAListReportResponse;
 
 public class RMAListCallerTest {
 		 
@@ -25,10 +25,10 @@ public class RMAListCallerTest {
 		APIConfig.load(ReportConfig.class);
 	}
 	
-	private RMAListRequest buildGetRMAListRequest(PLATFORM p) {
-		RMAListRequest request = new RMAListRequest();
-		RMAListRequest.RequestBody body = new RMAListRequest.RequestBody();
-		RMAListRequest.RequestBody.PageInfo page = new RMAListRequest.RequestBody.PageInfo();
+	private GetRMAListReportRequest buildGetRMAListRequest(PLATFORM p) {
+		GetRMAListReportRequest request = new GetRMAListReportRequest();
+		GetRMAListReportRequest.RequestBody body = new GetRMAListReportRequest.RequestBody();
+		GetRMAListReportRequest.RequestBody.PageInfo page = new GetRMAListReportRequest.RequestBody.PageInfo();
 		
 		switch (p) {
 		case USA:
@@ -60,11 +60,11 @@ public class RMAListCallerTest {
 		return request;
 	}
 	
-	private SRMAListRequest buildSubmitRMAListRequest(PLATFORM p) {
-		SRMAListRequest submitRequest = new SRMAListRequest();
-		SRMAListRequest.RequestBody submitBody = new SRMAListRequest.RequestBody();
-		SRMAListRequest.RequestBody.RMAListReportCriteria criteria = new
-				SRMAListRequest.RequestBody.RMAListReportCriteria();
+	private SubmitRMAListReportRequest buildSubmitRMAListRequest(PLATFORM p) {
+		SubmitRMAListReportRequest submitRequest = new SubmitRMAListReportRequest();
+		SubmitRMAListReportRequest.RequestBody submitBody = new SubmitRMAListReportRequest.RequestBody();
+		SubmitRMAListReportRequest.RequestBody.RMAListReportCriteria criteria = new
+				SubmitRMAListReportRequest.RequestBody.RMAListReportCriteria();
 		
 		switch (p) {
 		case USA:
@@ -109,9 +109,9 @@ public class RMAListCallerTest {
 		return submitRequest;
 	}
 	
-	private void sendGetRMAList(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		RMAListResponse response = null;
-		RMAListRequest request = null;
+	private void sendGetRMAList(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm,String version) {
+		GetRMAListReportResponse response = null;
+		GetRMAListReportRequest request = null;
 		RMAListCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -127,7 +127,7 @@ public class RMAListCallerTest {
 			else
 				sender = RMAListCaller.buildJSON();
 			
-			response = sender.sendRMAListRequest(request);
+			response = sender.sendRMAListRequest(request,version);
 			assertTrue("true".equals(response.getIsSuccess()));
 		} catch(NeweggException e) {
 			RequireSetting.log.info("Zack-Test NeweggException happened");
@@ -138,8 +138,8 @@ public class RMAListCallerTest {
 	}
 	
 	private void sendSubmitRMAList(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		SRMAListResponse response = null;
-		SRMAListRequest request = null;
+		SubmitRMAListReportResponse response = null;
+		SubmitRMAListReportRequest request = null;
 		RMAListCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -168,19 +168,19 @@ public class RMAListCallerTest {
 	@Test
 	public void testSendGetRMAListRequest_XML() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 306, 307, 309
+		//Variables.version = "306"; // 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetRMAList(false, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendGetRMAList(false, MEDIA_TYPE.XML, PLATFORM.USA,"306");
 		
 		RequireSetting.authKeySetting("A3TV");
-		Variables.version = "305"; // 305, 309
+		//Variables.version = "305"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetRMAList(false, MEDIA_TYPE.XML, PLATFORM.CAN);
+		sendGetRMAList(false, MEDIA_TYPE.XML, PLATFORM.CAN,"305");
 		
 		RequireSetting.authKeySetting("A44S");
-		Variables.version = "309"; // 305, 309
+		//Variables.version = "309"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetRMAList(false, MEDIA_TYPE.XML, PLATFORM.USB);
+		sendGetRMAList(false, MEDIA_TYPE.XML, PLATFORM.USB,"309");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -188,9 +188,9 @@ public class RMAListCallerTest {
 	@Test
 	public void testSendGetRMAListRequest_XML_MOCK() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 306, 307, 309
+		//Variables.version = "306"; // 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetRMAList(true, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendGetRMAList(true, MEDIA_TYPE.XML, PLATFORM.USA,"306");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -198,17 +198,17 @@ public class RMAListCallerTest {
 	@Test
 	public void testSendSubmitRMAListRequest_XML() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 306, 307, 309
+		//Variables.version = "306"; // 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitRMAList(false, MEDIA_TYPE.XML, PLATFORM.USA);
 		
 		RequireSetting.authKeySetting("A3TV");
-		Variables.version = "305"; // 305, 309
+		//Variables.version = "305"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitRMAList(false, MEDIA_TYPE.XML, PLATFORM.CAN);
 		
 		RequireSetting.authKeySetting("A44S");
-		Variables.version = "309"; // 305, 309
+		//Variables.version = "309"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitRMAList(false, MEDIA_TYPE.XML, PLATFORM.USB);
 		
@@ -218,7 +218,7 @@ public class RMAListCallerTest {
 	@Test
 	public void testSendSubmitRMAListRequest_XML_MOCK() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 306, 307, 309
+		//Variables.version = "306"; // 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitRMAList(true, MEDIA_TYPE.XML, PLATFORM.USA);
 		
@@ -229,19 +229,19 @@ public class RMAListCallerTest {
 	//@Test
 	public void testSendGetRMAListRequest_JSON() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 306, 307, 309
+		//Variables.version = "306"; // 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetRMAList(false, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendGetRMAList(false, MEDIA_TYPE.JSON, PLATFORM.USA,"306");
 		
 		RequireSetting.authKeySetting("A3TV");
-		Variables.version = "305"; // 305, 309
+		//Variables.version = "305"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetRMAList(false, MEDIA_TYPE.JSON, PLATFORM.CAN);
+		sendGetRMAList(false, MEDIA_TYPE.JSON, PLATFORM.CAN,"305");
 		
 		RequireSetting.authKeySetting("A44S");
-		Variables.version = "309"; // 305, 309
+		//Variables.version = "309"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetRMAList(false, MEDIA_TYPE.JSON, PLATFORM.USB);
+		sendGetRMAList(false, MEDIA_TYPE.JSON, PLATFORM.USB,"309");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -249,9 +249,9 @@ public class RMAListCallerTest {
 	//@Test
 	public void testSendGetRMAListRequest_JSON_MOCK() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 306, 307, 309
+		//Variables.version = "306"; // 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetRMAList(true, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendGetRMAList(true, MEDIA_TYPE.JSON, PLATFORM.USA,"306");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -259,17 +259,17 @@ public class RMAListCallerTest {
 	//@Test
 	public void testSendSubmitRMAListRequest_JSON() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 306, 307, 309
+		//Variables.version = "306"; // 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitRMAList(false, MEDIA_TYPE.JSON, PLATFORM.USA);
 		
 		RequireSetting.authKeySetting("A3TV");
-		Variables.version = "305"; // 305, 309
+		//Variables.version = "305"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitRMAList(false, MEDIA_TYPE.JSON, PLATFORM.CAN);
 		
 		RequireSetting.authKeySetting("A44S");
-		Variables.version = "309"; // 305, 309
+		//Variables.version = "309"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitRMAList(false, MEDIA_TYPE.JSON, PLATFORM.USB);
 		
@@ -279,7 +279,7 @@ public class RMAListCallerTest {
 	//@Test
 	public void testSendSubmitRMAListRequest_JSON_MOCK() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 306, 307, 309
+		//Variables.version = "306"; // 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitRMAList(true, MEDIA_TYPE.JSON, PLATFORM.USA);
 		

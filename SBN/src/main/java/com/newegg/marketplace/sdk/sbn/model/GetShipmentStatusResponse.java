@@ -117,7 +117,7 @@ public class GetShipmentStatusResponse {
     protected boolean isSuccess;
     @XmlElement(name = "OperationType", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "GetShipmentStatusResponse";
     @XmlElement(name = "SellerID")
     @JsonProperty("SellerID")
     protected String sellerID;

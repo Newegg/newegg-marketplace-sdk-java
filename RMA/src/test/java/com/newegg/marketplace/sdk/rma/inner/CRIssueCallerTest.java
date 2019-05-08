@@ -12,8 +12,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.rma.RMAConfig;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.CRIssueRequest;
-import com.newegg.marketplace.sdk.rma.model.CRIssueResponse;
+import com.newegg.marketplace.sdk.rma.model.IssueCourtesyRefundRequest;
+import com.newegg.marketplace.sdk.rma.model.IssueCourtesyRefundResponse;
 
 public class CRIssueCallerTest {
 
@@ -56,12 +56,12 @@ public class CRIssueCallerTest {
 			call = CRIssueCaller.buildJSON();
 		}
 
-		CRIssueRequest request = new CRIssueRequest();
-		request.setOperationType("IssueCourtesyRefund");
+		IssueCourtesyRefundRequest request = new IssueCourtesyRefundRequest();
+		//request.setOperationType("IssueCourtesyRefund");
 		request.setRequestBody(getBody());
 
 		int rsStatus = 200;
-		CRIssueResponse response = new CRIssueResponse();
+		IssueCourtesyRefundResponse response = new IssueCourtesyRefundResponse();
 		try {
 			response = call.getCourtesyRefundIssueRequest(request);
 
@@ -82,9 +82,9 @@ public class CRIssueCallerTest {
 		}
 	}
 
-	private CRIssueRequest.RequestBody getBody() {
-		CRIssueRequest.RequestBody body = new CRIssueRequest.RequestBody();
-		CRIssueRequest.RequestBody.IssueCourtesyRefund issueRefund = new CRIssueRequest.RequestBody.IssueCourtesyRefund();
+	private IssueCourtesyRefundRequest.RequestBody getBody() {
+		IssueCourtesyRefundRequest.RequestBody body = new IssueCourtesyRefundRequest.RequestBody();
+		IssueCourtesyRefundRequest.RequestBody.IssueCourtesyRefund issueRefund = new IssueCourtesyRefundRequest.RequestBody.IssueCourtesyRefund();
 		issueRefund.setSourceSONumber(299395404);
 		issueRefund.setRefundReason(3);
 		issueRefund.setTotalRefundAmount(BigDecimal.valueOf(1));

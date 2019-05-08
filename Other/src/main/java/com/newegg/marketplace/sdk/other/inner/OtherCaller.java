@@ -5,8 +5,8 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.other.Variables;
-import com.newegg.marketplace.sdk.other.model.Domain;
-import com.newegg.marketplace.sdk.other.model.GetServiceStatusResponse;
+import com.newegg.marketplace.sdk.other.model.ServiceDomain;
+import com.newegg.marketplace.sdk.other.model.VerifyServiceStatusResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -37,13 +37,13 @@ public interface OtherCaller {
 
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("GET /{domain}/servicestatus?sellerid={sellerid}")
-	GetServiceStatusResponse verifyServiceStatusJSON(@Param("sellerid") String sellerID,@Param("domain") String domain);
+	VerifyServiceStatusResponse verifyServiceStatusJSON(@Param("sellerid") String sellerID,@Param("domain") String domain);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("GET /{domain}/servicestatus?sellerid={sellerid}")
-	GetServiceStatusResponse verifyServiceStatusXML(@Param("sellerid") String sellerID,@Param("domain") String domain);
+	VerifyServiceStatusResponse verifyServiceStatusXML(@Param("sellerid") String sellerID,@Param("domain") String domain);
 	
-	default GetServiceStatusResponse verifyServiceStatus(Domain domain) {
+	default VerifyServiceStatusResponse verifyServiceStatus(ServiceDomain domain) {
 		switch(Variables.MediaType){
 		case JSON:	
 			if(Variables.SimulationEnabled)

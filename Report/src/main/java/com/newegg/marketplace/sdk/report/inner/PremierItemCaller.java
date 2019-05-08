@@ -5,10 +5,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.PremierItemRequest;
-import com.newegg.marketplace.sdk.report.model.get.PremierItemResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SPremierItemRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SPremierItemResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetNeweggPremierItemReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetNeweggPremierItemReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.PremierItemReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.PremierItemReportResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -26,14 +26,14 @@ public interface PremierItemCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	PremierItemResponse sendPremierItemRequestJSON(@Param("sellerid") String sellerID, PremierItemRequest body);
+	GetNeweggPremierItemReportResponse sendPremierItemRequestJSON(@Param("sellerid") String sellerID, GetNeweggPremierItemReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	PremierItemResponse sendPremierItemRequestXML(@Param("sellerid") String sellerID, PremierItemRequest body);
+	GetNeweggPremierItemReportResponse sendPremierItemRequestXML(@Param("sellerid") String sellerID, GetNeweggPremierItemReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default PremierItemResponse sendPremierItemRequest(PremierItemRequest body) {
+	default GetNeweggPremierItemReportResponse sendPremierItemRequest(GetNeweggPremierItemReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendPremierItemRequestJSON(Content.SellerID, body);
@@ -50,14 +50,14 @@ public interface PremierItemCaller {
 	// submit command
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SPremierItemResponse sendSubmitPremierItemRequestJSON(@Param("sellerid") String sellerID, SPremierItemRequest body);
+	PremierItemReportResponse sendSubmitPremierItemRequestJSON(@Param("sellerid") String sellerID, PremierItemReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SPremierItemResponse sendSubmitPremierItemRequestXML(@Param("sellerid") String sellerID, SPremierItemRequest body);
+	PremierItemReportResponse sendSubmitPremierItemRequestXML(@Param("sellerid") String sellerID, PremierItemReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SPremierItemResponse sendSubmitPremierItemRequest(SPremierItemRequest body) {
+	default PremierItemReportResponse sendSubmitPremierItemRequest(PremierItemReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendSubmitPremierItemRequestJSON(Content.SellerID, body);

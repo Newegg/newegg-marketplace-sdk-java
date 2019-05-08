@@ -4,14 +4,14 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.seller.Variables;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValueRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValueResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryPropertiesRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryPropertiesResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryRequestV2;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcatetoryResponseV2;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertiesRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertiesResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -40,12 +40,12 @@ public interface SubcategoryCaller {
 
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /sellermgmt/seller/subcategory?sellerid={sellerid}")
-	GetSubcatetoryResponse getSubcategoryStatusJSON(@Param("sellerid") String sellerID,GetSubcatetoryRequest body);	
+	GetSubcategoryStatusResponse getSubcategoryStatusJSON(@Param("sellerid") String sellerID,GetSubcategoryStatusRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /sellermgmt/seller/subcategory?sellerid={sellerid}")
-	GetSubcatetoryResponse getSubcategoryStatusXML(@Param("sellerid") String sellerID,GetSubcatetoryRequest body);
+	GetSubcategoryStatusResponse getSubcategoryStatusXML(@Param("sellerid") String sellerID,GetSubcategoryStatusRequest body);
 	
-	default GetSubcatetoryResponse getSubcategoryStatus(GetSubcatetoryRequest body) {
+	default GetSubcategoryStatusResponse getSubcategoryStatus(GetSubcategoryStatusRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getSubcategoryStatusJSON(Content.SellerID,body);			
@@ -59,12 +59,12 @@ public interface SubcategoryCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /sellermgmt/seller/subcategory/V2?sellerid={sellerid}")
-	GetSubcatetoryResponseV2 getSubcategory4InternationalCountryJSON(@Param("sellerid") String sellerID,GetSubcatetoryRequestV2 body);	
+	GetSubcategoryStatusForInternationalCountryResponse getSubcategory4InternationalCountryJSON(@Param("sellerid") String sellerID,GetSubcategoryStatusForInternationalCountryRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /sellermgmt/seller/subcategory/V2?sellerid={sellerid}")
-	GetSubcatetoryResponseV2 getSubcategory4InternationalCountryXML(@Param("sellerid") String sellerID,GetSubcatetoryRequestV2 body);	
+	GetSubcategoryStatusForInternationalCountryResponse getSubcategory4InternationalCountryXML(@Param("sellerid") String sellerID,GetSubcategoryStatusForInternationalCountryRequest body);	
 	
-	default GetSubcatetoryResponseV2 getSubcategory4InternationalCountry(GetSubcatetoryRequestV2 body) {
+	default GetSubcategoryStatusForInternationalCountryResponse getSubcategory4InternationalCountry(GetSubcategoryStatusForInternationalCountryRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getSubcategory4InternationalCountryJSON(Content.SellerID,body);			
@@ -77,12 +77,12 @@ public interface SubcategoryCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /sellermgmt/seller/subcategoryproperty?sellerid={sellerid}")
-	GetSubcatetoryPropertiesResponse getSubcategoryPropertiesJSON(@Param("sellerid") String sellerID,GetSubcatetoryPropertiesRequest body);	
+	GetSubcategoryPropertiesResponse getSubcategoryPropertiesJSON(@Param("sellerid") String sellerID,GetSubcategoryPropertiesRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /sellermgmt/seller/subcategoryproperty?sellerid={sellerid}")
-	GetSubcatetoryPropertiesResponse getSubcategoryPropertiesXML(@Param("sellerid") String sellerID,GetSubcatetoryPropertiesRequest body);
+	GetSubcategoryPropertiesResponse getSubcategoryPropertiesXML(@Param("sellerid") String sellerID,GetSubcategoryPropertiesRequest body);
 	
-	default GetSubcatetoryPropertiesResponse getSubcategoryProperties(GetSubcatetoryPropertiesRequest body) {
+	default GetSubcategoryPropertiesResponse getSubcategoryProperties(GetSubcategoryPropertiesRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getSubcategoryPropertiesJSON(Content.SellerID,body);			
@@ -95,12 +95,12 @@ public interface SubcategoryCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /sellermgmt/seller/propertyvalue?sellerid={sellerid}")
-	GetSubcategoryPropertyValueResponse getSubcategoryPropertyValuesJSON(@Param("sellerid") String sellerID,GetSubcategoryPropertyValueRequest body);	
+	GetSubcategoryPropertyValuesResponse getSubcategoryPropertyValuesJSON(@Param("sellerid") String sellerID,GetSubcategoryPropertyValuesRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /sellermgmt/seller/propertyvalue?sellerid={sellerid}")
-	GetSubcategoryPropertyValueResponse getSubcategoryPropertyValuesXML(@Param("sellerid") String sellerID,GetSubcategoryPropertyValueRequest body);
+	GetSubcategoryPropertyValuesResponse getSubcategoryPropertyValuesXML(@Param("sellerid") String sellerID,GetSubcategoryPropertyValuesRequest body);
 	
-	default GetSubcategoryPropertyValueResponse getSubcategoryPropertyValues(GetSubcategoryPropertyValueRequest body) {
+	default GetSubcategoryPropertyValuesResponse getSubcategoryPropertyValues(GetSubcategoryPropertyValuesRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getSubcategoryPropertyValuesJSON(Content.SellerID,body);			

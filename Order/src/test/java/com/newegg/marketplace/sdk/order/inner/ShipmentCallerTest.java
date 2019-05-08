@@ -4,25 +4,22 @@ import static org.junit.Assert.assertTrue;
 
 import javax.xml.bind.JAXBException;
 
-import org.apache.logging.log4j.LogManager;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.newegg.marketplace.sdk.common.APIConfig;
 import com.newegg.marketplace.sdk.common.Content;
-import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.common.Content.PLATFORM;
+import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.order.OrderConfig;
 import com.newegg.marketplace.sdk.order.RequireSetting;
 import com.newegg.marketplace.sdk.order.SerializationObjectParser;
 import com.newegg.marketplace.sdk.order.Variables;
-import com.newegg.marketplace.sdk.order.model.CancelOrderRequest;
-import com.newegg.marketplace.sdk.order.model.CancelOrderResponse;
 import com.newegg.marketplace.sdk.order.model.ShipOrderRequest;
-import com.newegg.marketplace.sdk.order.model.ShipOrderWrapper;
+import com.newegg.marketplace.sdk.order.model.ShipOrderRequestJSON;
+import com.newegg.marketplace.sdk.order.model.ShipOrderResponse;
 import com.newegg.marketplace.sdk.order.model.ShipmentRequest;
-import com.newegg.marketplace.sdk.order.model.ShipmentResponse;
 
 public class ShipmentCallerTest {
 	
@@ -64,21 +61,21 @@ public class ShipmentCallerTest {
 		return cdata;
 	}
 	
-	private ShipOrderRequest DummyRequestDataJSON() {
-		ShipOrderRequest newRequestObj = new ShipOrderRequest();
+	private ShipOrderRequestJSON DummyRequestDataJSON() {
+		ShipOrderRequestJSON newRequestObj = new ShipOrderRequestJSON();
 		
 		newRequestObj.setAction(2);
 		
-		ShipOrderRequest.Value.Shipment.PackageList.Package.ItemList[] itmList = 
-				new ShipOrderRequest.Value.Shipment.PackageList.Package.ItemList[2];
-		itmList[0] = new ShipOrderRequest.Value.Shipment.PackageList.Package.ItemList();
-		itmList[1] = new ShipOrderRequest.Value.Shipment.PackageList.Package.ItemList();
+		ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList[] itmList = 
+				new ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList[2];
+		itmList[0] = new ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList();
+		itmList[1] = new ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList();
 		
-		ShipOrderRequest.Value.Shipment.PackageList.Package.ItemList.Item[] rowItem = 
-				new ShipOrderRequest.Value.Shipment.PackageList.Package.ItemList.Item[3];
-		rowItem[0] = new ShipOrderRequest.Value.Shipment.PackageList.Package.ItemList.Item();
-		rowItem[1] = new ShipOrderRequest.Value.Shipment.PackageList.Package.ItemList.Item();
-		rowItem[2] = new ShipOrderRequest.Value.Shipment.PackageList.Package.ItemList.Item();	
+		ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList.Item[] rowItem = 
+				new ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList.Item[3];
+		rowItem[0] = new ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList.Item();
+		rowItem[1] = new ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList.Item();
+		rowItem[2] = new ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList.Item();	
 		
 		rowItem[0].setSellerPartNumber("A3WG11002378965412586");
 		rowItem[0].setShippedQty(1);
@@ -90,10 +87,10 @@ public class ShipmentCallerTest {
 		itmList[1].getItem().add(rowItem[1]);
 		itmList[1].getItem().add(rowItem[2]);
 		
-		ShipOrderRequest.Value.Shipment.PackageList.Package[] pkg = 
-				new ShipOrderRequest.Value.Shipment.PackageList.Package[2];
-		pkg[0] = new ShipOrderRequest.Value.Shipment.PackageList.Package();
-		pkg[1] = new ShipOrderRequest.Value.Shipment.PackageList.Package();
+		ShipOrderRequestJSON.Value.Shipment.PackageList.Package[] pkg = 
+				new ShipOrderRequestJSON.Value.Shipment.PackageList.Package[2];
+		pkg[0] = new ShipOrderRequestJSON.Value.Shipment.PackageList.Package();
+		pkg[1] = new ShipOrderRequestJSON.Value.Shipment.PackageList.Package();
 		
 		pkg[0].setTrackingNumber("alistestonly1");
 		pkg[0].setShipCarrier("Purolator");
@@ -104,27 +101,27 @@ public class ShipmentCallerTest {
 		pkg[1].setShipService("3-5");
 		pkg[1].setItemList(itmList[1]);
 		
-		ShipOrderRequest.Value.Shipment.PackageList pkgList = new ShipOrderRequest.Value.Shipment.PackageList();
+		ShipOrderRequestJSON.Value.Shipment.PackageList pkgList = new ShipOrderRequestJSON.Value.Shipment.PackageList();
 		pkgList.getPackage().add(pkg[0]);
 		pkgList.getPackage().add(pkg[1]);
 		
-		ShipOrderRequest.Value.Shipment ship = new ShipOrderRequest.Value.Shipment();
+		ShipOrderRequestJSON.Value.Shipment ship = new ShipOrderRequestJSON.Value.Shipment();
 		ship.setPackageList(pkgList);
 		
-		ShipOrderRequest.Value.Shipment.Header header = new ShipOrderRequest.Value.Shipment.Header();
+		ShipOrderRequestJSON.Value.Shipment.Header header = new ShipOrderRequestJSON.Value.Shipment.Header();
 		header.setSellerID("A006");
 		header.setSONumber(159243598);
 		ship.setHeader(header);
 		
-		ShipOrderRequest.Value values = new ShipOrderRequest.Value();
+		ShipOrderRequestJSON.Value values = new ShipOrderRequestJSON.Value();
 		values.setShipment(ship);
 		newRequestObj.setValue(values);
 		
 		return newRequestObj;
 	}
 	
-	private ShipOrderWrapper buildShipOrderRequest(PLATFORM p, String metadata) {
-		ShipOrderWrapper request = null;
+	private ShipOrderRequest buildShipOrderRequest(PLATFORM p, String metadata) {
+		ShipOrderRequest request = null;
 		SerializationObjectParser sop = new SerializationObjectParser();
 		
 		try {
@@ -158,12 +155,12 @@ public class ShipmentCallerTest {
 		return request;
 	}
 	
-	private void sendShipOrder(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		ShipmentResponse response = null;
-		ShipOrderWrapper request = null;
+	private void sendShipOrder(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm,String orderNumber) {
+		ShipOrderResponse response = null;
+		ShipOrderRequest request = null;
 		ShipmentCaller sender = null;
 		StringBuffer metadata = null;
-		ShipOrderRequest JSONRequestObj = null;
+		ShipOrderRequestJSON JSONRequestObj = null;
 		boolean sim = Variables.SimulationEnabled;
 		
 		Variables.MediaType = type;
@@ -178,11 +175,11 @@ public class ShipmentCallerTest {
 				metadata = DummyRequestData_XML();
 				request = buildShipOrderRequest(flatofrm, metadata.toString());
 				sender = ShipmentCaller.buildXML();
-				response = sender.sendShipmentRequest((ShipOrderWrapper)request);
+				response = sender.sendShipmentRequest((ShipOrderRequest)request,orderNumber,null);
 			} else {
 				JSONRequestObj = DummyRequestDataJSON();
 				sender = ShipmentCaller.buildJSON();
-				response = sender.sendShipmentRequest(JSONRequestObj);
+				response = sender.sendShipmentRequest(JSONRequestObj,orderNumber,null);
 			}
 			
 			assertTrue("true".equals(response.getIsSuccess()));
@@ -216,10 +213,10 @@ public class ShipmentCallerTest {
 		ShipmentResponse response = caller.sendShipmentRequest((ShipOrderWrapper)newRequest);
 		
 		assertTrue("true".equals(response.getIsSuccess()));*/
-		Variables.version = "304"; // only 304
-		Variables.orderNumber = "159243598"; // fake data will throw exception
+		
+		
 		RequireSetting.authKeySetting("A006");
-		sendShipOrder(false, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendShipOrder(false, MEDIA_TYPE.XML, PLATFORM.USA,"159243598");
 	}
 	
 	
@@ -232,18 +229,14 @@ public class ShipmentCallerTest {
 		ShipmentResponse response = caller.sendShipmentRequest(newRequestObj);
 		assertTrue("true".equals(response.getIsSuccess()));*/
 		
-		Variables.version = "304"; // only 304
-		Variables.orderNumber = "159243598"; // fake data will throw exception
 		RequireSetting.authKeySetting("A006");
-		sendShipOrder(false, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendShipOrder(false, MEDIA_TYPE.JSON, PLATFORM.USA,"159243598");
 	}
 	
 	@Test
 	public void testSendShipmentRequest_XML_MOCK() {
-		Variables.version = "304"; // only 304
-		Variables.orderNumber = "159243598"; // fake data will throw exception
 		RequireSetting.authKeySetting("A006");
-		sendShipOrder(true, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendShipOrder(true, MEDIA_TYPE.XML, PLATFORM.USA,"159243598");
 	}
 	
 	@Test

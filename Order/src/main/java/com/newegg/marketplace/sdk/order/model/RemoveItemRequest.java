@@ -105,9 +105,9 @@ public class RemoveItemRequest {
     @XmlElement(name = "IssueUser")
     @JsonProperty("IssueUser")
     protected String issueUser;
-    @XmlElement(name = "OperationType", required = true)
+    @XmlElement(name = "OperationType", defaultValue = "KillItemRequest", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "KillItemRequest";
     @XmlElement(name = "RequestBody", required = true)
     @JsonProperty("RequestBody")
     protected RemoveItemRequest.RequestBody requestBody;

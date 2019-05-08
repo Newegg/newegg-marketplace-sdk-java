@@ -4,14 +4,14 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.shipping.Variables;
-import com.newegg.marketplace.sdk.shipping.model.ShippingComfirmRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingComfirmResponse;
-import com.newegg.marketplace.sdk.shipping.model.ShippingDetailRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingDetailResponse;
-import com.newegg.marketplace.sdk.shipping.model.ShippingSubmitRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingSubmitResponse;
-import com.newegg.marketplace.sdk.shipping.model.ShippingVoidRequest;
-import com.newegg.marketplace.sdk.shipping.model.ShippingVoidResponse;
+import com.newegg.marketplace.sdk.shipping.model.ConfirmShipRequest;
+import com.newegg.marketplace.sdk.shipping.model.ConfirmShipResponse;
+import com.newegg.marketplace.sdk.shipping.model.GetShippingDetailRequest;
+import com.newegg.marketplace.sdk.shipping.model.GetShippingDetailResponse;
+import com.newegg.marketplace.sdk.shipping.model.SubmitShippingRequest;
+import com.newegg.marketplace.sdk.shipping.model.SubmitShippingResponse;
+import com.newegg.marketplace.sdk.shipping.model.VoidShippingRequest;
+import com.newegg.marketplace.sdk.shipping.model.VoidShippingResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -42,12 +42,12 @@ public interface ShipOPCaller {
 
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /shippingservice/shippinglabel/shippingrequest?sellerid={sellerid}")
-	ShippingSubmitResponse submitShippingRequestJSON(@Param("sellerid") String sellerID,ShippingSubmitRequest body);	
+	SubmitShippingResponse submitShippingRequestJSON(@Param("sellerid") String sellerID,SubmitShippingRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /shippingservice/shippinglabel/shippingrequest?sellerid={sellerid}")
-	ShippingSubmitResponse submitShippingRequestXML(@Param("sellerid") String sellerID,ShippingSubmitRequest body);
+	SubmitShippingResponse submitShippingRequestXML(@Param("sellerid") String sellerID,SubmitShippingRequest body);
 	
-	default ShippingSubmitResponse submitShippingRequest(ShippingSubmitRequest body) {
+	default SubmitShippingResponse submitShippingRequest(SubmitShippingRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return submitShippingRequestJSON(Content.SellerID,body);			
@@ -60,12 +60,12 @@ public interface ShipOPCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /shippingservice/shippinglabel/shippingdetail?sellerid={sellerid}")
-	ShippingDetailResponse getShippingRequestDetailJSON(@Param("sellerid") String sellerID,ShippingDetailRequest body);
+	GetShippingDetailResponse getShippingRequestDetailJSON(@Param("sellerid") String sellerID,GetShippingDetailRequest body);
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /shippingservice/shippinglabel/shippingdetail?sellerid={sellerid}")
-	ShippingDetailResponse getShippingRequestDetailXML(@Param("sellerid") String sellerID,ShippingDetailRequest body);
+	GetShippingDetailResponse getShippingRequestDetailXML(@Param("sellerid") String sellerID,GetShippingDetailRequest body);
 	
-	default ShippingDetailResponse getShippingRequestDetail(ShippingDetailRequest body) {
+	default GetShippingDetailResponse getShippingRequestDetail(GetShippingDetailRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getShippingRequestDetailJSON(Content.SellerID,body);			
@@ -78,12 +78,12 @@ public interface ShipOPCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /shippingservice/shippinglabel/confirmshippingrequest?sellerid={sellerid}")
-	ShippingComfirmResponse confirmShippingRequestJSON(@Param("sellerid") String sellerID,ShippingComfirmRequest body);
+	ConfirmShipResponse confirmShippingRequestJSON(@Param("sellerid") String sellerID,ConfirmShipRequest body);
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /shippingservice/shippinglabel/confirmshippingrequest?sellerid={sellerid}")
-	ShippingComfirmResponse confirmShippingRequestXML(@Param("sellerid") String sellerID,ShippingComfirmRequest body);
+	ConfirmShipResponse confirmShippingRequestXML(@Param("sellerid") String sellerID,ConfirmShipRequest body);
 	
-	default ShippingComfirmResponse confirmShippingRequest(ShippingComfirmRequest body) {
+	default ConfirmShipResponse confirmShippingRequest(ConfirmShipRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return confirmShippingRequestJSON(Content.SellerID,body);			
@@ -96,12 +96,12 @@ public interface ShipOPCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /shippingservice/shippinglabel/voidshippingrequest?sellerid={sellerid}")
-	ShippingVoidResponse voidShippingRequestJSON(@Param("sellerid") String sellerID,ShippingVoidRequest body);
+	VoidShippingResponse voidShippingRequestJSON(@Param("sellerid") String sellerID,VoidShippingRequest body);
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /shippingservice/shippinglabel/voidshippingrequest?sellerid={sellerid}")
-	ShippingVoidResponse voidShippingRequestXML(@Param("sellerid") String sellerID,ShippingVoidRequest body);
+	VoidShippingResponse voidShippingRequestXML(@Param("sellerid") String sellerID,VoidShippingRequest body);
 	
-	default ShippingVoidResponse voidShippingRequest(ShippingVoidRequest body) {
+	default VoidShippingResponse voidShippingRequest(VoidShippingRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return voidShippingRequestJSON(Content.SellerID,body);			

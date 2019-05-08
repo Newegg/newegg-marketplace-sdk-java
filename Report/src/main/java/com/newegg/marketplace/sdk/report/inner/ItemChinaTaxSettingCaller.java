@@ -5,10 +5,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.ItemChinaTaxSettingRequest;
-import com.newegg.marketplace.sdk.report.model.get.ItemChinaTaxSettingResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SItemChinaTaxSettingRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SItemChinaTaxSettingResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetTaxSettingReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetTaxSettingReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.ItemChinaTaxSettingReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.ItemChinaTaxSettingReportResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -37,14 +37,14 @@ limitations under the License.
 public interface ItemChinaTaxSettingCaller {
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	ItemChinaTaxSettingResponse sendItemChinaTaxSettingRequestJSON(@Param("sellerid") String sellerID, ItemChinaTaxSettingRequest body);
+	GetTaxSettingReportResponse sendItemChinaTaxSettingRequestJSON(@Param("sellerid") String sellerID, GetTaxSettingReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	ItemChinaTaxSettingResponse sendItemChinaTaxSettingRequestXML(@Param("sellerid") String sellerID, ItemChinaTaxSettingRequest body);
+	GetTaxSettingReportResponse sendItemChinaTaxSettingRequestXML(@Param("sellerid") String sellerID, GetTaxSettingReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default ItemChinaTaxSettingResponse sendItemChinaTaxSettingRequest(ItemChinaTaxSettingRequest body) {
+	default GetTaxSettingReportResponse sendItemChinaTaxSettingRequest(GetTaxSettingReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendItemChinaTaxSettingRequestJSON(Content.SellerID, body);
@@ -61,14 +61,14 @@ public interface ItemChinaTaxSettingCaller {
 	// submit command
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SItemChinaTaxSettingResponse sendSubmitItemChinaTaxSettingRequestJSON(@Param("sellerid") String sellerID, SItemChinaTaxSettingRequest body);
+	ItemChinaTaxSettingReportResponse sendSubmitItemChinaTaxSettingRequestJSON(@Param("sellerid") String sellerID, ItemChinaTaxSettingReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SItemChinaTaxSettingResponse sendSubmitItemChinaTaxSettingRequestXML(@Param("sellerid") String sellerID, SItemChinaTaxSettingRequest body);
+	ItemChinaTaxSettingReportResponse sendSubmitItemChinaTaxSettingRequestXML(@Param("sellerid") String sellerID, ItemChinaTaxSettingReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SItemChinaTaxSettingResponse sendSubmitItemChinaTaxSettingRequest(SItemChinaTaxSettingRequest body) {
+	default ItemChinaTaxSettingReportResponse sendSubmitItemChinaTaxSettingRequest(ItemChinaTaxSettingReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendSubmitItemChinaTaxSettingRequestJSON(Content.SellerID, body);

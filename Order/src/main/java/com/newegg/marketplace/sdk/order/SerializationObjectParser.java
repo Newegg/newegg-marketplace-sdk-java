@@ -45,8 +45,8 @@ public class SerializationObjectParser {
 		return new StringBuffer(strWriter.toString());
 	}
 	
-	public StringBuffer xmlObjectToString(ShipOrderWrapper bound) throws JAXBException {
-		JAXBContext jaxbContent = JAXBContext.newInstance(ShipOrderWrapper.class); 
+	public StringBuffer xmlObjectToString(ShipOrderRequest bound) throws JAXBException {
+		JAXBContext jaxbContent = JAXBContext.newInstance(ShipOrderRequest.class); 
 		Marshaller jaxbMarshaller = jaxbContent.createMarshaller();
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 		jaxbMarshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
@@ -69,10 +69,10 @@ public class SerializationObjectParser {
 		return new StringBuffer(strWriter.toString());
 	}
 	
-	public ShipOrderWrapper reBuildRequestXML() throws JAXBException {
-		ShipOrderWrapper sop = new ShipOrderWrapper();
+	public ShipOrderRequest reBuildRequestXML() throws JAXBException {
+		ShipOrderRequest sop = new ShipOrderRequest();
 		
-		jaxbXML = JAXBContext.newInstance(ShipOrderWrapper.class);
+		jaxbXML = JAXBContext.newInstance(ShipOrderRequest.class);
 		marshallerObject = jaxbXML.createMarshaller();
 		marshallerObject.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.FALSE);	// xml format
 		marshallerObject.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");

@@ -5,10 +5,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.CAPropSixtyFiveReportRequest;
-import com.newegg.marketplace.sdk.report.model.get.CAPropSixtyFiveReportResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SCAPropSixtyFiveRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SCAPropSixtyFiveResponse;
+import com.newegg.marketplace.sdk.report.model.get.CAProp65WarningReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.CAProp65WarningReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.CAProp65ReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.CAProp65ReportResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -41,14 +41,14 @@ public interface CAPropSixtyFiveReportCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	CAPropSixtyFiveReportResponse sendCAPropSixtyFiveReportRequestJSON(@Param("sellerid") String sellerID, CAPropSixtyFiveReportRequest body);
+	CAProp65WarningReportResponse sendCAPropSixtyFiveReportRequestJSON(@Param("sellerid") String sellerID, CAProp65WarningReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	CAPropSixtyFiveReportResponse sendCAPropSixtyFiveReportRequestXML(@Param("sellerid") String sellerID, CAPropSixtyFiveReportRequest body);
+	CAProp65WarningReportResponse sendCAPropSixtyFiveReportRequestXML(@Param("sellerid") String sellerID, CAProp65WarningReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default CAPropSixtyFiveReportResponse sendCAPropSixtyFiveReportRequest(CAPropSixtyFiveReportRequest body) {
+	default CAProp65WarningReportResponse sendCAPropSixtyFiveReportRequest(CAProp65WarningReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendCAPropSixtyFiveReportRequestJSON(Content.SellerID, body);
@@ -65,14 +65,14 @@ public interface CAPropSixtyFiveReportCaller {
 	// submit command
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SCAPropSixtyFiveResponse sendSubmitCAPropSixtyFiveReportRequestJSON(@Param("sellerid") String sellerID, SCAPropSixtyFiveRequest body);
+	CAProp65ReportResponse sendSubmitCAPropSixtyFiveReportRequestJSON(@Param("sellerid") String sellerID, CAProp65ReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SCAPropSixtyFiveResponse sendSubmitCAPropSixtyFiveReportRequestXML(@Param("sellerid") String sellerID, SCAPropSixtyFiveRequest body);
+	CAProp65ReportResponse sendSubmitCAPropSixtyFiveReportRequestXML(@Param("sellerid") String sellerID, CAProp65ReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SCAPropSixtyFiveResponse sendSubmitCAPropSixtyFiveReportRequest(SCAPropSixtyFiveRequest body) {
+	default CAProp65ReportResponse sendSubmitCAPropSixtyFiveReportRequest(CAProp65ReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendSubmitCAPropSixtyFiveReportRequestJSON(Content.SellerID, body);

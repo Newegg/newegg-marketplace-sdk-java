@@ -166,7 +166,7 @@ public class SubmitVolumeDiscountRequest {
 
     @XmlElement(name = "OperationType", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "SubmitVolumeDiscountRequest";
     @XmlElement(name = "RequestBody", required = true)
     @JsonProperty("RequestBody")
     protected SubmitVolumeDiscountRequest.RequestBody requestBody;

@@ -12,18 +12,18 @@ import com.newegg.marketplace.sdk.order.inner.SBNOrderCancellationCaller;
 import com.newegg.marketplace.sdk.order.inner.ShipmentCaller;
 import com.newegg.marketplace.sdk.order.model.CancelOrderRequest;
 import com.newegg.marketplace.sdk.order.model.CancelOrderResponse;
-import com.newegg.marketplace.sdk.order.model.GetAddOrderInfoRequest;
-import com.newegg.marketplace.sdk.order.model.GetAddOrderInfoResponse;
+import com.newegg.marketplace.sdk.order.model.GetAdditionalOrderInformationRequest;
+import com.newegg.marketplace.sdk.order.model.GetAdditionalOrderInformationResponse;
+import com.newegg.marketplace.sdk.order.model.GetOrderInformationRequest;
+import com.newegg.marketplace.sdk.order.model.GetOrderInformationResponse;
 import com.newegg.marketplace.sdk.order.model.GetOrderStatusResponse;
-import com.newegg.marketplace.sdk.order.model.OrderConfirmRequest;
-import com.newegg.marketplace.sdk.order.model.OrderConfirmResponse;
-import com.newegg.marketplace.sdk.order.model.OrderInfoRequest;
-import com.newegg.marketplace.sdk.order.model.OrderInfoResponse;
+import com.newegg.marketplace.sdk.order.model.GetSBNOrderCancellationRequestResultResponse;
+import com.newegg.marketplace.sdk.order.model.OrderConfirmationRequest;
+import com.newegg.marketplace.sdk.order.model.OrderConfirmationResponse;
 import com.newegg.marketplace.sdk.order.model.RemoveItemRequest;
 import com.newegg.marketplace.sdk.order.model.RemoveItemResponse;
-import com.newegg.marketplace.sdk.order.model.SBNOrderCancellationResponse;
-import com.newegg.marketplace.sdk.order.model.ShipOrderImpl;
-import com.newegg.marketplace.sdk.order.model.ShipmentResponse;
+import com.newegg.marketplace.sdk.order.model.ShipOrderRequestImpl;
+import com.newegg.marketplace.sdk.order.model.ShipOrderResponse;
 
 
 
@@ -95,19 +95,19 @@ public class OrderCall {
 	
 	// Redefine method of interface class of com.newegg.marketplace.sdk.order.inner package
 	// request command
-	public OrderConfirmResponse orderConfirmation(OrderConfirmRequest body) {
+	public OrderConfirmationResponse orderConfirmation(OrderConfirmationRequest body) {
 		return ocCaller.sendOrderConfirmRequest(body);
 	}
 	
-	public GetOrderStatusResponse getOrderStatus() {
-		return osCaller.sendOrderStatusRequest();
+	public GetOrderStatusResponse getOrderStatus(String orderNumber,String version) {
+		return osCaller.sendOrderStatusRequest(orderNumber,version);
 	}
 	
-	public CancelOrderResponse cancelOrder(CancelOrderRequest body) {
-		return coCaller.sendCancelOrderRequest(body);
+	public CancelOrderResponse cancelOrder(CancelOrderRequest body,String orderNumber,String version) {
+		return coCaller.sendCancelOrderRequest(body,orderNumber,version);
 	}
 	
-	public GetAddOrderInfoResponse getAdditionalOrderInformation(GetAddOrderInfoRequest body) {
+	public GetAdditionalOrderInformationResponse getAdditionalOrderInformation(GetAdditionalOrderInformationRequest body) {
 		if (Content.Platform == Content.PLATFORM.USA) {
 			return aoCaller.sendAdditionalOrderInforRequest(body);
 		} else {
@@ -115,8 +115,8 @@ public class OrderCall {
 		}
 	}
 	
-	public ShipmentResponse shipOrder(ShipOrderImpl/*ShipOrderRequest*/ body) {
-		return shipCaller.sendShipmentRequest(body);
+	public ShipOrderResponse shipOrder(ShipOrderRequestImpl/*ShipOrderRequest*/ body,String orderNumber,String version) {
+		return shipCaller.sendShipmentRequest(body,orderNumber,version);
 	}
 	
 	/*public ShipmentResponse sendShipmentRequestJSON(ShipOrderRequest body) {
@@ -127,16 +127,16 @@ public class OrderCall {
 		return shipCaller.sendShipOrderRequestXML(body);
 	}*/
 	
-	public OrderInfoResponse getOrderInformation(OrderInfoRequest body) {
-		return oiCaller.sendOrderInfoRequest(body);
+	public GetOrderInformationResponse getOrderInformation(GetOrderInformationRequest body,String version) {
+		return oiCaller.sendOrderInfoRequest(body,version);
 	}
 	
-	public SBNOrderCancellationResponse getSBNOrderCancellationRequestResult() {
-		return sbnCaller.sendSBNOrderCancellationCallerRequest();
+	public GetSBNOrderCancellationRequestResultResponse getSBNOrderCancellationRequestResult(String orderNumber) {
+		return sbnCaller.sendSBNOrderCancellationCallerRequest(orderNumber);
 	}
 	
-	public RemoveItemResponse removeItem(RemoveItemRequest body) {
-		return rmItemCaller.sendRemoveItemRequest(body);
+	public RemoveItemResponse removeItem(RemoveItemRequest body,String orderNumber) {
+		return rmItemCaller.sendRemoveItemRequest(body, orderNumber);
 	}
 	
 }

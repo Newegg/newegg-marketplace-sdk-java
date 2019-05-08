@@ -4,8 +4,8 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.CRInfoRequest;
-import com.newegg.marketplace.sdk.rma.model.CRInfoResponse;
+import com.newegg.marketplace.sdk.rma.model.GetCourtesyRefundInformationRequest;
+import com.newegg.marketplace.sdk.rma.model.GetCourtesyRefundInformationResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -39,14 +39,14 @@ public interface CRInfoCaller {
 	 */
 	@Headers({ "Accept: application/json", "Content-Type: application/json" })
 	@RequestLine("PUT /servicemgmt/courtesyrefund/info?sellerid={sellerid}")
-	CRInfoResponse getCourtesyRefundInfoRequestJSON(@Param("sellerid") String sellerID, CRInfoRequest body);
+	GetCourtesyRefundInformationResponse getCourtesyRefundInfoRequestJSON(@Param("sellerid") String sellerID, GetCourtesyRefundInformationRequest body);
 
 	@Headers({ "Accept: application/xml", "Content-Type: application/xml" })
 	@RequestLine("PUT /servicemgmt/courtesyrefund/info?sellerid={sellerid}")
-	CRInfoResponse getCourtesyRefundInfoRequestXML(@Param("sellerid") String sellerID, CRInfoRequest body);
+	GetCourtesyRefundInformationResponse getCourtesyRefundInfoRequestXML(@Param("sellerid") String sellerID, GetCourtesyRefundInformationRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default CRInfoResponse getCourtesyRefundInfoRequest(CRInfoRequest body) {
+	default GetCourtesyRefundInformationResponse getCourtesyRefundInfoRequest(GetCourtesyRefundInformationRequest body) {
 		switch (Variables.MediaType) {
 		case JSON:
 			return getCourtesyRefundInfoRequestJSON(Content.SellerID, body);

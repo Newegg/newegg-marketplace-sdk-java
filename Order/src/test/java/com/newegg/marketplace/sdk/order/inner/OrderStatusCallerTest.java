@@ -21,7 +21,7 @@ public class OrderStatusCallerTest {
 		APIConfig.load(OrderConfig.class);
 	}
 	
-	private void sendGetReportStatus(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
+	private void sendGetReportStatus(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm,String orderNumber) {
 		GetOrderStatusResponse response = null;
 		OrderStatusCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
@@ -40,7 +40,7 @@ public class OrderStatusCallerTest {
 			else
 				sender = OrderStatusCaller.buildJSON();
 			
-			response = sender.sendOrderStatusRequest();
+			response = sender.sendOrderStatusRequest(orderNumber,null);
 			orderStatusCode = response.getOrderStatusCode();
 			assertTrue(orderStatusCode >= 0 && orderStatusCode <= 4);
 		} catch(NeweggException e) {
@@ -52,55 +52,47 @@ public class OrderStatusCallerTest {
 	}
 	
 	@Test
-	public void sendOrderStatusRequest_XML() {
-		Variables.version = "304";	// only 304
+	public void sendOrderStatusRequest_XML() {	
 		
-		Variables.orderNumber = "10513704";
+		
 		//Variables.orderNumber = "1200207029";	// fail response
 		RequireSetting.authKeySetting("A006");
-		sendGetReportStatus(false, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendGetReportStatus(false, MEDIA_TYPE.XML, PLATFORM.USA,"10513704");
 		
-		// can
-		Variables.orderNumber = "291536424";
+		// can	
 		RequireSetting.authKeySetting("A3TV");
-		sendGetReportStatus(false, MEDIA_TYPE.XML, PLATFORM.CAN);
+		sendGetReportStatus(false, MEDIA_TYPE.XML, PLATFORM.CAN,"291536424");
 		
 		// b2b
-		Variables.orderNumber = "1229724460";
 		RequireSetting.authKeySetting("A44S");
-		sendGetReportStatus(false, MEDIA_TYPE.XML, PLATFORM.USB);
+		sendGetReportStatus(false, MEDIA_TYPE.XML, PLATFORM.USB,"1229724460");
 		
 	}
 	
 	@Test
 	public void sendOrderStatusRequest_XML_MOCK() {
-		Variables.orderNumber = "105137040";
-		sendGetReportStatus(true, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendGetReportStatus(true, MEDIA_TYPE.XML, PLATFORM.USA,"105137040");
 	}
 	
 	//@Test
 	public void sendOrderStatusReques_JSON() {
-		Variables.version = "304";	// only 304
 		
-		Variables.orderNumber = "10513704";
+				
 		//Variables.orderNumber = "1200207029";	// fail response
 		RequireSetting.authKeySetting("A006");
-		sendGetReportStatus(false, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendGetReportStatus(false, MEDIA_TYPE.JSON, PLATFORM.USA,"10513704");
 		
-		// can
-		Variables.orderNumber = "291536424";
+		// can		
 		RequireSetting.authKeySetting("A3TV");
-		sendGetReportStatus(false, MEDIA_TYPE.JSON, PLATFORM.CAN);
+		sendGetReportStatus(false, MEDIA_TYPE.JSON, PLATFORM.CAN,"291536424");
 		
 		// b2b
-		Variables.orderNumber = "1229724460";
 		RequireSetting.authKeySetting("A44S");
-		sendGetReportStatus(false, MEDIA_TYPE.JSON, PLATFORM.USB);
+		sendGetReportStatus(false, MEDIA_TYPE.JSON, PLATFORM.USB,"1229724460");
 	}
 	
 	//@Test
-	public void sendOrderStatusReques_JSON_MOCK() {
-		Variables.orderNumber = "105137040";
-		sendGetReportStatus(true, MEDIA_TYPE.JSON, PLATFORM.USA);
+	public void sendOrderStatusReques_JSON_MOCK() {		
+		sendGetReportStatus(true, MEDIA_TYPE.JSON, PLATFORM.USA,"105137040");
 	}
 }

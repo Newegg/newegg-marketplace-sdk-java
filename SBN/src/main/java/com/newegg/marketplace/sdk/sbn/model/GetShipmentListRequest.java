@@ -5,7 +5,6 @@
 // Generated on: 2019.02.26 at 08:49:58 AM CST 
 //
 
-
 package com.newegg.marketplace.sdk.sbn.model;
 
 import java.math.BigInteger;
@@ -17,12 +16,13 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -112,403 +112,368 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @XmlRootElement(name = "NeweggAPIRequest")
 public class GetShipmentListRequest {
 
-	
-    @XmlElement(name = "OperationType", required = true)
-    @JsonProperty("OperationType")
-    protected Object operationType="GetShipmentListRequest";
-    @XmlElement(name = "RequestBody", required = true)
-    @JsonProperty("RequestBody")
-    protected GetShipmentListRequest.RequestBody requestBody;
+	@XmlElement(name = "OperationType", required = true)
+	@JsonProperty("OperationType")
+	protected String operationType = "GetShipmentListRequest";
+	@XmlElement(name = "RequestBody", required = true)
+	@JsonProperty("RequestBody")
+	protected GetShipmentListRequest.RequestBody requestBody;
 
-    /**
-     * Gets the value of the operationType property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Object }
-     *     
-     */
-    public Object getOperationType() {
-        return operationType;
-    }
+	/**
+	 * Gets the value of the operationType property.
+	 * 
+	 * @return possible object is {@link Object }
+	 * 
+	 */
+	public String getOperationType() {
+		return operationType;
+	}
 
-    /**
-     * Sets the value of the operationType property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Object }
-     *     
-     */
-    public void setOperationType(Object value) {
-        this.operationType = value;
-    }
+	/**
+	 * Sets the value of the operationType property.
+	 * 
+	 * @param value allowed object is {@link String }
+	 * 
+	 */
+	public void setOperationType(String value) {
+		this.operationType = value;
+	}
 
-    /**
-     * Gets the value of the requestBody property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link GetShipmentListRequest.RequestBody }
-     *     
-     */
-    public GetShipmentListRequest.RequestBody getRequestBody() {
-        return requestBody;
-    }
+	/**
+	 * Gets the value of the requestBody property.
+	 * 
+	 * @return possible object is {@link GetShipmentListRequest.RequestBody }
+	 * 
+	 */
+	public GetShipmentListRequest.RequestBody getRequestBody() {
+		return requestBody;
+	}
 
-    /**
-     * Sets the value of the requestBody property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link GetShipmentListRequest.RequestBody }
-     *     
-     */
-    public void setRequestBody(GetShipmentListRequest.RequestBody value) {
-        this.requestBody = value;
-    }
+	/**
+	 * Sets the value of the requestBody property.
+	 * 
+	 * @param value allowed object is {@link GetShipmentListRequest.RequestBody }
+	 * 
+	 */
+	public void setRequestBody(GetShipmentListRequest.RequestBody value) {
+		this.requestBody = value;
+	}
 
+	/**
+	 * <p>
+	 * Java class for anonymous complex type.
+	 * 
+	 * <p>
+	 * The following schema fragment specifies the expected content contained within
+	 * this class.
+	 * 
+	 * <pre>
+	 * &lt;complexType>
+	 *   &lt;complexContent>
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *       &lt;all>
+	 *         &lt;element name="PageInfo">
+	 *           &lt;complexType>
+	 *             &lt;complexContent>
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+	 *                 &lt;all>
+	 *                   &lt;element name="PageIndex">
+	 *                     &lt;simpleType>
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
+	 *                         &lt;minInclusive value="1"/>
+	 *                       &lt;/restriction>
+	 *                     &lt;/simpleType>
+	 *                   &lt;/element>
+	 *                   &lt;element name="PageSize">
+	 *                     &lt;simpleType>
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
+	 *                         &lt;minInclusive value="1"/>
+	 *                       &lt;/restriction>
+	 *                     &lt;/simpleType>
+	 *                   &lt;/element>
+	 *                 &lt;/all>
+	 *               &lt;/restriction>
+	 *             &lt;/complexContent>
+	 *           &lt;/complexType>
+	 *         &lt;/element>
+	 *         &lt;element name="KeywordsType" minOccurs="0">
+	 *           &lt;simpleType>
+	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
+	 *               &lt;enumeration value="0"/>
+	 *               &lt;enumeration value="1"/>
+	 *               &lt;enumeration value="2"/>
+	 *               &lt;enumeration value="3"/>
+	 *             &lt;/restriction>
+	 *           &lt;/simpleType>
+	 *         &lt;/element>
+	 *         &lt;element name="KeywordsValue" minOccurs="0">
+	 *           &lt;simpleType>
+	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+	 *               &lt;minLength value="1"/>
+	 *               &lt;maxLength value="40"/>
+	 *             &lt;/restriction>
+	 *           &lt;/simpleType>
+	 *         &lt;/element>
+	 *         &lt;element name="Status" minOccurs="0">
+	 *           &lt;simpleType>
+	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
+	 *               &lt;enumeration value="0"/>
+	 *               &lt;enumeration value="1"/>
+	 *               &lt;enumeration value="2"/>
+	 *               &lt;enumeration value="3"/>
+	 *               &lt;enumeration value="4"/>
+	 *               &lt;enumeration value="5"/>
+	 *               &lt;enumeration value="6"/>
+	 *             &lt;/restriction>
+	 *           &lt;/simpleType>
+	 *         &lt;/element>
+	 *         &lt;element name="LastUpdateDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+	 *         &lt;element name="LastUpdateDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+	 *       &lt;/all>
+	 *     &lt;/restriction>
+	 *   &lt;/complexContent>
+	 * &lt;/complexType>
+	 * </pre>
+	 * 
+	 * 
+	 */
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlType(name = "", propOrder = {
 
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="PageInfo">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="PageIndex">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                         &lt;minInclusive value="1"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="PageSize">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                         &lt;minInclusive value="1"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="KeywordsType" minOccurs="0">
-     *           &lt;simpleType>
-     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *               &lt;enumeration value="0"/>
-     *               &lt;enumeration value="1"/>
-     *               &lt;enumeration value="2"/>
-     *               &lt;enumeration value="3"/>
-     *             &lt;/restriction>
-     *           &lt;/simpleType>
-     *         &lt;/element>
-     *         &lt;element name="KeywordsValue" minOccurs="0">
-     *           &lt;simpleType>
-     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;minLength value="1"/>
-     *               &lt;maxLength value="40"/>
-     *             &lt;/restriction>
-     *           &lt;/simpleType>
-     *         &lt;/element>
-     *         &lt;element name="Status" minOccurs="0">
-     *           &lt;simpleType>
-     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *               &lt;enumeration value="0"/>
-     *               &lt;enumeration value="1"/>
-     *               &lt;enumeration value="2"/>
-     *               &lt;enumeration value="3"/>
-     *               &lt;enumeration value="4"/>
-     *               &lt;enumeration value="5"/>
-     *               &lt;enumeration value="6"/>
-     *             &lt;/restriction>
-     *           &lt;/simpleType>
-     *         &lt;/element>
-     *         &lt;element name="LastUpdateDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *         &lt;element name="LastUpdateDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
+	})
+	public static class RequestBody {
 
-    })
-    public static class RequestBody {
+		@XmlElement(name = "PageInfo", required = true)
+		@JsonProperty("PageInfo")
+		protected GetShipmentListRequest.RequestBody.PageInfo pageInfo;
+		@XmlElement(name = "KeywordsType")
+		@JsonProperty("KeywordsType")
+		protected BigInteger keywordsType;
+		@XmlElement(name = "KeywordsValue")
+		@JsonProperty("KeywordsValue")
+		protected String keywordsValue;
+		@XmlElement(name = "Status")
+		@JsonProperty("Status")
+		protected BigInteger status;
+		@XmlElement(name = "LastUpdateDateFrom")
+		@JsonProperty("LastUpdateDateFrom")
+		protected String lastUpdateDateFrom;
+		@XmlElement(name = "LastUpdateDateTo")
+		@JsonProperty("LastUpdateDateTo")
+		protected String lastUpdateDateTo;
 
-        @XmlElement(name = "PageInfo", required = true)
-        @JsonProperty("PageInfo")
-        protected GetShipmentListRequest.RequestBody.PageInfo pageInfo;
-        @XmlElement(name = "KeywordsType")
-        @JsonProperty("KeywordsType")
-        protected BigInteger keywordsType;
-        @XmlElement(name = "KeywordsValue")
-        @JsonProperty("KeywordsValue")
-        protected String keywordsValue;
-        @XmlElement(name = "Status")
-        @JsonProperty("Status")
-        protected BigInteger status;
-        @XmlElement(name = "LastUpdateDateFrom")
-        @JsonProperty("LastUpdateDateFrom")
-        protected String lastUpdateDateFrom;
-        @XmlElement(name = "LastUpdateDateTo")
-        @JsonProperty("LastUpdateDateTo")
-        protected String lastUpdateDateTo;
+		/**
+		 * Gets the value of the pageInfo property.
+		 * 
+		 * @return possible object is
+		 *         {@link GetShipmentListRequest.RequestBody.PageInfo }
+		 * 
+		 */
+		public GetShipmentListRequest.RequestBody.PageInfo getPageInfo() {
+			return pageInfo;
+		}
 
-        /**
-         * Gets the value of the pageInfo property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link GetShipmentListRequest.RequestBody.PageInfo }
-         *     
-         */
-        public GetShipmentListRequest.RequestBody.PageInfo getPageInfo() {
-            return pageInfo;
-        }
+		/**
+		 * Sets the value of the pageInfo property.
+		 * 
+		 * @param value allowed object is
+		 *              {@link GetShipmentListRequest.RequestBody.PageInfo }
+		 * 
+		 */
+		public void setPageInfo(GetShipmentListRequest.RequestBody.PageInfo value) {
+			this.pageInfo = value;
+		}
 
-        /**
-         * Sets the value of the pageInfo property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link GetShipmentListRequest.RequestBody.PageInfo }
-         *     
-         */
-        public void setPageInfo(GetShipmentListRequest.RequestBody.PageInfo value) {
-            this.pageInfo = value;
-        }
+		/**
+		 * Gets the value of the keywordsType property.
+		 * 
+		 * @return possible object is {@link BigInteger }
+		 * 
+		 */
+		public BigInteger getKeywordsType() {
+			return keywordsType;
+		}
 
-        /**
-         * Gets the value of the keywordsType property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link BigInteger }
-         *     
-         */
-        public BigInteger getKeywordsType() {
-            return keywordsType;
-        }
+		/**
+		 * Sets the value of the keywordsType property.
+		 * 
+		 * @param value allowed object is {@link BigInteger }
+		 * 
+		 */
+		public void setKeywordsType(BigInteger value) {
+			this.keywordsType = value;
+		}
 
-        /**
-         * Sets the value of the keywordsType property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BigInteger }
-         *     
-         */
-        public void setKeywordsType(BigInteger value) {
-            this.keywordsType = value;
-        }
+		/**
+		 * Gets the value of the keywordsValue property.
+		 * 
+		 * @return possible object is {@link String }
+		 * 
+		 */
+		public String getKeywordsValue() {
+			return keywordsValue;
+		}
 
-        /**
-         * Gets the value of the keywordsValue property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getKeywordsValue() {
-            return keywordsValue;
-        }
+		/**
+		 * Sets the value of the keywordsValue property.
+		 * 
+		 * @param value allowed object is {@link String }
+		 * 
+		 */
+		public void setKeywordsValue(String value) {
+			this.keywordsValue = value;
+		}
 
-        /**
-         * Sets the value of the keywordsValue property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setKeywordsValue(String value) {
-            this.keywordsValue = value;
-        }
+		/**
+		 * Gets the value of the status property.
+		 * 
+		 * @return possible object is {@link BigInteger }
+		 * 
+		 */
+		public BigInteger getStatus() {
+			return status;
+		}
 
-        /**
-         * Gets the value of the status property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link BigInteger }
-         *     
-         */
-        public BigInteger getStatus() {
-            return status;
-        }
+		/**
+		 * Sets the value of the status property.
+		 * 
+		 * @param value allowed object is {@link BigInteger }
+		 * 
+		 */
+		public void setStatus(BigInteger value) {
+			this.status = value;
+		}
 
-        /**
-         * Sets the value of the status property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BigInteger }
-         *     
-         */
-        public void setStatus(BigInteger value) {
-            this.status = value;
-        }
+		/**
+		 * Gets the value of the lastUpdateDateFrom property.
+		 * 
+		 * @return possible object is {@link String }
+		 * 
+		 */
+		public String getLastUpdateDateFrom() {
+			return lastUpdateDateFrom;
+		}
 
-        /**
-         * Gets the value of the lastUpdateDateFrom property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getLastUpdateDateFrom() {
-            return lastUpdateDateFrom;
-        }
+		/**
+		 * Sets the value of the lastUpdateDateFrom property.
+		 * 
+		 * @param value allowed object is {@link String }
+		 * 
+		 */
+		public void setLastUpdateDateFrom(String value) {
+			this.lastUpdateDateFrom = value;
+		}
 
-        /**
-         * Sets the value of the lastUpdateDateFrom property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setLastUpdateDateFrom(String value) {
-            this.lastUpdateDateFrom = value;
-        }
+		/**
+		 * Gets the value of the lastUpdateDateTo property.
+		 * 
+		 * @return possible object is {@link String }
+		 * 
+		 */
+		public String getLastUpdateDateTo() {
+			return lastUpdateDateTo;
+		}
 
-        /**
-         * Gets the value of the lastUpdateDateTo property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getLastUpdateDateTo() {
-            return lastUpdateDateTo;
-        }
+		/**
+		 * Sets the value of the lastUpdateDateTo property.
+		 * 
+		 * @param value allowed object is {@link String }
+		 * 
+		 */
+		public void setLastUpdateDateTo(String value) {
+			this.lastUpdateDateTo = value;
+		}
 
-        /**
-         * Sets the value of the lastUpdateDateTo property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setLastUpdateDateTo(String value) {
-            this.lastUpdateDateTo = value;
-        }
+		/**
+		 * <p>
+		 * Java class for anonymous complex type.
+		 * 
+		 * <p>
+		 * The following schema fragment specifies the expected content contained within
+		 * this class.
+		 * 
+		 * <pre>
+		 * &lt;complexType>
+		 *   &lt;complexContent>
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+		 *       &lt;all>
+		 *         &lt;element name="PageIndex">
+		 *           &lt;simpleType>
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
+		 *               &lt;minInclusive value="1"/>
+		 *             &lt;/restriction>
+		 *           &lt;/simpleType>
+		 *         &lt;/element>
+		 *         &lt;element name="PageSize">
+		 *           &lt;simpleType>
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
+		 *               &lt;minInclusive value="1"/>
+		 *             &lt;/restriction>
+		 *           &lt;/simpleType>
+		 *         &lt;/element>
+		 *       &lt;/all>
+		 *     &lt;/restriction>
+		 *   &lt;/complexContent>
+		 * &lt;/complexType>
+		 * </pre>
+		 * 
+		 * 
+		 */
+		@XmlAccessorType(XmlAccessType.FIELD)
+		@XmlType(name = "", propOrder = {
 
+		})
+		public static class PageInfo {
 
-        /**
-         * <p>Java class for anonymous complex type.
-         * 
-         * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="PageIndex">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *               &lt;minInclusive value="1"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="PageSize">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *               &lt;minInclusive value="1"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         * 
-         * 
-         */
-        @XmlAccessorType(XmlAccessType.FIELD)
-        @XmlType(name = "", propOrder = {
+			@XmlElement(name = "PageIndex", required = true)
+			@JsonProperty("PageIndex")
+			protected BigInteger pageIndex;
+			@XmlElement(name = "PageSize", required = true)
+			@JsonProperty("PageSize")
+			protected BigInteger pageSize;
 
-        })
-        public static class PageInfo {
+			/**
+			 * Gets the value of the pageIndex property.
+			 * 
+			 * @return possible object is {@link BigInteger }
+			 * 
+			 */
+			public BigInteger getPageIndex() {
+				return pageIndex;
+			}
 
-            @XmlElement(name = "PageIndex", required = true)
-            @JsonProperty("PageIndex")
-            protected BigInteger pageIndex;
-            @XmlElement(name = "PageSize", required = true)
-            @JsonProperty("PageSize")
-            protected BigInteger pageSize;
+			/**
+			 * Sets the value of the pageIndex property.
+			 * 
+			 * @param value allowed object is {@link BigInteger }
+			 * 
+			 */
+			public void setPageIndex(BigInteger value) {
+				this.pageIndex = value;
+			}
 
-            /**
-             * Gets the value of the pageIndex property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link BigInteger }
-             *     
-             */
-            public BigInteger getPageIndex() {
-                return pageIndex;
-            }
+			/**
+			 * Gets the value of the pageSize property.
+			 * 
+			 * @return possible object is {@link BigInteger }
+			 * 
+			 */
+			public BigInteger getPageSize() {
+				return pageSize;
+			}
 
-            /**
-             * Sets the value of the pageIndex property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link BigInteger }
-             *     
-             */
-            public void setPageIndex(BigInteger value) {
-                this.pageIndex = value;
-            }
+			/**
+			 * Sets the value of the pageSize property.
+			 * 
+			 * @param value allowed object is {@link BigInteger }
+			 * 
+			 */
+			public void setPageSize(BigInteger value) {
+				this.pageSize = value;
+			}
 
-            /**
-             * Gets the value of the pageSize property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link BigInteger }
-             *     
-             */
-            public BigInteger getPageSize() {
-                return pageSize;
-            }
+		}
 
-            /**
-             * Sets the value of the pageSize property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link BigInteger }
-             *     
-             */
-            public void setPageSize(BigInteger value) {
-                this.pageSize = value;
-            }
-
-        }
-
-    }
+	}
 
 }

@@ -129,9 +129,9 @@ public class SDailyInventBtoBCANResponse {
     @XmlElement(name = "IsSuccess", required = true)
     @JsonProperty("IsSuccess")
     protected String isSuccess;
-    @XmlElement(name = "OperationType", required = true)
+    @XmlElement(name = "OperationType", defaultValue = "DailyInventoryReportResponse", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "DailyInventoryReportResponse";
     @XmlElement(name = "SellerID", required = true)
     @JsonProperty("SellerID")
     protected String sellerID;

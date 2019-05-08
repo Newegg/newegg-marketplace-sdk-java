@@ -4,7 +4,7 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.order.Variables;
-import com.newegg.marketplace.sdk.order.model.SBNOrderCancellationResponse;
+import com.newegg.marketplace.sdk.order.model.GetSBNOrderCancellationRequestResultResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -37,20 +37,26 @@ public interface SBNOrderCancellationCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("GET /ordermgmt/sbnorder/cancellationresult/{ordernumber}?sellerid={sellerid}")
-	SBNOrderCancellationResponse sendSBNOrderCancellationCallerRequestJSON(@Param("ordernumber") String orderNumber, @Param("sellerid") String sellerID);
+	GetSBNOrderCancellationRequestResultResponse sendSBNOrderCancellationCallerRequestJSON(@Param("ordernumber") String orderNumber, @Param("sellerid") String sellerID);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("GET /ordermgmt/sbnorder/cancellationresult/{ordernumber}?sellerid={sellerid}")
-	SBNOrderCancellationResponse sendSBNOrderCancellationCallerRequestXML(@Param("ordernumber") String orderNumber, @Param("sellerid") String sellerID);
+	GetSBNOrderCancellationRequestResultResponse sendSBNOrderCancellationCallerRequestXML(@Param("ordernumber") String orderNumber, @Param("sellerid") String sellerID);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SBNOrderCancellationResponse sendSBNOrderCancellationCallerRequest() {
+	default GetSBNOrderCancellationRequestResultResponse sendSBNOrderCancellationCallerRequest(String orderNumber) {
 		switch(Variables.MediaType) {
-		case JSON:			
-			return sendSBNOrderCancellationCallerRequestJSON(Variables.orderNumber, Content.SellerID);
+		case JSON:
+			if(Variables.SimulationEnabled)
+				return sendSBNOrderCancellationCallerRequestJSON("123456", Content.SellerID);
+			else
+				return sendSBNOrderCancellationCallerRequestJSON(orderNumber, Content.SellerID);
 			
-		case XML:			
-			return sendSBNOrderCancellationCallerRequestXML(Variables.orderNumber, Content.SellerID);	
+		case XML:
+			if(Variables.SimulationEnabled)
+				return sendSBNOrderCancellationCallerRequestXML("123456", Content.SellerID);
+			else			
+				return sendSBNOrderCancellationCallerRequestXML(orderNumber, Content.SellerID);	
 			
 		default:
 			throw new RuntimeException("Never Happened!");

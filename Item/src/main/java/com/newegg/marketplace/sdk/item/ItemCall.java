@@ -8,34 +8,34 @@ import com.newegg.marketplace.sdk.item.inner.ItemUSACaller;
 import com.newegg.marketplace.sdk.item.inner.ManufacturerCaller;
 import com.newegg.marketplace.sdk.item.inner.VolumeDiscountCaller;
 import com.newegg.marketplace.sdk.item.inner.WarrantyCaller;
-import com.newegg.marketplace.sdk.item.model.AddManufacturerRequest;
-import com.newegg.marketplace.sdk.item.model.AddManufacturerResponse;
-import com.newegg.marketplace.sdk.item.model.InventoryQueryCriteria;
-import com.newegg.marketplace.sdk.item.model.InventoryQueryCriteriaV2;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerProcessStatusRequest;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerProcessStatusResponse;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerRequest;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerRequestV2;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerResponse;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerResponseV2;
-import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequest;
-import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountResponse;
-import com.newegg.marketplace.sdk.item.model.InventoryResult;
-import com.newegg.marketplace.sdk.item.model.InventoryResultV2;
-import com.newegg.marketplace.sdk.item.model.ItemInventoryAndPriceInfo;
-import com.newegg.marketplace.sdk.item.model.ItemInventoryInfo;
-import com.newegg.marketplace.sdk.item.model.ItemPriceInfo;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceRequest;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceResponse;
+import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryResponse;
+import com.newegg.marketplace.sdk.item.model.GetItemInventoryRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemInventoryResponse;
+import com.newegg.marketplace.sdk.item.model.GetItemPriceRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemPriceResponse;
+import com.newegg.marketplace.sdk.item.model.GetManufacturerRequestStatusRequest;
+import com.newegg.marketplace.sdk.item.model.GetManufacturerRequestStatusResponse;
+import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequestResultRequest;
+import com.newegg.marketplace.sdk.item.model.GetVolumeDiscountRequestResultResponse;
 import com.newegg.marketplace.sdk.item.model.ItemWarrantyRequest;
 import com.newegg.marketplace.sdk.item.model.ItemWarrantyResponse;
-import com.newegg.marketplace.sdk.item.model.PriceQueryCriteria;
-import com.newegg.marketplace.sdk.item.model.PriceQueryCriteriaV2;
-import com.newegg.marketplace.sdk.item.model.PriceResult;
-import com.newegg.marketplace.sdk.item.model.PriceResultV2;
+import com.newegg.marketplace.sdk.item.model.ManufacturerLookupForInternationalCountryRequest;
+import com.newegg.marketplace.sdk.item.model.ManufacturerLookupForInternationalCountryResponse;
+import com.newegg.marketplace.sdk.item.model.ManufacturerLookupRequest;
+import com.newegg.marketplace.sdk.item.model.ManufacturerLookupResponse;
+import com.newegg.marketplace.sdk.item.model.SubmitManufacturerRequest;
+import com.newegg.marketplace.sdk.item.model.SubmitManufacturerResponse;
 import com.newegg.marketplace.sdk.item.model.SubmitVolumeDiscountRequest;
 import com.newegg.marketplace.sdk.item.model.SubmitVolumeDiscountResponse;
-import com.newegg.marketplace.sdk.item.model.UpdateInventoryAndPriceResult;
-import com.newegg.marketplace.sdk.item.model.UpdateInventoryResult;
-import com.newegg.marketplace.sdk.item.model.UpdatePriceResult;
+import com.newegg.marketplace.sdk.item.model.UpdateInventoryRequest;
+import com.newegg.marketplace.sdk.item.model.UpdateInventoryResponse;
+import com.newegg.marketplace.sdk.item.model.UpdateInventoryandPriceRequest;
+import com.newegg.marketplace.sdk.item.model.UpdateInventoryandPriceResponse;
+import com.newegg.marketplace.sdk.item.model.UpdateItemPriceRequest;
+import com.newegg.marketplace.sdk.item.model.UpdateItemPriceResponse;
 
 /**
 Copyright (c) 2000-present, Newegg Inc.
@@ -93,10 +93,10 @@ public class ItemCall {
 	
 	
 	/**
-	 * @param body {@linkplain GetVolumeDiscountRequest} 
-	 * @return {@linkplain GetVolumeDiscountResponse} 
+	 * @param body {@linkplain GetVolumeDiscountRequestResultRequest} 
+	 * @return {@linkplain GetVolumeDiscountRequestResultResponse} 
 	 */
-	public GetVolumeDiscountResponse getVolumeDiscountRequestResult(GetVolumeDiscountRequest body) {
+	public GetVolumeDiscountRequestResultResponse getVolumeDiscountRequestResult(GetVolumeDiscountRequestResultRequest body) {
 		return vdCaller.getVolumeDiscountRequestResult(body);
 	}
 	
@@ -129,28 +129,28 @@ public class ItemCall {
 	 * If the manufacturer(s) for your items are not available from our system, 
 	 * you can submit new manufacturer creation request to Newegg Marketplace.
 	 * </pre>
-	 * @param body {@linkplain AddManufacturerRequest} 
+	 * @param body {@linkplain SubmitManufacturerRequest} 
 	 * @return {@linkplain AddManufacturerResponse} 
 	 */
-	public AddManufacturerResponse submitManufacturerRequest(AddManufacturerRequest body) {
+	public SubmitManufacturerResponse submitManufacturerRequest(SubmitManufacturerRequest body) {
 		return mfCaller.submitManufacturerRequest(body);
 	}
 	
 	/**
 	 * Query available manufacturer list from Newegg.
-	 * @param body {@linkplain GetManufacturerRequest} 
-	 * @return {@linkplain GetManufacturerResponse} 
+	 * @param body {@linkplain ManufacturerLookupRequest} 
+	 * @return {@linkplain ManufacturerLookupResponse} 
 	 */
-	public GetManufacturerResponse manufacturerLookup(GetManufacturerRequest body) {
+	public ManufacturerLookupResponse manufacturerLookup(ManufacturerLookupRequest body) {
 		return mfCaller.manufacturerLookup(body);
 	}
 	
 	/**
 	 * Query available manufacturer list on international country from Newegg.
-	 * @param body {@linkplain GetManufacturerRequestV2} 
-	 * @return {@linkplain GetManufacturerResponseV2} 
+	 * @param body {@linkplain ManufacturerLookupForInternationalCountryRequest} 
+	 * @return {@linkplain ManufacturerLookupForInternationalCountryResponse} 
 	 */
-	public GetManufacturerResponseV2 ManufacturerLookupForInternationalCountry(GetManufacturerRequestV2 body) {
+	public ManufacturerLookupForInternationalCountryResponse ManufacturerLookupForInternationalCountry(ManufacturerLookupForInternationalCountryRequest body) {
 		if(Content.Platform==Content.PLATFORM.USA )
 			return mfCaller.manufacturerLookupForInternationalCountry(body);
 		else throw new PlatformException();
@@ -158,10 +158,10 @@ public class ItemCall {
 	
 	/**
 	 * Check the status for the manufacturer request submitted previously.
-	 * @param body {@linkplain GetManufacturerProcessStatusRequest} 
-	 * @return {@linkplain GetManufacturerProcessStatusResponse} 
+	 * @param body {@linkplain GetManufacturerRequestStatusRequest} 
+	 * @return {@linkplain GetManufacturerRequestStatusResponse} 
 	 */
-	public GetManufacturerProcessStatusResponse getManufacturerRequestStatus(GetManufacturerProcessStatusRequest body) {
+	public GetManufacturerRequestStatusResponse getManufacturerRequestStatus(GetManufacturerRequestStatusRequest body) {
 		return mfCaller.getManufacturerRequestStatus(body);
 	}
 	
@@ -180,10 +180,10 @@ public class ItemCall {
 	 * including the United States.
 	 * Only for USA
 	 * </pre>
-	 * @param body {@linkplain InventoryQueryCriteria} 
-	 * @return {@linkplain InventoryResult}
+	 * @param body {@linkplain GetItemInternationalInventoryRequest} 
+	 * @return {@linkplain GetItemInternationalInventoryResponse}
 	 */
-	public InventoryResult getItemInternationalInventory(InventoryQueryCriteria body) {
+	public GetItemInternationalInventoryResponse getItemInternationalInventory(GetItemInternationalInventoryRequest body) {
 		if(Content.Platform==Content.PLATFORM.USA )
 			return itemUSACaller.getItemInventory(body);
 		else throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
@@ -195,10 +195,10 @@ public class ItemCall {
 	 * including the United States.
 	 * Only for USA
 	 * </pre>
-	 * @param body {@linkplain PriceQueryCriteria} 
-	 * @return {@linkplain PriceResult} 
+	 * @param body {@linkplain GetInternationalItemPriceRequest} 
+	 * @return {@linkplain GetInternationalItemPriceResponse} 
 	 */
-	public PriceResult getInternationalItemPrice(PriceQueryCriteria body) {
+	public GetInternationalItemPriceResponse getInternationalItemPrice(GetInternationalItemPriceRequest body) {
 		if(Content.Platform==Content.PLATFORM.USA )
 			return itemUSACaller.getItemPrice(body);
 		else throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
@@ -210,10 +210,10 @@ public class ItemCall {
 	 * including the United States.
 	 * Only for USA
 	 * </pre>
-	 * @param body {@linkplain ItemInventoryInfo}
-	 * @return {@linkplain UpdateInventoryResult}
+	 * @param body {@linkplain UpdateInventoryRequest}
+	 * @return {@linkplain UpdateInventoryResponse}
 	 */
-	public UpdateInventoryResult updateItemInventory(ItemInventoryInfo body) {
+	public UpdateInventoryResponse updateItemInventory(UpdateInventoryRequest body) {
 		if(Content.Platform==Content.PLATFORM.USA )
 			return itemUSACaller.updateItemInventory(body);
 		else throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
@@ -225,10 +225,10 @@ public class ItemCall {
 	 * including the United States.
 	 * Only for USA
 	 * </pre>
-	 * @param body {@linkplain ItemPriceInfo}
-	 * @return {@linkplain UpdatePriceResult}
+	 * @param body {@linkplain UpdateItemPriceRequest}
+	 * @return {@linkplain UpdateItemPriceResponse}
 	 */
-	public UpdatePriceResult updateItemPrice(ItemPriceInfo body) {
+	public UpdateItemPriceResponse updateItemPrice(UpdateItemPriceRequest body) {
 		if(Content.Platform==Content.PLATFORM.USA )
 			return itemUSACaller.updateItemPrice(body);
 		else throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
@@ -240,10 +240,10 @@ public class ItemCall {
 	 * Tracking the inventory quantity of items in default warehouse.
 	 * Only for USB,CAN
 	 * </pre>
-	 * @param body {@linkplain InventoryQueryCriteriaV2}
-	 * @return {@linkplain InventoryResultV2}
+	 * @param body {@linkplain GetItemInventoryRequest}
+	 * @return {@linkplain GetItemInventoryResponse}
 	 */
-	public InventoryResultV2 getItemInventory(InventoryQueryCriteriaV2 body) {
+	public GetItemInventoryResponse getItemInventory(GetItemInventoryRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB || Content.Platform==Content.PLATFORM.CAN)
 			return itemCBCaller.getItemInventory(body);
 		else throw new PlatformException(PLATFORM.USA.name());
@@ -254,10 +254,10 @@ public class ItemCall {
 	 * Tracking the price related information of items.
 	 * Only for USB,CAN
 	 * </pre>
-	 * @param body {@linkplain PriceQueryCriteriaV2}
-	 * @return {@linkplain PriceResultV2}
+	 * @param body {@linkplain GetItemPriceRequest}
+	 * @return {@linkplain GetItemPriceResponse}
 	 */
-	public PriceResultV2 getItemPrice(PriceQueryCriteriaV2 body) {
+	public GetItemPriceResponse getItemPrice(GetItemPriceRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB || Content.Platform==Content.PLATFORM.CAN)
 			return itemCBCaller.getPrice(body);
 		else throw new PlatformException(PLATFORM.USA.name());		
@@ -270,10 +270,10 @@ public class ItemCall {
 	 * You may update price and inventory again when you re-activate your item.
 	 * Only for USB,CAN
 	 * </pre>
-	 * @param body {@linkplain ItemInventoryAndPriceInfo}
-	 * @return {@linkplain UpdateInventoryAndPriceResult}
+	 * @param body {@linkplain UpdateInventoryandPriceRequest}
+	 * @return {@linkplain UpdateInventoryandPriceResponse}
 	 */
-	public UpdateInventoryAndPriceResult updateInventoryAndPrice(ItemInventoryAndPriceInfo body) {
+	public UpdateInventoryandPriceResponse updateInventoryAndPrice(UpdateInventoryandPriceRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB || Content.Platform==Content.PLATFORM.CAN)
 			return itemCBCaller.updateInventoryAndPrice(body);
 		else throw new PlatformException(PLATFORM.USA.name());	

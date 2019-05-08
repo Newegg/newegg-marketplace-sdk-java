@@ -127,9 +127,9 @@ public class GetReportStatusResponse {
     @XmlElement(name = "IsSuccess", required = true)
     @JsonProperty("IsSuccess")
     protected String isSuccess;
-    @XmlElement(name = "OperationType", required = true)
+    @XmlElement(name = "OperationType", defaultValue = "GetReportStatusResponse", required = true)
     @JsonProperty("OperationType")
-    protected String operationType;
+    protected String operationType = "GetReportStatusResponse";
     @XmlElement(name = "SellerID", required = true)
     @JsonProperty("SellerID")
     protected String sellerID;

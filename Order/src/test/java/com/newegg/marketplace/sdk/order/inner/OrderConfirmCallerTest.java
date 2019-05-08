@@ -7,7 +7,6 @@ import java.math.BigInteger;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.newegg.marketplace.sdk.common.APIConfig;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.NeweggException;
@@ -16,10 +15,12 @@ import com.newegg.marketplace.sdk.common.Content.PLATFORM;
 import com.newegg.marketplace.sdk.order.OrderConfig;
 import com.newegg.marketplace.sdk.order.RequireSetting;
 import com.newegg.marketplace.sdk.order.Variables;
+
 import com.newegg.marketplace.sdk.order.model.CancelOrderRequest;
 import com.newegg.marketplace.sdk.order.model.CancelOrderResponse;
-import com.newegg.marketplace.sdk.order.model.OrderConfirmRequest;
-import com.newegg.marketplace.sdk.order.model.OrderConfirmResponse;
+import com.newegg.marketplace.sdk.order.model.OrderConfirmationRequest;
+import com.newegg.marketplace.sdk.order.model.OrderConfirmationResponse;
+
 
 public class OrderConfirmCallerTest {
 
@@ -28,11 +29,11 @@ public class OrderConfirmCallerTest {
 		APIConfig.load(OrderConfig.class);
 	}
 	
-	private OrderConfirmRequest buildOderConifrmRequest(PLATFORM p) {
-		OrderConfirmRequest request = new OrderConfirmRequest();
-		OrderConfirmRequest.RequestBody body = new OrderConfirmRequest.RequestBody();
-		OrderConfirmRequest.RequestBody.DownloadedOrderList downloadList = 
-				new OrderConfirmRequest.RequestBody.DownloadedOrderList();
+	private OrderConfirmationRequest buildOderConifrmRequest(PLATFORM p) {
+		OrderConfirmationRequest request = new OrderConfirmationRequest();
+		OrderConfirmationRequest.RequestBody body = new OrderConfirmationRequest.RequestBody();
+		OrderConfirmationRequest.RequestBody.DownloadedOrderList downloadList = 
+				new OrderConfirmationRequest.RequestBody.DownloadedOrderList();
 		
 		switch (p) {
 		case USA:
@@ -61,8 +62,8 @@ public class OrderConfirmCallerTest {
 	}
 	
 	private void sendOrderConfirm(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		OrderConfirmResponse response = null;
-		OrderConfirmRequest request = null;
+		OrderConfirmationResponse response = null;
+		OrderConfirmationRequest request = null;
 		OrderConfirmCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		

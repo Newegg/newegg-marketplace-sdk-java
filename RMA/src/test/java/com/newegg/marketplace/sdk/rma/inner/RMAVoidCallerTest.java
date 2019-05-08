@@ -10,8 +10,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.rma.RMAConfig;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.RMAVoidRequest;
-import com.newegg.marketplace.sdk.rma.model.RMAVoidResponse;
+import com.newegg.marketplace.sdk.rma.model.VoidRMARequest;
+import com.newegg.marketplace.sdk.rma.model.VoidRMAResponse;
 import com.newegg.marketplace.sdk.rma.model.bean.VoidRMAInfo;
 
 public class RMAVoidCallerTest {
@@ -21,12 +21,12 @@ public class RMAVoidCallerTest {
 		APIConfig.load(RMAConfig.class);
 	}
 
-	//@Test
+	// @Test
 	public void sendRMAVoidRequest_XML() {
 		initailRMACaller(Content.MEDIA_TYPE.XML);
 	}
 
-	//@Test
+	// @Test
 	public void sendRMAVoidRequest_JSON() {
 		initailRMACaller(Content.MEDIA_TYPE.JSON);
 	}
@@ -54,14 +54,14 @@ public class RMAVoidCallerTest {
 			call = RMAVoidCaller.buildJSON();
 		}
 
-		RMAVoidRequest request = new RMAVoidRequest();
-		request.setOperationType("VoidRMARequest");
+		VoidRMARequest request = new VoidRMARequest();
+		// request.setOperationType("VoidRMARequest");
 		request.setRequestBody(getBody());
 
 		int rsStatus = 200;
-		RMAVoidResponse response = new RMAVoidResponse();
+		VoidRMAResponse response = new VoidRMAResponse();
 		try {
-			response = call.sendRMAVoidRequest("307", request);
+			response = call.sendRMAVoidRequest(request, "307");
 		} catch (NeweggException e) {
 			rsStatus = e.status();
 
@@ -75,13 +75,14 @@ public class RMAVoidCallerTest {
 
 		} finally {
 			if (Variables.SimulationEnabled)
-				assertTrue("RMAVoidCaller.sendRMAVoidRequest [" + type + "] command fail (Status:" + rsStatus + ").", "true".equals(response.getIsSuccess()));
+				assertTrue("RMAVoidCaller.sendRMAVoidRequest [" + type + "] command fail (Status:" + rsStatus + ").",
+						"true".equals(response.getIsSuccess()));
 		}
 
 	}
 
-	private RMAVoidRequest.RequestBody getBody() {
-		RMAVoidRequest.RequestBody body = new RMAVoidRequest.RequestBody();
+	private VoidRMARequest.RequestBody getBody() {
+		VoidRMARequest.RequestBody body = new VoidRMARequest.RequestBody();
 
 		VoidRMAInfo voidInfo = new VoidRMAInfo();
 		voidInfo.setRmaNumber(38875600);

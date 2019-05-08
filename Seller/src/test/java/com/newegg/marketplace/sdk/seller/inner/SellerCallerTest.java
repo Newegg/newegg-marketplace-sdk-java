@@ -15,10 +15,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.seller.SellerConfig;
 import com.newegg.marketplace.sdk.seller.Variables;
-import com.newegg.marketplace.sdk.seller.model.GetIndustryResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSchemaRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSchemaRequest.RequestBody.GetFeedSchema;
-import com.newegg.marketplace.sdk.seller.model.GetSellerAccountStatusResponse;
+import com.newegg.marketplace.sdk.seller.model.GetIndustryListResponse;
+import com.newegg.marketplace.sdk.seller.model.DownloadFeedSchemaRequest;
+import com.newegg.marketplace.sdk.seller.model.DownloadFeedSchemaRequest.RequestBody.GetFeedSchema;
+import com.newegg.marketplace.sdk.seller.model.SellerStatusCheckResponse;
 
 public class SellerCallerTest {
 
@@ -30,8 +30,8 @@ public class SellerCallerTest {
 	@Test
 	public void testDownloadFeedSchema_XML(){
 		SellerCaller call=SellerCaller.buildDownload(MEDIA_TYPE.XML);
-		GetSchemaRequest request=new GetSchemaRequest();
-		GetSchemaRequest.RequestBody body=new GetSchemaRequest.RequestBody();
+		DownloadFeedSchemaRequest request=new DownloadFeedSchemaRequest();
+		DownloadFeedSchemaRequest.RequestBody body=new DownloadFeedSchemaRequest.RequestBody();
 		GetFeedSchema gfs=new GetFeedSchema();
 		gfs.setFeedType(1);
 		gfs.setIndustryCode("BA");
@@ -45,8 +45,8 @@ public class SellerCallerTest {
 	@Test
 	public void testDownloadFeedSchema_JSON(){
 		SellerCaller call=SellerCaller.buildDownload(MEDIA_TYPE.JSON);
-		GetSchemaRequest request=new GetSchemaRequest();
-		GetSchemaRequest.RequestBody body=new GetSchemaRequest.RequestBody();
+		DownloadFeedSchemaRequest request=new DownloadFeedSchemaRequest();
+		DownloadFeedSchemaRequest.RequestBody body=new DownloadFeedSchemaRequest.RequestBody();
 		GetFeedSchema gfs=new GetFeedSchema();
 		gfs.setFeedType(1);
 		gfs.setIndustryCode("BA");
@@ -60,10 +60,10 @@ public class SellerCallerTest {
 	@Test
 	public void testUSA_JSON() {
 		SellerCaller call=SellerCaller.buildJSON();
-		GetSellerAccountStatusResponse r=call.sellerStatus();		
+		SellerStatusCheckResponse r=call.sellerStatus();		
 		assertTrue(r.getIsSuccess());
 		assertTrue("Test_SandBox_MKTPLS".equals(r.getResponseBody().getSellerName()));		
-		GetIndustryResponse r1=call.getIndustryList("");
+		GetIndustryListResponse r1=call.getIndustryList("");
 		assertTrue(r1.getIsSuccess());
 		assertTrue(r1.getResponseBody().getIndustryList().getIndustry().size()>0);
 	}
@@ -71,10 +71,10 @@ public class SellerCallerTest {
 	@Test
 	public void testUSA_XML() {
 		SellerCaller call=SellerCaller.buildXML();
-		GetSellerAccountStatusResponse r=call.sellerStatus();		
+		SellerStatusCheckResponse r=call.sellerStatus();		
 		assertTrue(r.getIsSuccess());
 		assertTrue("Test_SandBox_MKTPLS".equals(r.getResponseBody().getSellerName()));		
-		GetIndustryResponse r1=call.getIndustryList("");
+		GetIndustryListResponse r1=call.getIndustryList("");
 		assertTrue(r1.getIsSuccess());
 	}
 
@@ -88,7 +88,7 @@ public class SellerCallerTest {
 		String SellerID=Content.SellerID;
 		Content.SellerID="A3TV";
 		SellerCaller call=SellerCaller.buildJSON();
-		GetSellerAccountStatusResponse r=call.sellerStatus();		
+		SellerStatusCheckResponse r=call.sellerStatus();		
 		Content.Platform=Content.PLATFORM.USA;
 		Content.Authorization=Authorization;
 		Content.SecretKey=SecretKey;
@@ -107,7 +107,7 @@ public class SellerCallerTest {
 		String SellerID=Content.SellerID;
 		Content.SellerID="A3TV";
 		SellerCaller call=SellerCaller.buildXML();
-		GetSellerAccountStatusResponse r=call.sellerStatus();		
+		SellerStatusCheckResponse r=call.sellerStatus();		
 		Content.Platform=Content.PLATFORM.USA;
 		Content.Authorization=Authorization;
 		Content.SecretKey=SecretKey;
@@ -120,8 +120,8 @@ public class SellerCallerTest {
 	public void testMockUSA() {
 		Variables.SimulationEnabled=true;		
 		SellerCaller call=SellerCaller.buildXML();
-		GetSellerAccountStatusResponse r=call.sellerStatus();
-		GetIndustryResponse r1=call.getIndustryList("");
+		SellerStatusCheckResponse r=call.sellerStatus();
+		GetIndustryListResponse r1=call.getIndustryList("");
 		Variables.SimulationEnabled=false;		
 		assertTrue(r.getIsSuccess());	
 		assertTrue(r1.getIsSuccess());
@@ -133,8 +133,8 @@ public class SellerCallerTest {
 		Content.Platform=Content.PLATFORM.CAN;
 		Variables.SimulationEnabled=true;		
 		SellerCaller call=SellerCaller.buildXML();
-		GetSellerAccountStatusResponse r=call.sellerStatus();
-		GetIndustryResponse r1=call.getIndustryList("");
+		SellerStatusCheckResponse r=call.sellerStatus();
+		GetIndustryListResponse r1=call.getIndustryList("");
 		Variables.SimulationEnabled=false;
 		Content.Platform=Content.PLATFORM.USA;
 		assertTrue(r.getIsSuccess());	
@@ -145,8 +145,8 @@ public class SellerCallerTest {
 	public void testMockDownloadFeedSchema_XML(){
 		Variables.SimulationEnabled=true;
 		SellerCaller call=SellerCaller.buildDownload(MEDIA_TYPE.XML);
-		GetSchemaRequest request=new GetSchemaRequest();
-		GetSchemaRequest.RequestBody body=new GetSchemaRequest.RequestBody();
+		DownloadFeedSchemaRequest request=new DownloadFeedSchemaRequest();
+		DownloadFeedSchemaRequest.RequestBody body=new DownloadFeedSchemaRequest.RequestBody();
 		GetFeedSchema gfs=new GetFeedSchema();
 		gfs.setFeedType(1);
 		gfs.setIndustryCode("BA");
@@ -162,8 +162,8 @@ public class SellerCallerTest {
 	public void testMockDownloadFeedSchema_JSON(){
 		Variables.SimulationEnabled=true;
 		SellerCaller call=SellerCaller.buildDownload(MEDIA_TYPE.JSON);
-		GetSchemaRequest request=new GetSchemaRequest();
-		GetSchemaRequest.RequestBody body=new GetSchemaRequest.RequestBody();
+		DownloadFeedSchemaRequest request=new DownloadFeedSchemaRequest();
+		DownloadFeedSchemaRequest.RequestBody body=new DownloadFeedSchemaRequest.RequestBody();
 		GetFeedSchema gfs=new GetFeedSchema();
 		gfs.setFeedType(1);
 		gfs.setIndustryCode("BA");

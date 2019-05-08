@@ -14,12 +14,11 @@ import com.newegg.marketplace.sdk.common.Content.PLATFORM;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.report.ReportConfig;
 import com.newegg.marketplace.sdk.report.RequireSetting;
-import com.newegg.marketplace.sdk.report.SerializationObjectParser;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.model.get.OrderListRequest;
-import com.newegg.marketplace.sdk.report.model.get.OrderListResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SOrderListRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SOrderListResponse;
+import com.newegg.marketplace.sdk.report.model.get.OrderListReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.OrderListReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitOrderListReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitOrderListReportResponse;
 
 public class OrderListReportCallerTest {
 	
@@ -28,11 +27,11 @@ public class OrderListReportCallerTest {
 		APIConfig.load(ReportConfig.class);
 	}
 	
-	private SOrderListRequest buildSubmitOrderListRequest(PLATFORM p) {
-		SOrderListRequest submitRequest = new SOrderListRequest();
-		SOrderListRequest.RequestBody submitBody = new SOrderListRequest.RequestBody();
-		SOrderListRequest.RequestBody.OrderReportCriteria orderCriteria = 
-				new SOrderListRequest.RequestBody.OrderReportCriteria();
+	private SubmitOrderListReportRequest buildSubmitOrderListRequest(PLATFORM p) {
+		SubmitOrderListReportRequest submitRequest = new SubmitOrderListReportRequest();
+		SubmitOrderListReportRequest.RequestBody submitBody = new SubmitOrderListReportRequest.RequestBody();
+		SubmitOrderListReportRequest.RequestBody.OrderReportCriteria orderCriteria = 
+				new SubmitOrderListReportRequest.RequestBody.OrderReportCriteria();
 		
 		switch (p) {
 		case USA:
@@ -74,10 +73,10 @@ public class OrderListReportCallerTest {
 		return submitRequest;
 	}
 	
-	private OrderListRequest buildGetOrderListRequest(PLATFORM p) {
-		OrderListRequest request = new OrderListRequest();
-		OrderListRequest.RequestBody body = new OrderListRequest.RequestBody();
-		OrderListRequest.RequestBody.PageInfo page = new OrderListRequest.RequestBody.PageInfo();
+	private OrderListReportRequest buildGetOrderListRequest(PLATFORM p) {
+		OrderListReportRequest request = new OrderListReportRequest();
+		OrderListReportRequest.RequestBody body = new OrderListReportRequest.RequestBody();
+		OrderListReportRequest.RequestBody.PageInfo page = new OrderListReportRequest.RequestBody.PageInfo();
 		
 		switch (p) {
 		case USA:
@@ -109,9 +108,9 @@ public class OrderListReportCallerTest {
 		return request;
 	}
 	
-	private void sendGetOrderList(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		OrderListResponse response = null;
-		OrderListRequest request = null;
+	private void sendGetOrderList(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm,String version) {
+		OrderListReportResponse response = null;
+		OrderListReportRequest request = null;
 		OrderListReportCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -127,7 +126,7 @@ public class OrderListReportCallerTest {
 			else
 				sender = OrderListReportCaller.buildJSON();
 			
-			response = sender.sendOrderListReportRequest(request);
+			response = sender.sendOrderListReportRequest(request,version);
 			assertTrue("true".equals(response.getIsSuccess()));
 		} catch(NeweggException e) {
 			RequireSetting.log.info("Zack-Test NeweggException happened");
@@ -138,8 +137,8 @@ public class OrderListReportCallerTest {
 	}
 	
 	private void sendSubmitOrderList(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		SOrderListResponse response = null;
-		SOrderListRequest request = null;
+		SubmitOrderListReportResponse response = null;
+		SubmitOrderListReportRequest request = null;
 		OrderListReportCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -168,19 +167,19 @@ public class OrderListReportCallerTest {
 	@Test
 	public void testOrderListReportCaller_XML() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 305, 306, 307, 309
+		//Variables.version = "306"; // 305, 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetOrderList(false, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendGetOrderList(false, MEDIA_TYPE.XML, PLATFORM.USA,"306");
 		
 		RequireSetting.authKeySetting("A3TV");
-		Variables.version = "305"; // 305, 309
+		//Variables.version = "305"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetOrderList(false, MEDIA_TYPE.XML, PLATFORM.CAN);
+		sendGetOrderList(false, MEDIA_TYPE.XML, PLATFORM.CAN,"305");
 		
 		RequireSetting.authKeySetting("A44S");
-		Variables.version = "309"; // 309
+		//Variables.version = "309"; // 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetOrderList(false, MEDIA_TYPE.XML, PLATFORM.USB);
+		sendGetOrderList(false, MEDIA_TYPE.XML, PLATFORM.USB,"309");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -188,9 +187,9 @@ public class OrderListReportCallerTest {
 	@Test
 	public void testOrderListReportCaller_XML_MOCK() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 305, 306, 307, 309
+		//Variables.version = "306"; // 305, 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetOrderList(true, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendGetOrderList(true, MEDIA_TYPE.XML, PLATFORM.USA,"306");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -198,19 +197,19 @@ public class OrderListReportCallerTest {
 	//@Test
 	public void testOrderListReportCaller_JSON() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 305, 306, 307, 309
+		//Variables.version = "306"; // 305, 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetOrderList(false, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendGetOrderList(false, MEDIA_TYPE.JSON, PLATFORM.USA,"306");
 		
 		RequireSetting.authKeySetting("A3TV");
-		Variables.version = "305"; // 305, 309
+		//Variables.version = "305"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetOrderList(false, MEDIA_TYPE.JSON, PLATFORM.CAN);
+		sendGetOrderList(false, MEDIA_TYPE.JSON, PLATFORM.CAN,"305");
 		
 		RequireSetting.authKeySetting("A44S");
-		Variables.version = "309"; // 309
+		//Variables.version = "309"; // 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetOrderList(false, MEDIA_TYPE.JSON, PLATFORM.USB);
+		sendGetOrderList(false, MEDIA_TYPE.JSON, PLATFORM.USB,"309");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -218,9 +217,9 @@ public class OrderListReportCallerTest {
 	//@Test
 	public void testOrderListReportCaller_JSON_MOCK() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 305, 306, 307, 309
+		//Variables.version = "306"; // 305, 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendGetOrderList(true, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendGetOrderList(true, MEDIA_TYPE.JSON, PLATFORM.USA,"306");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -233,17 +232,17 @@ public class OrderListReportCallerTest {
 		log.info(st.toString());*/
 		
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 305, 306, 307, 309
+		//Variables.version = "306"; // 305, 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitOrderList(false, MEDIA_TYPE.XML, PLATFORM.USA);
 		
 		RequireSetting.authKeySetting("A3TV");
-		Variables.version = "305"; // 305, 309
+		//Variables.version = "305"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitOrderList(false, MEDIA_TYPE.XML, PLATFORM.CAN);
 		
 		RequireSetting.authKeySetting("A44S");
-		Variables.version = "309"; // 309
+		//Variables.version = "309"; // 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitOrderList(false, MEDIA_TYPE.XML, PLATFORM.USB);
 		
@@ -253,7 +252,7 @@ public class OrderListReportCallerTest {
 	@Test
 	public void testSendSubmitOrderListReportRequest_XML_MOCK() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 305, 306, 307, 309
+		//Variables.version = "306"; // 305, 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitOrderList(true, MEDIA_TYPE.XML, PLATFORM.USA);
 		
@@ -263,17 +262,17 @@ public class OrderListReportCallerTest {
 	//@Test
 	public void testSendSubmitOrderListReportRequest_JSON() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 305, 306, 307, 309
+		//Variables.version = "306"; // 305, 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitOrderList(false, MEDIA_TYPE.JSON, PLATFORM.USA);
 		
 		RequireSetting.authKeySetting("A3TV");
-		Variables.version = "305"; // 305, 309
+		//Variables.version = "305"; // 305, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitOrderList(false, MEDIA_TYPE.JSON, PLATFORM.CAN);
 		
 		RequireSetting.authKeySetting("A44S");
-		Variables.version = "309"; // 309
+		//Variables.version = "309"; // 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitOrderList(false, MEDIA_TYPE.JSON, PLATFORM.USB);
 		
@@ -283,7 +282,7 @@ public class OrderListReportCallerTest {
 	//@Test
 	public void testSendSubmitOrderListReportRequest_JSON_MOCK() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "306"; // 305, 306, 307, 309
+		//Variables.version = "306"; // 305, 306, 307, 309
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendSubmitOrderList(true, MEDIA_TYPE.JSON, PLATFORM.USA);
 		

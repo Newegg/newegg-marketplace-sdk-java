@@ -5,10 +5,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.RMAListRequest;
-import com.newegg.marketplace.sdk.report.model.get.RMAListResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SRMAListRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SRMAListResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetRMAListReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetRMAListReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitRMAListReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitRMAListReportResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -41,24 +41,30 @@ public interface RMAListCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}&version={version}")
-	RMAListResponse sendRMAListRequestJSON(@Param("sellerid") String sellerID,
+	GetRMAListReportResponse sendRMAListRequestJSON(@Param("sellerid") String sellerID,
 			                               @Param("version") String version, 
-			                               RMAListRequest body);
+			                               GetRMAListReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}&version={version}")
-	RMAListResponse sendRMAListRequestXML(@Param("sellerid") String sellerID,
+	GetRMAListReportResponse sendRMAListRequestXML(@Param("sellerid") String sellerID,
 								            @Param("version") String version, 
-								            RMAListRequest body);
+								            GetRMAListReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default RMAListResponse sendRMAListRequest(RMAListRequest body) {
+	default GetRMAListReportResponse sendRMAListRequest(GetRMAListReportRequest body,String version) {
 		switch(Variables.MediaType) {
-		case JSON:			
-			return sendRMAListRequestJSON(Content.SellerID, Variables.version, body);
+		case JSON:		
+			if(Variables.SimulationEnabled)
+				return sendRMAListRequestJSON(Content.SellerID, "309", body);
+			else
+				return sendRMAListRequestJSON(Content.SellerID, version, body);
 			
-		case XML:			
-			return sendRMAListRequestXML(Content.SellerID, Variables.version, body);	
+		case XML:	
+			if(Variables.SimulationEnabled)
+				return sendRMAListRequestXML(Content.SellerID, "309", body);
+			else				
+				return sendRMAListRequestXML(Content.SellerID, version, body);	
 			
 		default:
 			throw new RuntimeException("Never Happened!");
@@ -69,14 +75,14 @@ public interface RMAListCaller {
 	// submit command
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SRMAListResponse sendSubmitRMAListRequestJSON(@Param("sellerid") String sellerID, SRMAListRequest body);
+	SubmitRMAListReportResponse sendSubmitRMAListRequestJSON(@Param("sellerid") String sellerID, SubmitRMAListReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SRMAListResponse sendSubmitRMAListRequestXML(@Param("sellerid") String sellerID, SRMAListRequest body);
+	SubmitRMAListReportResponse sendSubmitRMAListRequestXML(@Param("sellerid") String sellerID, SubmitRMAListReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SRMAListResponse sendSubmitRMAListRequest(SRMAListRequest body) {
+	default SubmitRMAListReportResponse sendSubmitRMAListRequest(SubmitRMAListReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendSubmitRMAListRequestJSON(Content.SellerID, body);

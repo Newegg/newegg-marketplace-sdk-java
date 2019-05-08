@@ -4,8 +4,8 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.order.Variables;
-import com.newegg.marketplace.sdk.order.model.GetAddOrderInfoRequest;
-import com.newegg.marketplace.sdk.order.model.GetAddOrderInfoResponse;
+import com.newegg.marketplace.sdk.order.model.GetAdditionalOrderInformationRequest;
+import com.newegg.marketplace.sdk.order.model.GetAdditionalOrderInformationResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -38,14 +38,14 @@ public interface AdditionalOrderInforCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /ordermgmt/order/addorderinfo?sellerid={sellerid}")
-	GetAddOrderInfoResponse sendAdditionalOrderInforRequestJSON(@Param("sellerid") String sellerID, GetAddOrderInfoRequest body);
+	GetAdditionalOrderInformationResponse sendAdditionalOrderInforRequestJSON(@Param("sellerid") String sellerID, GetAdditionalOrderInformationRequest body);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /ordermgmt/order/addorderinfo?sellerid={sellerid}")
-	GetAddOrderInfoResponse sendAdditionalOrderInforRequestXML(@Param("sellerid") String sellerID, GetAddOrderInfoRequest body);
+	GetAdditionalOrderInformationResponse sendAdditionalOrderInforRequestXML(@Param("sellerid") String sellerID, GetAdditionalOrderInformationRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default GetAddOrderInfoResponse sendAdditionalOrderInforRequest(GetAddOrderInfoRequest body) {
+	default GetAdditionalOrderInformationResponse sendAdditionalOrderInforRequest(GetAdditionalOrderInformationRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendAdditionalOrderInforRequestJSON(Content.SellerID, body);

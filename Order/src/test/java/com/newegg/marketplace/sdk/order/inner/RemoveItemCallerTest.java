@@ -55,7 +55,7 @@ public class RemoveItemCallerTest {
 		return request;
 	}
 	
-	private void sendRemoveItem(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
+	private void sendRemoveItem(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm,String orderNumber) {
 		RemoveItemResponse response = null;
 		RemoveItemRequest request = null;
 		RemoveItemCaller sender = null;
@@ -74,7 +74,7 @@ public class RemoveItemCallerTest {
 			else
 				sender = RemoveItemCaller.buildJSON();
 			
-			response = sender.sendRemoveItemRequest(request);
+			response = sender.sendRemoveItemRequest(request,orderNumber);
 			assertTrue("true".equals(response.getIsSuccess()));
 		} catch(NeweggException e) {
 			RequireSetting.log.info("Zack-Test NeweggException happened");
@@ -86,9 +86,9 @@ public class RemoveItemCallerTest {
 	
 	@Test
 	public void testRemoveItemCaller_XML_MOCK() {
-		Variables.orderNumber = "230103635";
+		
 		RequireSetting.authKeySetting("A006");
-		sendRemoveItem(true, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendRemoveItem(true, MEDIA_TYPE.XML, PLATFORM.USA,"230103635");
 	}
 
 }

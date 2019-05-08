@@ -1,20 +1,20 @@
 package com.newegg.marketplace.sdk.order.inner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.newegg.marketplace.sdk.common.APIConfig;
 import com.newegg.marketplace.sdk.common.Content;
-import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.common.Content.PLATFORM;
+import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.order.OrderConfig;
 import com.newegg.marketplace.sdk.order.RequireSetting;
 import com.newegg.marketplace.sdk.order.Variables;
-import com.newegg.marketplace.sdk.order.model.OrderInfoRequest;
-import com.newegg.marketplace.sdk.order.model.OrderInfoResponse;
+import com.newegg.marketplace.sdk.order.model.GetOrderInformationRequest;
+import com.newegg.marketplace.sdk.order.model.GetOrderInformationResponse;
 
 public class OrderInfoCallerTest {
 	
@@ -23,14 +23,14 @@ public class OrderInfoCallerTest {
 		APIConfig.load(OrderConfig.class);
 	}
 	
-	private OrderInfoRequest buildOrderInfoRequest(PLATFORM p) {
-		OrderInfoRequest request = new OrderInfoRequest();
-		OrderInfoRequest.RequestBody body = new OrderInfoRequest.RequestBody();
-		OrderInfoRequest.RequestBody.RequestCriteria criteria = new OrderInfoRequest.RequestBody.RequestCriteria();
-		OrderInfoRequest.RequestBody.RequestCriteria.OrderNumberList orderList = 
-				new OrderInfoRequest.RequestBody.RequestCriteria.OrderNumberList();
-		OrderInfoRequest.RequestBody.RequestCriteria.SellerOrderNumberList sellerList = 
-				new OrderInfoRequest.RequestBody.RequestCriteria.SellerOrderNumberList();
+	private GetOrderInformationRequest buildOrderInfoRequest(PLATFORM p) {
+		GetOrderInformationRequest request = new GetOrderInformationRequest();
+		GetOrderInformationRequest.RequestBody body = new GetOrderInformationRequest.RequestBody();
+		GetOrderInformationRequest.RequestBody.RequestCriteria criteria = new GetOrderInformationRequest.RequestBody.RequestCriteria();
+		GetOrderInformationRequest.RequestBody.RequestCriteria.OrderNumberList orderList = 
+				new GetOrderInformationRequest.RequestBody.RequestCriteria.OrderNumberList();
+		GetOrderInformationRequest.RequestBody.RequestCriteria.SellerOrderNumberList sellerList = 
+				new GetOrderInformationRequest.RequestBody.RequestCriteria.SellerOrderNumberList();
 		
 		
 		switch (p) {
@@ -83,9 +83,9 @@ public class OrderInfoCallerTest {
 		return request;
 	}
 	
-	private void sendOrderInfo(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		OrderInfoResponse response = null;
-		OrderInfoRequest request = null;
+	private void sendOrderInfo(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm,String verson) {
+		GetOrderInformationResponse response = null;
+		GetOrderInformationRequest request = null;
 		OrderInfoCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -103,7 +103,7 @@ public class OrderInfoCallerTest {
 			else
 				sender = OrderInfoCaller.buildJSON();
 			
-			response = sender.sendOrderInfoRequest(request);
+			response = sender.sendOrderInfoRequest(request,verson);
 			assertTrue("true".equals(response.getIsSuccess()));
 		} catch(NeweggException e) {
 			RequireSetting.log.info("Zack-Test NeweggException happened");
@@ -118,20 +118,20 @@ public class OrderInfoCallerTest {
 		
 		Variables.MediaType = MEDIA_TYPE.XML;
 		OrderInfoCaller call = OrderInfoCaller.buildXML();
-		OrderInfoRequest request = new OrderInfoRequest();
-		OrderInfoRequest.RequestBody body = new OrderInfoRequest.RequestBody();
+		GetOrderInformationRequest request = new GetOrderInformationRequest();
+		GetOrderInformationRequest.RequestBody body = new GetOrderInformationRequest.RequestBody();
 		
 		request.setOperationType("GetOrderInfoRequest");
 		body.setPageIndex(1);
 		body.setPageSize(10);
-		OrderInfoRequest.RequestBody.RequestCriteria criteria = new OrderInfoRequest.RequestBody.RequestCriteria();
-		OrderInfoRequest.RequestBody.RequestCriteria.OrderNumberList orderNumberList = 
-				new OrderInfoRequest.RequestBody.RequestCriteria.OrderNumberList();
+		GetOrderInformationRequest.RequestBody.RequestCriteria criteria = new GetOrderInformationRequest.RequestBody.RequestCriteria();
+		GetOrderInformationRequest.RequestBody.RequestCriteria.OrderNumberList orderNumberList = 
+				new GetOrderInformationRequest.RequestBody.RequestCriteria.OrderNumberList();
 		orderNumberList.getOrderNumber().add(159243598);
 		orderNumberList.getOrderNumber().add(41473642);
 		criteria.setOrderNumberList(orderNumberList);
-		OrderInfoRequest.RequestBody.RequestCriteria.SellerOrderNumberList sellerOrderNumberList = 
-				new OrderInfoRequest.RequestBody.RequestCriteria.SellerOrderNumberList(); 
+		GetOrderInformationRequest.RequestBody.RequestCriteria.SellerOrderNumberList sellerOrderNumberList = 
+				new GetOrderInformationRequest.RequestBody.RequestCriteria.SellerOrderNumberList(); 
 		sellerOrderNumberList.getSellerOrderNumber().add("SO159243598");
 		sellerOrderNumberList.getSellerOrderNumber().add("SO41473642");
 		criteria.setSellerOrderNumberList(sellerOrderNumberList);
@@ -144,7 +144,7 @@ public class OrderInfoCallerTest {
 		criteria.setPremierOrder(1);
 		body.setRequestCriteria(criteria);
 		request.setRequestBody(body);
-		OrderInfoResponse response = call.sendOrderInfoRequest(request);
+		GetOrderInformationResponse response = call.sendOrderInfoRequest(request,"304");
 		Variables.MediaType = saveType;
 		assertTrue("true".equals(response.getIsSuccess()));
 	}
@@ -153,9 +153,9 @@ public class OrderInfoCallerTest {
 	public void testSendOrderInfoRequest_XML_USA() {
 		//testSendOrderInfoRequest_XML();
 		
-		Variables.version = "304";	// 304, 305, 306, 307
+
 		RequireSetting.authKeySetting("A2GS");
-		sendOrderInfo(false, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendOrderInfo(false, MEDIA_TYPE.XML, PLATFORM.USA,"304");
 	}
 	
 	@Test
@@ -163,9 +163,8 @@ public class OrderInfoCallerTest {
 		//Content.Platform = Content.PLATFORM.USB;
 		//testSendOrderInfoRequest_XML();
 		
-		Variables.version = "304";	// 304, 305
 		RequireSetting.authKeySetting("A44S");
-		sendOrderInfo(false, MEDIA_TYPE.XML, PLATFORM.USB);
+		sendOrderInfo(false, MEDIA_TYPE.XML, PLATFORM.USB,"304");
 	}
 	
 	@Test
@@ -173,31 +172,27 @@ public class OrderInfoCallerTest {
 		//Content.Platform = Content.PLATFORM.CAN;
 		//testSendOrderInfoRequest_XML();
 		
-		Variables.version = "304";	// 304, 305
 		RequireSetting.authKeySetting("A3TV");
-		sendOrderInfo(false, MEDIA_TYPE.XML, PLATFORM.CAN);
+		sendOrderInfo(false, MEDIA_TYPE.XML, PLATFORM.CAN,"304");
 	}
 	
 	
 	@Test
 	public void testSendOrderInfoRequest_XML_MOCK() {
-		Variables.version = "304";	// 304, 305
 		RequireSetting.authKeySetting("A3TV");
-		sendOrderInfo(true, MEDIA_TYPE.XML, PLATFORM.CAN);
+		sendOrderInfo(true, MEDIA_TYPE.XML, PLATFORM.CAN,"304");
 	}
 	
 	//@Test
 	public void testSendOrderInfoRequest_JSON() {
-		Variables.version = "304";	// 304, 305, 306, 307
 		RequireSetting.authKeySetting("A2GS");
-		sendOrderInfo(false, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendOrderInfo(false, MEDIA_TYPE.JSON, PLATFORM.USA,"304");
 	}
 	
 	//@Test
 	public void testSendOrderInfoRequest_JSON_MOCK() {
-		Variables.version = "304";	// 304, 305, 306, 307
 		RequireSetting.authKeySetting("A2GS");
-		sendOrderInfo(true, MEDIA_TYPE.JSON, PLATFORM.USA);
+		sendOrderInfo(true, MEDIA_TYPE.JSON, PLATFORM.USA,"304");
 	}
 	
 }

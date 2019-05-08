@@ -5,10 +5,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.report.Variables;
 import com.newegg.marketplace.sdk.report.Variables.URILock;
-import com.newegg.marketplace.sdk.report.model.get.ItemLookupRequest;
-import com.newegg.marketplace.sdk.report.model.get.ItemLookupResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SItemLookupRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SItemLookupResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetItemLookupReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetItemLookupReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.ItemLookupRequest;
+import com.newegg.marketplace.sdk.report.model.submit.ItemLookupResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -41,14 +41,14 @@ public interface ItemLookupCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	ItemLookupResponse sendItemLookupRequestJSON(@Param("sellerid") String sellerID, ItemLookupRequest body);
+	GetItemLookupReportResponse sendItemLookupRequestJSON(@Param("sellerid") String sellerID, GetItemLookupReportRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /reportmgmt/report/result?sellerid={sellerid}")
-	ItemLookupResponse sendItemLookupRequestXML(@Param("sellerid") String sellerID, ItemLookupRequest body);
+	GetItemLookupReportResponse sendItemLookupRequestXML(@Param("sellerid") String sellerID, GetItemLookupReportRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default ItemLookupResponse sendItemLookupRequest(ItemLookupRequest body) {
+	default GetItemLookupReportResponse sendItemLookupRequest(GetItemLookupReportRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendItemLookupRequestJSON(Content.SellerID, body);
@@ -65,14 +65,14 @@ public interface ItemLookupCaller {
 	// submit command
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SItemLookupResponse sendSubmitItemLookupRequestJSON(@Param("sellerid") String sellerID, SItemLookupRequest body);
+	ItemLookupResponse sendSubmitItemLookupRequestJSON(@Param("sellerid") String sellerID, ItemLookupRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /reportmgmt/report/submitrequest?sellerid={sellerid}")
-	SItemLookupResponse sendSubmitItemLookupRequestXML(@Param("sellerid") String sellerID, SItemLookupRequest body);
+	ItemLookupResponse sendSubmitItemLookupRequestXML(@Param("sellerid") String sellerID, ItemLookupRequest body);
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default SItemLookupResponse sendSubmitItemLookupRequest(SItemLookupRequest body) {
+	default ItemLookupResponse sendSubmitItemLookupRequest(ItemLookupRequest body) {
 		switch(Variables.MediaType) {
 		case JSON:			
 			return sendSubmitItemLookupRequestJSON(Content.SellerID, body);

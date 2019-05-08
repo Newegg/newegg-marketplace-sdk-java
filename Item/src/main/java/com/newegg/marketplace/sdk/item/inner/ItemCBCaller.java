@@ -4,12 +4,12 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.item.Variables;
-import com.newegg.marketplace.sdk.item.model.InventoryQueryCriteriaV2;
-import com.newegg.marketplace.sdk.item.model.InventoryResultV2;
-import com.newegg.marketplace.sdk.item.model.ItemInventoryAndPriceInfo;
-import com.newegg.marketplace.sdk.item.model.PriceQueryCriteriaV2;
-import com.newegg.marketplace.sdk.item.model.PriceResultV2;
-import com.newegg.marketplace.sdk.item.model.UpdateInventoryAndPriceResult;
+import com.newegg.marketplace.sdk.item.model.GetItemInventoryRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemInventoryResponse;
+import com.newegg.marketplace.sdk.item.model.UpdateInventoryandPriceRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemPriceRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemPriceResponse;
+import com.newegg.marketplace.sdk.item.model.UpdateInventoryandPriceResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -40,12 +40,12 @@ public interface ItemCBCaller {
 
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /contentmgmt/item/inventory?sellerid={sellerid}&version=304")
-	InventoryResultV2 getItemInventoryJSON(@Param("sellerid") String sellerID,InventoryQueryCriteriaV2 body);	
+	GetItemInventoryResponse getItemInventoryJSON(@Param("sellerid") String sellerID,GetItemInventoryRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /contentmgmt/item/inventory?sellerid={sellerid}&version=304")
-	InventoryResultV2 getItemInventoryXML(@Param("sellerid") String sellerID,InventoryQueryCriteriaV2 body);
+	GetItemInventoryResponse getItemInventoryXML(@Param("sellerid") String sellerID,GetItemInventoryRequest body);
 	
-	default InventoryResultV2 getItemInventory(InventoryQueryCriteriaV2 body) {
+	default GetItemInventoryResponse getItemInventory(GetItemInventoryRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getItemInventoryJSON(Content.SellerID,body);
@@ -59,12 +59,12 @@ public interface ItemCBCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /contentmgmt/item/price?sellerid={sellerid}")
-	PriceResultV2 getPriceJSON(@Param("sellerid") String sellerID,PriceQueryCriteriaV2 body);
+	GetItemPriceResponse getPriceJSON(@Param("sellerid") String sellerID,GetItemPriceRequest body);
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /contentmgmt/item/price?sellerid={sellerid}")
-	PriceResultV2 getPriceXML(@Param("sellerid") String sellerID,PriceQueryCriteriaV2 body);
+	GetItemPriceResponse getPriceXML(@Param("sellerid") String sellerID,GetItemPriceRequest body);
 
-	default PriceResultV2 getPrice(PriceQueryCriteriaV2 body) {
+	default GetItemPriceResponse getPrice(GetItemPriceRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getPriceJSON(Content.SellerID,body);
@@ -78,12 +78,12 @@ public interface ItemCBCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /contentmgmt/item/inventoryandprice?sellerid={sellerid}")
-	UpdateInventoryAndPriceResult updateInventoryAndPriceJSON(@Param("sellerid") String sellerID,ItemInventoryAndPriceInfo body);
+	UpdateInventoryandPriceResponse updateInventoryAndPriceJSON(@Param("sellerid") String sellerID,UpdateInventoryandPriceRequest body);
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /contentmgmt/item/inventoryandprice?sellerid={sellerid}")
-	UpdateInventoryAndPriceResult updateInventoryAndPriceXML(@Param("sellerid") String sellerID,ItemInventoryAndPriceInfo body);
+	UpdateInventoryandPriceResponse updateInventoryAndPriceXML(@Param("sellerid") String sellerID,UpdateInventoryandPriceRequest body);
 	
-	default UpdateInventoryAndPriceResult updateInventoryAndPrice(ItemInventoryAndPriceInfo body) {
+	default UpdateInventoryandPriceResponse updateInventoryAndPrice(UpdateInventoryandPriceRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return updateInventoryAndPriceJSON(Content.SellerID,body);

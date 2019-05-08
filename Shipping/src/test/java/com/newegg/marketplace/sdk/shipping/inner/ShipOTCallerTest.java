@@ -12,7 +12,7 @@ import com.newegg.marketplace.sdk.shipping.Variables;
 import com.newegg.marketplace.sdk.shipping.model.GetPackageListRequest;
 import com.newegg.marketplace.sdk.shipping.model.GetPackageListResponse;
 import com.newegg.marketplace.sdk.shipping.model.GetShippingLabelRequest;
-import com.newegg.marketplace.sdk.shipping.model.GetShippingLabelResponse;
+import com.newegg.marketplace.sdk.shipping.model.GetShippinLabelResponse;
 
 public class ShipOTCallerTest {
 
@@ -69,7 +69,7 @@ public class ShipOTCallerTest {
 		body.setRequestID("282Q5AUAMQKIE");
 		body.setOrderNumber("252426189");
 		request.setRequestBody(body);
-		GetShippingLabelResponse r=call.getShippingLabel(request);
+		GetShippinLabelResponse r=call.getShippingLabel(request);
 		assertTrue(r.getIsSuccess());
 		assertEquals("252426189",r.getResponseBody().getOrderNumber());
 		assertTrue(r.getResponseBody().getRequestList().getRequest().size()>0);
@@ -86,7 +86,7 @@ public class ShipOTCallerTest {
 		body.setRequestID("282Q5AUAMQKIE");
 		body.setOrderNumber("252426189");
 		request.setRequestBody(body);
-		GetShippingLabelResponse r=call.getShippingLabel(request);
+		GetShippinLabelResponse r=call.getShippingLabel(request);
 		assertTrue(r.getIsSuccess());
 		assertEquals("252426189",r.getResponseBody().getOrderNumber());
 		assertTrue(r.getResponseBody().getRequestList().getRequest().size()>0);
@@ -144,7 +144,7 @@ public class ShipOTCallerTest {
 		body.setRequestID("282Q5AUAMQKIE");
 		body.setOrderNumber("252426189");
 		request.setRequestBody(body);
-		GetShippingLabelResponse r=call.getShippingLabel(request);
+		GetShippinLabelResponse r=call.getShippingLabel(request);
 		Variables.SimulationEnabled=false;
 		assertTrue(r.getIsSuccess());
 		assertEquals("252426189",r.getResponseBody().getOrderNumber());
@@ -163,7 +163,7 @@ public class ShipOTCallerTest {
 		body.setRequestID("282Q5AUAMQKIE");
 		body.setOrderNumber("252426189");
 		request.setRequestBody(body);
-		GetShippingLabelResponse r=call.getShippingLabel(request);
+		GetShippinLabelResponse r=call.getShippingLabel(request);
 		Variables.SimulationEnabled=false;
 		assertTrue(r.getIsSuccess());
 		assertEquals("252426189",r.getResponseBody().getOrderNumber());

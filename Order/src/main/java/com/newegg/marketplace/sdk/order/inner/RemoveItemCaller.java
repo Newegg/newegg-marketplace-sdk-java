@@ -45,13 +45,19 @@ public interface RemoveItemCaller {
 	RemoveItemResponse sendRemoveItemRequestXML(@Param("ordernumber") String orderNumber, @Param("sellerid") String sellerID, RemoveItemRequest body);
 	
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default RemoveItemResponse sendRemoveItemRequest(RemoveItemRequest body) {
+	default RemoveItemResponse sendRemoveItemRequest(RemoveItemRequest body,String orderNumber) {
 		switch(Variables.MediaType) {
-		case JSON:			
-			return sendRemoveItemRequestJSON(Variables.orderNumber, Content.SellerID, body);
+		case JSON:		
+			if(Variables.SimulationEnabled)
+				return sendRemoveItemRequestJSON("123456", Content.SellerID, body);
+			else
+				return sendRemoveItemRequestJSON(orderNumber, Content.SellerID, body);
 			
-		case XML:			
-			return sendRemoveItemRequestXML(Variables.orderNumber, Content.SellerID, body);	
+		case XML:
+			if(Variables.SimulationEnabled)
+				return sendRemoveItemRequestXML("123456", Content.SellerID, body);
+			else
+				return sendRemoveItemRequestXML(orderNumber, Content.SellerID, body);	
 			
 		default:
 			throw new RuntimeException("Never Happened!");

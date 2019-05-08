@@ -4,8 +4,8 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.order.Variables;
-import com.newegg.marketplace.sdk.order.model.OrderInfoRequest;
-import com.newegg.marketplace.sdk.order.model.OrderInfoResponse;
+import com.newegg.marketplace.sdk.order.model.GetOrderInformationRequest;
+import com.newegg.marketplace.sdk.order.model.GetOrderInformationResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -38,20 +38,27 @@ public interface OrderInfoCaller {
 	 */
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /ordermgmt/order/orderinfo?sellerid={sellerid}&version={version}")
-	OrderInfoResponse sendOrderInfoRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version, OrderInfoRequest body);
+	GetOrderInformationResponse sendOrderInfoRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version, GetOrderInformationRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /ordermgmt/order/orderinfo?sellerid={sellerid}&version={version}")
-	OrderInfoResponse sendOrderInfoRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, OrderInfoRequest body);
+	GetOrderInformationResponse sendOrderInfoRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, GetOrderInformationRequest body);
 	
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default OrderInfoResponse sendOrderInfoRequest(OrderInfoRequest body) {
+	default GetOrderInformationResponse sendOrderInfoRequest(GetOrderInformationRequest body,String version) {
 		switch(Variables.MediaType) {
-		case JSON:			
-			return sendOrderInfoRequestJSON(Content.SellerID, Variables.version, body);
-			
-		case XML:			
-			return sendOrderInfoRequestXML(Content.SellerID, Variables.version, body);	
+		case JSON:	
+			if(Variables.SimulationEnabled) {
+				return sendOrderInfoRequestJSON(Content.SellerID, "304", body);
+			}else {
+				return sendOrderInfoRequestJSON(Content.SellerID, version, body);
+			}						
+		case XML:
+			if(Variables.SimulationEnabled) {
+				return sendOrderInfoRequestXML(Content.SellerID, "304", body);
+			}else {
+				return sendOrderInfoRequestXML(Content.SellerID, version, body);
+			}				
 			
 		default:
 			throw new RuntimeException("Never Happened!");

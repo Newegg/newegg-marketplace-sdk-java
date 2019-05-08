@@ -7,7 +7,7 @@ import com.newegg.marketplace.sdk.shipping.Variables;
 import com.newegg.marketplace.sdk.shipping.model.GetPackageListRequest;
 import com.newegg.marketplace.sdk.shipping.model.GetPackageListResponse;
 import com.newegg.marketplace.sdk.shipping.model.GetShippingLabelRequest;
-import com.newegg.marketplace.sdk.shipping.model.GetShippingLabelResponse;
+import com.newegg.marketplace.sdk.shipping.model.GetShippinLabelResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -56,12 +56,12 @@ public interface ShipOTCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /shippingservice/shippinglabel/shippinglabels?sellerid={sellerid}")
-	GetShippingLabelResponse getShippingLabelJSON(@Param("sellerid") String sellerID,GetShippingLabelRequest body);
+	GetShippinLabelResponse getShippingLabelJSON(@Param("sellerid") String sellerID,GetShippingLabelRequest body);
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /shippingservice/shippinglabel/shippinglabels?sellerid={sellerid}")
-	GetShippingLabelResponse getShippingLabelXML(@Param("sellerid") String sellerID,GetShippingLabelRequest body);
+	GetShippinLabelResponse getShippingLabelXML(@Param("sellerid") String sellerID,GetShippingLabelRequest body);
 	
-	default GetShippingLabelResponse getShippingLabel(GetShippingLabelRequest body) {
+	default GetShippinLabelResponse getShippingLabel(GetShippingLabelRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getShippingLabelJSON(Content.SellerID,body);			

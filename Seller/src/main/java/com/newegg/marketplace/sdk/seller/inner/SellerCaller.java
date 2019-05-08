@@ -6,9 +6,9 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.seller.Variables;
-import com.newegg.marketplace.sdk.seller.model.GetIndustryResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSchemaRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSellerAccountStatusResponse;
+import com.newegg.marketplace.sdk.seller.model.GetIndustryListResponse;
+import com.newegg.marketplace.sdk.seller.model.DownloadFeedSchemaRequest;
+import com.newegg.marketplace.sdk.seller.model.SellerStatusCheckResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -55,21 +55,21 @@ public interface SellerCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("GET /sellermgmt/seller/accountstatus?sellerid={sellerid}")
-	GetSellerAccountStatusResponse sellerStatusJSON(@Param("sellerid") String sellerID);
+	SellerStatusCheckResponse sellerStatusJSON(@Param("sellerid") String sellerID);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("GET /sellermgmt/seller/accountstatus?sellerid={sellerid}")
-	GetSellerAccountStatusResponse sellerStatusXML(@Param("sellerid") String sellerID);
+	SellerStatusCheckResponse sellerStatusXML(@Param("sellerid") String sellerID);
 
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("GET /sellermgmt/seller/accountstatus?sellerid={sellerid}&version=307")
-	GetSellerAccountStatusResponse sellerStatusUSA_JSON(@Param("sellerid") String sellerID);
+	SellerStatusCheckResponse sellerStatusUSA_JSON(@Param("sellerid") String sellerID);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("GET /sellermgmt/seller/accountstatus?sellerid={sellerid}&version=307")
-	GetSellerAccountStatusResponse sellerStatusUSA_XML(@Param("sellerid") String sellerID);
+	SellerStatusCheckResponse sellerStatusUSA_XML(@Param("sellerid") String sellerID);
 	
-	default GetSellerAccountStatusResponse sellerStatus() {
+	default SellerStatusCheckResponse sellerStatus() {
 		switch(Variables.MediaType){
 		case JSON:
 			if(Content.Platform==Content.PLATFORM.USA) {
@@ -88,13 +88,13 @@ public interface SellerCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("GET /sellermgmt/seller/industry?sellerid={sellerid}&industrycode={industrycode}")
-	GetIndustryResponse getIndustryListJSON(@Param("sellerid") String sellerID,@Param("industrycode") String code);
+	GetIndustryListResponse getIndustryListJSON(@Param("sellerid") String sellerID,@Param("industrycode") String code);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("GET /sellermgmt/seller/industry?sellerid={sellerid}&industrycode={industrycode}")
-	GetIndustryResponse getIndustryListXML(@Param("sellerid") String sellerID,@Param("industrycode") String code);
+	GetIndustryListResponse getIndustryListXML(@Param("sellerid") String sellerID,@Param("industrycode") String code);
 	
-	default GetIndustryResponse getIndustryList(String industryCode) {
+	default GetIndustryListResponse getIndustryList(String industryCode) {
 		switch(Variables.MediaType){
 		case JSON:		
 			if(Variables.SimulationEnabled) {
@@ -113,13 +113,13 @@ public interface SellerCaller {
 	
 	@Headers({"Accept: application/octet-stream","Content-Type: application/json"})
 	@RequestLine("PUT /sellermgmt/seller/feedschema?sellerid={sellerid}")
-	File downloadFeedSchemaJSON(@Param("sellerid") String sellerID,GetSchemaRequest body);
+	File downloadFeedSchemaJSON(@Param("sellerid") String sellerID,DownloadFeedSchemaRequest body);
 	
 	@Headers({"Accept: application/octet-stream","Content-Type: application/xml"})
 	@RequestLine("PUT /sellermgmt/seller/feedschema?sellerid={sellerid}")
-	File downloadFeedSchemaXML(@Param("sellerid") String sellerID,GetSchemaRequest body);
+	File downloadFeedSchemaXML(@Param("sellerid") String sellerID,DownloadFeedSchemaRequest body);
 	
-	default File downloadFeedSchema(GetSchemaRequest body) {
+	default File downloadFeedSchema(DownloadFeedSchemaRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return downloadFeedSchemaJSON(Content.SellerID,body);			

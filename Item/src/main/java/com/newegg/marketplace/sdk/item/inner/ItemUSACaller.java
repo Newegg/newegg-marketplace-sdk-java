@@ -4,14 +4,14 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.item.Variables;
-import com.newegg.marketplace.sdk.item.model.InventoryQueryCriteria;
-import com.newegg.marketplace.sdk.item.model.InventoryResult;
-import com.newegg.marketplace.sdk.item.model.ItemInventoryInfo;
-import com.newegg.marketplace.sdk.item.model.ItemPriceInfo;
-import com.newegg.marketplace.sdk.item.model.PriceQueryCriteria;
-import com.newegg.marketplace.sdk.item.model.PriceResult;
-import com.newegg.marketplace.sdk.item.model.UpdateInventoryResult;
-import com.newegg.marketplace.sdk.item.model.UpdatePriceResult;
+import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryResponse;
+import com.newegg.marketplace.sdk.item.model.UpdateInventoryRequest;
+import com.newegg.marketplace.sdk.item.model.UpdateItemPriceRequest;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceRequest;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceResponse;
+import com.newegg.marketplace.sdk.item.model.UpdateInventoryResponse;
+import com.newegg.marketplace.sdk.item.model.UpdateItemPriceResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -41,12 +41,12 @@ public interface ItemUSACaller {
 
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /contentmgmt/item/international/inventory?sellerid={sellerid}")
-	InventoryResult getItemInventoryJSON(@Param("sellerid") String sellerID,InventoryQueryCriteria body);	
+	GetItemInternationalInventoryResponse getItemInventoryJSON(@Param("sellerid") String sellerID,GetItemInternationalInventoryRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /contentmgmt/item/international/inventory?sellerid={sellerid}")
-	InventoryResult getItemInventoryXML(@Param("sellerid") String sellerID,InventoryQueryCriteria body);
+	GetItemInternationalInventoryResponse getItemInventoryXML(@Param("sellerid") String sellerID,GetItemInternationalInventoryRequest body);
 	
-	default InventoryResult getItemInventory(InventoryQueryCriteria body) {
+	default GetItemInternationalInventoryResponse getItemInventory(GetItemInternationalInventoryRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getItemInventoryJSON(Content.SellerID,body);
@@ -60,12 +60,12 @@ public interface ItemUSACaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /contentmgmt/item/international/price?sellerid={sellerid}")
-	PriceResult getItemPriceJSON(@Param("sellerid") String sellerID,PriceQueryCriteria body);
+	GetInternationalItemPriceResponse getItemPriceJSON(@Param("sellerid") String sellerID,GetInternationalItemPriceRequest body);
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /contentmgmt/item/international/price?sellerid={sellerid}")
-	PriceResult getItemPriceXML(@Param("sellerid") String sellerID,PriceQueryCriteria body);
+	GetInternationalItemPriceResponse getItemPriceXML(@Param("sellerid") String sellerID,GetInternationalItemPriceRequest body);
 	
-	default PriceResult getItemPrice(PriceQueryCriteria body) {
+	default GetInternationalItemPriceResponse getItemPrice(GetInternationalItemPriceRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getItemPriceJSON(Content.SellerID,body);
@@ -79,12 +79,12 @@ public interface ItemUSACaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /contentmgmt/item/international/inventory?sellerid={sellerid}")
-	UpdateInventoryResult updateItemInventoryJSON(@Param("sellerid") String sellerID,ItemInventoryInfo body);
+	UpdateInventoryResponse updateItemInventoryJSON(@Param("sellerid") String sellerID,UpdateInventoryRequest body);
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /contentmgmt/item/international/inventory?sellerid={sellerid}")
-	UpdateInventoryResult updateItemInventoryXML(@Param("sellerid") String sellerID,ItemInventoryInfo body);
+	UpdateInventoryResponse updateItemInventoryXML(@Param("sellerid") String sellerID,UpdateInventoryRequest body);
 	
-	default UpdateInventoryResult updateItemInventory(ItemInventoryInfo body) {
+	default UpdateInventoryResponse updateItemInventory(UpdateInventoryRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return updateItemInventoryJSON(Content.SellerID,body);
@@ -98,12 +98,12 @@ public interface ItemUSACaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /contentmgmt/item/international/price?sellerid={sellerid}")
-	UpdatePriceResult updateItemPriceJSON(@Param("sellerid") String sellerID,ItemPriceInfo body);
+	UpdateItemPriceResponse updateItemPriceJSON(@Param("sellerid") String sellerID,UpdateItemPriceRequest body);
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /contentmgmt/item/international/price?sellerid={sellerid}")
-	UpdatePriceResult updateItemPriceXML(@Param("sellerid") String sellerID,ItemPriceInfo body);
+	UpdateItemPriceResponse updateItemPriceXML(@Param("sellerid") String sellerID,UpdateItemPriceRequest body);
 
-	default UpdatePriceResult updateItemPrice(ItemPriceInfo body) {
+	default UpdateItemPriceResponse updateItemPrice(UpdateItemPriceRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return updateItemPriceJSON(Content.SellerID,body);

@@ -15,10 +15,10 @@ import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.report.ReportConfig;
 import com.newegg.marketplace.sdk.report.RequireSetting;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.model.get.PremierItemRequest;
-import com.newegg.marketplace.sdk.report.model.get.PremierItemResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SPremierItemRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SPremierItemResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetNeweggPremierItemReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetNeweggPremierItemReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.PremierItemReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.PremierItemReportResponse;
 
 public class PremierItemCallerTest {
 	/*PremierItemResponse response = new PremierItemResponse();
@@ -38,10 +38,10 @@ public class PremierItemCallerTest {
 		APIConfig.load(ReportConfig.class);
 	}
 	
-	private PremierItemRequest buildGetPremierItemRequest(PLATFORM p) {
-		PremierItemRequest request = new PremierItemRequest();
-		PremierItemRequest.RequestBody body = new PremierItemRequest.RequestBody();
-		PremierItemRequest.RequestBody.PageInfo page = new PremierItemRequest.RequestBody.PageInfo();
+	private GetNeweggPremierItemReportRequest buildGetPremierItemRequest(PLATFORM p) {
+		GetNeweggPremierItemReportRequest request = new GetNeweggPremierItemReportRequest();
+		GetNeweggPremierItemReportRequest.RequestBody body = new GetNeweggPremierItemReportRequest.RequestBody();
+		GetNeweggPremierItemReportRequest.RequestBody.PageInfo page = new GetNeweggPremierItemReportRequest.RequestBody.PageInfo();
 		
 		switch (p) {
 		case USA:
@@ -69,11 +69,11 @@ public class PremierItemCallerTest {
 		return request;
 	}
 	
-	private SPremierItemRequest buildSubmitPremierItemRequest(PLATFORM p) {
-		SPremierItemRequest submitRequest = new SPremierItemRequest();
-		SPremierItemRequest.RequestBody submitBody = new SPremierItemRequest.RequestBody();
-		SPremierItemRequest.RequestBody.PremierItemReportCriteria criteria = 
-				new SPremierItemRequest.RequestBody.PremierItemReportCriteria();
+	private PremierItemReportRequest buildSubmitPremierItemRequest(PLATFORM p) {
+		PremierItemReportRequest submitRequest = new PremierItemReportRequest();
+		PremierItemReportRequest.RequestBody submitBody = new PremierItemReportRequest.RequestBody();
+		PremierItemReportRequest.RequestBody.PremierItemReportCriteria criteria = 
+				new PremierItemReportRequest.RequestBody.PremierItemReportCriteria();
 		
 		switch (p) {
 		case USA:
@@ -103,8 +103,8 @@ public class PremierItemCallerTest {
 	}
 	
 	private void sendGetPremierItem(boolean mock, MEDIA_TYPE type, PLATFORM flatform) {
-		PremierItemResponse response = null;
-		PremierItemRequest request = null;
+		GetNeweggPremierItemReportResponse response = null;
+		GetNeweggPremierItemReportRequest request = null;
 		PremierItemCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -131,8 +131,8 @@ public class PremierItemCallerTest {
 	}
 	
 	private void sendSubmitPremierItem(boolean mock, MEDIA_TYPE type, PLATFORM flatform) {
-		SPremierItemResponse response = null;
-		SPremierItemRequest request = null;
+		PremierItemReportResponse response = null;
+		PremierItemReportRequest request = null;
 		PremierItemCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		

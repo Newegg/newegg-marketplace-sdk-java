@@ -4,14 +4,14 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.item.Variables;
-import com.newegg.marketplace.sdk.item.model.AddManufacturerRequest;
-import com.newegg.marketplace.sdk.item.model.AddManufacturerResponse;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerProcessStatusRequest;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerProcessStatusResponse;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerRequest;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerRequestV2;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerResponse;
-import com.newegg.marketplace.sdk.item.model.GetManufacturerResponseV2;
+import com.newegg.marketplace.sdk.item.model.SubmitManufacturerRequest;
+import com.newegg.marketplace.sdk.item.model.SubmitManufacturerResponse;
+import com.newegg.marketplace.sdk.item.model.GetManufacturerRequestStatusRequest;
+import com.newegg.marketplace.sdk.item.model.GetManufacturerRequestStatusResponse;
+import com.newegg.marketplace.sdk.item.model.ManufacturerLookupRequest;
+import com.newegg.marketplace.sdk.item.model.ManufacturerLookupForInternationalCountryRequest;
+import com.newegg.marketplace.sdk.item.model.ManufacturerLookupResponse;
+import com.newegg.marketplace.sdk.item.model.ManufacturerLookupForInternationalCountryResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -41,13 +41,13 @@ public interface ManufacturerCaller {
 
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /contentmgmt/manufacturer/creationrequest?sellerid={sellerid}")
-	AddManufacturerResponse submitManufacturerRequestJSON(@Param("sellerid") String sellerID,AddManufacturerRequest body);
+	SubmitManufacturerResponse submitManufacturerRequestJSON(@Param("sellerid") String sellerID,SubmitManufacturerRequest body);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /contentmgmt/manufacturer/creationrequest?sellerid={sellerid}")
-	AddManufacturerResponse submitManufacturerRequestXML(@Param("sellerid") String sellerID,AddManufacturerRequest body);
+	SubmitManufacturerResponse submitManufacturerRequestXML(@Param("sellerid") String sellerID,SubmitManufacturerRequest body);
 	
-	default AddManufacturerResponse submitManufacturerRequest(AddManufacturerRequest body) {
+	default SubmitManufacturerResponse submitManufacturerRequest(SubmitManufacturerRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return submitManufacturerRequestJSON(Content.SellerID,body);
@@ -61,13 +61,13 @@ public interface ManufacturerCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /contentmgmt/manufacturer/manufacturerinfo?sellerid={sellerid}")
-	GetManufacturerResponse manufacturerLookupJSON(@Param("sellerid") String sellerID,GetManufacturerRequest body);
+	ManufacturerLookupResponse manufacturerLookupJSON(@Param("sellerid") String sellerID,ManufacturerLookupRequest body);
 
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /contentmgmt/manufacturer/manufacturerinfo?sellerid={sellerid}")
-	GetManufacturerResponse manufacturerLookupXML(@Param("sellerid") String sellerID,GetManufacturerRequest body);
+	ManufacturerLookupResponse manufacturerLookupXML(@Param("sellerid") String sellerID,ManufacturerLookupRequest body);
 	
-	default GetManufacturerResponse manufacturerLookup(GetManufacturerRequest body) {
+	default ManufacturerLookupResponse manufacturerLookup(ManufacturerLookupRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return manufacturerLookupJSON(Content.SellerID,body);
@@ -81,13 +81,13 @@ public interface ManufacturerCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /contentmgmt/manufacturer/manufacturerinfo/V2?sellerid={sellerid}")
-	GetManufacturerResponseV2 manufacturerLookupForInternationalCountryJSON(@Param("sellerid") String sellerID,GetManufacturerRequestV2 body);
+	ManufacturerLookupForInternationalCountryResponse manufacturerLookupForInternationalCountryJSON(@Param("sellerid") String sellerID,ManufacturerLookupForInternationalCountryRequest body);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /contentmgmt/manufacturer/manufacturerinfo/V2?sellerid={sellerid}")
-	GetManufacturerResponseV2 manufacturerLookupForInternationalCountryXML(@Param("sellerid") String sellerID,GetManufacturerRequestV2 body);
+	ManufacturerLookupForInternationalCountryResponse manufacturerLookupForInternationalCountryXML(@Param("sellerid") String sellerID,ManufacturerLookupForInternationalCountryRequest body);
 	
-	default GetManufacturerResponseV2 manufacturerLookupForInternationalCountry(GetManufacturerRequestV2 body) {
+	default ManufacturerLookupForInternationalCountryResponse manufacturerLookupForInternationalCountry(ManufacturerLookupForInternationalCountryRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return manufacturerLookupForInternationalCountryJSON(Content.SellerID,body);
@@ -101,13 +101,13 @@ public interface ManufacturerCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /contentmgmt/manufacturer/creationrequeststatus?sellerid={sellerid}")
-	GetManufacturerProcessStatusResponse getManufacturerRequestStatusJSON(@Param("sellerid") String sellerID,GetManufacturerProcessStatusRequest body);
+	GetManufacturerRequestStatusResponse getManufacturerRequestStatusJSON(@Param("sellerid") String sellerID,GetManufacturerRequestStatusRequest body);
 	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("PUT /contentmgmt/manufacturer/creationrequeststatus?sellerid={sellerid}")
-	GetManufacturerProcessStatusResponse getManufacturerRequestStatusXML(@Param("sellerid") String sellerID,GetManufacturerProcessStatusRequest body);
+	GetManufacturerRequestStatusResponse getManufacturerRequestStatusXML(@Param("sellerid") String sellerID,GetManufacturerRequestStatusRequest body);
 	
-	default GetManufacturerProcessStatusResponse getManufacturerRequestStatus(GetManufacturerProcessStatusRequest body) {
+	default GetManufacturerRequestStatusResponse getManufacturerRequestStatus(GetManufacturerRequestStatusRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return getManufacturerRequestStatusJSON(Content.SellerID,body);

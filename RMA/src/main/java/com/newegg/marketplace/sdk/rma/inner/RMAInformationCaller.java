@@ -4,8 +4,8 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.RMAInformationRequest;
-import com.newegg.marketplace.sdk.rma.model.RMAInformationResponse;
+import com.newegg.marketplace.sdk.rma.model.GetRMAInformationRequest;
+import com.newegg.marketplace.sdk.rma.model.GetRMAInformationResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -39,14 +39,17 @@ public interface RMAInformationCaller {
 	 */
 	@Headers({ "Accept: application/json", "Content-Type: application/json" })
 	@RequestLine("PUT /servicemgmt/rma/rmainfo?sellerid={sellerid}&version={version}")
-	RMAInformationResponse sendRMAInformationRequestJSON(@Param("sellerid") String sellerID, @Param("version") String version, RMAInformationRequest body);
+	GetRMAInformationResponse sendRMAInformationRequestJSON(@Param("sellerid") String sellerID,
+			@Param("version") String version, GetRMAInformationRequest body);
 
 	@Headers({ "Accept: application/xml", "Content-Type: application/xml" })
 	@RequestLine("PUT /servicemgmt/rma/rmainfo?sellerid={sellerid}&version={version}")
-	RMAInformationResponse sendRMAInformationRequestXML(@Param("sellerid") String sellerID, @Param("version") String version, RMAInformationRequest body);
+	GetRMAInformationResponse sendRMAInformationRequestXML(@Param("sellerid") String sellerID,
+			@Param("version") String version, GetRMAInformationRequest body);
 
-	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default RMAInformationResponse getRMAInformationRequest(String version, RMAInformationRequest body) {
+	// Implement default method of interface class that according to
+	// Variables.MediaType to run at JSON or XML request.
+	default GetRMAInformationResponse getRMAInformationRequest(GetRMAInformationRequest body, String version) {
 		switch (Variables.MediaType) {
 		case JSON:
 			if (Variables.SimulationEnabled)
@@ -69,15 +72,15 @@ public interface RMAInformationCaller {
 	static RMAInformationCaller buildJSON() {
 		Variables.MediaType = MEDIA_TYPE.JSON;
 
-		return new CallerFactory<RMAInformationCaller>()
-				.jsonBuild(RMAInformationCaller.class, Variables.LogLevel, Variables.Retryer, RMAClient.genClient());
+		return new CallerFactory<RMAInformationCaller>().jsonBuild(RMAInformationCaller.class, Variables.LogLevel,
+				Variables.Retryer, RMAClient.genClient());
 	}
 
 	static RMAInformationCaller buildXML() {
 		Variables.MediaType = MEDIA_TYPE.XML;
 
-		return new CallerFactory<RMAInformationCaller>()
-				.xmlBuild(RMAInformationCaller.class, Variables.LogLevel, Variables.Retryer, RMAClient.genClient());
+		return new CallerFactory<RMAInformationCaller>().xmlBuild(RMAInformationCaller.class, Variables.LogLevel,
+				Variables.Retryer, RMAClient.genClient());
 	}
 
 }

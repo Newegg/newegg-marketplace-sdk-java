@@ -4,12 +4,12 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.datafeed.Variables;
-import com.newegg.marketplace.sdk.datafeed.model.AddingCAProp65;
-import com.newegg.marketplace.sdk.datafeed.model.GetFeedStatusRequest;
-import com.newegg.marketplace.sdk.datafeed.model.GetFeedStatusResponse;
-import com.newegg.marketplace.sdk.datafeed.model.ItemChinaTaxSetting;
-import com.newegg.marketplace.sdk.datafeed.model.ItemSubscription;
-import com.newegg.marketplace.sdk.datafeed.model.SubmitFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemCAProp65FeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemCAProp65FeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemChinaTaxSettingFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemChinaTaxSettingFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemSubscriptionFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemSubscriptionFeedResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -45,12 +45,12 @@ public interface SubmitOtherCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ITEM_CHINATAXSETTING_DATA")
-	SubmitFeedResponse itemChinaTaxSettingFeedJSON(@Param("sellerid") String sellerID,ItemChinaTaxSetting body);	
+	ItemChinaTaxSettingFeedResponse itemChinaTaxSettingFeedJSON(@Param("sellerid") String sellerID,ItemChinaTaxSettingFeedRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ITEM_CHINATAXSETTING_DATA")
-	SubmitFeedResponse itemChinaTaxSettingFeedXML(@Param("sellerid") String sellerID,ItemChinaTaxSetting body);
+	ItemChinaTaxSettingFeedResponse itemChinaTaxSettingFeedXML(@Param("sellerid") String sellerID,ItemChinaTaxSettingFeedRequest body);
 	
-	default SubmitFeedResponse itemChinaTaxSettingFeed(ItemChinaTaxSetting body) {
+	default ItemChinaTaxSettingFeedResponse itemChinaTaxSettingFeed(ItemChinaTaxSettingFeedRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return itemChinaTaxSettingFeedJSON(Content.SellerID,body);
@@ -64,12 +64,12 @@ public interface SubmitOtherCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ITEM_CAPROP65_DATA")
-	SubmitFeedResponse itemCAProp65FeedJSON(@Param("sellerid") String sellerID,AddingCAProp65 body);	
+	ItemCAProp65FeedResponse itemCAProp65FeedJSON(@Param("sellerid") String sellerID,ItemCAProp65FeedRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ITEM_CAPROP65_DATA")
-	SubmitFeedResponse itemCAProp65FeedXML(@Param("sellerid") String sellerID,AddingCAProp65 body);
+	ItemCAProp65FeedResponse itemCAProp65FeedXML(@Param("sellerid") String sellerID,ItemCAProp65FeedRequest body);
 	
-	default SubmitFeedResponse itemCAProp65Feed(AddingCAProp65 body) {
+	default ItemCAProp65FeedResponse itemCAProp65Feed(ItemCAProp65FeedRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return itemCAProp65FeedJSON(Content.SellerID,body);
@@ -86,12 +86,12 @@ public interface SubmitOtherCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ITEM_SUBSCRIPTION")
-	SubmitFeedResponse itemSubscriptionFeedJSON(@Param("sellerid") String sellerID,ItemSubscription body);	
+	ItemSubscriptionFeedResponse itemSubscriptionFeedJSON(@Param("sellerid") String sellerID,ItemSubscriptionFeedRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ITEM_SUBSCRIPTION")
-	SubmitFeedResponse itemSubscriptionFeedXML(@Param("sellerid") String sellerID,ItemSubscription body);
+	ItemSubscriptionFeedResponse itemSubscriptionFeedXML(@Param("sellerid") String sellerID,ItemSubscriptionFeedRequest body);
 	
-	default SubmitFeedResponse itemSubscriptionFeed(ItemSubscription body) {
+	default ItemSubscriptionFeedResponse itemSubscriptionFeed(ItemSubscriptionFeedRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return itemSubscriptionFeedJSON(Content.SellerID,body);

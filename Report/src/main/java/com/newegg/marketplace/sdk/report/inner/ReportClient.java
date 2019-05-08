@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 import com.newegg.marketplace.sdk.common.BaseClient;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.Variables.URILock;
 
 import feign.Client;
 import feign.mock.HttpMethod;
@@ -48,7 +47,7 @@ public class ReportClient extends BaseClient {
 					break;
 					
 				case ORDER_LIST:
-					client = genMockClient(client, "/OrderListResponse.json", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID + "&version=" + Variables.version);
+					client = genMockClient(client, "/OrderListResponse.json", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID + "&version=309");
 					client = genMockClient(client, "/SubmitOrderListResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
 					break;
 					
@@ -63,7 +62,7 @@ public class ReportClient extends BaseClient {
 					break;
 					
 				case RMA_LIST:
-					client = genMockClient(client, "/RMAListResponse.json", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID + "&version=" + Variables.version);
+					client = genMockClient(client, "/RMAListResponse.json", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID + "&version=309");
 					client = genMockClient(client, "/SubmitRMAListResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
 					break;
 					
@@ -74,17 +73,17 @@ public class ReportClient extends BaseClient {
 					
 				case DAILY_INVENTORY:
 					client = genMockClient(client, "/DailyInventoryResponse.json", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID);
-					client = genMockClient(client, "/SubmitDailyInventoryResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=" + Variables.version);
+					client = genMockClient(client, "/SubmitDailyInventoryResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=310");
 					break;
 					
 				case DAILY_PRICE:
 					client = genMockClient(client, "/DailyPriceResponse.json", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID);
-					client = genMockClient(client, "/SubmitDailyPriceResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=" + Variables.version);
+					client = genMockClient(client, "/SubmitDailyPriceResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=310");
 					break;
 					
 				case DAILY_INVENTORY_CA:
 					client = genMockClient(client, "/DailyInventBtoBCANResponse.json", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID);
-					client = genMockClient(client, "/SubmitDailyInventoryResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=" + Variables.version);
+					client = genMockClient(client, "/SubmitDailyInventoryResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=310");
 					break;
 					
 				case PREMIER_ITEM:
@@ -102,51 +101,6 @@ public class ReportClient extends BaseClient {
 					client = genMockClient(client, "/SubmitItemChinaTaxSettingResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
 					break;
 					
-				// submit
-				/*case SUBMIT_ORDER_LIST:
-					client = genMockClient(client, "/SubmitOrderListResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
-					break;
-					
-				case SUBMIT_SETTLEMENT_SUMMARY:
-					client = genMockClient(client, "/SubmitSettlementSummaryResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
-					break;
-					
-				case SUBMIT_SETTLEMENT_TRANSACTION:
-					client = genMockClient(client, "/SubmitSettlementTransactionResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
-					break;
-					
-				case SUBMIT_RMA_LIST:
-					client = genMockClient(client, "/SubmitRMAListResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
-					break;
-					
-				case SUBMIT_ITEM_LOOKUP:
-					client = genMockClient(client, "/SubmitItemLookupResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
-					break;
-					
-				case SUBMIT_DAILY_INVENTORY:
-					client = genMockClient(client, "/SubmitDailyInventoryResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=" + Variables.version);
-					break;
-					
-				case SUBMIT_DAILY_PRICE:
-					client = genMockClient(client, "/SubmitDailyPriceResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=" + Variables.version);
-					break;
-					
-				case SUBMIT_DAILY_INVENTORY_CA:
-					client = genMockClient(client, "/SubmitDailyInventBtoBCANResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=" + Variables.version);
-					break;
-					
-				case SUBMIT_PREMIER_ITEM:
-					client = genMockClient(client, "/SubmitPremierItemResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
-					break;
-					
-				case SUBMIT_CA_PRO_65:
-					client = genMockClient(client, "/SubmitCAPropSixtyFiveResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
-					break;
-					
-				case SUBMIT_TAX_SET_ITEMS_ON_FOR_CHINA:
-					client = genMockClient(client, "/SubmitItemChinaTaxSettingResponse.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
-					break;*/
-					
 				default:
 					break;
 				}
@@ -160,7 +114,7 @@ public class ReportClient extends BaseClient {
 					break;
 					
 				case ORDER_LIST:	
-					client = genMockClient(client, "/OrderListResponse.xml", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID + "&version=" + Variables.version);
+					client = genMockClient(client, "/OrderListResponse.xml", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID + "&version=309");
 					client = genMockClient(client, "/SubmitOrderListResponse.xml", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
 					break;
 					
@@ -175,7 +129,7 @@ public class ReportClient extends BaseClient {
 					break;
 					
 				case RMA_LIST:
-					client = genMockClient(client, "/RMAListResponse.xml", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID + "&version=" + Variables.version);
+					client = genMockClient(client, "/RMAListResponse.xml", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID + "&version=309");
 					client = genMockClient(client, "/SubmitRMAListResponse.xml", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
 					break;
 					
@@ -186,17 +140,17 @@ public class ReportClient extends BaseClient {
 					
 				case DAILY_INVENTORY:	
 					client = genMockClient(client, "/DailyInventoryResponse.xml", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID);
-					client = genMockClient(client, "/SubmitDailyInventoryResponse.xml", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=" + Variables.version);
+					client = genMockClient(client, "/SubmitDailyInventoryResponse.xml", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=310");
 					break;
 					
 				case DAILY_PRICE:	
 					client = genMockClient(client, "/DailyPriceResponse.xml", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID);
-					client = genMockClient(client, "/SubmitDailyPriceResponse.xml", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=" + Variables.version);
+					client = genMockClient(client, "/SubmitDailyPriceResponse.xml", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=310" );
 					break;
 					
-				case DAILY_INVENTORY_CA:	
+				case DAILY_INVENTORY_CA:
 					client = genMockClient(client, "/DailyInventBtoBCANResponse.xml", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID);
-					client = genMockClient(client, "/SubmitDailyInventBtoBCANResponse.xml", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=" + Variables.version);
+					client = genMockClient(client, "/SubmitDailyInventBtoBCANResponse.xml", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID + "&version=310");
 					break;
 					
 				case PREMIER_ITEM:	

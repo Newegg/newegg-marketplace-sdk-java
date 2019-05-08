@@ -2,8 +2,8 @@ package com.newegg.marketplace.sdk.other;
 
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.other.inner.OtherCaller;
-import com.newegg.marketplace.sdk.other.model.Domain;
-import com.newegg.marketplace.sdk.other.model.GetServiceStatusResponse;
+import com.newegg.marketplace.sdk.other.model.ServiceDomain;
+import com.newegg.marketplace.sdk.other.model.VerifyServiceStatusResponse;
 
 /**
 Copyright (c) 2000-present, Newegg Inc.
@@ -53,10 +53,10 @@ public class OtherCall {
 	 * Each major service group is listed in the Parameters section, domain field description.  
 	 * Return each major service group’s availability. 
 	 * </pre>
-	 * @param domain {@linkplain Domain} 
-	 * @return {@linkplain GetServiceStatusResponse} 
+	 * @param domain {@linkplain ServiceDomain} 
+	 * @return {@linkplain VerifyServiceStatusResponse} 
 	 */
-	public GetServiceStatusResponse verifyServiceStatus(Domain domain) {
+	public VerifyServiceStatusResponse verifyServiceStatus(ServiceDomain domain) {
 		return otherCaller.verifyServiceStatus(domain);
 	}
 }

@@ -13,10 +13,10 @@ import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.report.ReportConfig;
 import com.newegg.marketplace.sdk.report.RequireSetting;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.model.get.ItemChinaTaxSettingRequest;
-import com.newegg.marketplace.sdk.report.model.get.ItemChinaTaxSettingResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SItemChinaTaxSettingRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SItemChinaTaxSettingResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetTaxSettingReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetTaxSettingReportResponse;
+import com.newegg.marketplace.sdk.report.model.submit.ItemChinaTaxSettingReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.ItemChinaTaxSettingReportResponse;
 
 public class ItemChinaTaxSettingCallerTest {
 	/*ItemChinaTaxSettingRequest request = new ItemChinaTaxSettingRequest();
@@ -36,10 +36,10 @@ public class ItemChinaTaxSettingCallerTest {
 		APIConfig.load(ReportConfig.class);
 	}
 	
-	private ItemChinaTaxSettingRequest buildGetItemChinaTaxSettingRequest(PLATFORM p) {
-		ItemChinaTaxSettingRequest request = new ItemChinaTaxSettingRequest();
-		ItemChinaTaxSettingRequest.RequestBody body = new ItemChinaTaxSettingRequest.RequestBody();
-		ItemChinaTaxSettingRequest.RequestBody.PageInfo page = new ItemChinaTaxSettingRequest.RequestBody.PageInfo();
+	private GetTaxSettingReportRequest buildGetItemChinaTaxSettingRequest(PLATFORM p) {
+		GetTaxSettingReportRequest request = new GetTaxSettingReportRequest();
+		GetTaxSettingReportRequest.RequestBody body = new GetTaxSettingReportRequest.RequestBody();
+		GetTaxSettingReportRequest.RequestBody.PageInfo page = new GetTaxSettingReportRequest.RequestBody.PageInfo();
 		
 		switch (p) {
 		case USA:
@@ -67,11 +67,11 @@ public class ItemChinaTaxSettingCallerTest {
 		return request;
 	}
 	
-	private SItemChinaTaxSettingRequest buildSubmitItemChinaTaxSettingRequest(PLATFORM p) {
-		SItemChinaTaxSettingRequest submitRequest = new SItemChinaTaxSettingRequest();
-		SItemChinaTaxSettingRequest.RequestBody submitBody = new SItemChinaTaxSettingRequest.RequestBody();
-		SItemChinaTaxSettingRequest.RequestBody.ItemChinaTaxSettingReportCriteria criteria = 
-				new SItemChinaTaxSettingRequest.RequestBody.ItemChinaTaxSettingReportCriteria();
+	private ItemChinaTaxSettingReportRequest buildSubmitItemChinaTaxSettingRequest(PLATFORM p) {
+		ItemChinaTaxSettingReportRequest submitRequest = new ItemChinaTaxSettingReportRequest();
+		ItemChinaTaxSettingReportRequest.RequestBody submitBody = new ItemChinaTaxSettingReportRequest.RequestBody();
+		ItemChinaTaxSettingReportRequest.RequestBody.ItemChinaTaxSettingReportCriteria criteria = 
+				new ItemChinaTaxSettingReportRequest.RequestBody.ItemChinaTaxSettingReportCriteria();
 		
 		switch (p) {
 		case USA:
@@ -97,8 +97,8 @@ public class ItemChinaTaxSettingCallerTest {
 	}
 	
 	private void sendGetItemChinaTaxSetting(boolean mock, MEDIA_TYPE type, PLATFORM flatform) {
-		ItemChinaTaxSettingResponse response = null;
-		ItemChinaTaxSettingRequest request = null;
+		GetTaxSettingReportResponse response = null;
+		GetTaxSettingReportRequest request = null;
 		ItemChinaTaxSettingCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -125,8 +125,8 @@ public class ItemChinaTaxSettingCallerTest {
 	}
 	
 	private void sendSubmitItemChinaTaxSetting(boolean mock, MEDIA_TYPE type, PLATFORM flatform) {
-		SItemChinaTaxSettingResponse response = null;
-		SItemChinaTaxSettingRequest request = null;
+		ItemChinaTaxSettingReportResponse response = null;
+		ItemChinaTaxSettingReportRequest request = null;
 		ItemChinaTaxSettingCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		

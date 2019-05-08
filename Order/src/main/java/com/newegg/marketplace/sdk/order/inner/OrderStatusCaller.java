@@ -51,13 +51,19 @@ public interface OrderStatusCaller {
 			@Param("version") String version); 
 
 	// Implement default method of interface class that according to Variables.MediaType to run at JSON or XML request.
-	default GetOrderStatusResponse sendOrderStatusRequest() {
+	default GetOrderStatusResponse sendOrderStatusRequest(String orderNumber,String version) {
 		switch(Variables.MediaType) {
-		case JSON:			
-			return sendOrderStatusRequestJSON(Variables.orderNumber, Content.SellerID, Variables.version);
+		case JSON:	
+			if(Variables.SimulationEnabled)
+				return sendOrderStatusRequestJSON("123456", Content.SellerID, null);
+			else
+				return sendOrderStatusRequestJSON(orderNumber, Content.SellerID, version);
 			
-		case XML:			
-			return sendOrderStatusRequestXML(Variables.orderNumber, Content.SellerID, Variables.version);	
+		case XML:
+			if(Variables.SimulationEnabled)
+				return sendOrderStatusRequestXML("123456", Content.SellerID, null);	
+			else
+				return sendOrderStatusRequestXML(orderNumber, Content.SellerID, version);	
 			
 		default:
 			throw new RuntimeException("Never Happened!");

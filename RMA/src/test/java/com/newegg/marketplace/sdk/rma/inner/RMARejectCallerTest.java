@@ -10,8 +10,8 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.rma.RMAConfig;
 import com.newegg.marketplace.sdk.rma.Variables;
-import com.newegg.marketplace.sdk.rma.model.RMARejectRequest;
-import com.newegg.marketplace.sdk.rma.model.RMARejectResponse;
+import com.newegg.marketplace.sdk.rma.model.RejectRMARequest;
+import com.newegg.marketplace.sdk.rma.model.RejectRMAResponse;
 import com.newegg.marketplace.sdk.rma.model.bean.RejectRMAInfo;
 
 public class RMARejectCallerTest {
@@ -21,12 +21,12 @@ public class RMARejectCallerTest {
 		APIConfig.load(RMAConfig.class);
 	}
 
-	//@Test
+	// @Test
 	public void sendRMARejectRequest_XML() {
 		initailRMACaller(Content.MEDIA_TYPE.XML);
 	}
 
-	//@Test
+	// @Test
 	public void sendRMARejectRequest_JSON() {
 		initailRMACaller(Content.MEDIA_TYPE.JSON);
 	}
@@ -54,14 +54,14 @@ public class RMARejectCallerTest {
 			call = RMARejectCaller.buildJSON();
 		}
 
-		RMARejectRequest request = new RMARejectRequest();
-		request.setOperationType("RejectRMARequest");
+		RejectRMARequest request = new RejectRMARequest();
+		// request.setOperationType("RejectRMARequest");
 		request.setRequestBody(getBody());
 
 		int rsStatus = 200;
-		RMARejectResponse response = new RMARejectResponse();
+		RejectRMAResponse response = new RejectRMAResponse();
 		try {
-			response = call.sendRMARejectRequest("307", request);
+			response = call.sendRMARejectRequest(request, "307");
 		} catch (NeweggException e) {
 			rsStatus = e.status();
 
@@ -75,12 +75,14 @@ public class RMARejectCallerTest {
 
 		} finally {
 			if (Variables.SimulationEnabled)
-				assertTrue("RMARejectCaller.sendRMARejectRequest [" + type + "] command fail (Status:" + rsStatus + ").", "true".equals(response.getIsSuccess()));
+				assertTrue(
+						"RMARejectCaller.sendRMARejectRequest [" + type + "] command fail (Status:" + rsStatus + ").",
+						"true".equals(response.getIsSuccess()));
 		}
 	}
 
-	private RMARejectRequest.RequestBody getBody() {
-		RMARejectRequest.RequestBody body = new RMARejectRequest.RequestBody();
+	private RejectRMARequest.RequestBody getBody() {
+		RejectRMARequest.RequestBody body = new RejectRMARequest.RequestBody();
 
 		RejectRMAInfo rejectInfo = new RejectRMAInfo();
 		RejectRMAInfo.TrackingNumberList transList = new RejectRMAInfo.TrackingNumberList();

@@ -4,10 +4,12 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.datafeed.Variables;
-import com.newegg.marketplace.sdk.datafeed.model.ItemPromotion;
-import com.newegg.marketplace.sdk.datafeed.model.PremierItemMark;
-import com.newegg.marketplace.sdk.datafeed.model.SubmitFeedResponse;
-import com.newegg.marketplace.sdk.datafeed.model.VolumeDiscount;
+import com.newegg.marketplace.sdk.datafeed.model.ItemPremierMarkFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemPremierMarkFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemPromotionFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.ItemPromotionFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.VolumeDiscountFeedRequest;
+import com.newegg.marketplace.sdk.datafeed.model.VolumeDiscountFeedResponse;
 
 import feign.Headers;
 import feign.Param;
@@ -38,12 +40,12 @@ public interface SubmitActivityCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=VOLUME_DISCOUNT_DATA")
-	SubmitFeedResponse volumeDiscountFeedJSON(@Param("sellerid") String sellerID,VolumeDiscount body);	
+	VolumeDiscountFeedResponse volumeDiscountFeedJSON(@Param("sellerid") String sellerID,VolumeDiscountFeedRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=VOLUME_DISCOUNT_DATA")
-	SubmitFeedResponse volumeDiscountFeedXML(@Param("sellerid") String sellerID,VolumeDiscount body);
+	VolumeDiscountFeedResponse volumeDiscountFeedXML(@Param("sellerid") String sellerID,VolumeDiscountFeedRequest body);
 	
-	default SubmitFeedResponse volumeDiscountFeed(VolumeDiscount body) {
+	default VolumeDiscountFeedResponse volumeDiscountFeed(VolumeDiscountFeedRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return volumeDiscountFeedJSON(Content.SellerID,body);
@@ -57,12 +59,12 @@ public interface SubmitActivityCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ITEM_PROMOTION_DATA")
-	SubmitFeedResponse itemPromotionFeedJSON(@Param("sellerid") String sellerID,ItemPromotion body);	
+	ItemPromotionFeedResponse itemPromotionFeedJSON(@Param("sellerid") String sellerID,ItemPromotionFeedRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ITEM_PROMOTION_DATA")
-	SubmitFeedResponse itemPromotionFeedXML(@Param("sellerid") String sellerID,ItemPromotion body);
+	ItemPromotionFeedResponse itemPromotionFeedXML(@Param("sellerid") String sellerID,ItemPromotionFeedRequest body);
 	
-	default SubmitFeedResponse itemPromotionFeed(ItemPromotion body) {
+	default ItemPromotionFeedResponse itemPromotionFeed(ItemPromotionFeedRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return itemPromotionFeedJSON(Content.SellerID,body);
@@ -76,12 +78,12 @@ public interface SubmitActivityCaller {
 	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ITEM_PREMIER_MARK_DATA")
-	SubmitFeedResponse itemPremierMarkFeedJSON(@Param("sellerid") String sellerID,PremierItemMark body);	
+	ItemPremierMarkFeedResponse itemPremierMarkFeedJSON(@Param("sellerid") String sellerID,ItemPremierMarkFeedRequest body);	
 	@Headers({"Accept: application/xml","Content-Type: application/xml"})
 	@RequestLine("POST /datafeedmgmt/feeds/submitfeed?sellerid={sellerid}&requesttype=ITEM_PREMIER_MARK_DATA")
-	SubmitFeedResponse itemPremierMarkFeedXML(@Param("sellerid") String sellerID,PremierItemMark body);
+	ItemPremierMarkFeedResponse itemPremierMarkFeedXML(@Param("sellerid") String sellerID,ItemPremierMarkFeedRequest body);
 	
-	default SubmitFeedResponse itemPremierMarkFeed(PremierItemMark body) {
+	default ItemPremierMarkFeedResponse itemPremierMarkFeed(ItemPremierMarkFeedRequest body) {
 		switch(Variables.MediaType){
 		case JSON:			
 			return itemPremierMarkFeedJSON(Content.SellerID,body);

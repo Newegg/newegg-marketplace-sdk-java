@@ -12,12 +12,11 @@ import com.newegg.marketplace.sdk.common.Content.PLATFORM;
 import com.newegg.marketplace.sdk.common.NeweggException;
 import com.newegg.marketplace.sdk.report.ReportConfig;
 import com.newegg.marketplace.sdk.report.RequireSetting;
-import com.newegg.marketplace.sdk.report.SerializationObjectParser;
 import com.newegg.marketplace.sdk.report.Variables;
-import com.newegg.marketplace.sdk.report.model.get.DailyInventoryRequest;
-import com.newegg.marketplace.sdk.report.model.get.DailyInventoryResponse;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyInventoryRequest;
-import com.newegg.marketplace.sdk.report.model.submit.SDailyInventoryResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.DailyInventoryReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.DailyInventoryReportResponse;
 
 public class DailyInventoryCallerTest {
 	
@@ -26,10 +25,10 @@ public class DailyInventoryCallerTest {
 		APIConfig.load(ReportConfig.class);
 	}
 	
-	private DailyInventoryRequest buildGetDailyInventoryRequest(PLATFORM p) {
-		DailyInventoryRequest request = new DailyInventoryRequest();
-		DailyInventoryRequest.RequestBody body = new DailyInventoryRequest.RequestBody();
-		DailyInventoryRequest.RequestBody.PageInfo page = new DailyInventoryRequest.RequestBody.PageInfo();
+	private GetDailyInventoryReportRequest buildGetDailyInventoryRequest(PLATFORM p) {
+		GetDailyInventoryReportRequest request = new GetDailyInventoryReportRequest();
+		GetDailyInventoryReportRequest.RequestBody body = new GetDailyInventoryReportRequest.RequestBody();
+		GetDailyInventoryReportRequest.RequestBody.PageInfo page = new GetDailyInventoryReportRequest.RequestBody.PageInfo();
 		
 		switch (p) {
 		case USA:
@@ -63,14 +62,14 @@ public class DailyInventoryCallerTest {
 		return request;
 	}
 	
-	private SDailyInventoryRequest buildSubmitDailyInventoryRequest(PLATFORM p) {
-		SDailyInventoryRequest submitRequest = new SDailyInventoryRequest();
-		SDailyInventoryRequest.RequestBody submitBody = new SDailyInventoryRequest.RequestBody();
-		SDailyInventoryRequest.RequestBody.DailyInventoryReportCriteria criteria = 
-				new SDailyInventoryRequest.RequestBody.DailyInventoryReportCriteria();
+	private DailyInventoryReportRequest buildSubmitDailyInventoryRequest(PLATFORM p) {
+		DailyInventoryReportRequest submitRequest = new DailyInventoryReportRequest();
+		DailyInventoryReportRequest.RequestBody submitBody = new DailyInventoryReportRequest.RequestBody();
+		DailyInventoryReportRequest.RequestBody.DailyInventoryReportCriteria criteria = 
+				new DailyInventoryReportRequest.RequestBody.DailyInventoryReportCriteria();
 		
-		SDailyInventoryRequest.RequestBody.DailyInventoryReportCriteria.WarehouseList whList = 
-				new SDailyInventoryRequest.RequestBody.DailyInventoryReportCriteria.WarehouseList();
+		DailyInventoryReportRequest.RequestBody.DailyInventoryReportCriteria.WarehouseList whList = 
+				new DailyInventoryReportRequest.RequestBody.DailyInventoryReportCriteria.WarehouseList();
 		
 		switch (p) {
 		case USA:
@@ -107,8 +106,8 @@ public class DailyInventoryCallerTest {
 	}
 	
 	private void sendGetDailyInventory(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		DailyInventoryResponse response = null;
-		DailyInventoryRequest request = null;
+		GetDailyInventoryReportResponse response = null;
+		GetDailyInventoryReportRequest request = null;
 		DailyInventoryCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -135,9 +134,9 @@ public class DailyInventoryCallerTest {
 		Variables.SimulationEnabled = sim;
 	}
 	
-	private void sendSubmitDailyInventory(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm) {
-		SDailyInventoryResponse response = null;
-		SDailyInventoryRequest request = null;
+	private void sendSubmitDailyInventory(boolean mock, MEDIA_TYPE type, PLATFORM flatofrm,String version) {
+		DailyInventoryReportResponse response = null;
+		DailyInventoryReportRequest request = null;
 		DailyInventoryCaller sender = null;
 		boolean sim = Variables.SimulationEnabled;
 		
@@ -153,7 +152,7 @@ public class DailyInventoryCallerTest {
 			else
 				sender = DailyInventoryCaller.buildJSON();
 			
-			response = sender.sendSubmitDailyInventoryRequest(request);
+			response = sender.sendSubmitDailyInventoryRequest(request,version);
 			assertTrue("true".equals(response.getIsSuccess()));
 		} catch(NeweggException e) {
 			RequireSetting.log.info("Zack-Test NeweggException happened");
@@ -192,19 +191,19 @@ public class DailyInventoryCallerTest {
 	@Test
 	public void testSendSubmitDailyInventory_XML() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "310"; // only 310
+		//Variables.version = "310"; // only 310
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendSubmitDailyInventory(false, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendSubmitDailyInventory(false, MEDIA_TYPE.XML, PLATFORM.USA,"310");
 		
 		RequireSetting.authKeySetting("A3TV");
-		Variables.version = "310"; // only 310
+		//Variables.version = "310"; // only 310
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendSubmitDailyInventory(false, MEDIA_TYPE.XML, PLATFORM.CAN);
+		sendSubmitDailyInventory(false, MEDIA_TYPE.XML, PLATFORM.CAN,"310");
 		
 		RequireSetting.authKeySetting("A44S");
-		Variables.version = "310"; // only 310
+		//Variables.version = "310"; // only 310
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendSubmitDailyInventory(false, MEDIA_TYPE.XML, PLATFORM.USB);
+		sendSubmitDailyInventory(false, MEDIA_TYPE.XML, PLATFORM.USB,"310");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -212,9 +211,9 @@ public class DailyInventoryCallerTest {
 	@Test
 	public void testSendSubmitDailyInventory_XML_MOCK() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "310"; // only 310
+		//Variables.version = "310"; // only 310
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendSubmitDailyInventory(true, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendSubmitDailyInventory(true, MEDIA_TYPE.XML, PLATFORM.USA,"310");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
@@ -250,9 +249,9 @@ public class DailyInventoryCallerTest {
 	//@Test
 	public void testSendSubmitDailyInventory_JSON_MOCK() {
 		RequireSetting.authKeySetting("A006");
-		Variables.version = "310"; // only 310
+		//Variables.version = "310"; // only 310
 		RequireSetting.log.info(RequireSetting.getTestInfo());
-		sendSubmitDailyInventory(true, MEDIA_TYPE.XML, PLATFORM.USA);
+		sendSubmitDailyInventory(true, MEDIA_TYPE.XML, PLATFORM.USA,"310");
 		
 		RequireSetting.log.info("Zack-Test END");
 	}
