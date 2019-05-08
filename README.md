@@ -1,4 +1,4 @@
-# NewEgg SDK for java
+# Newegg SDK for java
 
 Newegg Marketplace SDK(Java) is a library to help Java programmer easily integrates with Newegg Marketplace API. It provides the definition of the data objects models to help coder create the request and resolve the response. It also provides customize of logger and retry mechanism.  
 To use the SDK to communicate with the Newegg API, you need to be a registered seller and get the 'API Key(Authorization)' and 'Secret Key'  by mail Datafeeds@newegg.com. You can put this information into a 'newegg.properties' file. Without the Authorization Token and Secret Key, you can run the test project with Simulation Mode. This mode is to help you understand the SDK before actual use.
