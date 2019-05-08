@@ -161,13 +161,13 @@
 	<distributionManagement>
 		<repository>
 			<id>central</id>
-			<name>stemktp18-releases</name>
-			<url>http://172.22.29.18:8080/artifactory/libs-release</url>
+			<name>sonatype</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
-			<name>stemktp18-snapshots</name>
-			<url>http://172.22.29.18:8080/artifactory/libs-snapshot</url>
+			<name>sonatype-snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
