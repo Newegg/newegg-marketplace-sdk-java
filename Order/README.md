@@ -6,7 +6,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/order_managemen
 ## How to use
 ### Maven
 - Set pom.xml of project using module dependency
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>Order</artifactId>
@@ -15,7 +15,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/order_managemen
 ```
 
 - Or you can set pom.xml of project using SDK-ALL dependency import all sdk modules
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>SDK-ALL</artifactId>
@@ -26,7 +26,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/order_managemen
 
 ### Setup properties
 Write your newegg.properties file
-```
+```Properties
 # basic
 newegg.simulation=false
 newegg.platform=USA
@@ -50,14 +50,14 @@ newegg.order.loglevel=FULL
 ```
 
 ### Sample code
-- Get Order Information: Retrieve order information by specified order number.
-```
+- Get Order Information: Get Unshipped Order during a time period
+```java
 // Load Configuration
 APIConfig.load(OrderConfig.class);
 
 // Create RequestCriteria
 GetOrderInformationRequest.RequestBody.RequestCriteria criteria = new GetOrderInformationRequest.RequestBody.RequestCriteria();
-criteria.setStatus(4); // Void
+criteria.setStatus(0); // Unshipped
 criteria.setType(0);
 criteria.setOrderDateFrom("2019-05-01 00:00:00");
 criteria.setOrderDateTo("2019-05-31 00:00:00");
@@ -65,8 +65,6 @@ criteria.setOrderDownloaded(0);
 
 // Create RequestBody
 GetOrderInformationRequest.RequestBody body = new GetOrderInformationRequest.RequestBody();
-body.setPageIndex(1);
-body.setPageSize(100);
 body.setRequestCriteria(criteria);
 
 // Create Request
@@ -75,12 +73,13 @@ request.setRequestBody(body);
 
 // Send your request and get response
 OrderCall caller = new OrderCall();
+GetOrderInformationResponse response = caller.getOrderInformation(request,"304");
 
 //do something...
 ```
 
-- Get Order Status: Get the order status by specified the order number of existing order.
-```
+- Get Order Status: Get the status of special order
+```java
 // Load Configuration
 APIConfig.load(OrderConfig.class);
 
@@ -91,27 +90,18 @@ GetOrderStatusResponse response = caller.getOrderStatus("xxxxxxxxx","304");
 //do something...
 ```
 
-- Get Additional Order Information: Retrieve the additional information for Newegg Global order including:
-
-1. Additional order requirement for certain countries.
-2. The original recipient information for orders shipped by NISP service.
-3. The original recipient information inputted by international customers.
-```
+- Get Additional Order Information: Get additional Information of order.
+```java
 // Load Configuration
 APIConfig.load(OrderConfig.class);
 
 // Create RequestCriteria
 GetAdditionalOrderInformationRequest.RequestBody.RequestCriteria criteria = new GetAdditionalOrderInformationRequest.RequestBody.RequestCriteria();
-criteria.setType(0);
-criteria.setStatus(5);
 criteria.setOrderDateFrom("2019-05-01 00:00:00");
 criteria.setOrderDateTo("2019-05-31 00:00:00");
-criteria.setOrderDownloaded(0);
 
 // Create RequestBody
 GetAdditionalOrderInformationRequest.RequestBody body = new GetAdditionalOrderInformationRequest.RequestBody();
-body.setPageIndex(1);
-body.setPageSize(100);
 body.setRequestCriteria(criteria);
 
 // Create Request

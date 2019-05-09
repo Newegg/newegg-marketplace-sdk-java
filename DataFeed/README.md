@@ -7,7 +7,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/datafeed_manage
 ## How to use
 ### Maven
 - Set pom.xml of project using module dependency
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>DataFeed</artifactId>
@@ -16,7 +16,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/datafeed_manage
 ```
 
 - Or you can set pom.xml of project using SDK-ALL dependency import all sdk modules
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>SDK-ALL</artifactId>
@@ -27,7 +27,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/datafeed_manage
 
 ### Setup properties
 Write your newegg.properties file
-```
+```properties
 # basic
 newegg.simulation=false
 newegg.platform=USA
@@ -51,59 +51,48 @@ newegg.datafeed.loglevel=FULL
 ```
 
 ### Sample code
-- Submit feed: The available feeds in Newegg Marketplace to submit: [https://developer.newegg.com/newegg_marketplace_api/datafeed_management/submit_feed/](https://developer.newegg.com/newegg_marketplace_api/datafeed_management/submit_feed/)
-```
+- Submit feed: Submit Item Subscription Feed
+
+The available feeds in Newegg Marketplace to submit: [https://developer.newegg.com/newegg_marketplace_api/datafeed_management/submit_feed/](https://developer.newegg.com/newegg_marketplace_api/datafeed_management/submit_feed/)
+```java
 // Load Configuration
 APIConfig.load(DataFeedConfig.class);
 
-// Create Price Item List
-PriceUpdateFeedRequest.Message.Price prices = new PriceUpdateFeedRequest.Message.Price();
+// Create item1 for add
+ItemSubscriptionFeedRequest.Message.Item item1 = new ItemSubscriptionFeedRequest.Message.Item();
+item1.setSellerPartNumber("item1");
+item1.setAction("Add");
 
-// Item for USA
-PriceUpdateFeedRequest.Message.Price.Item itemUSA = new PriceUpdateFeedRequest.Message.Price.Item();
-itemUSA.setSellerPartNumber("xxxx");
-itemUSA.setNeweggItemNumber("9SIxxxxxxxx");
-itemUSA.setCountryCode("USA");
-itemUSA.setCurrency("USD");
-itemUSA.setMSRP(new BigDecimal("199.00"));
-itemUSA.setSellingPrice(new BigDecimal("99.99"));
-itemUSA.setActivationMark("False");
-prices.getItem().add(itemUSA);
-
-// Item for AUS
-PriceUpdateFeedRequest.Message.Price.Item itemAUS = new PriceUpdateFeedRequest.Message.Price.Item();
-itemAUS.setSellerPartNumber("xxxx");
-itemAUS.setNeweggItemNumber("9SIxxxxxxxx");
-itemAUS.setCountryCode("AUS");
-itemAUS.setCurrency("USD");
-itemAUS.setMSRP(new BigDecimal("199.00"));
-itemAUS.setSellingPrice(new BigDecimal("99.99"));
-itemAUS.setActivationMark("False");
-prices.getItem().add(itemAUS);
+// Create item2 for remove
+ItemSubscriptionFeedRequest.Message.Item item2 = new ItemSubscriptionFeedRequest.Message.Item();
+item1.setSellerPartNumber("item2");
+item2.setAction("Remove");
 
 // Create Message
-PriceUpdateFeedRequest.Message message = new PriceUpdateFeedRequest.Message();
-message.setPrice(prices);
+ItemSubscriptionFeedRequest.Message message = new ItemSubscriptionFeedRequest.Message();
+message.getItem().add(item1);
+message.getItem().add(item2);
 
 // Create Request
-PriceUpdateFeedRequest request = new PriceUpdateFeedRequest();
+ItemSubscriptionFeedRequest request = new ItemSubscriptionFeedRequest();
 request.setMessage(message);
 
 // Send your request and get response
 DataFeedCall caller = new DataFeedCall();
-PriceUpdateFeedResponse response = caller.submitFeed_PriceUpdateFeed(request);
+ItemSubscriptionFeedResponse response = caller.submitFeed_ItemSubscriptionFeed(request);
 
 //do something...
 ```
 
-- Get Feed Status: Get the status of specified feed request by specified query conditions.
-```
+- Get Feed Status: Get the status of the submitted datafeed.
+```java
 // Load Configuration
 APIConfig.load(DataFeedConfig.class);
 
 // Create RequestIDList
 GetFeedStatusRequest.RequestBody.GetRequestStatus.RequestIDList requestIDList = new GetFeedStatusRequest.RequestBody.GetRequestStatus.RequestIDList();
-requestIDList.getRequestID().add("xxxxxxxxxxxx");
+requestIDList.getRequestID().add("xxxxxxxxxxxx1");
+requestIDList.getRequestID().add("xxxxxxxxxxxx2");
 
 // Create RequestStatus
 GetFeedStatusRequest.RequestBody.GetRequestStatus requestStatus = new GetFeedStatusRequest.RequestBody.GetRequestStatus();
@@ -126,8 +115,8 @@ GetFeedStatusResponse response = caller.getFeedStatus(request);
 //do something...
 ```
 
-- Get Feed Result: When “Get Feed Status” result is FINISHED, use this request to get the ready/completed processing report for review.
-```
+- Get Feed Result: Get the result of the submitted datafeed.
+```java
 // Load Configuration
 APIConfig.load(DataFeedConfig.class);
 

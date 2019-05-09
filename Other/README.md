@@ -6,7 +6,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/verify_service_
 ## How to use
 ### Maven
 - Set pom.xml of project using module dependency
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>Other</artifactId>
@@ -15,7 +15,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/verify_service_
 ```
 
 - Or you can set pom.xml of project using SDK-ALL dependency import all sdk modules
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>SDK-ALL</artifactId>
@@ -26,7 +26,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/verify_service_
 
 ### Setup properties
 Write your newegg.properties file
-```
+```properties
 # basic
 newegg.simulation=false
 newegg.platform=USA
@@ -50,8 +50,8 @@ newegg.other.loglevel=FULL
 ```
 
 ### Sample code
-- Verify Service Status:
-```
+- Verify Service Status: Check the status of Newegg Marketplace API
+```java
 // Load Configuration
 APIConfig.load(OtherConfig.class);
 
@@ -66,7 +66,7 @@ OtherCall call = new OtherCall();
 // ServiceDomain.sellermgmt
 // ServiceDomain.sbnmgmt
 // ServiceDomain.shippingservice
-VerifyServiceStatusResponse response = call.verifyServiceStatus(ServiceDomain.contentmgmt);
+VerifyServiceStatusResponse response = call.verifyServiceStatus(ServiceDomain.ordermgmt);
 	
 //do something...
 ```

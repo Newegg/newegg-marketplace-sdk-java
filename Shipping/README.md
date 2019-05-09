@@ -6,7 +6,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/newegg_shipping
 ## How to use
 ### Maven
 - Set pom.xml of project using module dependency
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>Shipping</artifactId>
@@ -15,7 +15,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/newegg_shipping
 ```
 
 - Or you can set pom.xml of project using SDK-ALL dependency import all sdk modules
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>SDK-ALL</artifactId>
@@ -26,7 +26,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/newegg_shipping
 
 ### Setup properties
 Write your newegg.properties file
-```
+```properties
 # basic
 newegg.simulation=false
 newegg.platform=USA
@@ -51,53 +51,30 @@ newegg.shipping.loglevel=FULL
 
 ### Sample code
 - Submit Shipping Request: Submit the shipping request for your Newegg order to receive the estimation of shipping cost using Newegg Shipping Label Service.
-```
+```java
 // Load Configuration
 APIConfig.load(ShipConfig.class);
 
-// Create ItemList1
-SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList itemList1 = new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList();
+// Create Item
+SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item item = new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item();
+item.setQuantity(1);
+item.setSellerPartNumber("xxxxxxxxxxx");
 
-// Create 2 Item in Package1
-SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item item1 = new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item();
-item1.setQuantity(4);
-item1.setSellerPartNumber("item1");
-itemList1.getItem().add(item1);
+// Create ItemList and Add Item
+SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList itemList = new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList();
+itemList.getItem().add(item);
 
-SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item item2 = new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item();
-item2.setQuantity(1);
-item2.setSellerPartNumber("item2");
-itemList1.getItem().add(item2);
-
-// Create Package1 and Add ItemList
-SubmitShippingRequest.RequestBody.Shipment.PackageList.Package pack1 = new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package();
-pack1.setPackageWeight(new BigDecimal("5"));
-pack1.setPackageLength(new BigDecimal("5.00"));
-pack1.setPackageWidth(new BigDecimal("3.00"));
-pack1.setPackageHeight(new BigDecimal("4.00"));
-pack1.setItemList(itemList1);
-
-// Create ItemList2
-SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList itemList2 = new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList();
-
-// Create 1 Item in Package2
-SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item item3 = new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package.ItemList.Item();
-item3.setQuantity(3);
-item3.setSellerPartNumber("item3");
-itemList2.getItem().add(item3);
-
-// Create Package2 and Add ItemList
-SubmitShippingRequest.RequestBody.Shipment.PackageList.Package pack2 = new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package();
-pack2.setPackageWeight(new BigDecimal("1.5"));
-pack2.setPackageLength(new BigDecimal("2.00"));
-pack2.setPackageWidth(new BigDecimal("4.00"));
-pack2.setPackageHeight(new BigDecimal("3.00"));
-pack2.setItemList(itemList2);
+// Create Package and Add ItemList
+SubmitShippingRequest.RequestBody.Shipment.PackageList.Package pakg = new SubmitShippingRequest.RequestBody.Shipment.PackageList.Package();
+pakg.setPackageWeight(new BigDecimal("5"));
+pakg.setPackageLength(new BigDecimal("5.00"));
+pakg.setPackageWidth(new BigDecimal("3.00"));
+pakg.setPackageHeight(new BigDecimal("4.00"));
+pakg.setItemList(itemList);
 
 // Create PackageList
 SubmitShippingRequest.RequestBody.Shipment.PackageList packageList = new SubmitShippingRequest.RequestBody.Shipment.PackageList();
-packageList.getPackage().add(pack1);
-packageList.getPackage().add(pack2);
+packageList.getPackage().add(pakg);
 
 // Create Shipment and Add PackageList
 SubmitShippingRequest.RequestBody.Shipment shipment = new SubmitShippingRequest.RequestBody.Shipment();
@@ -130,14 +107,13 @@ SubmitShippingResponse response = caller.submitShippingRequest(request);
 ```
 
 - Get Shipping Request Detail: Retrieving the processing result of Submit Shipping Request.
-```
+```java
 // Load Configuration
 APIConfig.load(ShipConfig.class);
 
 // Create RequestBody
 GetShippingDetailRequest.RequestBody body = new GetShippingDetailRequest.RequestBody();
 body.setRequestID("xxxxxxxxxxxxx");
-body.setOrderNumber("123456789");
 
 // Create Request
 GetShippingDetailRequest request = new GetShippingDetailRequest();
@@ -150,33 +126,8 @@ GetShippingDetailResponse response = caller.getShippingRequestDetail(request);
 //do something...
 ```
 
-- Confirm Shipping Request: Once shipping estimate is available, you must confirm it when you are ready to ship.
-```
-// Load Configuration
-APIConfig.load(ShipConfig.class);
-
-// Create RequestIDList
-ConfirmShipRequest.RequestBody.RequestIDList requestIDList = new ConfirmShipRequest.RequestBody.RequestIDList();
-requestIDList.getRequestID().add("xxxxxxxxxxxxx");
-// can more request id
-
-// Create Body
-ConfirmShipRequest.RequestBody body = new ConfirmShipRequest.RequestBody();
-body.setRequestIDList(requestIDList);
-
-//Create Request
-ConfirmShipRequest request = new ConfirmShipRequest();
-request.setRequestBody(body);
-
-// Send your request and get response
-ShippingCall caller = new ShippingCall();
-ConfirmShipResponse response = caller.confirmShippingRequest(request);
-
-//do something...
-```
-
 - Void Shipping Request: An unconfirmed shipping request is applicable for void using this function.
-```
+```java
 // Load Configuration
 APIConfig.load(ShipConfig.class);
 
@@ -196,4 +147,32 @@ request.setRequestBody(body);
 // Send your request and get response
 ShippingCall caller = new ShippingCall();
 VoidShippingResponse response = caller.voidShippingRequest(request);
+
+//do something...
+```
+
+- Confirm Shipping Request: Once shipping estimate is available, you must confirm it when you are ready to ship.
+
+Note: Once a shipping request is confirmed, Newegg will continue to process the order and the status of order will soon become "Shipped".  Also, the shipping information will be displayed in Order Detail under the customer's My Account section, and Newegg will send the customer an email notification with all of the shipping information.  When shipping request is confirmed, the revoke of the operation is not available.
+```java
+// Load Configuration
+APIConfig.load(ShipConfig.class);
+
+// Create RequestIDList
+ConfirmShipRequest.RequestBody.RequestIDList requestIDList = new ConfirmShipRequest.RequestBody.RequestIDList();
+requestIDList.getRequestID().add("xxxxxxxxxxx");
+
+// Create Body
+ConfirmShipRequest.RequestBody body = new ConfirmShipRequest.RequestBody();
+body.setRequestIDList(requestIDList);
+
+// Create Request
+ConfirmShipRequest request = new ConfirmShipRequest();
+request.setRequestBody(body);
+
+// Send your request and get response
+ShippingCall caller = new ShippingCall();
+ConfirmShipResponse response = caller.confirmShippingRequest(request);
+
+//do something...
 ```

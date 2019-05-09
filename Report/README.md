@@ -7,7 +7,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/reports_managem
 ## How to use
 ### Maven
 - Set pom.xml of project using module dependency
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>Report</artifactId>
@@ -16,7 +16,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/reports_managem
 ```
 
 - Or you can set pom.xml of project using SDK-ALL dependency import all sdk modules
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>SDK-ALL</artifactId>
@@ -27,7 +27,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/reports_managem
 
 ### Setup properties
 Write your newegg.properties file
-```
+```properties
 # basic
 newegg.simulation=false
 newegg.platform=USA
@@ -51,9 +51,37 @@ newegg.report.loglevel=FULL
 ```
 
 ### Sample code for Daily Price Report
-- Submit Report Request: The available reports in Newegg Marketplace to submit:
-[https://developer.newegg.com/newegg_marketplace_api/reports_management/submit_report_request/](https://developer.newegg.com/newegg_marketplace_api/reports_management/submit_report_request/)
+- Submit Daily Inventory Report Request: Get item's available inventory quantity, price information, shipping, and activation status for defaulted warehouse.
+```java
+// Load Configuration
+APIConfig.load(ReportConfig.class);
+
+// Create Daily Inventory WarehouseList
+DailyInventoryReportRequest.RequestBody.DailyInventoryReportCriteria.WarehouseList warehouseList = new DailyInventoryReportRequest.RequestBody.DailyInventoryReportCriteria.WarehouseList();
+warehouseList.getWarehouseLocation().add("USA");
+
+// Create Daily Inventory Criteria
+DailyInventoryReportRequest.RequestBody.DailyInventoryReportCriteria criteria = new DailyInventoryReportRequest.RequestBody.DailyInventoryReportCriteria();
+criteria.setFulfillType(0); // All
+criteria.setFileType("XLS");
+criteria.setWarehouseList(warehouseList);
+// Create RequestBody
+DailyInventoryReportRequest.RequestBody body = new DailyInventoryReportRequest.RequestBody();
+body.setDailyInventoryReportCriteria(criteria);		
+
+// Create Request
+DailyInventoryReportRequest request = new DailyInventoryReportRequest();
+request.setRequestBody(body);
+
+// Send your request and get response
+ReportCall caller = new ReportCall();
+DailyInventoryReportResponse response = caller.submitDailyInventoryReport(request,"301");
+
+//do something...
 ```
+
+- Submit Daily Price Report Request: Get item's price information, shipping, and activation status for targeted countries, including United States.
+```java
 // Load Configuration
 APIConfig.load(ReportConfig.class);
 
@@ -76,13 +104,13 @@ request.setRequestBody(body);
 
 // Send your request and get response
 ReportCall caller = new ReportCall();
-DailyPriceReportResponse response = caller.submitDailyPriceReport(request,"301");
+DailyPriceReportResponse response = caller.submitDailyPriceReport(request, "301");
 
 //do something...
 ```
 
 - Get Report Status: Get the status of specified report request.
-```
+```java
 // Load Configuration
 APIConfig.load(ReportConfig.class);
 
@@ -93,8 +121,7 @@ requestIDList.getRequestID().add("xxxxxxxxxxxx");
 // Create RequestStatus
 GetReportStatusRequest.RequestBody.GetRequestStatus requestStatus = new GetReportStatusRequest.RequestBody.GetRequestStatus();
 requestStatus.setRequestIDList(requestIDList);
-requestStatus.setMaxCount(100);
-requestStatus.setRequestStatus("ALL");
+requestStatus.setMaxCount(20);
 
 // Create RequestBody
 GetReportStatusRequest.RequestBody body = new GetReportStatusRequest.RequestBody();
@@ -111,9 +138,8 @@ GetReportStatusResponse response = caller.getReportStatus(request);
 //do something...
 ```
 
-- Get Report Result: Get report when Get Report Status result is FINISHED for the following:
-[https://developer.newegg.com/newegg_marketplace_api/reports_management/get_report_result/](https://developer.newegg.com/newegg_marketplace_api/reports_management/get_report_result/)
-```
+- Get Daily Inventory Report Result: Get report when Get Report Status result is FINISHED.
+```java
 // Load Configuration
 APIConfig.load(ReportConfig.class);
 
@@ -123,9 +149,9 @@ pageInfo.setPageIndex(1);
 pageInfo.setPageSize(10);
 
 // Create RequestBody
-GetDailyPriceReportRequest.RequestBody body = new GetDailyPriceReportRequest.RequestBody();
-body.setPageInfo(pageInfo);
+GetDailyPriceReportRequest.RequestBody body = new GetDailyPriceReportRequest.RequestBody();		
 body.setRequestID("xxxxxxxxxxxx");
+body.setPageInfo(pageInfo);
 
 // Create Request
 GetDailyPriceReportRequest request = new GetDailyPriceReportRequest();
@@ -137,4 +163,3 @@ GetDailyPriceReportResponse response = caller.getDailyPriceReport(request);
 
 //do something...
 ```
-

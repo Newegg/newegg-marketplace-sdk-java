@@ -6,7 +6,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/seller_manageme
 ## How to use
 ### Maven
 - Set pom.xml of project using module dependency
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>Seller</artifactId>
@@ -15,7 +15,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/seller_manageme
 ```
 
 - Or you can set pom.xml of project using SDK-ALL dependency import all sdk modules
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>SDK-ALL</artifactId>
@@ -26,7 +26,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/seller_manageme
 
 ### Setup properties
 Write your newegg.properties file
-```
+```properties
 # basic
 newegg.simulation=false
 newegg.platform=USA
@@ -50,8 +50,8 @@ newegg.seller.loglevel=FULL
 ```
 
 ### Sample code
-- Seller Status Check: Get the seller account status. Additional for Newegg.com, it includes the seller’s warehouse location and shipping destination information.
-```
+- Seller Status Check
+```java
 // Load Configuration
 APIConfig.load(SellerConfig.class);
 
@@ -59,46 +59,11 @@ APIConfig.load(SellerConfig.class);
 SellerCall caller = new SellerCall();
 SellerStatusCheckResponse response = caller.sellerStatusCheck();
 
-SellerStatusCheckResponse.ResponseBody responseBody = response.getResponseBody();
-
 //do something...
 ```
 
-- Get Subcategory Status: Get the subcategory status for the specified seller account. Subcategory is either enabled or not enabled for a seller.
-```
-// Load Configuration
-APIConfig.load(SellerConfig.class);
-
-// Create SubcategoryIDList
-GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory.SubcategoryIDList subcategoryIDList = new GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory.SubcategoryIDList();
-subcategoryIDList.getSubcategoryID().add(000);
-
-// Create IndustryCodeList
-GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory.IndustryCodeList industoryCodeList = new GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory.IndustryCodeList();
-industoryCodeList.getIndustryCode().add("XX");
-
-// Create GetItemSubcategory
-GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory itemSubcategory = new GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory();
-itemSubcategory.setSubcategoryIDList(subcategoryIDList);
-itemSubcategory.setIndustryCodeList(industoryCodeList);
-
-// Create RequestBody
-GetSubcategoryStatusRequest.RequestBody body = new GetSubcategoryStatusRequest.RequestBody();
-body.setGetItemSubcategory(itemSubcategory);
-
-// Create Request
-GetSubcategoryStatusRequest request = new GetSubcategoryStatusRequest();
-request.setRequestBody(body);
-
-// Send your request and get response
-SellerCall caller = new SellerCall();
-GetSubcategoryStatusResponse response =  caller.getSubcategoryStatus(request);
-
-//do something...
-```
-
-- Get Subcategory Properties: Get the subcategory properties for the specified subcategory.
-```
+- Get Subcategory Properties: Get the properties of special subcategory.
+```java
 // Load Configuration
 APIConfig.load(SellerConfig.class);
 
@@ -116,3 +81,32 @@ GetSubcategoryPropertiesResponse response = caller.getSubcategoryProperties(requ
 
 //do something...
 ```
+
+- Get Subcategory Status: Get Subcategory of special Industry.
+```java
+// Load Configuration
+APIConfig.load(SellerConfig.class);
+
+// Create IndustryCodeList
+GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory.IndustryCodeList industoryCodeList = new GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory.IndustryCodeList();
+industoryCodeList.getIndustryCode().add("XX");
+
+// Create GetItemSubcategory
+GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory itemSubcategory = new GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory();
+itemSubcategory.setIndustryCodeList(industoryCodeList);
+
+// Create RequestBody
+GetSubcategoryStatusRequest.RequestBody body = new GetSubcategoryStatusRequest.RequestBody();
+body.setGetItemSubcategory(itemSubcategory);
+
+// Create Request
+GetSubcategoryStatusRequest request = new GetSubcategoryStatusRequest();
+request.setRequestBody(body);
+
+// Send your request and get response
+SellerCall caller = new SellerCall();
+GetSubcategoryStatusResponse response =  caller.getSubcategoryStatus(request);
+
+//do something...
+```
+

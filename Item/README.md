@@ -6,7 +6,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/item_management
 ## How to use
 ### Maven
 - Set pom.xml of project using module dependency
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>Item</artifactId>
@@ -15,7 +15,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/item_management
 ```
 
 - Or you can set pom.xml of project using SDK-ALL dependency import all sdk modules
-```
+```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
     <artifactId>SDK-ALL</artifactId>
@@ -26,7 +26,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/item_management
 
 ### Setup properties
 Write your newegg.properties file
-```
+```properties
 # basic
 newegg.simulation=false
 newegg.platform=USA
@@ -50,20 +50,17 @@ newegg.item.loglevel=FULL
 ```
 
 ### Sample code
-- Get Item Price(newegg.com): Tracking the price related information of items for destination countries, including the United States.
-```
+- Get Item Price(newegg.com): Get Item price for multiple countries.
+```java
 // Load Configuration
 APIConfig.load(ItemConfig.class);
 
-// Create Request CountryList
+// Create Request CountryList can set more country...
 GetInternationalItemPriceRequest.CountryList counties = new GetInternationalItemPriceRequest.CountryList();
-counties.getCountryCode().add("USA");
-counties.getCountryCode().add("AUS");
-// more country...
 
 // Create Request
 GetInternationalItemPriceRequest request = new GetInternationalItemPriceRequest();
-request.setType(0);
+request.setType(0); //NE Item#
 request.setValue("9SIxxxxxxx");
 request.setCountryList(counties);
 
@@ -74,33 +71,28 @@ GetInternationalItemPriceResponse response = caller.getInternationalItemPrice(re
 //do something...
 ```
 
-- Update Item Price(newegg.com): Maintaining the price information, shipping, and/or status of items in all eligible countries, including the United States.
-```
+- Update Item Price(newegg.com): Update item price
+```java
 // Load Configuration
 APIConfig.load(ItemConfig.class);
 
 // Create Request Price List
 UpdateItemPriceRequest.PriceList priceList = new UpdateItemPriceRequest.PriceList();
 
-// USA Price
-UpdateItemPriceRequest.PriceList.Price priceUSA = new UpdateItemPriceRequest.PriceList.Price();
-priceUSA.setCountryCode("USA");
-priceUSA.setCurrency("USD");
-priceUSA.setSellingPrice(new BigDecimal("98.99"));
-priceUSA.setActive(0);
-priceList.getPrice().add(priceUSA);
-
 // AUS Price
 UpdateItemPriceRequest.PriceList.Price priceAUS = new UpdateItemPriceRequest.PriceList.Price();
 priceAUS.setCountryCode("AUS");
 priceAUS.setCurrency("USD");
-priceAUS.setSellingPrice(new BigDecimal("98.98"));
 priceAUS.setActive(0);
+priceAUS.setMSRP(new BigDecimal("3500"));
+priceAUS.setMAP(new BigDecimal("0"));
+priceAUS.setCheckoutMAP(0);
+priceAUS.setSellingPrice(new BigDecimal("1149.98"));
 priceList.getPrice().add(priceAUS);
 
 // Create Request
 UpdateItemPriceRequest request = new UpdateItemPriceRequest();
-request.setType(0);
+request.setType(0); //NE Item#
 request.setValue("9SIxxxxxxx");
 request.setPriceList(priceList);
 
