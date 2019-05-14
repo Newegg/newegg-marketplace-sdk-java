@@ -30,7 +30,7 @@ To use the SDK to communicate with the Newegg API, you need to be a registered s
 ```properties
 newegg.simulation=false
 newegg.platform=USA
-newegg.hosturl=https://apis.newegg.org/marketplace
+newegg.hosturl=https://api.newegg.com/marketplace
 newegg.sellerid=XXX
 newegg.authorization=XXXXXXXXXXXX
 newegg.secretkey=XXXX-XXXXX-XXXX-XXXX-XXXX
