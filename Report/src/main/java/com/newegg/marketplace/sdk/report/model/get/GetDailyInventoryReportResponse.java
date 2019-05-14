@@ -25,52 +25,52 @@ import com.fasterxml.jackson.annotation.JsonRootName;
  * <p>下列綱要片段會指定此類別中包含的預期內容.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *               &lt;enumeration value="false"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;pattern value="InternationalInventoryReportResponse"/>
- *               &lt;enumeration value="InternationalInventoryReportResponse"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="ReportFileURL" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="RequestType">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                         &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *               &lt;enumeration value="false"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;pattern value="InternationalInventoryReportResponse"/&gt;
+ *               &lt;enumeration value="InternationalInventoryReportResponse"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="ReportFileURL" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="RequestType"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                         &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -177,7 +177,7 @@ public class GetDailyInventoryReportResponse {
      * 
      * @return
      *     possible object is
-     *     {@link NeweggAPIResponse.ResponseBody }
+     *     {@link GetDailyInventoryReportResponse.ResponseBody }
      *     
      */
     public GetDailyInventoryReportResponse.ResponseBody getResponseBody() {
@@ -189,7 +189,7 @@ public class GetDailyInventoryReportResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link NeweggAPIResponse.ResponseBody }
+     *     {@link GetDailyInventoryReportResponse.ResponseBody }
      *     
      */
     public void setResponseBody(GetDailyInventoryReportResponse.ResponseBody value) {
@@ -227,24 +227,24 @@ public class GetDailyInventoryReportResponse {
      * <p>下列綱要片段會指定此類別中包含的預期內容.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="ReportFileURL" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="RequestType">
-     *           &lt;simpleType>
-     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/>
-     *             &lt;/restriction>
-     *           &lt;/simpleType>
-     *         &lt;/element>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="ReportFileURL" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="RequestType"&gt;
+     *           &lt;simpleType&gt;
+     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *               &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/&gt;
+     *             &lt;/restriction&gt;
+     *           &lt;/simpleType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/all&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 

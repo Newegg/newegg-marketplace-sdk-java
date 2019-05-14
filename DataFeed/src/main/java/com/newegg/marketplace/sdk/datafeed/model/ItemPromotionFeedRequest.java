@@ -31,89 +31,89 @@ import com.newegg.marketplace.sdk.common.DateAdapter;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Header">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="MessageType" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Message">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="Item" maxOccurs="unbounded">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="TabID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                             &lt;element name="PromoMSRP" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                   &lt;fractionDigits value="2"/>
- *                                   &lt;minInclusive value="0.00"/>
- *                                   &lt;maxInclusive value="99999.00"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="PromoSellingPrice">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                   &lt;fractionDigits value="2"/>
- *                                   &lt;minInclusive value="0.00"/>
- *                                   &lt;maxInclusive value="99999.00"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="PromoShipping">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;enumeration value="Default"/>
- *                                   &lt;enumeration value="Free"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="PromoStartDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
- *                             &lt;element name="PromoEndDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
- *                             &lt;element name="LimitQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *                             &lt;element name="MaxQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *                             &lt;element name="MinInventory" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *                             &lt;element name="InventoryLocked">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;enumeration value="Yes"/>
- *                                   &lt;enumeration value="No"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="Note" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Header"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="MessageType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Message"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Item" maxOccurs="unbounded"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="TabID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                             &lt;element name="PromoMSRP" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                   &lt;fractionDigits value="2"/&gt;
+ *                                   &lt;minInclusive value="0.00"/&gt;
+ *                                   &lt;maxInclusive value="99999.00"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="PromoSellingPrice"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                   &lt;fractionDigits value="2"/&gt;
+ *                                   &lt;minInclusive value="0.00"/&gt;
+ *                                   &lt;maxInclusive value="99999.00"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="PromoShipping"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;enumeration value="Default"/&gt;
+ *                                   &lt;enumeration value="Free"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="PromoStartDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+ *                             &lt;element name="PromoEndDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+ *                             &lt;element name="LimitQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *                             &lt;element name="MaxQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *                             &lt;element name="MinInventory" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *                             &lt;element name="InventoryLocked"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;enumeration value="Yes"/&gt;
+ *                                   &lt;enumeration value="No"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="Note" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -213,15 +213,15 @@ public class ItemPromotionFeedRequest {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -268,67 +268,67 @@ public class ItemPromotionFeedRequest {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="Item" maxOccurs="unbounded">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="TabID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                   &lt;element name="PromoMSRP" minOccurs="0">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                         &lt;fractionDigits value="2"/>
-     *                         &lt;minInclusive value="0.00"/>
-     *                         &lt;maxInclusive value="99999.00"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="PromoSellingPrice">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                         &lt;fractionDigits value="2"/>
-     *                         &lt;minInclusive value="0.00"/>
-     *                         &lt;maxInclusive value="99999.00"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="PromoShipping">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                         &lt;enumeration value="Default"/>
-     *                         &lt;enumeration value="Free"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="PromoStartDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
-     *                   &lt;element name="PromoEndDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
-     *                   &lt;element name="LimitQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-     *                   &lt;element name="MaxQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-     *                   &lt;element name="MinInventory" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-     *                   &lt;element name="InventoryLocked">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                         &lt;enumeration value="Yes"/>
-     *                         &lt;enumeration value="No"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="Note" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Item" maxOccurs="unbounded"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="TabID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                   &lt;element name="PromoMSRP" minOccurs="0"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                         &lt;fractionDigits value="2"/&gt;
+     *                         &lt;minInclusive value="0.00"/&gt;
+     *                         &lt;maxInclusive value="99999.00"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="PromoSellingPrice"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                         &lt;fractionDigits value="2"/&gt;
+     *                         &lt;minInclusive value="0.00"/&gt;
+     *                         &lt;maxInclusive value="99999.00"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="PromoShipping"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                         &lt;enumeration value="Default"/&gt;
+     *                         &lt;enumeration value="Free"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="PromoStartDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+     *                   &lt;element name="PromoEndDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+     *                   &lt;element name="LimitQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+     *                   &lt;element name="MaxQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+     *                   &lt;element name="MinInventory" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+     *                   &lt;element name="InventoryLocked"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                         &lt;enumeration value="Yes"/&gt;
+     *                         &lt;enumeration value="No"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="Note" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -362,6 +362,9 @@ public class ItemPromotionFeedRequest {
          * Objects of the following type(s) are allowed in the list
          * {@link ItemPromotionFeedRequest.Message.Item }
          * 
+         * @return
+         * Objects of the following type(s) are allowed in the list
+         * {@link ItemPromotionFeedRequest.Message.Item }
          * 
          */
         public List<ItemPromotionFeedRequest.Message.Item> getItem() {
@@ -378,57 +381,57 @@ public class ItemPromotionFeedRequest {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="TabID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *         &lt;element name="PromoMSRP" minOccurs="0">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *               &lt;fractionDigits value="2"/>
-         *               &lt;minInclusive value="0.00"/>
-         *               &lt;maxInclusive value="99999.00"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="PromoSellingPrice">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *               &lt;fractionDigits value="2"/>
-         *               &lt;minInclusive value="0.00"/>
-         *               &lt;maxInclusive value="99999.00"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="PromoShipping">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *               &lt;enumeration value="Default"/>
-         *               &lt;enumeration value="Free"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="PromoStartDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
-         *         &lt;element name="PromoEndDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
-         *         &lt;element name="LimitQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-         *         &lt;element name="MaxQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-         *         &lt;element name="MinInventory" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-         *         &lt;element name="InventoryLocked">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *               &lt;enumeration value="Yes"/>
-         *               &lt;enumeration value="No"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="Note" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="TabID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *         &lt;element name="PromoMSRP" minOccurs="0"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *               &lt;fractionDigits value="2"/&gt;
+         *               &lt;minInclusive value="0.00"/&gt;
+         *               &lt;maxInclusive value="99999.00"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="PromoSellingPrice"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *               &lt;fractionDigits value="2"/&gt;
+         *               &lt;minInclusive value="0.00"/&gt;
+         *               &lt;maxInclusive value="99999.00"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="PromoShipping"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *               &lt;enumeration value="Default"/&gt;
+         *               &lt;enumeration value="Free"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="PromoStartDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+         *         &lt;element name="PromoEndDate" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+         *         &lt;element name="LimitQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+         *         &lt;element name="MaxQty" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+         *         &lt;element name="MinInventory" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+         *         &lt;element name="InventoryLocked"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *               &lt;enumeration value="Yes"/&gt;
+         *               &lt;enumeration value="No"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="Note" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 

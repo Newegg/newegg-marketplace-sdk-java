@@ -28,158 +28,158 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence maxOccurs="unbounded" minOccurs="0">
- *                   &lt;element name="ShipmentList">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence maxOccurs="unbounded" minOccurs="0">
- *                             &lt;element name="Shipment">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="ShipmentID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="Status" minOccurs="0">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="Creating"/>
- *                                             &lt;enumeration value="Preparing"/>
- *                                             &lt;enumeration value="Ready to ship"/>
- *                                             &lt;enumeration value="Shipped"/>
- *                                             &lt;enumeration value="Partially Received"/>
- *                                             &lt;enumeration value="Received"/>
- *                                             &lt;enumeration value="Void"/>
- *                                             &lt;enumeration value="Manually closed"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="CreateDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="LastEditDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="ShipFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="ShipToWarehouseCode" minOccurs="0">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="06"/>
- *                                             &lt;enumeration value="07"/>
- *                                             &lt;enumeration value="08"/>
- *                                             &lt;enumeration value="10"/>
- *                                             &lt;enumeration value="12"/>
- *                                             &lt;enumeration value="14"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="ShippingMethodCode" minOccurs="0">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="1"/>
- *                                             &lt;enumeration value="2"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="ShippingCarrierCode" minOccurs="0">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="101"/>
- *                                             &lt;enumeration value="102"/>
- *                                             &lt;enumeration value="103"/>
- *                                             &lt;enumeration value="104"/>
- *                                             &lt;enumeration value="105"/>
- *                                             &lt;enumeration value="99"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="OtherCarrierName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="PackageList">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;sequence maxOccurs="unbounded" minOccurs="0">
- *                                                 &lt;element name="Package">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;all>
- *                                                           &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                           &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                                           &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                                           &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                                           &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                                         &lt;/all>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                               &lt;/sequence>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                       &lt;element name="ItemList">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;sequence maxOccurs="unbounded" minOccurs="0">
- *                                                 &lt;element name="Item">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;all>
- *                                                           &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                           &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                                                           &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                                                         &lt;/all>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                               &lt;/sequence>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+ *                   &lt;element name="ShipmentList"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+ *                             &lt;element name="Shipment"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="ShipmentID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="Status" minOccurs="0"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="Creating"/&gt;
+ *                                             &lt;enumeration value="Preparing"/&gt;
+ *                                             &lt;enumeration value="Ready to ship"/&gt;
+ *                                             &lt;enumeration value="Shipped"/&gt;
+ *                                             &lt;enumeration value="Partially Received"/&gt;
+ *                                             &lt;enumeration value="Received"/&gt;
+ *                                             &lt;enumeration value="Void"/&gt;
+ *                                             &lt;enumeration value="Manually closed"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="CreateDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="LastEditDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="ShipFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="ShipToWarehouseCode" minOccurs="0"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="06"/&gt;
+ *                                             &lt;enumeration value="07"/&gt;
+ *                                             &lt;enumeration value="08"/&gt;
+ *                                             &lt;enumeration value="10"/&gt;
+ *                                             &lt;enumeration value="12"/&gt;
+ *                                             &lt;enumeration value="14"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="ShippingMethodCode" minOccurs="0"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="1"/&gt;
+ *                                             &lt;enumeration value="2"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="ShippingCarrierCode" minOccurs="0"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="101"/&gt;
+ *                                             &lt;enumeration value="102"/&gt;
+ *                                             &lt;enumeration value="103"/&gt;
+ *                                             &lt;enumeration value="104"/&gt;
+ *                                             &lt;enumeration value="105"/&gt;
+ *                                             &lt;enumeration value="99"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="OtherCarrierName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="PackageList"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+ *                                                 &lt;element name="Package"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;complexContent&gt;
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                         &lt;all&gt;
+ *                                                           &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                           &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                                           &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                                           &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                                           &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                                         &lt;/all&gt;
+ *                                                       &lt;/restriction&gt;
+ *                                                     &lt;/complexContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                               &lt;/sequence&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="ItemList"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+ *                                                 &lt;element name="Item"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;complexContent&gt;
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                         &lt;all&gt;
+ *                                                           &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                           &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                                                           &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                                                         &lt;/all&gt;
+ *                                                       &lt;/restriction&gt;
+ *                                                     &lt;/complexContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                               &lt;/sequence&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -307,139 +307,139 @@ public class GetShipmentListResponse {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
-     *         &lt;element name="ShipmentList">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence maxOccurs="unbounded" minOccurs="0">
-     *                   &lt;element name="Shipment">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="ShipmentID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="Status" minOccurs="0">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;enumeration value="Creating"/>
-     *                                   &lt;enumeration value="Preparing"/>
-     *                                   &lt;enumeration value="Ready to ship"/>
-     *                                   &lt;enumeration value="Shipped"/>
-     *                                   &lt;enumeration value="Partially Received"/>
-     *                                   &lt;enumeration value="Received"/>
-     *                                   &lt;enumeration value="Void"/>
-     *                                   &lt;enumeration value="Manually closed"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="CreateDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="LastEditDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="ShipFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="ShipToWarehouseCode" minOccurs="0">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;enumeration value="06"/>
-     *                                   &lt;enumeration value="07"/>
-     *                                   &lt;enumeration value="08"/>
-     *                                   &lt;enumeration value="10"/>
-     *                                   &lt;enumeration value="12"/>
-     *                                   &lt;enumeration value="14"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="ShippingMethodCode" minOccurs="0">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;enumeration value="1"/>
-     *                                   &lt;enumeration value="2"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="ShippingCarrierCode" minOccurs="0">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;enumeration value="101"/>
-     *                                   &lt;enumeration value="102"/>
-     *                                   &lt;enumeration value="103"/>
-     *                                   &lt;enumeration value="104"/>
-     *                                   &lt;enumeration value="105"/>
-     *                                   &lt;enumeration value="99"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="OtherCarrierName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="PackageList">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence maxOccurs="unbounded" minOccurs="0">
-     *                                       &lt;element name="Package">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;all>
-     *                                                 &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                                 &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                                                 &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                                                 &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                                                 &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                                               &lt;/all>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="ItemList">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence maxOccurs="unbounded" minOccurs="0">
-     *                                       &lt;element name="Item">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;all>
-     *                                                 &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                                 &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                                                 &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                                               &lt;/all>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+     *         &lt;element name="ShipmentList"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+     *                   &lt;element name="Shipment"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;all&gt;
+     *                             &lt;element name="ShipmentID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="Status" minOccurs="0"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;enumeration value="Creating"/&gt;
+     *                                   &lt;enumeration value="Preparing"/&gt;
+     *                                   &lt;enumeration value="Ready to ship"/&gt;
+     *                                   &lt;enumeration value="Shipped"/&gt;
+     *                                   &lt;enumeration value="Partially Received"/&gt;
+     *                                   &lt;enumeration value="Received"/&gt;
+     *                                   &lt;enumeration value="Void"/&gt;
+     *                                   &lt;enumeration value="Manually closed"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="CreateDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="LastEditDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="ShipFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="ShipToWarehouseCode" minOccurs="0"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;enumeration value="06"/&gt;
+     *                                   &lt;enumeration value="07"/&gt;
+     *                                   &lt;enumeration value="08"/&gt;
+     *                                   &lt;enumeration value="10"/&gt;
+     *                                   &lt;enumeration value="12"/&gt;
+     *                                   &lt;enumeration value="14"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="ShippingMethodCode" minOccurs="0"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;enumeration value="1"/&gt;
+     *                                   &lt;enumeration value="2"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="ShippingCarrierCode" minOccurs="0"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;enumeration value="101"/&gt;
+     *                                   &lt;enumeration value="102"/&gt;
+     *                                   &lt;enumeration value="103"/&gt;
+     *                                   &lt;enumeration value="104"/&gt;
+     *                                   &lt;enumeration value="105"/&gt;
+     *                                   &lt;enumeration value="99"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="OtherCarrierName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="PackageList"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+     *                                       &lt;element name="Package"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;all&gt;
+     *                                                 &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                                 &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                                                 &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                                                 &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                                                 &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                                               &lt;/all&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="ItemList"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+     *                                       &lt;element name="Item"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;all&gt;
+     *                                                 &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                                 &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                                                 &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                                               &lt;/all&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/all&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -474,6 +474,9 @@ public class GetShipmentListResponse {
          * Objects of the following type(s) are allowed in the list
          * {@link GetShipmentListResponse.ResponseBody.ShipmentList }
          * 
+         * @return
+         * possible object is 
+         *     {@link GetShipmentListResponse.ResponseBody.ShipmentList }
          * 
          */
         public GetShipmentListResponse.ResponseBody.ShipmentList getShipmentList() {            
@@ -495,129 +498,129 @@ public class GetShipmentListResponse {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
-         *         &lt;element name="Shipment">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="ShipmentID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="Status" minOccurs="0">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;enumeration value="Creating"/>
-         *                         &lt;enumeration value="Preparing"/>
-         *                         &lt;enumeration value="Ready to ship"/>
-         *                         &lt;enumeration value="Shipped"/>
-         *                         &lt;enumeration value="Partially Received"/>
-         *                         &lt;enumeration value="Received"/>
-         *                         &lt;enumeration value="Void"/>
-         *                         &lt;enumeration value="Manually closed"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="CreateDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="LastEditDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="ShipFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="ShipToWarehouseCode" minOccurs="0">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;enumeration value="06"/>
-         *                         &lt;enumeration value="07"/>
-         *                         &lt;enumeration value="08"/>
-         *                         &lt;enumeration value="10"/>
-         *                         &lt;enumeration value="12"/>
-         *                         &lt;enumeration value="14"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="ShippingMethodCode" minOccurs="0">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;enumeration value="1"/>
-         *                         &lt;enumeration value="2"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="ShippingCarrierCode" minOccurs="0">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;enumeration value="101"/>
-         *                         &lt;enumeration value="102"/>
-         *                         &lt;enumeration value="103"/>
-         *                         &lt;enumeration value="104"/>
-         *                         &lt;enumeration value="105"/>
-         *                         &lt;enumeration value="99"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="OtherCarrierName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="PackageList">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence maxOccurs="unbounded" minOccurs="0">
-         *                             &lt;element name="Package">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;all>
-         *                                       &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                       &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                                       &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                                       &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                                       &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                                     &lt;/all>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="ItemList">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence maxOccurs="unbounded" minOccurs="0">
-         *                             &lt;element name="Item">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;all>
-         *                                       &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                       &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *                                       &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *                                     &lt;/all>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+         *         &lt;element name="Shipment"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;all&gt;
+         *                   &lt;element name="ShipmentID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="Status" minOccurs="0"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;enumeration value="Creating"/&gt;
+         *                         &lt;enumeration value="Preparing"/&gt;
+         *                         &lt;enumeration value="Ready to ship"/&gt;
+         *                         &lt;enumeration value="Shipped"/&gt;
+         *                         &lt;enumeration value="Partially Received"/&gt;
+         *                         &lt;enumeration value="Received"/&gt;
+         *                         &lt;enumeration value="Void"/&gt;
+         *                         &lt;enumeration value="Manually closed"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="CreateDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="LastEditDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="ShipFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="ShipToWarehouseCode" minOccurs="0"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;enumeration value="06"/&gt;
+         *                         &lt;enumeration value="07"/&gt;
+         *                         &lt;enumeration value="08"/&gt;
+         *                         &lt;enumeration value="10"/&gt;
+         *                         &lt;enumeration value="12"/&gt;
+         *                         &lt;enumeration value="14"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="ShippingMethodCode" minOccurs="0"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;enumeration value="1"/&gt;
+         *                         &lt;enumeration value="2"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="ShippingCarrierCode" minOccurs="0"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;enumeration value="101"/&gt;
+         *                         &lt;enumeration value="102"/&gt;
+         *                         &lt;enumeration value="103"/&gt;
+         *                         &lt;enumeration value="104"/&gt;
+         *                         &lt;enumeration value="105"/&gt;
+         *                         &lt;enumeration value="99"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="OtherCarrierName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="PackageList"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+         *                             &lt;element name="Package"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;all&gt;
+         *                                       &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                                       &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                                       &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                                       &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                                       &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                                     &lt;/all&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="ItemList"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+         *                             &lt;element name="Item"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;all&gt;
+         *                                       &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                                       &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *                                       &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *                                     &lt;/all&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/all&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -652,6 +655,9 @@ public class GetShipmentListResponse {
              * Objects of the following type(s) are allowed in the list
              * {@link GetShipmentListResponse.ResponseBody.ShipmentList.Shipment }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link GetShipmentListResponse.ResponseBody.ShipmentList.Shipment }
              * 
              */
             public List<GetShipmentListResponse.ResponseBody.ShipmentList.Shipment> getShipment() {
@@ -668,119 +674,119 @@ public class GetShipmentListResponse {
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="ShipmentID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="Status" minOccurs="0">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;enumeration value="Creating"/>
-             *               &lt;enumeration value="Preparing"/>
-             *               &lt;enumeration value="Ready to ship"/>
-             *               &lt;enumeration value="Shipped"/>
-             *               &lt;enumeration value="Partially Received"/>
-             *               &lt;enumeration value="Received"/>
-             *               &lt;enumeration value="Void"/>
-             *               &lt;enumeration value="Manually closed"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="CreateDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="LastEditDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="ShipFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="ShipToWarehouseCode" minOccurs="0">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;enumeration value="06"/>
-             *               &lt;enumeration value="07"/>
-             *               &lt;enumeration value="08"/>
-             *               &lt;enumeration value="10"/>
-             *               &lt;enumeration value="12"/>
-             *               &lt;enumeration value="14"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="ShippingMethodCode" minOccurs="0">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;enumeration value="1"/>
-             *               &lt;enumeration value="2"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="ShippingCarrierCode" minOccurs="0">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;enumeration value="101"/>
-             *               &lt;enumeration value="102"/>
-             *               &lt;enumeration value="103"/>
-             *               &lt;enumeration value="104"/>
-             *               &lt;enumeration value="105"/>
-             *               &lt;enumeration value="99"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="OtherCarrierName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="PackageList">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence maxOccurs="unbounded" minOccurs="0">
-             *                   &lt;element name="Package">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;all>
-             *                             &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                             &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *                             &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *                             &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *                             &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *                           &lt;/all>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="ItemList">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence maxOccurs="unbounded" minOccurs="0">
-             *                   &lt;element name="Item">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;all>
-             *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                             &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-             *                             &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-             *                           &lt;/all>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;all&gt;
+             *         &lt;element name="ShipmentID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="Status" minOccurs="0"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;enumeration value="Creating"/&gt;
+             *               &lt;enumeration value="Preparing"/&gt;
+             *               &lt;enumeration value="Ready to ship"/&gt;
+             *               &lt;enumeration value="Shipped"/&gt;
+             *               &lt;enumeration value="Partially Received"/&gt;
+             *               &lt;enumeration value="Received"/&gt;
+             *               &lt;enumeration value="Void"/&gt;
+             *               &lt;enumeration value="Manually closed"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="CreateDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="LastEditDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="ShipFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="ShipToWarehouseCode" minOccurs="0"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;enumeration value="06"/&gt;
+             *               &lt;enumeration value="07"/&gt;
+             *               &lt;enumeration value="08"/&gt;
+             *               &lt;enumeration value="10"/&gt;
+             *               &lt;enumeration value="12"/&gt;
+             *               &lt;enumeration value="14"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="ShippingMethodCode" minOccurs="0"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;enumeration value="1"/&gt;
+             *               &lt;enumeration value="2"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="ShippingCarrierCode" minOccurs="0"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;enumeration value="101"/&gt;
+             *               &lt;enumeration value="102"/&gt;
+             *               &lt;enumeration value="103"/&gt;
+             *               &lt;enumeration value="104"/&gt;
+             *               &lt;enumeration value="105"/&gt;
+             *               &lt;enumeration value="99"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="OtherCarrierName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="PackageList"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+             *                   &lt;element name="Package"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;all&gt;
+             *                             &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                             &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *                             &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *                             &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *                             &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *                           &lt;/all&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="ItemList"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+             *                   &lt;element name="Item"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;all&gt;
+             *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                             &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+             *                             &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+             *                           &lt;/all&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/all&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -1260,27 +1266,27 @@ public class GetShipmentListResponse {
                  * <p>The following schema fragment specifies the expected content contained within this class.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
-                 *         &lt;element name="Item">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;all>
-                 *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *                   &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-                 *                   &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-                 *                 &lt;/all>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+                 *         &lt;element name="Item"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;all&gt;
+                 *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *                   &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+                 *                   &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+                 *                 &lt;/all&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -1315,6 +1321,9 @@ public class GetShipmentListResponse {
                      * Objects of the following type(s) are allowed in the list
                      * {@link GetShipmentListResponse.ResponseBody.ShipmentList.Shipment.ItemList.Item }
                      * 
+                     * @return
+                     * Objects of the following type(s) are allowed in the list
+                     * {@link GetShipmentListResponse.ResponseBody.ShipmentList.Shipment.ItemList.Item }
                      * 
                      */
                     public List<GetShipmentListResponse.ResponseBody.ShipmentList.Shipment.ItemList.Item> getItem() {
@@ -1331,17 +1340,17 @@ public class GetShipmentListResponse {
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;all>
-                     *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                     *         &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-                     *         &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-                     *       &lt;/all>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;all&gt;
+                     *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                     *         &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+                     *         &lt;element name="NumberofPackage" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+                     *       &lt;/all&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -1445,29 +1454,29 @@ public class GetShipmentListResponse {
                  * <p>The following schema fragment specifies the expected content contained within this class.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
-                 *         &lt;element name="Package">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;all>
-                 *                   &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *                   &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                 *                   &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                 *                   &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                 *                   &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                 *                 &lt;/all>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+                 *         &lt;element name="Package"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;all&gt;
+                 *                   &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *                   &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+                 *                   &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+                 *                   &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+                 *                   &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+                 *                 &lt;/all&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -1502,6 +1511,9 @@ public class GetShipmentListResponse {
                      * Objects of the following type(s) are allowed in the list
                      * {@link GetShipmentListResponse.ResponseBody.ShipmentList.Shipment.PackageList.Package }
                      * 
+                     * @return
+                     * Objects of the following type(s) are allowed in the list
+                     * {@link GetShipmentListResponse.ResponseBody.ShipmentList.Shipment.PackageList.Package }
                      * 
                      */
                     public List<GetShipmentListResponse.ResponseBody.ShipmentList.Shipment.PackageList.Package> getPackage() {
@@ -1518,19 +1530,19 @@ public class GetShipmentListResponse {
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;all>
-                     *         &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                     *         &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                     *         &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                     *         &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                     *         &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-                     *       &lt;/all>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;all&gt;
+                     *         &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                     *         &lt;element name="PackageWeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+                     *         &lt;element name="PackageLength" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+                     *         &lt;element name="PackageHeight" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+                     *         &lt;element name="PackageWidth" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+                     *       &lt;/all&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 

@@ -116,6 +116,8 @@ public class DataFeedCall {
 	 * use this request to get the ready/completed processing report for review.
 	 * </pre>
 	 * @param Requestid
+	 * 	   allowed object is
+     *     {@link String }
 	 * @return {@linkplain ProcessingReportResponse}
 	 */
 	public ProcessingReportResponse getFeedResult(String Requestid) {
@@ -182,7 +184,7 @@ public class DataFeedCall {
 	 * <pre>
 	 * Batch enroll/remove items for Premier program for participating sellers.
 	 * To participate in this program sellers must enroll in Newegg Shipping Label Service and Newegg  Premier Seller Program, 
-	 * go to Newegg Seller Portal > Add-on Services to enroll.
+	 * go to Newegg Seller Portal &gt; Add-on Services to enroll.
 	 * Only for USA
 	 * </pre>
 	 * @param body {@linkplain ItemPremierMarkFeedRequest} 
@@ -197,9 +199,9 @@ public class DataFeedCall {
 	
 	/**
 	 * <pre>
-	 * Batch add/remove items for Subscription & Save program.
+	 * Batch add/remove items for Subscription &amp; Save program.
 	 * 
-	 * Subscribe & Save is Newegg’s subscription service. 
+	 * Subscribe &amp; Save is Newegg’s subscription service. 
 	 * It is available for most items in different categories.
 	 * This program allows customers to subscribe to certain items for repeat uses and have them shipped every few months with certain percentage of discount. 
 	 * 
@@ -264,7 +266,7 @@ public class DataFeedCall {
 	 * 
 	 * Note: If not enable to ship to different countries, default country is USA.
 	 * To enable different countries to ship, you may manage at 
-	 * Newegg Seller Portal > Manage Account > Shipping Settings, 
+	 * Newegg Seller Portal &gt; Manage Account &gt; Shipping Settings, 
 	 * please refer to our <a href="https://www.newegg.com/sellers/index.php/global-seller-program/"> Newegg Global Program </a> for more details. 
 	 * Only for USA
 	 * </pre>
@@ -284,7 +286,7 @@ public class DataFeedCall {
 	 * only one warehouse per region.
 	 * 
 	 * Note: Setup of seller’s warehouse(s) is managed at 
-	 * Newegg Seller Portal > Manage Account > Shipping Settings. 
+	 * Newegg Seller Portal &gt; Manage Account &gt; Shipping Settings. 
 	 * Only for USA
 	 * </pre>
 	 * @param body {@linkplain InventoryUpdateFeedRequest} 

@@ -24,77 +24,77 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *               &lt;enumeration value="false"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="ResponseList">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="ResponseInfo" maxOccurs="unbounded" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="RequestId" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="RequestType">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="ITEM_DATA"/>
- *                                             &lt;enumeration value="INVENTORY_AND_PRICE_DATA"/>
- *                                             &lt;enumeration value="ORDER_SHIP_NOTICE_DATA"/>
- *                                             &lt;enumeration value="MULTICHANNEL_ORDER_DATA"/>
- *                                             &lt;enumeration value="ITEM_SUBSCRIPTION"/>
- *                                             &lt;enumeration value="VOLUME_DISCOUNT_DATA"/>
- *                                             &lt;enumeration value="ITEM_COUNTRY_RESTRICTION_DATA"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="RequestStatus">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="SUBMITTED"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *               &lt;enumeration value="false"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="ResponseList"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="ResponseInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="RequestId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="RequestType"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="ITEM_DATA"/&gt;
+ *                                             &lt;enumeration value="INVENTORY_AND_PRICE_DATA"/&gt;
+ *                                             &lt;enumeration value="ORDER_SHIP_NOTICE_DATA"/&gt;
+ *                                             &lt;enumeration value="MULTICHANNEL_ORDER_DATA"/&gt;
+ *                                             &lt;enumeration value="ITEM_SUBSCRIPTION"/&gt;
+ *                                             &lt;enumeration value="VOLUME_DISCOUNT_DATA"/&gt;
+ *                                             &lt;enumeration value="ITEM_COUNTRY_RESTRICTION_DATA"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="RequestStatus"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="SUBMITTED"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -244,56 +244,56 @@ public class VolumeDiscountFeedResponse {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="ResponseList">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="ResponseInfo" maxOccurs="unbounded" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="RequestId" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="RequestType">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;enumeration value="ITEM_DATA"/>
-     *                                   &lt;enumeration value="INVENTORY_AND_PRICE_DATA"/>
-     *                                   &lt;enumeration value="ORDER_SHIP_NOTICE_DATA"/>
-     *                                   &lt;enumeration value="MULTICHANNEL_ORDER_DATA"/>
-     *                                   &lt;enumeration value="ITEM_SUBSCRIPTION"/>
-     *                                   &lt;enumeration value="VOLUME_DISCOUNT_DATA"/>
-     *                                   &lt;enumeration value="ITEM_COUNTRY_RESTRICTION_DATA"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="RequestStatus">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;enumeration value="SUBMITTED"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="ResponseList"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="ResponseInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;all&gt;
+     *                             &lt;element name="RequestId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="RequestType"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;enumeration value="ITEM_DATA"/&gt;
+     *                                   &lt;enumeration value="INVENTORY_AND_PRICE_DATA"/&gt;
+     *                                   &lt;enumeration value="ORDER_SHIP_NOTICE_DATA"/&gt;
+     *                                   &lt;enumeration value="MULTICHANNEL_ORDER_DATA"/&gt;
+     *                                   &lt;enumeration value="ITEM_SUBSCRIPTION"/&gt;
+     *                                   &lt;enumeration value="VOLUME_DISCOUNT_DATA"/&gt;
+     *                                   &lt;enumeration value="ITEM_COUNTRY_RESTRICTION_DATA"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="RequestStatus"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;enumeration value="SUBMITTED"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/all&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -338,46 +338,46 @@ public class VolumeDiscountFeedResponse {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="ResponseInfo" maxOccurs="unbounded" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="RequestId" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="RequestType">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;enumeration value="ITEM_DATA"/>
-         *                         &lt;enumeration value="INVENTORY_AND_PRICE_DATA"/>
-         *                         &lt;enumeration value="ORDER_SHIP_NOTICE_DATA"/>
-         *                         &lt;enumeration value="MULTICHANNEL_ORDER_DATA"/>
-         *                         &lt;enumeration value="ITEM_SUBSCRIPTION"/>
-         *                         &lt;enumeration value="VOLUME_DISCOUNT_DATA"/>
-         *                         &lt;enumeration value="ITEM_COUNTRY_RESTRICTION_DATA"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="RequestStatus">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;enumeration value="SUBMITTED"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="ResponseInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;all&gt;
+         *                   &lt;element name="RequestId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="RequestType"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;enumeration value="ITEM_DATA"/&gt;
+         *                         &lt;enumeration value="INVENTORY_AND_PRICE_DATA"/&gt;
+         *                         &lt;enumeration value="ORDER_SHIP_NOTICE_DATA"/&gt;
+         *                         &lt;enumeration value="MULTICHANNEL_ORDER_DATA"/&gt;
+         *                         &lt;enumeration value="ITEM_SUBSCRIPTION"/&gt;
+         *                         &lt;enumeration value="VOLUME_DISCOUNT_DATA"/&gt;
+         *                         &lt;enumeration value="ITEM_COUNTRY_RESTRICTION_DATA"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="RequestStatus"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;enumeration value="SUBMITTED"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/all&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -411,6 +411,9 @@ public class VolumeDiscountFeedResponse {
              * Objects of the following type(s) are allowed in the list
              * {@link SubmitFeedResponse.ResponseBody.ResponseList.ResponseInfo }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link SubmitFeedResponse.ResponseBody.ResponseList.ResponseInfo }
              * 
              */
             public List<SubmitFeedResponse.ResponseBody.ResponseList.ResponseInfo> getResponseInfo() {
@@ -427,36 +430,36 @@ public class VolumeDiscountFeedResponse {
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="RequestId" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="RequestType">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;enumeration value="ITEM_DATA"/>
-             *               &lt;enumeration value="INVENTORY_AND_PRICE_DATA"/>
-             *               &lt;enumeration value="ORDER_SHIP_NOTICE_DATA"/>
-             *               &lt;enumeration value="MULTICHANNEL_ORDER_DATA"/>
-             *               &lt;enumeration value="ITEM_SUBSCRIPTION"/>
-             *               &lt;enumeration value="VOLUME_DISCOUNT_DATA"/>
-             *               &lt;enumeration value="ITEM_COUNTRY_RESTRICTION_DATA"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="RequestStatus">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;enumeration value="SUBMITTED"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;all&gt;
+             *         &lt;element name="RequestId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="RequestType"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;enumeration value="ITEM_DATA"/&gt;
+             *               &lt;enumeration value="INVENTORY_AND_PRICE_DATA"/&gt;
+             *               &lt;enumeration value="ORDER_SHIP_NOTICE_DATA"/&gt;
+             *               &lt;enumeration value="MULTICHANNEL_ORDER_DATA"/&gt;
+             *               &lt;enumeration value="ITEM_SUBSCRIPTION"/&gt;
+             *               &lt;enumeration value="VOLUME_DISCOUNT_DATA"/&gt;
+             *               &lt;enumeration value="ITEM_COUNTRY_RESTRICTION_DATA"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="RequestStatus"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;enumeration value="SUBMITTED"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/all&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 

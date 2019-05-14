@@ -3,21 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.newegg.marketplace.sdk</groupId>
-    <artifactId>SDK</artifactId>
-    <version>0.0.1</version>
+    <groupId>com.newegg.marketplace</groupId>
+    <artifactId>sdk</artifactId>
+    <version>1.0.0</version>
   </parent>
-  <artifactId>common</artifactId>
-  <name>common</name>
-  <version>0.1.0</version>
-  <url>http://maven.apache.org</url>
-  <properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
-  <dependencies>
-
-  </dependencies>
+  <artifactId>sdk-common</artifactId>
+  <name>Newegg SDK for Java - Common</name>
+  <url>https://developer.newegg.com/</url>
+  <description></description>
 </project>

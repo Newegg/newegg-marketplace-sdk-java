@@ -30,674 +30,674 @@ import com.newegg.marketplace.sdk.datafeed.model.sub.properties.Microphone;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Header">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="MessageType" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *         &lt;element name="Overwrite" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="Yes"/>
- *               &lt;enumeration value="No"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="Message">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="Itemfeed" maxOccurs="unbounded">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="SummaryInfo">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="Item" maxOccurs="unbounded">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="Action" minOccurs="0">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="Create Item"/>
- *                                             &lt;enumeration value="Update Item"/>
- *                                             &lt;enumeration value="Update/Append Image"/>
- *                                             &lt;enumeration value="Replace Image"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="BasicInfo">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;sequence>
- *                                                 &lt;element name="SellerPartNumber">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;minLength value="1"/>
- *                                                       &lt;maxLength value="40"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="Manufacturer">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;minLength value="1"/>
- *                                                       &lt;maxLength value="40"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ManufacturerPartsNumber">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;minLength value="1"/>
- *                                                       &lt;maxLength value="20"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="UPCOrISBN">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;maxLength value="40"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="RelatedSellerPartNumber" minOccurs="0">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;minLength value="0"/>
- *                                                       &lt;maxLength value="40"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="WebsiteShortTitle">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;minLength value="1"/>
- *                                                       &lt;maxLength value="200"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="BulletDescription" minOccurs="0">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;minLength value="1"/>
- *                                                       &lt;maxLength value="200"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ProductDescription">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;minLength value="1"/>
- *                                                       &lt;maxLength value="4000"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ItemDimension">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;sequence>
- *                                                           &lt;element name="ItemLength" minOccurs="0">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                                                 &lt;minInclusive value="0.01"/>
- *                                                                 &lt;maxInclusive value="485.99"/>
- *                                                                 &lt;fractionDigits value="2"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/element>
- *                                                           &lt;element name="ItemWidth" minOccurs="0">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                                                 &lt;maxInclusive value="485.99"/>
- *                                                                 &lt;minInclusive value="0.01"/>
- *                                                                 &lt;fractionDigits value="2"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/element>
- *                                                           &lt;element name="ItemHeight" minOccurs="0">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                                                 &lt;minInclusive value="0.01"/>
- *                                                                 &lt;maxInclusive value="485.99"/>
- *                                                                 &lt;fractionDigits value="2"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/element>
- *                                                         &lt;/sequence>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ItemWeight">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                                       &lt;minInclusive value="0.01"/>
- *                                                       &lt;maxInclusive value="99999.00"/>
- *                                                       &lt;fractionDigits value="2"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="PacksOrSets">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                                       &lt;minInclusive value="1"/>
- *                                                       &lt;maxInclusive value="9999"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ItemCondition">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;enumeration value="New"/>
- *                                                       &lt;enumeration value="Refurbished"/>
- *                                                       &lt;enumeration value="UsedLikeNew"/>
- *                                                       &lt;enumeration value="UsedVeryGood"/>
- *                                                       &lt;enumeration value="UsedGood"/>
- *                                                       &lt;enumeration value="UsedAcceptable"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ItemPackage" minOccurs="0">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;enumeration value="Retail"/>
- *                                                       &lt;enumeration value="OEM"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ShippingRestriction">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;enumeration value="Yes"/>
- *                                                       &lt;enumeration value="No"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="Currency" minOccurs="0">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="MSRP" minOccurs="0">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                                       &lt;minInclusive value="0.01"/>
- *                                                       &lt;maxInclusive value="99999.00"/>
- *                                                       &lt;fractionDigits value="2"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="MAP" minOccurs="0">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                                       &lt;minInclusive value="0.00"/>
- *                                                       &lt;maxInclusive value="99999.00"/>
- *                                                       &lt;fractionDigits value="2"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="CheckoutMAP" minOccurs="0">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;enumeration value="True"/>
- *                                                       &lt;enumeration value="False"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="SellingPrice">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                                       &lt;minInclusive value="0.01"/>
- *                                                       &lt;maxInclusive value="99999.00"/>
- *                                                       &lt;fractionDigits value="2"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="Shipping">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;enumeration value="Default"/>
- *                                                       &lt;enumeration value="Free"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="Inventory">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                                       &lt;maxInclusive value="999999"/>
- *                                                       &lt;minInclusive value="0"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ActivationMark" minOccurs="0">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;enumeration value="True"/>
- *                                                       &lt;enumeration value="False"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ItemImages">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;sequence>
- *                                                           &lt;element name="Image" maxOccurs="7">
- *                                                             &lt;complexType>
- *                                                               &lt;complexContent>
- *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                   &lt;sequence>
- *                                                                     &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                                                                     &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *                                                                   &lt;/sequence>
- *                                                                 &lt;/restriction>
- *                                                               &lt;/complexContent>
- *                                                             &lt;/complexType>
- *                                                           &lt;/element>
- *                                                         &lt;/sequence>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ConditionDetails" minOccurs="0">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;minLength value="0"/>
- *                                                       &lt;maxLength value="200"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="UsedItemImages" minOccurs="0">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;sequence>
- *                                                           &lt;element name="Image" maxOccurs="7">
- *                                                             &lt;complexType>
- *                                                               &lt;complexContent>
- *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                   &lt;sequence>
- *                                                                     &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                                                                     &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *                                                                   &lt;/sequence>
- *                                                                 &lt;/restriction>
- *                                                               &lt;/complexContent>
- *                                                             &lt;/complexType>
- *                                                           &lt;/element>
- *                                                         &lt;/sequence>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="Warning" minOccurs="0">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;sequence>
- *                                                           &lt;element name="CountryOfOrigin" minOccurs="0">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                 &lt;enumeration value="ABW"/>
- *                                                                 &lt;enumeration value="AFG"/>
- *                                                                 &lt;enumeration value="AGO"/>
- *                                                                 &lt;enumeration value="AIA"/>
- *                                                                 &lt;enumeration value="ALB"/>
- *                                                                 &lt;enumeration value="AND"/>
- *                                                                 &lt;enumeration value="ANT"/>
- *                                                                 &lt;enumeration value="ARE"/>
- *                                                                 &lt;enumeration value="ARG"/>
- *                                                                 &lt;enumeration value="ARM"/>
- *                                                                 &lt;enumeration value="ASM"/>
- *                                                                 &lt;enumeration value="ATA"/>
- *                                                                 &lt;enumeration value="ATF"/>
- *                                                                 &lt;enumeration value="ATG"/>
- *                                                                 &lt;enumeration value="AUS"/>
- *                                                                 &lt;enumeration value="AUT"/>
- *                                                                 &lt;enumeration value="AZE"/>
- *                                                                 &lt;enumeration value="BDI"/>
- *                                                                 &lt;enumeration value="BEL"/>
- *                                                                 &lt;enumeration value="BEN"/>
- *                                                                 &lt;enumeration value="BFA"/>
- *                                                                 &lt;enumeration value="BGD"/>
- *                                                                 &lt;enumeration value="BGR"/>
- *                                                                 &lt;enumeration value="BHR"/>
- *                                                                 &lt;enumeration value="BHS"/>
- *                                                                 &lt;enumeration value="BIH"/>
- *                                                                 &lt;enumeration value="BLR"/>
- *                                                                 &lt;enumeration value="BLZ"/>
- *                                                                 &lt;enumeration value="BMU"/>
- *                                                                 &lt;enumeration value="BOL"/>
- *                                                                 &lt;enumeration value="BRA"/>
- *                                                                 &lt;enumeration value="BRB"/>
- *                                                                 &lt;enumeration value="BRN"/>
- *                                                                 &lt;enumeration value="BTN"/>
- *                                                                 &lt;enumeration value="BVT"/>
- *                                                                 &lt;enumeration value="BWA"/>
- *                                                                 &lt;enumeration value="CAF"/>
- *                                                                 &lt;enumeration value="CAN"/>
- *                                                                 &lt;enumeration value="CCK"/>
- *                                                                 &lt;enumeration value="CHE"/>
- *                                                                 &lt;enumeration value="CHL"/>
- *                                                                 &lt;enumeration value="CHN"/>
- *                                                                 &lt;enumeration value="CIV"/>
- *                                                                 &lt;enumeration value="CMR"/>
- *                                                                 &lt;enumeration value="COD"/>
- *                                                                 &lt;enumeration value="COG"/>
- *                                                                 &lt;enumeration value="COK"/>
- *                                                                 &lt;enumeration value="COL"/>
- *                                                                 &lt;enumeration value="COM"/>
- *                                                                 &lt;enumeration value="CPV"/>
- *                                                                 &lt;enumeration value="CRI"/>
- *                                                                 &lt;enumeration value="CUB"/>
- *                                                                 &lt;enumeration value="CXR"/>
- *                                                                 &lt;enumeration value="CYM"/>
- *                                                                 &lt;enumeration value="CYP"/>
- *                                                                 &lt;enumeration value="CZE"/>
- *                                                                 &lt;enumeration value="DEU"/>
- *                                                                 &lt;enumeration value="DJI"/>
- *                                                                 &lt;enumeration value="DMA"/>
- *                                                                 &lt;enumeration value="DNK"/>
- *                                                                 &lt;enumeration value="DOM"/>
- *                                                                 &lt;enumeration value="DZA"/>
- *                                                                 &lt;enumeration value="ECU"/>
- *                                                                 &lt;enumeration value="EGY"/>
- *                                                                 &lt;enumeration value="ERI"/>
- *                                                                 &lt;enumeration value="ESH"/>
- *                                                                 &lt;enumeration value="ESP"/>
- *                                                                 &lt;enumeration value="EST"/>
- *                                                                 &lt;enumeration value="ETH"/>
- *                                                                 &lt;enumeration value="FIN"/>
- *                                                                 &lt;enumeration value="FJI"/>
- *                                                                 &lt;enumeration value="FLK"/>
- *                                                                 &lt;enumeration value="FRA"/>
- *                                                                 &lt;enumeration value="FRO"/>
- *                                                                 &lt;enumeration value="FSM"/>
- *                                                                 &lt;enumeration value="FXX"/>
- *                                                                 &lt;enumeration value="GAB"/>
- *                                                                 &lt;enumeration value="GBR"/>
- *                                                                 &lt;enumeration value="GEO"/>
- *                                                                 &lt;enumeration value="GHA"/>
- *                                                                 &lt;enumeration value="GIB"/>
- *                                                                 &lt;enumeration value="GIN"/>
- *                                                                 &lt;enumeration value="GLP"/>
- *                                                                 &lt;enumeration value="GMB"/>
- *                                                                 &lt;enumeration value="GNB"/>
- *                                                                 &lt;enumeration value="GNQ"/>
- *                                                                 &lt;enumeration value="GRC"/>
- *                                                                 &lt;enumeration value="GRD"/>
- *                                                                 &lt;enumeration value="GRL"/>
- *                                                                 &lt;enumeration value="GTM"/>
- *                                                                 &lt;enumeration value="GUF"/>
- *                                                                 &lt;enumeration value="GUM"/>
- *                                                                 &lt;enumeration value="GUY"/>
- *                                                                 &lt;enumeration value="HKG"/>
- *                                                                 &lt;enumeration value="HMD"/>
- *                                                                 &lt;enumeration value="HND"/>
- *                                                                 &lt;enumeration value="HRV"/>
- *                                                                 &lt;enumeration value="HTI"/>
- *                                                                 &lt;enumeration value="HUN"/>
- *                                                                 &lt;enumeration value="IDN"/>
- *                                                                 &lt;enumeration value="IND"/>
- *                                                                 &lt;enumeration value="IOT"/>
- *                                                                 &lt;enumeration value="IRL"/>
- *                                                                 &lt;enumeration value="IRN"/>
- *                                                                 &lt;enumeration value="IRQ"/>
- *                                                                 &lt;enumeration value="ISL"/>
- *                                                                 &lt;enumeration value="ISR"/>
- *                                                                 &lt;enumeration value="ITA"/>
- *                                                                 &lt;enumeration value="JAM"/>
- *                                                                 &lt;enumeration value="JOR"/>
- *                                                                 &lt;enumeration value="JPN"/>
- *                                                                 &lt;enumeration value="KAZ"/>
- *                                                                 &lt;enumeration value="KEN"/>
- *                                                                 &lt;enumeration value="KGZ"/>
- *                                                                 &lt;enumeration value="KHM"/>
- *                                                                 &lt;enumeration value="KIR"/>
- *                                                                 &lt;enumeration value="KNA"/>
- *                                                                 &lt;enumeration value="KOR"/>
- *                                                                 &lt;enumeration value="KWT"/>
- *                                                                 &lt;enumeration value="LAO"/>
- *                                                                 &lt;enumeration value="LBN"/>
- *                                                                 &lt;enumeration value="LBR"/>
- *                                                                 &lt;enumeration value="LBY"/>
- *                                                                 &lt;enumeration value="LCA"/>
- *                                                                 &lt;enumeration value="LIE"/>
- *                                                                 &lt;enumeration value="LKA"/>
- *                                                                 &lt;enumeration value="LSO"/>
- *                                                                 &lt;enumeration value="LTU"/>
- *                                                                 &lt;enumeration value="LUX"/>
- *                                                                 &lt;enumeration value="LVA"/>
- *                                                                 &lt;enumeration value="MAC"/>
- *                                                                 &lt;enumeration value="MAR"/>
- *                                                                 &lt;enumeration value="MCO"/>
- *                                                                 &lt;enumeration value="MDA"/>
- *                                                                 &lt;enumeration value="MDG"/>
- *                                                                 &lt;enumeration value="MDV"/>
- *                                                                 &lt;enumeration value="MEX"/>
- *                                                                 &lt;enumeration value="MHL"/>
- *                                                                 &lt;enumeration value="MKD"/>
- *                                                                 &lt;enumeration value="MLI"/>
- *                                                                 &lt;enumeration value="MLT"/>
- *                                                                 &lt;enumeration value="MMR"/>
- *                                                                 &lt;enumeration value="MNG"/>
- *                                                                 &lt;enumeration value="MNP"/>
- *                                                                 &lt;enumeration value="MOZ"/>
- *                                                                 &lt;enumeration value="MRT"/>
- *                                                                 &lt;enumeration value="MSR"/>
- *                                                                 &lt;enumeration value="MTQ"/>
- *                                                                 &lt;enumeration value="MUS"/>
- *                                                                 &lt;enumeration value="MWI"/>
- *                                                                 &lt;enumeration value="MYS"/>
- *                                                                 &lt;enumeration value="MYT"/>
- *                                                                 &lt;enumeration value="NAM"/>
- *                                                                 &lt;enumeration value="NCL"/>
- *                                                                 &lt;enumeration value="NER"/>
- *                                                                 &lt;enumeration value="NFK"/>
- *                                                                 &lt;enumeration value="NGA"/>
- *                                                                 &lt;enumeration value="NIC"/>
- *                                                                 &lt;enumeration value="NIU"/>
- *                                                                 &lt;enumeration value="NLD"/>
- *                                                                 &lt;enumeration value="NOR"/>
- *                                                                 &lt;enumeration value="NPL"/>
- *                                                                 &lt;enumeration value="NRU"/>
- *                                                                 &lt;enumeration value="NZL"/>
- *                                                                 &lt;enumeration value="OMN"/>
- *                                                                 &lt;enumeration value="PAK"/>
- *                                                                 &lt;enumeration value="PAN"/>
- *                                                                 &lt;enumeration value="PCN"/>
- *                                                                 &lt;enumeration value="PER"/>
- *                                                                 &lt;enumeration value="PHL"/>
- *                                                                 &lt;enumeration value="PLW"/>
- *                                                                 &lt;enumeration value="PNG"/>
- *                                                                 &lt;enumeration value="POL"/>
- *                                                                 &lt;enumeration value="PRI"/>
- *                                                                 &lt;enumeration value="PRK"/>
- *                                                                 &lt;enumeration value="PRT"/>
- *                                                                 &lt;enumeration value="PRY"/>
- *                                                                 &lt;enumeration value="PSE"/>
- *                                                                 &lt;enumeration value="PYF"/>
- *                                                                 &lt;enumeration value="QAT"/>
- *                                                                 &lt;enumeration value="REU"/>
- *                                                                 &lt;enumeration value="ROM"/>
- *                                                                 &lt;enumeration value="RUS"/>
- *                                                                 &lt;enumeration value="RWA"/>
- *                                                                 &lt;enumeration value="SAU"/>
- *                                                                 &lt;enumeration value="SDN"/>
- *                                                                 &lt;enumeration value="SEN"/>
- *                                                                 &lt;enumeration value="SGP"/>
- *                                                                 &lt;enumeration value="SGS"/>
- *                                                                 &lt;enumeration value="SHN"/>
- *                                                                 &lt;enumeration value="SJM"/>
- *                                                                 &lt;enumeration value="SLB"/>
- *                                                                 &lt;enumeration value="SLE"/>
- *                                                                 &lt;enumeration value="SLV"/>
- *                                                                 &lt;enumeration value="SMR"/>
- *                                                                 &lt;enumeration value="SOM"/>
- *                                                                 &lt;enumeration value="SPM"/>
- *                                                                 &lt;enumeration value="STP"/>
- *                                                                 &lt;enumeration value="SUR"/>
- *                                                                 &lt;enumeration value="SVK"/>
- *                                                                 &lt;enumeration value="SVN"/>
- *                                                                 &lt;enumeration value="SWE"/>
- *                                                                 &lt;enumeration value="SWZ"/>
- *                                                                 &lt;enumeration value="SYC"/>
- *                                                                 &lt;enumeration value="SYR"/>
- *                                                                 &lt;enumeration value="TCA"/>
- *                                                                 &lt;enumeration value="TCD"/>
- *                                                                 &lt;enumeration value="TGO"/>
- *                                                                 &lt;enumeration value="THA"/>
- *                                                                 &lt;enumeration value="TJK"/>
- *                                                                 &lt;enumeration value="TKL"/>
- *                                                                 &lt;enumeration value="TKM"/>
- *                                                                 &lt;enumeration value="TMP"/>
- *                                                                 &lt;enumeration value="TON"/>
- *                                                                 &lt;enumeration value="TTO"/>
- *                                                                 &lt;enumeration value="TUN"/>
- *                                                                 &lt;enumeration value="TUR"/>
- *                                                                 &lt;enumeration value="TUV"/>
- *                                                                 &lt;enumeration value="TWN"/>
- *                                                                 &lt;enumeration value="TZA"/>
- *                                                                 &lt;enumeration value="UGA"/>
- *                                                                 &lt;enumeration value="UKR"/>
- *                                                                 &lt;enumeration value="UMI"/>
- *                                                                 &lt;enumeration value="URY"/>
- *                                                                 &lt;enumeration value="USA"/>
- *                                                                 &lt;enumeration value="UZB"/>
- *                                                                 &lt;enumeration value="VAT"/>
- *                                                                 &lt;enumeration value="VCT"/>
- *                                                                 &lt;enumeration value="VEN"/>
- *                                                                 &lt;enumeration value="VGB"/>
- *                                                                 &lt;enumeration value="VIR"/>
- *                                                                 &lt;enumeration value="VNM"/>
- *                                                                 &lt;enumeration value="VUT"/>
- *                                                                 &lt;enumeration value="WLF"/>
- *                                                                 &lt;enumeration value="WSM"/>
- *                                                                 &lt;enumeration value="YEM"/>
- *                                                                 &lt;enumeration value="YUG"/>
- *                                                                 &lt;enumeration value="ZAF"/>
- *                                                                 &lt;enumeration value="ZMB"/>
- *                                                                 &lt;enumeration value="ZWE"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/element>
- *                                                           &lt;element name="OverAge18Verification" minOccurs="0">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                 &lt;enumeration value="Yes"/>
- *                                                                 &lt;enumeration value="No"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/element>
- *                                                           &lt;element name="ChokingHazard" minOccurs="0">
- *                                                             &lt;complexType>
- *                                                               &lt;complexContent>
- *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                                   &lt;sequence>
- *                                                                     &lt;element name="SmallParts" minOccurs="0">
- *                                                                       &lt;simpleType>
- *                                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                           &lt;enumeration value="Yes"/>
- *                                                                           &lt;enumeration value="No"/>
- *                                                                         &lt;/restriction>
- *                                                                       &lt;/simpleType>
- *                                                                     &lt;/element>
- *                                                                     &lt;element name="SmallBall" minOccurs="0">
- *                                                                       &lt;simpleType>
- *                                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                           &lt;enumeration value="Is a small ball"/>
- *                                                                           &lt;enumeration value="Contains a small ball"/>
- *                                                                         &lt;/restriction>
- *                                                                       &lt;/simpleType>
- *                                                                     &lt;/element>
- *                                                                     &lt;element name="Balloons" minOccurs="0">
- *                                                                       &lt;simpleType>
- *                                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                           &lt;enumeration value="Yes"/>
- *                                                                           &lt;enumeration value="No"/>
- *                                                                         &lt;/restriction>
- *                                                                       &lt;/simpleType>
- *                                                                     &lt;/element>
- *                                                                     &lt;element name="Marble" minOccurs="0">
- *                                                                       &lt;simpleType>
- *                                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                                           &lt;enumeration value="Is a marble"/>
- *                                                                           &lt;enumeration value="Contains a marble"/>
- *                                                                         &lt;/restriction>
- *                                                                       &lt;/simpleType>
- *                                                                     &lt;/element>
- *                                                                   &lt;/sequence>
- *                                                                 &lt;/restriction>
- *                                                               &lt;/complexContent>
- *                                                             &lt;/complexType>
- *                                                           &lt;/element>
- *                                                         &lt;/sequence>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                               &lt;/sequence>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                       &lt;element name="SubCategoryProperty">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;sequence>
- *                                                 &lt;any/>
- *                                               &lt;/sequence>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Header"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="MessageType" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *         &lt;element name="Overwrite" minOccurs="0"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="Yes"/&gt;
+ *               &lt;enumeration value="No"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Message"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Itemfeed" maxOccurs="unbounded"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="SummaryInfo"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="Item" maxOccurs="unbounded"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="Action" minOccurs="0"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="Create Item"/&gt;
+ *                                             &lt;enumeration value="Update Item"/&gt;
+ *                                             &lt;enumeration value="Update/Append Image"/&gt;
+ *                                             &lt;enumeration value="Replace Image"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="BasicInfo"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;sequence&gt;
+ *                                                 &lt;element name="SellerPartNumber"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;minLength value="1"/&gt;
+ *                                                       &lt;maxLength value="40"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="Manufacturer"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;minLength value="1"/&gt;
+ *                                                       &lt;maxLength value="40"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ManufacturerPartsNumber"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;minLength value="1"/&gt;
+ *                                                       &lt;maxLength value="20"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="UPCOrISBN"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;maxLength value="40"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="RelatedSellerPartNumber" minOccurs="0"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;minLength value="0"/&gt;
+ *                                                       &lt;maxLength value="40"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="WebsiteShortTitle"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;minLength value="1"/&gt;
+ *                                                       &lt;maxLength value="200"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="BulletDescription" minOccurs="0"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;minLength value="1"/&gt;
+ *                                                       &lt;maxLength value="200"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ProductDescription"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;minLength value="1"/&gt;
+ *                                                       &lt;maxLength value="4000"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ItemDimension"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;complexContent&gt;
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                         &lt;sequence&gt;
+ *                                                           &lt;element name="ItemLength" minOccurs="0"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                                                 &lt;minInclusive value="0.01"/&gt;
+ *                                                                 &lt;maxInclusive value="485.99"/&gt;
+ *                                                                 &lt;fractionDigits value="2"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                           &lt;element name="ItemWidth" minOccurs="0"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                                                 &lt;maxInclusive value="485.99"/&gt;
+ *                                                                 &lt;minInclusive value="0.01"/&gt;
+ *                                                                 &lt;fractionDigits value="2"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                           &lt;element name="ItemHeight" minOccurs="0"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                                                 &lt;minInclusive value="0.01"/&gt;
+ *                                                                 &lt;maxInclusive value="485.99"/&gt;
+ *                                                                 &lt;fractionDigits value="2"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                         &lt;/sequence&gt;
+ *                                                       &lt;/restriction&gt;
+ *                                                     &lt;/complexContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ItemWeight"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                                       &lt;minInclusive value="0.01"/&gt;
+ *                                                       &lt;maxInclusive value="99999.00"/&gt;
+ *                                                       &lt;fractionDigits value="2"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="PacksOrSets"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                                       &lt;minInclusive value="1"/&gt;
+ *                                                       &lt;maxInclusive value="9999"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ItemCondition"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;enumeration value="New"/&gt;
+ *                                                       &lt;enumeration value="Refurbished"/&gt;
+ *                                                       &lt;enumeration value="UsedLikeNew"/&gt;
+ *                                                       &lt;enumeration value="UsedVeryGood"/&gt;
+ *                                                       &lt;enumeration value="UsedGood"/&gt;
+ *                                                       &lt;enumeration value="UsedAcceptable"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ItemPackage" minOccurs="0"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;enumeration value="Retail"/&gt;
+ *                                                       &lt;enumeration value="OEM"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ShippingRestriction"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;enumeration value="Yes"/&gt;
+ *                                                       &lt;enumeration value="No"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="Currency" minOccurs="0"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="MSRP" minOccurs="0"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                                       &lt;minInclusive value="0.01"/&gt;
+ *                                                       &lt;maxInclusive value="99999.00"/&gt;
+ *                                                       &lt;fractionDigits value="2"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="MAP" minOccurs="0"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                                       &lt;minInclusive value="0.00"/&gt;
+ *                                                       &lt;maxInclusive value="99999.00"/&gt;
+ *                                                       &lt;fractionDigits value="2"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="CheckoutMAP" minOccurs="0"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;enumeration value="True"/&gt;
+ *                                                       &lt;enumeration value="False"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="SellingPrice"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                                       &lt;minInclusive value="0.01"/&gt;
+ *                                                       &lt;maxInclusive value="99999.00"/&gt;
+ *                                                       &lt;fractionDigits value="2"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="Shipping"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;enumeration value="Default"/&gt;
+ *                                                       &lt;enumeration value="Free"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="Inventory"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                                       &lt;maxInclusive value="999999"/&gt;
+ *                                                       &lt;minInclusive value="0"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ActivationMark" minOccurs="0"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;enumeration value="True"/&gt;
+ *                                                       &lt;enumeration value="False"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ItemImages"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;complexContent&gt;
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                         &lt;sequence&gt;
+ *                                                           &lt;element name="Image" maxOccurs="7"&gt;
+ *                                                             &lt;complexType&gt;
+ *                                                               &lt;complexContent&gt;
+ *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                   &lt;sequence&gt;
+ *                                                                     &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                                                                     &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *                                                                   &lt;/sequence&gt;
+ *                                                                 &lt;/restriction&gt;
+ *                                                               &lt;/complexContent&gt;
+ *                                                             &lt;/complexType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                         &lt;/sequence&gt;
+ *                                                       &lt;/restriction&gt;
+ *                                                     &lt;/complexContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ConditionDetails" minOccurs="0"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;minLength value="0"/&gt;
+ *                                                       &lt;maxLength value="200"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="UsedItemImages" minOccurs="0"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;complexContent&gt;
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                         &lt;sequence&gt;
+ *                                                           &lt;element name="Image" maxOccurs="7"&gt;
+ *                                                             &lt;complexType&gt;
+ *                                                               &lt;complexContent&gt;
+ *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                   &lt;sequence&gt;
+ *                                                                     &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                                                                     &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *                                                                   &lt;/sequence&gt;
+ *                                                                 &lt;/restriction&gt;
+ *                                                               &lt;/complexContent&gt;
+ *                                                             &lt;/complexType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                         &lt;/sequence&gt;
+ *                                                       &lt;/restriction&gt;
+ *                                                     &lt;/complexContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="Warning" minOccurs="0"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;complexContent&gt;
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                         &lt;sequence&gt;
+ *                                                           &lt;element name="CountryOfOrigin" minOccurs="0"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                 &lt;enumeration value="ABW"/&gt;
+ *                                                                 &lt;enumeration value="AFG"/&gt;
+ *                                                                 &lt;enumeration value="AGO"/&gt;
+ *                                                                 &lt;enumeration value="AIA"/&gt;
+ *                                                                 &lt;enumeration value="ALB"/&gt;
+ *                                                                 &lt;enumeration value="AND"/&gt;
+ *                                                                 &lt;enumeration value="ANT"/&gt;
+ *                                                                 &lt;enumeration value="ARE"/&gt;
+ *                                                                 &lt;enumeration value="ARG"/&gt;
+ *                                                                 &lt;enumeration value="ARM"/&gt;
+ *                                                                 &lt;enumeration value="ASM"/&gt;
+ *                                                                 &lt;enumeration value="ATA"/&gt;
+ *                                                                 &lt;enumeration value="ATF"/&gt;
+ *                                                                 &lt;enumeration value="ATG"/&gt;
+ *                                                                 &lt;enumeration value="AUS"/&gt;
+ *                                                                 &lt;enumeration value="AUT"/&gt;
+ *                                                                 &lt;enumeration value="AZE"/&gt;
+ *                                                                 &lt;enumeration value="BDI"/&gt;
+ *                                                                 &lt;enumeration value="BEL"/&gt;
+ *                                                                 &lt;enumeration value="BEN"/&gt;
+ *                                                                 &lt;enumeration value="BFA"/&gt;
+ *                                                                 &lt;enumeration value="BGD"/&gt;
+ *                                                                 &lt;enumeration value="BGR"/&gt;
+ *                                                                 &lt;enumeration value="BHR"/&gt;
+ *                                                                 &lt;enumeration value="BHS"/&gt;
+ *                                                                 &lt;enumeration value="BIH"/&gt;
+ *                                                                 &lt;enumeration value="BLR"/&gt;
+ *                                                                 &lt;enumeration value="BLZ"/&gt;
+ *                                                                 &lt;enumeration value="BMU"/&gt;
+ *                                                                 &lt;enumeration value="BOL"/&gt;
+ *                                                                 &lt;enumeration value="BRA"/&gt;
+ *                                                                 &lt;enumeration value="BRB"/&gt;
+ *                                                                 &lt;enumeration value="BRN"/&gt;
+ *                                                                 &lt;enumeration value="BTN"/&gt;
+ *                                                                 &lt;enumeration value="BVT"/&gt;
+ *                                                                 &lt;enumeration value="BWA"/&gt;
+ *                                                                 &lt;enumeration value="CAF"/&gt;
+ *                                                                 &lt;enumeration value="CAN"/&gt;
+ *                                                                 &lt;enumeration value="CCK"/&gt;
+ *                                                                 &lt;enumeration value="CHE"/&gt;
+ *                                                                 &lt;enumeration value="CHL"/&gt;
+ *                                                                 &lt;enumeration value="CHN"/&gt;
+ *                                                                 &lt;enumeration value="CIV"/&gt;
+ *                                                                 &lt;enumeration value="CMR"/&gt;
+ *                                                                 &lt;enumeration value="COD"/&gt;
+ *                                                                 &lt;enumeration value="COG"/&gt;
+ *                                                                 &lt;enumeration value="COK"/&gt;
+ *                                                                 &lt;enumeration value="COL"/&gt;
+ *                                                                 &lt;enumeration value="COM"/&gt;
+ *                                                                 &lt;enumeration value="CPV"/&gt;
+ *                                                                 &lt;enumeration value="CRI"/&gt;
+ *                                                                 &lt;enumeration value="CUB"/&gt;
+ *                                                                 &lt;enumeration value="CXR"/&gt;
+ *                                                                 &lt;enumeration value="CYM"/&gt;
+ *                                                                 &lt;enumeration value="CYP"/&gt;
+ *                                                                 &lt;enumeration value="CZE"/&gt;
+ *                                                                 &lt;enumeration value="DEU"/&gt;
+ *                                                                 &lt;enumeration value="DJI"/&gt;
+ *                                                                 &lt;enumeration value="DMA"/&gt;
+ *                                                                 &lt;enumeration value="DNK"/&gt;
+ *                                                                 &lt;enumeration value="DOM"/&gt;
+ *                                                                 &lt;enumeration value="DZA"/&gt;
+ *                                                                 &lt;enumeration value="ECU"/&gt;
+ *                                                                 &lt;enumeration value="EGY"/&gt;
+ *                                                                 &lt;enumeration value="ERI"/&gt;
+ *                                                                 &lt;enumeration value="ESH"/&gt;
+ *                                                                 &lt;enumeration value="ESP"/&gt;
+ *                                                                 &lt;enumeration value="EST"/&gt;
+ *                                                                 &lt;enumeration value="ETH"/&gt;
+ *                                                                 &lt;enumeration value="FIN"/&gt;
+ *                                                                 &lt;enumeration value="FJI"/&gt;
+ *                                                                 &lt;enumeration value="FLK"/&gt;
+ *                                                                 &lt;enumeration value="FRA"/&gt;
+ *                                                                 &lt;enumeration value="FRO"/&gt;
+ *                                                                 &lt;enumeration value="FSM"/&gt;
+ *                                                                 &lt;enumeration value="FXX"/&gt;
+ *                                                                 &lt;enumeration value="GAB"/&gt;
+ *                                                                 &lt;enumeration value="GBR"/&gt;
+ *                                                                 &lt;enumeration value="GEO"/&gt;
+ *                                                                 &lt;enumeration value="GHA"/&gt;
+ *                                                                 &lt;enumeration value="GIB"/&gt;
+ *                                                                 &lt;enumeration value="GIN"/&gt;
+ *                                                                 &lt;enumeration value="GLP"/&gt;
+ *                                                                 &lt;enumeration value="GMB"/&gt;
+ *                                                                 &lt;enumeration value="GNB"/&gt;
+ *                                                                 &lt;enumeration value="GNQ"/&gt;
+ *                                                                 &lt;enumeration value="GRC"/&gt;
+ *                                                                 &lt;enumeration value="GRD"/&gt;
+ *                                                                 &lt;enumeration value="GRL"/&gt;
+ *                                                                 &lt;enumeration value="GTM"/&gt;
+ *                                                                 &lt;enumeration value="GUF"/&gt;
+ *                                                                 &lt;enumeration value="GUM"/&gt;
+ *                                                                 &lt;enumeration value="GUY"/&gt;
+ *                                                                 &lt;enumeration value="HKG"/&gt;
+ *                                                                 &lt;enumeration value="HMD"/&gt;
+ *                                                                 &lt;enumeration value="HND"/&gt;
+ *                                                                 &lt;enumeration value="HRV"/&gt;
+ *                                                                 &lt;enumeration value="HTI"/&gt;
+ *                                                                 &lt;enumeration value="HUN"/&gt;
+ *                                                                 &lt;enumeration value="IDN"/&gt;
+ *                                                                 &lt;enumeration value="IND"/&gt;
+ *                                                                 &lt;enumeration value="IOT"/&gt;
+ *                                                                 &lt;enumeration value="IRL"/&gt;
+ *                                                                 &lt;enumeration value="IRN"/&gt;
+ *                                                                 &lt;enumeration value="IRQ"/&gt;
+ *                                                                 &lt;enumeration value="ISL"/&gt;
+ *                                                                 &lt;enumeration value="ISR"/&gt;
+ *                                                                 &lt;enumeration value="ITA"/&gt;
+ *                                                                 &lt;enumeration value="JAM"/&gt;
+ *                                                                 &lt;enumeration value="JOR"/&gt;
+ *                                                                 &lt;enumeration value="JPN"/&gt;
+ *                                                                 &lt;enumeration value="KAZ"/&gt;
+ *                                                                 &lt;enumeration value="KEN"/&gt;
+ *                                                                 &lt;enumeration value="KGZ"/&gt;
+ *                                                                 &lt;enumeration value="KHM"/&gt;
+ *                                                                 &lt;enumeration value="KIR"/&gt;
+ *                                                                 &lt;enumeration value="KNA"/&gt;
+ *                                                                 &lt;enumeration value="KOR"/&gt;
+ *                                                                 &lt;enumeration value="KWT"/&gt;
+ *                                                                 &lt;enumeration value="LAO"/&gt;
+ *                                                                 &lt;enumeration value="LBN"/&gt;
+ *                                                                 &lt;enumeration value="LBR"/&gt;
+ *                                                                 &lt;enumeration value="LBY"/&gt;
+ *                                                                 &lt;enumeration value="LCA"/&gt;
+ *                                                                 &lt;enumeration value="LIE"/&gt;
+ *                                                                 &lt;enumeration value="LKA"/&gt;
+ *                                                                 &lt;enumeration value="LSO"/&gt;
+ *                                                                 &lt;enumeration value="LTU"/&gt;
+ *                                                                 &lt;enumeration value="LUX"/&gt;
+ *                                                                 &lt;enumeration value="LVA"/&gt;
+ *                                                                 &lt;enumeration value="MAC"/&gt;
+ *                                                                 &lt;enumeration value="MAR"/&gt;
+ *                                                                 &lt;enumeration value="MCO"/&gt;
+ *                                                                 &lt;enumeration value="MDA"/&gt;
+ *                                                                 &lt;enumeration value="MDG"/&gt;
+ *                                                                 &lt;enumeration value="MDV"/&gt;
+ *                                                                 &lt;enumeration value="MEX"/&gt;
+ *                                                                 &lt;enumeration value="MHL"/&gt;
+ *                                                                 &lt;enumeration value="MKD"/&gt;
+ *                                                                 &lt;enumeration value="MLI"/&gt;
+ *                                                                 &lt;enumeration value="MLT"/&gt;
+ *                                                                 &lt;enumeration value="MMR"/&gt;
+ *                                                                 &lt;enumeration value="MNG"/&gt;
+ *                                                                 &lt;enumeration value="MNP"/&gt;
+ *                                                                 &lt;enumeration value="MOZ"/&gt;
+ *                                                                 &lt;enumeration value="MRT"/&gt;
+ *                                                                 &lt;enumeration value="MSR"/&gt;
+ *                                                                 &lt;enumeration value="MTQ"/&gt;
+ *                                                                 &lt;enumeration value="MUS"/&gt;
+ *                                                                 &lt;enumeration value="MWI"/&gt;
+ *                                                                 &lt;enumeration value="MYS"/&gt;
+ *                                                                 &lt;enumeration value="MYT"/&gt;
+ *                                                                 &lt;enumeration value="NAM"/&gt;
+ *                                                                 &lt;enumeration value="NCL"/&gt;
+ *                                                                 &lt;enumeration value="NER"/&gt;
+ *                                                                 &lt;enumeration value="NFK"/&gt;
+ *                                                                 &lt;enumeration value="NGA"/&gt;
+ *                                                                 &lt;enumeration value="NIC"/&gt;
+ *                                                                 &lt;enumeration value="NIU"/&gt;
+ *                                                                 &lt;enumeration value="NLD"/&gt;
+ *                                                                 &lt;enumeration value="NOR"/&gt;
+ *                                                                 &lt;enumeration value="NPL"/&gt;
+ *                                                                 &lt;enumeration value="NRU"/&gt;
+ *                                                                 &lt;enumeration value="NZL"/&gt;
+ *                                                                 &lt;enumeration value="OMN"/&gt;
+ *                                                                 &lt;enumeration value="PAK"/&gt;
+ *                                                                 &lt;enumeration value="PAN"/&gt;
+ *                                                                 &lt;enumeration value="PCN"/&gt;
+ *                                                                 &lt;enumeration value="PER"/&gt;
+ *                                                                 &lt;enumeration value="PHL"/&gt;
+ *                                                                 &lt;enumeration value="PLW"/&gt;
+ *                                                                 &lt;enumeration value="PNG"/&gt;
+ *                                                                 &lt;enumeration value="POL"/&gt;
+ *                                                                 &lt;enumeration value="PRI"/&gt;
+ *                                                                 &lt;enumeration value="PRK"/&gt;
+ *                                                                 &lt;enumeration value="PRT"/&gt;
+ *                                                                 &lt;enumeration value="PRY"/&gt;
+ *                                                                 &lt;enumeration value="PSE"/&gt;
+ *                                                                 &lt;enumeration value="PYF"/&gt;
+ *                                                                 &lt;enumeration value="QAT"/&gt;
+ *                                                                 &lt;enumeration value="REU"/&gt;
+ *                                                                 &lt;enumeration value="ROM"/&gt;
+ *                                                                 &lt;enumeration value="RUS"/&gt;
+ *                                                                 &lt;enumeration value="RWA"/&gt;
+ *                                                                 &lt;enumeration value="SAU"/&gt;
+ *                                                                 &lt;enumeration value="SDN"/&gt;
+ *                                                                 &lt;enumeration value="SEN"/&gt;
+ *                                                                 &lt;enumeration value="SGP"/&gt;
+ *                                                                 &lt;enumeration value="SGS"/&gt;
+ *                                                                 &lt;enumeration value="SHN"/&gt;
+ *                                                                 &lt;enumeration value="SJM"/&gt;
+ *                                                                 &lt;enumeration value="SLB"/&gt;
+ *                                                                 &lt;enumeration value="SLE"/&gt;
+ *                                                                 &lt;enumeration value="SLV"/&gt;
+ *                                                                 &lt;enumeration value="SMR"/&gt;
+ *                                                                 &lt;enumeration value="SOM"/&gt;
+ *                                                                 &lt;enumeration value="SPM"/&gt;
+ *                                                                 &lt;enumeration value="STP"/&gt;
+ *                                                                 &lt;enumeration value="SUR"/&gt;
+ *                                                                 &lt;enumeration value="SVK"/&gt;
+ *                                                                 &lt;enumeration value="SVN"/&gt;
+ *                                                                 &lt;enumeration value="SWE"/&gt;
+ *                                                                 &lt;enumeration value="SWZ"/&gt;
+ *                                                                 &lt;enumeration value="SYC"/&gt;
+ *                                                                 &lt;enumeration value="SYR"/&gt;
+ *                                                                 &lt;enumeration value="TCA"/&gt;
+ *                                                                 &lt;enumeration value="TCD"/&gt;
+ *                                                                 &lt;enumeration value="TGO"/&gt;
+ *                                                                 &lt;enumeration value="THA"/&gt;
+ *                                                                 &lt;enumeration value="TJK"/&gt;
+ *                                                                 &lt;enumeration value="TKL"/&gt;
+ *                                                                 &lt;enumeration value="TKM"/&gt;
+ *                                                                 &lt;enumeration value="TMP"/&gt;
+ *                                                                 &lt;enumeration value="TON"/&gt;
+ *                                                                 &lt;enumeration value="TTO"/&gt;
+ *                                                                 &lt;enumeration value="TUN"/&gt;
+ *                                                                 &lt;enumeration value="TUR"/&gt;
+ *                                                                 &lt;enumeration value="TUV"/&gt;
+ *                                                                 &lt;enumeration value="TWN"/&gt;
+ *                                                                 &lt;enumeration value="TZA"/&gt;
+ *                                                                 &lt;enumeration value="UGA"/&gt;
+ *                                                                 &lt;enumeration value="UKR"/&gt;
+ *                                                                 &lt;enumeration value="UMI"/&gt;
+ *                                                                 &lt;enumeration value="URY"/&gt;
+ *                                                                 &lt;enumeration value="USA"/&gt;
+ *                                                                 &lt;enumeration value="UZB"/&gt;
+ *                                                                 &lt;enumeration value="VAT"/&gt;
+ *                                                                 &lt;enumeration value="VCT"/&gt;
+ *                                                                 &lt;enumeration value="VEN"/&gt;
+ *                                                                 &lt;enumeration value="VGB"/&gt;
+ *                                                                 &lt;enumeration value="VIR"/&gt;
+ *                                                                 &lt;enumeration value="VNM"/&gt;
+ *                                                                 &lt;enumeration value="VUT"/&gt;
+ *                                                                 &lt;enumeration value="WLF"/&gt;
+ *                                                                 &lt;enumeration value="WSM"/&gt;
+ *                                                                 &lt;enumeration value="YEM"/&gt;
+ *                                                                 &lt;enumeration value="YUG"/&gt;
+ *                                                                 &lt;enumeration value="ZAF"/&gt;
+ *                                                                 &lt;enumeration value="ZMB"/&gt;
+ *                                                                 &lt;enumeration value="ZWE"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                           &lt;element name="OverAge18Verification" minOccurs="0"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                 &lt;enumeration value="Yes"/&gt;
+ *                                                                 &lt;enumeration value="No"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                           &lt;element name="ChokingHazard" minOccurs="0"&gt;
+ *                                                             &lt;complexType&gt;
+ *                                                               &lt;complexContent&gt;
+ *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                                   &lt;sequence&gt;
+ *                                                                     &lt;element name="SmallParts" minOccurs="0"&gt;
+ *                                                                       &lt;simpleType&gt;
+ *                                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                           &lt;enumeration value="Yes"/&gt;
+ *                                                                           &lt;enumeration value="No"/&gt;
+ *                                                                         &lt;/restriction&gt;
+ *                                                                       &lt;/simpleType&gt;
+ *                                                                     &lt;/element&gt;
+ *                                                                     &lt;element name="SmallBall" minOccurs="0"&gt;
+ *                                                                       &lt;simpleType&gt;
+ *                                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                           &lt;enumeration value="Is a small ball"/&gt;
+ *                                                                           &lt;enumeration value="Contains a small ball"/&gt;
+ *                                                                         &lt;/restriction&gt;
+ *                                                                       &lt;/simpleType&gt;
+ *                                                                     &lt;/element&gt;
+ *                                                                     &lt;element name="Balloons" minOccurs="0"&gt;
+ *                                                                       &lt;simpleType&gt;
+ *                                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                           &lt;enumeration value="Yes"/&gt;
+ *                                                                           &lt;enumeration value="No"/&gt;
+ *                                                                         &lt;/restriction&gt;
+ *                                                                       &lt;/simpleType&gt;
+ *                                                                     &lt;/element&gt;
+ *                                                                     &lt;element name="Marble" minOccurs="0"&gt;
+ *                                                                       &lt;simpleType&gt;
+ *                                                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                                           &lt;enumeration value="Is a marble"/&gt;
+ *                                                                           &lt;enumeration value="Contains a marble"/&gt;
+ *                                                                         &lt;/restriction&gt;
+ *                                                                       &lt;/simpleType&gt;
+ *                                                                     &lt;/element&gt;
+ *                                                                   &lt;/sequence&gt;
+ *                                                                 &lt;/restriction&gt;
+ *                                                               &lt;/complexContent&gt;
+ *                                                             &lt;/complexType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                         &lt;/sequence&gt;
+ *                                                       &lt;/restriction&gt;
+ *                                                     &lt;/complexContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                               &lt;/sequence&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="SubCategoryProperty"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;sequence&gt;
+ *                                                 &lt;any/&gt;
+ *                                               &lt;/sequence&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -824,15 +824,15 @@ public class ItemCreationOrUpdateFeedRequest {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -879,644 +879,644 @@ public class ItemCreationOrUpdateFeedRequest {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="Itemfeed" maxOccurs="unbounded">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="SummaryInfo">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="Item" maxOccurs="unbounded">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="Action" minOccurs="0">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;enumeration value="Create Item"/>
-     *                                   &lt;enumeration value="Update Item"/>
-     *                                   &lt;enumeration value="Update/Append Image"/>
-     *                                   &lt;enumeration value="Replace Image"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="BasicInfo">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="SellerPartNumber">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;minLength value="1"/>
-     *                                             &lt;maxLength value="40"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="Manufacturer">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;minLength value="1"/>
-     *                                             &lt;maxLength value="40"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="ManufacturerPartsNumber">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;minLength value="1"/>
-     *                                             &lt;maxLength value="20"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="UPCOrISBN">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;maxLength value="40"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="RelatedSellerPartNumber" minOccurs="0">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;minLength value="0"/>
-     *                                             &lt;maxLength value="40"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="WebsiteShortTitle">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;minLength value="1"/>
-     *                                             &lt;maxLength value="200"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="BulletDescription" minOccurs="0">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;minLength value="1"/>
-     *                                             &lt;maxLength value="200"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="ProductDescription">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;minLength value="1"/>
-     *                                             &lt;maxLength value="4000"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="ItemDimension">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="ItemLength" minOccurs="0">
-     *                                                   &lt;simpleType>
-     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                                       &lt;minInclusive value="0.01"/>
-     *                                                       &lt;maxInclusive value="485.99"/>
-     *                                                       &lt;fractionDigits value="2"/>
-     *                                                     &lt;/restriction>
-     *                                                   &lt;/simpleType>
-     *                                                 &lt;/element>
-     *                                                 &lt;element name="ItemWidth" minOccurs="0">
-     *                                                   &lt;simpleType>
-     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                                       &lt;maxInclusive value="485.99"/>
-     *                                                       &lt;minInclusive value="0.01"/>
-     *                                                       &lt;fractionDigits value="2"/>
-     *                                                     &lt;/restriction>
-     *                                                   &lt;/simpleType>
-     *                                                 &lt;/element>
-     *                                                 &lt;element name="ItemHeight" minOccurs="0">
-     *                                                   &lt;simpleType>
-     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                                       &lt;minInclusive value="0.01"/>
-     *                                                       &lt;maxInclusive value="485.99"/>
-     *                                                       &lt;fractionDigits value="2"/>
-     *                                                     &lt;/restriction>
-     *                                                   &lt;/simpleType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="ItemWeight">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                             &lt;minInclusive value="0.01"/>
-     *                                             &lt;maxInclusive value="99999.00"/>
-     *                                             &lt;fractionDigits value="2"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="PacksOrSets">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                                             &lt;minInclusive value="1"/>
-     *                                             &lt;maxInclusive value="9999"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="ItemCondition">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;enumeration value="New"/>
-     *                                             &lt;enumeration value="Refurbished"/>
-     *                                             &lt;enumeration value="UsedLikeNew"/>
-     *                                             &lt;enumeration value="UsedVeryGood"/>
-     *                                             &lt;enumeration value="UsedGood"/>
-     *                                             &lt;enumeration value="UsedAcceptable"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="ItemPackage" minOccurs="0">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;enumeration value="Retail"/>
-     *                                             &lt;enumeration value="OEM"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="ShippingRestriction">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;enumeration value="Yes"/>
-     *                                             &lt;enumeration value="No"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="Currency" minOccurs="0">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="MSRP" minOccurs="0">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                             &lt;minInclusive value="0.01"/>
-     *                                             &lt;maxInclusive value="99999.00"/>
-     *                                             &lt;fractionDigits value="2"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="MAP" minOccurs="0">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                             &lt;minInclusive value="0.00"/>
-     *                                             &lt;maxInclusive value="99999.00"/>
-     *                                             &lt;fractionDigits value="2"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="CheckoutMAP" minOccurs="0">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;enumeration value="True"/>
-     *                                             &lt;enumeration value="False"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="SellingPrice">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                             &lt;minInclusive value="0.01"/>
-     *                                             &lt;maxInclusive value="99999.00"/>
-     *                                             &lt;fractionDigits value="2"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="Shipping">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;enumeration value="Default"/>
-     *                                             &lt;enumeration value="Free"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="Inventory">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                                             &lt;maxInclusive value="999999"/>
-     *                                             &lt;minInclusive value="0"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="ActivationMark" minOccurs="0">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;enumeration value="True"/>
-     *                                             &lt;enumeration value="False"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="ItemImages">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="Image" maxOccurs="7">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;sequence>
-     *                                                           &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                                                           &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-     *                                                         &lt;/sequence>
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="ConditionDetails" minOccurs="0">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;minLength value="0"/>
-     *                                             &lt;maxLength value="200"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="UsedItemImages" minOccurs="0">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="Image" maxOccurs="7">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;sequence>
-     *                                                           &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                                                           &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-     *                                                         &lt;/sequence>
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="Warning" minOccurs="0">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="CountryOfOrigin" minOccurs="0">
-     *                                                   &lt;simpleType>
-     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                       &lt;enumeration value="ABW"/>
-     *                                                       &lt;enumeration value="AFG"/>
-     *                                                       &lt;enumeration value="AGO"/>
-     *                                                       &lt;enumeration value="AIA"/>
-     *                                                       &lt;enumeration value="ALB"/>
-     *                                                       &lt;enumeration value="AND"/>
-     *                                                       &lt;enumeration value="ANT"/>
-     *                                                       &lt;enumeration value="ARE"/>
-     *                                                       &lt;enumeration value="ARG"/>
-     *                                                       &lt;enumeration value="ARM"/>
-     *                                                       &lt;enumeration value="ASM"/>
-     *                                                       &lt;enumeration value="ATA"/>
-     *                                                       &lt;enumeration value="ATF"/>
-     *                                                       &lt;enumeration value="ATG"/>
-     *                                                       &lt;enumeration value="AUS"/>
-     *                                                       &lt;enumeration value="AUT"/>
-     *                                                       &lt;enumeration value="AZE"/>
-     *                                                       &lt;enumeration value="BDI"/>
-     *                                                       &lt;enumeration value="BEL"/>
-     *                                                       &lt;enumeration value="BEN"/>
-     *                                                       &lt;enumeration value="BFA"/>
-     *                                                       &lt;enumeration value="BGD"/>
-     *                                                       &lt;enumeration value="BGR"/>
-     *                                                       &lt;enumeration value="BHR"/>
-     *                                                       &lt;enumeration value="BHS"/>
-     *                                                       &lt;enumeration value="BIH"/>
-     *                                                       &lt;enumeration value="BLR"/>
-     *                                                       &lt;enumeration value="BLZ"/>
-     *                                                       &lt;enumeration value="BMU"/>
-     *                                                       &lt;enumeration value="BOL"/>
-     *                                                       &lt;enumeration value="BRA"/>
-     *                                                       &lt;enumeration value="BRB"/>
-     *                                                       &lt;enumeration value="BRN"/>
-     *                                                       &lt;enumeration value="BTN"/>
-     *                                                       &lt;enumeration value="BVT"/>
-     *                                                       &lt;enumeration value="BWA"/>
-     *                                                       &lt;enumeration value="CAF"/>
-     *                                                       &lt;enumeration value="CAN"/>
-     *                                                       &lt;enumeration value="CCK"/>
-     *                                                       &lt;enumeration value="CHE"/>
-     *                                                       &lt;enumeration value="CHL"/>
-     *                                                       &lt;enumeration value="CHN"/>
-     *                                                       &lt;enumeration value="CIV"/>
-     *                                                       &lt;enumeration value="CMR"/>
-     *                                                       &lt;enumeration value="COD"/>
-     *                                                       &lt;enumeration value="COG"/>
-     *                                                       &lt;enumeration value="COK"/>
-     *                                                       &lt;enumeration value="COL"/>
-     *                                                       &lt;enumeration value="COM"/>
-     *                                                       &lt;enumeration value="CPV"/>
-     *                                                       &lt;enumeration value="CRI"/>
-     *                                                       &lt;enumeration value="CUB"/>
-     *                                                       &lt;enumeration value="CXR"/>
-     *                                                       &lt;enumeration value="CYM"/>
-     *                                                       &lt;enumeration value="CYP"/>
-     *                                                       &lt;enumeration value="CZE"/>
-     *                                                       &lt;enumeration value="DEU"/>
-     *                                                       &lt;enumeration value="DJI"/>
-     *                                                       &lt;enumeration value="DMA"/>
-     *                                                       &lt;enumeration value="DNK"/>
-     *                                                       &lt;enumeration value="DOM"/>
-     *                                                       &lt;enumeration value="DZA"/>
-     *                                                       &lt;enumeration value="ECU"/>
-     *                                                       &lt;enumeration value="EGY"/>
-     *                                                       &lt;enumeration value="ERI"/>
-     *                                                       &lt;enumeration value="ESH"/>
-     *                                                       &lt;enumeration value="ESP"/>
-     *                                                       &lt;enumeration value="EST"/>
-     *                                                       &lt;enumeration value="ETH"/>
-     *                                                       &lt;enumeration value="FIN"/>
-     *                                                       &lt;enumeration value="FJI"/>
-     *                                                       &lt;enumeration value="FLK"/>
-     *                                                       &lt;enumeration value="FRA"/>
-     *                                                       &lt;enumeration value="FRO"/>
-     *                                                       &lt;enumeration value="FSM"/>
-     *                                                       &lt;enumeration value="FXX"/>
-     *                                                       &lt;enumeration value="GAB"/>
-     *                                                       &lt;enumeration value="GBR"/>
-     *                                                       &lt;enumeration value="GEO"/>
-     *                                                       &lt;enumeration value="GHA"/>
-     *                                                       &lt;enumeration value="GIB"/>
-     *                                                       &lt;enumeration value="GIN"/>
-     *                                                       &lt;enumeration value="GLP"/>
-     *                                                       &lt;enumeration value="GMB"/>
-     *                                                       &lt;enumeration value="GNB"/>
-     *                                                       &lt;enumeration value="GNQ"/>
-     *                                                       &lt;enumeration value="GRC"/>
-     *                                                       &lt;enumeration value="GRD"/>
-     *                                                       &lt;enumeration value="GRL"/>
-     *                                                       &lt;enumeration value="GTM"/>
-     *                                                       &lt;enumeration value="GUF"/>
-     *                                                       &lt;enumeration value="GUM"/>
-     *                                                       &lt;enumeration value="GUY"/>
-     *                                                       &lt;enumeration value="HKG"/>
-     *                                                       &lt;enumeration value="HMD"/>
-     *                                                       &lt;enumeration value="HND"/>
-     *                                                       &lt;enumeration value="HRV"/>
-     *                                                       &lt;enumeration value="HTI"/>
-     *                                                       &lt;enumeration value="HUN"/>
-     *                                                       &lt;enumeration value="IDN"/>
-     *                                                       &lt;enumeration value="IND"/>
-     *                                                       &lt;enumeration value="IOT"/>
-     *                                                       &lt;enumeration value="IRL"/>
-     *                                                       &lt;enumeration value="IRN"/>
-     *                                                       &lt;enumeration value="IRQ"/>
-     *                                                       &lt;enumeration value="ISL"/>
-     *                                                       &lt;enumeration value="ISR"/>
-     *                                                       &lt;enumeration value="ITA"/>
-     *                                                       &lt;enumeration value="JAM"/>
-     *                                                       &lt;enumeration value="JOR"/>
-     *                                                       &lt;enumeration value="JPN"/>
-     *                                                       &lt;enumeration value="KAZ"/>
-     *                                                       &lt;enumeration value="KEN"/>
-     *                                                       &lt;enumeration value="KGZ"/>
-     *                                                       &lt;enumeration value="KHM"/>
-     *                                                       &lt;enumeration value="KIR"/>
-     *                                                       &lt;enumeration value="KNA"/>
-     *                                                       &lt;enumeration value="KOR"/>
-     *                                                       &lt;enumeration value="KWT"/>
-     *                                                       &lt;enumeration value="LAO"/>
-     *                                                       &lt;enumeration value="LBN"/>
-     *                                                       &lt;enumeration value="LBR"/>
-     *                                                       &lt;enumeration value="LBY"/>
-     *                                                       &lt;enumeration value="LCA"/>
-     *                                                       &lt;enumeration value="LIE"/>
-     *                                                       &lt;enumeration value="LKA"/>
-     *                                                       &lt;enumeration value="LSO"/>
-     *                                                       &lt;enumeration value="LTU"/>
-     *                                                       &lt;enumeration value="LUX"/>
-     *                                                       &lt;enumeration value="LVA"/>
-     *                                                       &lt;enumeration value="MAC"/>
-     *                                                       &lt;enumeration value="MAR"/>
-     *                                                       &lt;enumeration value="MCO"/>
-     *                                                       &lt;enumeration value="MDA"/>
-     *                                                       &lt;enumeration value="MDG"/>
-     *                                                       &lt;enumeration value="MDV"/>
-     *                                                       &lt;enumeration value="MEX"/>
-     *                                                       &lt;enumeration value="MHL"/>
-     *                                                       &lt;enumeration value="MKD"/>
-     *                                                       &lt;enumeration value="MLI"/>
-     *                                                       &lt;enumeration value="MLT"/>
-     *                                                       &lt;enumeration value="MMR"/>
-     *                                                       &lt;enumeration value="MNG"/>
-     *                                                       &lt;enumeration value="MNP"/>
-     *                                                       &lt;enumeration value="MOZ"/>
-     *                                                       &lt;enumeration value="MRT"/>
-     *                                                       &lt;enumeration value="MSR"/>
-     *                                                       &lt;enumeration value="MTQ"/>
-     *                                                       &lt;enumeration value="MUS"/>
-     *                                                       &lt;enumeration value="MWI"/>
-     *                                                       &lt;enumeration value="MYS"/>
-     *                                                       &lt;enumeration value="MYT"/>
-     *                                                       &lt;enumeration value="NAM"/>
-     *                                                       &lt;enumeration value="NCL"/>
-     *                                                       &lt;enumeration value="NER"/>
-     *                                                       &lt;enumeration value="NFK"/>
-     *                                                       &lt;enumeration value="NGA"/>
-     *                                                       &lt;enumeration value="NIC"/>
-     *                                                       &lt;enumeration value="NIU"/>
-     *                                                       &lt;enumeration value="NLD"/>
-     *                                                       &lt;enumeration value="NOR"/>
-     *                                                       &lt;enumeration value="NPL"/>
-     *                                                       &lt;enumeration value="NRU"/>
-     *                                                       &lt;enumeration value="NZL"/>
-     *                                                       &lt;enumeration value="OMN"/>
-     *                                                       &lt;enumeration value="PAK"/>
-     *                                                       &lt;enumeration value="PAN"/>
-     *                                                       &lt;enumeration value="PCN"/>
-     *                                                       &lt;enumeration value="PER"/>
-     *                                                       &lt;enumeration value="PHL"/>
-     *                                                       &lt;enumeration value="PLW"/>
-     *                                                       &lt;enumeration value="PNG"/>
-     *                                                       &lt;enumeration value="POL"/>
-     *                                                       &lt;enumeration value="PRI"/>
-     *                                                       &lt;enumeration value="PRK"/>
-     *                                                       &lt;enumeration value="PRT"/>
-     *                                                       &lt;enumeration value="PRY"/>
-     *                                                       &lt;enumeration value="PSE"/>
-     *                                                       &lt;enumeration value="PYF"/>
-     *                                                       &lt;enumeration value="QAT"/>
-     *                                                       &lt;enumeration value="REU"/>
-     *                                                       &lt;enumeration value="ROM"/>
-     *                                                       &lt;enumeration value="RUS"/>
-     *                                                       &lt;enumeration value="RWA"/>
-     *                                                       &lt;enumeration value="SAU"/>
-     *                                                       &lt;enumeration value="SDN"/>
-     *                                                       &lt;enumeration value="SEN"/>
-     *                                                       &lt;enumeration value="SGP"/>
-     *                                                       &lt;enumeration value="SGS"/>
-     *                                                       &lt;enumeration value="SHN"/>
-     *                                                       &lt;enumeration value="SJM"/>
-     *                                                       &lt;enumeration value="SLB"/>
-     *                                                       &lt;enumeration value="SLE"/>
-     *                                                       &lt;enumeration value="SLV"/>
-     *                                                       &lt;enumeration value="SMR"/>
-     *                                                       &lt;enumeration value="SOM"/>
-     *                                                       &lt;enumeration value="SPM"/>
-     *                                                       &lt;enumeration value="STP"/>
-     *                                                       &lt;enumeration value="SUR"/>
-     *                                                       &lt;enumeration value="SVK"/>
-     *                                                       &lt;enumeration value="SVN"/>
-     *                                                       &lt;enumeration value="SWE"/>
-     *                                                       &lt;enumeration value="SWZ"/>
-     *                                                       &lt;enumeration value="SYC"/>
-     *                                                       &lt;enumeration value="SYR"/>
-     *                                                       &lt;enumeration value="TCA"/>
-     *                                                       &lt;enumeration value="TCD"/>
-     *                                                       &lt;enumeration value="TGO"/>
-     *                                                       &lt;enumeration value="THA"/>
-     *                                                       &lt;enumeration value="TJK"/>
-     *                                                       &lt;enumeration value="TKL"/>
-     *                                                       &lt;enumeration value="TKM"/>
-     *                                                       &lt;enumeration value="TMP"/>
-     *                                                       &lt;enumeration value="TON"/>
-     *                                                       &lt;enumeration value="TTO"/>
-     *                                                       &lt;enumeration value="TUN"/>
-     *                                                       &lt;enumeration value="TUR"/>
-     *                                                       &lt;enumeration value="TUV"/>
-     *                                                       &lt;enumeration value="TWN"/>
-     *                                                       &lt;enumeration value="TZA"/>
-     *                                                       &lt;enumeration value="UGA"/>
-     *                                                       &lt;enumeration value="UKR"/>
-     *                                                       &lt;enumeration value="UMI"/>
-     *                                                       &lt;enumeration value="URY"/>
-     *                                                       &lt;enumeration value="USA"/>
-     *                                                       &lt;enumeration value="UZB"/>
-     *                                                       &lt;enumeration value="VAT"/>
-     *                                                       &lt;enumeration value="VCT"/>
-     *                                                       &lt;enumeration value="VEN"/>
-     *                                                       &lt;enumeration value="VGB"/>
-     *                                                       &lt;enumeration value="VIR"/>
-     *                                                       &lt;enumeration value="VNM"/>
-     *                                                       &lt;enumeration value="VUT"/>
-     *                                                       &lt;enumeration value="WLF"/>
-     *                                                       &lt;enumeration value="WSM"/>
-     *                                                       &lt;enumeration value="YEM"/>
-     *                                                       &lt;enumeration value="YUG"/>
-     *                                                       &lt;enumeration value="ZAF"/>
-     *                                                       &lt;enumeration value="ZMB"/>
-     *                                                       &lt;enumeration value="ZWE"/>
-     *                                                     &lt;/restriction>
-     *                                                   &lt;/simpleType>
-     *                                                 &lt;/element>
-     *                                                 &lt;element name="OverAge18Verification" minOccurs="0">
-     *                                                   &lt;simpleType>
-     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                       &lt;enumeration value="Yes"/>
-     *                                                       &lt;enumeration value="No"/>
-     *                                                     &lt;/restriction>
-     *                                                   &lt;/simpleType>
-     *                                                 &lt;/element>
-     *                                                 &lt;element name="ChokingHazard" minOccurs="0">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;sequence>
-     *                                                           &lt;element name="SmallParts" minOccurs="0">
-     *                                                             &lt;simpleType>
-     *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                 &lt;enumeration value="Yes"/>
-     *                                                                 &lt;enumeration value="No"/>
-     *                                                               &lt;/restriction>
-     *                                                             &lt;/simpleType>
-     *                                                           &lt;/element>
-     *                                                           &lt;element name="SmallBall" minOccurs="0">
-     *                                                             &lt;simpleType>
-     *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                 &lt;enumeration value="Is a small ball"/>
-     *                                                                 &lt;enumeration value="Contains a small ball"/>
-     *                                                               &lt;/restriction>
-     *                                                             &lt;/simpleType>
-     *                                                           &lt;/element>
-     *                                                           &lt;element name="Balloons" minOccurs="0">
-     *                                                             &lt;simpleType>
-     *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                 &lt;enumeration value="Yes"/>
-     *                                                                 &lt;enumeration value="No"/>
-     *                                                               &lt;/restriction>
-     *                                                             &lt;/simpleType>
-     *                                                           &lt;/element>
-     *                                                           &lt;element name="Marble" minOccurs="0">
-     *                                                             &lt;simpleType>
-     *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                                                 &lt;enumeration value="Is a marble"/>
-     *                                                                 &lt;enumeration value="Contains a marble"/>
-     *                                                               &lt;/restriction>
-     *                                                             &lt;/simpleType>
-     *                                                           &lt;/element>
-     *                                                         &lt;/sequence>
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="SubCategoryProperty">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;any/>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Itemfeed" maxOccurs="unbounded"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="SummaryInfo"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="Item" maxOccurs="unbounded"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="Action" minOccurs="0"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;enumeration value="Create Item"/&gt;
+     *                                   &lt;enumeration value="Update Item"/&gt;
+     *                                   &lt;enumeration value="Update/Append Image"/&gt;
+     *                                   &lt;enumeration value="Replace Image"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="BasicInfo"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence&gt;
+     *                                       &lt;element name="SellerPartNumber"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;minLength value="1"/&gt;
+     *                                             &lt;maxLength value="40"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="Manufacturer"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;minLength value="1"/&gt;
+     *                                             &lt;maxLength value="40"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="ManufacturerPartsNumber"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;minLength value="1"/&gt;
+     *                                             &lt;maxLength value="20"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="UPCOrISBN"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;maxLength value="40"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="RelatedSellerPartNumber" minOccurs="0"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;minLength value="0"/&gt;
+     *                                             &lt;maxLength value="40"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="WebsiteShortTitle"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;minLength value="1"/&gt;
+     *                                             &lt;maxLength value="200"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="BulletDescription" minOccurs="0"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;minLength value="1"/&gt;
+     *                                             &lt;maxLength value="200"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="ProductDescription"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;minLength value="1"/&gt;
+     *                                             &lt;maxLength value="4000"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="ItemDimension"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="ItemLength" minOccurs="0"&gt;
+     *                                                   &lt;simpleType&gt;
+     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                                       &lt;minInclusive value="0.01"/&gt;
+     *                                                       &lt;maxInclusive value="485.99"/&gt;
+     *                                                       &lt;fractionDigits value="2"/&gt;
+     *                                                     &lt;/restriction&gt;
+     *                                                   &lt;/simpleType&gt;
+     *                                                 &lt;/element&gt;
+     *                                                 &lt;element name="ItemWidth" minOccurs="0"&gt;
+     *                                                   &lt;simpleType&gt;
+     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                                       &lt;maxInclusive value="485.99"/&gt;
+     *                                                       &lt;minInclusive value="0.01"/&gt;
+     *                                                       &lt;fractionDigits value="2"/&gt;
+     *                                                     &lt;/restriction&gt;
+     *                                                   &lt;/simpleType&gt;
+     *                                                 &lt;/element&gt;
+     *                                                 &lt;element name="ItemHeight" minOccurs="0"&gt;
+     *                                                   &lt;simpleType&gt;
+     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                                       &lt;minInclusive value="0.01"/&gt;
+     *                                                       &lt;maxInclusive value="485.99"/&gt;
+     *                                                       &lt;fractionDigits value="2"/&gt;
+     *                                                     &lt;/restriction&gt;
+     *                                                   &lt;/simpleType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="ItemWeight"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                             &lt;minInclusive value="0.01"/&gt;
+     *                                             &lt;maxInclusive value="99999.00"/&gt;
+     *                                             &lt;fractionDigits value="2"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="PacksOrSets"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                                             &lt;minInclusive value="1"/&gt;
+     *                                             &lt;maxInclusive value="9999"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="ItemCondition"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;enumeration value="New"/&gt;
+     *                                             &lt;enumeration value="Refurbished"/&gt;
+     *                                             &lt;enumeration value="UsedLikeNew"/&gt;
+     *                                             &lt;enumeration value="UsedVeryGood"/&gt;
+     *                                             &lt;enumeration value="UsedGood"/&gt;
+     *                                             &lt;enumeration value="UsedAcceptable"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="ItemPackage" minOccurs="0"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;enumeration value="Retail"/&gt;
+     *                                             &lt;enumeration value="OEM"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="ShippingRestriction"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;enumeration value="Yes"/&gt;
+     *                                             &lt;enumeration value="No"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="Currency" minOccurs="0"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="MSRP" minOccurs="0"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                             &lt;minInclusive value="0.01"/&gt;
+     *                                             &lt;maxInclusive value="99999.00"/&gt;
+     *                                             &lt;fractionDigits value="2"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="MAP" minOccurs="0"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                             &lt;minInclusive value="0.00"/&gt;
+     *                                             &lt;maxInclusive value="99999.00"/&gt;
+     *                                             &lt;fractionDigits value="2"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="CheckoutMAP" minOccurs="0"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;enumeration value="True"/&gt;
+     *                                             &lt;enumeration value="False"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="SellingPrice"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                             &lt;minInclusive value="0.01"/&gt;
+     *                                             &lt;maxInclusive value="99999.00"/&gt;
+     *                                             &lt;fractionDigits value="2"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="Shipping"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;enumeration value="Default"/&gt;
+     *                                             &lt;enumeration value="Free"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="Inventory"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                                             &lt;maxInclusive value="999999"/&gt;
+     *                                             &lt;minInclusive value="0"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="ActivationMark" minOccurs="0"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;enumeration value="True"/&gt;
+     *                                             &lt;enumeration value="False"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="ItemImages"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="Image" maxOccurs="7"&gt;
+     *                                                   &lt;complexType&gt;
+     *                                                     &lt;complexContent&gt;
+     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                         &lt;sequence&gt;
+     *                                                           &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *                                                           &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+     *                                                         &lt;/sequence&gt;
+     *                                                       &lt;/restriction&gt;
+     *                                                     &lt;/complexContent&gt;
+     *                                                   &lt;/complexType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="ConditionDetails" minOccurs="0"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;minLength value="0"/&gt;
+     *                                             &lt;maxLength value="200"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="UsedItemImages" minOccurs="0"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="Image" maxOccurs="7"&gt;
+     *                                                   &lt;complexType&gt;
+     *                                                     &lt;complexContent&gt;
+     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                         &lt;sequence&gt;
+     *                                                           &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *                                                           &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+     *                                                         &lt;/sequence&gt;
+     *                                                       &lt;/restriction&gt;
+     *                                                     &lt;/complexContent&gt;
+     *                                                   &lt;/complexType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="Warning" minOccurs="0"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="CountryOfOrigin" minOccurs="0"&gt;
+     *                                                   &lt;simpleType&gt;
+     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                       &lt;enumeration value="ABW"/&gt;
+     *                                                       &lt;enumeration value="AFG"/&gt;
+     *                                                       &lt;enumeration value="AGO"/&gt;
+     *                                                       &lt;enumeration value="AIA"/&gt;
+     *                                                       &lt;enumeration value="ALB"/&gt;
+     *                                                       &lt;enumeration value="AND"/&gt;
+     *                                                       &lt;enumeration value="ANT"/&gt;
+     *                                                       &lt;enumeration value="ARE"/&gt;
+     *                                                       &lt;enumeration value="ARG"/&gt;
+     *                                                       &lt;enumeration value="ARM"/&gt;
+     *                                                       &lt;enumeration value="ASM"/&gt;
+     *                                                       &lt;enumeration value="ATA"/&gt;
+     *                                                       &lt;enumeration value="ATF"/&gt;
+     *                                                       &lt;enumeration value="ATG"/&gt;
+     *                                                       &lt;enumeration value="AUS"/&gt;
+     *                                                       &lt;enumeration value="AUT"/&gt;
+     *                                                       &lt;enumeration value="AZE"/&gt;
+     *                                                       &lt;enumeration value="BDI"/&gt;
+     *                                                       &lt;enumeration value="BEL"/&gt;
+     *                                                       &lt;enumeration value="BEN"/&gt;
+     *                                                       &lt;enumeration value="BFA"/&gt;
+     *                                                       &lt;enumeration value="BGD"/&gt;
+     *                                                       &lt;enumeration value="BGR"/&gt;
+     *                                                       &lt;enumeration value="BHR"/&gt;
+     *                                                       &lt;enumeration value="BHS"/&gt;
+     *                                                       &lt;enumeration value="BIH"/&gt;
+     *                                                       &lt;enumeration value="BLR"/&gt;
+     *                                                       &lt;enumeration value="BLZ"/&gt;
+     *                                                       &lt;enumeration value="BMU"/&gt;
+     *                                                       &lt;enumeration value="BOL"/&gt;
+     *                                                       &lt;enumeration value="BRA"/&gt;
+     *                                                       &lt;enumeration value="BRB"/&gt;
+     *                                                       &lt;enumeration value="BRN"/&gt;
+     *                                                       &lt;enumeration value="BTN"/&gt;
+     *                                                       &lt;enumeration value="BVT"/&gt;
+     *                                                       &lt;enumeration value="BWA"/&gt;
+     *                                                       &lt;enumeration value="CAF"/&gt;
+     *                                                       &lt;enumeration value="CAN"/&gt;
+     *                                                       &lt;enumeration value="CCK"/&gt;
+     *                                                       &lt;enumeration value="CHE"/&gt;
+     *                                                       &lt;enumeration value="CHL"/&gt;
+     *                                                       &lt;enumeration value="CHN"/&gt;
+     *                                                       &lt;enumeration value="CIV"/&gt;
+     *                                                       &lt;enumeration value="CMR"/&gt;
+     *                                                       &lt;enumeration value="COD"/&gt;
+     *                                                       &lt;enumeration value="COG"/&gt;
+     *                                                       &lt;enumeration value="COK"/&gt;
+     *                                                       &lt;enumeration value="COL"/&gt;
+     *                                                       &lt;enumeration value="COM"/&gt;
+     *                                                       &lt;enumeration value="CPV"/&gt;
+     *                                                       &lt;enumeration value="CRI"/&gt;
+     *                                                       &lt;enumeration value="CUB"/&gt;
+     *                                                       &lt;enumeration value="CXR"/&gt;
+     *                                                       &lt;enumeration value="CYM"/&gt;
+     *                                                       &lt;enumeration value="CYP"/&gt;
+     *                                                       &lt;enumeration value="CZE"/&gt;
+     *                                                       &lt;enumeration value="DEU"/&gt;
+     *                                                       &lt;enumeration value="DJI"/&gt;
+     *                                                       &lt;enumeration value="DMA"/&gt;
+     *                                                       &lt;enumeration value="DNK"/&gt;
+     *                                                       &lt;enumeration value="DOM"/&gt;
+     *                                                       &lt;enumeration value="DZA"/&gt;
+     *                                                       &lt;enumeration value="ECU"/&gt;
+     *                                                       &lt;enumeration value="EGY"/&gt;
+     *                                                       &lt;enumeration value="ERI"/&gt;
+     *                                                       &lt;enumeration value="ESH"/&gt;
+     *                                                       &lt;enumeration value="ESP"/&gt;
+     *                                                       &lt;enumeration value="EST"/&gt;
+     *                                                       &lt;enumeration value="ETH"/&gt;
+     *                                                       &lt;enumeration value="FIN"/&gt;
+     *                                                       &lt;enumeration value="FJI"/&gt;
+     *                                                       &lt;enumeration value="FLK"/&gt;
+     *                                                       &lt;enumeration value="FRA"/&gt;
+     *                                                       &lt;enumeration value="FRO"/&gt;
+     *                                                       &lt;enumeration value="FSM"/&gt;
+     *                                                       &lt;enumeration value="FXX"/&gt;
+     *                                                       &lt;enumeration value="GAB"/&gt;
+     *                                                       &lt;enumeration value="GBR"/&gt;
+     *                                                       &lt;enumeration value="GEO"/&gt;
+     *                                                       &lt;enumeration value="GHA"/&gt;
+     *                                                       &lt;enumeration value="GIB"/&gt;
+     *                                                       &lt;enumeration value="GIN"/&gt;
+     *                                                       &lt;enumeration value="GLP"/&gt;
+     *                                                       &lt;enumeration value="GMB"/&gt;
+     *                                                       &lt;enumeration value="GNB"/&gt;
+     *                                                       &lt;enumeration value="GNQ"/&gt;
+     *                                                       &lt;enumeration value="GRC"/&gt;
+     *                                                       &lt;enumeration value="GRD"/&gt;
+     *                                                       &lt;enumeration value="GRL"/&gt;
+     *                                                       &lt;enumeration value="GTM"/&gt;
+     *                                                       &lt;enumeration value="GUF"/&gt;
+     *                                                       &lt;enumeration value="GUM"/&gt;
+     *                                                       &lt;enumeration value="GUY"/&gt;
+     *                                                       &lt;enumeration value="HKG"/&gt;
+     *                                                       &lt;enumeration value="HMD"/&gt;
+     *                                                       &lt;enumeration value="HND"/&gt;
+     *                                                       &lt;enumeration value="HRV"/&gt;
+     *                                                       &lt;enumeration value="HTI"/&gt;
+     *                                                       &lt;enumeration value="HUN"/&gt;
+     *                                                       &lt;enumeration value="IDN"/&gt;
+     *                                                       &lt;enumeration value="IND"/&gt;
+     *                                                       &lt;enumeration value="IOT"/&gt;
+     *                                                       &lt;enumeration value="IRL"/&gt;
+     *                                                       &lt;enumeration value="IRN"/&gt;
+     *                                                       &lt;enumeration value="IRQ"/&gt;
+     *                                                       &lt;enumeration value="ISL"/&gt;
+     *                                                       &lt;enumeration value="ISR"/&gt;
+     *                                                       &lt;enumeration value="ITA"/&gt;
+     *                                                       &lt;enumeration value="JAM"/&gt;
+     *                                                       &lt;enumeration value="JOR"/&gt;
+     *                                                       &lt;enumeration value="JPN"/&gt;
+     *                                                       &lt;enumeration value="KAZ"/&gt;
+     *                                                       &lt;enumeration value="KEN"/&gt;
+     *                                                       &lt;enumeration value="KGZ"/&gt;
+     *                                                       &lt;enumeration value="KHM"/&gt;
+     *                                                       &lt;enumeration value="KIR"/&gt;
+     *                                                       &lt;enumeration value="KNA"/&gt;
+     *                                                       &lt;enumeration value="KOR"/&gt;
+     *                                                       &lt;enumeration value="KWT"/&gt;
+     *                                                       &lt;enumeration value="LAO"/&gt;
+     *                                                       &lt;enumeration value="LBN"/&gt;
+     *                                                       &lt;enumeration value="LBR"/&gt;
+     *                                                       &lt;enumeration value="LBY"/&gt;
+     *                                                       &lt;enumeration value="LCA"/&gt;
+     *                                                       &lt;enumeration value="LIE"/&gt;
+     *                                                       &lt;enumeration value="LKA"/&gt;
+     *                                                       &lt;enumeration value="LSO"/&gt;
+     *                                                       &lt;enumeration value="LTU"/&gt;
+     *                                                       &lt;enumeration value="LUX"/&gt;
+     *                                                       &lt;enumeration value="LVA"/&gt;
+     *                                                       &lt;enumeration value="MAC"/&gt;
+     *                                                       &lt;enumeration value="MAR"/&gt;
+     *                                                       &lt;enumeration value="MCO"/&gt;
+     *                                                       &lt;enumeration value="MDA"/&gt;
+     *                                                       &lt;enumeration value="MDG"/&gt;
+     *                                                       &lt;enumeration value="MDV"/&gt;
+     *                                                       &lt;enumeration value="MEX"/&gt;
+     *                                                       &lt;enumeration value="MHL"/&gt;
+     *                                                       &lt;enumeration value="MKD"/&gt;
+     *                                                       &lt;enumeration value="MLI"/&gt;
+     *                                                       &lt;enumeration value="MLT"/&gt;
+     *                                                       &lt;enumeration value="MMR"/&gt;
+     *                                                       &lt;enumeration value="MNG"/&gt;
+     *                                                       &lt;enumeration value="MNP"/&gt;
+     *                                                       &lt;enumeration value="MOZ"/&gt;
+     *                                                       &lt;enumeration value="MRT"/&gt;
+     *                                                       &lt;enumeration value="MSR"/&gt;
+     *                                                       &lt;enumeration value="MTQ"/&gt;
+     *                                                       &lt;enumeration value="MUS"/&gt;
+     *                                                       &lt;enumeration value="MWI"/&gt;
+     *                                                       &lt;enumeration value="MYS"/&gt;
+     *                                                       &lt;enumeration value="MYT"/&gt;
+     *                                                       &lt;enumeration value="NAM"/&gt;
+     *                                                       &lt;enumeration value="NCL"/&gt;
+     *                                                       &lt;enumeration value="NER"/&gt;
+     *                                                       &lt;enumeration value="NFK"/&gt;
+     *                                                       &lt;enumeration value="NGA"/&gt;
+     *                                                       &lt;enumeration value="NIC"/&gt;
+     *                                                       &lt;enumeration value="NIU"/&gt;
+     *                                                       &lt;enumeration value="NLD"/&gt;
+     *                                                       &lt;enumeration value="NOR"/&gt;
+     *                                                       &lt;enumeration value="NPL"/&gt;
+     *                                                       &lt;enumeration value="NRU"/&gt;
+     *                                                       &lt;enumeration value="NZL"/&gt;
+     *                                                       &lt;enumeration value="OMN"/&gt;
+     *                                                       &lt;enumeration value="PAK"/&gt;
+     *                                                       &lt;enumeration value="PAN"/&gt;
+     *                                                       &lt;enumeration value="PCN"/&gt;
+     *                                                       &lt;enumeration value="PER"/&gt;
+     *                                                       &lt;enumeration value="PHL"/&gt;
+     *                                                       &lt;enumeration value="PLW"/&gt;
+     *                                                       &lt;enumeration value="PNG"/&gt;
+     *                                                       &lt;enumeration value="POL"/&gt;
+     *                                                       &lt;enumeration value="PRI"/&gt;
+     *                                                       &lt;enumeration value="PRK"/&gt;
+     *                                                       &lt;enumeration value="PRT"/&gt;
+     *                                                       &lt;enumeration value="PRY"/&gt;
+     *                                                       &lt;enumeration value="PSE"/&gt;
+     *                                                       &lt;enumeration value="PYF"/&gt;
+     *                                                       &lt;enumeration value="QAT"/&gt;
+     *                                                       &lt;enumeration value="REU"/&gt;
+     *                                                       &lt;enumeration value="ROM"/&gt;
+     *                                                       &lt;enumeration value="RUS"/&gt;
+     *                                                       &lt;enumeration value="RWA"/&gt;
+     *                                                       &lt;enumeration value="SAU"/&gt;
+     *                                                       &lt;enumeration value="SDN"/&gt;
+     *                                                       &lt;enumeration value="SEN"/&gt;
+     *                                                       &lt;enumeration value="SGP"/&gt;
+     *                                                       &lt;enumeration value="SGS"/&gt;
+     *                                                       &lt;enumeration value="SHN"/&gt;
+     *                                                       &lt;enumeration value="SJM"/&gt;
+     *                                                       &lt;enumeration value="SLB"/&gt;
+     *                                                       &lt;enumeration value="SLE"/&gt;
+     *                                                       &lt;enumeration value="SLV"/&gt;
+     *                                                       &lt;enumeration value="SMR"/&gt;
+     *                                                       &lt;enumeration value="SOM"/&gt;
+     *                                                       &lt;enumeration value="SPM"/&gt;
+     *                                                       &lt;enumeration value="STP"/&gt;
+     *                                                       &lt;enumeration value="SUR"/&gt;
+     *                                                       &lt;enumeration value="SVK"/&gt;
+     *                                                       &lt;enumeration value="SVN"/&gt;
+     *                                                       &lt;enumeration value="SWE"/&gt;
+     *                                                       &lt;enumeration value="SWZ"/&gt;
+     *                                                       &lt;enumeration value="SYC"/&gt;
+     *                                                       &lt;enumeration value="SYR"/&gt;
+     *                                                       &lt;enumeration value="TCA"/&gt;
+     *                                                       &lt;enumeration value="TCD"/&gt;
+     *                                                       &lt;enumeration value="TGO"/&gt;
+     *                                                       &lt;enumeration value="THA"/&gt;
+     *                                                       &lt;enumeration value="TJK"/&gt;
+     *                                                       &lt;enumeration value="TKL"/&gt;
+     *                                                       &lt;enumeration value="TKM"/&gt;
+     *                                                       &lt;enumeration value="TMP"/&gt;
+     *                                                       &lt;enumeration value="TON"/&gt;
+     *                                                       &lt;enumeration value="TTO"/&gt;
+     *                                                       &lt;enumeration value="TUN"/&gt;
+     *                                                       &lt;enumeration value="TUR"/&gt;
+     *                                                       &lt;enumeration value="TUV"/&gt;
+     *                                                       &lt;enumeration value="TWN"/&gt;
+     *                                                       &lt;enumeration value="TZA"/&gt;
+     *                                                       &lt;enumeration value="UGA"/&gt;
+     *                                                       &lt;enumeration value="UKR"/&gt;
+     *                                                       &lt;enumeration value="UMI"/&gt;
+     *                                                       &lt;enumeration value="URY"/&gt;
+     *                                                       &lt;enumeration value="USA"/&gt;
+     *                                                       &lt;enumeration value="UZB"/&gt;
+     *                                                       &lt;enumeration value="VAT"/&gt;
+     *                                                       &lt;enumeration value="VCT"/&gt;
+     *                                                       &lt;enumeration value="VEN"/&gt;
+     *                                                       &lt;enumeration value="VGB"/&gt;
+     *                                                       &lt;enumeration value="VIR"/&gt;
+     *                                                       &lt;enumeration value="VNM"/&gt;
+     *                                                       &lt;enumeration value="VUT"/&gt;
+     *                                                       &lt;enumeration value="WLF"/&gt;
+     *                                                       &lt;enumeration value="WSM"/&gt;
+     *                                                       &lt;enumeration value="YEM"/&gt;
+     *                                                       &lt;enumeration value="YUG"/&gt;
+     *                                                       &lt;enumeration value="ZAF"/&gt;
+     *                                                       &lt;enumeration value="ZMB"/&gt;
+     *                                                       &lt;enumeration value="ZWE"/&gt;
+     *                                                     &lt;/restriction&gt;
+     *                                                   &lt;/simpleType&gt;
+     *                                                 &lt;/element&gt;
+     *                                                 &lt;element name="OverAge18Verification" minOccurs="0"&gt;
+     *                                                   &lt;simpleType&gt;
+     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                       &lt;enumeration value="Yes"/&gt;
+     *                                                       &lt;enumeration value="No"/&gt;
+     *                                                     &lt;/restriction&gt;
+     *                                                   &lt;/simpleType&gt;
+     *                                                 &lt;/element&gt;
+     *                                                 &lt;element name="ChokingHazard" minOccurs="0"&gt;
+     *                                                   &lt;complexType&gt;
+     *                                                     &lt;complexContent&gt;
+     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                                         &lt;sequence&gt;
+     *                                                           &lt;element name="SmallParts" minOccurs="0"&gt;
+     *                                                             &lt;simpleType&gt;
+     *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                 &lt;enumeration value="Yes"/&gt;
+     *                                                                 &lt;enumeration value="No"/&gt;
+     *                                                               &lt;/restriction&gt;
+     *                                                             &lt;/simpleType&gt;
+     *                                                           &lt;/element&gt;
+     *                                                           &lt;element name="SmallBall" minOccurs="0"&gt;
+     *                                                             &lt;simpleType&gt;
+     *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                 &lt;enumeration value="Is a small ball"/&gt;
+     *                                                                 &lt;enumeration value="Contains a small ball"/&gt;
+     *                                                               &lt;/restriction&gt;
+     *                                                             &lt;/simpleType&gt;
+     *                                                           &lt;/element&gt;
+     *                                                           &lt;element name="Balloons" minOccurs="0"&gt;
+     *                                                             &lt;simpleType&gt;
+     *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                 &lt;enumeration value="Yes"/&gt;
+     *                                                                 &lt;enumeration value="No"/&gt;
+     *                                                               &lt;/restriction&gt;
+     *                                                             &lt;/simpleType&gt;
+     *                                                           &lt;/element&gt;
+     *                                                           &lt;element name="Marble" minOccurs="0"&gt;
+     *                                                             &lt;simpleType&gt;
+     *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                                                 &lt;enumeration value="Is a marble"/&gt;
+     *                                                                 &lt;enumeration value="Contains a marble"/&gt;
+     *                                                               &lt;/restriction&gt;
+     *                                                             &lt;/simpleType&gt;
+     *                                                           &lt;/element&gt;
+     *                                                         &lt;/sequence&gt;
+     *                                                       &lt;/restriction&gt;
+     *                                                     &lt;/complexContent&gt;
+     *                                                   &lt;/complexType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="SubCategoryProperty"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence&gt;
+     *                                       &lt;any/&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1550,6 +1550,9 @@ public class ItemCreationOrUpdateFeedRequest {
          * Objects of the following type(s) are allowed in the list
          * {@link ItemCreationOrUpdateFeedRequest.Message.Itemfeed }
          * 
+         * @return
+         * Objects of the following type(s) are allowed in the list
+         * {@link ItemCreationOrUpdateFeedRequest.Message.Itemfeed }
          * 
          */
         public List<ItemCreationOrUpdateFeedRequest.Message.Itemfeed> getItemfeed() {
@@ -1566,634 +1569,634 @@ public class ItemCreationOrUpdateFeedRequest {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="SummaryInfo">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="Item" maxOccurs="unbounded">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="Action" minOccurs="0">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;enumeration value="Create Item"/>
-         *                         &lt;enumeration value="Update Item"/>
-         *                         &lt;enumeration value="Update/Append Image"/>
-         *                         &lt;enumeration value="Replace Image"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="BasicInfo">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="SellerPartNumber">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;minLength value="1"/>
-         *                                   &lt;maxLength value="40"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="Manufacturer">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;minLength value="1"/>
-         *                                   &lt;maxLength value="40"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="ManufacturerPartsNumber">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;minLength value="1"/>
-         *                                   &lt;maxLength value="20"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="UPCOrISBN">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;maxLength value="40"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="RelatedSellerPartNumber" minOccurs="0">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;minLength value="0"/>
-         *                                   &lt;maxLength value="40"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="WebsiteShortTitle">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;minLength value="1"/>
-         *                                   &lt;maxLength value="200"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="BulletDescription" minOccurs="0">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;minLength value="1"/>
-         *                                   &lt;maxLength value="200"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="ProductDescription">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;minLength value="1"/>
-         *                                   &lt;maxLength value="4000"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="ItemDimension">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="ItemLength" minOccurs="0">
-         *                                         &lt;simpleType>
-         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                                             &lt;minInclusive value="0.01"/>
-         *                                             &lt;maxInclusive value="485.99"/>
-         *                                             &lt;fractionDigits value="2"/>
-         *                                           &lt;/restriction>
-         *                                         &lt;/simpleType>
-         *                                       &lt;/element>
-         *                                       &lt;element name="ItemWidth" minOccurs="0">
-         *                                         &lt;simpleType>
-         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                                             &lt;maxInclusive value="485.99"/>
-         *                                             &lt;minInclusive value="0.01"/>
-         *                                             &lt;fractionDigits value="2"/>
-         *                                           &lt;/restriction>
-         *                                         &lt;/simpleType>
-         *                                       &lt;/element>
-         *                                       &lt;element name="ItemHeight" minOccurs="0">
-         *                                         &lt;simpleType>
-         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                                             &lt;minInclusive value="0.01"/>
-         *                                             &lt;maxInclusive value="485.99"/>
-         *                                             &lt;fractionDigits value="2"/>
-         *                                           &lt;/restriction>
-         *                                         &lt;/simpleType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                             &lt;element name="ItemWeight">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                                   &lt;minInclusive value="0.01"/>
-         *                                   &lt;maxInclusive value="99999.00"/>
-         *                                   &lt;fractionDigits value="2"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="PacksOrSets">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *                                   &lt;minInclusive value="1"/>
-         *                                   &lt;maxInclusive value="9999"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="ItemCondition">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;enumeration value="New"/>
-         *                                   &lt;enumeration value="Refurbished"/>
-         *                                   &lt;enumeration value="UsedLikeNew"/>
-         *                                   &lt;enumeration value="UsedVeryGood"/>
-         *                                   &lt;enumeration value="UsedGood"/>
-         *                                   &lt;enumeration value="UsedAcceptable"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="ItemPackage" minOccurs="0">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;enumeration value="Retail"/>
-         *                                   &lt;enumeration value="OEM"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="ShippingRestriction">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;enumeration value="Yes"/>
-         *                                   &lt;enumeration value="No"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="Currency" minOccurs="0">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="MSRP" minOccurs="0">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                                   &lt;minInclusive value="0.01"/>
-         *                                   &lt;maxInclusive value="99999.00"/>
-         *                                   &lt;fractionDigits value="2"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="MAP" minOccurs="0">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                                   &lt;minInclusive value="0.00"/>
-         *                                   &lt;maxInclusive value="99999.00"/>
-         *                                   &lt;fractionDigits value="2"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="CheckoutMAP" minOccurs="0">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;enumeration value="True"/>
-         *                                   &lt;enumeration value="False"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="SellingPrice">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                                   &lt;minInclusive value="0.01"/>
-         *                                   &lt;maxInclusive value="99999.00"/>
-         *                                   &lt;fractionDigits value="2"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="Shipping">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;enumeration value="Default"/>
-         *                                   &lt;enumeration value="Free"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="Inventory">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *                                   &lt;maxInclusive value="999999"/>
-         *                                   &lt;minInclusive value="0"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="ActivationMark" minOccurs="0">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;enumeration value="True"/>
-         *                                   &lt;enumeration value="False"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="ItemImages">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="Image" maxOccurs="7">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;sequence>
-         *                                                 &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *                                                 &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-         *                                               &lt;/sequence>
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                             &lt;element name="ConditionDetails" minOccurs="0">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;minLength value="0"/>
-         *                                   &lt;maxLength value="200"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="UsedItemImages" minOccurs="0">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="Image" maxOccurs="7">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;sequence>
-         *                                                 &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *                                                 &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-         *                                               &lt;/sequence>
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                             &lt;element name="Warning" minOccurs="0">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="CountryOfOrigin" minOccurs="0">
-         *                                         &lt;simpleType>
-         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                             &lt;enumeration value="ABW"/>
-         *                                             &lt;enumeration value="AFG"/>
-         *                                             &lt;enumeration value="AGO"/>
-         *                                             &lt;enumeration value="AIA"/>
-         *                                             &lt;enumeration value="ALB"/>
-         *                                             &lt;enumeration value="AND"/>
-         *                                             &lt;enumeration value="ANT"/>
-         *                                             &lt;enumeration value="ARE"/>
-         *                                             &lt;enumeration value="ARG"/>
-         *                                             &lt;enumeration value="ARM"/>
-         *                                             &lt;enumeration value="ASM"/>
-         *                                             &lt;enumeration value="ATA"/>
-         *                                             &lt;enumeration value="ATF"/>
-         *                                             &lt;enumeration value="ATG"/>
-         *                                             &lt;enumeration value="AUS"/>
-         *                                             &lt;enumeration value="AUT"/>
-         *                                             &lt;enumeration value="AZE"/>
-         *                                             &lt;enumeration value="BDI"/>
-         *                                             &lt;enumeration value="BEL"/>
-         *                                             &lt;enumeration value="BEN"/>
-         *                                             &lt;enumeration value="BFA"/>
-         *                                             &lt;enumeration value="BGD"/>
-         *                                             &lt;enumeration value="BGR"/>
-         *                                             &lt;enumeration value="BHR"/>
-         *                                             &lt;enumeration value="BHS"/>
-         *                                             &lt;enumeration value="BIH"/>
-         *                                             &lt;enumeration value="BLR"/>
-         *                                             &lt;enumeration value="BLZ"/>
-         *                                             &lt;enumeration value="BMU"/>
-         *                                             &lt;enumeration value="BOL"/>
-         *                                             &lt;enumeration value="BRA"/>
-         *                                             &lt;enumeration value="BRB"/>
-         *                                             &lt;enumeration value="BRN"/>
-         *                                             &lt;enumeration value="BTN"/>
-         *                                             &lt;enumeration value="BVT"/>
-         *                                             &lt;enumeration value="BWA"/>
-         *                                             &lt;enumeration value="CAF"/>
-         *                                             &lt;enumeration value="CAN"/>
-         *                                             &lt;enumeration value="CCK"/>
-         *                                             &lt;enumeration value="CHE"/>
-         *                                             &lt;enumeration value="CHL"/>
-         *                                             &lt;enumeration value="CHN"/>
-         *                                             &lt;enumeration value="CIV"/>
-         *                                             &lt;enumeration value="CMR"/>
-         *                                             &lt;enumeration value="COD"/>
-         *                                             &lt;enumeration value="COG"/>
-         *                                             &lt;enumeration value="COK"/>
-         *                                             &lt;enumeration value="COL"/>
-         *                                             &lt;enumeration value="COM"/>
-         *                                             &lt;enumeration value="CPV"/>
-         *                                             &lt;enumeration value="CRI"/>
-         *                                             &lt;enumeration value="CUB"/>
-         *                                             &lt;enumeration value="CXR"/>
-         *                                             &lt;enumeration value="CYM"/>
-         *                                             &lt;enumeration value="CYP"/>
-         *                                             &lt;enumeration value="CZE"/>
-         *                                             &lt;enumeration value="DEU"/>
-         *                                             &lt;enumeration value="DJI"/>
-         *                                             &lt;enumeration value="DMA"/>
-         *                                             &lt;enumeration value="DNK"/>
-         *                                             &lt;enumeration value="DOM"/>
-         *                                             &lt;enumeration value="DZA"/>
-         *                                             &lt;enumeration value="ECU"/>
-         *                                             &lt;enumeration value="EGY"/>
-         *                                             &lt;enumeration value="ERI"/>
-         *                                             &lt;enumeration value="ESH"/>
-         *                                             &lt;enumeration value="ESP"/>
-         *                                             &lt;enumeration value="EST"/>
-         *                                             &lt;enumeration value="ETH"/>
-         *                                             &lt;enumeration value="FIN"/>
-         *                                             &lt;enumeration value="FJI"/>
-         *                                             &lt;enumeration value="FLK"/>
-         *                                             &lt;enumeration value="FRA"/>
-         *                                             &lt;enumeration value="FRO"/>
-         *                                             &lt;enumeration value="FSM"/>
-         *                                             &lt;enumeration value="FXX"/>
-         *                                             &lt;enumeration value="GAB"/>
-         *                                             &lt;enumeration value="GBR"/>
-         *                                             &lt;enumeration value="GEO"/>
-         *                                             &lt;enumeration value="GHA"/>
-         *                                             &lt;enumeration value="GIB"/>
-         *                                             &lt;enumeration value="GIN"/>
-         *                                             &lt;enumeration value="GLP"/>
-         *                                             &lt;enumeration value="GMB"/>
-         *                                             &lt;enumeration value="GNB"/>
-         *                                             &lt;enumeration value="GNQ"/>
-         *                                             &lt;enumeration value="GRC"/>
-         *                                             &lt;enumeration value="GRD"/>
-         *                                             &lt;enumeration value="GRL"/>
-         *                                             &lt;enumeration value="GTM"/>
-         *                                             &lt;enumeration value="GUF"/>
-         *                                             &lt;enumeration value="GUM"/>
-         *                                             &lt;enumeration value="GUY"/>
-         *                                             &lt;enumeration value="HKG"/>
-         *                                             &lt;enumeration value="HMD"/>
-         *                                             &lt;enumeration value="HND"/>
-         *                                             &lt;enumeration value="HRV"/>
-         *                                             &lt;enumeration value="HTI"/>
-         *                                             &lt;enumeration value="HUN"/>
-         *                                             &lt;enumeration value="IDN"/>
-         *                                             &lt;enumeration value="IND"/>
-         *                                             &lt;enumeration value="IOT"/>
-         *                                             &lt;enumeration value="IRL"/>
-         *                                             &lt;enumeration value="IRN"/>
-         *                                             &lt;enumeration value="IRQ"/>
-         *                                             &lt;enumeration value="ISL"/>
-         *                                             &lt;enumeration value="ISR"/>
-         *                                             &lt;enumeration value="ITA"/>
-         *                                             &lt;enumeration value="JAM"/>
-         *                                             &lt;enumeration value="JOR"/>
-         *                                             &lt;enumeration value="JPN"/>
-         *                                             &lt;enumeration value="KAZ"/>
-         *                                             &lt;enumeration value="KEN"/>
-         *                                             &lt;enumeration value="KGZ"/>
-         *                                             &lt;enumeration value="KHM"/>
-         *                                             &lt;enumeration value="KIR"/>
-         *                                             &lt;enumeration value="KNA"/>
-         *                                             &lt;enumeration value="KOR"/>
-         *                                             &lt;enumeration value="KWT"/>
-         *                                             &lt;enumeration value="LAO"/>
-         *                                             &lt;enumeration value="LBN"/>
-         *                                             &lt;enumeration value="LBR"/>
-         *                                             &lt;enumeration value="LBY"/>
-         *                                             &lt;enumeration value="LCA"/>
-         *                                             &lt;enumeration value="LIE"/>
-         *                                             &lt;enumeration value="LKA"/>
-         *                                             &lt;enumeration value="LSO"/>
-         *                                             &lt;enumeration value="LTU"/>
-         *                                             &lt;enumeration value="LUX"/>
-         *                                             &lt;enumeration value="LVA"/>
-         *                                             &lt;enumeration value="MAC"/>
-         *                                             &lt;enumeration value="MAR"/>
-         *                                             &lt;enumeration value="MCO"/>
-         *                                             &lt;enumeration value="MDA"/>
-         *                                             &lt;enumeration value="MDG"/>
-         *                                             &lt;enumeration value="MDV"/>
-         *                                             &lt;enumeration value="MEX"/>
-         *                                             &lt;enumeration value="MHL"/>
-         *                                             &lt;enumeration value="MKD"/>
-         *                                             &lt;enumeration value="MLI"/>
-         *                                             &lt;enumeration value="MLT"/>
-         *                                             &lt;enumeration value="MMR"/>
-         *                                             &lt;enumeration value="MNG"/>
-         *                                             &lt;enumeration value="MNP"/>
-         *                                             &lt;enumeration value="MOZ"/>
-         *                                             &lt;enumeration value="MRT"/>
-         *                                             &lt;enumeration value="MSR"/>
-         *                                             &lt;enumeration value="MTQ"/>
-         *                                             &lt;enumeration value="MUS"/>
-         *                                             &lt;enumeration value="MWI"/>
-         *                                             &lt;enumeration value="MYS"/>
-         *                                             &lt;enumeration value="MYT"/>
-         *                                             &lt;enumeration value="NAM"/>
-         *                                             &lt;enumeration value="NCL"/>
-         *                                             &lt;enumeration value="NER"/>
-         *                                             &lt;enumeration value="NFK"/>
-         *                                             &lt;enumeration value="NGA"/>
-         *                                             &lt;enumeration value="NIC"/>
-         *                                             &lt;enumeration value="NIU"/>
-         *                                             &lt;enumeration value="NLD"/>
-         *                                             &lt;enumeration value="NOR"/>
-         *                                             &lt;enumeration value="NPL"/>
-         *                                             &lt;enumeration value="NRU"/>
-         *                                             &lt;enumeration value="NZL"/>
-         *                                             &lt;enumeration value="OMN"/>
-         *                                             &lt;enumeration value="PAK"/>
-         *                                             &lt;enumeration value="PAN"/>
-         *                                             &lt;enumeration value="PCN"/>
-         *                                             &lt;enumeration value="PER"/>
-         *                                             &lt;enumeration value="PHL"/>
-         *                                             &lt;enumeration value="PLW"/>
-         *                                             &lt;enumeration value="PNG"/>
-         *                                             &lt;enumeration value="POL"/>
-         *                                             &lt;enumeration value="PRI"/>
-         *                                             &lt;enumeration value="PRK"/>
-         *                                             &lt;enumeration value="PRT"/>
-         *                                             &lt;enumeration value="PRY"/>
-         *                                             &lt;enumeration value="PSE"/>
-         *                                             &lt;enumeration value="PYF"/>
-         *                                             &lt;enumeration value="QAT"/>
-         *                                             &lt;enumeration value="REU"/>
-         *                                             &lt;enumeration value="ROM"/>
-         *                                             &lt;enumeration value="RUS"/>
-         *                                             &lt;enumeration value="RWA"/>
-         *                                             &lt;enumeration value="SAU"/>
-         *                                             &lt;enumeration value="SDN"/>
-         *                                             &lt;enumeration value="SEN"/>
-         *                                             &lt;enumeration value="SGP"/>
-         *                                             &lt;enumeration value="SGS"/>
-         *                                             &lt;enumeration value="SHN"/>
-         *                                             &lt;enumeration value="SJM"/>
-         *                                             &lt;enumeration value="SLB"/>
-         *                                             &lt;enumeration value="SLE"/>
-         *                                             &lt;enumeration value="SLV"/>
-         *                                             &lt;enumeration value="SMR"/>
-         *                                             &lt;enumeration value="SOM"/>
-         *                                             &lt;enumeration value="SPM"/>
-         *                                             &lt;enumeration value="STP"/>
-         *                                             &lt;enumeration value="SUR"/>
-         *                                             &lt;enumeration value="SVK"/>
-         *                                             &lt;enumeration value="SVN"/>
-         *                                             &lt;enumeration value="SWE"/>
-         *                                             &lt;enumeration value="SWZ"/>
-         *                                             &lt;enumeration value="SYC"/>
-         *                                             &lt;enumeration value="SYR"/>
-         *                                             &lt;enumeration value="TCA"/>
-         *                                             &lt;enumeration value="TCD"/>
-         *                                             &lt;enumeration value="TGO"/>
-         *                                             &lt;enumeration value="THA"/>
-         *                                             &lt;enumeration value="TJK"/>
-         *                                             &lt;enumeration value="TKL"/>
-         *                                             &lt;enumeration value="TKM"/>
-         *                                             &lt;enumeration value="TMP"/>
-         *                                             &lt;enumeration value="TON"/>
-         *                                             &lt;enumeration value="TTO"/>
-         *                                             &lt;enumeration value="TUN"/>
-         *                                             &lt;enumeration value="TUR"/>
-         *                                             &lt;enumeration value="TUV"/>
-         *                                             &lt;enumeration value="TWN"/>
-         *                                             &lt;enumeration value="TZA"/>
-         *                                             &lt;enumeration value="UGA"/>
-         *                                             &lt;enumeration value="UKR"/>
-         *                                             &lt;enumeration value="UMI"/>
-         *                                             &lt;enumeration value="URY"/>
-         *                                             &lt;enumeration value="USA"/>
-         *                                             &lt;enumeration value="UZB"/>
-         *                                             &lt;enumeration value="VAT"/>
-         *                                             &lt;enumeration value="VCT"/>
-         *                                             &lt;enumeration value="VEN"/>
-         *                                             &lt;enumeration value="VGB"/>
-         *                                             &lt;enumeration value="VIR"/>
-         *                                             &lt;enumeration value="VNM"/>
-         *                                             &lt;enumeration value="VUT"/>
-         *                                             &lt;enumeration value="WLF"/>
-         *                                             &lt;enumeration value="WSM"/>
-         *                                             &lt;enumeration value="YEM"/>
-         *                                             &lt;enumeration value="YUG"/>
-         *                                             &lt;enumeration value="ZAF"/>
-         *                                             &lt;enumeration value="ZMB"/>
-         *                                             &lt;enumeration value="ZWE"/>
-         *                                           &lt;/restriction>
-         *                                         &lt;/simpleType>
-         *                                       &lt;/element>
-         *                                       &lt;element name="OverAge18Verification" minOccurs="0">
-         *                                         &lt;simpleType>
-         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                             &lt;enumeration value="Yes"/>
-         *                                             &lt;enumeration value="No"/>
-         *                                           &lt;/restriction>
-         *                                         &lt;/simpleType>
-         *                                       &lt;/element>
-         *                                       &lt;element name="ChokingHazard" minOccurs="0">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;sequence>
-         *                                                 &lt;element name="SmallParts" minOccurs="0">
-         *                                                   &lt;simpleType>
-         *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                       &lt;enumeration value="Yes"/>
-         *                                                       &lt;enumeration value="No"/>
-         *                                                     &lt;/restriction>
-         *                                                   &lt;/simpleType>
-         *                                                 &lt;/element>
-         *                                                 &lt;element name="SmallBall" minOccurs="0">
-         *                                                   &lt;simpleType>
-         *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                       &lt;enumeration value="Is a small ball"/>
-         *                                                       &lt;enumeration value="Contains a small ball"/>
-         *                                                     &lt;/restriction>
-         *                                                   &lt;/simpleType>
-         *                                                 &lt;/element>
-         *                                                 &lt;element name="Balloons" minOccurs="0">
-         *                                                   &lt;simpleType>
-         *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                       &lt;enumeration value="Yes"/>
-         *                                                       &lt;enumeration value="No"/>
-         *                                                     &lt;/restriction>
-         *                                                   &lt;/simpleType>
-         *                                                 &lt;/element>
-         *                                                 &lt;element name="Marble" minOccurs="0">
-         *                                                   &lt;simpleType>
-         *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                                       &lt;enumeration value="Is a marble"/>
-         *                                                       &lt;enumeration value="Contains a marble"/>
-         *                                                     &lt;/restriction>
-         *                                                   &lt;/simpleType>
-         *                                                 &lt;/element>
-         *                                               &lt;/sequence>
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="SubCategoryProperty">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;any/>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="SummaryInfo"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="Item" maxOccurs="unbounded"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="Action" minOccurs="0"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;enumeration value="Create Item"/&gt;
+         *                         &lt;enumeration value="Update Item"/&gt;
+         *                         &lt;enumeration value="Update/Append Image"/&gt;
+         *                         &lt;enumeration value="Replace Image"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="BasicInfo"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence&gt;
+         *                             &lt;element name="SellerPartNumber"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;minLength value="1"/&gt;
+         *                                   &lt;maxLength value="40"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="Manufacturer"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;minLength value="1"/&gt;
+         *                                   &lt;maxLength value="40"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="ManufacturerPartsNumber"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;minLength value="1"/&gt;
+         *                                   &lt;maxLength value="20"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="UPCOrISBN"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;maxLength value="40"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="RelatedSellerPartNumber" minOccurs="0"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;minLength value="0"/&gt;
+         *                                   &lt;maxLength value="40"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="WebsiteShortTitle"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;minLength value="1"/&gt;
+         *                                   &lt;maxLength value="200"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="BulletDescription" minOccurs="0"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;minLength value="1"/&gt;
+         *                                   &lt;maxLength value="200"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="ProductDescription"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;minLength value="1"/&gt;
+         *                                   &lt;maxLength value="4000"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="ItemDimension"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="ItemLength" minOccurs="0"&gt;
+         *                                         &lt;simpleType&gt;
+         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                                             &lt;minInclusive value="0.01"/&gt;
+         *                                             &lt;maxInclusive value="485.99"/&gt;
+         *                                             &lt;fractionDigits value="2"/&gt;
+         *                                           &lt;/restriction&gt;
+         *                                         &lt;/simpleType&gt;
+         *                                       &lt;/element&gt;
+         *                                       &lt;element name="ItemWidth" minOccurs="0"&gt;
+         *                                         &lt;simpleType&gt;
+         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                                             &lt;maxInclusive value="485.99"/&gt;
+         *                                             &lt;minInclusive value="0.01"/&gt;
+         *                                             &lt;fractionDigits value="2"/&gt;
+         *                                           &lt;/restriction&gt;
+         *                                         &lt;/simpleType&gt;
+         *                                       &lt;/element&gt;
+         *                                       &lt;element name="ItemHeight" minOccurs="0"&gt;
+         *                                         &lt;simpleType&gt;
+         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                                             &lt;minInclusive value="0.01"/&gt;
+         *                                             &lt;maxInclusive value="485.99"/&gt;
+         *                                             &lt;fractionDigits value="2"/&gt;
+         *                                           &lt;/restriction&gt;
+         *                                         &lt;/simpleType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="ItemWeight"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                                   &lt;minInclusive value="0.01"/&gt;
+         *                                   &lt;maxInclusive value="99999.00"/&gt;
+         *                                   &lt;fractionDigits value="2"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="PacksOrSets"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *                                   &lt;minInclusive value="1"/&gt;
+         *                                   &lt;maxInclusive value="9999"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="ItemCondition"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;enumeration value="New"/&gt;
+         *                                   &lt;enumeration value="Refurbished"/&gt;
+         *                                   &lt;enumeration value="UsedLikeNew"/&gt;
+         *                                   &lt;enumeration value="UsedVeryGood"/&gt;
+         *                                   &lt;enumeration value="UsedGood"/&gt;
+         *                                   &lt;enumeration value="UsedAcceptable"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="ItemPackage" minOccurs="0"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;enumeration value="Retail"/&gt;
+         *                                   &lt;enumeration value="OEM"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="ShippingRestriction"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;enumeration value="Yes"/&gt;
+         *                                   &lt;enumeration value="No"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="Currency" minOccurs="0"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="MSRP" minOccurs="0"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                                   &lt;minInclusive value="0.01"/&gt;
+         *                                   &lt;maxInclusive value="99999.00"/&gt;
+         *                                   &lt;fractionDigits value="2"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="MAP" minOccurs="0"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                                   &lt;minInclusive value="0.00"/&gt;
+         *                                   &lt;maxInclusive value="99999.00"/&gt;
+         *                                   &lt;fractionDigits value="2"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="CheckoutMAP" minOccurs="0"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;enumeration value="True"/&gt;
+         *                                   &lt;enumeration value="False"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="SellingPrice"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                                   &lt;minInclusive value="0.01"/&gt;
+         *                                   &lt;maxInclusive value="99999.00"/&gt;
+         *                                   &lt;fractionDigits value="2"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="Shipping"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;enumeration value="Default"/&gt;
+         *                                   &lt;enumeration value="Free"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="Inventory"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *                                   &lt;maxInclusive value="999999"/&gt;
+         *                                   &lt;minInclusive value="0"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="ActivationMark" minOccurs="0"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;enumeration value="True"/&gt;
+         *                                   &lt;enumeration value="False"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="ItemImages"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="Image" maxOccurs="7"&gt;
+         *                                         &lt;complexType&gt;
+         *                                           &lt;complexContent&gt;
+         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                               &lt;sequence&gt;
+         *                                                 &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+         *                                                 &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+         *                                               &lt;/sequence&gt;
+         *                                             &lt;/restriction&gt;
+         *                                           &lt;/complexContent&gt;
+         *                                         &lt;/complexType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="ConditionDetails" minOccurs="0"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;minLength value="0"/&gt;
+         *                                   &lt;maxLength value="200"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="UsedItemImages" minOccurs="0"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="Image" maxOccurs="7"&gt;
+         *                                         &lt;complexType&gt;
+         *                                           &lt;complexContent&gt;
+         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                               &lt;sequence&gt;
+         *                                                 &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+         *                                                 &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+         *                                               &lt;/sequence&gt;
+         *                                             &lt;/restriction&gt;
+         *                                           &lt;/complexContent&gt;
+         *                                         &lt;/complexType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="Warning" minOccurs="0"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="CountryOfOrigin" minOccurs="0"&gt;
+         *                                         &lt;simpleType&gt;
+         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                             &lt;enumeration value="ABW"/&gt;
+         *                                             &lt;enumeration value="AFG"/&gt;
+         *                                             &lt;enumeration value="AGO"/&gt;
+         *                                             &lt;enumeration value="AIA"/&gt;
+         *                                             &lt;enumeration value="ALB"/&gt;
+         *                                             &lt;enumeration value="AND"/&gt;
+         *                                             &lt;enumeration value="ANT"/&gt;
+         *                                             &lt;enumeration value="ARE"/&gt;
+         *                                             &lt;enumeration value="ARG"/&gt;
+         *                                             &lt;enumeration value="ARM"/&gt;
+         *                                             &lt;enumeration value="ASM"/&gt;
+         *                                             &lt;enumeration value="ATA"/&gt;
+         *                                             &lt;enumeration value="ATF"/&gt;
+         *                                             &lt;enumeration value="ATG"/&gt;
+         *                                             &lt;enumeration value="AUS"/&gt;
+         *                                             &lt;enumeration value="AUT"/&gt;
+         *                                             &lt;enumeration value="AZE"/&gt;
+         *                                             &lt;enumeration value="BDI"/&gt;
+         *                                             &lt;enumeration value="BEL"/&gt;
+         *                                             &lt;enumeration value="BEN"/&gt;
+         *                                             &lt;enumeration value="BFA"/&gt;
+         *                                             &lt;enumeration value="BGD"/&gt;
+         *                                             &lt;enumeration value="BGR"/&gt;
+         *                                             &lt;enumeration value="BHR"/&gt;
+         *                                             &lt;enumeration value="BHS"/&gt;
+         *                                             &lt;enumeration value="BIH"/&gt;
+         *                                             &lt;enumeration value="BLR"/&gt;
+         *                                             &lt;enumeration value="BLZ"/&gt;
+         *                                             &lt;enumeration value="BMU"/&gt;
+         *                                             &lt;enumeration value="BOL"/&gt;
+         *                                             &lt;enumeration value="BRA"/&gt;
+         *                                             &lt;enumeration value="BRB"/&gt;
+         *                                             &lt;enumeration value="BRN"/&gt;
+         *                                             &lt;enumeration value="BTN"/&gt;
+         *                                             &lt;enumeration value="BVT"/&gt;
+         *                                             &lt;enumeration value="BWA"/&gt;
+         *                                             &lt;enumeration value="CAF"/&gt;
+         *                                             &lt;enumeration value="CAN"/&gt;
+         *                                             &lt;enumeration value="CCK"/&gt;
+         *                                             &lt;enumeration value="CHE"/&gt;
+         *                                             &lt;enumeration value="CHL"/&gt;
+         *                                             &lt;enumeration value="CHN"/&gt;
+         *                                             &lt;enumeration value="CIV"/&gt;
+         *                                             &lt;enumeration value="CMR"/&gt;
+         *                                             &lt;enumeration value="COD"/&gt;
+         *                                             &lt;enumeration value="COG"/&gt;
+         *                                             &lt;enumeration value="COK"/&gt;
+         *                                             &lt;enumeration value="COL"/&gt;
+         *                                             &lt;enumeration value="COM"/&gt;
+         *                                             &lt;enumeration value="CPV"/&gt;
+         *                                             &lt;enumeration value="CRI"/&gt;
+         *                                             &lt;enumeration value="CUB"/&gt;
+         *                                             &lt;enumeration value="CXR"/&gt;
+         *                                             &lt;enumeration value="CYM"/&gt;
+         *                                             &lt;enumeration value="CYP"/&gt;
+         *                                             &lt;enumeration value="CZE"/&gt;
+         *                                             &lt;enumeration value="DEU"/&gt;
+         *                                             &lt;enumeration value="DJI"/&gt;
+         *                                             &lt;enumeration value="DMA"/&gt;
+         *                                             &lt;enumeration value="DNK"/&gt;
+         *                                             &lt;enumeration value="DOM"/&gt;
+         *                                             &lt;enumeration value="DZA"/&gt;
+         *                                             &lt;enumeration value="ECU"/&gt;
+         *                                             &lt;enumeration value="EGY"/&gt;
+         *                                             &lt;enumeration value="ERI"/&gt;
+         *                                             &lt;enumeration value="ESH"/&gt;
+         *                                             &lt;enumeration value="ESP"/&gt;
+         *                                             &lt;enumeration value="EST"/&gt;
+         *                                             &lt;enumeration value="ETH"/&gt;
+         *                                             &lt;enumeration value="FIN"/&gt;
+         *                                             &lt;enumeration value="FJI"/&gt;
+         *                                             &lt;enumeration value="FLK"/&gt;
+         *                                             &lt;enumeration value="FRA"/&gt;
+         *                                             &lt;enumeration value="FRO"/&gt;
+         *                                             &lt;enumeration value="FSM"/&gt;
+         *                                             &lt;enumeration value="FXX"/&gt;
+         *                                             &lt;enumeration value="GAB"/&gt;
+         *                                             &lt;enumeration value="GBR"/&gt;
+         *                                             &lt;enumeration value="GEO"/&gt;
+         *                                             &lt;enumeration value="GHA"/&gt;
+         *                                             &lt;enumeration value="GIB"/&gt;
+         *                                             &lt;enumeration value="GIN"/&gt;
+         *                                             &lt;enumeration value="GLP"/&gt;
+         *                                             &lt;enumeration value="GMB"/&gt;
+         *                                             &lt;enumeration value="GNB"/&gt;
+         *                                             &lt;enumeration value="GNQ"/&gt;
+         *                                             &lt;enumeration value="GRC"/&gt;
+         *                                             &lt;enumeration value="GRD"/&gt;
+         *                                             &lt;enumeration value="GRL"/&gt;
+         *                                             &lt;enumeration value="GTM"/&gt;
+         *                                             &lt;enumeration value="GUF"/&gt;
+         *                                             &lt;enumeration value="GUM"/&gt;
+         *                                             &lt;enumeration value="GUY"/&gt;
+         *                                             &lt;enumeration value="HKG"/&gt;
+         *                                             &lt;enumeration value="HMD"/&gt;
+         *                                             &lt;enumeration value="HND"/&gt;
+         *                                             &lt;enumeration value="HRV"/&gt;
+         *                                             &lt;enumeration value="HTI"/&gt;
+         *                                             &lt;enumeration value="HUN"/&gt;
+         *                                             &lt;enumeration value="IDN"/&gt;
+         *                                             &lt;enumeration value="IND"/&gt;
+         *                                             &lt;enumeration value="IOT"/&gt;
+         *                                             &lt;enumeration value="IRL"/&gt;
+         *                                             &lt;enumeration value="IRN"/&gt;
+         *                                             &lt;enumeration value="IRQ"/&gt;
+         *                                             &lt;enumeration value="ISL"/&gt;
+         *                                             &lt;enumeration value="ISR"/&gt;
+         *                                             &lt;enumeration value="ITA"/&gt;
+         *                                             &lt;enumeration value="JAM"/&gt;
+         *                                             &lt;enumeration value="JOR"/&gt;
+         *                                             &lt;enumeration value="JPN"/&gt;
+         *                                             &lt;enumeration value="KAZ"/&gt;
+         *                                             &lt;enumeration value="KEN"/&gt;
+         *                                             &lt;enumeration value="KGZ"/&gt;
+         *                                             &lt;enumeration value="KHM"/&gt;
+         *                                             &lt;enumeration value="KIR"/&gt;
+         *                                             &lt;enumeration value="KNA"/&gt;
+         *                                             &lt;enumeration value="KOR"/&gt;
+         *                                             &lt;enumeration value="KWT"/&gt;
+         *                                             &lt;enumeration value="LAO"/&gt;
+         *                                             &lt;enumeration value="LBN"/&gt;
+         *                                             &lt;enumeration value="LBR"/&gt;
+         *                                             &lt;enumeration value="LBY"/&gt;
+         *                                             &lt;enumeration value="LCA"/&gt;
+         *                                             &lt;enumeration value="LIE"/&gt;
+         *                                             &lt;enumeration value="LKA"/&gt;
+         *                                             &lt;enumeration value="LSO"/&gt;
+         *                                             &lt;enumeration value="LTU"/&gt;
+         *                                             &lt;enumeration value="LUX"/&gt;
+         *                                             &lt;enumeration value="LVA"/&gt;
+         *                                             &lt;enumeration value="MAC"/&gt;
+         *                                             &lt;enumeration value="MAR"/&gt;
+         *                                             &lt;enumeration value="MCO"/&gt;
+         *                                             &lt;enumeration value="MDA"/&gt;
+         *                                             &lt;enumeration value="MDG"/&gt;
+         *                                             &lt;enumeration value="MDV"/&gt;
+         *                                             &lt;enumeration value="MEX"/&gt;
+         *                                             &lt;enumeration value="MHL"/&gt;
+         *                                             &lt;enumeration value="MKD"/&gt;
+         *                                             &lt;enumeration value="MLI"/&gt;
+         *                                             &lt;enumeration value="MLT"/&gt;
+         *                                             &lt;enumeration value="MMR"/&gt;
+         *                                             &lt;enumeration value="MNG"/&gt;
+         *                                             &lt;enumeration value="MNP"/&gt;
+         *                                             &lt;enumeration value="MOZ"/&gt;
+         *                                             &lt;enumeration value="MRT"/&gt;
+         *                                             &lt;enumeration value="MSR"/&gt;
+         *                                             &lt;enumeration value="MTQ"/&gt;
+         *                                             &lt;enumeration value="MUS"/&gt;
+         *                                             &lt;enumeration value="MWI"/&gt;
+         *                                             &lt;enumeration value="MYS"/&gt;
+         *                                             &lt;enumeration value="MYT"/&gt;
+         *                                             &lt;enumeration value="NAM"/&gt;
+         *                                             &lt;enumeration value="NCL"/&gt;
+         *                                             &lt;enumeration value="NER"/&gt;
+         *                                             &lt;enumeration value="NFK"/&gt;
+         *                                             &lt;enumeration value="NGA"/&gt;
+         *                                             &lt;enumeration value="NIC"/&gt;
+         *                                             &lt;enumeration value="NIU"/&gt;
+         *                                             &lt;enumeration value="NLD"/&gt;
+         *                                             &lt;enumeration value="NOR"/&gt;
+         *                                             &lt;enumeration value="NPL"/&gt;
+         *                                             &lt;enumeration value="NRU"/&gt;
+         *                                             &lt;enumeration value="NZL"/&gt;
+         *                                             &lt;enumeration value="OMN"/&gt;
+         *                                             &lt;enumeration value="PAK"/&gt;
+         *                                             &lt;enumeration value="PAN"/&gt;
+         *                                             &lt;enumeration value="PCN"/&gt;
+         *                                             &lt;enumeration value="PER"/&gt;
+         *                                             &lt;enumeration value="PHL"/&gt;
+         *                                             &lt;enumeration value="PLW"/&gt;
+         *                                             &lt;enumeration value="PNG"/&gt;
+         *                                             &lt;enumeration value="POL"/&gt;
+         *                                             &lt;enumeration value="PRI"/&gt;
+         *                                             &lt;enumeration value="PRK"/&gt;
+         *                                             &lt;enumeration value="PRT"/&gt;
+         *                                             &lt;enumeration value="PRY"/&gt;
+         *                                             &lt;enumeration value="PSE"/&gt;
+         *                                             &lt;enumeration value="PYF"/&gt;
+         *                                             &lt;enumeration value="QAT"/&gt;
+         *                                             &lt;enumeration value="REU"/&gt;
+         *                                             &lt;enumeration value="ROM"/&gt;
+         *                                             &lt;enumeration value="RUS"/&gt;
+         *                                             &lt;enumeration value="RWA"/&gt;
+         *                                             &lt;enumeration value="SAU"/&gt;
+         *                                             &lt;enumeration value="SDN"/&gt;
+         *                                             &lt;enumeration value="SEN"/&gt;
+         *                                             &lt;enumeration value="SGP"/&gt;
+         *                                             &lt;enumeration value="SGS"/&gt;
+         *                                             &lt;enumeration value="SHN"/&gt;
+         *                                             &lt;enumeration value="SJM"/&gt;
+         *                                             &lt;enumeration value="SLB"/&gt;
+         *                                             &lt;enumeration value="SLE"/&gt;
+         *                                             &lt;enumeration value="SLV"/&gt;
+         *                                             &lt;enumeration value="SMR"/&gt;
+         *                                             &lt;enumeration value="SOM"/&gt;
+         *                                             &lt;enumeration value="SPM"/&gt;
+         *                                             &lt;enumeration value="STP"/&gt;
+         *                                             &lt;enumeration value="SUR"/&gt;
+         *                                             &lt;enumeration value="SVK"/&gt;
+         *                                             &lt;enumeration value="SVN"/&gt;
+         *                                             &lt;enumeration value="SWE"/&gt;
+         *                                             &lt;enumeration value="SWZ"/&gt;
+         *                                             &lt;enumeration value="SYC"/&gt;
+         *                                             &lt;enumeration value="SYR"/&gt;
+         *                                             &lt;enumeration value="TCA"/&gt;
+         *                                             &lt;enumeration value="TCD"/&gt;
+         *                                             &lt;enumeration value="TGO"/&gt;
+         *                                             &lt;enumeration value="THA"/&gt;
+         *                                             &lt;enumeration value="TJK"/&gt;
+         *                                             &lt;enumeration value="TKL"/&gt;
+         *                                             &lt;enumeration value="TKM"/&gt;
+         *                                             &lt;enumeration value="TMP"/&gt;
+         *                                             &lt;enumeration value="TON"/&gt;
+         *                                             &lt;enumeration value="TTO"/&gt;
+         *                                             &lt;enumeration value="TUN"/&gt;
+         *                                             &lt;enumeration value="TUR"/&gt;
+         *                                             &lt;enumeration value="TUV"/&gt;
+         *                                             &lt;enumeration value="TWN"/&gt;
+         *                                             &lt;enumeration value="TZA"/&gt;
+         *                                             &lt;enumeration value="UGA"/&gt;
+         *                                             &lt;enumeration value="UKR"/&gt;
+         *                                             &lt;enumeration value="UMI"/&gt;
+         *                                             &lt;enumeration value="URY"/&gt;
+         *                                             &lt;enumeration value="USA"/&gt;
+         *                                             &lt;enumeration value="UZB"/&gt;
+         *                                             &lt;enumeration value="VAT"/&gt;
+         *                                             &lt;enumeration value="VCT"/&gt;
+         *                                             &lt;enumeration value="VEN"/&gt;
+         *                                             &lt;enumeration value="VGB"/&gt;
+         *                                             &lt;enumeration value="VIR"/&gt;
+         *                                             &lt;enumeration value="VNM"/&gt;
+         *                                             &lt;enumeration value="VUT"/&gt;
+         *                                             &lt;enumeration value="WLF"/&gt;
+         *                                             &lt;enumeration value="WSM"/&gt;
+         *                                             &lt;enumeration value="YEM"/&gt;
+         *                                             &lt;enumeration value="YUG"/&gt;
+         *                                             &lt;enumeration value="ZAF"/&gt;
+         *                                             &lt;enumeration value="ZMB"/&gt;
+         *                                             &lt;enumeration value="ZWE"/&gt;
+         *                                           &lt;/restriction&gt;
+         *                                         &lt;/simpleType&gt;
+         *                                       &lt;/element&gt;
+         *                                       &lt;element name="OverAge18Verification" minOccurs="0"&gt;
+         *                                         &lt;simpleType&gt;
+         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                             &lt;enumeration value="Yes"/&gt;
+         *                                             &lt;enumeration value="No"/&gt;
+         *                                           &lt;/restriction&gt;
+         *                                         &lt;/simpleType&gt;
+         *                                       &lt;/element&gt;
+         *                                       &lt;element name="ChokingHazard" minOccurs="0"&gt;
+         *                                         &lt;complexType&gt;
+         *                                           &lt;complexContent&gt;
+         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                               &lt;sequence&gt;
+         *                                                 &lt;element name="SmallParts" minOccurs="0"&gt;
+         *                                                   &lt;simpleType&gt;
+         *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                       &lt;enumeration value="Yes"/&gt;
+         *                                                       &lt;enumeration value="No"/&gt;
+         *                                                     &lt;/restriction&gt;
+         *                                                   &lt;/simpleType&gt;
+         *                                                 &lt;/element&gt;
+         *                                                 &lt;element name="SmallBall" minOccurs="0"&gt;
+         *                                                   &lt;simpleType&gt;
+         *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                       &lt;enumeration value="Is a small ball"/&gt;
+         *                                                       &lt;enumeration value="Contains a small ball"/&gt;
+         *                                                     &lt;/restriction&gt;
+         *                                                   &lt;/simpleType&gt;
+         *                                                 &lt;/element&gt;
+         *                                                 &lt;element name="Balloons" minOccurs="0"&gt;
+         *                                                   &lt;simpleType&gt;
+         *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                       &lt;enumeration value="Yes"/&gt;
+         *                                                       &lt;enumeration value="No"/&gt;
+         *                                                     &lt;/restriction&gt;
+         *                                                   &lt;/simpleType&gt;
+         *                                                 &lt;/element&gt;
+         *                                                 &lt;element name="Marble" minOccurs="0"&gt;
+         *                                                   &lt;simpleType&gt;
+         *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                                       &lt;enumeration value="Is a marble"/&gt;
+         *                                                       &lt;enumeration value="Contains a marble"/&gt;
+         *                                                     &lt;/restriction&gt;
+         *                                                   &lt;/simpleType&gt;
+         *                                                 &lt;/element&gt;
+         *                                               &lt;/sequence&gt;
+         *                                             &lt;/restriction&gt;
+         *                                           &lt;/complexContent&gt;
+         *                                         &lt;/complexType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="SubCategoryProperty"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence&gt;
+         *                             &lt;any/&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -2254,6 +2257,9 @@ public class ItemCreationOrUpdateFeedRequest {
              * Objects of the following type(s) are allowed in the list
              * {@link ItemCreationOrUpdateFeedRequest.Message.Itemfeed.Item }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link ItemCreationOrUpdateFeedRequest.Message.Itemfeed.Item }
              * 
              */
             public List<ItemCreationOrUpdateFeedRequest.Message.Itemfeed.Item> getItem() {
@@ -2270,613 +2276,613 @@ public class ItemCreationOrUpdateFeedRequest {
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="Action" minOccurs="0">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;enumeration value="Create Item"/>
-             *               &lt;enumeration value="Update Item"/>
-             *               &lt;enumeration value="Update/Append Image"/>
-             *               &lt;enumeration value="Replace Image"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="BasicInfo">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;element name="SellerPartNumber">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;minLength value="1"/>
-             *                         &lt;maxLength value="40"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="Manufacturer">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;minLength value="1"/>
-             *                         &lt;maxLength value="40"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="ManufacturerPartsNumber">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;minLength value="1"/>
-             *                         &lt;maxLength value="20"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="UPCOrISBN">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;maxLength value="40"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="RelatedSellerPartNumber" minOccurs="0">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;minLength value="0"/>
-             *                         &lt;maxLength value="40"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="WebsiteShortTitle">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;minLength value="1"/>
-             *                         &lt;maxLength value="200"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="BulletDescription" minOccurs="0">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;minLength value="1"/>
-             *                         &lt;maxLength value="200"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="ProductDescription">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;minLength value="1"/>
-             *                         &lt;maxLength value="4000"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="ItemDimension">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="ItemLength" minOccurs="0">
-             *                               &lt;simpleType>
-             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *                                   &lt;minInclusive value="0.01"/>
-             *                                   &lt;maxInclusive value="485.99"/>
-             *                                   &lt;fractionDigits value="2"/>
-             *                                 &lt;/restriction>
-             *                               &lt;/simpleType>
-             *                             &lt;/element>
-             *                             &lt;element name="ItemWidth" minOccurs="0">
-             *                               &lt;simpleType>
-             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *                                   &lt;maxInclusive value="485.99"/>
-             *                                   &lt;minInclusive value="0.01"/>
-             *                                   &lt;fractionDigits value="2"/>
-             *                                 &lt;/restriction>
-             *                               &lt;/simpleType>
-             *                             &lt;/element>
-             *                             &lt;element name="ItemHeight" minOccurs="0">
-             *                               &lt;simpleType>
-             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *                                   &lt;minInclusive value="0.01"/>
-             *                                   &lt;maxInclusive value="485.99"/>
-             *                                   &lt;fractionDigits value="2"/>
-             *                                 &lt;/restriction>
-             *                               &lt;/simpleType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                   &lt;element name="ItemWeight">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *                         &lt;minInclusive value="0.01"/>
-             *                         &lt;maxInclusive value="99999.00"/>
-             *                         &lt;fractionDigits value="2"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="PacksOrSets">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-             *                         &lt;minInclusive value="1"/>
-             *                         &lt;maxInclusive value="9999"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="ItemCondition">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;enumeration value="New"/>
-             *                         &lt;enumeration value="Refurbished"/>
-             *                         &lt;enumeration value="UsedLikeNew"/>
-             *                         &lt;enumeration value="UsedVeryGood"/>
-             *                         &lt;enumeration value="UsedGood"/>
-             *                         &lt;enumeration value="UsedAcceptable"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="ItemPackage" minOccurs="0">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;enumeration value="Retail"/>
-             *                         &lt;enumeration value="OEM"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="ShippingRestriction">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;enumeration value="Yes"/>
-             *                         &lt;enumeration value="No"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="Currency" minOccurs="0">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="MSRP" minOccurs="0">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *                         &lt;minInclusive value="0.01"/>
-             *                         &lt;maxInclusive value="99999.00"/>
-             *                         &lt;fractionDigits value="2"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="MAP" minOccurs="0">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *                         &lt;minInclusive value="0.00"/>
-             *                         &lt;maxInclusive value="99999.00"/>
-             *                         &lt;fractionDigits value="2"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="CheckoutMAP" minOccurs="0">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;enumeration value="True"/>
-             *                         &lt;enumeration value="False"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="SellingPrice">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *                         &lt;minInclusive value="0.01"/>
-             *                         &lt;maxInclusive value="99999.00"/>
-             *                         &lt;fractionDigits value="2"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="Shipping">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;enumeration value="Default"/>
-             *                         &lt;enumeration value="Free"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="Inventory">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-             *                         &lt;maxInclusive value="999999"/>
-             *                         &lt;minInclusive value="0"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="ActivationMark" minOccurs="0">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;enumeration value="True"/>
-             *                         &lt;enumeration value="False"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="ItemImages">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="Image" maxOccurs="7">
-             *                               &lt;complexType>
-             *                                 &lt;complexContent>
-             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                     &lt;sequence>
-             *                                       &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-             *                                       &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-             *                                     &lt;/sequence>
-             *                                   &lt;/restriction>
-             *                                 &lt;/complexContent>
-             *                               &lt;/complexType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                   &lt;element name="ConditionDetails" minOccurs="0">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;minLength value="0"/>
-             *                         &lt;maxLength value="200"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="UsedItemImages" minOccurs="0">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="Image" maxOccurs="7">
-             *                               &lt;complexType>
-             *                                 &lt;complexContent>
-             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                     &lt;sequence>
-             *                                       &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-             *                                       &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-             *                                     &lt;/sequence>
-             *                                   &lt;/restriction>
-             *                                 &lt;/complexContent>
-             *                               &lt;/complexType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                   &lt;element name="Warning" minOccurs="0">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="CountryOfOrigin" minOccurs="0">
-             *                               &lt;simpleType>
-             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                   &lt;enumeration value="ABW"/>
-             *                                   &lt;enumeration value="AFG"/>
-             *                                   &lt;enumeration value="AGO"/>
-             *                                   &lt;enumeration value="AIA"/>
-             *                                   &lt;enumeration value="ALB"/>
-             *                                   &lt;enumeration value="AND"/>
-             *                                   &lt;enumeration value="ANT"/>
-             *                                   &lt;enumeration value="ARE"/>
-             *                                   &lt;enumeration value="ARG"/>
-             *                                   &lt;enumeration value="ARM"/>
-             *                                   &lt;enumeration value="ASM"/>
-             *                                   &lt;enumeration value="ATA"/>
-             *                                   &lt;enumeration value="ATF"/>
-             *                                   &lt;enumeration value="ATG"/>
-             *                                   &lt;enumeration value="AUS"/>
-             *                                   &lt;enumeration value="AUT"/>
-             *                                   &lt;enumeration value="AZE"/>
-             *                                   &lt;enumeration value="BDI"/>
-             *                                   &lt;enumeration value="BEL"/>
-             *                                   &lt;enumeration value="BEN"/>
-             *                                   &lt;enumeration value="BFA"/>
-             *                                   &lt;enumeration value="BGD"/>
-             *                                   &lt;enumeration value="BGR"/>
-             *                                   &lt;enumeration value="BHR"/>
-             *                                   &lt;enumeration value="BHS"/>
-             *                                   &lt;enumeration value="BIH"/>
-             *                                   &lt;enumeration value="BLR"/>
-             *                                   &lt;enumeration value="BLZ"/>
-             *                                   &lt;enumeration value="BMU"/>
-             *                                   &lt;enumeration value="BOL"/>
-             *                                   &lt;enumeration value="BRA"/>
-             *                                   &lt;enumeration value="BRB"/>
-             *                                   &lt;enumeration value="BRN"/>
-             *                                   &lt;enumeration value="BTN"/>
-             *                                   &lt;enumeration value="BVT"/>
-             *                                   &lt;enumeration value="BWA"/>
-             *                                   &lt;enumeration value="CAF"/>
-             *                                   &lt;enumeration value="CAN"/>
-             *                                   &lt;enumeration value="CCK"/>
-             *                                   &lt;enumeration value="CHE"/>
-             *                                   &lt;enumeration value="CHL"/>
-             *                                   &lt;enumeration value="CHN"/>
-             *                                   &lt;enumeration value="CIV"/>
-             *                                   &lt;enumeration value="CMR"/>
-             *                                   &lt;enumeration value="COD"/>
-             *                                   &lt;enumeration value="COG"/>
-             *                                   &lt;enumeration value="COK"/>
-             *                                   &lt;enumeration value="COL"/>
-             *                                   &lt;enumeration value="COM"/>
-             *                                   &lt;enumeration value="CPV"/>
-             *                                   &lt;enumeration value="CRI"/>
-             *                                   &lt;enumeration value="CUB"/>
-             *                                   &lt;enumeration value="CXR"/>
-             *                                   &lt;enumeration value="CYM"/>
-             *                                   &lt;enumeration value="CYP"/>
-             *                                   &lt;enumeration value="CZE"/>
-             *                                   &lt;enumeration value="DEU"/>
-             *                                   &lt;enumeration value="DJI"/>
-             *                                   &lt;enumeration value="DMA"/>
-             *                                   &lt;enumeration value="DNK"/>
-             *                                   &lt;enumeration value="DOM"/>
-             *                                   &lt;enumeration value="DZA"/>
-             *                                   &lt;enumeration value="ECU"/>
-             *                                   &lt;enumeration value="EGY"/>
-             *                                   &lt;enumeration value="ERI"/>
-             *                                   &lt;enumeration value="ESH"/>
-             *                                   &lt;enumeration value="ESP"/>
-             *                                   &lt;enumeration value="EST"/>
-             *                                   &lt;enumeration value="ETH"/>
-             *                                   &lt;enumeration value="FIN"/>
-             *                                   &lt;enumeration value="FJI"/>
-             *                                   &lt;enumeration value="FLK"/>
-             *                                   &lt;enumeration value="FRA"/>
-             *                                   &lt;enumeration value="FRO"/>
-             *                                   &lt;enumeration value="FSM"/>
-             *                                   &lt;enumeration value="FXX"/>
-             *                                   &lt;enumeration value="GAB"/>
-             *                                   &lt;enumeration value="GBR"/>
-             *                                   &lt;enumeration value="GEO"/>
-             *                                   &lt;enumeration value="GHA"/>
-             *                                   &lt;enumeration value="GIB"/>
-             *                                   &lt;enumeration value="GIN"/>
-             *                                   &lt;enumeration value="GLP"/>
-             *                                   &lt;enumeration value="GMB"/>
-             *                                   &lt;enumeration value="GNB"/>
-             *                                   &lt;enumeration value="GNQ"/>
-             *                                   &lt;enumeration value="GRC"/>
-             *                                   &lt;enumeration value="GRD"/>
-             *                                   &lt;enumeration value="GRL"/>
-             *                                   &lt;enumeration value="GTM"/>
-             *                                   &lt;enumeration value="GUF"/>
-             *                                   &lt;enumeration value="GUM"/>
-             *                                   &lt;enumeration value="GUY"/>
-             *                                   &lt;enumeration value="HKG"/>
-             *                                   &lt;enumeration value="HMD"/>
-             *                                   &lt;enumeration value="HND"/>
-             *                                   &lt;enumeration value="HRV"/>
-             *                                   &lt;enumeration value="HTI"/>
-             *                                   &lt;enumeration value="HUN"/>
-             *                                   &lt;enumeration value="IDN"/>
-             *                                   &lt;enumeration value="IND"/>
-             *                                   &lt;enumeration value="IOT"/>
-             *                                   &lt;enumeration value="IRL"/>
-             *                                   &lt;enumeration value="IRN"/>
-             *                                   &lt;enumeration value="IRQ"/>
-             *                                   &lt;enumeration value="ISL"/>
-             *                                   &lt;enumeration value="ISR"/>
-             *                                   &lt;enumeration value="ITA"/>
-             *                                   &lt;enumeration value="JAM"/>
-             *                                   &lt;enumeration value="JOR"/>
-             *                                   &lt;enumeration value="JPN"/>
-             *                                   &lt;enumeration value="KAZ"/>
-             *                                   &lt;enumeration value="KEN"/>
-             *                                   &lt;enumeration value="KGZ"/>
-             *                                   &lt;enumeration value="KHM"/>
-             *                                   &lt;enumeration value="KIR"/>
-             *                                   &lt;enumeration value="KNA"/>
-             *                                   &lt;enumeration value="KOR"/>
-             *                                   &lt;enumeration value="KWT"/>
-             *                                   &lt;enumeration value="LAO"/>
-             *                                   &lt;enumeration value="LBN"/>
-             *                                   &lt;enumeration value="LBR"/>
-             *                                   &lt;enumeration value="LBY"/>
-             *                                   &lt;enumeration value="LCA"/>
-             *                                   &lt;enumeration value="LIE"/>
-             *                                   &lt;enumeration value="LKA"/>
-             *                                   &lt;enumeration value="LSO"/>
-             *                                   &lt;enumeration value="LTU"/>
-             *                                   &lt;enumeration value="LUX"/>
-             *                                   &lt;enumeration value="LVA"/>
-             *                                   &lt;enumeration value="MAC"/>
-             *                                   &lt;enumeration value="MAR"/>
-             *                                   &lt;enumeration value="MCO"/>
-             *                                   &lt;enumeration value="MDA"/>
-             *                                   &lt;enumeration value="MDG"/>
-             *                                   &lt;enumeration value="MDV"/>
-             *                                   &lt;enumeration value="MEX"/>
-             *                                   &lt;enumeration value="MHL"/>
-             *                                   &lt;enumeration value="MKD"/>
-             *                                   &lt;enumeration value="MLI"/>
-             *                                   &lt;enumeration value="MLT"/>
-             *                                   &lt;enumeration value="MMR"/>
-             *                                   &lt;enumeration value="MNG"/>
-             *                                   &lt;enumeration value="MNP"/>
-             *                                   &lt;enumeration value="MOZ"/>
-             *                                   &lt;enumeration value="MRT"/>
-             *                                   &lt;enumeration value="MSR"/>
-             *                                   &lt;enumeration value="MTQ"/>
-             *                                   &lt;enumeration value="MUS"/>
-             *                                   &lt;enumeration value="MWI"/>
-             *                                   &lt;enumeration value="MYS"/>
-             *                                   &lt;enumeration value="MYT"/>
-             *                                   &lt;enumeration value="NAM"/>
-             *                                   &lt;enumeration value="NCL"/>
-             *                                   &lt;enumeration value="NER"/>
-             *                                   &lt;enumeration value="NFK"/>
-             *                                   &lt;enumeration value="NGA"/>
-             *                                   &lt;enumeration value="NIC"/>
-             *                                   &lt;enumeration value="NIU"/>
-             *                                   &lt;enumeration value="NLD"/>
-             *                                   &lt;enumeration value="NOR"/>
-             *                                   &lt;enumeration value="NPL"/>
-             *                                   &lt;enumeration value="NRU"/>
-             *                                   &lt;enumeration value="NZL"/>
-             *                                   &lt;enumeration value="OMN"/>
-             *                                   &lt;enumeration value="PAK"/>
-             *                                   &lt;enumeration value="PAN"/>
-             *                                   &lt;enumeration value="PCN"/>
-             *                                   &lt;enumeration value="PER"/>
-             *                                   &lt;enumeration value="PHL"/>
-             *                                   &lt;enumeration value="PLW"/>
-             *                                   &lt;enumeration value="PNG"/>
-             *                                   &lt;enumeration value="POL"/>
-             *                                   &lt;enumeration value="PRI"/>
-             *                                   &lt;enumeration value="PRK"/>
-             *                                   &lt;enumeration value="PRT"/>
-             *                                   &lt;enumeration value="PRY"/>
-             *                                   &lt;enumeration value="PSE"/>
-             *                                   &lt;enumeration value="PYF"/>
-             *                                   &lt;enumeration value="QAT"/>
-             *                                   &lt;enumeration value="REU"/>
-             *                                   &lt;enumeration value="ROM"/>
-             *                                   &lt;enumeration value="RUS"/>
-             *                                   &lt;enumeration value="RWA"/>
-             *                                   &lt;enumeration value="SAU"/>
-             *                                   &lt;enumeration value="SDN"/>
-             *                                   &lt;enumeration value="SEN"/>
-             *                                   &lt;enumeration value="SGP"/>
-             *                                   &lt;enumeration value="SGS"/>
-             *                                   &lt;enumeration value="SHN"/>
-             *                                   &lt;enumeration value="SJM"/>
-             *                                   &lt;enumeration value="SLB"/>
-             *                                   &lt;enumeration value="SLE"/>
-             *                                   &lt;enumeration value="SLV"/>
-             *                                   &lt;enumeration value="SMR"/>
-             *                                   &lt;enumeration value="SOM"/>
-             *                                   &lt;enumeration value="SPM"/>
-             *                                   &lt;enumeration value="STP"/>
-             *                                   &lt;enumeration value="SUR"/>
-             *                                   &lt;enumeration value="SVK"/>
-             *                                   &lt;enumeration value="SVN"/>
-             *                                   &lt;enumeration value="SWE"/>
-             *                                   &lt;enumeration value="SWZ"/>
-             *                                   &lt;enumeration value="SYC"/>
-             *                                   &lt;enumeration value="SYR"/>
-             *                                   &lt;enumeration value="TCA"/>
-             *                                   &lt;enumeration value="TCD"/>
-             *                                   &lt;enumeration value="TGO"/>
-             *                                   &lt;enumeration value="THA"/>
-             *                                   &lt;enumeration value="TJK"/>
-             *                                   &lt;enumeration value="TKL"/>
-             *                                   &lt;enumeration value="TKM"/>
-             *                                   &lt;enumeration value="TMP"/>
-             *                                   &lt;enumeration value="TON"/>
-             *                                   &lt;enumeration value="TTO"/>
-             *                                   &lt;enumeration value="TUN"/>
-             *                                   &lt;enumeration value="TUR"/>
-             *                                   &lt;enumeration value="TUV"/>
-             *                                   &lt;enumeration value="TWN"/>
-             *                                   &lt;enumeration value="TZA"/>
-             *                                   &lt;enumeration value="UGA"/>
-             *                                   &lt;enumeration value="UKR"/>
-             *                                   &lt;enumeration value="UMI"/>
-             *                                   &lt;enumeration value="URY"/>
-             *                                   &lt;enumeration value="USA"/>
-             *                                   &lt;enumeration value="UZB"/>
-             *                                   &lt;enumeration value="VAT"/>
-             *                                   &lt;enumeration value="VCT"/>
-             *                                   &lt;enumeration value="VEN"/>
-             *                                   &lt;enumeration value="VGB"/>
-             *                                   &lt;enumeration value="VIR"/>
-             *                                   &lt;enumeration value="VNM"/>
-             *                                   &lt;enumeration value="VUT"/>
-             *                                   &lt;enumeration value="WLF"/>
-             *                                   &lt;enumeration value="WSM"/>
-             *                                   &lt;enumeration value="YEM"/>
-             *                                   &lt;enumeration value="YUG"/>
-             *                                   &lt;enumeration value="ZAF"/>
-             *                                   &lt;enumeration value="ZMB"/>
-             *                                   &lt;enumeration value="ZWE"/>
-             *                                 &lt;/restriction>
-             *                               &lt;/simpleType>
-             *                             &lt;/element>
-             *                             &lt;element name="OverAge18Verification" minOccurs="0">
-             *                               &lt;simpleType>
-             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                   &lt;enumeration value="Yes"/>
-             *                                   &lt;enumeration value="No"/>
-             *                                 &lt;/restriction>
-             *                               &lt;/simpleType>
-             *                             &lt;/element>
-             *                             &lt;element name="ChokingHazard" minOccurs="0">
-             *                               &lt;complexType>
-             *                                 &lt;complexContent>
-             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                                     &lt;sequence>
-             *                                       &lt;element name="SmallParts" minOccurs="0">
-             *                                         &lt;simpleType>
-             *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                             &lt;enumeration value="Yes"/>
-             *                                             &lt;enumeration value="No"/>
-             *                                           &lt;/restriction>
-             *                                         &lt;/simpleType>
-             *                                       &lt;/element>
-             *                                       &lt;element name="SmallBall" minOccurs="0">
-             *                                         &lt;simpleType>
-             *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                             &lt;enumeration value="Is a small ball"/>
-             *                                             &lt;enumeration value="Contains a small ball"/>
-             *                                           &lt;/restriction>
-             *                                         &lt;/simpleType>
-             *                                       &lt;/element>
-             *                                       &lt;element name="Balloons" minOccurs="0">
-             *                                         &lt;simpleType>
-             *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                             &lt;enumeration value="Yes"/>
-             *                                             &lt;enumeration value="No"/>
-             *                                           &lt;/restriction>
-             *                                         &lt;/simpleType>
-             *                                       &lt;/element>
-             *                                       &lt;element name="Marble" minOccurs="0">
-             *                                         &lt;simpleType>
-             *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                                             &lt;enumeration value="Is a marble"/>
-             *                                             &lt;enumeration value="Contains a marble"/>
-             *                                           &lt;/restriction>
-             *                                         &lt;/simpleType>
-             *                                       &lt;/element>
-             *                                     &lt;/sequence>
-             *                                   &lt;/restriction>
-             *                                 &lt;/complexContent>
-             *                               &lt;/complexType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="SubCategoryProperty">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;any/>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="Action" minOccurs="0"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;enumeration value="Create Item"/&gt;
+             *               &lt;enumeration value="Update Item"/&gt;
+             *               &lt;enumeration value="Update/Append Image"/&gt;
+             *               &lt;enumeration value="Replace Image"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="BasicInfo"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence&gt;
+             *                   &lt;element name="SellerPartNumber"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;minLength value="1"/&gt;
+             *                         &lt;maxLength value="40"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="Manufacturer"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;minLength value="1"/&gt;
+             *                         &lt;maxLength value="40"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="ManufacturerPartsNumber"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;minLength value="1"/&gt;
+             *                         &lt;maxLength value="20"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="UPCOrISBN"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;maxLength value="40"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="RelatedSellerPartNumber" minOccurs="0"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;minLength value="0"/&gt;
+             *                         &lt;maxLength value="40"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="WebsiteShortTitle"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;minLength value="1"/&gt;
+             *                         &lt;maxLength value="200"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="BulletDescription" minOccurs="0"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;minLength value="1"/&gt;
+             *                         &lt;maxLength value="200"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="ProductDescription"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;minLength value="1"/&gt;
+             *                         &lt;maxLength value="4000"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="ItemDimension"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="ItemLength" minOccurs="0"&gt;
+             *                               &lt;simpleType&gt;
+             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *                                   &lt;minInclusive value="0.01"/&gt;
+             *                                   &lt;maxInclusive value="485.99"/&gt;
+             *                                   &lt;fractionDigits value="2"/&gt;
+             *                                 &lt;/restriction&gt;
+             *                               &lt;/simpleType&gt;
+             *                             &lt;/element&gt;
+             *                             &lt;element name="ItemWidth" minOccurs="0"&gt;
+             *                               &lt;simpleType&gt;
+             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *                                   &lt;maxInclusive value="485.99"/&gt;
+             *                                   &lt;minInclusive value="0.01"/&gt;
+             *                                   &lt;fractionDigits value="2"/&gt;
+             *                                 &lt;/restriction&gt;
+             *                               &lt;/simpleType&gt;
+             *                             &lt;/element&gt;
+             *                             &lt;element name="ItemHeight" minOccurs="0"&gt;
+             *                               &lt;simpleType&gt;
+             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *                                   &lt;minInclusive value="0.01"/&gt;
+             *                                   &lt;maxInclusive value="485.99"/&gt;
+             *                                   &lt;fractionDigits value="2"/&gt;
+             *                                 &lt;/restriction&gt;
+             *                               &lt;/simpleType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="ItemWeight"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *                         &lt;minInclusive value="0.01"/&gt;
+             *                         &lt;maxInclusive value="99999.00"/&gt;
+             *                         &lt;fractionDigits value="2"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="PacksOrSets"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+             *                         &lt;minInclusive value="1"/&gt;
+             *                         &lt;maxInclusive value="9999"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="ItemCondition"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;enumeration value="New"/&gt;
+             *                         &lt;enumeration value="Refurbished"/&gt;
+             *                         &lt;enumeration value="UsedLikeNew"/&gt;
+             *                         &lt;enumeration value="UsedVeryGood"/&gt;
+             *                         &lt;enumeration value="UsedGood"/&gt;
+             *                         &lt;enumeration value="UsedAcceptable"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="ItemPackage" minOccurs="0"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;enumeration value="Retail"/&gt;
+             *                         &lt;enumeration value="OEM"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="ShippingRestriction"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;enumeration value="Yes"/&gt;
+             *                         &lt;enumeration value="No"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="Currency" minOccurs="0"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="MSRP" minOccurs="0"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *                         &lt;minInclusive value="0.01"/&gt;
+             *                         &lt;maxInclusive value="99999.00"/&gt;
+             *                         &lt;fractionDigits value="2"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="MAP" minOccurs="0"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *                         &lt;minInclusive value="0.00"/&gt;
+             *                         &lt;maxInclusive value="99999.00"/&gt;
+             *                         &lt;fractionDigits value="2"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="CheckoutMAP" minOccurs="0"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;enumeration value="True"/&gt;
+             *                         &lt;enumeration value="False"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="SellingPrice"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *                         &lt;minInclusive value="0.01"/&gt;
+             *                         &lt;maxInclusive value="99999.00"/&gt;
+             *                         &lt;fractionDigits value="2"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="Shipping"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;enumeration value="Default"/&gt;
+             *                         &lt;enumeration value="Free"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="Inventory"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+             *                         &lt;maxInclusive value="999999"/&gt;
+             *                         &lt;minInclusive value="0"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="ActivationMark" minOccurs="0"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;enumeration value="True"/&gt;
+             *                         &lt;enumeration value="False"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="ItemImages"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="Image" maxOccurs="7"&gt;
+             *                               &lt;complexType&gt;
+             *                                 &lt;complexContent&gt;
+             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                     &lt;sequence&gt;
+             *                                       &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+             *                                       &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+             *                                     &lt;/sequence&gt;
+             *                                   &lt;/restriction&gt;
+             *                                 &lt;/complexContent&gt;
+             *                               &lt;/complexType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="ConditionDetails" minOccurs="0"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;minLength value="0"/&gt;
+             *                         &lt;maxLength value="200"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="UsedItemImages" minOccurs="0"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="Image" maxOccurs="7"&gt;
+             *                               &lt;complexType&gt;
+             *                                 &lt;complexContent&gt;
+             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                     &lt;sequence&gt;
+             *                                       &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+             *                                       &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+             *                                     &lt;/sequence&gt;
+             *                                   &lt;/restriction&gt;
+             *                                 &lt;/complexContent&gt;
+             *                               &lt;/complexType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="Warning" minOccurs="0"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="CountryOfOrigin" minOccurs="0"&gt;
+             *                               &lt;simpleType&gt;
+             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                   &lt;enumeration value="ABW"/&gt;
+             *                                   &lt;enumeration value="AFG"/&gt;
+             *                                   &lt;enumeration value="AGO"/&gt;
+             *                                   &lt;enumeration value="AIA"/&gt;
+             *                                   &lt;enumeration value="ALB"/&gt;
+             *                                   &lt;enumeration value="AND"/&gt;
+             *                                   &lt;enumeration value="ANT"/&gt;
+             *                                   &lt;enumeration value="ARE"/&gt;
+             *                                   &lt;enumeration value="ARG"/&gt;
+             *                                   &lt;enumeration value="ARM"/&gt;
+             *                                   &lt;enumeration value="ASM"/&gt;
+             *                                   &lt;enumeration value="ATA"/&gt;
+             *                                   &lt;enumeration value="ATF"/&gt;
+             *                                   &lt;enumeration value="ATG"/&gt;
+             *                                   &lt;enumeration value="AUS"/&gt;
+             *                                   &lt;enumeration value="AUT"/&gt;
+             *                                   &lt;enumeration value="AZE"/&gt;
+             *                                   &lt;enumeration value="BDI"/&gt;
+             *                                   &lt;enumeration value="BEL"/&gt;
+             *                                   &lt;enumeration value="BEN"/&gt;
+             *                                   &lt;enumeration value="BFA"/&gt;
+             *                                   &lt;enumeration value="BGD"/&gt;
+             *                                   &lt;enumeration value="BGR"/&gt;
+             *                                   &lt;enumeration value="BHR"/&gt;
+             *                                   &lt;enumeration value="BHS"/&gt;
+             *                                   &lt;enumeration value="BIH"/&gt;
+             *                                   &lt;enumeration value="BLR"/&gt;
+             *                                   &lt;enumeration value="BLZ"/&gt;
+             *                                   &lt;enumeration value="BMU"/&gt;
+             *                                   &lt;enumeration value="BOL"/&gt;
+             *                                   &lt;enumeration value="BRA"/&gt;
+             *                                   &lt;enumeration value="BRB"/&gt;
+             *                                   &lt;enumeration value="BRN"/&gt;
+             *                                   &lt;enumeration value="BTN"/&gt;
+             *                                   &lt;enumeration value="BVT"/&gt;
+             *                                   &lt;enumeration value="BWA"/&gt;
+             *                                   &lt;enumeration value="CAF"/&gt;
+             *                                   &lt;enumeration value="CAN"/&gt;
+             *                                   &lt;enumeration value="CCK"/&gt;
+             *                                   &lt;enumeration value="CHE"/&gt;
+             *                                   &lt;enumeration value="CHL"/&gt;
+             *                                   &lt;enumeration value="CHN"/&gt;
+             *                                   &lt;enumeration value="CIV"/&gt;
+             *                                   &lt;enumeration value="CMR"/&gt;
+             *                                   &lt;enumeration value="COD"/&gt;
+             *                                   &lt;enumeration value="COG"/&gt;
+             *                                   &lt;enumeration value="COK"/&gt;
+             *                                   &lt;enumeration value="COL"/&gt;
+             *                                   &lt;enumeration value="COM"/&gt;
+             *                                   &lt;enumeration value="CPV"/&gt;
+             *                                   &lt;enumeration value="CRI"/&gt;
+             *                                   &lt;enumeration value="CUB"/&gt;
+             *                                   &lt;enumeration value="CXR"/&gt;
+             *                                   &lt;enumeration value="CYM"/&gt;
+             *                                   &lt;enumeration value="CYP"/&gt;
+             *                                   &lt;enumeration value="CZE"/&gt;
+             *                                   &lt;enumeration value="DEU"/&gt;
+             *                                   &lt;enumeration value="DJI"/&gt;
+             *                                   &lt;enumeration value="DMA"/&gt;
+             *                                   &lt;enumeration value="DNK"/&gt;
+             *                                   &lt;enumeration value="DOM"/&gt;
+             *                                   &lt;enumeration value="DZA"/&gt;
+             *                                   &lt;enumeration value="ECU"/&gt;
+             *                                   &lt;enumeration value="EGY"/&gt;
+             *                                   &lt;enumeration value="ERI"/&gt;
+             *                                   &lt;enumeration value="ESH"/&gt;
+             *                                   &lt;enumeration value="ESP"/&gt;
+             *                                   &lt;enumeration value="EST"/&gt;
+             *                                   &lt;enumeration value="ETH"/&gt;
+             *                                   &lt;enumeration value="FIN"/&gt;
+             *                                   &lt;enumeration value="FJI"/&gt;
+             *                                   &lt;enumeration value="FLK"/&gt;
+             *                                   &lt;enumeration value="FRA"/&gt;
+             *                                   &lt;enumeration value="FRO"/&gt;
+             *                                   &lt;enumeration value="FSM"/&gt;
+             *                                   &lt;enumeration value="FXX"/&gt;
+             *                                   &lt;enumeration value="GAB"/&gt;
+             *                                   &lt;enumeration value="GBR"/&gt;
+             *                                   &lt;enumeration value="GEO"/&gt;
+             *                                   &lt;enumeration value="GHA"/&gt;
+             *                                   &lt;enumeration value="GIB"/&gt;
+             *                                   &lt;enumeration value="GIN"/&gt;
+             *                                   &lt;enumeration value="GLP"/&gt;
+             *                                   &lt;enumeration value="GMB"/&gt;
+             *                                   &lt;enumeration value="GNB"/&gt;
+             *                                   &lt;enumeration value="GNQ"/&gt;
+             *                                   &lt;enumeration value="GRC"/&gt;
+             *                                   &lt;enumeration value="GRD"/&gt;
+             *                                   &lt;enumeration value="GRL"/&gt;
+             *                                   &lt;enumeration value="GTM"/&gt;
+             *                                   &lt;enumeration value="GUF"/&gt;
+             *                                   &lt;enumeration value="GUM"/&gt;
+             *                                   &lt;enumeration value="GUY"/&gt;
+             *                                   &lt;enumeration value="HKG"/&gt;
+             *                                   &lt;enumeration value="HMD"/&gt;
+             *                                   &lt;enumeration value="HND"/&gt;
+             *                                   &lt;enumeration value="HRV"/&gt;
+             *                                   &lt;enumeration value="HTI"/&gt;
+             *                                   &lt;enumeration value="HUN"/&gt;
+             *                                   &lt;enumeration value="IDN"/&gt;
+             *                                   &lt;enumeration value="IND"/&gt;
+             *                                   &lt;enumeration value="IOT"/&gt;
+             *                                   &lt;enumeration value="IRL"/&gt;
+             *                                   &lt;enumeration value="IRN"/&gt;
+             *                                   &lt;enumeration value="IRQ"/&gt;
+             *                                   &lt;enumeration value="ISL"/&gt;
+             *                                   &lt;enumeration value="ISR"/&gt;
+             *                                   &lt;enumeration value="ITA"/&gt;
+             *                                   &lt;enumeration value="JAM"/&gt;
+             *                                   &lt;enumeration value="JOR"/&gt;
+             *                                   &lt;enumeration value="JPN"/&gt;
+             *                                   &lt;enumeration value="KAZ"/&gt;
+             *                                   &lt;enumeration value="KEN"/&gt;
+             *                                   &lt;enumeration value="KGZ"/&gt;
+             *                                   &lt;enumeration value="KHM"/&gt;
+             *                                   &lt;enumeration value="KIR"/&gt;
+             *                                   &lt;enumeration value="KNA"/&gt;
+             *                                   &lt;enumeration value="KOR"/&gt;
+             *                                   &lt;enumeration value="KWT"/&gt;
+             *                                   &lt;enumeration value="LAO"/&gt;
+             *                                   &lt;enumeration value="LBN"/&gt;
+             *                                   &lt;enumeration value="LBR"/&gt;
+             *                                   &lt;enumeration value="LBY"/&gt;
+             *                                   &lt;enumeration value="LCA"/&gt;
+             *                                   &lt;enumeration value="LIE"/&gt;
+             *                                   &lt;enumeration value="LKA"/&gt;
+             *                                   &lt;enumeration value="LSO"/&gt;
+             *                                   &lt;enumeration value="LTU"/&gt;
+             *                                   &lt;enumeration value="LUX"/&gt;
+             *                                   &lt;enumeration value="LVA"/&gt;
+             *                                   &lt;enumeration value="MAC"/&gt;
+             *                                   &lt;enumeration value="MAR"/&gt;
+             *                                   &lt;enumeration value="MCO"/&gt;
+             *                                   &lt;enumeration value="MDA"/&gt;
+             *                                   &lt;enumeration value="MDG"/&gt;
+             *                                   &lt;enumeration value="MDV"/&gt;
+             *                                   &lt;enumeration value="MEX"/&gt;
+             *                                   &lt;enumeration value="MHL"/&gt;
+             *                                   &lt;enumeration value="MKD"/&gt;
+             *                                   &lt;enumeration value="MLI"/&gt;
+             *                                   &lt;enumeration value="MLT"/&gt;
+             *                                   &lt;enumeration value="MMR"/&gt;
+             *                                   &lt;enumeration value="MNG"/&gt;
+             *                                   &lt;enumeration value="MNP"/&gt;
+             *                                   &lt;enumeration value="MOZ"/&gt;
+             *                                   &lt;enumeration value="MRT"/&gt;
+             *                                   &lt;enumeration value="MSR"/&gt;
+             *                                   &lt;enumeration value="MTQ"/&gt;
+             *                                   &lt;enumeration value="MUS"/&gt;
+             *                                   &lt;enumeration value="MWI"/&gt;
+             *                                   &lt;enumeration value="MYS"/&gt;
+             *                                   &lt;enumeration value="MYT"/&gt;
+             *                                   &lt;enumeration value="NAM"/&gt;
+             *                                   &lt;enumeration value="NCL"/&gt;
+             *                                   &lt;enumeration value="NER"/&gt;
+             *                                   &lt;enumeration value="NFK"/&gt;
+             *                                   &lt;enumeration value="NGA"/&gt;
+             *                                   &lt;enumeration value="NIC"/&gt;
+             *                                   &lt;enumeration value="NIU"/&gt;
+             *                                   &lt;enumeration value="NLD"/&gt;
+             *                                   &lt;enumeration value="NOR"/&gt;
+             *                                   &lt;enumeration value="NPL"/&gt;
+             *                                   &lt;enumeration value="NRU"/&gt;
+             *                                   &lt;enumeration value="NZL"/&gt;
+             *                                   &lt;enumeration value="OMN"/&gt;
+             *                                   &lt;enumeration value="PAK"/&gt;
+             *                                   &lt;enumeration value="PAN"/&gt;
+             *                                   &lt;enumeration value="PCN"/&gt;
+             *                                   &lt;enumeration value="PER"/&gt;
+             *                                   &lt;enumeration value="PHL"/&gt;
+             *                                   &lt;enumeration value="PLW"/&gt;
+             *                                   &lt;enumeration value="PNG"/&gt;
+             *                                   &lt;enumeration value="POL"/&gt;
+             *                                   &lt;enumeration value="PRI"/&gt;
+             *                                   &lt;enumeration value="PRK"/&gt;
+             *                                   &lt;enumeration value="PRT"/&gt;
+             *                                   &lt;enumeration value="PRY"/&gt;
+             *                                   &lt;enumeration value="PSE"/&gt;
+             *                                   &lt;enumeration value="PYF"/&gt;
+             *                                   &lt;enumeration value="QAT"/&gt;
+             *                                   &lt;enumeration value="REU"/&gt;
+             *                                   &lt;enumeration value="ROM"/&gt;
+             *                                   &lt;enumeration value="RUS"/&gt;
+             *                                   &lt;enumeration value="RWA"/&gt;
+             *                                   &lt;enumeration value="SAU"/&gt;
+             *                                   &lt;enumeration value="SDN"/&gt;
+             *                                   &lt;enumeration value="SEN"/&gt;
+             *                                   &lt;enumeration value="SGP"/&gt;
+             *                                   &lt;enumeration value="SGS"/&gt;
+             *                                   &lt;enumeration value="SHN"/&gt;
+             *                                   &lt;enumeration value="SJM"/&gt;
+             *                                   &lt;enumeration value="SLB"/&gt;
+             *                                   &lt;enumeration value="SLE"/&gt;
+             *                                   &lt;enumeration value="SLV"/&gt;
+             *                                   &lt;enumeration value="SMR"/&gt;
+             *                                   &lt;enumeration value="SOM"/&gt;
+             *                                   &lt;enumeration value="SPM"/&gt;
+             *                                   &lt;enumeration value="STP"/&gt;
+             *                                   &lt;enumeration value="SUR"/&gt;
+             *                                   &lt;enumeration value="SVK"/&gt;
+             *                                   &lt;enumeration value="SVN"/&gt;
+             *                                   &lt;enumeration value="SWE"/&gt;
+             *                                   &lt;enumeration value="SWZ"/&gt;
+             *                                   &lt;enumeration value="SYC"/&gt;
+             *                                   &lt;enumeration value="SYR"/&gt;
+             *                                   &lt;enumeration value="TCA"/&gt;
+             *                                   &lt;enumeration value="TCD"/&gt;
+             *                                   &lt;enumeration value="TGO"/&gt;
+             *                                   &lt;enumeration value="THA"/&gt;
+             *                                   &lt;enumeration value="TJK"/&gt;
+             *                                   &lt;enumeration value="TKL"/&gt;
+             *                                   &lt;enumeration value="TKM"/&gt;
+             *                                   &lt;enumeration value="TMP"/&gt;
+             *                                   &lt;enumeration value="TON"/&gt;
+             *                                   &lt;enumeration value="TTO"/&gt;
+             *                                   &lt;enumeration value="TUN"/&gt;
+             *                                   &lt;enumeration value="TUR"/&gt;
+             *                                   &lt;enumeration value="TUV"/&gt;
+             *                                   &lt;enumeration value="TWN"/&gt;
+             *                                   &lt;enumeration value="TZA"/&gt;
+             *                                   &lt;enumeration value="UGA"/&gt;
+             *                                   &lt;enumeration value="UKR"/&gt;
+             *                                   &lt;enumeration value="UMI"/&gt;
+             *                                   &lt;enumeration value="URY"/&gt;
+             *                                   &lt;enumeration value="USA"/&gt;
+             *                                   &lt;enumeration value="UZB"/&gt;
+             *                                   &lt;enumeration value="VAT"/&gt;
+             *                                   &lt;enumeration value="VCT"/&gt;
+             *                                   &lt;enumeration value="VEN"/&gt;
+             *                                   &lt;enumeration value="VGB"/&gt;
+             *                                   &lt;enumeration value="VIR"/&gt;
+             *                                   &lt;enumeration value="VNM"/&gt;
+             *                                   &lt;enumeration value="VUT"/&gt;
+             *                                   &lt;enumeration value="WLF"/&gt;
+             *                                   &lt;enumeration value="WSM"/&gt;
+             *                                   &lt;enumeration value="YEM"/&gt;
+             *                                   &lt;enumeration value="YUG"/&gt;
+             *                                   &lt;enumeration value="ZAF"/&gt;
+             *                                   &lt;enumeration value="ZMB"/&gt;
+             *                                   &lt;enumeration value="ZWE"/&gt;
+             *                                 &lt;/restriction&gt;
+             *                               &lt;/simpleType&gt;
+             *                             &lt;/element&gt;
+             *                             &lt;element name="OverAge18Verification" minOccurs="0"&gt;
+             *                               &lt;simpleType&gt;
+             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                   &lt;enumeration value="Yes"/&gt;
+             *                                   &lt;enumeration value="No"/&gt;
+             *                                 &lt;/restriction&gt;
+             *                               &lt;/simpleType&gt;
+             *                             &lt;/element&gt;
+             *                             &lt;element name="ChokingHazard" minOccurs="0"&gt;
+             *                               &lt;complexType&gt;
+             *                                 &lt;complexContent&gt;
+             *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                                     &lt;sequence&gt;
+             *                                       &lt;element name="SmallParts" minOccurs="0"&gt;
+             *                                         &lt;simpleType&gt;
+             *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                             &lt;enumeration value="Yes"/&gt;
+             *                                             &lt;enumeration value="No"/&gt;
+             *                                           &lt;/restriction&gt;
+             *                                         &lt;/simpleType&gt;
+             *                                       &lt;/element&gt;
+             *                                       &lt;element name="SmallBall" minOccurs="0"&gt;
+             *                                         &lt;simpleType&gt;
+             *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                             &lt;enumeration value="Is a small ball"/&gt;
+             *                                             &lt;enumeration value="Contains a small ball"/&gt;
+             *                                           &lt;/restriction&gt;
+             *                                         &lt;/simpleType&gt;
+             *                                       &lt;/element&gt;
+             *                                       &lt;element name="Balloons" minOccurs="0"&gt;
+             *                                         &lt;simpleType&gt;
+             *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                             &lt;enumeration value="Yes"/&gt;
+             *                                             &lt;enumeration value="No"/&gt;
+             *                                           &lt;/restriction&gt;
+             *                                         &lt;/simpleType&gt;
+             *                                       &lt;/element&gt;
+             *                                       &lt;element name="Marble" minOccurs="0"&gt;
+             *                                         &lt;simpleType&gt;
+             *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                                             &lt;enumeration value="Is a marble"/&gt;
+             *                                             &lt;enumeration value="Contains a marble"/&gt;
+             *                                           &lt;/restriction&gt;
+             *                                         &lt;/simpleType&gt;
+             *                                       &lt;/element&gt;
+             *                                     &lt;/sequence&gt;
+             *                                   &lt;/restriction&gt;
+             *                                 &lt;/complexContent&gt;
+             *                               &lt;/complexType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="SubCategoryProperty"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence&gt;
+             *                   &lt;any/&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -2975,582 +2981,582 @@ public class ItemCreationOrUpdateFeedRequest {
                  * <p>The following schema fragment specifies the expected content contained within this class.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence>
-                 *         &lt;element name="SellerPartNumber">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;minLength value="1"/>
-                 *               &lt;maxLength value="40"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="Manufacturer">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;minLength value="1"/>
-                 *               &lt;maxLength value="40"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="ManufacturerPartsNumber">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;minLength value="1"/>
-                 *               &lt;maxLength value="20"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="UPCOrISBN">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;maxLength value="40"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="RelatedSellerPartNumber" minOccurs="0">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;minLength value="0"/>
-                 *               &lt;maxLength value="40"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="WebsiteShortTitle">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;minLength value="1"/>
-                 *               &lt;maxLength value="200"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="BulletDescription" minOccurs="0">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;minLength value="1"/>
-                 *               &lt;maxLength value="200"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="ProductDescription">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;minLength value="1"/>
-                 *               &lt;maxLength value="4000"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="ItemDimension">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="ItemLength" minOccurs="0">
-                 *                     &lt;simpleType>
-                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                 *                         &lt;minInclusive value="0.01"/>
-                 *                         &lt;maxInclusive value="485.99"/>
-                 *                         &lt;fractionDigits value="2"/>
-                 *                       &lt;/restriction>
-                 *                     &lt;/simpleType>
-                 *                   &lt;/element>
-                 *                   &lt;element name="ItemWidth" minOccurs="0">
-                 *                     &lt;simpleType>
-                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                 *                         &lt;maxInclusive value="485.99"/>
-                 *                         &lt;minInclusive value="0.01"/>
-                 *                         &lt;fractionDigits value="2"/>
-                 *                       &lt;/restriction>
-                 *                     &lt;/simpleType>
-                 *                   &lt;/element>
-                 *                   &lt;element name="ItemHeight" minOccurs="0">
-                 *                     &lt;simpleType>
-                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                 *                         &lt;minInclusive value="0.01"/>
-                 *                         &lt;maxInclusive value="485.99"/>
-                 *                         &lt;fractionDigits value="2"/>
-                 *                       &lt;/restriction>
-                 *                     &lt;/simpleType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *         &lt;element name="ItemWeight">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                 *               &lt;minInclusive value="0.01"/>
-                 *               &lt;maxInclusive value="99999.00"/>
-                 *               &lt;fractionDigits value="2"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="PacksOrSets">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-                 *               &lt;minInclusive value="1"/>
-                 *               &lt;maxInclusive value="9999"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="ItemCondition">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;enumeration value="New"/>
-                 *               &lt;enumeration value="Refurbished"/>
-                 *               &lt;enumeration value="UsedLikeNew"/>
-                 *               &lt;enumeration value="UsedVeryGood"/>
-                 *               &lt;enumeration value="UsedGood"/>
-                 *               &lt;enumeration value="UsedAcceptable"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="ItemPackage" minOccurs="0">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;enumeration value="Retail"/>
-                 *               &lt;enumeration value="OEM"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="ShippingRestriction">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;enumeration value="Yes"/>
-                 *               &lt;enumeration value="No"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="Currency" minOccurs="0">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="MSRP" minOccurs="0">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                 *               &lt;minInclusive value="0.01"/>
-                 *               &lt;maxInclusive value="99999.00"/>
-                 *               &lt;fractionDigits value="2"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="MAP" minOccurs="0">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                 *               &lt;minInclusive value="0.00"/>
-                 *               &lt;maxInclusive value="99999.00"/>
-                 *               &lt;fractionDigits value="2"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="CheckoutMAP" minOccurs="0">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;enumeration value="True"/>
-                 *               &lt;enumeration value="False"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="SellingPrice">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                 *               &lt;minInclusive value="0.01"/>
-                 *               &lt;maxInclusive value="99999.00"/>
-                 *               &lt;fractionDigits value="2"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="Shipping">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;enumeration value="Default"/>
-                 *               &lt;enumeration value="Free"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="Inventory">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-                 *               &lt;maxInclusive value="999999"/>
-                 *               &lt;minInclusive value="0"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="ActivationMark" minOccurs="0">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;enumeration value="True"/>
-                 *               &lt;enumeration value="False"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="ItemImages">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="Image" maxOccurs="7">
-                 *                     &lt;complexType>
-                 *                       &lt;complexContent>
-                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                           &lt;sequence>
-                 *                             &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-                 *                             &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-                 *                           &lt;/sequence>
-                 *                         &lt;/restriction>
-                 *                       &lt;/complexContent>
-                 *                     &lt;/complexType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *         &lt;element name="ConditionDetails" minOccurs="0">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;minLength value="0"/>
-                 *               &lt;maxLength value="200"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="UsedItemImages" minOccurs="0">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="Image" maxOccurs="7">
-                 *                     &lt;complexType>
-                 *                       &lt;complexContent>
-                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                           &lt;sequence>
-                 *                             &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-                 *                             &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-                 *                           &lt;/sequence>
-                 *                         &lt;/restriction>
-                 *                       &lt;/complexContent>
-                 *                     &lt;/complexType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *         &lt;element name="Warning" minOccurs="0">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="CountryOfOrigin" minOccurs="0">
-                 *                     &lt;simpleType>
-                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                         &lt;enumeration value="ABW"/>
-                 *                         &lt;enumeration value="AFG"/>
-                 *                         &lt;enumeration value="AGO"/>
-                 *                         &lt;enumeration value="AIA"/>
-                 *                         &lt;enumeration value="ALB"/>
-                 *                         &lt;enumeration value="AND"/>
-                 *                         &lt;enumeration value="ANT"/>
-                 *                         &lt;enumeration value="ARE"/>
-                 *                         &lt;enumeration value="ARG"/>
-                 *                         &lt;enumeration value="ARM"/>
-                 *                         &lt;enumeration value="ASM"/>
-                 *                         &lt;enumeration value="ATA"/>
-                 *                         &lt;enumeration value="ATF"/>
-                 *                         &lt;enumeration value="ATG"/>
-                 *                         &lt;enumeration value="AUS"/>
-                 *                         &lt;enumeration value="AUT"/>
-                 *                         &lt;enumeration value="AZE"/>
-                 *                         &lt;enumeration value="BDI"/>
-                 *                         &lt;enumeration value="BEL"/>
-                 *                         &lt;enumeration value="BEN"/>
-                 *                         &lt;enumeration value="BFA"/>
-                 *                         &lt;enumeration value="BGD"/>
-                 *                         &lt;enumeration value="BGR"/>
-                 *                         &lt;enumeration value="BHR"/>
-                 *                         &lt;enumeration value="BHS"/>
-                 *                         &lt;enumeration value="BIH"/>
-                 *                         &lt;enumeration value="BLR"/>
-                 *                         &lt;enumeration value="BLZ"/>
-                 *                         &lt;enumeration value="BMU"/>
-                 *                         &lt;enumeration value="BOL"/>
-                 *                         &lt;enumeration value="BRA"/>
-                 *                         &lt;enumeration value="BRB"/>
-                 *                         &lt;enumeration value="BRN"/>
-                 *                         &lt;enumeration value="BTN"/>
-                 *                         &lt;enumeration value="BVT"/>
-                 *                         &lt;enumeration value="BWA"/>
-                 *                         &lt;enumeration value="CAF"/>
-                 *                         &lt;enumeration value="CAN"/>
-                 *                         &lt;enumeration value="CCK"/>
-                 *                         &lt;enumeration value="CHE"/>
-                 *                         &lt;enumeration value="CHL"/>
-                 *                         &lt;enumeration value="CHN"/>
-                 *                         &lt;enumeration value="CIV"/>
-                 *                         &lt;enumeration value="CMR"/>
-                 *                         &lt;enumeration value="COD"/>
-                 *                         &lt;enumeration value="COG"/>
-                 *                         &lt;enumeration value="COK"/>
-                 *                         &lt;enumeration value="COL"/>
-                 *                         &lt;enumeration value="COM"/>
-                 *                         &lt;enumeration value="CPV"/>
-                 *                         &lt;enumeration value="CRI"/>
-                 *                         &lt;enumeration value="CUB"/>
-                 *                         &lt;enumeration value="CXR"/>
-                 *                         &lt;enumeration value="CYM"/>
-                 *                         &lt;enumeration value="CYP"/>
-                 *                         &lt;enumeration value="CZE"/>
-                 *                         &lt;enumeration value="DEU"/>
-                 *                         &lt;enumeration value="DJI"/>
-                 *                         &lt;enumeration value="DMA"/>
-                 *                         &lt;enumeration value="DNK"/>
-                 *                         &lt;enumeration value="DOM"/>
-                 *                         &lt;enumeration value="DZA"/>
-                 *                         &lt;enumeration value="ECU"/>
-                 *                         &lt;enumeration value="EGY"/>
-                 *                         &lt;enumeration value="ERI"/>
-                 *                         &lt;enumeration value="ESH"/>
-                 *                         &lt;enumeration value="ESP"/>
-                 *                         &lt;enumeration value="EST"/>
-                 *                         &lt;enumeration value="ETH"/>
-                 *                         &lt;enumeration value="FIN"/>
-                 *                         &lt;enumeration value="FJI"/>
-                 *                         &lt;enumeration value="FLK"/>
-                 *                         &lt;enumeration value="FRA"/>
-                 *                         &lt;enumeration value="FRO"/>
-                 *                         &lt;enumeration value="FSM"/>
-                 *                         &lt;enumeration value="FXX"/>
-                 *                         &lt;enumeration value="GAB"/>
-                 *                         &lt;enumeration value="GBR"/>
-                 *                         &lt;enumeration value="GEO"/>
-                 *                         &lt;enumeration value="GHA"/>
-                 *                         &lt;enumeration value="GIB"/>
-                 *                         &lt;enumeration value="GIN"/>
-                 *                         &lt;enumeration value="GLP"/>
-                 *                         &lt;enumeration value="GMB"/>
-                 *                         &lt;enumeration value="GNB"/>
-                 *                         &lt;enumeration value="GNQ"/>
-                 *                         &lt;enumeration value="GRC"/>
-                 *                         &lt;enumeration value="GRD"/>
-                 *                         &lt;enumeration value="GRL"/>
-                 *                         &lt;enumeration value="GTM"/>
-                 *                         &lt;enumeration value="GUF"/>
-                 *                         &lt;enumeration value="GUM"/>
-                 *                         &lt;enumeration value="GUY"/>
-                 *                         &lt;enumeration value="HKG"/>
-                 *                         &lt;enumeration value="HMD"/>
-                 *                         &lt;enumeration value="HND"/>
-                 *                         &lt;enumeration value="HRV"/>
-                 *                         &lt;enumeration value="HTI"/>
-                 *                         &lt;enumeration value="HUN"/>
-                 *                         &lt;enumeration value="IDN"/>
-                 *                         &lt;enumeration value="IND"/>
-                 *                         &lt;enumeration value="IOT"/>
-                 *                         &lt;enumeration value="IRL"/>
-                 *                         &lt;enumeration value="IRN"/>
-                 *                         &lt;enumeration value="IRQ"/>
-                 *                         &lt;enumeration value="ISL"/>
-                 *                         &lt;enumeration value="ISR"/>
-                 *                         &lt;enumeration value="ITA"/>
-                 *                         &lt;enumeration value="JAM"/>
-                 *                         &lt;enumeration value="JOR"/>
-                 *                         &lt;enumeration value="JPN"/>
-                 *                         &lt;enumeration value="KAZ"/>
-                 *                         &lt;enumeration value="KEN"/>
-                 *                         &lt;enumeration value="KGZ"/>
-                 *                         &lt;enumeration value="KHM"/>
-                 *                         &lt;enumeration value="KIR"/>
-                 *                         &lt;enumeration value="KNA"/>
-                 *                         &lt;enumeration value="KOR"/>
-                 *                         &lt;enumeration value="KWT"/>
-                 *                         &lt;enumeration value="LAO"/>
-                 *                         &lt;enumeration value="LBN"/>
-                 *                         &lt;enumeration value="LBR"/>
-                 *                         &lt;enumeration value="LBY"/>
-                 *                         &lt;enumeration value="LCA"/>
-                 *                         &lt;enumeration value="LIE"/>
-                 *                         &lt;enumeration value="LKA"/>
-                 *                         &lt;enumeration value="LSO"/>
-                 *                         &lt;enumeration value="LTU"/>
-                 *                         &lt;enumeration value="LUX"/>
-                 *                         &lt;enumeration value="LVA"/>
-                 *                         &lt;enumeration value="MAC"/>
-                 *                         &lt;enumeration value="MAR"/>
-                 *                         &lt;enumeration value="MCO"/>
-                 *                         &lt;enumeration value="MDA"/>
-                 *                         &lt;enumeration value="MDG"/>
-                 *                         &lt;enumeration value="MDV"/>
-                 *                         &lt;enumeration value="MEX"/>
-                 *                         &lt;enumeration value="MHL"/>
-                 *                         &lt;enumeration value="MKD"/>
-                 *                         &lt;enumeration value="MLI"/>
-                 *                         &lt;enumeration value="MLT"/>
-                 *                         &lt;enumeration value="MMR"/>
-                 *                         &lt;enumeration value="MNG"/>
-                 *                         &lt;enumeration value="MNP"/>
-                 *                         &lt;enumeration value="MOZ"/>
-                 *                         &lt;enumeration value="MRT"/>
-                 *                         &lt;enumeration value="MSR"/>
-                 *                         &lt;enumeration value="MTQ"/>
-                 *                         &lt;enumeration value="MUS"/>
-                 *                         &lt;enumeration value="MWI"/>
-                 *                         &lt;enumeration value="MYS"/>
-                 *                         &lt;enumeration value="MYT"/>
-                 *                         &lt;enumeration value="NAM"/>
-                 *                         &lt;enumeration value="NCL"/>
-                 *                         &lt;enumeration value="NER"/>
-                 *                         &lt;enumeration value="NFK"/>
-                 *                         &lt;enumeration value="NGA"/>
-                 *                         &lt;enumeration value="NIC"/>
-                 *                         &lt;enumeration value="NIU"/>
-                 *                         &lt;enumeration value="NLD"/>
-                 *                         &lt;enumeration value="NOR"/>
-                 *                         &lt;enumeration value="NPL"/>
-                 *                         &lt;enumeration value="NRU"/>
-                 *                         &lt;enumeration value="NZL"/>
-                 *                         &lt;enumeration value="OMN"/>
-                 *                         &lt;enumeration value="PAK"/>
-                 *                         &lt;enumeration value="PAN"/>
-                 *                         &lt;enumeration value="PCN"/>
-                 *                         &lt;enumeration value="PER"/>
-                 *                         &lt;enumeration value="PHL"/>
-                 *                         &lt;enumeration value="PLW"/>
-                 *                         &lt;enumeration value="PNG"/>
-                 *                         &lt;enumeration value="POL"/>
-                 *                         &lt;enumeration value="PRI"/>
-                 *                         &lt;enumeration value="PRK"/>
-                 *                         &lt;enumeration value="PRT"/>
-                 *                         &lt;enumeration value="PRY"/>
-                 *                         &lt;enumeration value="PSE"/>
-                 *                         &lt;enumeration value="PYF"/>
-                 *                         &lt;enumeration value="QAT"/>
-                 *                         &lt;enumeration value="REU"/>
-                 *                         &lt;enumeration value="ROM"/>
-                 *                         &lt;enumeration value="RUS"/>
-                 *                         &lt;enumeration value="RWA"/>
-                 *                         &lt;enumeration value="SAU"/>
-                 *                         &lt;enumeration value="SDN"/>
-                 *                         &lt;enumeration value="SEN"/>
-                 *                         &lt;enumeration value="SGP"/>
-                 *                         &lt;enumeration value="SGS"/>
-                 *                         &lt;enumeration value="SHN"/>
-                 *                         &lt;enumeration value="SJM"/>
-                 *                         &lt;enumeration value="SLB"/>
-                 *                         &lt;enumeration value="SLE"/>
-                 *                         &lt;enumeration value="SLV"/>
-                 *                         &lt;enumeration value="SMR"/>
-                 *                         &lt;enumeration value="SOM"/>
-                 *                         &lt;enumeration value="SPM"/>
-                 *                         &lt;enumeration value="STP"/>
-                 *                         &lt;enumeration value="SUR"/>
-                 *                         &lt;enumeration value="SVK"/>
-                 *                         &lt;enumeration value="SVN"/>
-                 *                         &lt;enumeration value="SWE"/>
-                 *                         &lt;enumeration value="SWZ"/>
-                 *                         &lt;enumeration value="SYC"/>
-                 *                         &lt;enumeration value="SYR"/>
-                 *                         &lt;enumeration value="TCA"/>
-                 *                         &lt;enumeration value="TCD"/>
-                 *                         &lt;enumeration value="TGO"/>
-                 *                         &lt;enumeration value="THA"/>
-                 *                         &lt;enumeration value="TJK"/>
-                 *                         &lt;enumeration value="TKL"/>
-                 *                         &lt;enumeration value="TKM"/>
-                 *                         &lt;enumeration value="TMP"/>
-                 *                         &lt;enumeration value="TON"/>
-                 *                         &lt;enumeration value="TTO"/>
-                 *                         &lt;enumeration value="TUN"/>
-                 *                         &lt;enumeration value="TUR"/>
-                 *                         &lt;enumeration value="TUV"/>
-                 *                         &lt;enumeration value="TWN"/>
-                 *                         &lt;enumeration value="TZA"/>
-                 *                         &lt;enumeration value="UGA"/>
-                 *                         &lt;enumeration value="UKR"/>
-                 *                         &lt;enumeration value="UMI"/>
-                 *                         &lt;enumeration value="URY"/>
-                 *                         &lt;enumeration value="USA"/>
-                 *                         &lt;enumeration value="UZB"/>
-                 *                         &lt;enumeration value="VAT"/>
-                 *                         &lt;enumeration value="VCT"/>
-                 *                         &lt;enumeration value="VEN"/>
-                 *                         &lt;enumeration value="VGB"/>
-                 *                         &lt;enumeration value="VIR"/>
-                 *                         &lt;enumeration value="VNM"/>
-                 *                         &lt;enumeration value="VUT"/>
-                 *                         &lt;enumeration value="WLF"/>
-                 *                         &lt;enumeration value="WSM"/>
-                 *                         &lt;enumeration value="YEM"/>
-                 *                         &lt;enumeration value="YUG"/>
-                 *                         &lt;enumeration value="ZAF"/>
-                 *                         &lt;enumeration value="ZMB"/>
-                 *                         &lt;enumeration value="ZWE"/>
-                 *                       &lt;/restriction>
-                 *                     &lt;/simpleType>
-                 *                   &lt;/element>
-                 *                   &lt;element name="OverAge18Verification" minOccurs="0">
-                 *                     &lt;simpleType>
-                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                         &lt;enumeration value="Yes"/>
-                 *                         &lt;enumeration value="No"/>
-                 *                       &lt;/restriction>
-                 *                     &lt;/simpleType>
-                 *                   &lt;/element>
-                 *                   &lt;element name="ChokingHazard" minOccurs="0">
-                 *                     &lt;complexType>
-                 *                       &lt;complexContent>
-                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                           &lt;sequence>
-                 *                             &lt;element name="SmallParts" minOccurs="0">
-                 *                               &lt;simpleType>
-                 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                   &lt;enumeration value="Yes"/>
-                 *                                   &lt;enumeration value="No"/>
-                 *                                 &lt;/restriction>
-                 *                               &lt;/simpleType>
-                 *                             &lt;/element>
-                 *                             &lt;element name="SmallBall" minOccurs="0">
-                 *                               &lt;simpleType>
-                 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                   &lt;enumeration value="Is a small ball"/>
-                 *                                   &lt;enumeration value="Contains a small ball"/>
-                 *                                 &lt;/restriction>
-                 *                               &lt;/simpleType>
-                 *                             &lt;/element>
-                 *                             &lt;element name="Balloons" minOccurs="0">
-                 *                               &lt;simpleType>
-                 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                   &lt;enumeration value="Yes"/>
-                 *                                   &lt;enumeration value="No"/>
-                 *                                 &lt;/restriction>
-                 *                               &lt;/simpleType>
-                 *                             &lt;/element>
-                 *                             &lt;element name="Marble" minOccurs="0">
-                 *                               &lt;simpleType>
-                 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *                                   &lt;enumeration value="Is a marble"/>
-                 *                                   &lt;enumeration value="Contains a marble"/>
-                 *                                 &lt;/restriction>
-                 *                               &lt;/simpleType>
-                 *                             &lt;/element>
-                 *                           &lt;/sequence>
-                 *                         &lt;/restriction>
-                 *                       &lt;/complexContent>
-                 *                     &lt;/complexType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence&gt;
+                 *         &lt;element name="SellerPartNumber"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;minLength value="1"/&gt;
+                 *               &lt;maxLength value="40"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="Manufacturer"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;minLength value="1"/&gt;
+                 *               &lt;maxLength value="40"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="ManufacturerPartsNumber"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;minLength value="1"/&gt;
+                 *               &lt;maxLength value="20"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="UPCOrISBN"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;maxLength value="40"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="RelatedSellerPartNumber" minOccurs="0"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;minLength value="0"/&gt;
+                 *               &lt;maxLength value="40"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="WebsiteShortTitle"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;minLength value="1"/&gt;
+                 *               &lt;maxLength value="200"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="BulletDescription" minOccurs="0"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;minLength value="1"/&gt;
+                 *               &lt;maxLength value="200"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="ProductDescription"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;minLength value="1"/&gt;
+                 *               &lt;maxLength value="4000"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="ItemDimension"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="ItemLength" minOccurs="0"&gt;
+                 *                     &lt;simpleType&gt;
+                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                 *                         &lt;minInclusive value="0.01"/&gt;
+                 *                         &lt;maxInclusive value="485.99"/&gt;
+                 *                         &lt;fractionDigits value="2"/&gt;
+                 *                       &lt;/restriction&gt;
+                 *                     &lt;/simpleType&gt;
+                 *                   &lt;/element&gt;
+                 *                   &lt;element name="ItemWidth" minOccurs="0"&gt;
+                 *                     &lt;simpleType&gt;
+                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                 *                         &lt;maxInclusive value="485.99"/&gt;
+                 *                         &lt;minInclusive value="0.01"/&gt;
+                 *                         &lt;fractionDigits value="2"/&gt;
+                 *                       &lt;/restriction&gt;
+                 *                     &lt;/simpleType&gt;
+                 *                   &lt;/element&gt;
+                 *                   &lt;element name="ItemHeight" minOccurs="0"&gt;
+                 *                     &lt;simpleType&gt;
+                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                 *                         &lt;minInclusive value="0.01"/&gt;
+                 *                         &lt;maxInclusive value="485.99"/&gt;
+                 *                         &lt;fractionDigits value="2"/&gt;
+                 *                       &lt;/restriction&gt;
+                 *                     &lt;/simpleType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="ItemWeight"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                 *               &lt;minInclusive value="0.01"/&gt;
+                 *               &lt;maxInclusive value="99999.00"/&gt;
+                 *               &lt;fractionDigits value="2"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="PacksOrSets"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+                 *               &lt;minInclusive value="1"/&gt;
+                 *               &lt;maxInclusive value="9999"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="ItemCondition"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;enumeration value="New"/&gt;
+                 *               &lt;enumeration value="Refurbished"/&gt;
+                 *               &lt;enumeration value="UsedLikeNew"/&gt;
+                 *               &lt;enumeration value="UsedVeryGood"/&gt;
+                 *               &lt;enumeration value="UsedGood"/&gt;
+                 *               &lt;enumeration value="UsedAcceptable"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="ItemPackage" minOccurs="0"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;enumeration value="Retail"/&gt;
+                 *               &lt;enumeration value="OEM"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="ShippingRestriction"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;enumeration value="Yes"/&gt;
+                 *               &lt;enumeration value="No"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="Currency" minOccurs="0"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="MSRP" minOccurs="0"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                 *               &lt;minInclusive value="0.01"/&gt;
+                 *               &lt;maxInclusive value="99999.00"/&gt;
+                 *               &lt;fractionDigits value="2"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="MAP" minOccurs="0"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                 *               &lt;minInclusive value="0.00"/&gt;
+                 *               &lt;maxInclusive value="99999.00"/&gt;
+                 *               &lt;fractionDigits value="2"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="CheckoutMAP" minOccurs="0"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;enumeration value="True"/&gt;
+                 *               &lt;enumeration value="False"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="SellingPrice"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                 *               &lt;minInclusive value="0.01"/&gt;
+                 *               &lt;maxInclusive value="99999.00"/&gt;
+                 *               &lt;fractionDigits value="2"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="Shipping"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;enumeration value="Default"/&gt;
+                 *               &lt;enumeration value="Free"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="Inventory"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+                 *               &lt;maxInclusive value="999999"/&gt;
+                 *               &lt;minInclusive value="0"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="ActivationMark" minOccurs="0"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;enumeration value="True"/&gt;
+                 *               &lt;enumeration value="False"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="ItemImages"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="Image" maxOccurs="7"&gt;
+                 *                     &lt;complexType&gt;
+                 *                       &lt;complexContent&gt;
+                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                           &lt;sequence&gt;
+                 *                             &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+                 *                             &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+                 *                           &lt;/sequence&gt;
+                 *                         &lt;/restriction&gt;
+                 *                       &lt;/complexContent&gt;
+                 *                     &lt;/complexType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="ConditionDetails" minOccurs="0"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;minLength value="0"/&gt;
+                 *               &lt;maxLength value="200"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="UsedItemImages" minOccurs="0"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="Image" maxOccurs="7"&gt;
+                 *                     &lt;complexType&gt;
+                 *                       &lt;complexContent&gt;
+                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                           &lt;sequence&gt;
+                 *                             &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+                 *                             &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+                 *                           &lt;/sequence&gt;
+                 *                         &lt;/restriction&gt;
+                 *                       &lt;/complexContent&gt;
+                 *                     &lt;/complexType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="Warning" minOccurs="0"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="CountryOfOrigin" minOccurs="0"&gt;
+                 *                     &lt;simpleType&gt;
+                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                         &lt;enumeration value="ABW"/&gt;
+                 *                         &lt;enumeration value="AFG"/&gt;
+                 *                         &lt;enumeration value="AGO"/&gt;
+                 *                         &lt;enumeration value="AIA"/&gt;
+                 *                         &lt;enumeration value="ALB"/&gt;
+                 *                         &lt;enumeration value="AND"/&gt;
+                 *                         &lt;enumeration value="ANT"/&gt;
+                 *                         &lt;enumeration value="ARE"/&gt;
+                 *                         &lt;enumeration value="ARG"/&gt;
+                 *                         &lt;enumeration value="ARM"/&gt;
+                 *                         &lt;enumeration value="ASM"/&gt;
+                 *                         &lt;enumeration value="ATA"/&gt;
+                 *                         &lt;enumeration value="ATF"/&gt;
+                 *                         &lt;enumeration value="ATG"/&gt;
+                 *                         &lt;enumeration value="AUS"/&gt;
+                 *                         &lt;enumeration value="AUT"/&gt;
+                 *                         &lt;enumeration value="AZE"/&gt;
+                 *                         &lt;enumeration value="BDI"/&gt;
+                 *                         &lt;enumeration value="BEL"/&gt;
+                 *                         &lt;enumeration value="BEN"/&gt;
+                 *                         &lt;enumeration value="BFA"/&gt;
+                 *                         &lt;enumeration value="BGD"/&gt;
+                 *                         &lt;enumeration value="BGR"/&gt;
+                 *                         &lt;enumeration value="BHR"/&gt;
+                 *                         &lt;enumeration value="BHS"/&gt;
+                 *                         &lt;enumeration value="BIH"/&gt;
+                 *                         &lt;enumeration value="BLR"/&gt;
+                 *                         &lt;enumeration value="BLZ"/&gt;
+                 *                         &lt;enumeration value="BMU"/&gt;
+                 *                         &lt;enumeration value="BOL"/&gt;
+                 *                         &lt;enumeration value="BRA"/&gt;
+                 *                         &lt;enumeration value="BRB"/&gt;
+                 *                         &lt;enumeration value="BRN"/&gt;
+                 *                         &lt;enumeration value="BTN"/&gt;
+                 *                         &lt;enumeration value="BVT"/&gt;
+                 *                         &lt;enumeration value="BWA"/&gt;
+                 *                         &lt;enumeration value="CAF"/&gt;
+                 *                         &lt;enumeration value="CAN"/&gt;
+                 *                         &lt;enumeration value="CCK"/&gt;
+                 *                         &lt;enumeration value="CHE"/&gt;
+                 *                         &lt;enumeration value="CHL"/&gt;
+                 *                         &lt;enumeration value="CHN"/&gt;
+                 *                         &lt;enumeration value="CIV"/&gt;
+                 *                         &lt;enumeration value="CMR"/&gt;
+                 *                         &lt;enumeration value="COD"/&gt;
+                 *                         &lt;enumeration value="COG"/&gt;
+                 *                         &lt;enumeration value="COK"/&gt;
+                 *                         &lt;enumeration value="COL"/&gt;
+                 *                         &lt;enumeration value="COM"/&gt;
+                 *                         &lt;enumeration value="CPV"/&gt;
+                 *                         &lt;enumeration value="CRI"/&gt;
+                 *                         &lt;enumeration value="CUB"/&gt;
+                 *                         &lt;enumeration value="CXR"/&gt;
+                 *                         &lt;enumeration value="CYM"/&gt;
+                 *                         &lt;enumeration value="CYP"/&gt;
+                 *                         &lt;enumeration value="CZE"/&gt;
+                 *                         &lt;enumeration value="DEU"/&gt;
+                 *                         &lt;enumeration value="DJI"/&gt;
+                 *                         &lt;enumeration value="DMA"/&gt;
+                 *                         &lt;enumeration value="DNK"/&gt;
+                 *                         &lt;enumeration value="DOM"/&gt;
+                 *                         &lt;enumeration value="DZA"/&gt;
+                 *                         &lt;enumeration value="ECU"/&gt;
+                 *                         &lt;enumeration value="EGY"/&gt;
+                 *                         &lt;enumeration value="ERI"/&gt;
+                 *                         &lt;enumeration value="ESH"/&gt;
+                 *                         &lt;enumeration value="ESP"/&gt;
+                 *                         &lt;enumeration value="EST"/&gt;
+                 *                         &lt;enumeration value="ETH"/&gt;
+                 *                         &lt;enumeration value="FIN"/&gt;
+                 *                         &lt;enumeration value="FJI"/&gt;
+                 *                         &lt;enumeration value="FLK"/&gt;
+                 *                         &lt;enumeration value="FRA"/&gt;
+                 *                         &lt;enumeration value="FRO"/&gt;
+                 *                         &lt;enumeration value="FSM"/&gt;
+                 *                         &lt;enumeration value="FXX"/&gt;
+                 *                         &lt;enumeration value="GAB"/&gt;
+                 *                         &lt;enumeration value="GBR"/&gt;
+                 *                         &lt;enumeration value="GEO"/&gt;
+                 *                         &lt;enumeration value="GHA"/&gt;
+                 *                         &lt;enumeration value="GIB"/&gt;
+                 *                         &lt;enumeration value="GIN"/&gt;
+                 *                         &lt;enumeration value="GLP"/&gt;
+                 *                         &lt;enumeration value="GMB"/&gt;
+                 *                         &lt;enumeration value="GNB"/&gt;
+                 *                         &lt;enumeration value="GNQ"/&gt;
+                 *                         &lt;enumeration value="GRC"/&gt;
+                 *                         &lt;enumeration value="GRD"/&gt;
+                 *                         &lt;enumeration value="GRL"/&gt;
+                 *                         &lt;enumeration value="GTM"/&gt;
+                 *                         &lt;enumeration value="GUF"/&gt;
+                 *                         &lt;enumeration value="GUM"/&gt;
+                 *                         &lt;enumeration value="GUY"/&gt;
+                 *                         &lt;enumeration value="HKG"/&gt;
+                 *                         &lt;enumeration value="HMD"/&gt;
+                 *                         &lt;enumeration value="HND"/&gt;
+                 *                         &lt;enumeration value="HRV"/&gt;
+                 *                         &lt;enumeration value="HTI"/&gt;
+                 *                         &lt;enumeration value="HUN"/&gt;
+                 *                         &lt;enumeration value="IDN"/&gt;
+                 *                         &lt;enumeration value="IND"/&gt;
+                 *                         &lt;enumeration value="IOT"/&gt;
+                 *                         &lt;enumeration value="IRL"/&gt;
+                 *                         &lt;enumeration value="IRN"/&gt;
+                 *                         &lt;enumeration value="IRQ"/&gt;
+                 *                         &lt;enumeration value="ISL"/&gt;
+                 *                         &lt;enumeration value="ISR"/&gt;
+                 *                         &lt;enumeration value="ITA"/&gt;
+                 *                         &lt;enumeration value="JAM"/&gt;
+                 *                         &lt;enumeration value="JOR"/&gt;
+                 *                         &lt;enumeration value="JPN"/&gt;
+                 *                         &lt;enumeration value="KAZ"/&gt;
+                 *                         &lt;enumeration value="KEN"/&gt;
+                 *                         &lt;enumeration value="KGZ"/&gt;
+                 *                         &lt;enumeration value="KHM"/&gt;
+                 *                         &lt;enumeration value="KIR"/&gt;
+                 *                         &lt;enumeration value="KNA"/&gt;
+                 *                         &lt;enumeration value="KOR"/&gt;
+                 *                         &lt;enumeration value="KWT"/&gt;
+                 *                         &lt;enumeration value="LAO"/&gt;
+                 *                         &lt;enumeration value="LBN"/&gt;
+                 *                         &lt;enumeration value="LBR"/&gt;
+                 *                         &lt;enumeration value="LBY"/&gt;
+                 *                         &lt;enumeration value="LCA"/&gt;
+                 *                         &lt;enumeration value="LIE"/&gt;
+                 *                         &lt;enumeration value="LKA"/&gt;
+                 *                         &lt;enumeration value="LSO"/&gt;
+                 *                         &lt;enumeration value="LTU"/&gt;
+                 *                         &lt;enumeration value="LUX"/&gt;
+                 *                         &lt;enumeration value="LVA"/&gt;
+                 *                         &lt;enumeration value="MAC"/&gt;
+                 *                         &lt;enumeration value="MAR"/&gt;
+                 *                         &lt;enumeration value="MCO"/&gt;
+                 *                         &lt;enumeration value="MDA"/&gt;
+                 *                         &lt;enumeration value="MDG"/&gt;
+                 *                         &lt;enumeration value="MDV"/&gt;
+                 *                         &lt;enumeration value="MEX"/&gt;
+                 *                         &lt;enumeration value="MHL"/&gt;
+                 *                         &lt;enumeration value="MKD"/&gt;
+                 *                         &lt;enumeration value="MLI"/&gt;
+                 *                         &lt;enumeration value="MLT"/&gt;
+                 *                         &lt;enumeration value="MMR"/&gt;
+                 *                         &lt;enumeration value="MNG"/&gt;
+                 *                         &lt;enumeration value="MNP"/&gt;
+                 *                         &lt;enumeration value="MOZ"/&gt;
+                 *                         &lt;enumeration value="MRT"/&gt;
+                 *                         &lt;enumeration value="MSR"/&gt;
+                 *                         &lt;enumeration value="MTQ"/&gt;
+                 *                         &lt;enumeration value="MUS"/&gt;
+                 *                         &lt;enumeration value="MWI"/&gt;
+                 *                         &lt;enumeration value="MYS"/&gt;
+                 *                         &lt;enumeration value="MYT"/&gt;
+                 *                         &lt;enumeration value="NAM"/&gt;
+                 *                         &lt;enumeration value="NCL"/&gt;
+                 *                         &lt;enumeration value="NER"/&gt;
+                 *                         &lt;enumeration value="NFK"/&gt;
+                 *                         &lt;enumeration value="NGA"/&gt;
+                 *                         &lt;enumeration value="NIC"/&gt;
+                 *                         &lt;enumeration value="NIU"/&gt;
+                 *                         &lt;enumeration value="NLD"/&gt;
+                 *                         &lt;enumeration value="NOR"/&gt;
+                 *                         &lt;enumeration value="NPL"/&gt;
+                 *                         &lt;enumeration value="NRU"/&gt;
+                 *                         &lt;enumeration value="NZL"/&gt;
+                 *                         &lt;enumeration value="OMN"/&gt;
+                 *                         &lt;enumeration value="PAK"/&gt;
+                 *                         &lt;enumeration value="PAN"/&gt;
+                 *                         &lt;enumeration value="PCN"/&gt;
+                 *                         &lt;enumeration value="PER"/&gt;
+                 *                         &lt;enumeration value="PHL"/&gt;
+                 *                         &lt;enumeration value="PLW"/&gt;
+                 *                         &lt;enumeration value="PNG"/&gt;
+                 *                         &lt;enumeration value="POL"/&gt;
+                 *                         &lt;enumeration value="PRI"/&gt;
+                 *                         &lt;enumeration value="PRK"/&gt;
+                 *                         &lt;enumeration value="PRT"/&gt;
+                 *                         &lt;enumeration value="PRY"/&gt;
+                 *                         &lt;enumeration value="PSE"/&gt;
+                 *                         &lt;enumeration value="PYF"/&gt;
+                 *                         &lt;enumeration value="QAT"/&gt;
+                 *                         &lt;enumeration value="REU"/&gt;
+                 *                         &lt;enumeration value="ROM"/&gt;
+                 *                         &lt;enumeration value="RUS"/&gt;
+                 *                         &lt;enumeration value="RWA"/&gt;
+                 *                         &lt;enumeration value="SAU"/&gt;
+                 *                         &lt;enumeration value="SDN"/&gt;
+                 *                         &lt;enumeration value="SEN"/&gt;
+                 *                         &lt;enumeration value="SGP"/&gt;
+                 *                         &lt;enumeration value="SGS"/&gt;
+                 *                         &lt;enumeration value="SHN"/&gt;
+                 *                         &lt;enumeration value="SJM"/&gt;
+                 *                         &lt;enumeration value="SLB"/&gt;
+                 *                         &lt;enumeration value="SLE"/&gt;
+                 *                         &lt;enumeration value="SLV"/&gt;
+                 *                         &lt;enumeration value="SMR"/&gt;
+                 *                         &lt;enumeration value="SOM"/&gt;
+                 *                         &lt;enumeration value="SPM"/&gt;
+                 *                         &lt;enumeration value="STP"/&gt;
+                 *                         &lt;enumeration value="SUR"/&gt;
+                 *                         &lt;enumeration value="SVK"/&gt;
+                 *                         &lt;enumeration value="SVN"/&gt;
+                 *                         &lt;enumeration value="SWE"/&gt;
+                 *                         &lt;enumeration value="SWZ"/&gt;
+                 *                         &lt;enumeration value="SYC"/&gt;
+                 *                         &lt;enumeration value="SYR"/&gt;
+                 *                         &lt;enumeration value="TCA"/&gt;
+                 *                         &lt;enumeration value="TCD"/&gt;
+                 *                         &lt;enumeration value="TGO"/&gt;
+                 *                         &lt;enumeration value="THA"/&gt;
+                 *                         &lt;enumeration value="TJK"/&gt;
+                 *                         &lt;enumeration value="TKL"/&gt;
+                 *                         &lt;enumeration value="TKM"/&gt;
+                 *                         &lt;enumeration value="TMP"/&gt;
+                 *                         &lt;enumeration value="TON"/&gt;
+                 *                         &lt;enumeration value="TTO"/&gt;
+                 *                         &lt;enumeration value="TUN"/&gt;
+                 *                         &lt;enumeration value="TUR"/&gt;
+                 *                         &lt;enumeration value="TUV"/&gt;
+                 *                         &lt;enumeration value="TWN"/&gt;
+                 *                         &lt;enumeration value="TZA"/&gt;
+                 *                         &lt;enumeration value="UGA"/&gt;
+                 *                         &lt;enumeration value="UKR"/&gt;
+                 *                         &lt;enumeration value="UMI"/&gt;
+                 *                         &lt;enumeration value="URY"/&gt;
+                 *                         &lt;enumeration value="USA"/&gt;
+                 *                         &lt;enumeration value="UZB"/&gt;
+                 *                         &lt;enumeration value="VAT"/&gt;
+                 *                         &lt;enumeration value="VCT"/&gt;
+                 *                         &lt;enumeration value="VEN"/&gt;
+                 *                         &lt;enumeration value="VGB"/&gt;
+                 *                         &lt;enumeration value="VIR"/&gt;
+                 *                         &lt;enumeration value="VNM"/&gt;
+                 *                         &lt;enumeration value="VUT"/&gt;
+                 *                         &lt;enumeration value="WLF"/&gt;
+                 *                         &lt;enumeration value="WSM"/&gt;
+                 *                         &lt;enumeration value="YEM"/&gt;
+                 *                         &lt;enumeration value="YUG"/&gt;
+                 *                         &lt;enumeration value="ZAF"/&gt;
+                 *                         &lt;enumeration value="ZMB"/&gt;
+                 *                         &lt;enumeration value="ZWE"/&gt;
+                 *                       &lt;/restriction&gt;
+                 *                     &lt;/simpleType&gt;
+                 *                   &lt;/element&gt;
+                 *                   &lt;element name="OverAge18Verification" minOccurs="0"&gt;
+                 *                     &lt;simpleType&gt;
+                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                         &lt;enumeration value="Yes"/&gt;
+                 *                         &lt;enumeration value="No"/&gt;
+                 *                       &lt;/restriction&gt;
+                 *                     &lt;/simpleType&gt;
+                 *                   &lt;/element&gt;
+                 *                   &lt;element name="ChokingHazard" minOccurs="0"&gt;
+                 *                     &lt;complexType&gt;
+                 *                       &lt;complexContent&gt;
+                 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                           &lt;sequence&gt;
+                 *                             &lt;element name="SmallParts" minOccurs="0"&gt;
+                 *                               &lt;simpleType&gt;
+                 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                   &lt;enumeration value="Yes"/&gt;
+                 *                                   &lt;enumeration value="No"/&gt;
+                 *                                 &lt;/restriction&gt;
+                 *                               &lt;/simpleType&gt;
+                 *                             &lt;/element&gt;
+                 *                             &lt;element name="SmallBall" minOccurs="0"&gt;
+                 *                               &lt;simpleType&gt;
+                 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                   &lt;enumeration value="Is a small ball"/&gt;
+                 *                                   &lt;enumeration value="Contains a small ball"/&gt;
+                 *                                 &lt;/restriction&gt;
+                 *                               &lt;/simpleType&gt;
+                 *                             &lt;/element&gt;
+                 *                             &lt;element name="Balloons" minOccurs="0"&gt;
+                 *                               &lt;simpleType&gt;
+                 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                   &lt;enumeration value="Yes"/&gt;
+                 *                                   &lt;enumeration value="No"/&gt;
+                 *                                 &lt;/restriction&gt;
+                 *                               &lt;/simpleType&gt;
+                 *                             &lt;/element&gt;
+                 *                             &lt;element name="Marble" minOccurs="0"&gt;
+                 *                               &lt;simpleType&gt;
+                 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *                                   &lt;enumeration value="Is a marble"/&gt;
+                 *                                   &lt;enumeration value="Contains a marble"/&gt;
+                 *                                 &lt;/restriction&gt;
+                 *                               &lt;/simpleType&gt;
+                 *                             &lt;/element&gt;
+                 *                           &lt;/sequence&gt;
+                 *                         &lt;/restriction&gt;
+                 *                       &lt;/complexContent&gt;
+                 *                     &lt;/complexType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -3881,6 +3887,9 @@ public class ItemCreationOrUpdateFeedRequest {
 
                     /**
                      * Gets the value of the packsOrSets property.
+                     * @return
+                     * possible object is 
+                     *     {@link int }
                      * 
                      */
                     public int getPacksOrSets() {
@@ -3889,6 +3898,9 @@ public class ItemCreationOrUpdateFeedRequest {
 
                     /**
                      * Sets the value of the packsOrSets property.
+                     * @param value
+                     *     allowed object is
+                     *     {@link  }
                      * 
                      */
                     public void setPacksOrSets(int value) {
@@ -4113,6 +4125,9 @@ public class ItemCreationOrUpdateFeedRequest {
 
                     /**
                      * Gets the value of the inventory property.
+                     * @return
+                     * possible object is 
+                     *     {@link int }
                      * 
                      */
                     public int getInventory() {
@@ -4121,6 +4136,9 @@ public class ItemCreationOrUpdateFeedRequest {
 
                     /**
                      * Sets the value of the inventory property.
+                     * @param value
+                     *     allowed object is
+                     *     {@link  }
                      * 
                      */
                     public void setInventory(int value) {
@@ -4254,41 +4272,41 @@ public class ItemCreationOrUpdateFeedRequest {
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="ItemLength" minOccurs="0">
-                     *           &lt;simpleType>
-                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                     *               &lt;minInclusive value="0.01"/>
-                     *               &lt;maxInclusive value="485.99"/>
-                     *               &lt;fractionDigits value="2"/>
-                     *             &lt;/restriction>
-                     *           &lt;/simpleType>
-                     *         &lt;/element>
-                     *         &lt;element name="ItemWidth" minOccurs="0">
-                     *           &lt;simpleType>
-                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                     *               &lt;maxInclusive value="485.99"/>
-                     *               &lt;minInclusive value="0.01"/>
-                     *               &lt;fractionDigits value="2"/>
-                     *             &lt;/restriction>
-                     *           &lt;/simpleType>
-                     *         &lt;/element>
-                     *         &lt;element name="ItemHeight" minOccurs="0">
-                     *           &lt;simpleType>
-                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                     *               &lt;minInclusive value="0.01"/>
-                     *               &lt;maxInclusive value="485.99"/>
-                     *               &lt;fractionDigits value="2"/>
-                     *             &lt;/restriction>
-                     *           &lt;/simpleType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="ItemLength" minOccurs="0"&gt;
+                     *           &lt;simpleType&gt;
+                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                     *               &lt;minInclusive value="0.01"/&gt;
+                     *               &lt;maxInclusive value="485.99"/&gt;
+                     *               &lt;fractionDigits value="2"/&gt;
+                     *             &lt;/restriction&gt;
+                     *           &lt;/simpleType&gt;
+                     *         &lt;/element&gt;
+                     *         &lt;element name="ItemWidth" minOccurs="0"&gt;
+                     *           &lt;simpleType&gt;
+                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                     *               &lt;maxInclusive value="485.99"/&gt;
+                     *               &lt;minInclusive value="0.01"/&gt;
+                     *               &lt;fractionDigits value="2"/&gt;
+                     *             &lt;/restriction&gt;
+                     *           &lt;/simpleType&gt;
+                     *         &lt;/element&gt;
+                     *         &lt;element name="ItemHeight" minOccurs="0"&gt;
+                     *           &lt;simpleType&gt;
+                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                     *               &lt;minInclusive value="0.01"/&gt;
+                     *               &lt;maxInclusive value="485.99"/&gt;
+                     *               &lt;fractionDigits value="2"/&gt;
+                     *             &lt;/restriction&gt;
+                     *           &lt;/simpleType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -4389,26 +4407,26 @@ public class ItemCreationOrUpdateFeedRequest {
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="Image" maxOccurs="7">
-                     *           &lt;complexType>
-                     *             &lt;complexContent>
-                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                 &lt;sequence>
-                     *                   &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-                     *                   &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-                     *                 &lt;/sequence>
-                     *               &lt;/restriction>
-                     *             &lt;/complexContent>
-                     *           &lt;/complexType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="Image" maxOccurs="7"&gt;
+                     *           &lt;complexType&gt;
+                     *             &lt;complexContent&gt;
+                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                 &lt;sequence&gt;
+                     *                   &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+                     *                   &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+                     *                 &lt;/sequence&gt;
+                     *               &lt;/restriction&gt;
+                     *             &lt;/complexContent&gt;
+                     *           &lt;/complexType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -4442,6 +4460,9 @@ public class ItemCreationOrUpdateFeedRequest {
                          * Objects of the following type(s) are allowed in the list
                          * {@link ItemCreationOrUpdateFeedRequest.Message.Itemfeed.Item.BasicInfo.ItemImages.Image }
                          * 
+                         * @return
+                         * Objects of the following type(s) are allowed in the list
+                         * {@link ItemCreationOrUpdateFeedRequest.Message.Itemfeed.Item.BasicInfo.ItemImages.Image }
                          * 
                          */
                         public List<ItemCreationOrUpdateFeedRequest.Message.Itemfeed.Item.BasicInfo.ItemImages.Image> getImage() {
@@ -4458,16 +4479,16 @@ public class ItemCreationOrUpdateFeedRequest {
                          * <p>The following schema fragment specifies the expected content contained within this class.
                          * 
                          * <pre>
-                         * &lt;complexType>
-                         *   &lt;complexContent>
-                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *       &lt;sequence>
-                         *         &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-                         *         &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-                         *       &lt;/sequence>
-                         *     &lt;/restriction>
-                         *   &lt;/complexContent>
-                         * &lt;/complexType>
+                         * &lt;complexType&gt;
+                         *   &lt;complexContent&gt;
+                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *       &lt;sequence&gt;
+                         *         &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+                         *         &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+                         *       &lt;/sequence&gt;
+                         *     &lt;/restriction&gt;
+                         *   &lt;/complexContent&gt;
+                         * &lt;/complexType&gt;
                          * </pre>
                          * 
                          * 
@@ -4543,26 +4564,26 @@ public class ItemCreationOrUpdateFeedRequest {
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="Image" maxOccurs="7">
-                     *           &lt;complexType>
-                     *             &lt;complexContent>
-                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                 &lt;sequence>
-                     *                   &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-                     *                   &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-                     *                 &lt;/sequence>
-                     *               &lt;/restriction>
-                     *             &lt;/complexContent>
-                     *           &lt;/complexType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="Image" maxOccurs="7"&gt;
+                     *           &lt;complexType&gt;
+                     *             &lt;complexContent&gt;
+                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                 &lt;sequence&gt;
+                     *                   &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+                     *                   &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+                     *                 &lt;/sequence&gt;
+                     *               &lt;/restriction&gt;
+                     *             &lt;/complexContent&gt;
+                     *           &lt;/complexType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -4596,6 +4617,9 @@ public class ItemCreationOrUpdateFeedRequest {
                          * Objects of the following type(s) are allowed in the list
                          * {@link ItemCreationOrUpdateFeedRequest.Message.Itemfeed.Item.BasicInfo.UsedItemImages.Image }
                          * 
+                         * @return
+                         * Objects of the following type(s) are allowed in the list
+                         * {@link ItemCreationOrUpdateFeedRequest.Message.Itemfeed.Item.BasicInfo.UsedItemImages.Image }
                          * 
                          */
                         public List<ItemCreationOrUpdateFeedRequest.Message.Itemfeed.Item.BasicInfo.UsedItemImages.Image> getImage() {
@@ -4612,16 +4636,16 @@ public class ItemCreationOrUpdateFeedRequest {
                          * <p>The following schema fragment specifies the expected content contained within this class.
                          * 
                          * <pre>
-                         * &lt;complexType>
-                         *   &lt;complexContent>
-                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *       &lt;sequence>
-                         *         &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-                         *         &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
-                         *       &lt;/sequence>
-                         *     &lt;/restriction>
-                         *   &lt;/complexContent>
-                         * &lt;/complexType>
+                         * &lt;complexType&gt;
+                         *   &lt;complexContent&gt;
+                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *       &lt;sequence&gt;
+                         *         &lt;element name="ImageUrl" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+                         *         &lt;element name="IsPrimary" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+                         *       &lt;/sequence&gt;
+                         *     &lt;/restriction&gt;
+                         *   &lt;/complexContent&gt;
+                         * &lt;/complexType&gt;
                          * </pre>
                          * 
                          * 
@@ -4697,310 +4721,310 @@ public class ItemCreationOrUpdateFeedRequest {
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="CountryOfOrigin" minOccurs="0">
-                     *           &lt;simpleType>
-                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *               &lt;enumeration value="ABW"/>
-                     *               &lt;enumeration value="AFG"/>
-                     *               &lt;enumeration value="AGO"/>
-                     *               &lt;enumeration value="AIA"/>
-                     *               &lt;enumeration value="ALB"/>
-                     *               &lt;enumeration value="AND"/>
-                     *               &lt;enumeration value="ANT"/>
-                     *               &lt;enumeration value="ARE"/>
-                     *               &lt;enumeration value="ARG"/>
-                     *               &lt;enumeration value="ARM"/>
-                     *               &lt;enumeration value="ASM"/>
-                     *               &lt;enumeration value="ATA"/>
-                     *               &lt;enumeration value="ATF"/>
-                     *               &lt;enumeration value="ATG"/>
-                     *               &lt;enumeration value="AUS"/>
-                     *               &lt;enumeration value="AUT"/>
-                     *               &lt;enumeration value="AZE"/>
-                     *               &lt;enumeration value="BDI"/>
-                     *               &lt;enumeration value="BEL"/>
-                     *               &lt;enumeration value="BEN"/>
-                     *               &lt;enumeration value="BFA"/>
-                     *               &lt;enumeration value="BGD"/>
-                     *               &lt;enumeration value="BGR"/>
-                     *               &lt;enumeration value="BHR"/>
-                     *               &lt;enumeration value="BHS"/>
-                     *               &lt;enumeration value="BIH"/>
-                     *               &lt;enumeration value="BLR"/>
-                     *               &lt;enumeration value="BLZ"/>
-                     *               &lt;enumeration value="BMU"/>
-                     *               &lt;enumeration value="BOL"/>
-                     *               &lt;enumeration value="BRA"/>
-                     *               &lt;enumeration value="BRB"/>
-                     *               &lt;enumeration value="BRN"/>
-                     *               &lt;enumeration value="BTN"/>
-                     *               &lt;enumeration value="BVT"/>
-                     *               &lt;enumeration value="BWA"/>
-                     *               &lt;enumeration value="CAF"/>
-                     *               &lt;enumeration value="CAN"/>
-                     *               &lt;enumeration value="CCK"/>
-                     *               &lt;enumeration value="CHE"/>
-                     *               &lt;enumeration value="CHL"/>
-                     *               &lt;enumeration value="CHN"/>
-                     *               &lt;enumeration value="CIV"/>
-                     *               &lt;enumeration value="CMR"/>
-                     *               &lt;enumeration value="COD"/>
-                     *               &lt;enumeration value="COG"/>
-                     *               &lt;enumeration value="COK"/>
-                     *               &lt;enumeration value="COL"/>
-                     *               &lt;enumeration value="COM"/>
-                     *               &lt;enumeration value="CPV"/>
-                     *               &lt;enumeration value="CRI"/>
-                     *               &lt;enumeration value="CUB"/>
-                     *               &lt;enumeration value="CXR"/>
-                     *               &lt;enumeration value="CYM"/>
-                     *               &lt;enumeration value="CYP"/>
-                     *               &lt;enumeration value="CZE"/>
-                     *               &lt;enumeration value="DEU"/>
-                     *               &lt;enumeration value="DJI"/>
-                     *               &lt;enumeration value="DMA"/>
-                     *               &lt;enumeration value="DNK"/>
-                     *               &lt;enumeration value="DOM"/>
-                     *               &lt;enumeration value="DZA"/>
-                     *               &lt;enumeration value="ECU"/>
-                     *               &lt;enumeration value="EGY"/>
-                     *               &lt;enumeration value="ERI"/>
-                     *               &lt;enumeration value="ESH"/>
-                     *               &lt;enumeration value="ESP"/>
-                     *               &lt;enumeration value="EST"/>
-                     *               &lt;enumeration value="ETH"/>
-                     *               &lt;enumeration value="FIN"/>
-                     *               &lt;enumeration value="FJI"/>
-                     *               &lt;enumeration value="FLK"/>
-                     *               &lt;enumeration value="FRA"/>
-                     *               &lt;enumeration value="FRO"/>
-                     *               &lt;enumeration value="FSM"/>
-                     *               &lt;enumeration value="FXX"/>
-                     *               &lt;enumeration value="GAB"/>
-                     *               &lt;enumeration value="GBR"/>
-                     *               &lt;enumeration value="GEO"/>
-                     *               &lt;enumeration value="GHA"/>
-                     *               &lt;enumeration value="GIB"/>
-                     *               &lt;enumeration value="GIN"/>
-                     *               &lt;enumeration value="GLP"/>
-                     *               &lt;enumeration value="GMB"/>
-                     *               &lt;enumeration value="GNB"/>
-                     *               &lt;enumeration value="GNQ"/>
-                     *               &lt;enumeration value="GRC"/>
-                     *               &lt;enumeration value="GRD"/>
-                     *               &lt;enumeration value="GRL"/>
-                     *               &lt;enumeration value="GTM"/>
-                     *               &lt;enumeration value="GUF"/>
-                     *               &lt;enumeration value="GUM"/>
-                     *               &lt;enumeration value="GUY"/>
-                     *               &lt;enumeration value="HKG"/>
-                     *               &lt;enumeration value="HMD"/>
-                     *               &lt;enumeration value="HND"/>
-                     *               &lt;enumeration value="HRV"/>
-                     *               &lt;enumeration value="HTI"/>
-                     *               &lt;enumeration value="HUN"/>
-                     *               &lt;enumeration value="IDN"/>
-                     *               &lt;enumeration value="IND"/>
-                     *               &lt;enumeration value="IOT"/>
-                     *               &lt;enumeration value="IRL"/>
-                     *               &lt;enumeration value="IRN"/>
-                     *               &lt;enumeration value="IRQ"/>
-                     *               &lt;enumeration value="ISL"/>
-                     *               &lt;enumeration value="ISR"/>
-                     *               &lt;enumeration value="ITA"/>
-                     *               &lt;enumeration value="JAM"/>
-                     *               &lt;enumeration value="JOR"/>
-                     *               &lt;enumeration value="JPN"/>
-                     *               &lt;enumeration value="KAZ"/>
-                     *               &lt;enumeration value="KEN"/>
-                     *               &lt;enumeration value="KGZ"/>
-                     *               &lt;enumeration value="KHM"/>
-                     *               &lt;enumeration value="KIR"/>
-                     *               &lt;enumeration value="KNA"/>
-                     *               &lt;enumeration value="KOR"/>
-                     *               &lt;enumeration value="KWT"/>
-                     *               &lt;enumeration value="LAO"/>
-                     *               &lt;enumeration value="LBN"/>
-                     *               &lt;enumeration value="LBR"/>
-                     *               &lt;enumeration value="LBY"/>
-                     *               &lt;enumeration value="LCA"/>
-                     *               &lt;enumeration value="LIE"/>
-                     *               &lt;enumeration value="LKA"/>
-                     *               &lt;enumeration value="LSO"/>
-                     *               &lt;enumeration value="LTU"/>
-                     *               &lt;enumeration value="LUX"/>
-                     *               &lt;enumeration value="LVA"/>
-                     *               &lt;enumeration value="MAC"/>
-                     *               &lt;enumeration value="MAR"/>
-                     *               &lt;enumeration value="MCO"/>
-                     *               &lt;enumeration value="MDA"/>
-                     *               &lt;enumeration value="MDG"/>
-                     *               &lt;enumeration value="MDV"/>
-                     *               &lt;enumeration value="MEX"/>
-                     *               &lt;enumeration value="MHL"/>
-                     *               &lt;enumeration value="MKD"/>
-                     *               &lt;enumeration value="MLI"/>
-                     *               &lt;enumeration value="MLT"/>
-                     *               &lt;enumeration value="MMR"/>
-                     *               &lt;enumeration value="MNG"/>
-                     *               &lt;enumeration value="MNP"/>
-                     *               &lt;enumeration value="MOZ"/>
-                     *               &lt;enumeration value="MRT"/>
-                     *               &lt;enumeration value="MSR"/>
-                     *               &lt;enumeration value="MTQ"/>
-                     *               &lt;enumeration value="MUS"/>
-                     *               &lt;enumeration value="MWI"/>
-                     *               &lt;enumeration value="MYS"/>
-                     *               &lt;enumeration value="MYT"/>
-                     *               &lt;enumeration value="NAM"/>
-                     *               &lt;enumeration value="NCL"/>
-                     *               &lt;enumeration value="NER"/>
-                     *               &lt;enumeration value="NFK"/>
-                     *               &lt;enumeration value="NGA"/>
-                     *               &lt;enumeration value="NIC"/>
-                     *               &lt;enumeration value="NIU"/>
-                     *               &lt;enumeration value="NLD"/>
-                     *               &lt;enumeration value="NOR"/>
-                     *               &lt;enumeration value="NPL"/>
-                     *               &lt;enumeration value="NRU"/>
-                     *               &lt;enumeration value="NZL"/>
-                     *               &lt;enumeration value="OMN"/>
-                     *               &lt;enumeration value="PAK"/>
-                     *               &lt;enumeration value="PAN"/>
-                     *               &lt;enumeration value="PCN"/>
-                     *               &lt;enumeration value="PER"/>
-                     *               &lt;enumeration value="PHL"/>
-                     *               &lt;enumeration value="PLW"/>
-                     *               &lt;enumeration value="PNG"/>
-                     *               &lt;enumeration value="POL"/>
-                     *               &lt;enumeration value="PRI"/>
-                     *               &lt;enumeration value="PRK"/>
-                     *               &lt;enumeration value="PRT"/>
-                     *               &lt;enumeration value="PRY"/>
-                     *               &lt;enumeration value="PSE"/>
-                     *               &lt;enumeration value="PYF"/>
-                     *               &lt;enumeration value="QAT"/>
-                     *               &lt;enumeration value="REU"/>
-                     *               &lt;enumeration value="ROM"/>
-                     *               &lt;enumeration value="RUS"/>
-                     *               &lt;enumeration value="RWA"/>
-                     *               &lt;enumeration value="SAU"/>
-                     *               &lt;enumeration value="SDN"/>
-                     *               &lt;enumeration value="SEN"/>
-                     *               &lt;enumeration value="SGP"/>
-                     *               &lt;enumeration value="SGS"/>
-                     *               &lt;enumeration value="SHN"/>
-                     *               &lt;enumeration value="SJM"/>
-                     *               &lt;enumeration value="SLB"/>
-                     *               &lt;enumeration value="SLE"/>
-                     *               &lt;enumeration value="SLV"/>
-                     *               &lt;enumeration value="SMR"/>
-                     *               &lt;enumeration value="SOM"/>
-                     *               &lt;enumeration value="SPM"/>
-                     *               &lt;enumeration value="STP"/>
-                     *               &lt;enumeration value="SUR"/>
-                     *               &lt;enumeration value="SVK"/>
-                     *               &lt;enumeration value="SVN"/>
-                     *               &lt;enumeration value="SWE"/>
-                     *               &lt;enumeration value="SWZ"/>
-                     *               &lt;enumeration value="SYC"/>
-                     *               &lt;enumeration value="SYR"/>
-                     *               &lt;enumeration value="TCA"/>
-                     *               &lt;enumeration value="TCD"/>
-                     *               &lt;enumeration value="TGO"/>
-                     *               &lt;enumeration value="THA"/>
-                     *               &lt;enumeration value="TJK"/>
-                     *               &lt;enumeration value="TKL"/>
-                     *               &lt;enumeration value="TKM"/>
-                     *               &lt;enumeration value="TMP"/>
-                     *               &lt;enumeration value="TON"/>
-                     *               &lt;enumeration value="TTO"/>
-                     *               &lt;enumeration value="TUN"/>
-                     *               &lt;enumeration value="TUR"/>
-                     *               &lt;enumeration value="TUV"/>
-                     *               &lt;enumeration value="TWN"/>
-                     *               &lt;enumeration value="TZA"/>
-                     *               &lt;enumeration value="UGA"/>
-                     *               &lt;enumeration value="UKR"/>
-                     *               &lt;enumeration value="UMI"/>
-                     *               &lt;enumeration value="URY"/>
-                     *               &lt;enumeration value="USA"/>
-                     *               &lt;enumeration value="UZB"/>
-                     *               &lt;enumeration value="VAT"/>
-                     *               &lt;enumeration value="VCT"/>
-                     *               &lt;enumeration value="VEN"/>
-                     *               &lt;enumeration value="VGB"/>
-                     *               &lt;enumeration value="VIR"/>
-                     *               &lt;enumeration value="VNM"/>
-                     *               &lt;enumeration value="VUT"/>
-                     *               &lt;enumeration value="WLF"/>
-                     *               &lt;enumeration value="WSM"/>
-                     *               &lt;enumeration value="YEM"/>
-                     *               &lt;enumeration value="YUG"/>
-                     *               &lt;enumeration value="ZAF"/>
-                     *               &lt;enumeration value="ZMB"/>
-                     *               &lt;enumeration value="ZWE"/>
-                     *             &lt;/restriction>
-                     *           &lt;/simpleType>
-                     *         &lt;/element>
-                     *         &lt;element name="OverAge18Verification" minOccurs="0">
-                     *           &lt;simpleType>
-                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *               &lt;enumeration value="Yes"/>
-                     *               &lt;enumeration value="No"/>
-                     *             &lt;/restriction>
-                     *           &lt;/simpleType>
-                     *         &lt;/element>
-                     *         &lt;element name="ChokingHazard" minOccurs="0">
-                     *           &lt;complexType>
-                     *             &lt;complexContent>
-                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *                 &lt;sequence>
-                     *                   &lt;element name="SmallParts" minOccurs="0">
-                     *                     &lt;simpleType>
-                     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                         &lt;enumeration value="Yes"/>
-                     *                         &lt;enumeration value="No"/>
-                     *                       &lt;/restriction>
-                     *                     &lt;/simpleType>
-                     *                   &lt;/element>
-                     *                   &lt;element name="SmallBall" minOccurs="0">
-                     *                     &lt;simpleType>
-                     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                         &lt;enumeration value="Is a small ball"/>
-                     *                         &lt;enumeration value="Contains a small ball"/>
-                     *                       &lt;/restriction>
-                     *                     &lt;/simpleType>
-                     *                   &lt;/element>
-                     *                   &lt;element name="Balloons" minOccurs="0">
-                     *                     &lt;simpleType>
-                     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                         &lt;enumeration value="Yes"/>
-                     *                         &lt;enumeration value="No"/>
-                     *                       &lt;/restriction>
-                     *                     &lt;/simpleType>
-                     *                   &lt;/element>
-                     *                   &lt;element name="Marble" minOccurs="0">
-                     *                     &lt;simpleType>
-                     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                     *                         &lt;enumeration value="Is a marble"/>
-                     *                         &lt;enumeration value="Contains a marble"/>
-                     *                       &lt;/restriction>
-                     *                     &lt;/simpleType>
-                     *                   &lt;/element>
-                     *                 &lt;/sequence>
-                     *               &lt;/restriction>
-                     *             &lt;/complexContent>
-                     *           &lt;/complexType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="CountryOfOrigin" minOccurs="0"&gt;
+                     *           &lt;simpleType&gt;
+                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *               &lt;enumeration value="ABW"/&gt;
+                     *               &lt;enumeration value="AFG"/&gt;
+                     *               &lt;enumeration value="AGO"/&gt;
+                     *               &lt;enumeration value="AIA"/&gt;
+                     *               &lt;enumeration value="ALB"/&gt;
+                     *               &lt;enumeration value="AND"/&gt;
+                     *               &lt;enumeration value="ANT"/&gt;
+                     *               &lt;enumeration value="ARE"/&gt;
+                     *               &lt;enumeration value="ARG"/&gt;
+                     *               &lt;enumeration value="ARM"/&gt;
+                     *               &lt;enumeration value="ASM"/&gt;
+                     *               &lt;enumeration value="ATA"/&gt;
+                     *               &lt;enumeration value="ATF"/&gt;
+                     *               &lt;enumeration value="ATG"/&gt;
+                     *               &lt;enumeration value="AUS"/&gt;
+                     *               &lt;enumeration value="AUT"/&gt;
+                     *               &lt;enumeration value="AZE"/&gt;
+                     *               &lt;enumeration value="BDI"/&gt;
+                     *               &lt;enumeration value="BEL"/&gt;
+                     *               &lt;enumeration value="BEN"/&gt;
+                     *               &lt;enumeration value="BFA"/&gt;
+                     *               &lt;enumeration value="BGD"/&gt;
+                     *               &lt;enumeration value="BGR"/&gt;
+                     *               &lt;enumeration value="BHR"/&gt;
+                     *               &lt;enumeration value="BHS"/&gt;
+                     *               &lt;enumeration value="BIH"/&gt;
+                     *               &lt;enumeration value="BLR"/&gt;
+                     *               &lt;enumeration value="BLZ"/&gt;
+                     *               &lt;enumeration value="BMU"/&gt;
+                     *               &lt;enumeration value="BOL"/&gt;
+                     *               &lt;enumeration value="BRA"/&gt;
+                     *               &lt;enumeration value="BRB"/&gt;
+                     *               &lt;enumeration value="BRN"/&gt;
+                     *               &lt;enumeration value="BTN"/&gt;
+                     *               &lt;enumeration value="BVT"/&gt;
+                     *               &lt;enumeration value="BWA"/&gt;
+                     *               &lt;enumeration value="CAF"/&gt;
+                     *               &lt;enumeration value="CAN"/&gt;
+                     *               &lt;enumeration value="CCK"/&gt;
+                     *               &lt;enumeration value="CHE"/&gt;
+                     *               &lt;enumeration value="CHL"/&gt;
+                     *               &lt;enumeration value="CHN"/&gt;
+                     *               &lt;enumeration value="CIV"/&gt;
+                     *               &lt;enumeration value="CMR"/&gt;
+                     *               &lt;enumeration value="COD"/&gt;
+                     *               &lt;enumeration value="COG"/&gt;
+                     *               &lt;enumeration value="COK"/&gt;
+                     *               &lt;enumeration value="COL"/&gt;
+                     *               &lt;enumeration value="COM"/&gt;
+                     *               &lt;enumeration value="CPV"/&gt;
+                     *               &lt;enumeration value="CRI"/&gt;
+                     *               &lt;enumeration value="CUB"/&gt;
+                     *               &lt;enumeration value="CXR"/&gt;
+                     *               &lt;enumeration value="CYM"/&gt;
+                     *               &lt;enumeration value="CYP"/&gt;
+                     *               &lt;enumeration value="CZE"/&gt;
+                     *               &lt;enumeration value="DEU"/&gt;
+                     *               &lt;enumeration value="DJI"/&gt;
+                     *               &lt;enumeration value="DMA"/&gt;
+                     *               &lt;enumeration value="DNK"/&gt;
+                     *               &lt;enumeration value="DOM"/&gt;
+                     *               &lt;enumeration value="DZA"/&gt;
+                     *               &lt;enumeration value="ECU"/&gt;
+                     *               &lt;enumeration value="EGY"/&gt;
+                     *               &lt;enumeration value="ERI"/&gt;
+                     *               &lt;enumeration value="ESH"/&gt;
+                     *               &lt;enumeration value="ESP"/&gt;
+                     *               &lt;enumeration value="EST"/&gt;
+                     *               &lt;enumeration value="ETH"/&gt;
+                     *               &lt;enumeration value="FIN"/&gt;
+                     *               &lt;enumeration value="FJI"/&gt;
+                     *               &lt;enumeration value="FLK"/&gt;
+                     *               &lt;enumeration value="FRA"/&gt;
+                     *               &lt;enumeration value="FRO"/&gt;
+                     *               &lt;enumeration value="FSM"/&gt;
+                     *               &lt;enumeration value="FXX"/&gt;
+                     *               &lt;enumeration value="GAB"/&gt;
+                     *               &lt;enumeration value="GBR"/&gt;
+                     *               &lt;enumeration value="GEO"/&gt;
+                     *               &lt;enumeration value="GHA"/&gt;
+                     *               &lt;enumeration value="GIB"/&gt;
+                     *               &lt;enumeration value="GIN"/&gt;
+                     *               &lt;enumeration value="GLP"/&gt;
+                     *               &lt;enumeration value="GMB"/&gt;
+                     *               &lt;enumeration value="GNB"/&gt;
+                     *               &lt;enumeration value="GNQ"/&gt;
+                     *               &lt;enumeration value="GRC"/&gt;
+                     *               &lt;enumeration value="GRD"/&gt;
+                     *               &lt;enumeration value="GRL"/&gt;
+                     *               &lt;enumeration value="GTM"/&gt;
+                     *               &lt;enumeration value="GUF"/&gt;
+                     *               &lt;enumeration value="GUM"/&gt;
+                     *               &lt;enumeration value="GUY"/&gt;
+                     *               &lt;enumeration value="HKG"/&gt;
+                     *               &lt;enumeration value="HMD"/&gt;
+                     *               &lt;enumeration value="HND"/&gt;
+                     *               &lt;enumeration value="HRV"/&gt;
+                     *               &lt;enumeration value="HTI"/&gt;
+                     *               &lt;enumeration value="HUN"/&gt;
+                     *               &lt;enumeration value="IDN"/&gt;
+                     *               &lt;enumeration value="IND"/&gt;
+                     *               &lt;enumeration value="IOT"/&gt;
+                     *               &lt;enumeration value="IRL"/&gt;
+                     *               &lt;enumeration value="IRN"/&gt;
+                     *               &lt;enumeration value="IRQ"/&gt;
+                     *               &lt;enumeration value="ISL"/&gt;
+                     *               &lt;enumeration value="ISR"/&gt;
+                     *               &lt;enumeration value="ITA"/&gt;
+                     *               &lt;enumeration value="JAM"/&gt;
+                     *               &lt;enumeration value="JOR"/&gt;
+                     *               &lt;enumeration value="JPN"/&gt;
+                     *               &lt;enumeration value="KAZ"/&gt;
+                     *               &lt;enumeration value="KEN"/&gt;
+                     *               &lt;enumeration value="KGZ"/&gt;
+                     *               &lt;enumeration value="KHM"/&gt;
+                     *               &lt;enumeration value="KIR"/&gt;
+                     *               &lt;enumeration value="KNA"/&gt;
+                     *               &lt;enumeration value="KOR"/&gt;
+                     *               &lt;enumeration value="KWT"/&gt;
+                     *               &lt;enumeration value="LAO"/&gt;
+                     *               &lt;enumeration value="LBN"/&gt;
+                     *               &lt;enumeration value="LBR"/&gt;
+                     *               &lt;enumeration value="LBY"/&gt;
+                     *               &lt;enumeration value="LCA"/&gt;
+                     *               &lt;enumeration value="LIE"/&gt;
+                     *               &lt;enumeration value="LKA"/&gt;
+                     *               &lt;enumeration value="LSO"/&gt;
+                     *               &lt;enumeration value="LTU"/&gt;
+                     *               &lt;enumeration value="LUX"/&gt;
+                     *               &lt;enumeration value="LVA"/&gt;
+                     *               &lt;enumeration value="MAC"/&gt;
+                     *               &lt;enumeration value="MAR"/&gt;
+                     *               &lt;enumeration value="MCO"/&gt;
+                     *               &lt;enumeration value="MDA"/&gt;
+                     *               &lt;enumeration value="MDG"/&gt;
+                     *               &lt;enumeration value="MDV"/&gt;
+                     *               &lt;enumeration value="MEX"/&gt;
+                     *               &lt;enumeration value="MHL"/&gt;
+                     *               &lt;enumeration value="MKD"/&gt;
+                     *               &lt;enumeration value="MLI"/&gt;
+                     *               &lt;enumeration value="MLT"/&gt;
+                     *               &lt;enumeration value="MMR"/&gt;
+                     *               &lt;enumeration value="MNG"/&gt;
+                     *               &lt;enumeration value="MNP"/&gt;
+                     *               &lt;enumeration value="MOZ"/&gt;
+                     *               &lt;enumeration value="MRT"/&gt;
+                     *               &lt;enumeration value="MSR"/&gt;
+                     *               &lt;enumeration value="MTQ"/&gt;
+                     *               &lt;enumeration value="MUS"/&gt;
+                     *               &lt;enumeration value="MWI"/&gt;
+                     *               &lt;enumeration value="MYS"/&gt;
+                     *               &lt;enumeration value="MYT"/&gt;
+                     *               &lt;enumeration value="NAM"/&gt;
+                     *               &lt;enumeration value="NCL"/&gt;
+                     *               &lt;enumeration value="NER"/&gt;
+                     *               &lt;enumeration value="NFK"/&gt;
+                     *               &lt;enumeration value="NGA"/&gt;
+                     *               &lt;enumeration value="NIC"/&gt;
+                     *               &lt;enumeration value="NIU"/&gt;
+                     *               &lt;enumeration value="NLD"/&gt;
+                     *               &lt;enumeration value="NOR"/&gt;
+                     *               &lt;enumeration value="NPL"/&gt;
+                     *               &lt;enumeration value="NRU"/&gt;
+                     *               &lt;enumeration value="NZL"/&gt;
+                     *               &lt;enumeration value="OMN"/&gt;
+                     *               &lt;enumeration value="PAK"/&gt;
+                     *               &lt;enumeration value="PAN"/&gt;
+                     *               &lt;enumeration value="PCN"/&gt;
+                     *               &lt;enumeration value="PER"/&gt;
+                     *               &lt;enumeration value="PHL"/&gt;
+                     *               &lt;enumeration value="PLW"/&gt;
+                     *               &lt;enumeration value="PNG"/&gt;
+                     *               &lt;enumeration value="POL"/&gt;
+                     *               &lt;enumeration value="PRI"/&gt;
+                     *               &lt;enumeration value="PRK"/&gt;
+                     *               &lt;enumeration value="PRT"/&gt;
+                     *               &lt;enumeration value="PRY"/&gt;
+                     *               &lt;enumeration value="PSE"/&gt;
+                     *               &lt;enumeration value="PYF"/&gt;
+                     *               &lt;enumeration value="QAT"/&gt;
+                     *               &lt;enumeration value="REU"/&gt;
+                     *               &lt;enumeration value="ROM"/&gt;
+                     *               &lt;enumeration value="RUS"/&gt;
+                     *               &lt;enumeration value="RWA"/&gt;
+                     *               &lt;enumeration value="SAU"/&gt;
+                     *               &lt;enumeration value="SDN"/&gt;
+                     *               &lt;enumeration value="SEN"/&gt;
+                     *               &lt;enumeration value="SGP"/&gt;
+                     *               &lt;enumeration value="SGS"/&gt;
+                     *               &lt;enumeration value="SHN"/&gt;
+                     *               &lt;enumeration value="SJM"/&gt;
+                     *               &lt;enumeration value="SLB"/&gt;
+                     *               &lt;enumeration value="SLE"/&gt;
+                     *               &lt;enumeration value="SLV"/&gt;
+                     *               &lt;enumeration value="SMR"/&gt;
+                     *               &lt;enumeration value="SOM"/&gt;
+                     *               &lt;enumeration value="SPM"/&gt;
+                     *               &lt;enumeration value="STP"/&gt;
+                     *               &lt;enumeration value="SUR"/&gt;
+                     *               &lt;enumeration value="SVK"/&gt;
+                     *               &lt;enumeration value="SVN"/&gt;
+                     *               &lt;enumeration value="SWE"/&gt;
+                     *               &lt;enumeration value="SWZ"/&gt;
+                     *               &lt;enumeration value="SYC"/&gt;
+                     *               &lt;enumeration value="SYR"/&gt;
+                     *               &lt;enumeration value="TCA"/&gt;
+                     *               &lt;enumeration value="TCD"/&gt;
+                     *               &lt;enumeration value="TGO"/&gt;
+                     *               &lt;enumeration value="THA"/&gt;
+                     *               &lt;enumeration value="TJK"/&gt;
+                     *               &lt;enumeration value="TKL"/&gt;
+                     *               &lt;enumeration value="TKM"/&gt;
+                     *               &lt;enumeration value="TMP"/&gt;
+                     *               &lt;enumeration value="TON"/&gt;
+                     *               &lt;enumeration value="TTO"/&gt;
+                     *               &lt;enumeration value="TUN"/&gt;
+                     *               &lt;enumeration value="TUR"/&gt;
+                     *               &lt;enumeration value="TUV"/&gt;
+                     *               &lt;enumeration value="TWN"/&gt;
+                     *               &lt;enumeration value="TZA"/&gt;
+                     *               &lt;enumeration value="UGA"/&gt;
+                     *               &lt;enumeration value="UKR"/&gt;
+                     *               &lt;enumeration value="UMI"/&gt;
+                     *               &lt;enumeration value="URY"/&gt;
+                     *               &lt;enumeration value="USA"/&gt;
+                     *               &lt;enumeration value="UZB"/&gt;
+                     *               &lt;enumeration value="VAT"/&gt;
+                     *               &lt;enumeration value="VCT"/&gt;
+                     *               &lt;enumeration value="VEN"/&gt;
+                     *               &lt;enumeration value="VGB"/&gt;
+                     *               &lt;enumeration value="VIR"/&gt;
+                     *               &lt;enumeration value="VNM"/&gt;
+                     *               &lt;enumeration value="VUT"/&gt;
+                     *               &lt;enumeration value="WLF"/&gt;
+                     *               &lt;enumeration value="WSM"/&gt;
+                     *               &lt;enumeration value="YEM"/&gt;
+                     *               &lt;enumeration value="YUG"/&gt;
+                     *               &lt;enumeration value="ZAF"/&gt;
+                     *               &lt;enumeration value="ZMB"/&gt;
+                     *               &lt;enumeration value="ZWE"/&gt;
+                     *             &lt;/restriction&gt;
+                     *           &lt;/simpleType&gt;
+                     *         &lt;/element&gt;
+                     *         &lt;element name="OverAge18Verification" minOccurs="0"&gt;
+                     *           &lt;simpleType&gt;
+                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *               &lt;enumeration value="Yes"/&gt;
+                     *               &lt;enumeration value="No"/&gt;
+                     *             &lt;/restriction&gt;
+                     *           &lt;/simpleType&gt;
+                     *         &lt;/element&gt;
+                     *         &lt;element name="ChokingHazard" minOccurs="0"&gt;
+                     *           &lt;complexType&gt;
+                     *             &lt;complexContent&gt;
+                     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *                 &lt;sequence&gt;
+                     *                   &lt;element name="SmallParts" minOccurs="0"&gt;
+                     *                     &lt;simpleType&gt;
+                     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                         &lt;enumeration value="Yes"/&gt;
+                     *                         &lt;enumeration value="No"/&gt;
+                     *                       &lt;/restriction&gt;
+                     *                     &lt;/simpleType&gt;
+                     *                   &lt;/element&gt;
+                     *                   &lt;element name="SmallBall" minOccurs="0"&gt;
+                     *                     &lt;simpleType&gt;
+                     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                         &lt;enumeration value="Is a small ball"/&gt;
+                     *                         &lt;enumeration value="Contains a small ball"/&gt;
+                     *                       &lt;/restriction&gt;
+                     *                     &lt;/simpleType&gt;
+                     *                   &lt;/element&gt;
+                     *                   &lt;element name="Balloons" minOccurs="0"&gt;
+                     *                     &lt;simpleType&gt;
+                     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                         &lt;enumeration value="Yes"/&gt;
+                     *                         &lt;enumeration value="No"/&gt;
+                     *                       &lt;/restriction&gt;
+                     *                     &lt;/simpleType&gt;
+                     *                   &lt;/element&gt;
+                     *                   &lt;element name="Marble" minOccurs="0"&gt;
+                     *                     &lt;simpleType&gt;
+                     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                     *                         &lt;enumeration value="Is a marble"/&gt;
+                     *                         &lt;enumeration value="Contains a marble"/&gt;
+                     *                       &lt;/restriction&gt;
+                     *                     &lt;/simpleType&gt;
+                     *                   &lt;/element&gt;
+                     *                 &lt;/sequence&gt;
+                     *               &lt;/restriction&gt;
+                     *             &lt;/complexContent&gt;
+                     *           &lt;/complexType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -5121,46 +5145,46 @@ public class ItemCreationOrUpdateFeedRequest {
                          * <p>The following schema fragment specifies the expected content contained within this class.
                          * 
                          * <pre>
-                         * &lt;complexType>
-                         *   &lt;complexContent>
-                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                         *       &lt;sequence>
-                         *         &lt;element name="SmallParts" minOccurs="0">
-                         *           &lt;simpleType>
-                         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *               &lt;enumeration value="Yes"/>
-                         *               &lt;enumeration value="No"/>
-                         *             &lt;/restriction>
-                         *           &lt;/simpleType>
-                         *         &lt;/element>
-                         *         &lt;element name="SmallBall" minOccurs="0">
-                         *           &lt;simpleType>
-                         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *               &lt;enumeration value="Is a small ball"/>
-                         *               &lt;enumeration value="Contains a small ball"/>
-                         *             &lt;/restriction>
-                         *           &lt;/simpleType>
-                         *         &lt;/element>
-                         *         &lt;element name="Balloons" minOccurs="0">
-                         *           &lt;simpleType>
-                         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *               &lt;enumeration value="Yes"/>
-                         *               &lt;enumeration value="No"/>
-                         *             &lt;/restriction>
-                         *           &lt;/simpleType>
-                         *         &lt;/element>
-                         *         &lt;element name="Marble" minOccurs="0">
-                         *           &lt;simpleType>
-                         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                         *               &lt;enumeration value="Is a marble"/>
-                         *               &lt;enumeration value="Contains a marble"/>
-                         *             &lt;/restriction>
-                         *           &lt;/simpleType>
-                         *         &lt;/element>
-                         *       &lt;/sequence>
-                         *     &lt;/restriction>
-                         *   &lt;/complexContent>
-                         * &lt;/complexType>
+                         * &lt;complexType&gt;
+                         *   &lt;complexContent&gt;
+                         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                         *       &lt;sequence&gt;
+                         *         &lt;element name="SmallParts" minOccurs="0"&gt;
+                         *           &lt;simpleType&gt;
+                         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *               &lt;enumeration value="Yes"/&gt;
+                         *               &lt;enumeration value="No"/&gt;
+                         *             &lt;/restriction&gt;
+                         *           &lt;/simpleType&gt;
+                         *         &lt;/element&gt;
+                         *         &lt;element name="SmallBall" minOccurs="0"&gt;
+                         *           &lt;simpleType&gt;
+                         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *               &lt;enumeration value="Is a small ball"/&gt;
+                         *               &lt;enumeration value="Contains a small ball"/&gt;
+                         *             &lt;/restriction&gt;
+                         *           &lt;/simpleType&gt;
+                         *         &lt;/element&gt;
+                         *         &lt;element name="Balloons" minOccurs="0"&gt;
+                         *           &lt;simpleType&gt;
+                         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *               &lt;enumeration value="Yes"/&gt;
+                         *               &lt;enumeration value="No"/&gt;
+                         *             &lt;/restriction&gt;
+                         *           &lt;/simpleType&gt;
+                         *         &lt;/element&gt;
+                         *         &lt;element name="Marble" minOccurs="0"&gt;
+                         *           &lt;simpleType&gt;
+                         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                         *               &lt;enumeration value="Is a marble"/&gt;
+                         *               &lt;enumeration value="Contains a marble"/&gt;
+                         *             &lt;/restriction&gt;
+                         *           &lt;/simpleType&gt;
+                         *         &lt;/element&gt;
+                         *       &lt;/sequence&gt;
+                         *     &lt;/restriction&gt;
+                         *   &lt;/complexContent&gt;
+                         * &lt;/complexType&gt;
                          * </pre>
                          * 
                          * 
@@ -5292,15 +5316,15 @@ public class ItemCreationOrUpdateFeedRequest {
                  * <p>The following schema fragment specifies the expected content contained within this class.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence>
-                 *         &lt;any/>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence&gt;
+                 *         &lt;any/&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * TABLE itemcatalog
@@ -5330,6 +5354,9 @@ public class ItemCreationOrUpdateFeedRequest {
 					 * Sets the value of the any property.
 					 * 
 					 * @param value allowed object is {@link Object }
+					 * @param value
+					 *     allowed object is
+					 *     {@link Object }
 					 * 
 					 */
 					public void setAny(Object value) {
@@ -5347,15 +5374,15 @@ public class ItemCreationOrUpdateFeedRequest {
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 

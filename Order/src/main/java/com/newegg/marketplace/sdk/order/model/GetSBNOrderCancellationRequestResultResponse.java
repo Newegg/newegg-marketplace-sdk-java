@@ -24,46 +24,46 @@ import com.fasterxml.jackson.annotation.JsonRootName;
  * <p>下列綱要片段會指定此類別中包含的預期內容.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                   &lt;element name="Result">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                         &lt;enumeration value="Success"/>
- *                         &lt;enumeration value="Failed"/>
- *                         &lt;enumeration value="Processing"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="ErrorMessage" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                   &lt;element name="Result"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                         &lt;enumeration value="Success"/&gt;
+ *                         &lt;enumeration value="Failed"/&gt;
+ *                         &lt;enumeration value="Processing"/&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="ErrorMessage" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -193,7 +193,7 @@ public class GetSBNOrderCancellationRequestResultResponse {
      * 
      * @return
      *     possible object is
-     *     {@link NeweggAPIResponse.ResponseBody }
+     *     {@link GetSBNOrderCancellationRequestResultResponse.ResponseBody }
      *     
      */
     public GetSBNOrderCancellationRequestResultResponse.ResponseBody getResponseBody() {
@@ -205,7 +205,7 @@ public class GetSBNOrderCancellationRequestResultResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link NeweggAPIResponse.ResponseBody }
+     *     {@link GetSBNOrderCancellationRequestResultResponse.ResponseBody }
      *     
      */
     public void setResponseBody(GetSBNOrderCancellationRequestResultResponse.ResponseBody value) {
@@ -219,26 +219,26 @@ public class GetSBNOrderCancellationRequestResultResponse {
      * <p>下列綱要片段會指定此類別中包含的預期內容.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *         &lt;element name="Result">
-     *           &lt;simpleType>
-     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;enumeration value="Success"/>
-     *               &lt;enumeration value="Failed"/>
-     *               &lt;enumeration value="Processing"/>
-     *             &lt;/restriction>
-     *           &lt;/simpleType>
-     *         &lt;/element>
-     *         &lt;element name="ErrorMessage" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *         &lt;element name="Result"&gt;
+     *           &lt;simpleType&gt;
+     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *               &lt;enumeration value="Success"/&gt;
+     *               &lt;enumeration value="Failed"/&gt;
+     *               &lt;enumeration value="Processing"/&gt;
+     *             &lt;/restriction&gt;
+     *           &lt;/simpleType&gt;
+     *         &lt;/element&gt;
+     *         &lt;element name="ErrorMessage" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/all&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -288,6 +288,9 @@ public class GetSBNOrderCancellationRequestResultResponse {
 
         /**
          * 取得 orderNumber 特性的值.
+         * @return
+         * possible object is 
+         *     {@link int }
          * 
          */
         public int getOrderNumber() {
@@ -296,6 +299,9 @@ public class GetSBNOrderCancellationRequestResultResponse {
 
         /**
          * 設定 orderNumber 特性的值.
+         * @param value
+         *     allowed object is
+         *     {@link  }
          * 
          */
         public void setOrderNumber(int value) {

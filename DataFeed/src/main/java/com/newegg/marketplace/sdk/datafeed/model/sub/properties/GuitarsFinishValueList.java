@@ -17,17 +17,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for GuitarsFinishValueList.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
+ * 
  * <pre>
- * &lt;simpleType name="GuitarsFinishValueList">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Black"/>
- *     &lt;enumeration value="White"/>
- *     &lt;enumeration value="Blue"/>
- *     &lt;enumeration value="Red"/>
- *     &lt;enumeration value="Natural"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GuitarsFinishValueList"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Black"/&gt;
+ *     &lt;enumeration value="White"/&gt;
+ *     &lt;enumeration value="Blue"/&gt;
+ *     &lt;enumeration value="Red"/&gt;
+ *     &lt;enumeration value="Natural"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

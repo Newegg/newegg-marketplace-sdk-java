@@ -26,101 +26,101 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *               &lt;enumeration value="false"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="ShipmentList">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="Shipment" maxOccurs="unbounded">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="ShipToWarehouseCode" minOccurs="0">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="06"/>
- *                                             &lt;enumeration value="07"/>
- *                                             &lt;enumeration value="08"/>
- *                                             &lt;enumeration value="10"/>
- *                                             &lt;enumeration value="12"/>
- *                                             &lt;enumeration value="14"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="ItemList" minOccurs="0">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;sequence>
- *                                                 &lt;element name="Item" maxOccurs="unbounded">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;all>
- *                                                           &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                           &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                           &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                                           &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *                                                         &lt;/all>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                               &lt;/sequence>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *               &lt;enumeration value="false"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="ShipmentList"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="Shipment" maxOccurs="unbounded"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="ShipToWarehouseCode" minOccurs="0"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="06"/&gt;
+ *                                             &lt;enumeration value="07"/&gt;
+ *                                             &lt;enumeration value="08"/&gt;
+ *                                             &lt;enumeration value="10"/&gt;
+ *                                             &lt;enumeration value="12"/&gt;
+ *                                             &lt;enumeration value="14"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="ItemList" minOccurs="0"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;sequence&gt;
+ *                                                 &lt;element name="Item" maxOccurs="unbounded"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;complexContent&gt;
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                         &lt;all&gt;
+ *                                                           &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                           &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                           &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                                           &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *                                                         &lt;/all&gt;
+ *                                                       &lt;/restriction&gt;
+ *                                                     &lt;/complexContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                               &lt;/sequence&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -248,76 +248,76 @@ public class GetInboundShipmentPlanResponse {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="ShipmentList">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="Shipment" maxOccurs="unbounded">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="ShipToWarehouseCode" minOccurs="0">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;enumeration value="06"/>
-     *                                   &lt;enumeration value="07"/>
-     *                                   &lt;enumeration value="08"/>
-     *                                   &lt;enumeration value="10"/>
-     *                                   &lt;enumeration value="12"/>
-     *                                   &lt;enumeration value="14"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="ItemList" minOccurs="0">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="Item" maxOccurs="unbounded">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;all>
-     *                                                 &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                                 &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                                 &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                                                 &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-     *                                               &lt;/all>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="ShipmentList"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="Shipment" maxOccurs="unbounded"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;all&gt;
+     *                             &lt;element name="ShipToWarehouseCode" minOccurs="0"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;enumeration value="06"/&gt;
+     *                                   &lt;enumeration value="07"/&gt;
+     *                                   &lt;enumeration value="08"/&gt;
+     *                                   &lt;enumeration value="10"/&gt;
+     *                                   &lt;enumeration value="12"/&gt;
+     *                                   &lt;enumeration value="14"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="ItemList" minOccurs="0"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence&gt;
+     *                                       &lt;element name="Item" maxOccurs="unbounded"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;all&gt;
+     *                                                 &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                                 &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                                 &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                                                 &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+     *                                               &lt;/all&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/all&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/all&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -364,66 +364,66 @@ public class GetInboundShipmentPlanResponse {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="Shipment" maxOccurs="unbounded">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="ShipToWarehouseCode" minOccurs="0">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;enumeration value="06"/>
-         *                         &lt;enumeration value="07"/>
-         *                         &lt;enumeration value="08"/>
-         *                         &lt;enumeration value="10"/>
-         *                         &lt;enumeration value="12"/>
-         *                         &lt;enumeration value="14"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="ItemList" minOccurs="0">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="Item" maxOccurs="unbounded">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;all>
-         *                                       &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                       &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                       &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                                       &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-         *                                     &lt;/all>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="Shipment" maxOccurs="unbounded"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;all&gt;
+         *                   &lt;element name="ShipToWarehouseCode" minOccurs="0"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;enumeration value="06"/&gt;
+         *                         &lt;enumeration value="07"/&gt;
+         *                         &lt;enumeration value="08"/&gt;
+         *                         &lt;enumeration value="10"/&gt;
+         *                         &lt;enumeration value="12"/&gt;
+         *                         &lt;enumeration value="14"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="ItemList" minOccurs="0"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence&gt;
+         *                             &lt;element name="Item" maxOccurs="unbounded"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;all&gt;
+         *                                       &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                                       &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                                       &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                                       &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+         *                                     &lt;/all&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/all&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -458,6 +458,9 @@ public class GetInboundShipmentPlanResponse {
              * Objects of the following type(s) are allowed in the list
              * {@link GetInboundShipmentPlanResponse.ResponseBody.ShipmentList.Shipment }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link GetInboundShipmentPlanResponse.ResponseBody.ShipmentList.Shipment }
              * 
              */
             public List<GetInboundShipmentPlanResponse.ResponseBody.ShipmentList.Shipment> getShipment() {
@@ -474,56 +477,56 @@ public class GetInboundShipmentPlanResponse {
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="ShipToWarehouseCode" minOccurs="0">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;enumeration value="06"/>
-             *               &lt;enumeration value="07"/>
-             *               &lt;enumeration value="08"/>
-             *               &lt;enumeration value="10"/>
-             *               &lt;enumeration value="12"/>
-             *               &lt;enumeration value="14"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="ItemList" minOccurs="0">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;element name="Item" maxOccurs="unbounded">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;all>
-             *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                             &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *                             &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-             *                           &lt;/all>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;all&gt;
+             *         &lt;element name="ShipToWarehouseCode" minOccurs="0"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;enumeration value="06"/&gt;
+             *               &lt;enumeration value="07"/&gt;
+             *               &lt;enumeration value="08"/&gt;
+             *               &lt;enumeration value="10"/&gt;
+             *               &lt;enumeration value="12"/&gt;
+             *               &lt;enumeration value="14"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="ShipToCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="ItemList" minOccurs="0"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence&gt;
+             *                   &lt;element name="Item" maxOccurs="unbounded"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;all&gt;
+             *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                             &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *                             &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+             *                           &lt;/all&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/all&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -759,28 +762,28 @@ public class GetInboundShipmentPlanResponse {
                  * <p>The following schema fragment specifies the expected content contained within this class.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence>
-                 *         &lt;element name="Item" maxOccurs="unbounded">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;all>
-                 *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *                   &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
-                 *                   &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-                 *                 &lt;/all>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence&gt;
+                 *         &lt;element name="Item" maxOccurs="unbounded"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;all&gt;
+                 *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *                   &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+                 *                   &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+                 *                 &lt;/all&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -815,6 +818,9 @@ public class GetInboundShipmentPlanResponse {
                      * Objects of the following type(s) are allowed in the list
                      * {@link GetInboundShipmentPlanResponse.ResponseBody.ShipmentList.Shipment.ItemList.Item }
                      * 
+                     * @return
+                     * Objects of the following type(s) are allowed in the list
+                     * {@link GetInboundShipmentPlanResponse.ResponseBody.ShipmentList.Shipment.ItemList.Item }
                      * 
                      */
                     public List<GetInboundShipmentPlanResponse.ResponseBody.ShipmentList.Shipment.ItemList.Item> getItem() {
@@ -831,18 +837,18 @@ public class GetInboundShipmentPlanResponse {
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;all>
-                     *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                     *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                     *         &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
-                     *         &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-                     *       &lt;/all>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;all&gt;
+                     *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                     *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                     *         &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+                     *         &lt;element name="NumberofCartons" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+                     *       &lt;/all&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -916,6 +922,9 @@ public class GetInboundShipmentPlanResponse {
 
                         /**
                          * Gets the value of the quantity property.
+                         * @return
+                         * possible object is 
+                         *     {@link int }
                          * 
                          */
                         public int getQuantity() {
@@ -924,6 +933,9 @@ public class GetInboundShipmentPlanResponse {
 
                         /**
                          * Sets the value of the quantity property.
+                         * @param value
+                         *     allowed object is
+                         *     {@link  }
                          * 
                          */
                         public void setQuantity(int value) {

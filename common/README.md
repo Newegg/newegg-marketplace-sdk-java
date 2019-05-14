@@ -34,6 +34,3 @@
     Socket connect timeout (ms)
 ### newegg.readTimeoutMillis=60000
     Socket read timeout  (ms)
-## Change log
-### 0.1.0
-- initial

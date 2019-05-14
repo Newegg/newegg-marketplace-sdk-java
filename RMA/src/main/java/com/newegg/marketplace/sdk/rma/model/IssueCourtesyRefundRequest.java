@@ -24,76 +24,76 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="IssueUser" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="IssueCourtesyRefund"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="RequestBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="IssueCourtesyRefund">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="SourceSONumber">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;minInclusive value="1"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="RefundReason">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                   &lt;minInclusive value="1"/>
- *                                   &lt;maxInclusive value="6"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="TotalRefundAmount">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                   &lt;minExclusive value="0.00"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="NoteToCustomer" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;maxLength value="500"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="IssueUser" minOccurs="0"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="IssueCourtesyRefund"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="RequestBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="IssueCourtesyRefund"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="SourceSONumber"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="RefundReason"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                   &lt;maxInclusive value="6"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="TotalRefundAmount"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                   &lt;minExclusive value="0.00"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="NoteToCustomer" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;maxLength value="500"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -151,53 +151,53 @@ public class IssueCourtesyRefundRequest {
 	 * The following schema fragment specifies the expected content contained within this class.
 	 * 
 	 * <pre>
-	 * &lt;complexType>
-	 *   &lt;complexContent>
-	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *       &lt;sequence>
-	 *         &lt;element name="IssueCourtesyRefund">
-	 *           &lt;complexType>
-	 *             &lt;complexContent>
-	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                 &lt;all>
-	 *                   &lt;element name="SourceSONumber">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *                         &lt;minInclusive value="1"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="RefundReason">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-	 *                         &lt;minInclusive value="1"/>
-	 *                         &lt;maxInclusive value="6"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="TotalRefundAmount">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-	 *                         &lt;minExclusive value="0.00"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="NoteToCustomer" minOccurs="0">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-	 *                         &lt;maxLength value="500"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                 &lt;/all>
-	 *               &lt;/restriction>
-	 *             &lt;/complexContent>
-	 *           &lt;/complexType>
-	 *         &lt;/element>
-	 *       &lt;/sequence>
-	 *     &lt;/restriction>
-	 *   &lt;/complexContent>
-	 * &lt;/complexType>
+	 * &lt;complexType&gt;
+	 *   &lt;complexContent&gt;
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *       &lt;sequence&gt;
+	 *         &lt;element name="IssueCourtesyRefund"&gt;
+	 *           &lt;complexType&gt;
+	 *             &lt;complexContent&gt;
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                 &lt;all&gt;
+	 *                   &lt;element name="SourceSONumber"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="RefundReason"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                         &lt;maxInclusive value="6"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="TotalRefundAmount"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+	 *                         &lt;minExclusive value="0.00"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="NoteToCustomer" minOccurs="0"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+	 *                         &lt;maxLength value="500"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                 &lt;/all&gt;
+	 *               &lt;/restriction&gt;
+	 *             &lt;/complexContent&gt;
+	 *           &lt;/complexType&gt;
+	 *         &lt;/element&gt;
+	 *       &lt;/sequence&gt;
+	 *     &lt;/restriction&gt;
+	 *   &lt;/complexContent&gt;
+	 * &lt;/complexType&gt;
 	 * </pre>
 	 * 
 	 * 
@@ -228,43 +228,43 @@ public class IssueCourtesyRefundRequest {
 		 * The following schema fragment specifies the expected content contained within this class.
 		 * 
 		 * <pre>
-		 * &lt;complexType>
-		 *   &lt;complexContent>
-		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *       &lt;all>
-		 *         &lt;element name="SourceSONumber">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-		 *               &lt;minInclusive value="1"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="RefundReason">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-		 *               &lt;minInclusive value="1"/>
-		 *               &lt;maxInclusive value="6"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="TotalRefundAmount">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-		 *               &lt;minExclusive value="0.00"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="NoteToCustomer" minOccurs="0">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-		 *               &lt;maxLength value="500"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *       &lt;/all>
-		 *     &lt;/restriction>
-		 *   &lt;/complexContent>
-		 * &lt;/complexType>
+		 * &lt;complexType&gt;
+		 *   &lt;complexContent&gt;
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *       &lt;all&gt;
+		 *         &lt;element name="SourceSONumber"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="RefundReason"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *               &lt;maxInclusive value="6"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="TotalRefundAmount"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+		 *               &lt;minExclusive value="0.00"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="NoteToCustomer" minOccurs="0"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+		 *               &lt;maxLength value="500"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *       &lt;/all&gt;
+		 *     &lt;/restriction&gt;
+		 *   &lt;/complexContent&gt;
+		 * &lt;/complexType&gt;
 		 * </pre>
 		 * 
 		 * 

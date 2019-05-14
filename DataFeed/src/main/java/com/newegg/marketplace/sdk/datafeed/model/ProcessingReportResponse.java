@@ -31,119 +31,119 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Header">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="MessageType" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Message">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;choice>
- *                   &lt;element name="ProcessingReport">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="OriginalMessageName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="OriginalMessageType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                             &lt;element name="ProcessedStamp" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *                             &lt;element name="StatusCode">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;enumeration value="CanNotFindSubCategoryCode"/>
- *                                   &lt;enumeration value="DownloadFtpError"/>
- *                                   &lt;enumeration value="DuplicateColumn"/>
- *                                   &lt;enumeration value="FileContentError"/>
- *                                   &lt;enumeration value="FileFormatError"/>
- *                                   &lt;enumeration value="GetConfigError"/>
- *                                   &lt;enumeration value="Init"/>
- *                                   &lt;enumeration value="KeyColumnNoFind"/>
- *                                   &lt;enumeration value="NoRecord"/>
- *                                   &lt;enumeration value="NotFoundSheet"/>
- *                                   &lt;enumeration value="ProcessReport"/>
- *                                   &lt;enumeration value="TemplateError"/>
- *                                   &lt;enumeration value="UploadFtpError"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="ProcessingSummary" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="ProcessedCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                       &lt;element name="SuccessCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                       &lt;element name="WithErrorCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="Result" maxOccurs="unbounded" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="AdditionalInfo" minOccurs="0">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;choice maxOccurs="unbounded">
- *                                                 &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="ManufacturerPartNumberOrISBN" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                               &lt;/choice>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                       &lt;element name="ErrorList" minOccurs="0">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;sequence maxOccurs="unbounded">
- *                                                 &lt;element name="ErrorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                               &lt;/sequence>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/choice>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Header"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="MessageType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Message"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;choice&gt;
+ *                   &lt;element name="ProcessingReport"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="OriginalMessageName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="OriginalMessageType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                             &lt;element name="ProcessedStamp" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *                             &lt;element name="StatusCode"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;enumeration value="CanNotFindSubCategoryCode"/&gt;
+ *                                   &lt;enumeration value="DownloadFtpError"/&gt;
+ *                                   &lt;enumeration value="DuplicateColumn"/&gt;
+ *                                   &lt;enumeration value="FileContentError"/&gt;
+ *                                   &lt;enumeration value="FileFormatError"/&gt;
+ *                                   &lt;enumeration value="GetConfigError"/&gt;
+ *                                   &lt;enumeration value="Init"/&gt;
+ *                                   &lt;enumeration value="KeyColumnNoFind"/&gt;
+ *                                   &lt;enumeration value="NoRecord"/&gt;
+ *                                   &lt;enumeration value="NotFoundSheet"/&gt;
+ *                                   &lt;enumeration value="ProcessReport"/&gt;
+ *                                   &lt;enumeration value="TemplateError"/&gt;
+ *                                   &lt;enumeration value="UploadFtpError"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="ProcessingSummary" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="ProcessedCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                       &lt;element name="SuccessCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                       &lt;element name="WithErrorCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="Result" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="AdditionalInfo" minOccurs="0"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;choice maxOccurs="unbounded"&gt;
+ *                                                 &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="ManufacturerPartNumberOrISBN" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                               &lt;/choice&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="ErrorList" minOccurs="0"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;sequence maxOccurs="unbounded"&gt;
+ *                                                 &lt;element name="ErrorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                               &lt;/sequence&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/choice&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -246,15 +246,15 @@ public class ProcessingReportResponse {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -302,97 +302,97 @@ public class ProcessingReportResponse {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;choice>
-     *         &lt;element name="ProcessingReport">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="OriginalMessageName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="OriginalMessageType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                   &lt;element name="ProcessedStamp" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
-     *                   &lt;element name="StatusCode">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                         &lt;enumeration value="CanNotFindSubCategoryCode"/>
-     *                         &lt;enumeration value="DownloadFtpError"/>
-     *                         &lt;enumeration value="DuplicateColumn"/>
-     *                         &lt;enumeration value="FileContentError"/>
-     *                         &lt;enumeration value="FileFormatError"/>
-     *                         &lt;enumeration value="GetConfigError"/>
-     *                         &lt;enumeration value="Init"/>
-     *                         &lt;enumeration value="KeyColumnNoFind"/>
-     *                         &lt;enumeration value="NoRecord"/>
-     *                         &lt;enumeration value="NotFoundSheet"/>
-     *                         &lt;enumeration value="ProcessReport"/>
-     *                         &lt;enumeration value="TemplateError"/>
-     *                         &lt;enumeration value="UploadFtpError"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="ProcessingSummary" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="ProcessedCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                             &lt;element name="SuccessCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                             &lt;element name="WithErrorCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="Result" maxOccurs="unbounded" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="AdditionalInfo" minOccurs="0">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;choice maxOccurs="unbounded">
-     *                                       &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="ManufacturerPartNumberOrISBN" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                     &lt;/choice>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="ErrorList" minOccurs="0">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence maxOccurs="unbounded">
-     *                                       &lt;element name="ErrorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/choice>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;choice&gt;
+     *         &lt;element name="ProcessingReport"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="OriginalMessageName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                   &lt;element name="OriginalMessageType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                   &lt;element name="ProcessedStamp" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+     *                   &lt;element name="StatusCode"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                         &lt;enumeration value="CanNotFindSubCategoryCode"/&gt;
+     *                         &lt;enumeration value="DownloadFtpError"/&gt;
+     *                         &lt;enumeration value="DuplicateColumn"/&gt;
+     *                         &lt;enumeration value="FileContentError"/&gt;
+     *                         &lt;enumeration value="FileFormatError"/&gt;
+     *                         &lt;enumeration value="GetConfigError"/&gt;
+     *                         &lt;enumeration value="Init"/&gt;
+     *                         &lt;enumeration value="KeyColumnNoFind"/&gt;
+     *                         &lt;enumeration value="NoRecord"/&gt;
+     *                         &lt;enumeration value="NotFoundSheet"/&gt;
+     *                         &lt;enumeration value="ProcessReport"/&gt;
+     *                         &lt;enumeration value="TemplateError"/&gt;
+     *                         &lt;enumeration value="UploadFtpError"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="ProcessingSummary" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="ProcessedCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                             &lt;element name="SuccessCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                             &lt;element name="WithErrorCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="Result" maxOccurs="unbounded" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="AdditionalInfo" minOccurs="0"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;choice maxOccurs="unbounded"&gt;
+     *                                       &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="ManufacturerPartNumberOrISBN" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                     &lt;/choice&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="ErrorList" minOccurs="0"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence maxOccurs="unbounded"&gt;
+     *                                       &lt;element name="ErrorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/choice&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -438,87 +438,87 @@ public class ProcessingReportResponse {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="OriginalMessageName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="OriginalMessageType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *         &lt;element name="ProcessedStamp" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
-         *         &lt;element name="StatusCode">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *               &lt;enumeration value="CanNotFindSubCategoryCode"/>
-         *               &lt;enumeration value="DownloadFtpError"/>
-         *               &lt;enumeration value="DuplicateColumn"/>
-         *               &lt;enumeration value="FileContentError"/>
-         *               &lt;enumeration value="FileFormatError"/>
-         *               &lt;enumeration value="GetConfigError"/>
-         *               &lt;enumeration value="Init"/>
-         *               &lt;enumeration value="KeyColumnNoFind"/>
-         *               &lt;enumeration value="NoRecord"/>
-         *               &lt;enumeration value="NotFoundSheet"/>
-         *               &lt;enumeration value="ProcessReport"/>
-         *               &lt;enumeration value="TemplateError"/>
-         *               &lt;enumeration value="UploadFtpError"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="ProcessingSummary" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="ProcessedCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                   &lt;element name="SuccessCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                   &lt;element name="WithErrorCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="Result" maxOccurs="unbounded" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="AdditionalInfo" minOccurs="0">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;choice maxOccurs="unbounded">
-         *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="ManufacturerPartNumberOrISBN" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                           &lt;/choice>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="ErrorList" minOccurs="0">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence maxOccurs="unbounded">
-         *                             &lt;element name="ErrorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="OriginalMessageName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *         &lt;element name="OriginalMessageType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *         &lt;element name="ProcessedStamp" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+         *         &lt;element name="StatusCode"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *               &lt;enumeration value="CanNotFindSubCategoryCode"/&gt;
+         *               &lt;enumeration value="DownloadFtpError"/&gt;
+         *               &lt;enumeration value="DuplicateColumn"/&gt;
+         *               &lt;enumeration value="FileContentError"/&gt;
+         *               &lt;enumeration value="FileFormatError"/&gt;
+         *               &lt;enumeration value="GetConfigError"/&gt;
+         *               &lt;enumeration value="Init"/&gt;
+         *               &lt;enumeration value="KeyColumnNoFind"/&gt;
+         *               &lt;enumeration value="NoRecord"/&gt;
+         *               &lt;enumeration value="NotFoundSheet"/&gt;
+         *               &lt;enumeration value="ProcessReport"/&gt;
+         *               &lt;enumeration value="TemplateError"/&gt;
+         *               &lt;enumeration value="UploadFtpError"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="ProcessingSummary" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="ProcessedCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                   &lt;element name="SuccessCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                   &lt;element name="WithErrorCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="Result" maxOccurs="unbounded" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="AdditionalInfo" minOccurs="0"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;choice maxOccurs="unbounded"&gt;
+         *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="ManufacturerPartNumberOrISBN" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                           &lt;/choice&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="ErrorList" minOccurs="0"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence maxOccurs="unbounded"&gt;
+         *                             &lt;element name="ErrorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -607,7 +607,7 @@ public class ProcessingReportResponse {
              * 
              * @return
              *     possible object is
-             *     {@link XMLGregorianCalendar }
+             *     {@link String }
              *     
              */
             public String getProcessedStamp() {
@@ -619,7 +619,7 @@ public class ProcessingReportResponse {
              * 
              * @param value
              *     allowed object is
-             *     {@link XMLGregorianCalendar }
+             *     {@link String }
              *     
              */
             public void setProcessedStamp(String value) {
@@ -694,6 +694,9 @@ public class ProcessingReportResponse {
              * Objects of the following type(s) are allowed in the list
              * {@link ProcessingReportResponse.Message.ProcessingReport.Result }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link ProcessingReportResponse.Message.ProcessingReport.Result }
              * 
              */
             public List<ProcessingReportResponse.Message.ProcessingReport.Result> getResult() {
@@ -710,17 +713,17 @@ public class ProcessingReportResponse {
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="ProcessedCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *         &lt;element name="SuccessCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *         &lt;element name="WithErrorCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="ProcessedCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *         &lt;element name="SuccessCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *         &lt;element name="WithErrorCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -745,6 +748,9 @@ public class ProcessingReportResponse {
 
                 /**
                  * Gets the value of the processedCount property.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getProcessedCount() {
@@ -753,6 +759,9 @@ public class ProcessingReportResponse {
 
                 /**
                  * Sets the value of the processedCount property.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setProcessedCount(int value) {
@@ -761,6 +770,9 @@ public class ProcessingReportResponse {
 
                 /**
                  * Gets the value of the successCount property.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getSuccessCount() {
@@ -769,6 +781,9 @@ public class ProcessingReportResponse {
 
                 /**
                  * Sets the value of the successCount property.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setSuccessCount(int value) {
@@ -777,6 +792,9 @@ public class ProcessingReportResponse {
 
                 /**
                  * Gets the value of the withErrorCount property.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getWithErrorCount() {
@@ -785,6 +803,9 @@ public class ProcessingReportResponse {
 
                 /**
                  * Sets the value of the withErrorCount property.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setWithErrorCount(int value) {
@@ -800,42 +821,42 @@ public class ProcessingReportResponse {
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="AdditionalInfo" minOccurs="0">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;choice maxOccurs="unbounded">
-             *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="ManufacturerPartNumberOrISBN" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                 &lt;/choice>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="ErrorList" minOccurs="0">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence maxOccurs="unbounded">
-             *                   &lt;element name="ErrorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="AdditionalInfo" minOccurs="0"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;choice maxOccurs="unbounded"&gt;
+             *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="ManufacturerPartNumberOrISBN" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                 &lt;/choice&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="ErrorList" minOccurs="0"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence maxOccurs="unbounded"&gt;
+             *                   &lt;element name="ErrorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -909,21 +930,21 @@ public class ProcessingReportResponse {
                  * <p>The following schema fragment specifies the expected content contained within this class.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;choice maxOccurs="unbounded">
-                 *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="ManufacturerPartNumberOrISBN" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *       &lt;/choice>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;choice maxOccurs="unbounded"&gt;
+                 *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="SubCategoryID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="ManufacturerPartNumberOrISBN" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="UPC" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="TrackingNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *       &lt;/choice&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -989,15 +1010,10 @@ public class ProcessingReportResponse {
                      * {@link JAXBElement }{@code <}{@link String }{@code >}
                      * {@link JAXBElement }{@code <}{@link String }{@code >}
                      * 
-                     * 
-                     */
-                   /* public List<JAXBElement<String>> getSellerPartNumberOrSubCategoryIDOrManufacturerPartNumberOrISBN() {
-                        if (sellerPartNumberOrSubCategoryIDOrManufacturerPartNumberOrISBN == null) {
-                            sellerPartNumberOrSubCategoryIDOrManufacturerPartNumberOrISBN = new ArrayList<JAXBElement<String>>();
-                        }
-                        return this.sellerPartNumberOrSubCategoryIDOrManufacturerPartNumberOrISBN;
-                    }*/
-                	
+                     * @return
+                     * possible object is
+                     *     {@link String }
+                     */                  
 					public String getManufacturerPartNumber() {
 						return manufacturerPartNumber;
 					}
@@ -1051,20 +1067,20 @@ public class ProcessingReportResponse {
 
 
                 /**
-                 * <p>Java class for anonymous complex type.
+                 * <p>Java class for anonymous complex type.</p>
                  * 
-                 * <p>The following schema fragment specifies the expected content contained within this class.
+                 * <p>The following schema fragment specifies the expected content contained within this class.</p>
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence maxOccurs="unbounded">
-                 *         &lt;element name="ErrorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence maxOccurs="unbounded"&gt;
+                 *         &lt;element name="ErrorDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -1087,18 +1103,23 @@ public class ProcessingReportResponse {
                      * not a snapshot. Therefore any modification you make to the
                      * returned list will be present inside the JAXB object.
                      * This is why there is not a <CODE>set</CODE> method for the errorDescription property.
+                     * </p>
                      * 
                      * <p>
                      * For example, to add a new item, do as follows:
+                     * </p>
                      * <pre>
                      *    getErrorDescription().add(newItem);
                      * </pre>
                      * 
                      * 
                      * <p>
-                     * Objects of the following type(s) are allowed in the list
+                     * Objects of the following type(s) are allowed in the list                     
                      * {@link String }
                      * 
+                     * @return
+                     * Objects of the following type(s) are allowed in the list
+                     * {@link String }
                      * 
                      */
                     public List<String> getErrorDescription() {

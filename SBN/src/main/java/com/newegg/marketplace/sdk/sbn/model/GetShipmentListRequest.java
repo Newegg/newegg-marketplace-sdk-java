@@ -25,82 +25,82 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *         &lt;element name="RequestBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="PageInfo">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="PageIndex">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                   &lt;minInclusive value="1"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="PageSize">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                   &lt;minInclusive value="1"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="KeywordsType" minOccurs="0">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                         &lt;enumeration value="0"/>
- *                         &lt;enumeration value="1"/>
- *                         &lt;enumeration value="2"/>
- *                         &lt;enumeration value="3"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="KeywordsValue" minOccurs="0">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                         &lt;minLength value="1"/>
- *                         &lt;maxLength value="40"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="Status" minOccurs="0">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                         &lt;enumeration value="0"/>
- *                         &lt;enumeration value="1"/>
- *                         &lt;enumeration value="2"/>
- *                         &lt;enumeration value="3"/>
- *                         &lt;enumeration value="4"/>
- *                         &lt;enumeration value="5"/>
- *                         &lt;enumeration value="6"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="LastUpdateDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="LastUpdateDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *         &lt;element name="RequestBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="PageInfo"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="PageIndex"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="PageSize"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="KeywordsType" minOccurs="0"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                         &lt;enumeration value="0"/&gt;
+ *                         &lt;enumeration value="1"/&gt;
+ *                         &lt;enumeration value="2"/&gt;
+ *                         &lt;enumeration value="3"/&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="KeywordsValue" minOccurs="0"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                         &lt;minLength value="1"/&gt;
+ *                         &lt;maxLength value="40"/&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="Status" minOccurs="0"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                         &lt;enumeration value="0"/&gt;
+ *                         &lt;enumeration value="1"/&gt;
+ *                         &lt;enumeration value="2"/&gt;
+ *                         &lt;enumeration value="3"/&gt;
+ *                         &lt;enumeration value="4"/&gt;
+ *                         &lt;enumeration value="5"/&gt;
+ *                         &lt;enumeration value="6"/&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="LastUpdateDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                   &lt;element name="LastUpdateDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -133,6 +133,9 @@ public class GetShipmentListRequest {
 	 * Sets the value of the operationType property.
 	 * 
 	 * @param value allowed object is {@link String }
+	 * @param value
+	 *     allowed object is
+	 *     {@link 	String }
 	 * 
 	 */
 	public void setOperationType(String value) {
@@ -153,6 +156,9 @@ public class GetShipmentListRequest {
 	 * Sets the value of the requestBody property.
 	 * 
 	 * @param value allowed object is {@link GetShipmentListRequest.RequestBody }
+	 * @param value
+	 *     allowed object is
+	 *     {@link 	GetShipmentListRequest.RequestBody }
 	 * 
 	 */
 	public void setRequestBody(GetShipmentListRequest.RequestBody value) {
@@ -168,71 +174,71 @@ public class GetShipmentListRequest {
 	 * this class.
 	 * 
 	 * <pre>
-	 * &lt;complexType>
-	 *   &lt;complexContent>
-	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *       &lt;all>
-	 *         &lt;element name="PageInfo">
-	 *           &lt;complexType>
-	 *             &lt;complexContent>
-	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                 &lt;all>
-	 *                   &lt;element name="PageIndex">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-	 *                         &lt;minInclusive value="1"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="PageSize">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-	 *                         &lt;minInclusive value="1"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                 &lt;/all>
-	 *               &lt;/restriction>
-	 *             &lt;/complexContent>
-	 *           &lt;/complexType>
-	 *         &lt;/element>
-	 *         &lt;element name="KeywordsType" minOccurs="0">
-	 *           &lt;simpleType>
-	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-	 *               &lt;enumeration value="0"/>
-	 *               &lt;enumeration value="1"/>
-	 *               &lt;enumeration value="2"/>
-	 *               &lt;enumeration value="3"/>
-	 *             &lt;/restriction>
-	 *           &lt;/simpleType>
-	 *         &lt;/element>
-	 *         &lt;element name="KeywordsValue" minOccurs="0">
-	 *           &lt;simpleType>
-	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-	 *               &lt;minLength value="1"/>
-	 *               &lt;maxLength value="40"/>
-	 *             &lt;/restriction>
-	 *           &lt;/simpleType>
-	 *         &lt;/element>
-	 *         &lt;element name="Status" minOccurs="0">
-	 *           &lt;simpleType>
-	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-	 *               &lt;enumeration value="0"/>
-	 *               &lt;enumeration value="1"/>
-	 *               &lt;enumeration value="2"/>
-	 *               &lt;enumeration value="3"/>
-	 *               &lt;enumeration value="4"/>
-	 *               &lt;enumeration value="5"/>
-	 *               &lt;enumeration value="6"/>
-	 *             &lt;/restriction>
-	 *           &lt;/simpleType>
-	 *         &lt;/element>
-	 *         &lt;element name="LastUpdateDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-	 *         &lt;element name="LastUpdateDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-	 *       &lt;/all>
-	 *     &lt;/restriction>
-	 *   &lt;/complexContent>
-	 * &lt;/complexType>
+	 * &lt;complexType&gt;
+	 *   &lt;complexContent&gt;
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *       &lt;all&gt;
+	 *         &lt;element name="PageInfo"&gt;
+	 *           &lt;complexType&gt;
+	 *             &lt;complexContent&gt;
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                 &lt;all&gt;
+	 *                   &lt;element name="PageIndex"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="PageSize"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                 &lt;/all&gt;
+	 *               &lt;/restriction&gt;
+	 *             &lt;/complexContent&gt;
+	 *           &lt;/complexType&gt;
+	 *         &lt;/element&gt;
+	 *         &lt;element name="KeywordsType" minOccurs="0"&gt;
+	 *           &lt;simpleType&gt;
+	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+	 *               &lt;enumeration value="0"/&gt;
+	 *               &lt;enumeration value="1"/&gt;
+	 *               &lt;enumeration value="2"/&gt;
+	 *               &lt;enumeration value="3"/&gt;
+	 *             &lt;/restriction&gt;
+	 *           &lt;/simpleType&gt;
+	 *         &lt;/element&gt;
+	 *         &lt;element name="KeywordsValue" minOccurs="0"&gt;
+	 *           &lt;simpleType&gt;
+	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+	 *               &lt;minLength value="1"/&gt;
+	 *               &lt;maxLength value="40"/&gt;
+	 *             &lt;/restriction&gt;
+	 *           &lt;/simpleType&gt;
+	 *         &lt;/element&gt;
+	 *         &lt;element name="Status" minOccurs="0"&gt;
+	 *           &lt;simpleType&gt;
+	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+	 *               &lt;enumeration value="0"/&gt;
+	 *               &lt;enumeration value="1"/&gt;
+	 *               &lt;enumeration value="2"/&gt;
+	 *               &lt;enumeration value="3"/&gt;
+	 *               &lt;enumeration value="4"/&gt;
+	 *               &lt;enumeration value="5"/&gt;
+	 *               &lt;enumeration value="6"/&gt;
+	 *             &lt;/restriction&gt;
+	 *           &lt;/simpleType&gt;
+	 *         &lt;/element&gt;
+	 *         &lt;element name="LastUpdateDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+	 *         &lt;element name="LastUpdateDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+	 *       &lt;/all&gt;
+	 *     &lt;/restriction&gt;
+	 *   &lt;/complexContent&gt;
+	 * &lt;/complexType&gt;
 	 * </pre>
 	 * 
 	 * 
@@ -278,6 +284,9 @@ public class GetShipmentListRequest {
 		 * 
 		 * @param value allowed object is
 		 *              {@link GetShipmentListRequest.RequestBody.PageInfo }
+		 * @param value
+		 *     allowed object is
+		 *     {@link 		GetShipmentListRequest.RequestBody.PageInfo }
 		 * 
 		 */
 		public void setPageInfo(GetShipmentListRequest.RequestBody.PageInfo value) {
@@ -298,6 +307,9 @@ public class GetShipmentListRequest {
 		 * Sets the value of the keywordsType property.
 		 * 
 		 * @param value allowed object is {@link BigInteger }
+		 * @param value
+		 *     allowed object is
+		 *     {@link 		BigInteger }
 		 * 
 		 */
 		public void setKeywordsType(BigInteger value) {
@@ -318,6 +330,9 @@ public class GetShipmentListRequest {
 		 * Sets the value of the keywordsValue property.
 		 * 
 		 * @param value allowed object is {@link String }
+		 * @param value
+		 *     allowed object is
+		 *     {@link 		String }
 		 * 
 		 */
 		public void setKeywordsValue(String value) {
@@ -338,6 +353,9 @@ public class GetShipmentListRequest {
 		 * Sets the value of the status property.
 		 * 
 		 * @param value allowed object is {@link BigInteger }
+		 * @param value
+		 *     allowed object is
+		 *     {@link 		BigInteger }
 		 * 
 		 */
 		public void setStatus(BigInteger value) {
@@ -358,6 +376,9 @@ public class GetShipmentListRequest {
 		 * Sets the value of the lastUpdateDateFrom property.
 		 * 
 		 * @param value allowed object is {@link String }
+		 * @param value
+		 *     allowed object is
+		 *     {@link 		String }
 		 * 
 		 */
 		public void setLastUpdateDateFrom(String value) {
@@ -378,6 +399,9 @@ public class GetShipmentListRequest {
 		 * Sets the value of the lastUpdateDateTo property.
 		 * 
 		 * @param value allowed object is {@link String }
+		 * @param value
+		 *     allowed object is
+		 *     {@link 		String }
 		 * 
 		 */
 		public void setLastUpdateDateTo(String value) {
@@ -393,28 +417,28 @@ public class GetShipmentListRequest {
 		 * this class.
 		 * 
 		 * <pre>
-		 * &lt;complexType>
-		 *   &lt;complexContent>
-		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *       &lt;all>
-		 *         &lt;element name="PageIndex">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-		 *               &lt;minInclusive value="1"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="PageSize">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-		 *               &lt;minInclusive value="1"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *       &lt;/all>
-		 *     &lt;/restriction>
-		 *   &lt;/complexContent>
-		 * &lt;/complexType>
+		 * &lt;complexType&gt;
+		 *   &lt;complexContent&gt;
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *       &lt;all&gt;
+		 *         &lt;element name="PageIndex"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="PageSize"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *       &lt;/all&gt;
+		 *     &lt;/restriction&gt;
+		 *   &lt;/complexContent&gt;
+		 * &lt;/complexType&gt;
 		 * </pre>
 		 * 
 		 * 
@@ -446,6 +470,9 @@ public class GetShipmentListRequest {
 			 * Sets the value of the pageIndex property.
 			 * 
 			 * @param value allowed object is {@link BigInteger }
+			 * @param value
+			 *     allowed object is
+			 *     {@link 			BigInteger }
 			 * 
 			 */
 			public void setPageIndex(BigInteger value) {
@@ -466,6 +493,9 @@ public class GetShipmentListRequest {
 			 * Sets the value of the pageSize property.
 			 * 
 			 * @param value allowed object is {@link BigInteger }
+			 * @param value
+			 *     allowed object is
+			 *     {@link 			BigInteger }
 			 * 
 			 */
 			public void setPageSize(BigInteger value) {

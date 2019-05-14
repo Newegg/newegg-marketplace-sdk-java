@@ -26,78 +26,78 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="GetSellerSubcategoryResponse"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="CountryCode">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                         &lt;length value="3"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="SubcategoryList">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="Subcategory" maxOccurs="unbounded">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="IndustryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                       &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="Enabled">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                             &lt;minInclusive value="0"/>
- *                                             &lt;maxInclusive value="1"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="GetSellerSubcategoryResponse"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="CountryCode"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                         &lt;length value="3"/&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="SubcategoryList"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="Subcategory" maxOccurs="unbounded"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="IndustryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                       &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="Enabled"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                             &lt;minInclusive value="0"/&gt;
+ *                                             &lt;maxInclusive value="1"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -225,53 +225,53 @@ public class GetSubcategoryStatusForInternationalCountryResponse {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="CountryCode">
-     *           &lt;simpleType>
-     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;length value="3"/>
-     *             &lt;/restriction>
-     *           &lt;/simpleType>
-     *         &lt;/element>
-     *         &lt;element name="SubcategoryList">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="Subcategory" maxOccurs="unbounded">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="IndustryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                             &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="Enabled">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                                   &lt;minInclusive value="0"/>
-     *                                   &lt;maxInclusive value="1"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="CountryCode"&gt;
+     *           &lt;simpleType&gt;
+     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *               &lt;length value="3"/&gt;
+     *             &lt;/restriction&gt;
+     *           &lt;/simpleType&gt;
+     *         &lt;/element&gt;
+     *         &lt;element name="SubcategoryList"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="Subcategory" maxOccurs="unbounded"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;all&gt;
+     *                             &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="IndustryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                             &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="Enabled"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                                   &lt;minInclusive value="0"/&gt;
+     *                                   &lt;maxInclusive value="1"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/all&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -345,36 +345,36 @@ public class GetSubcategoryStatusForInternationalCountryResponse {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="Subcategory" maxOccurs="unbounded">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="IndustryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                   &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="Enabled">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *                         &lt;minInclusive value="0"/>
-         *                         &lt;maxInclusive value="1"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="Subcategory" maxOccurs="unbounded"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;all&gt;
+         *                   &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="IndustryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                   &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="Enabled"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *                         &lt;minInclusive value="0"/&gt;
+         *                         &lt;maxInclusive value="1"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/all&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -409,6 +409,9 @@ public class GetSubcategoryStatusForInternationalCountryResponse {
              * Objects of the following type(s) are allowed in the list
              * {@link GetSubcategoryStatusForInternationalCountryResponse.ResponseBody.SubcategoryList.Subcategory }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link GetSubcategoryStatusForInternationalCountryResponse.ResponseBody.SubcategoryList.Subcategory }
              * 
              */
             public List<GetSubcategoryStatusForInternationalCountryResponse.ResponseBody.SubcategoryList.Subcategory> getSubcategory() {
@@ -425,26 +428,26 @@ public class GetSubcategoryStatusForInternationalCountryResponse {
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="IndustryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *         &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="Enabled">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-             *               &lt;minInclusive value="0"/>
-             *               &lt;maxInclusive value="1"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;all&gt;
+             *         &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="IndustryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *         &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="Enabled"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+             *               &lt;minInclusive value="0"/&gt;
+             *               &lt;maxInclusive value="1"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/all&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -521,6 +524,9 @@ public class GetSubcategoryStatusForInternationalCountryResponse {
 
                 /**
                  * Gets the value of the subcategoryID property.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getSubcategoryID() {
@@ -529,6 +535,9 @@ public class GetSubcategoryStatusForInternationalCountryResponse {
 
                 /**
                  * Sets the value of the subcategoryID property.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setSubcategoryID(int value) {
@@ -561,6 +570,9 @@ public class GetSubcategoryStatusForInternationalCountryResponse {
 
                 /**
                  * Gets the value of the enabled property.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getEnabled() {
@@ -569,6 +581,9 @@ public class GetSubcategoryStatusForInternationalCountryResponse {
 
                 /**
                  * Sets the value of the enabled property.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setEnabled(int value) {

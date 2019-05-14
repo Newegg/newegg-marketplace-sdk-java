@@ -23,173 +23,173 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * <p>下列綱要片段會指定此類別中包含的預期內容.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IssueUser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="GetOrderInfoRequest"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="RequestBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *                   &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *                   &lt;element name="RequestCriteria">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="OrderNumberList" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence minOccurs="0">
- *                                       &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="SellerOrderNumberList" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence minOccurs="0">
- *                                       &lt;element name="SellerOrderNumber" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="Status" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;enumeration value="0"/>
- *                                   &lt;enumeration value="1"/>
- *                                   &lt;enumeration value="2"/>
- *                                   &lt;enumeration value="3"/>
- *                                   &lt;enumeration value="4"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="OrderDownloaded" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;enumeration value="0"/>
- *                                   &lt;enumeration value="1"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="Type" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;enumeration value="0"/>
- *                                   &lt;enumeration value="1"/>
- *                                   &lt;enumeration value="2"/>
- *                                   &lt;enumeration value="3"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="VoidSoon" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;enumeration value="24"/>
- *                                   &lt;enumeration value="48"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="OrderDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                             &lt;element name="OrderDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                             &lt;element name="CountryCode" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;enumeration value="AUS"/>
- *                                   &lt;enumeration value="NZL"/>
- *                                   &lt;enumeration value="GBR"/>
- *                                   &lt;enumeration value="IRL"/>
- *                                   &lt;enumeration value="NLD"/>
- *                                   &lt;enumeration value="POL"/>
- *                                   &lt;enumeration value="IND"/>
- *                                   &lt;enumeration value="SGP"/>
- *                                   &lt;enumeration value="USA"/>
- *                                   &lt;enumeration value="HKG"/>
- *                                   &lt;enumeration value="MAC"/>
- *                                   &lt;enumeration value="IDN"/>
- *                                   &lt;enumeration value="PHL"/>
- *                                   &lt;enumeration value="KOR"/>
- *                                   &lt;enumeration value="THA"/>
- *                                   &lt;enumeration value="BRA"/>
- *                                   &lt;enumeration value="CHL"/>
- *                                   &lt;enumeration value="CHN"/>
- *                                   &lt;enumeration value="COL"/>
- *                                   &lt;enumeration value="CRI"/>
- *                                   &lt;enumeration value="DOM"/>
- *                                   &lt;enumeration value="ECU"/>
- *                                   &lt;enumeration value="SLV"/>
- *                                   &lt;enumeration value="GTM"/>
- *                                   &lt;enumeration value="HND"/>
- *                                   &lt;enumeration value="JAM"/>
- *                                   &lt;enumeration value="MEX"/>
- *                                   &lt;enumeration value="NIC"/>
- *                                   &lt;enumeration value="PAN"/>
- *                                   &lt;enumeration value="ISR"/>
- *                                   &lt;enumeration value="SAU"/>
- *                                   &lt;enumeration value="TUR"/>
- *                                   &lt;enumeration value="ARE"/>
- *                                   &lt;enumeration value="AUT"/>
- *                                   &lt;enumeration value="BEL"/>
- *                                   &lt;enumeration value="BGR"/>
- *                                   &lt;enumeration value="DNK"/>
- *                                   &lt;enumeration value="FIN"/>
- *                                   &lt;enumeration value="FRA"/>
- *                                   &lt;enumeration value="DEU"/>
- *                                   &lt;enumeration value="GRC"/>
- *                                   &lt;enumeration value="HUN"/>
- *                                   &lt;enumeration value="ITA"/>
- *                                   &lt;enumeration value="LVA"/>
- *                                   &lt;enumeration value="LUX"/>
- *                                   &lt;enumeration value="MCO"/>
- *                                   &lt;enumeration value="NOR"/>
- *                                   &lt;enumeration value="PRT"/>
- *                                   &lt;enumeration value="SVK"/>
- *                                   &lt;enumeration value="SVN"/>
- *                                   &lt;enumeration value="ESP"/>
- *                                   &lt;enumeration value="SWE"/>
- *                                   &lt;enumeration value="CHE"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="PremierOrder" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;enumeration value="0"/>
- *                                   &lt;enumeration value="1"/>
- *                                   &lt;enumeration value="2"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IssueUser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="GetOrderInfoRequest"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="RequestBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *                   &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *                   &lt;element name="RequestCriteria"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="OrderNumberList" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence minOccurs="0"&gt;
+ *                                       &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="SellerOrderNumberList" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence minOccurs="0"&gt;
+ *                                       &lt;element name="SellerOrderNumber" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="Status" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;enumeration value="0"/&gt;
+ *                                   &lt;enumeration value="1"/&gt;
+ *                                   &lt;enumeration value="2"/&gt;
+ *                                   &lt;enumeration value="3"/&gt;
+ *                                   &lt;enumeration value="4"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="OrderDownloaded" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;enumeration value="0"/&gt;
+ *                                   &lt;enumeration value="1"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="Type" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;enumeration value="0"/&gt;
+ *                                   &lt;enumeration value="1"/&gt;
+ *                                   &lt;enumeration value="2"/&gt;
+ *                                   &lt;enumeration value="3"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="VoidSoon" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;enumeration value="24"/&gt;
+ *                                   &lt;enumeration value="48"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="OrderDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                             &lt;element name="OrderDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                             &lt;element name="CountryCode" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;enumeration value="AUS"/&gt;
+ *                                   &lt;enumeration value="NZL"/&gt;
+ *                                   &lt;enumeration value="GBR"/&gt;
+ *                                   &lt;enumeration value="IRL"/&gt;
+ *                                   &lt;enumeration value="NLD"/&gt;
+ *                                   &lt;enumeration value="POL"/&gt;
+ *                                   &lt;enumeration value="IND"/&gt;
+ *                                   &lt;enumeration value="SGP"/&gt;
+ *                                   &lt;enumeration value="USA"/&gt;
+ *                                   &lt;enumeration value="HKG"/&gt;
+ *                                   &lt;enumeration value="MAC"/&gt;
+ *                                   &lt;enumeration value="IDN"/&gt;
+ *                                   &lt;enumeration value="PHL"/&gt;
+ *                                   &lt;enumeration value="KOR"/&gt;
+ *                                   &lt;enumeration value="THA"/&gt;
+ *                                   &lt;enumeration value="BRA"/&gt;
+ *                                   &lt;enumeration value="CHL"/&gt;
+ *                                   &lt;enumeration value="CHN"/&gt;
+ *                                   &lt;enumeration value="COL"/&gt;
+ *                                   &lt;enumeration value="CRI"/&gt;
+ *                                   &lt;enumeration value="DOM"/&gt;
+ *                                   &lt;enumeration value="ECU"/&gt;
+ *                                   &lt;enumeration value="SLV"/&gt;
+ *                                   &lt;enumeration value="GTM"/&gt;
+ *                                   &lt;enumeration value="HND"/&gt;
+ *                                   &lt;enumeration value="JAM"/&gt;
+ *                                   &lt;enumeration value="MEX"/&gt;
+ *                                   &lt;enumeration value="NIC"/&gt;
+ *                                   &lt;enumeration value="PAN"/&gt;
+ *                                   &lt;enumeration value="ISR"/&gt;
+ *                                   &lt;enumeration value="SAU"/&gt;
+ *                                   &lt;enumeration value="TUR"/&gt;
+ *                                   &lt;enumeration value="ARE"/&gt;
+ *                                   &lt;enumeration value="AUT"/&gt;
+ *                                   &lt;enumeration value="BEL"/&gt;
+ *                                   &lt;enumeration value="BGR"/&gt;
+ *                                   &lt;enumeration value="DNK"/&gt;
+ *                                   &lt;enumeration value="FIN"/&gt;
+ *                                   &lt;enumeration value="FRA"/&gt;
+ *                                   &lt;enumeration value="DEU"/&gt;
+ *                                   &lt;enumeration value="GRC"/&gt;
+ *                                   &lt;enumeration value="HUN"/&gt;
+ *                                   &lt;enumeration value="ITA"/&gt;
+ *                                   &lt;enumeration value="LVA"/&gt;
+ *                                   &lt;enumeration value="LUX"/&gt;
+ *                                   &lt;enumeration value="MCO"/&gt;
+ *                                   &lt;enumeration value="NOR"/&gt;
+ *                                   &lt;enumeration value="PRT"/&gt;
+ *                                   &lt;enumeration value="SVK"/&gt;
+ *                                   &lt;enumeration value="SVN"/&gt;
+ *                                   &lt;enumeration value="ESP"/&gt;
+ *                                   &lt;enumeration value="SWE"/&gt;
+ *                                   &lt;enumeration value="CHE"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="PremierOrder" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;enumeration value="0"/&gt;
+ *                                   &lt;enumeration value="1"/&gt;
+ *                                   &lt;enumeration value="2"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -264,7 +264,7 @@ public class GetOrderInformationRequest {
      * 
      * @return
      *     possible object is
-     *     {@link NeweggAPIRequest.RequestBody }
+     *     {@link GetOrderInformationRequest.RequestBody }
      *     
      */
     public GetOrderInformationRequest.RequestBody getRequestBody() {
@@ -276,7 +276,7 @@ public class GetOrderInformationRequest {
      * 
      * @param value
      *     allowed object is
-     *     {@link NeweggAPIRequest.RequestBody }
+     *     {@link GetOrderInformationRequest.RequestBody }
      *     
      */
     public void setRequestBody(GetOrderInformationRequest.RequestBody value) {
@@ -290,155 +290,155 @@ public class GetOrderInformationRequest {
      * <p>下列綱要片段會指定此類別中包含的預期內容.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-     *         &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-     *         &lt;element name="RequestCriteria">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="OrderNumberList" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence minOccurs="0">
-     *                             &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="SellerOrderNumberList" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence minOccurs="0">
-     *                             &lt;element name="SellerOrderNumber" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="Status" minOccurs="0">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                         &lt;enumeration value="0"/>
-     *                         &lt;enumeration value="1"/>
-     *                         &lt;enumeration value="2"/>
-     *                         &lt;enumeration value="3"/>
-     *                         &lt;enumeration value="4"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="OrderDownloaded" minOccurs="0">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                         &lt;enumeration value="0"/>
-     *                         &lt;enumeration value="1"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="Type" minOccurs="0">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                         &lt;enumeration value="0"/>
-     *                         &lt;enumeration value="1"/>
-     *                         &lt;enumeration value="2"/>
-     *                         &lt;enumeration value="3"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="VoidSoon" minOccurs="0">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                         &lt;enumeration value="24"/>
-     *                         &lt;enumeration value="48"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="OrderDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                   &lt;element name="OrderDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                   &lt;element name="CountryCode" minOccurs="0">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                         &lt;enumeration value="AUS"/>
-     *                         &lt;enumeration value="NZL"/>
-     *                         &lt;enumeration value="GBR"/>
-     *                         &lt;enumeration value="IRL"/>
-     *                         &lt;enumeration value="NLD"/>
-     *                         &lt;enumeration value="POL"/>
-     *                         &lt;enumeration value="IND"/>
-     *                         &lt;enumeration value="SGP"/>
-     *                         &lt;enumeration value="USA"/>
-     *                         &lt;enumeration value="HKG"/>
-     *                         &lt;enumeration value="MAC"/>
-     *                         &lt;enumeration value="IDN"/>
-     *                         &lt;enumeration value="PHL"/>
-     *                         &lt;enumeration value="KOR"/>
-     *                         &lt;enumeration value="THA"/>
-     *                         &lt;enumeration value="BRA"/>
-     *                         &lt;enumeration value="CHL"/>
-     *                         &lt;enumeration value="CHN"/>
-     *                         &lt;enumeration value="COL"/>
-     *                         &lt;enumeration value="CRI"/>
-     *                         &lt;enumeration value="DOM"/>
-     *                         &lt;enumeration value="ECU"/>
-     *                         &lt;enumeration value="SLV"/>
-     *                         &lt;enumeration value="GTM"/>
-     *                         &lt;enumeration value="HND"/>
-     *                         &lt;enumeration value="JAM"/>
-     *                         &lt;enumeration value="MEX"/>
-     *                         &lt;enumeration value="NIC"/>
-     *                         &lt;enumeration value="PAN"/>
-     *                         &lt;enumeration value="ISR"/>
-     *                         &lt;enumeration value="SAU"/>
-     *                         &lt;enumeration value="TUR"/>
-     *                         &lt;enumeration value="ARE"/>
-     *                         &lt;enumeration value="AUT"/>
-     *                         &lt;enumeration value="BEL"/>
-     *                         &lt;enumeration value="BGR"/>
-     *                         &lt;enumeration value="DNK"/>
-     *                         &lt;enumeration value="FIN"/>
-     *                         &lt;enumeration value="FRA"/>
-     *                         &lt;enumeration value="DEU"/>
-     *                         &lt;enumeration value="GRC"/>
-     *                         &lt;enumeration value="HUN"/>
-     *                         &lt;enumeration value="ITA"/>
-     *                         &lt;enumeration value="LVA"/>
-     *                         &lt;enumeration value="LUX"/>
-     *                         &lt;enumeration value="MCO"/>
-     *                         &lt;enumeration value="NOR"/>
-     *                         &lt;enumeration value="PRT"/>
-     *                         &lt;enumeration value="SVK"/>
-     *                         &lt;enumeration value="SVN"/>
-     *                         &lt;enumeration value="ESP"/>
-     *                         &lt;enumeration value="SWE"/>
-     *                         &lt;enumeration value="CHE"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="PremierOrder" minOccurs="0">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                         &lt;enumeration value="0"/>
-     *                         &lt;enumeration value="1"/>
-     *                         &lt;enumeration value="2"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+     *         &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+     *         &lt;element name="RequestCriteria"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="OrderNumberList" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence minOccurs="0"&gt;
+     *                             &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="SellerOrderNumberList" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence minOccurs="0"&gt;
+     *                             &lt;element name="SellerOrderNumber" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="Status" minOccurs="0"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                         &lt;enumeration value="0"/&gt;
+     *                         &lt;enumeration value="1"/&gt;
+     *                         &lt;enumeration value="2"/&gt;
+     *                         &lt;enumeration value="3"/&gt;
+     *                         &lt;enumeration value="4"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="OrderDownloaded" minOccurs="0"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                         &lt;enumeration value="0"/&gt;
+     *                         &lt;enumeration value="1"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="Type" minOccurs="0"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                         &lt;enumeration value="0"/&gt;
+     *                         &lt;enumeration value="1"/&gt;
+     *                         &lt;enumeration value="2"/&gt;
+     *                         &lt;enumeration value="3"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="VoidSoon" minOccurs="0"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                         &lt;enumeration value="24"/&gt;
+     *                         &lt;enumeration value="48"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="OrderDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                   &lt;element name="OrderDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                   &lt;element name="CountryCode" minOccurs="0"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                         &lt;enumeration value="AUS"/&gt;
+     *                         &lt;enumeration value="NZL"/&gt;
+     *                         &lt;enumeration value="GBR"/&gt;
+     *                         &lt;enumeration value="IRL"/&gt;
+     *                         &lt;enumeration value="NLD"/&gt;
+     *                         &lt;enumeration value="POL"/&gt;
+     *                         &lt;enumeration value="IND"/&gt;
+     *                         &lt;enumeration value="SGP"/&gt;
+     *                         &lt;enumeration value="USA"/&gt;
+     *                         &lt;enumeration value="HKG"/&gt;
+     *                         &lt;enumeration value="MAC"/&gt;
+     *                         &lt;enumeration value="IDN"/&gt;
+     *                         &lt;enumeration value="PHL"/&gt;
+     *                         &lt;enumeration value="KOR"/&gt;
+     *                         &lt;enumeration value="THA"/&gt;
+     *                         &lt;enumeration value="BRA"/&gt;
+     *                         &lt;enumeration value="CHL"/&gt;
+     *                         &lt;enumeration value="CHN"/&gt;
+     *                         &lt;enumeration value="COL"/&gt;
+     *                         &lt;enumeration value="CRI"/&gt;
+     *                         &lt;enumeration value="DOM"/&gt;
+     *                         &lt;enumeration value="ECU"/&gt;
+     *                         &lt;enumeration value="SLV"/&gt;
+     *                         &lt;enumeration value="GTM"/&gt;
+     *                         &lt;enumeration value="HND"/&gt;
+     *                         &lt;enumeration value="JAM"/&gt;
+     *                         &lt;enumeration value="MEX"/&gt;
+     *                         &lt;enumeration value="NIC"/&gt;
+     *                         &lt;enumeration value="PAN"/&gt;
+     *                         &lt;enumeration value="ISR"/&gt;
+     *                         &lt;enumeration value="SAU"/&gt;
+     *                         &lt;enumeration value="TUR"/&gt;
+     *                         &lt;enumeration value="ARE"/&gt;
+     *                         &lt;enumeration value="AUT"/&gt;
+     *                         &lt;enumeration value="BEL"/&gt;
+     *                         &lt;enumeration value="BGR"/&gt;
+     *                         &lt;enumeration value="DNK"/&gt;
+     *                         &lt;enumeration value="FIN"/&gt;
+     *                         &lt;enumeration value="FRA"/&gt;
+     *                         &lt;enumeration value="DEU"/&gt;
+     *                         &lt;enumeration value="GRC"/&gt;
+     *                         &lt;enumeration value="HUN"/&gt;
+     *                         &lt;enumeration value="ITA"/&gt;
+     *                         &lt;enumeration value="LVA"/&gt;
+     *                         &lt;enumeration value="LUX"/&gt;
+     *                         &lt;enumeration value="MCO"/&gt;
+     *                         &lt;enumeration value="NOR"/&gt;
+     *                         &lt;enumeration value="PRT"/&gt;
+     *                         &lt;enumeration value="SVK"/&gt;
+     *                         &lt;enumeration value="SVN"/&gt;
+     *                         &lt;enumeration value="ESP"/&gt;
+     *                         &lt;enumeration value="SWE"/&gt;
+     *                         &lt;enumeration value="CHE"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="PremierOrder" minOccurs="0"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                         &lt;enumeration value="0"/&gt;
+     *                         &lt;enumeration value="1"/&gt;
+     *                         &lt;enumeration value="2"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/all&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/all&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -512,7 +512,7 @@ public class GetOrderInformationRequest {
          * 
          * @return
          *     possible object is
-         *     {@link NeweggAPIRequest.RequestBody.RequestCriteria }
+         *     {@link GetOrderInformationRequest.RequestBody.RequestCriteria }
          *     
          */
         public GetOrderInformationRequest.RequestBody.RequestCriteria getRequestCriteria() {
@@ -524,7 +524,7 @@ public class GetOrderInformationRequest {
          * 
          * @param value
          *     allowed object is
-         *     {@link NeweggAPIRequest.RequestBody.RequestCriteria }
+         *     {@link GetOrderInformationRequest.RequestBody.RequestCriteria }
          *     
          */
         public void setRequestCriteria(GetOrderInformationRequest.RequestBody.RequestCriteria value) {
@@ -538,143 +538,143 @@ public class GetOrderInformationRequest {
          * <p>下列綱要片段會指定此類別中包含的預期內容.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="OrderNumberList" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence minOccurs="0">
-         *                   &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="SellerOrderNumberList" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence minOccurs="0">
-         *                   &lt;element name="SellerOrderNumber" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="Status" minOccurs="0">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *               &lt;enumeration value="0"/>
-         *               &lt;enumeration value="1"/>
-         *               &lt;enumeration value="2"/>
-         *               &lt;enumeration value="3"/>
-         *               &lt;enumeration value="4"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="OrderDownloaded" minOccurs="0">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *               &lt;enumeration value="0"/>
-         *               &lt;enumeration value="1"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="Type" minOccurs="0">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *               &lt;enumeration value="0"/>
-         *               &lt;enumeration value="1"/>
-         *               &lt;enumeration value="2"/>
-         *               &lt;enumeration value="3"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="VoidSoon" minOccurs="0">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *               &lt;enumeration value="24"/>
-         *               &lt;enumeration value="48"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="OrderDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *         &lt;element name="OrderDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *         &lt;element name="CountryCode" minOccurs="0">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *               &lt;enumeration value="AUS"/>
-         *               &lt;enumeration value="NZL"/>
-         *               &lt;enumeration value="GBR"/>
-         *               &lt;enumeration value="IRL"/>
-         *               &lt;enumeration value="NLD"/>
-         *               &lt;enumeration value="POL"/>
-         *               &lt;enumeration value="IND"/>
-         *               &lt;enumeration value="SGP"/>
-         *               &lt;enumeration value="USA"/>
-         *               &lt;enumeration value="HKG"/>
-         *               &lt;enumeration value="MAC"/>
-         *               &lt;enumeration value="IDN"/>
-         *               &lt;enumeration value="PHL"/>
-         *               &lt;enumeration value="KOR"/>
-         *               &lt;enumeration value="THA"/>
-         *               &lt;enumeration value="BRA"/>
-         *               &lt;enumeration value="CHL"/>
-         *               &lt;enumeration value="CHN"/>
-         *               &lt;enumeration value="COL"/>
-         *               &lt;enumeration value="CRI"/>
-         *               &lt;enumeration value="DOM"/>
-         *               &lt;enumeration value="ECU"/>
-         *               &lt;enumeration value="SLV"/>
-         *               &lt;enumeration value="GTM"/>
-         *               &lt;enumeration value="HND"/>
-         *               &lt;enumeration value="JAM"/>
-         *               &lt;enumeration value="MEX"/>
-         *               &lt;enumeration value="NIC"/>
-         *               &lt;enumeration value="PAN"/>
-         *               &lt;enumeration value="ISR"/>
-         *               &lt;enumeration value="SAU"/>
-         *               &lt;enumeration value="TUR"/>
-         *               &lt;enumeration value="ARE"/>
-         *               &lt;enumeration value="AUT"/>
-         *               &lt;enumeration value="BEL"/>
-         *               &lt;enumeration value="BGR"/>
-         *               &lt;enumeration value="DNK"/>
-         *               &lt;enumeration value="FIN"/>
-         *               &lt;enumeration value="FRA"/>
-         *               &lt;enumeration value="DEU"/>
-         *               &lt;enumeration value="GRC"/>
-         *               &lt;enumeration value="HUN"/>
-         *               &lt;enumeration value="ITA"/>
-         *               &lt;enumeration value="LVA"/>
-         *               &lt;enumeration value="LUX"/>
-         *               &lt;enumeration value="MCO"/>
-         *               &lt;enumeration value="NOR"/>
-         *               &lt;enumeration value="PRT"/>
-         *               &lt;enumeration value="SVK"/>
-         *               &lt;enumeration value="SVN"/>
-         *               &lt;enumeration value="ESP"/>
-         *               &lt;enumeration value="SWE"/>
-         *               &lt;enumeration value="CHE"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="PremierOrder" minOccurs="0">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *               &lt;enumeration value="0"/>
-         *               &lt;enumeration value="1"/>
-         *               &lt;enumeration value="2"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="OrderNumberList" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence minOccurs="0"&gt;
+         *                   &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="SellerOrderNumberList" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence minOccurs="0"&gt;
+         *                   &lt;element name="SellerOrderNumber" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="Status" minOccurs="0"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *               &lt;enumeration value="0"/&gt;
+         *               &lt;enumeration value="1"/&gt;
+         *               &lt;enumeration value="2"/&gt;
+         *               &lt;enumeration value="3"/&gt;
+         *               &lt;enumeration value="4"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="OrderDownloaded" minOccurs="0"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *               &lt;enumeration value="0"/&gt;
+         *               &lt;enumeration value="1"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="Type" minOccurs="0"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *               &lt;enumeration value="0"/&gt;
+         *               &lt;enumeration value="1"/&gt;
+         *               &lt;enumeration value="2"/&gt;
+         *               &lt;enumeration value="3"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="VoidSoon" minOccurs="0"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *               &lt;enumeration value="24"/&gt;
+         *               &lt;enumeration value="48"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="OrderDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *         &lt;element name="OrderDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *         &lt;element name="CountryCode" minOccurs="0"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *               &lt;enumeration value="AUS"/&gt;
+         *               &lt;enumeration value="NZL"/&gt;
+         *               &lt;enumeration value="GBR"/&gt;
+         *               &lt;enumeration value="IRL"/&gt;
+         *               &lt;enumeration value="NLD"/&gt;
+         *               &lt;enumeration value="POL"/&gt;
+         *               &lt;enumeration value="IND"/&gt;
+         *               &lt;enumeration value="SGP"/&gt;
+         *               &lt;enumeration value="USA"/&gt;
+         *               &lt;enumeration value="HKG"/&gt;
+         *               &lt;enumeration value="MAC"/&gt;
+         *               &lt;enumeration value="IDN"/&gt;
+         *               &lt;enumeration value="PHL"/&gt;
+         *               &lt;enumeration value="KOR"/&gt;
+         *               &lt;enumeration value="THA"/&gt;
+         *               &lt;enumeration value="BRA"/&gt;
+         *               &lt;enumeration value="CHL"/&gt;
+         *               &lt;enumeration value="CHN"/&gt;
+         *               &lt;enumeration value="COL"/&gt;
+         *               &lt;enumeration value="CRI"/&gt;
+         *               &lt;enumeration value="DOM"/&gt;
+         *               &lt;enumeration value="ECU"/&gt;
+         *               &lt;enumeration value="SLV"/&gt;
+         *               &lt;enumeration value="GTM"/&gt;
+         *               &lt;enumeration value="HND"/&gt;
+         *               &lt;enumeration value="JAM"/&gt;
+         *               &lt;enumeration value="MEX"/&gt;
+         *               &lt;enumeration value="NIC"/&gt;
+         *               &lt;enumeration value="PAN"/&gt;
+         *               &lt;enumeration value="ISR"/&gt;
+         *               &lt;enumeration value="SAU"/&gt;
+         *               &lt;enumeration value="TUR"/&gt;
+         *               &lt;enumeration value="ARE"/&gt;
+         *               &lt;enumeration value="AUT"/&gt;
+         *               &lt;enumeration value="BEL"/&gt;
+         *               &lt;enumeration value="BGR"/&gt;
+         *               &lt;enumeration value="DNK"/&gt;
+         *               &lt;enumeration value="FIN"/&gt;
+         *               &lt;enumeration value="FRA"/&gt;
+         *               &lt;enumeration value="DEU"/&gt;
+         *               &lt;enumeration value="GRC"/&gt;
+         *               &lt;enumeration value="HUN"/&gt;
+         *               &lt;enumeration value="ITA"/&gt;
+         *               &lt;enumeration value="LVA"/&gt;
+         *               &lt;enumeration value="LUX"/&gt;
+         *               &lt;enumeration value="MCO"/&gt;
+         *               &lt;enumeration value="NOR"/&gt;
+         *               &lt;enumeration value="PRT"/&gt;
+         *               &lt;enumeration value="SVK"/&gt;
+         *               &lt;enumeration value="SVN"/&gt;
+         *               &lt;enumeration value="ESP"/&gt;
+         *               &lt;enumeration value="SWE"/&gt;
+         *               &lt;enumeration value="CHE"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="PremierOrder" minOccurs="0"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *               &lt;enumeration value="0"/&gt;
+         *               &lt;enumeration value="1"/&gt;
+         *               &lt;enumeration value="2"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/all&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -721,7 +721,7 @@ public class GetOrderInformationRequest {
              * 
              * @return
              *     possible object is
-             *     {@link NeweggAPIRequest.RequestBody.RequestCriteria.OrderNumberList }
+             *     {@link GetOrderInformationRequest.RequestBody.RequestCriteria.OrderNumberList }
              *     
              */
             public GetOrderInformationRequest.RequestBody.RequestCriteria.OrderNumberList getOrderNumberList() {
@@ -733,7 +733,7 @@ public class GetOrderInformationRequest {
              * 
              * @param value
              *     allowed object is
-             *     {@link NeweggAPIRequest.RequestBody.RequestCriteria.OrderNumberList }
+             *     {@link GetOrderInformationRequest.RequestBody.RequestCriteria.OrderNumberList }
              *     
              */
             public void setOrderNumberList(GetOrderInformationRequest.RequestBody.RequestCriteria.OrderNumberList value) {
@@ -745,7 +745,7 @@ public class GetOrderInformationRequest {
              * 
              * @return
              *     possible object is
-             *     {@link NeweggAPIRequest.RequestBody.RequestCriteria.SellerOrderNumberList }
+             *     {@link GetOrderInformationRequest.RequestBody.RequestCriteria.SellerOrderNumberList }
              *     
              */
             public GetOrderInformationRequest.RequestBody.RequestCriteria.SellerOrderNumberList getSellerOrderNumberList() {
@@ -757,7 +757,7 @@ public class GetOrderInformationRequest {
              * 
              * @param value
              *     allowed object is
-             *     {@link NeweggAPIRequest.RequestBody.RequestCriteria.SellerOrderNumberList }
+             *     {@link GetOrderInformationRequest.RequestBody.RequestCriteria.SellerOrderNumberList }
              *     
              */
             public void setSellerOrderNumberList(GetOrderInformationRequest.RequestBody.RequestCriteria.SellerOrderNumberList value) {
@@ -963,15 +963,15 @@ public class GetOrderInformationRequest {
              * <p>下列綱要片段會指定此類別中包含的預期內容.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence minOccurs="0">
-             *         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence minOccurs="0"&gt;
+             *         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -1006,6 +1006,9 @@ public class GetOrderInformationRequest {
                  * Objects of the following type(s) are allowed in the list
                  * {@link Integer }
                  * 
+                 * @return
+                 * Objects of the following type(s) are allowed in the list
+                 * {@link Integer }
                  * 
                  */
                 public List<Integer> getOrderNumber() {
@@ -1024,15 +1027,15 @@ public class GetOrderInformationRequest {
              * <p>下列綱要片段會指定此類別中包含的預期內容.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence minOccurs="0">
-             *         &lt;element name="SellerOrderNumber" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence minOccurs="0"&gt;
+             *         &lt;element name="SellerOrderNumber" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -1067,6 +1070,9 @@ public class GetOrderInformationRequest {
                  * Objects of the following type(s) are allowed in the list
                  * {@link String }
                  * 
+                 * @return
+                 * Objects of the following type(s) are allowed in the list
+                 * {@link String }
                  * 
                  */
                 public List<String> getSellerOrderNumber() {

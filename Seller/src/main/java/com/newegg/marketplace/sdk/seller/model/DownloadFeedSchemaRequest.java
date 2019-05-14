@@ -23,59 +23,59 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="GetFeedSchemaRequest"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="RequestBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="GetFeedSchema">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="FeedType">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;enumeration value="1"/>
- *                                   &lt;enumeration value="2"/>
- *                                   &lt;enumeration value="3"/>
- *                                   &lt;enumeration value="4"/>
- *                                   &lt;enumeration value="5"/>
- *                                   &lt;enumeration value="6"/>
- *                                   &lt;enumeration value="7"/>
- *                                   &lt;enumeration value="8"/>
- *                                   &lt;enumeration value="10"/>
- *                                   &lt;enumeration value="11"/>
- *                                   &lt;enumeration value="12"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="GetFeedSchemaRequest"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="RequestBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="GetFeedSchema"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="FeedType"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;enumeration value="1"/&gt;
+ *                                   &lt;enumeration value="2"/&gt;
+ *                                   &lt;enumeration value="3"/&gt;
+ *                                   &lt;enumeration value="4"/&gt;
+ *                                   &lt;enumeration value="5"/&gt;
+ *                                   &lt;enumeration value="6"/&gt;
+ *                                   &lt;enumeration value="7"/&gt;
+ *                                   &lt;enumeration value="8"/&gt;
+ *                                   &lt;enumeration value="10"/&gt;
+ *                                   &lt;enumeration value="11"/&gt;
+ *                                   &lt;enumeration value="12"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -149,42 +149,42 @@ public class DownloadFeedSchemaRequest {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="GetFeedSchema">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="FeedType">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                         &lt;enumeration value="1"/>
-     *                         &lt;enumeration value="2"/>
-     *                         &lt;enumeration value="3"/>
-     *                         &lt;enumeration value="4"/>
-     *                         &lt;enumeration value="5"/>
-     *                         &lt;enumeration value="6"/>
-     *                         &lt;enumeration value="7"/>
-     *                         &lt;enumeration value="8"/>
-     *                         &lt;enumeration value="10"/>
-     *                         &lt;enumeration value="11"/>
-     *                         &lt;enumeration value="12"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="GetFeedSchema"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="FeedType"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                         &lt;enumeration value="1"/&gt;
+     *                         &lt;enumeration value="2"/&gt;
+     *                         &lt;enumeration value="3"/&gt;
+     *                         &lt;enumeration value="4"/&gt;
+     *                         &lt;enumeration value="5"/&gt;
+     *                         &lt;enumeration value="6"/&gt;
+     *                         &lt;enumeration value="7"/&gt;
+     *                         &lt;enumeration value="8"/&gt;
+     *                         &lt;enumeration value="10"/&gt;
+     *                         &lt;enumeration value="11"/&gt;
+     *                         &lt;enumeration value="12"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                 &lt;/all&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -230,32 +230,32 @@ public class DownloadFeedSchemaRequest {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="FeedType">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *               &lt;enumeration value="1"/>
-         *               &lt;enumeration value="2"/>
-         *               &lt;enumeration value="3"/>
-         *               &lt;enumeration value="4"/>
-         *               &lt;enumeration value="5"/>
-         *               &lt;enumeration value="6"/>
-         *               &lt;enumeration value="7"/>
-         *               &lt;enumeration value="8"/>
-         *               &lt;enumeration value="10"/>
-         *               &lt;enumeration value="11"/>
-         *               &lt;enumeration value="12"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="FeedType"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *               &lt;enumeration value="1"/&gt;
+         *               &lt;enumeration value="2"/&gt;
+         *               &lt;enumeration value="3"/&gt;
+         *               &lt;enumeration value="4"/&gt;
+         *               &lt;enumeration value="5"/&gt;
+         *               &lt;enumeration value="6"/&gt;
+         *               &lt;enumeration value="7"/&gt;
+         *               &lt;enumeration value="8"/&gt;
+         *               &lt;enumeration value="10"/&gt;
+         *               &lt;enumeration value="11"/&gt;
+         *               &lt;enumeration value="12"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="IndustryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *       &lt;/all&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -275,6 +275,9 @@ public class DownloadFeedSchemaRequest {
 
             /**
              * Gets the value of the feedType property.
+             * @return
+             * possible object is 
+             *     {@link int }
              * 
              */
             public int getFeedType() {
@@ -283,6 +286,9 @@ public class DownloadFeedSchemaRequest {
 
             /**
              * Sets the value of the feedType property.
+             * @param value
+             *     allowed object is
+             *     {@link  }
              * 
              */
             public void setFeedType(int value) {

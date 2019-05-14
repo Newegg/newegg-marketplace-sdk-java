@@ -17,17 +17,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for GuitarsAccessoryTypeValueList.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
+ * 
  * <pre>
- * &lt;simpleType name="GuitarsAccessoryTypeValueList">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Effects Pedals - Multi-Effects"/>
- *     &lt;enumeration value="Effects Pedals - Wah &amp; Volume"/>
- *     &lt;enumeration value="Tuners"/>
- *     &lt;enumeration value="Pickups"/>
- *     &lt;enumeration value="Effects Pedals - Distortion &amp; Overdrive"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GuitarsAccessoryTypeValueList"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Effects Pedals - Multi-Effects"/&gt;
+ *     &lt;enumeration value="Effects Pedals - Wah &amp; Volume"/&gt;
+ *     &lt;enumeration value="Tuners"/&gt;
+ *     &lt;enumeration value="Pickups"/&gt;
+ *     &lt;enumeration value="Effects Pedals - Distortion &amp; Overdrive"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

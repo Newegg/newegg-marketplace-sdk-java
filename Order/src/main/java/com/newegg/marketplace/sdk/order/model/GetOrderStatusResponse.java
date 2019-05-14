@@ -23,59 +23,59 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 * <p>下列綱要片段會指定此類別中包含的預期內容.
 * 
 * <pre>
-* &lt;complexType>
-*   &lt;complexContent>
-*     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-*       &lt;all>
-*         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-*         &lt;element name="OrderStatusCode">
-*           &lt;simpleType>
-*             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-*               &lt;minInclusive value="0"/>
-*               &lt;maxInclusive value="4"/>
-*             &lt;/restriction>
-*           &lt;/simpleType>
-*         &lt;/element>
-*         &lt;element name="OrderStatusName">
-*           &lt;simpleType>
-*             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-*               &lt;enumeration value="Unshipped"/>
-*               &lt;enumeration value="PartiallyShipped"/>
-*               &lt;enumeration value="Shipped"/>
-*               &lt;enumeration value="Invoiced"/>
-*               &lt;enumeration value="Void"/>
-*             &lt;/restriction>
-*           &lt;/simpleType>
-*         &lt;/element>
-*         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-*         &lt;element name="OrderDownloaded">
-*           &lt;simpleType>
-*             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-*               &lt;enumeration value="true"/>
-*               &lt;enumeration value="false"/>
-*             &lt;/restriction>
-*           &lt;/simpleType>
-*         &lt;/element>
-*         &lt;element name="SalesChannel" minOccurs="0">
-*           &lt;simpleType>
-*             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-*               &lt;enumeration value="0"/>
-*               &lt;enumeration value="2"/>
-*             &lt;/restriction>
-*           &lt;/simpleType>
-*         &lt;/element>
-*         &lt;element name="FulfillmentOption" minOccurs="0">
-*           &lt;simpleType>
-*             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-*               &lt;enumeration value="0"/>
-*               &lt;enumeration value="1"/>
-*             &lt;/restriction>
-*           &lt;/simpleType>
-*         &lt;/element>
-*       &lt;/all>
-*     &lt;/restriction>
-*   &lt;/complexContent>
-* &lt;/complexType>
+* &lt;complexType&gt;
+*   &lt;complexContent&gt;
+*     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+*       &lt;all&gt;
+*         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+*         &lt;element name="OrderStatusCode"&gt;
+*           &lt;simpleType&gt;
+*             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+*               &lt;minInclusive value="0"/&gt;
+*               &lt;maxInclusive value="4"/&gt;
+*             &lt;/restriction&gt;
+*           &lt;/simpleType&gt;
+*         &lt;/element&gt;
+*         &lt;element name="OrderStatusName"&gt;
+*           &lt;simpleType&gt;
+*             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+*               &lt;enumeration value="Unshipped"/&gt;
+*               &lt;enumeration value="PartiallyShipped"/&gt;
+*               &lt;enumeration value="Shipped"/&gt;
+*               &lt;enumeration value="Invoiced"/&gt;
+*               &lt;enumeration value="Void"/&gt;
+*             &lt;/restriction&gt;
+*           &lt;/simpleType&gt;
+*         &lt;/element&gt;
+*         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+*         &lt;element name="OrderDownloaded"&gt;
+*           &lt;simpleType&gt;
+*             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+*               &lt;enumeration value="true"/&gt;
+*               &lt;enumeration value="false"/&gt;
+*             &lt;/restriction&gt;
+*           &lt;/simpleType&gt;
+*         &lt;/element&gt;
+*         &lt;element name="SalesChannel" minOccurs="0"&gt;
+*           &lt;simpleType&gt;
+*             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+*               &lt;enumeration value="0"/&gt;
+*               &lt;enumeration value="2"/&gt;
+*             &lt;/restriction&gt;
+*           &lt;/simpleType&gt;
+*         &lt;/element&gt;
+*         &lt;element name="FulfillmentOption" minOccurs="0"&gt;
+*           &lt;simpleType&gt;
+*             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+*               &lt;enumeration value="0"/&gt;
+*               &lt;enumeration value="1"/&gt;
+*             &lt;/restriction&gt;
+*           &lt;/simpleType&gt;
+*         &lt;/element&gt;
+*       &lt;/all&gt;
+*     &lt;/restriction&gt;
+*   &lt;/complexContent&gt;
+* &lt;/complexType&gt;
 * </pre>
 * 
 * 
@@ -135,6 +135,9 @@ public class GetOrderStatusResponse {
 
     /**
      * 取得 orderStatusCode 特性的值.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getOrderStatusCode() {
@@ -143,6 +146,9 @@ public class GetOrderStatusResponse {
 
     /**
      * 設定 orderStatusCode 特性的值.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setOrderStatusCode(int value) {

@@ -184,7 +184,10 @@ public class ShipOrderRequestJSON implements ShipOrderRequestImpl {
 		
 		        /**
 		         * 取得 soNumber 特性的值.
-		         * 
+		         * @return
+		         *     possible object is
+		         *     {@link int }
+		         *    
 		         */
 		        @JsonProperty("SONumber")
 		        public int getSONumber() {
@@ -193,7 +196,9 @@ public class ShipOrderRequestJSON implements ShipOrderRequestImpl {
 		
 		        /**
 		         * 設定 soNumber 特性的值.
-		         * 
+		         * @param value
+		         *     allowed object is
+		         *     {@link int }
 		         */
 		        @JsonProperty("SONumber")
 		        public void setSONumber(int value) {
@@ -232,7 +237,10 @@ public class ShipOrderRequestJSON implements ShipOrderRequestImpl {
 		         * Objects of the following type(s) are allowed in the list
 		         * {@link Shipment.PackageList.Package }
 		         * 
-		         * 
+		         * @return
+	             *     possible object is list of
+	             *     {@link ShipOrderRequestJSON.Value.Shipment.PackageList.Package }
+	             *  
 		         */
 		        @JsonProperty("Package")
 		        public List<ShipOrderRequestJSON.Value.Shipment.PackageList.Package> getPackage() {
@@ -388,6 +396,9 @@ public class ShipOrderRequestJSON implements ShipOrderRequestImpl {
 		                 * Objects of the following type(s) are allowed in the list
 		                 * {@link Shipment.PackageList.Package.ItemList.Item }
 		                 * 
+		                 * @return
+		                 * Objects of the following type(s) are allowed in the list
+		                 * {@link ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList.Item }
 		                 * 
 		                 */
 		                public List<ShipOrderRequestJSON.Value.Shipment.PackageList.Package.ItemList.Item> getItem() {
@@ -464,6 +475,9 @@ public class ShipOrderRequestJSON implements ShipOrderRequestImpl {
 		
 		                    /**
 		                     * 取得 shippedQty 特性的值.
+		                     * @return
+		                     * possible object is 
+		                     *     {@link int }
 		                     * 
 		                     */
 		                    public int getShippedQty() {
@@ -472,6 +486,9 @@ public class ShipOrderRequestJSON implements ShipOrderRequestImpl {
 		
 		                    /**
 		                     * 設定 shippedQty 特性的值.
+		                     * @param value
+		                     *     allowed object is
+		                     *     {@link 		 }
 		                     * 
 		                     */
 		                    public void setShippedQty(int value) {

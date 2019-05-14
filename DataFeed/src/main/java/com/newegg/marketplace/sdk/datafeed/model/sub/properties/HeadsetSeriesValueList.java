@@ -17,20 +17,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for HeadsetSeriesValueList.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
+ * 
  * <pre>
- * &lt;simpleType name="HeadsetSeriesValueList">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Upgrader Series"/>
- *     &lt;enumeration value="Classic Series"/>
- *     &lt;enumeration value="MUZX Series"/>
- *     &lt;enumeration value="Sports Series"/>
- *     &lt;enumeration value="TuneBuds Mobile"/>
- *     &lt;enumeration value="Full Metal Jacket"/>
- *     &lt;enumeration value="IMAGE S4-WHITE"/>
- *     &lt;enumeration value="IMAGE S4i White"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="HeadsetSeriesValueList"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Upgrader Series"/&gt;
+ *     &lt;enumeration value="Classic Series"/&gt;
+ *     &lt;enumeration value="MUZX Series"/&gt;
+ *     &lt;enumeration value="Sports Series"/&gt;
+ *     &lt;enumeration value="TuneBuds Mobile"/&gt;
+ *     &lt;enumeration value="Full Metal Jacket"/&gt;
+ *     &lt;enumeration value="IMAGE S4-WHITE"/&gt;
+ *     &lt;enumeration value="IMAGE S4i White"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

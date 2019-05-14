@@ -28,143 +28,143 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="ItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="PriceList">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="Price" maxOccurs="unbounded">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="CountryCode">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;enumeration value="AUS"/>
- *                                   &lt;enumeration value="NZL"/>
- *                                   &lt;enumeration value="GBR"/>
- *                                   &lt;enumeration value="IRL"/>
- *                                   &lt;enumeration value="NLD"/>
- *                                   &lt;enumeration value="POL"/>
- *                                   &lt;enumeration value="IND"/>
- *                                   &lt;enumeration value="SGP"/>
- *                                   &lt;enumeration value="USA"/>
- *                                   &lt;enumeration value="HKG"/>
- *                                   &lt;enumeration value="MAC"/>
- *                                   &lt;enumeration value="IDN"/>
- *                                   &lt;enumeration value="PHL"/>
- *                                   &lt;enumeration value="KOR"/>
- *                                   &lt;enumeration value="THA"/>
- *                                   &lt;enumeration value="BRA"/>
- *                                   &lt;enumeration value="CHL"/>
- *                                   &lt;enumeration value="CHN"/>
- *                                   &lt;enumeration value="COL"/>
- *                                   &lt;enumeration value="CRI"/>
- *                                   &lt;enumeration value="DOM"/>
- *                                   &lt;enumeration value="ECU"/>
- *                                   &lt;enumeration value="SLV"/>
- *                                   &lt;enumeration value="GTM"/>
- *                                   &lt;enumeration value="HND"/>
- *                                   &lt;enumeration value="JAM"/>
- *                                   &lt;enumeration value="MEX"/>
- *                                   &lt;enumeration value="NIC"/>
- *                                   &lt;enumeration value="PAN"/>
- *                                   &lt;enumeration value="ISR"/>
- *                                   &lt;enumeration value="SAU"/>
- *                                   &lt;enumeration value="TUR"/>
- *                                   &lt;enumeration value="ARE"/>
- *                                   &lt;enumeration value="AUT"/>
- *                                   &lt;enumeration value="BEL"/>
- *                                   &lt;enumeration value="BGR"/>
- *                                   &lt;enumeration value="DNK"/>
- *                                   &lt;enumeration value="FIN"/>
- *                                   &lt;enumeration value="FRA"/>
- *                                   &lt;enumeration value="DEU"/>
- *                                   &lt;enumeration value="GRC"/>
- *                                   &lt;enumeration value="HUN"/>
- *                                   &lt;enumeration value="ITA"/>
- *                                   &lt;enumeration value="LVA"/>
- *                                   &lt;enumeration value="LUX"/>
- *                                   &lt;enumeration value="MCO"/>
- *                                   &lt;enumeration value="NOR"/>
- *                                   &lt;enumeration value="PRT"/>
- *                                   &lt;enumeration value="SVK"/>
- *                                   &lt;enumeration value="SVN"/>
- *                                   &lt;enumeration value="ESP"/>
- *                                   &lt;enumeration value="SWE"/>
- *                                   &lt;enumeration value="CHE"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="Currency">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;enumeration value="AED"/>
- *                                   &lt;enumeration value="AUD"/>
- *                                   &lt;enumeration value="BGN"/>
- *                                   &lt;enumeration value="BRL"/>
- *                                   &lt;enumeration value="CHF"/>
- *                                   &lt;enumeration value="CLP"/>
- *                                   &lt;enumeration value="COP"/>
- *                                   &lt;enumeration value="CRC"/>
- *                                   &lt;enumeration value="DKK"/>
- *                                   &lt;enumeration value="DOP"/>
- *                                   &lt;enumeration value="EUR"/>
- *                                   &lt;enumeration value="GBP"/>
- *                                   &lt;enumeration value="GTQ"/>
- *                                   &lt;enumeration value="HKD"/>
- *                                   &lt;enumeration value="HNL"/>
- *                                   &lt;enumeration value="HUF"/>
- *                                   &lt;enumeration value="IDR"/>
- *                                   &lt;enumeration value="ILS"/>
- *                                   &lt;enumeration value="INR"/>
- *                                   &lt;enumeration value="JMD"/>
- *                                   &lt;enumeration value="KRW"/>
- *                                   &lt;enumeration value="MOP"/>
- *                                   &lt;enumeration value="MXN"/>
- *                                   &lt;enumeration value="NIO"/>
- *                                   &lt;enumeration value="NOK"/>
- *                                   &lt;enumeration value="NZD"/>
- *                                   &lt;enumeration value="PAB"/>
- *                                   &lt;enumeration value="PHP"/>
- *                                   &lt;enumeration value="PLN"/>
- *                                   &lt;enumeration value="SAR"/>
- *                                   &lt;enumeration value="SEK"/>
- *                                   &lt;enumeration value="SGD"/>
- *                                   &lt;enumeration value="THB"/>
- *                                   &lt;enumeration value="TRY"/>
- *                                   &lt;enumeration value="USD"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="Active" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                             &lt;element name="MSRP" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="MAP" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="CheckoutMAP" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                             &lt;element name="SellingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="EnableFreeShipping" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="ItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="PriceList"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Price" maxOccurs="unbounded"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="CountryCode"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;enumeration value="AUS"/&gt;
+ *                                   &lt;enumeration value="NZL"/&gt;
+ *                                   &lt;enumeration value="GBR"/&gt;
+ *                                   &lt;enumeration value="IRL"/&gt;
+ *                                   &lt;enumeration value="NLD"/&gt;
+ *                                   &lt;enumeration value="POL"/&gt;
+ *                                   &lt;enumeration value="IND"/&gt;
+ *                                   &lt;enumeration value="SGP"/&gt;
+ *                                   &lt;enumeration value="USA"/&gt;
+ *                                   &lt;enumeration value="HKG"/&gt;
+ *                                   &lt;enumeration value="MAC"/&gt;
+ *                                   &lt;enumeration value="IDN"/&gt;
+ *                                   &lt;enumeration value="PHL"/&gt;
+ *                                   &lt;enumeration value="KOR"/&gt;
+ *                                   &lt;enumeration value="THA"/&gt;
+ *                                   &lt;enumeration value="BRA"/&gt;
+ *                                   &lt;enumeration value="CHL"/&gt;
+ *                                   &lt;enumeration value="CHN"/&gt;
+ *                                   &lt;enumeration value="COL"/&gt;
+ *                                   &lt;enumeration value="CRI"/&gt;
+ *                                   &lt;enumeration value="DOM"/&gt;
+ *                                   &lt;enumeration value="ECU"/&gt;
+ *                                   &lt;enumeration value="SLV"/&gt;
+ *                                   &lt;enumeration value="GTM"/&gt;
+ *                                   &lt;enumeration value="HND"/&gt;
+ *                                   &lt;enumeration value="JAM"/&gt;
+ *                                   &lt;enumeration value="MEX"/&gt;
+ *                                   &lt;enumeration value="NIC"/&gt;
+ *                                   &lt;enumeration value="PAN"/&gt;
+ *                                   &lt;enumeration value="ISR"/&gt;
+ *                                   &lt;enumeration value="SAU"/&gt;
+ *                                   &lt;enumeration value="TUR"/&gt;
+ *                                   &lt;enumeration value="ARE"/&gt;
+ *                                   &lt;enumeration value="AUT"/&gt;
+ *                                   &lt;enumeration value="BEL"/&gt;
+ *                                   &lt;enumeration value="BGR"/&gt;
+ *                                   &lt;enumeration value="DNK"/&gt;
+ *                                   &lt;enumeration value="FIN"/&gt;
+ *                                   &lt;enumeration value="FRA"/&gt;
+ *                                   &lt;enumeration value="DEU"/&gt;
+ *                                   &lt;enumeration value="GRC"/&gt;
+ *                                   &lt;enumeration value="HUN"/&gt;
+ *                                   &lt;enumeration value="ITA"/&gt;
+ *                                   &lt;enumeration value="LVA"/&gt;
+ *                                   &lt;enumeration value="LUX"/&gt;
+ *                                   &lt;enumeration value="MCO"/&gt;
+ *                                   &lt;enumeration value="NOR"/&gt;
+ *                                   &lt;enumeration value="PRT"/&gt;
+ *                                   &lt;enumeration value="SVK"/&gt;
+ *                                   &lt;enumeration value="SVN"/&gt;
+ *                                   &lt;enumeration value="ESP"/&gt;
+ *                                   &lt;enumeration value="SWE"/&gt;
+ *                                   &lt;enumeration value="CHE"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="Currency"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;enumeration value="AED"/&gt;
+ *                                   &lt;enumeration value="AUD"/&gt;
+ *                                   &lt;enumeration value="BGN"/&gt;
+ *                                   &lt;enumeration value="BRL"/&gt;
+ *                                   &lt;enumeration value="CHF"/&gt;
+ *                                   &lt;enumeration value="CLP"/&gt;
+ *                                   &lt;enumeration value="COP"/&gt;
+ *                                   &lt;enumeration value="CRC"/&gt;
+ *                                   &lt;enumeration value="DKK"/&gt;
+ *                                   &lt;enumeration value="DOP"/&gt;
+ *                                   &lt;enumeration value="EUR"/&gt;
+ *                                   &lt;enumeration value="GBP"/&gt;
+ *                                   &lt;enumeration value="GTQ"/&gt;
+ *                                   &lt;enumeration value="HKD"/&gt;
+ *                                   &lt;enumeration value="HNL"/&gt;
+ *                                   &lt;enumeration value="HUF"/&gt;
+ *                                   &lt;enumeration value="IDR"/&gt;
+ *                                   &lt;enumeration value="ILS"/&gt;
+ *                                   &lt;enumeration value="INR"/&gt;
+ *                                   &lt;enumeration value="JMD"/&gt;
+ *                                   &lt;enumeration value="KRW"/&gt;
+ *                                   &lt;enumeration value="MOP"/&gt;
+ *                                   &lt;enumeration value="MXN"/&gt;
+ *                                   &lt;enumeration value="NIO"/&gt;
+ *                                   &lt;enumeration value="NOK"/&gt;
+ *                                   &lt;enumeration value="NZD"/&gt;
+ *                                   &lt;enumeration value="PAB"/&gt;
+ *                                   &lt;enumeration value="PHP"/&gt;
+ *                                   &lt;enumeration value="PLN"/&gt;
+ *                                   &lt;enumeration value="SAR"/&gt;
+ *                                   &lt;enumeration value="SEK"/&gt;
+ *                                   &lt;enumeration value="SGD"/&gt;
+ *                                   &lt;enumeration value="THB"/&gt;
+ *                                   &lt;enumeration value="TRY"/&gt;
+ *                                   &lt;enumeration value="USD"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="Active" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                             &lt;element name="MSRP" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                             &lt;element name="MAP" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                             &lt;element name="CheckoutMAP" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                             &lt;element name="SellingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                             &lt;element name="EnableFreeShipping" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -293,130 +293,130 @@ public class UpdateItemPriceResponse {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="Price" maxOccurs="unbounded">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="CountryCode">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                         &lt;enumeration value="AUS"/>
-     *                         &lt;enumeration value="NZL"/>
-     *                         &lt;enumeration value="GBR"/>
-     *                         &lt;enumeration value="IRL"/>
-     *                         &lt;enumeration value="NLD"/>
-     *                         &lt;enumeration value="POL"/>
-     *                         &lt;enumeration value="IND"/>
-     *                         &lt;enumeration value="SGP"/>
-     *                         &lt;enumeration value="USA"/>
-     *                         &lt;enumeration value="HKG"/>
-     *                         &lt;enumeration value="MAC"/>
-     *                         &lt;enumeration value="IDN"/>
-     *                         &lt;enumeration value="PHL"/>
-     *                         &lt;enumeration value="KOR"/>
-     *                         &lt;enumeration value="THA"/>
-     *                         &lt;enumeration value="BRA"/>
-     *                         &lt;enumeration value="CHL"/>
-     *                         &lt;enumeration value="CHN"/>
-     *                         &lt;enumeration value="COL"/>
-     *                         &lt;enumeration value="CRI"/>
-     *                         &lt;enumeration value="DOM"/>
-     *                         &lt;enumeration value="ECU"/>
-     *                         &lt;enumeration value="SLV"/>
-     *                         &lt;enumeration value="GTM"/>
-     *                         &lt;enumeration value="HND"/>
-     *                         &lt;enumeration value="JAM"/>
-     *                         &lt;enumeration value="MEX"/>
-     *                         &lt;enumeration value="NIC"/>
-     *                         &lt;enumeration value="PAN"/>
-     *                         &lt;enumeration value="ISR"/>
-     *                         &lt;enumeration value="SAU"/>
-     *                         &lt;enumeration value="TUR"/>
-     *                         &lt;enumeration value="ARE"/>
-     *                         &lt;enumeration value="AUT"/>
-     *                         &lt;enumeration value="BEL"/>
-     *                         &lt;enumeration value="BGR"/>
-     *                         &lt;enumeration value="DNK"/>
-     *                         &lt;enumeration value="FIN"/>
-     *                         &lt;enumeration value="FRA"/>
-     *                         &lt;enumeration value="DEU"/>
-     *                         &lt;enumeration value="GRC"/>
-     *                         &lt;enumeration value="HUN"/>
-     *                         &lt;enumeration value="ITA"/>
-     *                         &lt;enumeration value="LVA"/>
-     *                         &lt;enumeration value="LUX"/>
-     *                         &lt;enumeration value="MCO"/>
-     *                         &lt;enumeration value="NOR"/>
-     *                         &lt;enumeration value="PRT"/>
-     *                         &lt;enumeration value="SVK"/>
-     *                         &lt;enumeration value="SVN"/>
-     *                         &lt;enumeration value="ESP"/>
-     *                         &lt;enumeration value="SWE"/>
-     *                         &lt;enumeration value="CHE"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="Currency">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                         &lt;enumeration value="AED"/>
-     *                         &lt;enumeration value="AUD"/>
-     *                         &lt;enumeration value="BGN"/>
-     *                         &lt;enumeration value="BRL"/>
-     *                         &lt;enumeration value="CHF"/>
-     *                         &lt;enumeration value="CLP"/>
-     *                         &lt;enumeration value="COP"/>
-     *                         &lt;enumeration value="CRC"/>
-     *                         &lt;enumeration value="DKK"/>
-     *                         &lt;enumeration value="DOP"/>
-     *                         &lt;enumeration value="EUR"/>
-     *                         &lt;enumeration value="GBP"/>
-     *                         &lt;enumeration value="GTQ"/>
-     *                         &lt;enumeration value="HKD"/>
-     *                         &lt;enumeration value="HNL"/>
-     *                         &lt;enumeration value="HUF"/>
-     *                         &lt;enumeration value="IDR"/>
-     *                         &lt;enumeration value="ILS"/>
-     *                         &lt;enumeration value="INR"/>
-     *                         &lt;enumeration value="JMD"/>
-     *                         &lt;enumeration value="KRW"/>
-     *                         &lt;enumeration value="MOP"/>
-     *                         &lt;enumeration value="MXN"/>
-     *                         &lt;enumeration value="NIO"/>
-     *                         &lt;enumeration value="NOK"/>
-     *                         &lt;enumeration value="NZD"/>
-     *                         &lt;enumeration value="PAB"/>
-     *                         &lt;enumeration value="PHP"/>
-     *                         &lt;enumeration value="PLN"/>
-     *                         &lt;enumeration value="SAR"/>
-     *                         &lt;enumeration value="SEK"/>
-     *                         &lt;enumeration value="SGD"/>
-     *                         &lt;enumeration value="THB"/>
-     *                         &lt;enumeration value="TRY"/>
-     *                         &lt;enumeration value="USD"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="Active" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                   &lt;element name="MSRP" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                   &lt;element name="MAP" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                   &lt;element name="CheckoutMAP" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                   &lt;element name="SellingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                   &lt;element name="EnableFreeShipping" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Price" maxOccurs="unbounded"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="CountryCode"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                         &lt;enumeration value="AUS"/&gt;
+     *                         &lt;enumeration value="NZL"/&gt;
+     *                         &lt;enumeration value="GBR"/&gt;
+     *                         &lt;enumeration value="IRL"/&gt;
+     *                         &lt;enumeration value="NLD"/&gt;
+     *                         &lt;enumeration value="POL"/&gt;
+     *                         &lt;enumeration value="IND"/&gt;
+     *                         &lt;enumeration value="SGP"/&gt;
+     *                         &lt;enumeration value="USA"/&gt;
+     *                         &lt;enumeration value="HKG"/&gt;
+     *                         &lt;enumeration value="MAC"/&gt;
+     *                         &lt;enumeration value="IDN"/&gt;
+     *                         &lt;enumeration value="PHL"/&gt;
+     *                         &lt;enumeration value="KOR"/&gt;
+     *                         &lt;enumeration value="THA"/&gt;
+     *                         &lt;enumeration value="BRA"/&gt;
+     *                         &lt;enumeration value="CHL"/&gt;
+     *                         &lt;enumeration value="CHN"/&gt;
+     *                         &lt;enumeration value="COL"/&gt;
+     *                         &lt;enumeration value="CRI"/&gt;
+     *                         &lt;enumeration value="DOM"/&gt;
+     *                         &lt;enumeration value="ECU"/&gt;
+     *                         &lt;enumeration value="SLV"/&gt;
+     *                         &lt;enumeration value="GTM"/&gt;
+     *                         &lt;enumeration value="HND"/&gt;
+     *                         &lt;enumeration value="JAM"/&gt;
+     *                         &lt;enumeration value="MEX"/&gt;
+     *                         &lt;enumeration value="NIC"/&gt;
+     *                         &lt;enumeration value="PAN"/&gt;
+     *                         &lt;enumeration value="ISR"/&gt;
+     *                         &lt;enumeration value="SAU"/&gt;
+     *                         &lt;enumeration value="TUR"/&gt;
+     *                         &lt;enumeration value="ARE"/&gt;
+     *                         &lt;enumeration value="AUT"/&gt;
+     *                         &lt;enumeration value="BEL"/&gt;
+     *                         &lt;enumeration value="BGR"/&gt;
+     *                         &lt;enumeration value="DNK"/&gt;
+     *                         &lt;enumeration value="FIN"/&gt;
+     *                         &lt;enumeration value="FRA"/&gt;
+     *                         &lt;enumeration value="DEU"/&gt;
+     *                         &lt;enumeration value="GRC"/&gt;
+     *                         &lt;enumeration value="HUN"/&gt;
+     *                         &lt;enumeration value="ITA"/&gt;
+     *                         &lt;enumeration value="LVA"/&gt;
+     *                         &lt;enumeration value="LUX"/&gt;
+     *                         &lt;enumeration value="MCO"/&gt;
+     *                         &lt;enumeration value="NOR"/&gt;
+     *                         &lt;enumeration value="PRT"/&gt;
+     *                         &lt;enumeration value="SVK"/&gt;
+     *                         &lt;enumeration value="SVN"/&gt;
+     *                         &lt;enumeration value="ESP"/&gt;
+     *                         &lt;enumeration value="SWE"/&gt;
+     *                         &lt;enumeration value="CHE"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="Currency"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                         &lt;enumeration value="AED"/&gt;
+     *                         &lt;enumeration value="AUD"/&gt;
+     *                         &lt;enumeration value="BGN"/&gt;
+     *                         &lt;enumeration value="BRL"/&gt;
+     *                         &lt;enumeration value="CHF"/&gt;
+     *                         &lt;enumeration value="CLP"/&gt;
+     *                         &lt;enumeration value="COP"/&gt;
+     *                         &lt;enumeration value="CRC"/&gt;
+     *                         &lt;enumeration value="DKK"/&gt;
+     *                         &lt;enumeration value="DOP"/&gt;
+     *                         &lt;enumeration value="EUR"/&gt;
+     *                         &lt;enumeration value="GBP"/&gt;
+     *                         &lt;enumeration value="GTQ"/&gt;
+     *                         &lt;enumeration value="HKD"/&gt;
+     *                         &lt;enumeration value="HNL"/&gt;
+     *                         &lt;enumeration value="HUF"/&gt;
+     *                         &lt;enumeration value="IDR"/&gt;
+     *                         &lt;enumeration value="ILS"/&gt;
+     *                         &lt;enumeration value="INR"/&gt;
+     *                         &lt;enumeration value="JMD"/&gt;
+     *                         &lt;enumeration value="KRW"/&gt;
+     *                         &lt;enumeration value="MOP"/&gt;
+     *                         &lt;enumeration value="MXN"/&gt;
+     *                         &lt;enumeration value="NIO"/&gt;
+     *                         &lt;enumeration value="NOK"/&gt;
+     *                         &lt;enumeration value="NZD"/&gt;
+     *                         &lt;enumeration value="PAB"/&gt;
+     *                         &lt;enumeration value="PHP"/&gt;
+     *                         &lt;enumeration value="PLN"/&gt;
+     *                         &lt;enumeration value="SAR"/&gt;
+     *                         &lt;enumeration value="SEK"/&gt;
+     *                         &lt;enumeration value="SGD"/&gt;
+     *                         &lt;enumeration value="THB"/&gt;
+     *                         &lt;enumeration value="TRY"/&gt;
+     *                         &lt;enumeration value="USD"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="Active" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                   &lt;element name="MSRP" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                   &lt;element name="MAP" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                   &lt;element name="CheckoutMAP" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                   &lt;element name="SellingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                   &lt;element name="EnableFreeShipping" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                 &lt;/all&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -451,6 +451,9 @@ public class UpdateItemPriceResponse {
          * Objects of the following type(s) are allowed in the list
          * {@link UpdateItemPriceResponse.PriceList.Price }
          * 
+         * @return
+         * Objects of the following type(s) are allowed in the list
+         * {@link UpdateItemPriceResponse.PriceList.Price }
          * 
          */
         public List<UpdateItemPriceResponse.PriceList.Price> getPrice() {
@@ -467,120 +470,120 @@ public class UpdateItemPriceResponse {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="CountryCode">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *               &lt;enumeration value="AUS"/>
-         *               &lt;enumeration value="NZL"/>
-         *               &lt;enumeration value="GBR"/>
-         *               &lt;enumeration value="IRL"/>
-         *               &lt;enumeration value="NLD"/>
-         *               &lt;enumeration value="POL"/>
-         *               &lt;enumeration value="IND"/>
-         *               &lt;enumeration value="SGP"/>
-         *               &lt;enumeration value="USA"/>
-         *               &lt;enumeration value="HKG"/>
-         *               &lt;enumeration value="MAC"/>
-         *               &lt;enumeration value="IDN"/>
-         *               &lt;enumeration value="PHL"/>
-         *               &lt;enumeration value="KOR"/>
-         *               &lt;enumeration value="THA"/>
-         *               &lt;enumeration value="BRA"/>
-         *               &lt;enumeration value="CHL"/>
-         *               &lt;enumeration value="CHN"/>
-         *               &lt;enumeration value="COL"/>
-         *               &lt;enumeration value="CRI"/>
-         *               &lt;enumeration value="DOM"/>
-         *               &lt;enumeration value="ECU"/>
-         *               &lt;enumeration value="SLV"/>
-         *               &lt;enumeration value="GTM"/>
-         *               &lt;enumeration value="HND"/>
-         *               &lt;enumeration value="JAM"/>
-         *               &lt;enumeration value="MEX"/>
-         *               &lt;enumeration value="NIC"/>
-         *               &lt;enumeration value="PAN"/>
-         *               &lt;enumeration value="ISR"/>
-         *               &lt;enumeration value="SAU"/>
-         *               &lt;enumeration value="TUR"/>
-         *               &lt;enumeration value="ARE"/>
-         *               &lt;enumeration value="AUT"/>
-         *               &lt;enumeration value="BEL"/>
-         *               &lt;enumeration value="BGR"/>
-         *               &lt;enumeration value="DNK"/>
-         *               &lt;enumeration value="FIN"/>
-         *               &lt;enumeration value="FRA"/>
-         *               &lt;enumeration value="DEU"/>
-         *               &lt;enumeration value="GRC"/>
-         *               &lt;enumeration value="HUN"/>
-         *               &lt;enumeration value="ITA"/>
-         *               &lt;enumeration value="LVA"/>
-         *               &lt;enumeration value="LUX"/>
-         *               &lt;enumeration value="MCO"/>
-         *               &lt;enumeration value="NOR"/>
-         *               &lt;enumeration value="PRT"/>
-         *               &lt;enumeration value="SVK"/>
-         *               &lt;enumeration value="SVN"/>
-         *               &lt;enumeration value="ESP"/>
-         *               &lt;enumeration value="SWE"/>
-         *               &lt;enumeration value="CHE"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="Currency">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *               &lt;enumeration value="AED"/>
-         *               &lt;enumeration value="AUD"/>
-         *               &lt;enumeration value="BGN"/>
-         *               &lt;enumeration value="BRL"/>
-         *               &lt;enumeration value="CHF"/>
-         *               &lt;enumeration value="CLP"/>
-         *               &lt;enumeration value="COP"/>
-         *               &lt;enumeration value="CRC"/>
-         *               &lt;enumeration value="DKK"/>
-         *               &lt;enumeration value="DOP"/>
-         *               &lt;enumeration value="EUR"/>
-         *               &lt;enumeration value="GBP"/>
-         *               &lt;enumeration value="GTQ"/>
-         *               &lt;enumeration value="HKD"/>
-         *               &lt;enumeration value="HNL"/>
-         *               &lt;enumeration value="HUF"/>
-         *               &lt;enumeration value="IDR"/>
-         *               &lt;enumeration value="ILS"/>
-         *               &lt;enumeration value="INR"/>
-         *               &lt;enumeration value="JMD"/>
-         *               &lt;enumeration value="KRW"/>
-         *               &lt;enumeration value="MOP"/>
-         *               &lt;enumeration value="MXN"/>
-         *               &lt;enumeration value="NIO"/>
-         *               &lt;enumeration value="NOK"/>
-         *               &lt;enumeration value="NZD"/>
-         *               &lt;enumeration value="PAB"/>
-         *               &lt;enumeration value="PHP"/>
-         *               &lt;enumeration value="PLN"/>
-         *               &lt;enumeration value="SAR"/>
-         *               &lt;enumeration value="SEK"/>
-         *               &lt;enumeration value="SGD"/>
-         *               &lt;enumeration value="THB"/>
-         *               &lt;enumeration value="TRY"/>
-         *               &lt;enumeration value="USD"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="Active" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *         &lt;element name="MSRP" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *         &lt;element name="MAP" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *         &lt;element name="CheckoutMAP" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *         &lt;element name="SellingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *         &lt;element name="EnableFreeShipping" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="CountryCode"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *               &lt;enumeration value="AUS"/&gt;
+         *               &lt;enumeration value="NZL"/&gt;
+         *               &lt;enumeration value="GBR"/&gt;
+         *               &lt;enumeration value="IRL"/&gt;
+         *               &lt;enumeration value="NLD"/&gt;
+         *               &lt;enumeration value="POL"/&gt;
+         *               &lt;enumeration value="IND"/&gt;
+         *               &lt;enumeration value="SGP"/&gt;
+         *               &lt;enumeration value="USA"/&gt;
+         *               &lt;enumeration value="HKG"/&gt;
+         *               &lt;enumeration value="MAC"/&gt;
+         *               &lt;enumeration value="IDN"/&gt;
+         *               &lt;enumeration value="PHL"/&gt;
+         *               &lt;enumeration value="KOR"/&gt;
+         *               &lt;enumeration value="THA"/&gt;
+         *               &lt;enumeration value="BRA"/&gt;
+         *               &lt;enumeration value="CHL"/&gt;
+         *               &lt;enumeration value="CHN"/&gt;
+         *               &lt;enumeration value="COL"/&gt;
+         *               &lt;enumeration value="CRI"/&gt;
+         *               &lt;enumeration value="DOM"/&gt;
+         *               &lt;enumeration value="ECU"/&gt;
+         *               &lt;enumeration value="SLV"/&gt;
+         *               &lt;enumeration value="GTM"/&gt;
+         *               &lt;enumeration value="HND"/&gt;
+         *               &lt;enumeration value="JAM"/&gt;
+         *               &lt;enumeration value="MEX"/&gt;
+         *               &lt;enumeration value="NIC"/&gt;
+         *               &lt;enumeration value="PAN"/&gt;
+         *               &lt;enumeration value="ISR"/&gt;
+         *               &lt;enumeration value="SAU"/&gt;
+         *               &lt;enumeration value="TUR"/&gt;
+         *               &lt;enumeration value="ARE"/&gt;
+         *               &lt;enumeration value="AUT"/&gt;
+         *               &lt;enumeration value="BEL"/&gt;
+         *               &lt;enumeration value="BGR"/&gt;
+         *               &lt;enumeration value="DNK"/&gt;
+         *               &lt;enumeration value="FIN"/&gt;
+         *               &lt;enumeration value="FRA"/&gt;
+         *               &lt;enumeration value="DEU"/&gt;
+         *               &lt;enumeration value="GRC"/&gt;
+         *               &lt;enumeration value="HUN"/&gt;
+         *               &lt;enumeration value="ITA"/&gt;
+         *               &lt;enumeration value="LVA"/&gt;
+         *               &lt;enumeration value="LUX"/&gt;
+         *               &lt;enumeration value="MCO"/&gt;
+         *               &lt;enumeration value="NOR"/&gt;
+         *               &lt;enumeration value="PRT"/&gt;
+         *               &lt;enumeration value="SVK"/&gt;
+         *               &lt;enumeration value="SVN"/&gt;
+         *               &lt;enumeration value="ESP"/&gt;
+         *               &lt;enumeration value="SWE"/&gt;
+         *               &lt;enumeration value="CHE"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="Currency"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *               &lt;enumeration value="AED"/&gt;
+         *               &lt;enumeration value="AUD"/&gt;
+         *               &lt;enumeration value="BGN"/&gt;
+         *               &lt;enumeration value="BRL"/&gt;
+         *               &lt;enumeration value="CHF"/&gt;
+         *               &lt;enumeration value="CLP"/&gt;
+         *               &lt;enumeration value="COP"/&gt;
+         *               &lt;enumeration value="CRC"/&gt;
+         *               &lt;enumeration value="DKK"/&gt;
+         *               &lt;enumeration value="DOP"/&gt;
+         *               &lt;enumeration value="EUR"/&gt;
+         *               &lt;enumeration value="GBP"/&gt;
+         *               &lt;enumeration value="GTQ"/&gt;
+         *               &lt;enumeration value="HKD"/&gt;
+         *               &lt;enumeration value="HNL"/&gt;
+         *               &lt;enumeration value="HUF"/&gt;
+         *               &lt;enumeration value="IDR"/&gt;
+         *               &lt;enumeration value="ILS"/&gt;
+         *               &lt;enumeration value="INR"/&gt;
+         *               &lt;enumeration value="JMD"/&gt;
+         *               &lt;enumeration value="KRW"/&gt;
+         *               &lt;enumeration value="MOP"/&gt;
+         *               &lt;enumeration value="MXN"/&gt;
+         *               &lt;enumeration value="NIO"/&gt;
+         *               &lt;enumeration value="NOK"/&gt;
+         *               &lt;enumeration value="NZD"/&gt;
+         *               &lt;enumeration value="PAB"/&gt;
+         *               &lt;enumeration value="PHP"/&gt;
+         *               &lt;enumeration value="PLN"/&gt;
+         *               &lt;enumeration value="SAR"/&gt;
+         *               &lt;enumeration value="SEK"/&gt;
+         *               &lt;enumeration value="SGD"/&gt;
+         *               &lt;enumeration value="THB"/&gt;
+         *               &lt;enumeration value="TRY"/&gt;
+         *               &lt;enumeration value="USD"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="Active" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *         &lt;element name="MSRP" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *         &lt;element name="MAP" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *         &lt;element name="CheckoutMAP" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *         &lt;element name="SellingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *         &lt;element name="EnableFreeShipping" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *       &lt;/all&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 

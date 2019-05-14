@@ -23,32 +23,32 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * <p>下列綱要片段會指定此類別中包含的預期內容.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="Action">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;minInclusive value="1"/>
- *               &lt;maxInclusive value="2"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="Value">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;enumeration value="24"/>
- *               &lt;enumeration value="72"/>
- *               &lt;enumeration value="73"/>
- *               &lt;enumeration value="74"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="Action"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;minInclusive value="1"/&gt;
+ *               &lt;maxInclusive value="2"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Value"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;enumeration value="24"/&gt;
+ *               &lt;enumeration value="72"/&gt;
+ *               &lt;enumeration value="73"/&gt;
+ *               &lt;enumeration value="74"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -69,6 +69,9 @@ public class CancelOrderRequest {
 
     /**
      * 取得 action 特性的值.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getAction() {
@@ -77,6 +80,9 @@ public class CancelOrderRequest {
 
     /**
      * 設定 action 特性的值.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setAction(int value) {
@@ -85,6 +91,9 @@ public class CancelOrderRequest {
 
     /**
      * 取得 value 特性的值.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getValue() {
@@ -93,6 +102,9 @@ public class CancelOrderRequest {
 
     /**
      * 設定 value 特性的值.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setValue(int value) {

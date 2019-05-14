@@ -29,119 +29,119 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * <p>下列綱要片段會指定此類別中包含的預期內容.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="PageInfo">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="TotalCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                             &lt;element name="TotalPageCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                             &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                             &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="AddOrderInfoList">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="AddOrderInfo" maxOccurs="unbounded" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                                       &lt;element name="RecipientIDType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="RecipientIDNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="NISPOriginalInfo" minOccurs="0">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;all>
- *                                                 &lt;element name="NISPOriFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NISPOriLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NISPOriCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NISPOriAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NISPOriAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NISPOriCity" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NISPOriState" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NISPOriZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NISPOriCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NISPOriPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                               &lt;/all>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                       &lt;element name="OriginalInputInfo">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;all>
- *                                                 &lt;element name="OriginalFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="OriginalLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="OriginalCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="OriginalAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="OriginalAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="OriginalCity" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="OriginalState" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="OriginalZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="OriginalCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="OriginalPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                               &lt;/all>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                       &lt;element name="AddInfo1" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                                       &lt;element name="AddInfo2" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                                       &lt;element name="AddInfo3" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                                       &lt;element name="TaxDutyTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="ImportTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="IDCopyFront" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="IDCopyBack" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="PageInfo"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="TotalCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                             &lt;element name="TotalPageCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                             &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                             &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="AddOrderInfoList"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="AddOrderInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                                       &lt;element name="RecipientIDType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="RecipientIDNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="NISPOriginalInfo" minOccurs="0"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;all&gt;
+ *                                                 &lt;element name="NISPOriFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NISPOriLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NISPOriCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NISPOriAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NISPOriAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NISPOriCity" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NISPOriState" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NISPOriZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NISPOriCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NISPOriPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                               &lt;/all&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="OriginalInputInfo"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;all&gt;
+ *                                                 &lt;element name="OriginalFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="OriginalLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="OriginalCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="OriginalAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="OriginalAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="OriginalCity" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="OriginalState" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="OriginalZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="OriginalCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="OriginalPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                               &lt;/all&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="AddInfo1" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                                       &lt;element name="AddInfo2" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                                       &lt;element name="AddInfo3" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                                       &lt;element name="TaxDutyTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="ImportTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="IDCopyFront" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="IDCopyBack" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -250,7 +250,7 @@ public class GetAdditionalOrderInformationResponse {
      * 
      * @return
      *     possible object is
-     *     {@link NeweggAPIResponse.ResponseBody }
+     *     {@link GetAdditionalOrderInformationResponse.ResponseBody }
      *     
      */
     public GetAdditionalOrderInformationResponse.ResponseBody getResponseBody() {
@@ -262,7 +262,7 @@ public class GetAdditionalOrderInformationResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link NeweggAPIResponse.ResponseBody }
+     *     {@link GetAdditionalOrderInformationResponse.ResponseBody }
      *     
      */
     public void setResponseBody(GetAdditionalOrderInformationResponse.ResponseBody value) {
@@ -324,98 +324,98 @@ public class GetAdditionalOrderInformationResponse {
      * <p>下列綱要片段會指定此類別中包含的預期內容.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="PageInfo">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="TotalCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                   &lt;element name="TotalPageCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                   &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                   &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="AddOrderInfoList">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="AddOrderInfo" maxOccurs="unbounded" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                             &lt;element name="RecipientIDType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="RecipientIDNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="NISPOriginalInfo" minOccurs="0">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;all>
-     *                                       &lt;element name="NISPOriFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="NISPOriLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="NISPOriCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="NISPOriAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="NISPOriAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="NISPOriCity" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="NISPOriState" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="NISPOriZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="NISPOriCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="NISPOriPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                     &lt;/all>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="OriginalInputInfo">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;all>
-     *                                       &lt;element name="OriginalFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="OriginalLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="OriginalCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="OriginalAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="OriginalAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="OriginalCity" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="OriginalState" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="OriginalZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="OriginalCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="OriginalPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                     &lt;/all>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="AddInfo1" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                             &lt;element name="AddInfo2" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                             &lt;element name="AddInfo3" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                             &lt;element name="TaxDutyTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="ImportTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="IDCopyFront" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="IDCopyBack" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="PageInfo"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="TotalCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                   &lt;element name="TotalPageCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                   &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                   &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                 &lt;/all&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *         &lt;element name="AddOrderInfoList"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="AddOrderInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;all&gt;
+     *                             &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                             &lt;element name="RecipientIDType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="RecipientIDNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="NISPOriginalInfo" minOccurs="0"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;all&gt;
+     *                                       &lt;element name="NISPOriFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="NISPOriLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="NISPOriCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="NISPOriAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="NISPOriAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="NISPOriCity" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="NISPOriState" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="NISPOriZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="NISPOriCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="NISPOriPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                     &lt;/all&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="OriginalInputInfo"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;all&gt;
+     *                                       &lt;element name="OriginalFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="OriginalLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="OriginalCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="OriginalAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="OriginalAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="OriginalCity" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="OriginalState" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="OriginalZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="OriginalCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="OriginalPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                     &lt;/all&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="AddInfo1" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *                             &lt;element name="AddInfo2" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *                             &lt;element name="AddInfo3" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *                             &lt;element name="TaxDutyTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="ImportTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="IDCopyFront" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="IDCopyBack" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                           &lt;/all&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/all&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -439,7 +439,7 @@ public class GetAdditionalOrderInformationResponse {
          * 
          * @return
          *     possible object is
-         *     {@link NeweggAPIResponse.ResponseBody.PageInfo }
+         *     {@link GetAdditionalOrderInformationResponse.ResponseBody.PageInfo }
          *     
          */
         public GetAdditionalOrderInformationResponse.ResponseBody.PageInfo getPageInfo() {
@@ -451,7 +451,7 @@ public class GetAdditionalOrderInformationResponse {
          * 
          * @param value
          *     allowed object is
-         *     {@link NeweggAPIResponse.ResponseBody.PageInfo }
+         *     {@link GetAdditionalOrderInformationResponse.ResponseBody.PageInfo }
          *     
          */
         public void setPageInfo(GetAdditionalOrderInformationResponse.ResponseBody.PageInfo value) {
@@ -463,7 +463,7 @@ public class GetAdditionalOrderInformationResponse {
          * 
          * @return
          *     possible object is
-         *     {@link NeweggAPIResponse.ResponseBody.AddOrderInfoList }
+         *     {@link GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList }
          *     
          */
         public GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList getAddOrderInfoList() {
@@ -475,7 +475,7 @@ public class GetAdditionalOrderInformationResponse {
          * 
          * @param value
          *     allowed object is
-         *     {@link NeweggAPIResponse.ResponseBody.AddOrderInfoList }
+         *     {@link GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList }
          *     
          */
         public void setAddOrderInfoList(GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList value) {
@@ -489,74 +489,74 @@ public class GetAdditionalOrderInformationResponse {
          * <p>下列綱要片段會指定此類別中包含的預期內容.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="AddOrderInfo" maxOccurs="unbounded" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *                   &lt;element name="RecipientIDType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="RecipientIDNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="NISPOriginalInfo" minOccurs="0">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;all>
-         *                             &lt;element name="NISPOriFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="NISPOriLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="NISPOriCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="NISPOriAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="NISPOriAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="NISPOriCity" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="NISPOriState" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="NISPOriZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="NISPOriCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="NISPOriPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                           &lt;/all>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="OriginalInputInfo">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;all>
-         *                             &lt;element name="OriginalFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="OriginalLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="OriginalCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="OriginalAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="OriginalAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="OriginalCity" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="OriginalState" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="OriginalZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="OriginalCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="OriginalPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                           &lt;/all>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="AddInfo1" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *                   &lt;element name="AddInfo2" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *                   &lt;element name="AddInfo3" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *                   &lt;element name="TaxDutyTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="ImportTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="IDCopyFront" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="IDCopyBack" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="AddOrderInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;all&gt;
+         *                   &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *                   &lt;element name="RecipientIDType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="RecipientIDNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="NISPOriginalInfo" minOccurs="0"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;all&gt;
+         *                             &lt;element name="NISPOriFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="NISPOriLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="NISPOriCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="NISPOriAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="NISPOriAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="NISPOriCity" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="NISPOriState" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="NISPOriZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="NISPOriCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="NISPOriPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                           &lt;/all&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="OriginalInputInfo"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;all&gt;
+         *                             &lt;element name="OriginalFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="OriginalLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="OriginalCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="OriginalAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="OriginalAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="OriginalCity" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="OriginalState" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="OriginalZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="OriginalCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="OriginalPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                           &lt;/all&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="AddInfo1" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+         *                   &lt;element name="AddInfo2" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+         *                   &lt;element name="AddInfo3" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+         *                   &lt;element name="TaxDutyTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="ImportTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="IDCopyFront" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="IDCopyBack" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                 &lt;/all&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -589,8 +589,11 @@ public class GetAdditionalOrderInformationResponse {
              * 
              * <p>
              * Objects of the following type(s) are allowed in the list
-             * {@link NeweggAPIResponse.ResponseBody.AddOrderInfoList.AddOrderInfo }
+             * {@link GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo }
              * 
              */
             public List<GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo> getAddOrderInfo() {
@@ -607,64 +610,64 @@ public class GetAdditionalOrderInformationResponse {
              * <p>下列綱要片段會指定此類別中包含的預期內容.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-             *         &lt;element name="RecipientIDType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="RecipientIDNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="NISPOriginalInfo" minOccurs="0">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;all>
-             *                   &lt;element name="NISPOriFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="NISPOriLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="NISPOriCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="NISPOriAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="NISPOriAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="NISPOriCity" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="NISPOriState" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="NISPOriZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="NISPOriCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="NISPOriPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                 &lt;/all>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="OriginalInputInfo">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;all>
-             *                   &lt;element name="OriginalFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="OriginalLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="OriginalCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="OriginalAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="OriginalAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="OriginalCity" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="OriginalState" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="OriginalZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="OriginalCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="OriginalPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                 &lt;/all>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="AddInfo1" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-             *         &lt;element name="AddInfo2" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-             *         &lt;element name="AddInfo3" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-             *         &lt;element name="TaxDutyTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="ImportTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="IDCopyFront" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="IDCopyBack" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;all&gt;
+             *         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+             *         &lt;element name="RecipientIDType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="RecipientIDNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="NISPOriginalInfo" minOccurs="0"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;all&gt;
+             *                   &lt;element name="NISPOriFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="NISPOriLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="NISPOriCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="NISPOriAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="NISPOriAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="NISPOriCity" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="NISPOriState" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="NISPOriZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="NISPOriCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="NISPOriPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                 &lt;/all&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="OriginalInputInfo"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;all&gt;
+             *                   &lt;element name="OriginalFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="OriginalLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="OriginalCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="OriginalAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="OriginalAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="OriginalCity" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="OriginalState" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="OriginalZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="OriginalCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="OriginalPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                 &lt;/all&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="AddInfo1" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+             *         &lt;element name="AddInfo2" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+             *         &lt;element name="AddInfo3" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+             *         &lt;element name="TaxDutyTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="ImportTypeChina" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="IDCopyFront" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="IDCopyBack" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *       &lt;/all&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -789,7 +792,7 @@ public class GetAdditionalOrderInformationResponse {
                  * 
                  * @return
                  *     possible object is
-                 *     {@link NeweggAPIResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.NISPOriginalInfo }
+                 *     {@link GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.NISPOriginalInfo }
                  *     
                  */
                 public GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.NISPOriginalInfo getNISPOriginalInfo() {
@@ -801,7 +804,7 @@ public class GetAdditionalOrderInformationResponse {
                  * 
                  * @param value
                  *     allowed object is
-                 *     {@link NeweggAPIResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.NISPOriginalInfo }
+                 *     {@link GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.NISPOriginalInfo }
                  *     
                  */
                 public void setNISPOriginalInfo(GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.NISPOriginalInfo value) {
@@ -813,7 +816,7 @@ public class GetAdditionalOrderInformationResponse {
                  * 
                  * @return
                  *     possible object is
-                 *     {@link NeweggAPIResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.OriginalInputInfo }
+                 *     {@link GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.OriginalInputInfo }
                  *     
                  */
                 public GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.OriginalInputInfo getOriginalInputInfo() {
@@ -825,7 +828,7 @@ public class GetAdditionalOrderInformationResponse {
                  * 
                  * @param value
                  *     allowed object is
-                 *     {@link NeweggAPIResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.OriginalInputInfo }
+                 *     {@link GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.OriginalInputInfo }
                  *     
                  */
                 public void setOriginalInputInfo(GetAdditionalOrderInformationResponse.ResponseBody.AddOrderInfoList.AddOrderInfo.OriginalInputInfo value) {
@@ -1007,24 +1010,24 @@ public class GetAdditionalOrderInformationResponse {
                  * <p>下列綱要片段會指定此類別中包含的預期內容.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;all>
-                 *         &lt;element name="NISPOriFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="NISPOriLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="NISPOriCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="NISPOriAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="NISPOriAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="NISPOriCity" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="NISPOriState" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="NISPOriZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="NISPOriCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="NISPOriPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *       &lt;/all>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;all&gt;
+                 *         &lt;element name="NISPOriFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="NISPOriLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="NISPOriCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="NISPOriAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="NISPOriAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="NISPOriCity" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="NISPOriState" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="NISPOriZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="NISPOriCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="NISPOriPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *       &lt;/all&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -1315,24 +1318,24 @@ public class GetAdditionalOrderInformationResponse {
                  * <p>下列綱要片段會指定此類別中包含的預期內容.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;all>
-                 *         &lt;element name="OriginalFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="OriginalLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="OriginalCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="OriginalAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="OriginalAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="OriginalCity" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="OriginalState" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="OriginalZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="OriginalCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="OriginalPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *       &lt;/all>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;all&gt;
+                 *         &lt;element name="OriginalFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="OriginalLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="OriginalCompanyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="OriginalAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="OriginalAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="OriginalCity" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="OriginalState" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="OriginalZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="OriginalCountryCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="OriginalPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *       &lt;/all&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -1627,18 +1630,18 @@ public class GetAdditionalOrderInformationResponse {
          * <p>下列綱要片段會指定此類別中包含的預期內容.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="TotalCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *         &lt;element name="TotalPageCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *         &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *         &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="TotalCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *         &lt;element name="TotalPageCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *         &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *         &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *       &lt;/all&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -1664,6 +1667,9 @@ public class GetAdditionalOrderInformationResponse {
 
             /**
              * 取得 totalCount 特性的值.
+             * @return
+             * possible object is 
+             *     {@link int }
              * 
              */
             public int getTotalCount() {
@@ -1672,6 +1678,9 @@ public class GetAdditionalOrderInformationResponse {
 
             /**
              * 設定 totalCount 特性的值.
+             * @param value
+             *     allowed object is
+             *     {@link  }
              * 
              */
             public void setTotalCount(int value) {
@@ -1680,6 +1689,9 @@ public class GetAdditionalOrderInformationResponse {
 
             /**
              * 取得 totalPageCount 特性的值.
+             * @return
+             * possible object is 
+             *     {@link int }
              * 
              */
             public int getTotalPageCount() {
@@ -1688,6 +1700,9 @@ public class GetAdditionalOrderInformationResponse {
 
             /**
              * 設定 totalPageCount 特性的值.
+             * @param value
+             *     allowed object is
+             *     {@link  }
              * 
              */
             public void setTotalPageCount(int value) {
@@ -1696,6 +1711,9 @@ public class GetAdditionalOrderInformationResponse {
 
             /**
              * 取得 pageSize 特性的值.
+             * @return
+             * possible object is 
+             *     {@link int }
              * 
              */
             public int getPageSize() {
@@ -1704,6 +1722,9 @@ public class GetAdditionalOrderInformationResponse {
 
             /**
              * 設定 pageSize 特性的值.
+             * @param value
+             *     allowed object is
+             *     {@link  }
              * 
              */
             public void setPageSize(int value) {
@@ -1712,6 +1733,9 @@ public class GetAdditionalOrderInformationResponse {
 
             /**
              * 取得 pageIndex 特性的值.
+             * @return
+             * possible object is 
+             *     {@link int }
              * 
              */
             public int getPageIndex() {
@@ -1720,6 +1744,9 @@ public class GetAdditionalOrderInformationResponse {
 
             /**
              * 設定 pageIndex 特性的值.
+             * @param value
+             *     allowed object is
+             *     {@link  }
              * 
              */
             public void setPageIndex(int value) {

@@ -23,99 +23,99 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IssueUser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="RequestBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="PageInfo" minOccurs="0">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="PageSize" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;minInclusive value="1"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="PageIndex" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;minInclusive value="1"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="KeywordsType" minOccurs="0">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                         &lt;enumeration value="1"/>
- *                         &lt;enumeration value="2"/>
- *                         &lt;enumeration value="3"/>
- *                         &lt;enumeration value="4"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="KeywordsValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="Status" minOccurs="0">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                         &lt;enumeration value="0"/>
- *                         &lt;enumeration value="1"/>
- *                         &lt;enumeration value="2"/>
- *                         &lt;enumeration value="3"/>
- *                         &lt;enumeration value="4"/>
- *                         &lt;enumeration value="5"/>
- *                         &lt;enumeration value="6"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="RMADateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="RMADateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="RMAType" minOccurs="0">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                         &lt;enumeration value="0"/>
- *                         &lt;enumeration value="1"/>
- *                         &lt;enumeration value="2"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="ProcessedBy" minOccurs="0">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                         &lt;enumeration value="0"/>
- *                         &lt;enumeration value="1"/>
- *                         &lt;enumeration value="2"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IssueUser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="RequestBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="PageInfo" minOccurs="0"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="PageSize" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="PageIndex" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="KeywordsType" minOccurs="0"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                         &lt;enumeration value="1"/&gt;
+ *                         &lt;enumeration value="2"/&gt;
+ *                         &lt;enumeration value="3"/&gt;
+ *                         &lt;enumeration value="4"/&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="KeywordsValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                   &lt;element name="Status" minOccurs="0"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                         &lt;enumeration value="0"/&gt;
+ *                         &lt;enumeration value="1"/&gt;
+ *                         &lt;enumeration value="2"/&gt;
+ *                         &lt;enumeration value="3"/&gt;
+ *                         &lt;enumeration value="4"/&gt;
+ *                         &lt;enumeration value="5"/&gt;
+ *                         &lt;enumeration value="6"/&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="RMADateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                   &lt;element name="RMADateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                   &lt;element name="RMAType" minOccurs="0"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                         &lt;enumeration value="0"/&gt;
+ *                         &lt;enumeration value="1"/&gt;
+ *                         &lt;enumeration value="2"/&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="ProcessedBy" minOccurs="0"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                         &lt;enumeration value="0"/&gt;
+ *                         &lt;enumeration value="1"/&gt;
+ *                         &lt;enumeration value="2"/&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -171,82 +171,82 @@ public class GetRMAInformationRequest {
 	 * The following schema fragment specifies the expected content contained within this class.
 	 * 
 	 * <pre>
-	 * &lt;complexType>
-	 *   &lt;complexContent>
-	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *       &lt;all>
-	 *         &lt;element name="PageInfo" minOccurs="0">
-	 *           &lt;complexType>
-	 *             &lt;complexContent>
-	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                 &lt;all>
-	 *                   &lt;element name="PageSize" minOccurs="0">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *                         &lt;minInclusive value="1"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="PageIndex" minOccurs="0">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *                         &lt;minInclusive value="1"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                 &lt;/all>
-	 *               &lt;/restriction>
-	 *             &lt;/complexContent>
-	 *           &lt;/complexType>
-	 *         &lt;/element>
-	 *         &lt;element name="KeywordsType" minOccurs="0">
-	 *           &lt;simpleType>
-	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *               &lt;enumeration value="1"/>
-	 *               &lt;enumeration value="2"/>
-	 *               &lt;enumeration value="3"/>
-	 *               &lt;enumeration value="4"/>
-	 *             &lt;/restriction>
-	 *           &lt;/simpleType>
-	 *         &lt;/element>
-	 *         &lt;element name="KeywordsValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-	 *         &lt;element name="Status" minOccurs="0">
-	 *           &lt;simpleType>
-	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *               &lt;enumeration value="0"/>
-	 *               &lt;enumeration value="1"/>
-	 *               &lt;enumeration value="2"/>
-	 *               &lt;enumeration value="3"/>
-	 *               &lt;enumeration value="4"/>
-	 *               &lt;enumeration value="5"/>
-	 *               &lt;enumeration value="6"/>
-	 *             &lt;/restriction>
-	 *           &lt;/simpleType>
-	 *         &lt;/element>
-	 *         &lt;element name="RMADateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-	 *         &lt;element name="RMADateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-	 *         &lt;element name="RMAType" minOccurs="0">
-	 *           &lt;simpleType>
-	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *               &lt;enumeration value="0"/>
-	 *               &lt;enumeration value="1"/>
-	 *               &lt;enumeration value="2"/>
-	 *             &lt;/restriction>
-	 *           &lt;/simpleType>
-	 *         &lt;/element>
-	 *         &lt;element name="ProcessedBy" minOccurs="0">
-	 *           &lt;simpleType>
-	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *               &lt;enumeration value="0"/>
-	 *               &lt;enumeration value="1"/>
-	 *               &lt;enumeration value="2"/>
-	 *             &lt;/restriction>
-	 *           &lt;/simpleType>
-	 *         &lt;/element>
-	 *       &lt;/all>
-	 *     &lt;/restriction>
-	 *   &lt;/complexContent>
-	 * &lt;/complexType>
+	 * &lt;complexType&gt;
+	 *   &lt;complexContent&gt;
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *       &lt;all&gt;
+	 *         &lt;element name="PageInfo" minOccurs="0"&gt;
+	 *           &lt;complexType&gt;
+	 *             &lt;complexContent&gt;
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                 &lt;all&gt;
+	 *                   &lt;element name="PageSize" minOccurs="0"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="PageIndex" minOccurs="0"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                 &lt;/all&gt;
+	 *               &lt;/restriction&gt;
+	 *             &lt;/complexContent&gt;
+	 *           &lt;/complexType&gt;
+	 *         &lt;/element&gt;
+	 *         &lt;element name="KeywordsType" minOccurs="0"&gt;
+	 *           &lt;simpleType&gt;
+	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *               &lt;enumeration value="1"/&gt;
+	 *               &lt;enumeration value="2"/&gt;
+	 *               &lt;enumeration value="3"/&gt;
+	 *               &lt;enumeration value="4"/&gt;
+	 *             &lt;/restriction&gt;
+	 *           &lt;/simpleType&gt;
+	 *         &lt;/element&gt;
+	 *         &lt;element name="KeywordsValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+	 *         &lt;element name="Status" minOccurs="0"&gt;
+	 *           &lt;simpleType&gt;
+	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *               &lt;enumeration value="0"/&gt;
+	 *               &lt;enumeration value="1"/&gt;
+	 *               &lt;enumeration value="2"/&gt;
+	 *               &lt;enumeration value="3"/&gt;
+	 *               &lt;enumeration value="4"/&gt;
+	 *               &lt;enumeration value="5"/&gt;
+	 *               &lt;enumeration value="6"/&gt;
+	 *             &lt;/restriction&gt;
+	 *           &lt;/simpleType&gt;
+	 *         &lt;/element&gt;
+	 *         &lt;element name="RMADateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+	 *         &lt;element name="RMADateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+	 *         &lt;element name="RMAType" minOccurs="0"&gt;
+	 *           &lt;simpleType&gt;
+	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *               &lt;enumeration value="0"/&gt;
+	 *               &lt;enumeration value="1"/&gt;
+	 *               &lt;enumeration value="2"/&gt;
+	 *             &lt;/restriction&gt;
+	 *           &lt;/simpleType&gt;
+	 *         &lt;/element&gt;
+	 *         &lt;element name="ProcessedBy" minOccurs="0"&gt;
+	 *           &lt;simpleType&gt;
+	 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *               &lt;enumeration value="0"/&gt;
+	 *               &lt;enumeration value="1"/&gt;
+	 *               &lt;enumeration value="2"/&gt;
+	 *             &lt;/restriction&gt;
+	 *           &lt;/simpleType&gt;
+	 *         &lt;/element&gt;
+	 *       &lt;/all&gt;
+	 *     &lt;/restriction&gt;
+	 *   &lt;/complexContent&gt;
+	 * &lt;/complexType&gt;
 	 * </pre>
 	 * 
 	 * 
@@ -361,28 +361,28 @@ public class GetRMAInformationRequest {
 		 * The following schema fragment specifies the expected content contained within this class.
 		 * 
 		 * <pre>
-		 * &lt;complexType>
-		 *   &lt;complexContent>
-		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *       &lt;all>
-		 *         &lt;element name="PageSize" minOccurs="0">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-		 *               &lt;minInclusive value="1"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="PageIndex" minOccurs="0">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-		 *               &lt;minInclusive value="1"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *       &lt;/all>
-		 *     &lt;/restriction>
-		 *   &lt;/complexContent>
-		 * &lt;/complexType>
+		 * &lt;complexType&gt;
+		 *   &lt;complexContent&gt;
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *       &lt;all&gt;
+		 *         &lt;element name="PageSize" minOccurs="0"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="PageIndex" minOccurs="0"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *       &lt;/all&gt;
+		 *     &lt;/restriction&gt;
+		 *   &lt;/complexContent&gt;
+		 * &lt;/complexType&gt;
 		 * </pre>
 		 * 
 		 * 

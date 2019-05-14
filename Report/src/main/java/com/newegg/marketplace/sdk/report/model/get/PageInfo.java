@@ -22,18 +22,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * <p>下列綱要片段會指定此類別中包含的預期內容.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="TotalCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="TotalPageCount" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="TotalCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="TotalPageCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="PageSize" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="PageIndex" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -60,6 +60,9 @@ public class PageInfo {
 
     /**
      * 取得 totalCount 特性的值.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getTotalCount() {
@@ -68,6 +71,9 @@ public class PageInfo {
 
     /**
      * 設定 totalCount 特性的值.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setTotalCount(int value) {
@@ -76,6 +82,9 @@ public class PageInfo {
 
     /**
      * 取得 totalPageCount 特性的值.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getTotalPageCount() {
@@ -84,6 +93,9 @@ public class PageInfo {
 
     /**
      * 設定 totalPageCount 特性的值.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setTotalPageCount(int value) {
@@ -92,6 +104,9 @@ public class PageInfo {
 
     /**
      * 取得 pageSize 特性的值.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getPageSize() {
@@ -100,6 +115,9 @@ public class PageInfo {
 
     /**
      * 設定 pageSize 特性的值.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setPageSize(int value) {
@@ -108,6 +126,9 @@ public class PageInfo {
 
     /**
      * 取得 pageIndex 特性的值.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getPageIndex() {
@@ -116,6 +137,9 @@ public class PageInfo {
 
     /**
      * 設定 pageIndex 特性的值.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setPageIndex(int value) {

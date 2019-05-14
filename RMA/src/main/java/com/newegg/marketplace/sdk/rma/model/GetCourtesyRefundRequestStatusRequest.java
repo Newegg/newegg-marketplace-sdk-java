@@ -26,80 +26,80 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IssueUser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="GetCourtesyRefundStatusRequest"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="RequestBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="GetRequestStatus">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="RequestIDList" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="RequestID" maxOccurs="unbounded">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;maxLength value="40"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="MaxCount" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;minInclusive value="0"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="RequestStatus" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;enumeration value="ALL"/>
- *                                   &lt;enumeration value="SUBMITTED"/>
- *                                   &lt;enumeration value="IN_PROGRESS"/>
- *                                   &lt;enumeration value="FINISHED"/>
- *                                   &lt;enumeration value="CANCELLED"/>
- *                                   &lt;enumeration value="FAILED"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                             &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IssueUser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="GetCourtesyRefundStatusRequest"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="RequestBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="GetRequestStatus"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="RequestIDList" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="RequestID" maxOccurs="unbounded"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;maxLength value="40"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="MaxCount" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;minInclusive value="0"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="RequestStatus" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;enumeration value="ALL"/&gt;
+ *                                   &lt;enumeration value="SUBMITTED"/&gt;
+ *                                   &lt;enumeration value="IN_PROGRESS"/&gt;
+ *                                   &lt;enumeration value="FINISHED"/&gt;
+ *                                   &lt;enumeration value="CANCELLED"/&gt;
+ *                                   &lt;enumeration value="FAILED"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                             &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -155,62 +155,62 @@ public class GetCourtesyRefundRequestStatusRequest {
 	 * The following schema fragment specifies the expected content contained within this class.
 	 * 
 	 * <pre>
-	 * &lt;complexType>
-	 *   &lt;complexContent>
-	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *       &lt;sequence>
-	 *         &lt;element name="GetRequestStatus">
-	 *           &lt;complexType>
-	 *             &lt;complexContent>
-	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                 &lt;all>
-	 *                   &lt;element name="RequestIDList" minOccurs="0">
-	 *                     &lt;complexType>
-	 *                       &lt;complexContent>
-	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                           &lt;sequence>
-	 *                             &lt;element name="RequestID" maxOccurs="unbounded">
-	 *                               &lt;simpleType>
-	 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-	 *                                   &lt;maxLength value="40"/>
-	 *                                 &lt;/restriction>
-	 *                               &lt;/simpleType>
-	 *                             &lt;/element>
-	 *                           &lt;/sequence>
-	 *                         &lt;/restriction>
-	 *                       &lt;/complexContent>
-	 *                     &lt;/complexType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="MaxCount" minOccurs="0">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *                         &lt;minInclusive value="0"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="RequestStatus" minOccurs="0">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-	 *                         &lt;enumeration value="ALL"/>
-	 *                         &lt;enumeration value="SUBMITTED"/>
-	 *                         &lt;enumeration value="IN_PROGRESS"/>
-	 *                         &lt;enumeration value="FINISHED"/>
-	 *                         &lt;enumeration value="CANCELLED"/>
-	 *                         &lt;enumeration value="FAILED"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-	 *                   &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-	 *                 &lt;/all>
-	 *               &lt;/restriction>
-	 *             &lt;/complexContent>
-	 *           &lt;/complexType>
-	 *         &lt;/element>
-	 *       &lt;/sequence>
-	 *     &lt;/restriction>
-	 *   &lt;/complexContent>
-	 * &lt;/complexType>
+	 * &lt;complexType&gt;
+	 *   &lt;complexContent&gt;
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *       &lt;sequence&gt;
+	 *         &lt;element name="GetRequestStatus"&gt;
+	 *           &lt;complexType&gt;
+	 *             &lt;complexContent&gt;
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                 &lt;all&gt;
+	 *                   &lt;element name="RequestIDList" minOccurs="0"&gt;
+	 *                     &lt;complexType&gt;
+	 *                       &lt;complexContent&gt;
+	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                           &lt;sequence&gt;
+	 *                             &lt;element name="RequestID" maxOccurs="unbounded"&gt;
+	 *                               &lt;simpleType&gt;
+	 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+	 *                                   &lt;maxLength value="40"/&gt;
+	 *                                 &lt;/restriction&gt;
+	 *                               &lt;/simpleType&gt;
+	 *                             &lt;/element&gt;
+	 *                           &lt;/sequence&gt;
+	 *                         &lt;/restriction&gt;
+	 *                       &lt;/complexContent&gt;
+	 *                     &lt;/complexType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="MaxCount" minOccurs="0"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *                         &lt;minInclusive value="0"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="RequestStatus" minOccurs="0"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+	 *                         &lt;enumeration value="ALL"/&gt;
+	 *                         &lt;enumeration value="SUBMITTED"/&gt;
+	 *                         &lt;enumeration value="IN_PROGRESS"/&gt;
+	 *                         &lt;enumeration value="FINISHED"/&gt;
+	 *                         &lt;enumeration value="CANCELLED"/&gt;
+	 *                         &lt;enumeration value="FAILED"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+	 *                   &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+	 *                 &lt;/all&gt;
+	 *               &lt;/restriction&gt;
+	 *             &lt;/complexContent&gt;
+	 *           &lt;/complexType&gt;
+	 *         &lt;/element&gt;
+	 *       &lt;/sequence&gt;
+	 *     &lt;/restriction&gt;
+	 *   &lt;/complexContent&gt;
+	 * &lt;/complexType&gt;
 	 * </pre>
 	 * 
 	 * 
@@ -241,52 +241,52 @@ public class GetCourtesyRefundRequestStatusRequest {
 		 * The following schema fragment specifies the expected content contained within this class.
 		 * 
 		 * <pre>
-		 * &lt;complexType>
-		 *   &lt;complexContent>
-		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *       &lt;all>
-		 *         &lt;element name="RequestIDList" minOccurs="0">
-		 *           &lt;complexType>
-		 *             &lt;complexContent>
-		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *                 &lt;sequence>
-		 *                   &lt;element name="RequestID" maxOccurs="unbounded">
-		 *                     &lt;simpleType>
-		 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-		 *                         &lt;maxLength value="40"/>
-		 *                       &lt;/restriction>
-		 *                     &lt;/simpleType>
-		 *                   &lt;/element>
-		 *                 &lt;/sequence>
-		 *               &lt;/restriction>
-		 *             &lt;/complexContent>
-		 *           &lt;/complexType>
-		 *         &lt;/element>
-		 *         &lt;element name="MaxCount" minOccurs="0">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-		 *               &lt;minInclusive value="0"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="RequestStatus" minOccurs="0">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-		 *               &lt;enumeration value="ALL"/>
-		 *               &lt;enumeration value="SUBMITTED"/>
-		 *               &lt;enumeration value="IN_PROGRESS"/>
-		 *               &lt;enumeration value="FINISHED"/>
-		 *               &lt;enumeration value="CANCELLED"/>
-		 *               &lt;enumeration value="FAILED"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-		 *         &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-		 *       &lt;/all>
-		 *     &lt;/restriction>
-		 *   &lt;/complexContent>
-		 * &lt;/complexType>
+		 * &lt;complexType&gt;
+		 *   &lt;complexContent&gt;
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *       &lt;all&gt;
+		 *         &lt;element name="RequestIDList" minOccurs="0"&gt;
+		 *           &lt;complexType&gt;
+		 *             &lt;complexContent&gt;
+		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *                 &lt;sequence&gt;
+		 *                   &lt;element name="RequestID" maxOccurs="unbounded"&gt;
+		 *                     &lt;simpleType&gt;
+		 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+		 *                         &lt;maxLength value="40"/&gt;
+		 *                       &lt;/restriction&gt;
+		 *                     &lt;/simpleType&gt;
+		 *                   &lt;/element&gt;
+		 *                 &lt;/sequence&gt;
+		 *               &lt;/restriction&gt;
+		 *             &lt;/complexContent&gt;
+		 *           &lt;/complexType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="MaxCount" minOccurs="0"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+		 *               &lt;minInclusive value="0"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="RequestStatus" minOccurs="0"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+		 *               &lt;enumeration value="ALL"/&gt;
+		 *               &lt;enumeration value="SUBMITTED"/&gt;
+		 *               &lt;enumeration value="IN_PROGRESS"/&gt;
+		 *               &lt;enumeration value="FINISHED"/&gt;
+		 *               &lt;enumeration value="CANCELLED"/&gt;
+		 *               &lt;enumeration value="FAILED"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+		 *         &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+		 *       &lt;/all&gt;
+		 *     &lt;/restriction&gt;
+		 *   &lt;/complexContent&gt;
+		 * &lt;/complexType&gt;
 		 * </pre>
 		 * 
 		 * 
@@ -365,21 +365,21 @@ public class GetCourtesyRefundRequestStatusRequest {
 			 * The following schema fragment specifies the expected content contained within this class.
 			 * 
 			 * <pre>
-			 * &lt;complexType>
-			 *   &lt;complexContent>
-			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-			 *       &lt;sequence>
-			 *         &lt;element name="RequestID" maxOccurs="unbounded">
-			 *           &lt;simpleType>
-			 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-			 *               &lt;maxLength value="40"/>
-			 *             &lt;/restriction>
-			 *           &lt;/simpleType>
-			 *         &lt;/element>
-			 *       &lt;/sequence>
-			 *     &lt;/restriction>
-			 *   &lt;/complexContent>
-			 * &lt;/complexType>
+			 * &lt;complexType&gt;
+			 *   &lt;complexContent&gt;
+			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+			 *       &lt;sequence&gt;
+			 *         &lt;element name="RequestID" maxOccurs="unbounded"&gt;
+			 *           &lt;simpleType&gt;
+			 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+			 *               &lt;maxLength value="40"/&gt;
+			 *             &lt;/restriction&gt;
+			 *           &lt;/simpleType&gt;
+			 *         &lt;/element&gt;
+			 *       &lt;/sequence&gt;
+			 *     &lt;/restriction&gt;
+			 *   &lt;/complexContent&gt;
+			 * &lt;/complexType&gt;
 			 * </pre>
 			 * 
 			 * 
@@ -411,6 +411,9 @@ public class GetCourtesyRefundRequestStatusRequest {
 				 * <p>
 				 * Objects of the following type(s) are allowed in the list {@link String }
 				 * 
+				 * @return
+				 * Objects of the following type(s) are allowed in the list
+				 * {@link String }
 				 * 
 				 */
 				public List<String> getRequestID() {

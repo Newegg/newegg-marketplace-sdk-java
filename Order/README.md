@@ -8,18 +8,18 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/order_managemen
 - Set pom.xml of project using module dependency
 ```xml
 <dependency>
-    <groupId>com.newegg.marketplace.sdk</groupId>
-    <artifactId>Order</artifactId>
+    <groupId>com.newegg.marketplace</groupId>
+    <artifactId>sdk-order</artifactId>
     <version>0.1.0</version>
 </dependency>
 ```
 
-- Or you can set pom.xml of project using SDK-ALL dependency import all sdk modules
+- Or you can set pom.xml of project using sdk-all dependency import all sdk modules
 ```xml
 <dependency>
     <groupId>com.newegg.marketplace.sdk</groupId>
-    <artifactId>SDK-ALL</artifactId>
-    <version>0.0.1</version>
+    <artifactId>sdk-all</artifactId>
+    <version>1.0.0</version>
     <type>pom</type>
 </dependency>
 ```

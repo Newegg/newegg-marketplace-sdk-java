@@ -30,70 +30,70 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * <p>下列綱要片段會指定此類別中包含的預期內容.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *               &lt;enumeration value="false"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element ref="{}PageInfo"/>
- *                   &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="SettlementTransactionInfoList">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="SettlementTransactionInfo" maxOccurs="unbounded" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="TransactionDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="TransactionType" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="OrderID" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                       &lt;element name="InvoiceID" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                       &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="ItemDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="ItemCondition" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="Amount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="CommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *               &lt;enumeration value="false"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element ref="{}PageInfo"/&gt;
+ *                   &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="SettlementTransactionInfoList"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="SettlementTransactionInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="TransactionDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="TransactionType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="OrderID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                       &lt;element name="InvoiceID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                       &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="ItemDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="ItemCondition" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="Amount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="CommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -204,7 +204,7 @@ public class GetSettlementTransactionReportResponse {
      * 
      * @return
      *     possible object is
-     *     {@link NeweggAPIResponse.ResponseBody }
+     *     {@link GetSettlementTransactionReportResponse.ResponseBody }
      *     
      */
     public GetSettlementTransactionReportResponse.ResponseBody getResponseBody() {
@@ -216,7 +216,7 @@ public class GetSettlementTransactionReportResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link NeweggAPIResponse.ResponseBody }
+     *     {@link GetSettlementTransactionReportResponse.ResponseBody }
      *     
      */
     public void setResponseBody(GetSettlementTransactionReportResponse.ResponseBody value) {
@@ -254,49 +254,49 @@ public class GetSettlementTransactionReportResponse {
      * <p>下列綱要片段會指定此類別中包含的預期內容.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element ref="{}PageInfo"/>
-     *         &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="SettlementTransactionInfoList">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="SettlementTransactionInfo" maxOccurs="unbounded" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="TransactionDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="TransactionType" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="OrderID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                             &lt;element name="InvoiceID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="ItemDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="ItemCondition" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="Amount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="CommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element ref="{}PageInfo"/&gt;
+     *         &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="SettlementTransactionInfoList"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="SettlementTransactionInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="TransactionDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="TransactionType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="OrderID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                             &lt;element name="InvoiceID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="ItemDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="ItemCondition" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="Amount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="CommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -401,7 +401,7 @@ public class GetSettlementTransactionReportResponse {
          * 
          * @return
          *     possible object is
-         *     {@link NeweggAPIResponse.ResponseBody.SettlementTransactionInfoList }
+         *     {@link GetSettlementTransactionReportResponse.ResponseBody.SettlementTransactionInfoList }
          *     
          */
         public GetSettlementTransactionReportResponse.ResponseBody.SettlementTransactionInfoList getSettlementTransactionInfoList() {
@@ -413,7 +413,7 @@ public class GetSettlementTransactionReportResponse {
          * 
          * @param value
          *     allowed object is
-         *     {@link NeweggAPIResponse.ResponseBody.SettlementTransactionInfoList }
+         *     {@link GetSettlementTransactionReportResponse.ResponseBody.SettlementTransactionInfoList }
          *     
          */
         public void setSettlementTransactionInfoList(GetSettlementTransactionReportResponse.ResponseBody.SettlementTransactionInfoList value) {
@@ -427,36 +427,36 @@ public class GetSettlementTransactionReportResponse {
          * <p>下列綱要片段會指定此類別中包含的預期內容.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="SettlementTransactionInfo" maxOccurs="unbounded" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="TransactionDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="TransactionType" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="OrderID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                   &lt;element name="InvoiceID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="ItemDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="ItemCondition" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="Amount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="CommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="SettlementTransactionInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="TransactionDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="TransactionType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="OrderID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                   &lt;element name="InvoiceID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="ItemDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="ItemCondition" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="Amount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="CommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -489,8 +489,11 @@ public class GetSettlementTransactionReportResponse {
              * 
              * <p>
              * Objects of the following type(s) are allowed in the list
-             * {@link NeweggAPIResponse.ResponseBody.SettlementTransactionInfoList.SettlementTransactionInfo }
+             * {@link GetSettlementTransactionReportResponse.ResponseBody.SettlementTransactionInfoList.SettlementTransactionInfo }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link GetSettlementTransactionReportResponse.ResponseBody.SettlementTransactionInfoList.SettlementTransactionInfo }
              * 
              */
             public List<GetSettlementTransactionReportResponse.ResponseBody.SettlementTransactionInfoList.SettlementTransactionInfo> getSettlementTransactionInfo() {
@@ -507,26 +510,26 @@ public class GetSettlementTransactionReportResponse {
              * <p>下列綱要片段會指定此類別中包含的預期內容.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="TransactionDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="TransactionType" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="OrderID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *         &lt;element name="InvoiceID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="ItemDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="ItemCondition" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="Amount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="CommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="TransactionDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="TransactionType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="OrderID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *         &lt;element name="InvoiceID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="ItemDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="ItemCondition" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="Amount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="CommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -635,6 +638,9 @@ public class GetSettlementTransactionReportResponse {
 
                 /**
                  * 取得 orderID 特性的值.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getOrderID() {
@@ -643,6 +649,9 @@ public class GetSettlementTransactionReportResponse {
 
                 /**
                  * 設定 orderID 特性的值.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setOrderID(int value) {
@@ -651,6 +660,9 @@ public class GetSettlementTransactionReportResponse {
 
                 /**
                  * 取得 invoiceID 特性的值.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getInvoiceID() {
@@ -659,6 +671,9 @@ public class GetSettlementTransactionReportResponse {
 
                 /**
                  * 設定 invoiceID 特性的值.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setInvoiceID(int value) {

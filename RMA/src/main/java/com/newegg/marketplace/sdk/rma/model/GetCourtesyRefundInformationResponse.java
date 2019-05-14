@@ -28,143 +28,143 @@ import com.fasterxml.jackson.annotation.JsonRootName;
  * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="GetCourtesyRefundResponse"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="PageInfo">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="TotalCount">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;minInclusive value="1"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="TotalPageCount">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;minInclusive value="1"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="PageSize">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;minInclusive value="1"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="PageIndex">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;minInclusive value="1"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="CourtesyRefundInfoList">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="CourtesyrefundInfo" maxOccurs="unbounded" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="CourtesyRefundID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="SONumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                                       &lt;element name="SOAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                                       &lt;element name="RefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="ReasonCode">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                             &lt;enumeration value="1"/>
- *                                             &lt;enumeration value="2"/>
- *                                             &lt;enumeration value="3"/>
- *                                             &lt;enumeration value="4"/>
- *                                             &lt;enumeration value="5"/>
- *                                             &lt;enumeration value="6"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="Reason">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="NoteToCustomer" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="Status">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="Open"/>
- *                                             &lt;enumeration value="Close"/>
- *                                             &lt;enumeration value="Void"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="IsNeweggRefund">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="true"/>
- *                                             &lt;enumeration value="false"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="InUserName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="InDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="EditUserName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="EditDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="GetCourtesyRefundResponse"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="PageInfo"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="TotalCount"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="TotalPageCount"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="PageSize"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="PageIndex"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="CourtesyRefundInfoList"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="CourtesyrefundInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="CourtesyRefundID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="SONumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                                       &lt;element name="SOAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                                       &lt;element name="RefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="ReasonCode"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                             &lt;enumeration value="1"/&gt;
+ *                                             &lt;enumeration value="2"/&gt;
+ *                                             &lt;enumeration value="3"/&gt;
+ *                                             &lt;enumeration value="4"/&gt;
+ *                                             &lt;enumeration value="5"/&gt;
+ *                                             &lt;enumeration value="6"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="Reason"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="NoteToCustomer" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="Status"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="Open"/&gt;
+ *                                             &lt;enumeration value="Close"/&gt;
+ *                                             &lt;enumeration value="Void"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="IsNeweggRefund"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="true"/&gt;
+ *                                             &lt;enumeration value="false"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="InUserName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="InDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="EditUserName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="EditDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -245,117 +245,117 @@ public class GetCourtesyRefundInformationResponse {
 	 * The following schema fragment specifies the expected content contained within this class.
 	 * 
 	 * <pre>
-	 * &lt;complexType>
-	 *   &lt;complexContent>
-	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *       &lt;all>
-	 *         &lt;element name="PageInfo">
-	 *           &lt;complexType>
-	 *             &lt;complexContent>
-	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                 &lt;all>
-	 *                   &lt;element name="TotalCount">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *                         &lt;minInclusive value="1"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="TotalPageCount">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *                         &lt;minInclusive value="1"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="PageSize">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *                         &lt;minInclusive value="1"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="PageIndex">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *                         &lt;minInclusive value="1"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                 &lt;/all>
-	 *               &lt;/restriction>
-	 *             &lt;/complexContent>
-	 *           &lt;/complexType>
-	 *         &lt;/element>
-	 *         &lt;element name="CourtesyRefundInfoList">
-	 *           &lt;complexType>
-	 *             &lt;complexContent>
-	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                 &lt;sequence>
-	 *                   &lt;element name="CourtesyrefundInfo" maxOccurs="unbounded" minOccurs="0">
-	 *                     &lt;complexType>
-	 *                       &lt;complexContent>
-	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                           &lt;all>
-	 *                             &lt;element name="CourtesyRefundID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                             &lt;element name="SONumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-	 *                             &lt;element name="SOAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-	 *                             &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-	 *                             &lt;element name="RefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-	 *                             &lt;element name="ReasonCode">
-	 *                               &lt;simpleType>
-	 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *                                   &lt;enumeration value="1"/>
-	 *                                   &lt;enumeration value="2"/>
-	 *                                   &lt;enumeration value="3"/>
-	 *                                   &lt;enumeration value="4"/>
-	 *                                   &lt;enumeration value="5"/>
-	 *                                   &lt;enumeration value="6"/>
-	 *                                 &lt;/restriction>
-	 *                               &lt;/simpleType>
-	 *                             &lt;/element>
-	 *                             &lt;element name="Reason">
-	 *                               &lt;simpleType>
-	 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-	 *                                 &lt;/restriction>
-	 *                               &lt;/simpleType>
-	 *                             &lt;/element>
-	 *                             &lt;element name="NoteToCustomer" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                             &lt;element name="Status">
-	 *                               &lt;simpleType>
-	 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-	 *                                   &lt;enumeration value="Open"/>
-	 *                                   &lt;enumeration value="Close"/>
-	 *                                   &lt;enumeration value="Void"/>
-	 *                                 &lt;/restriction>
-	 *                               &lt;/simpleType>
-	 *                             &lt;/element>
-	 *                             &lt;element name="IsNeweggRefund">
-	 *                               &lt;simpleType>
-	 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-	 *                                   &lt;enumeration value="true"/>
-	 *                                   &lt;enumeration value="false"/>
-	 *                                 &lt;/restriction>
-	 *                               &lt;/simpleType>
-	 *                             &lt;/element>
-	 *                             &lt;element name="InUserName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                             &lt;element name="InDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                             &lt;element name="EditUserName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                             &lt;element name="EditDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                           &lt;/all>
-	 *                         &lt;/restriction>
-	 *                       &lt;/complexContent>
-	 *                     &lt;/complexType>
-	 *                   &lt;/element>
-	 *                 &lt;/sequence>
-	 *               &lt;/restriction>
-	 *             &lt;/complexContent>
-	 *           &lt;/complexType>
-	 *         &lt;/element>
-	 *       &lt;/all>
-	 *     &lt;/restriction>
-	 *   &lt;/complexContent>
-	 * &lt;/complexType>
+	 * &lt;complexType&gt;
+	 *   &lt;complexContent&gt;
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *       &lt;all&gt;
+	 *         &lt;element name="PageInfo"&gt;
+	 *           &lt;complexType&gt;
+	 *             &lt;complexContent&gt;
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                 &lt;all&gt;
+	 *                   &lt;element name="TotalCount"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="TotalPageCount"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="PageSize"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="PageIndex"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                 &lt;/all&gt;
+	 *               &lt;/restriction&gt;
+	 *             &lt;/complexContent&gt;
+	 *           &lt;/complexType&gt;
+	 *         &lt;/element&gt;
+	 *         &lt;element name="CourtesyRefundInfoList"&gt;
+	 *           &lt;complexType&gt;
+	 *             &lt;complexContent&gt;
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                 &lt;sequence&gt;
+	 *                   &lt;element name="CourtesyrefundInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+	 *                     &lt;complexType&gt;
+	 *                       &lt;complexContent&gt;
+	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                           &lt;all&gt;
+	 *                             &lt;element name="CourtesyRefundID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                             &lt;element name="SONumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+	 *                             &lt;element name="SOAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+	 *                             &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+	 *                             &lt;element name="RefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+	 *                             &lt;element name="ReasonCode"&gt;
+	 *                               &lt;simpleType&gt;
+	 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *                                   &lt;enumeration value="1"/&gt;
+	 *                                   &lt;enumeration value="2"/&gt;
+	 *                                   &lt;enumeration value="3"/&gt;
+	 *                                   &lt;enumeration value="4"/&gt;
+	 *                                   &lt;enumeration value="5"/&gt;
+	 *                                   &lt;enumeration value="6"/&gt;
+	 *                                 &lt;/restriction&gt;
+	 *                               &lt;/simpleType&gt;
+	 *                             &lt;/element&gt;
+	 *                             &lt;element name="Reason"&gt;
+	 *                               &lt;simpleType&gt;
+	 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+	 *                                 &lt;/restriction&gt;
+	 *                               &lt;/simpleType&gt;
+	 *                             &lt;/element&gt;
+	 *                             &lt;element name="NoteToCustomer" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                             &lt;element name="Status"&gt;
+	 *                               &lt;simpleType&gt;
+	 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+	 *                                   &lt;enumeration value="Open"/&gt;
+	 *                                   &lt;enumeration value="Close"/&gt;
+	 *                                   &lt;enumeration value="Void"/&gt;
+	 *                                 &lt;/restriction&gt;
+	 *                               &lt;/simpleType&gt;
+	 *                             &lt;/element&gt;
+	 *                             &lt;element name="IsNeweggRefund"&gt;
+	 *                               &lt;simpleType&gt;
+	 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+	 *                                   &lt;enumeration value="true"/&gt;
+	 *                                   &lt;enumeration value="false"/&gt;
+	 *                                 &lt;/restriction&gt;
+	 *                               &lt;/simpleType&gt;
+	 *                             &lt;/element&gt;
+	 *                             &lt;element name="InUserName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                             &lt;element name="InDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                             &lt;element name="EditUserName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                             &lt;element name="EditDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                           &lt;/all&gt;
+	 *                         &lt;/restriction&gt;
+	 *                       &lt;/complexContent&gt;
+	 *                     &lt;/complexType&gt;
+	 *                   &lt;/element&gt;
+	 *                 &lt;/sequence&gt;
+	 *               &lt;/restriction&gt;
+	 *             &lt;/complexContent&gt;
+	 *           &lt;/complexType&gt;
+	 *         &lt;/element&gt;
+	 *       &lt;/all&gt;
+	 *     &lt;/restriction&gt;
+	 *   &lt;/complexContent&gt;
+	 * &lt;/complexType&gt;
 	 * </pre>
 	 * 
 	 * 
@@ -398,69 +398,69 @@ public class GetCourtesyRefundInformationResponse {
 		 * The following schema fragment specifies the expected content contained within this class.
 		 * 
 		 * <pre>
-		 * &lt;complexType>
-		 *   &lt;complexContent>
-		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *       &lt;sequence>
-		 *         &lt;element name="CourtesyrefundInfo" maxOccurs="unbounded" minOccurs="0">
-		 *           &lt;complexType>
-		 *             &lt;complexContent>
-		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *                 &lt;all>
-		 *                   &lt;element name="CourtesyRefundID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *                   &lt;element name="SONumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-		 *                   &lt;element name="SOAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-		 *                   &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-		 *                   &lt;element name="RefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-		 *                   &lt;element name="ReasonCode">
-		 *                     &lt;simpleType>
-		 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-		 *                         &lt;enumeration value="1"/>
-		 *                         &lt;enumeration value="2"/>
-		 *                         &lt;enumeration value="3"/>
-		 *                         &lt;enumeration value="4"/>
-		 *                         &lt;enumeration value="5"/>
-		 *                         &lt;enumeration value="6"/>
-		 *                       &lt;/restriction>
-		 *                     &lt;/simpleType>
-		 *                   &lt;/element>
-		 *                   &lt;element name="Reason">
-		 *                     &lt;simpleType>
-		 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-		 *                       &lt;/restriction>
-		 *                     &lt;/simpleType>
-		 *                   &lt;/element>
-		 *                   &lt;element name="NoteToCustomer" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *                   &lt;element name="Status">
-		 *                     &lt;simpleType>
-		 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-		 *                         &lt;enumeration value="Open"/>
-		 *                         &lt;enumeration value="Close"/>
-		 *                         &lt;enumeration value="Void"/>
-		 *                       &lt;/restriction>
-		 *                     &lt;/simpleType>
-		 *                   &lt;/element>
-		 *                   &lt;element name="IsNeweggRefund">
-		 *                     &lt;simpleType>
-		 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-		 *                         &lt;enumeration value="true"/>
-		 *                         &lt;enumeration value="false"/>
-		 *                       &lt;/restriction>
-		 *                     &lt;/simpleType>
-		 *                   &lt;/element>
-		 *                   &lt;element name="InUserName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *                   &lt;element name="InDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *                   &lt;element name="EditUserName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *                   &lt;element name="EditDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *                 &lt;/all>
-		 *               &lt;/restriction>
-		 *             &lt;/complexContent>
-		 *           &lt;/complexType>
-		 *         &lt;/element>
-		 *       &lt;/sequence>
-		 *     &lt;/restriction>
-		 *   &lt;/complexContent>
-		 * &lt;/complexType>
+		 * &lt;complexType&gt;
+		 *   &lt;complexContent&gt;
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *       &lt;sequence&gt;
+		 *         &lt;element name="CourtesyrefundInfo" maxOccurs="unbounded" minOccurs="0"&gt;
+		 *           &lt;complexType&gt;
+		 *             &lt;complexContent&gt;
+		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *                 &lt;all&gt;
+		 *                   &lt;element name="CourtesyRefundID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *                   &lt;element name="SONumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+		 *                   &lt;element name="SOAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+		 *                   &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+		 *                   &lt;element name="RefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+		 *                   &lt;element name="ReasonCode"&gt;
+		 *                     &lt;simpleType&gt;
+		 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+		 *                         &lt;enumeration value="1"/&gt;
+		 *                         &lt;enumeration value="2"/&gt;
+		 *                         &lt;enumeration value="3"/&gt;
+		 *                         &lt;enumeration value="4"/&gt;
+		 *                         &lt;enumeration value="5"/&gt;
+		 *                         &lt;enumeration value="6"/&gt;
+		 *                       &lt;/restriction&gt;
+		 *                     &lt;/simpleType&gt;
+		 *                   &lt;/element&gt;
+		 *                   &lt;element name="Reason"&gt;
+		 *                     &lt;simpleType&gt;
+		 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+		 *                       &lt;/restriction&gt;
+		 *                     &lt;/simpleType&gt;
+		 *                   &lt;/element&gt;
+		 *                   &lt;element name="NoteToCustomer" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *                   &lt;element name="Status"&gt;
+		 *                     &lt;simpleType&gt;
+		 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+		 *                         &lt;enumeration value="Open"/&gt;
+		 *                         &lt;enumeration value="Close"/&gt;
+		 *                         &lt;enumeration value="Void"/&gt;
+		 *                       &lt;/restriction&gt;
+		 *                     &lt;/simpleType&gt;
+		 *                   &lt;/element&gt;
+		 *                   &lt;element name="IsNeweggRefund"&gt;
+		 *                     &lt;simpleType&gt;
+		 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+		 *                         &lt;enumeration value="true"/&gt;
+		 *                         &lt;enumeration value="false"/&gt;
+		 *                       &lt;/restriction&gt;
+		 *                     &lt;/simpleType&gt;
+		 *                   &lt;/element&gt;
+		 *                   &lt;element name="InUserName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *                   &lt;element name="InDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *                   &lt;element name="EditUserName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *                   &lt;element name="EditDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *                 &lt;/all&gt;
+		 *               &lt;/restriction&gt;
+		 *             &lt;/complexContent&gt;
+		 *           &lt;/complexType&gt;
+		 *         &lt;/element&gt;
+		 *       &lt;/sequence&gt;
+		 *     &lt;/restriction&gt;
+		 *   &lt;/complexContent&gt;
+		 * &lt;/complexType&gt;
 		 * </pre>
 		 * 
 		 * 
@@ -492,6 +492,9 @@ public class GetCourtesyRefundInformationResponse {
 			 * <p>
 			 * Objects of the following type(s) are allowed in the list {@link GetCourtesyRefundInformationResponse.ResponseBody.CourtesyRefundInfoList.CourtesyrefundInfo }
 			 * 
+			 * @return
+			 * Objects of the following type(s) are allowed in the list
+			 * {@link GetCourtesyRefundInformationResponse.ResponseBody.CourtesyRefundInfoList.CourtesyrefundInfo }
 			 * 
 			 */
 			public List<GetCourtesyRefundInformationResponse.ResponseBody.CourtesyRefundInfoList.CourtesyrefundInfo> getCourtesyrefundInfo() {
@@ -509,59 +512,59 @@ public class GetCourtesyRefundInformationResponse {
 			 * The following schema fragment specifies the expected content contained within this class.
 			 * 
 			 * <pre>
-			 * &lt;complexType>
-			 *   &lt;complexContent>
-			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-			 *       &lt;all>
-			 *         &lt;element name="CourtesyRefundID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-			 *         &lt;element name="SONumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-			 *         &lt;element name="SOAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-			 *         &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-			 *         &lt;element name="RefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-			 *         &lt;element name="ReasonCode">
-			 *           &lt;simpleType>
-			 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-			 *               &lt;enumeration value="1"/>
-			 *               &lt;enumeration value="2"/>
-			 *               &lt;enumeration value="3"/>
-			 *               &lt;enumeration value="4"/>
-			 *               &lt;enumeration value="5"/>
-			 *               &lt;enumeration value="6"/>
-			 *             &lt;/restriction>
-			 *           &lt;/simpleType>
-			 *         &lt;/element>
-			 *         &lt;element name="Reason">
-			 *           &lt;simpleType>
-			 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-			 *             &lt;/restriction>
-			 *           &lt;/simpleType>
-			 *         &lt;/element>
-			 *         &lt;element name="NoteToCustomer" type="{http://www.w3.org/2001/XMLSchema}string"/>
-			 *         &lt;element name="Status">
-			 *           &lt;simpleType>
-			 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-			 *               &lt;enumeration value="Open"/>
-			 *               &lt;enumeration value="Close"/>
-			 *               &lt;enumeration value="Void"/>
-			 *             &lt;/restriction>
-			 *           &lt;/simpleType>
-			 *         &lt;/element>
-			 *         &lt;element name="IsNeweggRefund">
-			 *           &lt;simpleType>
-			 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-			 *               &lt;enumeration value="true"/>
-			 *               &lt;enumeration value="false"/>
-			 *             &lt;/restriction>
-			 *           &lt;/simpleType>
-			 *         &lt;/element>
-			 *         &lt;element name="InUserName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-			 *         &lt;element name="InDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-			 *         &lt;element name="EditUserName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-			 *         &lt;element name="EditDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-			 *       &lt;/all>
-			 *     &lt;/restriction>
-			 *   &lt;/complexContent>
-			 * &lt;/complexType>
+			 * &lt;complexType&gt;
+			 *   &lt;complexContent&gt;
+			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+			 *       &lt;all&gt;
+			 *         &lt;element name="CourtesyRefundID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+			 *         &lt;element name="SONumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+			 *         &lt;element name="SOAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+			 *         &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+			 *         &lt;element name="RefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+			 *         &lt;element name="ReasonCode"&gt;
+			 *           &lt;simpleType&gt;
+			 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+			 *               &lt;enumeration value="1"/&gt;
+			 *               &lt;enumeration value="2"/&gt;
+			 *               &lt;enumeration value="3"/&gt;
+			 *               &lt;enumeration value="4"/&gt;
+			 *               &lt;enumeration value="5"/&gt;
+			 *               &lt;enumeration value="6"/&gt;
+			 *             &lt;/restriction&gt;
+			 *           &lt;/simpleType&gt;
+			 *         &lt;/element&gt;
+			 *         &lt;element name="Reason"&gt;
+			 *           &lt;simpleType&gt;
+			 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+			 *             &lt;/restriction&gt;
+			 *           &lt;/simpleType&gt;
+			 *         &lt;/element&gt;
+			 *         &lt;element name="NoteToCustomer" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+			 *         &lt;element name="Status"&gt;
+			 *           &lt;simpleType&gt;
+			 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+			 *               &lt;enumeration value="Open"/&gt;
+			 *               &lt;enumeration value="Close"/&gt;
+			 *               &lt;enumeration value="Void"/&gt;
+			 *             &lt;/restriction&gt;
+			 *           &lt;/simpleType&gt;
+			 *         &lt;/element&gt;
+			 *         &lt;element name="IsNeweggRefund"&gt;
+			 *           &lt;simpleType&gt;
+			 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+			 *               &lt;enumeration value="true"/&gt;
+			 *               &lt;enumeration value="false"/&gt;
+			 *             &lt;/restriction&gt;
+			 *           &lt;/simpleType&gt;
+			 *         &lt;/element&gt;
+			 *         &lt;element name="InUserName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+			 *         &lt;element name="InDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+			 *         &lt;element name="EditUserName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+			 *         &lt;element name="EditDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+			 *       &lt;/all&gt;
+			 *     &lt;/restriction&gt;
+			 *   &lt;/complexContent&gt;
+			 * &lt;/complexType&gt;
 			 * </pre>
 			 * 
 			 * 
@@ -752,42 +755,42 @@ public class GetCourtesyRefundInformationResponse {
 		 * The following schema fragment specifies the expected content contained within this class.
 		 * 
 		 * <pre>
-		 * &lt;complexType>
-		 *   &lt;complexContent>
-		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *       &lt;all>
-		 *         &lt;element name="TotalCount">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-		 *               &lt;minInclusive value="1"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="TotalPageCount">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-		 *               &lt;minInclusive value="1"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="PageSize">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-		 *               &lt;minInclusive value="1"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="PageIndex">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-		 *               &lt;minInclusive value="1"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *       &lt;/all>
-		 *     &lt;/restriction>
-		 *   &lt;/complexContent>
-		 * &lt;/complexType>
+		 * &lt;complexType&gt;
+		 *   &lt;complexContent&gt;
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *       &lt;all&gt;
+		 *         &lt;element name="TotalCount"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="TotalPageCount"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="PageSize"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="PageIndex"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *       &lt;/all&gt;
+		 *     &lt;/restriction&gt;
+		 *   &lt;/complexContent&gt;
+		 * &lt;/complexType&gt;
 		 * </pre>
 		 * 
 		 * 

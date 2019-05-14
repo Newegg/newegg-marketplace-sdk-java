@@ -24,61 +24,61 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="Result" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;minInclusive value="0"/>
- *               &lt;maxInclusive value="1"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="FulfillmentOption">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;minInclusive value="0"/>
- *               &lt;maxInclusive value="2"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="Active">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;minInclusive value="0"/>
- *               &lt;maxInclusive value="1"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="AvailableQuantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="MSRP" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *         &lt;element name="MAP" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *         &lt;element name="CheckoutMAP">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;minInclusive value="0"/>
- *               &lt;maxInclusive value="1"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *         &lt;element name="EnableFreeShipping">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;minInclusive value="0"/>
- *               &lt;maxInclusive value="1"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="Result" minOccurs="0"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;minInclusive value="0"/&gt;
+ *               &lt;maxInclusive value="1"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="FulfillmentOption"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;minInclusive value="0"/&gt;
+ *               &lt;maxInclusive value="2"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Active"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;minInclusive value="0"/&gt;
+ *               &lt;maxInclusive value="1"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="AvailableQuantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="MSRP" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *         &lt;element name="MAP" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *         &lt;element name="CheckoutMAP"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;minInclusive value="0"/&gt;
+ *               &lt;maxInclusive value="1"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *         &lt;element name="EnableFreeShipping"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;minInclusive value="0"/&gt;
+ *               &lt;maxInclusive value="1"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -228,6 +228,9 @@ public class UpdateInventoryandPriceResponse {
 
 	/**
      * Gets the value of the fulfillmentOption property.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getFulfillmentOption() {
@@ -236,6 +239,9 @@ public class UpdateInventoryandPriceResponse {
 
     /**
      * Sets the value of the fulfillmentOption property.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setFulfillmentOption(int value) {
@@ -244,6 +250,9 @@ public class UpdateInventoryandPriceResponse {
 
     /**
      * Gets the value of the active property.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getActive() {
@@ -252,6 +261,9 @@ public class UpdateInventoryandPriceResponse {
 
     /**
      * Sets the value of the active property.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setActive(int value) {
@@ -260,6 +272,9 @@ public class UpdateInventoryandPriceResponse {
 
     /**
      * Gets the value of the availableQuantity property.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getAvailableQuantity() {
@@ -268,6 +283,9 @@ public class UpdateInventoryandPriceResponse {
 
     /**
      * Sets the value of the availableQuantity property.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setAvailableQuantity(int value) {
@@ -324,6 +342,9 @@ public class UpdateInventoryandPriceResponse {
 
     /**
      * Gets the value of the checkoutMAP property.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getCheckoutMAP() {
@@ -332,6 +353,9 @@ public class UpdateInventoryandPriceResponse {
 
     /**
      * Sets the value of the checkoutMAP property.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setCheckoutMAP(int value) {
@@ -364,6 +388,9 @@ public class UpdateInventoryandPriceResponse {
 
     /**
      * Gets the value of the enableFreeShipping property.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getEnableFreeShipping() {
@@ -372,6 +399,9 @@ public class UpdateInventoryandPriceResponse {
 
     /**
      * Sets the value of the enableFreeShipping property.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setEnableFreeShipping(int value) {

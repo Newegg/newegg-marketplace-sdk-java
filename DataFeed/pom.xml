@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.newegg.marketplace.sdk</groupId>
-    <artifactId>SDK</artifactId>
-    <version>0.0.1</version>
-  </parent>
-  <artifactId>DataFeed</artifactId>
-  <version>0.1.0</version>
-  <name>DataFeed</name>
-  <url>http://maven.apache.org</url>
-
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.newegg.marketplace</groupId>
+		<artifactId>sdk</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>sdk-datafeed</artifactId>
+	<name>Newegg SDK for Java - Datafeed</name>
+	<url>https://developer.newegg.com/</url>
+	<description>The Newegg DataFeed API lets you batch manage items which consist of creating items, updating items and shipping orders. In addition, batch manage other applicable Newegg services.</description>
 	<dependencies>
 		<dependency>
-			<groupId>com.newegg.marketplace.sdk</groupId>
-			<artifactId>common</artifactId>
-			<version>0.1.0</version>
+			<groupId>com.newegg.marketplace</groupId>
+			<artifactId>sdk-common</artifactId>
+			<version>${neweggsdk.version}</version>
 		</dependency>
 	</dependencies>
 </project>

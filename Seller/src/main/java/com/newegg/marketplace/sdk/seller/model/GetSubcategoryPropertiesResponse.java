@@ -26,65 +26,65 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *               &lt;enumeration value="false"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="SubcategoryPropertyList">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="SubcategoryProperty" maxOccurs="unbounded">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                       &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="PropertyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="IsAdvancedSearch" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                       &lt;element name="IsGroupBy" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                       &lt;element name="IsRequired" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *               &lt;enumeration value="false"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="SubcategoryPropertyList"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="SubcategoryProperty" maxOccurs="unbounded"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                       &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="PropertyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="IsAdvancedSearch" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                       &lt;element name="IsGroupBy" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                       &lt;element name="IsRequired" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -212,40 +212,40 @@ public class GetSubcategoryPropertiesResponse {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="SubcategoryPropertyList">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="SubcategoryProperty" maxOccurs="unbounded">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                             &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="PropertyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="IsAdvancedSearch" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                             &lt;element name="IsGroupBy" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                             &lt;element name="IsRequired" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="SubcategoryPropertyList"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="SubcategoryProperty" maxOccurs="unbounded"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                             &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="PropertyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="IsAdvancedSearch" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                             &lt;element name="IsGroupBy" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                             &lt;element name="IsRequired" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -292,30 +292,30 @@ public class GetSubcategoryPropertiesResponse {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="SubcategoryProperty" maxOccurs="unbounded">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                   &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="PropertyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="IsAdvancedSearch" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                   &lt;element name="IsGroupBy" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                   &lt;element name="IsRequired" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="SubcategoryProperty" maxOccurs="unbounded"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                   &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="PropertyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="IsAdvancedSearch" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                   &lt;element name="IsGroupBy" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                   &lt;element name="IsRequired" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -350,6 +350,9 @@ public class GetSubcategoryPropertiesResponse {
              * Objects of the following type(s) are allowed in the list
              * {@link GetSubcategoryPropertiesResponse.ResponseBody.SubcategoryPropertyList.SubcategoryProperty }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link GetSubcategoryPropertiesResponse.ResponseBody.SubcategoryPropertyList.SubcategoryProperty }
              * 
              */
             public List<GetSubcategoryPropertiesResponse.ResponseBody.SubcategoryPropertyList.SubcategoryProperty> getSubcategoryProperty() {
@@ -366,20 +369,20 @@ public class GetSubcategoryPropertiesResponse {
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *         &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="PropertyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="IsAdvancedSearch" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *         &lt;element name="IsGroupBy" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *         &lt;element name="IsRequired" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="SubcategoryID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *         &lt;element name="SubcategoryName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="PropertyName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="IsAdvancedSearch" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *         &lt;element name="IsGroupBy" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *         &lt;element name="IsRequired" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -416,6 +419,9 @@ public class GetSubcategoryPropertiesResponse {
 
                 /**
                  * Gets the value of the subcategoryID property.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getSubcategoryID() {
@@ -424,6 +430,9 @@ public class GetSubcategoryPropertiesResponse {
 
                 /**
                  * Sets the value of the subcategoryID property.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setSubcategoryID(int value) {
@@ -480,6 +489,9 @@ public class GetSubcategoryPropertiesResponse {
 
                 /**
                  * Gets the value of the isAdvancedSearch property.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getIsAdvancedSearch() {
@@ -488,6 +500,9 @@ public class GetSubcategoryPropertiesResponse {
 
                 /**
                  * Sets the value of the isAdvancedSearch property.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setIsAdvancedSearch(int value) {
@@ -496,6 +511,9 @@ public class GetSubcategoryPropertiesResponse {
 
                 /**
                  * Gets the value of the isGroupBy property.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getIsGroupBy() {
@@ -504,6 +522,9 @@ public class GetSubcategoryPropertiesResponse {
 
                 /**
                  * Sets the value of the isGroupBy property.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setIsGroupBy(int value) {
@@ -512,6 +533,9 @@ public class GetSubcategoryPropertiesResponse {
 
                 /**
                  * Gets the value of the isRequired property.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getIsRequired() {
@@ -520,6 +544,9 @@ public class GetSubcategoryPropertiesResponse {
 
                 /**
                  * Sets the value of the isRequired property.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setIsRequired(int value) {

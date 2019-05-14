@@ -24,118 +24,118 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Header">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="MessageType" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Message">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="VolumeDiscountList">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="ItemVolumeDiscountInfo" maxOccurs="unbounded">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="VolumeActivation">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="True"/>
- *                                             &lt;enumeration value="False"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                       &lt;element name="DiscountSetting">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;sequence>
- *                                                 &lt;element name="Tier" maxOccurs="5">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;sequence>
- *                                                           &lt;element name="Priority">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                                                 &lt;minInclusive value="1"/>
- *                                                                 &lt;maxInclusive value="5"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/element>
- *                                                           &lt;element name="Quantity">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                                                 &lt;minInclusive value="0"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/element>
- *                                                           &lt;element name="SellingPrice">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                                                 &lt;minInclusive value="0"/>
- *                                                                 &lt;fractionDigits value="2"/>
- *                                                                 &lt;maxInclusive value="99999.99"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/element>
- *                                                           &lt;element name="EnableFreeShipping">
- *                                                             &lt;simpleType>
- *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                                                 &lt;minInclusive value="0"/>
- *                                                                 &lt;maxInclusive value="1"/>
- *                                                               &lt;/restriction>
- *                                                             &lt;/simpleType>
- *                                                           &lt;/element>
- *                                                         &lt;/sequence>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                               &lt;/sequence>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Header"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="MessageType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Message"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="VolumeDiscountList"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="ItemVolumeDiscountInfo" maxOccurs="unbounded"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="VolumeActivation"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="True"/&gt;
+ *                                             &lt;enumeration value="False"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                       &lt;element name="DiscountSetting"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;sequence&gt;
+ *                                                 &lt;element name="Tier" maxOccurs="5"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;complexContent&gt;
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                         &lt;sequence&gt;
+ *                                                           &lt;element name="Priority"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                                                 &lt;minInclusive value="1"/&gt;
+ *                                                                 &lt;maxInclusive value="5"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                           &lt;element name="Quantity"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                                                 &lt;minInclusive value="0"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                           &lt;element name="SellingPrice"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                                                 &lt;minInclusive value="0"/&gt;
+ *                                                                 &lt;fractionDigits value="2"/&gt;
+ *                                                                 &lt;maxInclusive value="99999.99"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                           &lt;element name="EnableFreeShipping"&gt;
+ *                                                             &lt;simpleType&gt;
+ *                                                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                                                 &lt;minInclusive value="0"/&gt;
+ *                                                                 &lt;maxInclusive value="1"/&gt;
+ *                                                               &lt;/restriction&gt;
+ *                                                             &lt;/simpleType&gt;
+ *                                                           &lt;/element&gt;
+ *                                                         &lt;/sequence&gt;
+ *                                                       &lt;/restriction&gt;
+ *                                                     &lt;/complexContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                               &lt;/sequence&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -235,15 +235,15 @@ public class VolumeDiscountFeedRequest {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="DocumentVersion" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -290,96 +290,96 @@ public class VolumeDiscountFeedRequest {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="VolumeDiscountList">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="ItemVolumeDiscountInfo" maxOccurs="unbounded">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="VolumeActivation">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;enumeration value="True"/>
-     *                                   &lt;enumeration value="False"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                             &lt;element name="DiscountSetting">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="Tier" maxOccurs="5">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="Priority">
-     *                                                   &lt;simpleType>
-     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                                                       &lt;minInclusive value="1"/>
-     *                                                       &lt;maxInclusive value="5"/>
-     *                                                     &lt;/restriction>
-     *                                                   &lt;/simpleType>
-     *                                                 &lt;/element>
-     *                                                 &lt;element name="Quantity">
-     *                                                   &lt;simpleType>
-     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                                                       &lt;minInclusive value="0"/>
-     *                                                     &lt;/restriction>
-     *                                                   &lt;/simpleType>
-     *                                                 &lt;/element>
-     *                                                 &lt;element name="SellingPrice">
-     *                                                   &lt;simpleType>
-     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                                       &lt;minInclusive value="0"/>
-     *                                                       &lt;fractionDigits value="2"/>
-     *                                                       &lt;maxInclusive value="99999.99"/>
-     *                                                     &lt;/restriction>
-     *                                                   &lt;/simpleType>
-     *                                                 &lt;/element>
-     *                                                 &lt;element name="EnableFreeShipping">
-     *                                                   &lt;simpleType>
-     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                                                       &lt;minInclusive value="0"/>
-     *                                                       &lt;maxInclusive value="1"/>
-     *                                                     &lt;/restriction>
-     *                                                   &lt;/simpleType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="VolumeDiscountList"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="ItemVolumeDiscountInfo" maxOccurs="unbounded"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="VolumeActivation"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;enumeration value="True"/&gt;
+     *                                   &lt;enumeration value="False"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                             &lt;element name="DiscountSetting"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;sequence&gt;
+     *                                       &lt;element name="Tier" maxOccurs="5"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="Priority"&gt;
+     *                                                   &lt;simpleType&gt;
+     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                                                       &lt;minInclusive value="1"/&gt;
+     *                                                       &lt;maxInclusive value="5"/&gt;
+     *                                                     &lt;/restriction&gt;
+     *                                                   &lt;/simpleType&gt;
+     *                                                 &lt;/element&gt;
+     *                                                 &lt;element name="Quantity"&gt;
+     *                                                   &lt;simpleType&gt;
+     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                                                       &lt;minInclusive value="0"/&gt;
+     *                                                     &lt;/restriction&gt;
+     *                                                   &lt;/simpleType&gt;
+     *                                                 &lt;/element&gt;
+     *                                                 &lt;element name="SellingPrice"&gt;
+     *                                                   &lt;simpleType&gt;
+     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                                       &lt;minInclusive value="0"/&gt;
+     *                                                       &lt;fractionDigits value="2"/&gt;
+     *                                                       &lt;maxInclusive value="99999.99"/&gt;
+     *                                                     &lt;/restriction&gt;
+     *                                                   &lt;/simpleType&gt;
+     *                                                 &lt;/element&gt;
+     *                                                 &lt;element name="EnableFreeShipping"&gt;
+     *                                                   &lt;simpleType&gt;
+     *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                                                       &lt;minInclusive value="0"/&gt;
+     *                                                       &lt;maxInclusive value="1"/&gt;
+     *                                                     &lt;/restriction&gt;
+     *                                                   &lt;/simpleType&gt;
+     *                                                 &lt;/element&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/sequence&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -424,86 +424,86 @@ public class VolumeDiscountFeedRequest {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="ItemVolumeDiscountInfo" maxOccurs="unbounded">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="VolumeActivation">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;enumeration value="True"/>
-         *                         &lt;enumeration value="False"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                   &lt;element name="DiscountSetting">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="Tier" maxOccurs="5">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="Priority">
-         *                                         &lt;simpleType>
-         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *                                             &lt;minInclusive value="1"/>
-         *                                             &lt;maxInclusive value="5"/>
-         *                                           &lt;/restriction>
-         *                                         &lt;/simpleType>
-         *                                       &lt;/element>
-         *                                       &lt;element name="Quantity">
-         *                                         &lt;simpleType>
-         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *                                             &lt;minInclusive value="0"/>
-         *                                           &lt;/restriction>
-         *                                         &lt;/simpleType>
-         *                                       &lt;/element>
-         *                                       &lt;element name="SellingPrice">
-         *                                         &lt;simpleType>
-         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                                             &lt;minInclusive value="0"/>
-         *                                             &lt;fractionDigits value="2"/>
-         *                                             &lt;maxInclusive value="99999.99"/>
-         *                                           &lt;/restriction>
-         *                                         &lt;/simpleType>
-         *                                       &lt;/element>
-         *                                       &lt;element name="EnableFreeShipping">
-         *                                         &lt;simpleType>
-         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *                                             &lt;minInclusive value="0"/>
-         *                                             &lt;maxInclusive value="1"/>
-         *                                           &lt;/restriction>
-         *                                         &lt;/simpleType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="ItemVolumeDiscountInfo" maxOccurs="unbounded"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="VolumeActivation"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;enumeration value="True"/&gt;
+         *                         &lt;enumeration value="False"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                   &lt;element name="DiscountSetting"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;sequence&gt;
+         *                             &lt;element name="Tier" maxOccurs="5"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="Priority"&gt;
+         *                                         &lt;simpleType&gt;
+         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *                                             &lt;minInclusive value="1"/&gt;
+         *                                             &lt;maxInclusive value="5"/&gt;
+         *                                           &lt;/restriction&gt;
+         *                                         &lt;/simpleType&gt;
+         *                                       &lt;/element&gt;
+         *                                       &lt;element name="Quantity"&gt;
+         *                                         &lt;simpleType&gt;
+         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *                                             &lt;minInclusive value="0"/&gt;
+         *                                           &lt;/restriction&gt;
+         *                                         &lt;/simpleType&gt;
+         *                                       &lt;/element&gt;
+         *                                       &lt;element name="SellingPrice"&gt;
+         *                                         &lt;simpleType&gt;
+         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                                             &lt;minInclusive value="0"/&gt;
+         *                                             &lt;fractionDigits value="2"/&gt;
+         *                                             &lt;maxInclusive value="99999.99"/&gt;
+         *                                           &lt;/restriction&gt;
+         *                                         &lt;/simpleType&gt;
+         *                                       &lt;/element&gt;
+         *                                       &lt;element name="EnableFreeShipping"&gt;
+         *                                         &lt;simpleType&gt;
+         *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *                                             &lt;minInclusive value="0"/&gt;
+         *                                             &lt;maxInclusive value="1"/&gt;
+         *                                           &lt;/restriction&gt;
+         *                                         &lt;/simpleType&gt;
+         *                                       &lt;/element&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/sequence&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -537,6 +537,9 @@ public class VolumeDiscountFeedRequest {
              * Objects of the following type(s) are allowed in the list
              * {@link VolumeDiscountFeedRequest.Message.VolumeDiscountList.ItemVolumeDiscountInfo }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link VolumeDiscountFeedRequest.Message.VolumeDiscountList.ItemVolumeDiscountInfo }
              * 
              */
             public List<VolumeDiscountFeedRequest.Message.VolumeDiscountList.ItemVolumeDiscountInfo> getItemVolumeDiscountInfo() {
@@ -553,76 +556,76 @@ public class VolumeDiscountFeedRequest {
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="VolumeActivation">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;enumeration value="True"/>
-             *               &lt;enumeration value="False"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *         &lt;element name="DiscountSetting">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;element name="Tier" maxOccurs="5">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="Priority">
-             *                               &lt;simpleType>
-             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-             *                                   &lt;minInclusive value="1"/>
-             *                                   &lt;maxInclusive value="5"/>
-             *                                 &lt;/restriction>
-             *                               &lt;/simpleType>
-             *                             &lt;/element>
-             *                             &lt;element name="Quantity">
-             *                               &lt;simpleType>
-             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-             *                                   &lt;minInclusive value="0"/>
-             *                                 &lt;/restriction>
-             *                               &lt;/simpleType>
-             *                             &lt;/element>
-             *                             &lt;element name="SellingPrice">
-             *                               &lt;simpleType>
-             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *                                   &lt;minInclusive value="0"/>
-             *                                   &lt;fractionDigits value="2"/>
-             *                                   &lt;maxInclusive value="99999.99"/>
-             *                                 &lt;/restriction>
-             *                               &lt;/simpleType>
-             *                             &lt;/element>
-             *                             &lt;element name="EnableFreeShipping">
-             *                               &lt;simpleType>
-             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-             *                                   &lt;minInclusive value="0"/>
-             *                                   &lt;maxInclusive value="1"/>
-             *                                 &lt;/restriction>
-             *                               &lt;/simpleType>
-             *                             &lt;/element>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="VolumeActivation"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;enumeration value="True"/&gt;
+             *               &lt;enumeration value="False"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *         &lt;element name="DiscountSetting"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;sequence&gt;
+             *                   &lt;element name="Tier" maxOccurs="5"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="Priority"&gt;
+             *                               &lt;simpleType&gt;
+             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+             *                                   &lt;minInclusive value="1"/&gt;
+             *                                   &lt;maxInclusive value="5"/&gt;
+             *                                 &lt;/restriction&gt;
+             *                               &lt;/simpleType&gt;
+             *                             &lt;/element&gt;
+             *                             &lt;element name="Quantity"&gt;
+             *                               &lt;simpleType&gt;
+             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+             *                                   &lt;minInclusive value="0"/&gt;
+             *                                 &lt;/restriction&gt;
+             *                               &lt;/simpleType&gt;
+             *                             &lt;/element&gt;
+             *                             &lt;element name="SellingPrice"&gt;
+             *                               &lt;simpleType&gt;
+             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *                                   &lt;minInclusive value="0"/&gt;
+             *                                   &lt;fractionDigits value="2"/&gt;
+             *                                   &lt;maxInclusive value="99999.99"/&gt;
+             *                                 &lt;/restriction&gt;
+             *                               &lt;/simpleType&gt;
+             *                             &lt;/element&gt;
+             *                             &lt;element name="EnableFreeShipping"&gt;
+             *                               &lt;simpleType&gt;
+             *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+             *                                   &lt;minInclusive value="0"/&gt;
+             *                                   &lt;maxInclusive value="1"/&gt;
+             *                                 &lt;/restriction&gt;
+             *                               &lt;/simpleType&gt;
+             *                             &lt;/element&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/sequence&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -748,56 +751,56 @@ public class VolumeDiscountFeedRequest {
                  * <p>The following schema fragment specifies the expected content contained within this class.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;sequence>
-                 *         &lt;element name="Tier" maxOccurs="5">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="Priority">
-                 *                     &lt;simpleType>
-                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-                 *                         &lt;minInclusive value="1"/>
-                 *                         &lt;maxInclusive value="5"/>
-                 *                       &lt;/restriction>
-                 *                     &lt;/simpleType>
-                 *                   &lt;/element>
-                 *                   &lt;element name="Quantity">
-                 *                     &lt;simpleType>
-                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-                 *                         &lt;minInclusive value="0"/>
-                 *                       &lt;/restriction>
-                 *                     &lt;/simpleType>
-                 *                   &lt;/element>
-                 *                   &lt;element name="SellingPrice">
-                 *                     &lt;simpleType>
-                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                 *                         &lt;minInclusive value="0"/>
-                 *                         &lt;fractionDigits value="2"/>
-                 *                         &lt;maxInclusive value="99999.99"/>
-                 *                       &lt;/restriction>
-                 *                     &lt;/simpleType>
-                 *                   &lt;/element>
-                 *                   &lt;element name="EnableFreeShipping">
-                 *                     &lt;simpleType>
-                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-                 *                         &lt;minInclusive value="0"/>
-                 *                         &lt;maxInclusive value="1"/>
-                 *                       &lt;/restriction>
-                 *                     &lt;/simpleType>
-                 *                   &lt;/element>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/sequence>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;sequence&gt;
+                 *         &lt;element name="Tier" maxOccurs="5"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="Priority"&gt;
+                 *                     &lt;simpleType&gt;
+                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+                 *                         &lt;minInclusive value="1"/&gt;
+                 *                         &lt;maxInclusive value="5"/&gt;
+                 *                       &lt;/restriction&gt;
+                 *                     &lt;/simpleType&gt;
+                 *                   &lt;/element&gt;
+                 *                   &lt;element name="Quantity"&gt;
+                 *                     &lt;simpleType&gt;
+                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+                 *                         &lt;minInclusive value="0"/&gt;
+                 *                       &lt;/restriction&gt;
+                 *                     &lt;/simpleType&gt;
+                 *                   &lt;/element&gt;
+                 *                   &lt;element name="SellingPrice"&gt;
+                 *                     &lt;simpleType&gt;
+                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                 *                         &lt;minInclusive value="0"/&gt;
+                 *                         &lt;fractionDigits value="2"/&gt;
+                 *                         &lt;maxInclusive value="99999.99"/&gt;
+                 *                       &lt;/restriction&gt;
+                 *                     &lt;/simpleType&gt;
+                 *                   &lt;/element&gt;
+                 *                   &lt;element name="EnableFreeShipping"&gt;
+                 *                     &lt;simpleType&gt;
+                 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+                 *                         &lt;minInclusive value="0"/&gt;
+                 *                         &lt;maxInclusive value="1"/&gt;
+                 *                       &lt;/restriction&gt;
+                 *                     &lt;/simpleType&gt;
+                 *                   &lt;/element&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/sequence&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -831,6 +834,9 @@ public class VolumeDiscountFeedRequest {
                      * Objects of the following type(s) are allowed in the list
                      * {@link VolumeDiscountFeedRequest.Message.VolumeDiscountList.ItemVolumeDiscountInfo.DiscountSetting.Tier }
                      * 
+                     * @return
+                     * Objects of the following type(s) are allowed in the list
+                     * {@link VolumeDiscountFeedRequest.Message.VolumeDiscountList.ItemVolumeDiscountInfo.DiscountSetting.Tier }
                      * 
                      */
                     public List<VolumeDiscountFeedRequest.Message.VolumeDiscountList.ItemVolumeDiscountInfo.DiscountSetting.Tier> getTier() {
@@ -847,46 +853,46 @@ public class VolumeDiscountFeedRequest {
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="Priority">
-                     *           &lt;simpleType>
-                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-                     *               &lt;minInclusive value="1"/>
-                     *               &lt;maxInclusive value="5"/>
-                     *             &lt;/restriction>
-                     *           &lt;/simpleType>
-                     *         &lt;/element>
-                     *         &lt;element name="Quantity">
-                     *           &lt;simpleType>
-                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-                     *               &lt;minInclusive value="0"/>
-                     *             &lt;/restriction>
-                     *           &lt;/simpleType>
-                     *         &lt;/element>
-                     *         &lt;element name="SellingPrice">
-                     *           &lt;simpleType>
-                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-                     *               &lt;minInclusive value="0"/>
-                     *               &lt;fractionDigits value="2"/>
-                     *               &lt;maxInclusive value="99999.99"/>
-                     *             &lt;/restriction>
-                     *           &lt;/simpleType>
-                     *         &lt;/element>
-                     *         &lt;element name="EnableFreeShipping">
-                     *           &lt;simpleType>
-                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-                     *               &lt;minInclusive value="0"/>
-                     *               &lt;maxInclusive value="1"/>
-                     *             &lt;/restriction>
-                     *           &lt;/simpleType>
-                     *         &lt;/element>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="Priority"&gt;
+                     *           &lt;simpleType&gt;
+                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+                     *               &lt;minInclusive value="1"/&gt;
+                     *               &lt;maxInclusive value="5"/&gt;
+                     *             &lt;/restriction&gt;
+                     *           &lt;/simpleType&gt;
+                     *         &lt;/element&gt;
+                     *         &lt;element name="Quantity"&gt;
+                     *           &lt;simpleType&gt;
+                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+                     *               &lt;minInclusive value="0"/&gt;
+                     *             &lt;/restriction&gt;
+                     *           &lt;/simpleType&gt;
+                     *         &lt;/element&gt;
+                     *         &lt;element name="SellingPrice"&gt;
+                     *           &lt;simpleType&gt;
+                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+                     *               &lt;minInclusive value="0"/&gt;
+                     *               &lt;fractionDigits value="2"/&gt;
+                     *               &lt;maxInclusive value="99999.99"/&gt;
+                     *             &lt;/restriction&gt;
+                     *           &lt;/simpleType&gt;
+                     *         &lt;/element&gt;
+                     *         &lt;element name="EnableFreeShipping"&gt;
+                     *           &lt;simpleType&gt;
+                     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+                     *               &lt;minInclusive value="0"/&gt;
+                     *               &lt;maxInclusive value="1"/&gt;
+                     *             &lt;/restriction&gt;
+                     *           &lt;/simpleType&gt;
+                     *         &lt;/element&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -911,6 +917,9 @@ public class VolumeDiscountFeedRequest {
 
                         /**
                          * Gets the value of the priority property.
+                         * @return
+                         * possible object is 
+                         *     {@link int }
                          * 
                          */
                         public int getPriority() {
@@ -919,6 +928,9 @@ public class VolumeDiscountFeedRequest {
 
                         /**
                          * Sets the value of the priority property.
+                         * @param value
+                         *     allowed object is
+                         *     {@link  }
                          * 
                          */
                         public void setPriority(int value) {
@@ -927,6 +939,9 @@ public class VolumeDiscountFeedRequest {
 
                         /**
                          * Gets the value of the quantity property.
+                         * @return
+                         * possible object is 
+                         *     {@link int }
                          * 
                          */
                         public int getQuantity() {
@@ -935,6 +950,9 @@ public class VolumeDiscountFeedRequest {
 
                         /**
                          * Sets the value of the quantity property.
+                         * @param value
+                         *     allowed object is
+                         *     {@link  }
                          * 
                          */
                         public void setQuantity(int value) {
@@ -967,6 +985,9 @@ public class VolumeDiscountFeedRequest {
 
                         /**
                          * Gets the value of the enableFreeShipping property.
+                         * @return
+                         * possible object is 
+                         *     {@link int }
                          * 
                          */
                         public int getEnableFreeShipping() {
@@ -975,6 +996,9 @@ public class VolumeDiscountFeedRequest {
 
                         /**
                          * Sets the value of the enableFreeShipping property.
+                         * @param value
+                         *     allowed object is
+                         *     {@link  }
                          * 
                          */
                         public void setEnableFreeShipping(int value) {

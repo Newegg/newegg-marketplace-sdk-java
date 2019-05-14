@@ -23,284 +23,284 @@ import javax.xml.bind.annotation.XmlValue;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="GuitarsBrand" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsBrandValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsSeries" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsSeriesValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsModel" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsModelValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsPartNumber" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsPartNumberValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsType" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsTypeValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsFinish" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsFinishValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsString" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsStringValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsBodyStyle" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsBodyStyleValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsBodyMaterials" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsBodyMaterialsValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsBackSide" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsBackSideValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsTop" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsTopValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsNeckMaterials" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsNeckMaterialsValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsFretboardMaterials" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsFretboardMaterialsValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsNumberOfFrets" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsNumberOfFretsValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsPickup" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsPickupValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsOutputPower" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsOutputPowerValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsSpeaker" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsSpeakerValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsInputs" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsInputsValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsOutputs" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsOutputsValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsPowerSupply" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsPowerSupplyValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsAccessoryType" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsAccessoryTypeValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsSpecification" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsSpecificationValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsFeature" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsFeatureValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsDimension" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsDimensionValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsWeight" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsWeightValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GuitarsPackageContains" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GuitarsPackageContainsValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="SportsGlobalSportsTeam" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>SportsGlobalSportsTeamValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="SportsGlobalSportsLeague" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>SportsGlobalSportsLeagueValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GlobalElectricalOutletPlugType" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GlobalElectricalOutletPlugTypeValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GroupGuitarsOption" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;MIAcousticGuitars>GroupGuitarsOptionValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="GroupBy" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="GuitarsBrand" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsBrandValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsSeries" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsSeriesValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsModel" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsModelValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsPartNumber" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsPartNumberValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsType" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsTypeValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsFinish" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsFinishValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsString" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsStringValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsBodyStyle" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsBodyStyleValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsBodyMaterials" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsBodyMaterialsValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsBackSide" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsBackSideValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsTop" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsTopValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsNeckMaterials" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsNeckMaterialsValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsFretboardMaterials" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsFretboardMaterialsValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsNumberOfFrets" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsNumberOfFretsValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsPickup" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsPickupValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsOutputPower" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsOutputPowerValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsSpeaker" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsSpeakerValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsInputs" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsInputsValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsOutputs" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsOutputsValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsPowerSupply" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsPowerSupplyValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsAccessoryType" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsAccessoryTypeValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsSpecification" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsSpecificationValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsFeature" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsFeatureValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsDimension" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsDimensionValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsWeight" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsWeightValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GuitarsPackageContains" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsPackageContainsValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SportsGlobalSportsTeam" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;SportsGlobalSportsTeamValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SportsGlobalSportsLeague" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;SportsGlobalSportsLeagueValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GlobalElectricalOutletPlugType" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GlobalElectricalOutletPlugTypeValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GroupGuitarsOption" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;MIAcousticGuitars&gt;GroupGuitarsOptionValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="GroupBy" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -1129,13 +1129,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GlobalElectricalOutletPlugTypeValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GlobalElectricalOutletPlugTypeValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1212,13 +1212,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GroupGuitarsOptionValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="GroupBy" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GroupGuitarsOptionValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="GroupBy" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1295,13 +1295,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsAccessoryTypeValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsAccessoryTypeValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1378,13 +1378,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsBackSideValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsBackSideValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1461,13 +1461,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsBodyMaterialsValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsBodyMaterialsValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1544,13 +1544,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsBodyStyleValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsBodyStyleValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1627,13 +1627,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsBrandValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsBrandValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1710,13 +1710,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsDimensionValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsDimensionValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1793,13 +1793,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsFeatureValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsFeatureValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1876,13 +1876,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsFinishValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsFinishValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1959,13 +1959,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsFretboardMaterialsValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsFretboardMaterialsValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2042,13 +2042,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsInputsValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsInputsValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2125,13 +2125,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsModelValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsModelValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2208,13 +2208,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsNeckMaterialsValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsNeckMaterialsValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2291,13 +2291,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsNumberOfFretsValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsNumberOfFretsValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2374,13 +2374,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsOutputPowerValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsOutputPowerValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2457,13 +2457,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsOutputsValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsOutputsValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2540,13 +2540,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsPackageContainsValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsPackageContainsValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2623,13 +2623,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsPartNumberValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsPartNumberValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2706,13 +2706,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsPickupValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsPickupValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2789,13 +2789,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsPowerSupplyValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsPowerSupplyValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2872,13 +2872,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsSeriesValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsSeriesValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -2955,13 +2955,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsSpeakerValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsSpeakerValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -3038,13 +3038,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsSpecificationValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsSpecificationValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -3121,13 +3121,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsStringValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsStringValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -3204,13 +3204,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsTopValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsTopValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -3287,13 +3287,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsTypeValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsTypeValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -3370,13 +3370,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>GuitarsWeightValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;GuitarsWeightValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -3453,13 +3453,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>SportsGlobalSportsLeagueValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;SportsGlobalSportsLeagueValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -3536,13 +3536,13 @@ public class MIAcousticGuitars{
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;MIAcousticGuitars>SportsGlobalSportsTeamValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;MIAcousticGuitars&gt;SportsGlobalSportsTeamValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 

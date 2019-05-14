@@ -25,44 +25,44 @@ import com.newegg.marketplace.sdk.rma.model.bean.VoidRMAInfo;
  * this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IssueUser" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="EditRMARequest"/>
- *               &lt;enumeration value="RejectRMARequest"/>
- *               &lt;enumeration value="VoidRMARequest"/>
- *               &lt;enumeration value="ReceiveRMARequest"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="RequestBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;choice>
- *                   &lt;element ref="{}EditRMAInfo"/>
- *                   &lt;element ref="{}ReceiveRMAInfo"/>
- *                   &lt;element ref="{}VoidRMAInfo"/>
- *                   &lt;element ref="{}RejectRMAInfo"/>
- *                 &lt;/choice>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IssueUser" minOccurs="0"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="EditRMARequest"/&gt;
+ *               &lt;enumeration value="RejectRMARequest"/&gt;
+ *               &lt;enumeration value="VoidRMARequest"/&gt;
+ *               &lt;enumeration value="ReceiveRMARequest"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="RequestBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;choice&gt;
+ *                   &lt;element ref="{}EditRMAInfo"/&gt;
+ *                   &lt;element ref="{}ReceiveRMAInfo"/&gt;
+ *                   &lt;element ref="{}VoidRMAInfo"/&gt;
+ *                   &lt;element ref="{}RejectRMAInfo"/&gt;
+ *                 &lt;/choice&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -119,18 +119,18 @@ public class VoidRMARequest {
 	 * this class.
 	 * 
 	 * <pre>
-	 * &lt;complexType>
-	 *   &lt;complexContent>
-	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *       &lt;choice>
-	 *         &lt;element ref="{}EditRMAInfo"/>
-	 *         &lt;element ref="{}ReceiveRMAInfo"/>
-	 *         &lt;element ref="{}VoidRMAInfo"/>
-	 *         &lt;element ref="{}RejectRMAInfo"/>
-	 *       &lt;/choice>
-	 *     &lt;/restriction>
-	 *   &lt;/complexContent>
-	 * &lt;/complexType>
+	 * &lt;complexType&gt;
+	 *   &lt;complexContent&gt;
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *       &lt;choice&gt;
+	 *         &lt;element ref="{}EditRMAInfo"/&gt;
+	 *         &lt;element ref="{}ReceiveRMAInfo"/&gt;
+	 *         &lt;element ref="{}VoidRMAInfo"/&gt;
+	 *         &lt;element ref="{}RejectRMAInfo"/&gt;
+	 *       &lt;/choice&gt;
+	 *     &lt;/restriction&gt;
+	 *   &lt;/complexContent&gt;
+	 * &lt;/complexType&gt;
 	 * </pre>
 	 * 
 	 * 

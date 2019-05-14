@@ -17,14 +17,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for HeadsetModelValueList.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
+ * 
  * <pre>
- * &lt;simpleType name="HeadsetModelValueList">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="V-flashblack2"/>
- *     &lt;enumeration value="V-FLASHBLACK"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="HeadsetModelValueList"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="V-flashblack2"/&gt;
+ *     &lt;enumeration value="V-FLASHBLACK"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

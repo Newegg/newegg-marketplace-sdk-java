@@ -23,167 +23,167 @@ import javax.xml.bind.annotation.XmlValue;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="HeadsetModel" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetModelValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="HeadsetSeries" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetSeriesValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="HeadsetConnector" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetConnectorValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="AdvSearch" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="HeadsetMicrophoneImpedance" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetMicrophoneImpedanceValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="HeadsetMicrophoneFrequencyResponse" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetMicrophoneFrequencyResponseValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="HeadsetMicrophoneSignalToNoiseRatioSNR" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetMicrophoneSignalToNoiseRatioSNRValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="HeadsetMicrophoneSensitivity" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetMicrophoneSensitivityValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="HeadsetFeatures" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetFeaturesValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="HeadsetBrand" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetBrandValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="HeadsetColor" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetColorValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="ManufacturerWarrantyParts" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>ManufacturerWarrantyPartsValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="ManufacturerWarrantyLabor" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>ManufacturerWarrantyLaborValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="HeadsetSpecification" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>HeadsetSpecificationValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="SportsGlobalSportsTeam" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>SportsGlobalSportsTeamValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="SportsGlobalSportsLeague" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>SportsGlobalSportsLeagueValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GlobalElectricalOutletPlugType" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>GlobalElectricalOutletPlugTypeValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="GroupHeadsetColor" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>GroupHeadsetColorValueList">
- *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="GroupBy" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="HeadsetModel" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetModelValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="HeadsetSeries" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetSeriesValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="HeadsetConnector" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetConnectorValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="AdvSearch" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="HeadsetMicrophoneImpedance" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetMicrophoneImpedanceValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="HeadsetMicrophoneFrequencyResponse" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetMicrophoneFrequencyResponseValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="HeadsetMicrophoneSignalToNoiseRatioSNR" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetMicrophoneSignalToNoiseRatioSNRValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="HeadsetMicrophoneSensitivity" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetMicrophoneSensitivityValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="HeadsetFeatures" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetFeaturesValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="HeadsetBrand" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetBrandValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="HeadsetColor" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetColorValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="ManufacturerWarrantyParts" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;ManufacturerWarrantyPartsValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="ManufacturerWarrantyLabor" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;ManufacturerWarrantyLaborValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="HeadsetSpecification" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;HeadsetSpecificationValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SportsGlobalSportsTeam" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;SportsGlobalSportsTeamValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SportsGlobalSportsLeague" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;SportsGlobalSportsLeagueValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GlobalElectricalOutletPlugType" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;GlobalElectricalOutletPlugTypeValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="GroupHeadsetColor" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;&gt;GroupHeadsetColorValueList"&gt;
+ *                 &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="GroupBy" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -661,13 +661,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>GlobalElectricalOutletPlugTypeValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;GlobalElectricalOutletPlugTypeValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -744,13 +744,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>GroupHeadsetColorValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="GroupBy" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;GroupHeadsetColorValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="GroupBy" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -827,13 +827,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetBrandValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetBrandValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -910,13 +910,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetColorValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetColorValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -993,13 +993,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetConnectorValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="AdvSearch" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetConnectorValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="AdvSearch" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1076,13 +1076,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetFeaturesValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetFeaturesValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1159,13 +1159,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetMicrophoneFrequencyResponseValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetMicrophoneFrequencyResponseValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1242,13 +1242,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetMicrophoneImpedanceValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetMicrophoneImpedanceValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1325,13 +1325,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetMicrophoneSensitivityValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetMicrophoneSensitivityValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1408,13 +1408,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetMicrophoneSignalToNoiseRatioSNRValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetMicrophoneSignalToNoiseRatioSNRValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1491,13 +1491,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetModelValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetModelValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1574,13 +1574,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetSeriesValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetSeriesValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1657,13 +1657,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>HeadsetSpecificationValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;HeadsetSpecificationValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1740,13 +1740,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>ManufacturerWarrantyLaborValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;ManufacturerWarrantyLaborValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1823,13 +1823,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>ManufacturerWarrantyPartsValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;ManufacturerWarrantyPartsValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1906,13 +1906,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>SportsGlobalSportsLeagueValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;SportsGlobalSportsLeagueValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1989,13 +1989,13 @@ public class Microphone {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>SportsGlobalSportsTeamValueList">
-     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;&gt;SportsGlobalSportsTeamValueList"&gt;
+     *       &lt;attribute name="PropertyType" type="{http://www.w3.org/2001/XMLSchema}string" fixed="None" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 

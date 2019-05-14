@@ -1,27 +1,22 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.newegg.marketplace.sdk</groupId>
-    <artifactId>SDK</artifactId>
-    <version>0.0.1</version>
-  </parent>
-  <artifactId>Seller</artifactId>
-  <name>Seller</name>
-  <version>0.1.0</version>
-  <url>http://maven.apache.org</url>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.newegg.marketplace</groupId>
+		<artifactId>sdk</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>sdk-seller</artifactId>
+	<name>Newegg SDK for Java - Seller</name>
+	<url>https://developer.newegg.com/</url>
+	<description>The Seller Management service group contains functions that will allow you to get reference information you may need to use some of the functions in Newegg API.</description>
 	<dependencies>
 		<dependency>
-			<groupId>com.newegg.marketplace.sdk</groupId>
-			<artifactId>common</artifactId>
-			<version>0.1.0</version>
-		</dependency>		
+			<groupId>com.newegg.marketplace</groupId>
+			<artifactId>sdk-common</artifactId>
+			<version>${neweggsdk.version}</version>
+		</dependency>
 	</dependencies>
 </project>

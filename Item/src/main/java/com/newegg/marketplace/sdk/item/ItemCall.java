@@ -107,9 +107,9 @@ public class ItemCall {
 	 * By offering volume discounts, sellers are able to reward those who purchase a multiple quantity of goods.
 	 * Newegg Marketplace volume discount is designed as a 3-tier calculation. 
 	 * Volume discount creation/adjustment can only be submitted with the following rules:
-	 *  > Purchase Quantity: Minimum Purchase Quantity (If any) ≤ tier-1 &lt; tier-2 &lt; tier-3
-	 *  > Price per Product: Regular Selling Price &gt; tier-1 &gt; tier-2 &gt; tier-3
-	 *  > Shipping setting: tier-1 ≥ tier-2 ≥ tier-3
+	 *  &gt; Purchase Quantity: Minimum Purchase Quantity (If any) ≤ tier-1 &lt; tier-2 &lt; tier-3
+	 *  &gt; Price per Product: Regular Selling Price &gt; tier-1 &gt; tier-2 &gt; tier-3
+	 *  &gt; Shipping setting: tier-1 &gt; tier-2 &gt; tier-3
 	 * </pre>
 	 * @param body {@linkplain SubmitVolumeDiscountRequest} 
 	 * @return {@linkplain SubmitVolumeDiscountResponse} 
@@ -130,7 +130,7 @@ public class ItemCall {
 	 * you can submit new manufacturer creation request to Newegg Marketplace.
 	 * </pre>
 	 * @param body {@linkplain SubmitManufacturerRequest} 
-	 * @return {@linkplain AddManufacturerResponse} 
+	 * @return {@linkplain SubmitManufacturerResponse} 
 	 */
 	public SubmitManufacturerResponse submitManufacturerRequest(SubmitManufacturerRequest body) {
 		return mfCaller.submitManufacturerRequest(body);

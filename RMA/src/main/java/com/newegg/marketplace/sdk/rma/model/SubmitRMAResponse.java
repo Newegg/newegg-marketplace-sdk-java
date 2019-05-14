@@ -26,162 +26,162 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="IssueRMAResponse"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="RMAInfo">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="RMANumber" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *                             &lt;element name="RMAType">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                   &lt;minInclusive value="1"/>
- *                                   &lt;maxInclusive value="2"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="RMATypeDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="SellerRMANumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="IssueUser">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="RMADate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="RMAStatus" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                             &lt;element name="RMAStatusDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="RMAShipMethod" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                             &lt;element name="RMAShipMethodDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                             &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                             &lt;element name="OrderDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                             &lt;element name="OrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="AvailableRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="RMAProcessedBy" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;enumeration value="newegg"/>
- *                                   &lt;enumeration value="seller"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="RMAReceiveDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="RMANote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                             &lt;element name="PriorRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="CustomerName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="CustomerPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="CustomerEmailAddress" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="ShipToLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="ShipToFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="ShipToCompany" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="RMATransactionList">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence maxOccurs="unbounded">
- *                                       &lt;element name="RMATransaction">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;all>
- *                                                 &lt;element name="SellerPartNumber">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="MfrPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="UnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                                 &lt;element name="ReturnQuantity">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                                       &lt;minInclusive value="1"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="ReturnUnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                                                 &lt;element name="RefundShippingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                                 &lt;element name="ShippedBy" minOccurs="0">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                                       &lt;enumeration value="0"/>
- *                                                       &lt;enumeration value="1"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="RefundShipppingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *                                                 &lt;element name="RMAReason">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                                       &lt;minInclusive value="1"/>
- *                                                       &lt;maxInclusive value="9"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="RMAReasonDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                               &lt;/all>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ResponseDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="IssueRMAResponse"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="RMAInfo"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="RMANumber" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *                             &lt;element name="RMAType"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                   &lt;minInclusive value="1"/&gt;
+ *                                   &lt;maxInclusive value="2"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="RMATypeDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="SellerRMANumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="IssueUser"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="RMADate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="RMAStatus" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                             &lt;element name="RMAStatusDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="RMAShipMethod" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                             &lt;element name="RMAShipMethodDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                             &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                             &lt;element name="OrderDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                             &lt;element name="OrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                             &lt;element name="AvailableRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                             &lt;element name="RMAProcessedBy" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;enumeration value="newegg"/&gt;
+ *                                   &lt;enumeration value="seller"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="RMAReceiveDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="RMANote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                             &lt;element name="PriorRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                             &lt;element name="CustomerName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="CustomerPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="CustomerEmailAddress" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="ShipToLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="ShipToFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="ShipToCompany" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="RMATransactionList"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence maxOccurs="unbounded"&gt;
+ *                                       &lt;element name="RMATransaction"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;all&gt;
+ *                                                 &lt;element name="SellerPartNumber"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="MfrPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="UnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                                 &lt;element name="ReturnQuantity"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                                       &lt;minInclusive value="1"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="ReturnUnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
+ *                                                 &lt;element name="RefundShippingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                                 &lt;element name="ShippedBy" minOccurs="0"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                                       &lt;enumeration value="0"/&gt;
+ *                                                       &lt;enumeration value="1"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="RefundShipppingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
+ *                                                 &lt;element name="RMAReason"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                                       &lt;minInclusive value="1"/&gt;
+ *                                                       &lt;maxInclusive value="9"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="RMAReasonDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                               &lt;/all&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="ResponseDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -273,130 +273,130 @@ public class SubmitRMAResponse {
 	 * The following schema fragment specifies the expected content contained within this class.
 	 * 
 	 * <pre>
-	 * &lt;complexType>
-	 *   &lt;complexContent>
-	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *       &lt;all>
-	 *         &lt;element name="RMAInfo">
-	 *           &lt;complexType>
-	 *             &lt;complexContent>
-	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                 &lt;all>
-	 *                   &lt;element name="RMANumber" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-	 *                   &lt;element name="RMAType">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-	 *                         &lt;minInclusive value="1"/>
-	 *                         &lt;maxInclusive value="2"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="RMATypeDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="SellerRMANumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="IssueUser">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="RMADate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="RMAStatus" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-	 *                   &lt;element name="RMAStatusDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="RMAShipMethod" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-	 *                   &lt;element name="RMAShipMethodDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-	 *                   &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int"/>
-	 *                   &lt;element name="OrderDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-	 *                   &lt;element name="OrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-	 *                   &lt;element name="AvailableRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-	 *                   &lt;element name="RMAProcessedBy" minOccurs="0">
-	 *                     &lt;simpleType>
-	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-	 *                         &lt;enumeration value="newegg"/>
-	 *                         &lt;enumeration value="seller"/>
-	 *                       &lt;/restriction>
-	 *                     &lt;/simpleType>
-	 *                   &lt;/element>
-	 *                   &lt;element name="RMAReceiveDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="RMANote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-	 *                   &lt;element name="PriorRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-	 *                   &lt;element name="CustomerName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="CustomerPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="CustomerEmailAddress" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="ShipToLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="ShipToFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="ShipToCompany" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                   &lt;element name="RMATransactionList">
-	 *                     &lt;complexType>
-	 *                       &lt;complexContent>
-	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                           &lt;sequence maxOccurs="unbounded">
-	 *                             &lt;element name="RMATransaction">
-	 *                               &lt;complexType>
-	 *                                 &lt;complexContent>
-	 *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-	 *                                     &lt;all>
-	 *                                       &lt;element name="SellerPartNumber">
-	 *                                         &lt;simpleType>
-	 *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-	 *                                           &lt;/restriction>
-	 *                                         &lt;/simpleType>
-	 *                                       &lt;/element>
-	 *                                       &lt;element name="MfrPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                                       &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                                       &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                                       &lt;element name="UnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-	 *                                       &lt;element name="ReturnQuantity">
-	 *                                         &lt;simpleType>
-	 *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-	 *                                             &lt;minInclusive value="1"/>
-	 *                                           &lt;/restriction>
-	 *                                         &lt;/simpleType>
-	 *                                       &lt;/element>
-	 *                                       &lt;element name="ReturnUnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-	 *                                       &lt;element name="RefundShippingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-	 *                                       &lt;element name="ShippedBy" minOccurs="0">
-	 *                                         &lt;simpleType>
-	 *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-	 *                                             &lt;enumeration value="0"/>
-	 *                                             &lt;enumeration value="1"/>
-	 *                                           &lt;/restriction>
-	 *                                         &lt;/simpleType>
-	 *                                       &lt;/element>
-	 *                                       &lt;element name="RefundShipppingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-	 *                                       &lt;element name="RMAReason">
-	 *                                         &lt;simpleType>
-	 *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-	 *                                             &lt;minInclusive value="1"/>
-	 *                                             &lt;maxInclusive value="9"/>
-	 *                                           &lt;/restriction>
-	 *                                         &lt;/simpleType>
-	 *                                       &lt;/element>
-	 *                                       &lt;element name="RMAReasonDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-	 *                                     &lt;/all>
-	 *                                   &lt;/restriction>
-	 *                                 &lt;/complexContent>
-	 *                               &lt;/complexType>
-	 *                             &lt;/element>
-	 *                           &lt;/sequence>
-	 *                         &lt;/restriction>
-	 *                       &lt;/complexContent>
-	 *                     &lt;/complexType>
-	 *                   &lt;/element>
-	 *                 &lt;/all>
-	 *               &lt;/restriction>
-	 *             &lt;/complexContent>
-	 *           &lt;/complexType>
-	 *         &lt;/element>
-	 *       &lt;/all>
-	 *     &lt;/restriction>
-	 *   &lt;/complexContent>
-	 * &lt;/complexType>
+	 * &lt;complexType&gt;
+	 *   &lt;complexContent&gt;
+	 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *       &lt;all&gt;
+	 *         &lt;element name="RMAInfo"&gt;
+	 *           &lt;complexType&gt;
+	 *             &lt;complexContent&gt;
+	 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                 &lt;all&gt;
+	 *                   &lt;element name="RMANumber" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+	 *                   &lt;element name="RMAType"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+	 *                         &lt;minInclusive value="1"/&gt;
+	 *                         &lt;maxInclusive value="2"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="RMATypeDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="SellerRMANumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="IssueUser"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="RMADate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="RMAStatus" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+	 *                   &lt;element name="RMAStatusDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="RMAShipMethod" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+	 *                   &lt;element name="RMAShipMethodDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+	 *                   &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+	 *                   &lt;element name="OrderDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+	 *                   &lt;element name="OrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+	 *                   &lt;element name="AvailableRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+	 *                   &lt;element name="RMAProcessedBy" minOccurs="0"&gt;
+	 *                     &lt;simpleType&gt;
+	 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+	 *                         &lt;enumeration value="newegg"/&gt;
+	 *                         &lt;enumeration value="seller"/&gt;
+	 *                       &lt;/restriction&gt;
+	 *                     &lt;/simpleType&gt;
+	 *                   &lt;/element&gt;
+	 *                   &lt;element name="RMAReceiveDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="RMANote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+	 *                   &lt;element name="PriorRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+	 *                   &lt;element name="CustomerName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="CustomerPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="CustomerEmailAddress" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="ShipToLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="ShipToFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="ShipToCompany" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                   &lt;element name="RMATransactionList"&gt;
+	 *                     &lt;complexType&gt;
+	 *                       &lt;complexContent&gt;
+	 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                           &lt;sequence maxOccurs="unbounded"&gt;
+	 *                             &lt;element name="RMATransaction"&gt;
+	 *                               &lt;complexType&gt;
+	 *                                 &lt;complexContent&gt;
+	 *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+	 *                                     &lt;all&gt;
+	 *                                       &lt;element name="SellerPartNumber"&gt;
+	 *                                         &lt;simpleType&gt;
+	 *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+	 *                                           &lt;/restriction&gt;
+	 *                                         &lt;/simpleType&gt;
+	 *                                       &lt;/element&gt;
+	 *                                       &lt;element name="MfrPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                                       &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                                       &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                                       &lt;element name="UnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+	 *                                       &lt;element name="ReturnQuantity"&gt;
+	 *                                         &lt;simpleType&gt;
+	 *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+	 *                                             &lt;minInclusive value="1"/&gt;
+	 *                                           &lt;/restriction&gt;
+	 *                                         &lt;/simpleType&gt;
+	 *                                       &lt;/element&gt;
+	 *                                       &lt;element name="ReturnUnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
+	 *                                       &lt;element name="RefundShippingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+	 *                                       &lt;element name="ShippedBy" minOccurs="0"&gt;
+	 *                                         &lt;simpleType&gt;
+	 *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+	 *                                             &lt;enumeration value="0"/&gt;
+	 *                                             &lt;enumeration value="1"/&gt;
+	 *                                           &lt;/restriction&gt;
+	 *                                         &lt;/simpleType&gt;
+	 *                                       &lt;/element&gt;
+	 *                                       &lt;element name="RefundShipppingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
+	 *                                       &lt;element name="RMAReason"&gt;
+	 *                                         &lt;simpleType&gt;
+	 *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+	 *                                             &lt;minInclusive value="1"/&gt;
+	 *                                             &lt;maxInclusive value="9"/&gt;
+	 *                                           &lt;/restriction&gt;
+	 *                                         &lt;/simpleType&gt;
+	 *                                       &lt;/element&gt;
+	 *                                       &lt;element name="RMAReasonDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+	 *                                     &lt;/all&gt;
+	 *                                   &lt;/restriction&gt;
+	 *                                 &lt;/complexContent&gt;
+	 *                               &lt;/complexType&gt;
+	 *                             &lt;/element&gt;
+	 *                           &lt;/sequence&gt;
+	 *                         &lt;/restriction&gt;
+	 *                       &lt;/complexContent&gt;
+	 *                     &lt;/complexType&gt;
+	 *                   &lt;/element&gt;
+	 *                 &lt;/all&gt;
+	 *               &lt;/restriction&gt;
+	 *             &lt;/complexContent&gt;
+	 *           &lt;/complexType&gt;
+	 *         &lt;/element&gt;
+	 *       &lt;/all&gt;
+	 *     &lt;/restriction&gt;
+	 *   &lt;/complexContent&gt;
+	 * &lt;/complexType&gt;
 	 * </pre>
 	 * 
 	 * 
@@ -427,120 +427,120 @@ public class SubmitRMAResponse {
 		 * The following schema fragment specifies the expected content contained within this class.
 		 * 
 		 * <pre>
-		 * &lt;complexType>
-		 *   &lt;complexContent>
-		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *       &lt;all>
-		 *         &lt;element name="RMANumber" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
-		 *         &lt;element name="RMAType">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-		 *               &lt;minInclusive value="1"/>
-		 *               &lt;maxInclusive value="2"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="RMATypeDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="SellerRMANumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="IssueUser">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="RMADate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="RMAStatus" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-		 *         &lt;element name="RMAStatusDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="RMAShipMethod" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-		 *         &lt;element name="RMAShipMethodDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-		 *         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int"/>
-		 *         &lt;element name="OrderDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-		 *         &lt;element name="OrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-		 *         &lt;element name="AvailableRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-		 *         &lt;element name="RMAProcessedBy" minOccurs="0">
-		 *           &lt;simpleType>
-		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-		 *               &lt;enumeration value="newegg"/>
-		 *               &lt;enumeration value="seller"/>
-		 *             &lt;/restriction>
-		 *           &lt;/simpleType>
-		 *         &lt;/element>
-		 *         &lt;element name="RMAReceiveDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="RMANote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-		 *         &lt;element name="PriorRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-		 *         &lt;element name="CustomerName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="CustomerPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="CustomerEmailAddress" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="ShipToLastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="ShipToFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="ShipToCompany" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *         &lt;element name="RMATransactionList">
-		 *           &lt;complexType>
-		 *             &lt;complexContent>
-		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *                 &lt;sequence maxOccurs="unbounded">
-		 *                   &lt;element name="RMATransaction">
-		 *                     &lt;complexType>
-		 *                       &lt;complexContent>
-		 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-		 *                           &lt;all>
-		 *                             &lt;element name="SellerPartNumber">
-		 *                               &lt;simpleType>
-		 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-		 *                                 &lt;/restriction>
-		 *                               &lt;/simpleType>
-		 *                             &lt;/element>
-		 *                             &lt;element name="MfrPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *                             &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *                             &lt;element name="UnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-		 *                             &lt;element name="ReturnQuantity">
-		 *                               &lt;simpleType>
-		 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-		 *                                   &lt;minInclusive value="1"/>
-		 *                                 &lt;/restriction>
-		 *                               &lt;/simpleType>
-		 *                             &lt;/element>
-		 *                             &lt;element name="ReturnUnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-		 *                             &lt;element name="RefundShippingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-		 *                             &lt;element name="ShippedBy" minOccurs="0">
-		 *                               &lt;simpleType>
-		 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-		 *                                   &lt;enumeration value="0"/>
-		 *                                   &lt;enumeration value="1"/>
-		 *                                 &lt;/restriction>
-		 *                               &lt;/simpleType>
-		 *                             &lt;/element>
-		 *                             &lt;element name="RefundShipppingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-		 *                             &lt;element name="RMAReason">
-		 *                               &lt;simpleType>
-		 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-		 *                                   &lt;minInclusive value="1"/>
-		 *                                   &lt;maxInclusive value="9"/>
-		 *                                 &lt;/restriction>
-		 *                               &lt;/simpleType>
-		 *                             &lt;/element>
-		 *                             &lt;element name="RMAReasonDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-		 *                           &lt;/all>
-		 *                         &lt;/restriction>
-		 *                       &lt;/complexContent>
-		 *                     &lt;/complexType>
-		 *                   &lt;/element>
-		 *                 &lt;/sequence>
-		 *               &lt;/restriction>
-		 *             &lt;/complexContent>
-		 *           &lt;/complexType>
-		 *         &lt;/element>
-		 *       &lt;/all>
-		 *     &lt;/restriction>
-		 *   &lt;/complexContent>
-		 * &lt;/complexType>
+		 * &lt;complexType&gt;
+		 *   &lt;complexContent&gt;
+		 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *       &lt;all&gt;
+		 *         &lt;element name="RMANumber" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+		 *         &lt;element name="RMAType"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+		 *               &lt;minInclusive value="1"/&gt;
+		 *               &lt;maxInclusive value="2"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="RMATypeDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="SellerRMANumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="IssueUser"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="RMADate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="RMAStatus" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+		 *         &lt;element name="RMAStatusDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="RMAShipMethod" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+		 *         &lt;element name="RMAShipMethodDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+		 *         &lt;element name="OrderNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+		 *         &lt;element name="OrderDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="InvoiceNumber" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+		 *         &lt;element name="OrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+		 *         &lt;element name="AvailableRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+		 *         &lt;element name="RMAProcessedBy" minOccurs="0"&gt;
+		 *           &lt;simpleType&gt;
+		 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+		 *               &lt;enumeration value="newegg"/&gt;
+		 *               &lt;enumeration value="seller"/&gt;
+		 *             &lt;/restriction&gt;
+		 *           &lt;/simpleType&gt;
+		 *         &lt;/element&gt;
+		 *         &lt;element name="RMAReceiveDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="RMANote" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+		 *         &lt;element name="PriorRefundAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+		 *         &lt;element name="CustomerName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="CustomerPhoneNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="CustomerEmailAddress" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="ShipToAddress1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="ShipToAddress2" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="ShipToCityName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="ShipToStateCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="ShipToZipCode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="ShipToLastName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="ShipToFirstName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="ShipToCompany" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *         &lt;element name="RMATransactionList"&gt;
+		 *           &lt;complexType&gt;
+		 *             &lt;complexContent&gt;
+		 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *                 &lt;sequence maxOccurs="unbounded"&gt;
+		 *                   &lt;element name="RMATransaction"&gt;
+		 *                     &lt;complexType&gt;
+		 *                       &lt;complexContent&gt;
+		 *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+		 *                           &lt;all&gt;
+		 *                             &lt;element name="SellerPartNumber"&gt;
+		 *                               &lt;simpleType&gt;
+		 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+		 *                                 &lt;/restriction&gt;
+		 *                               &lt;/simpleType&gt;
+		 *                             &lt;/element&gt;
+		 *                             &lt;element name="MfrPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *                             &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *                             &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *                             &lt;element name="UnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+		 *                             &lt;element name="ReturnQuantity"&gt;
+		 *                               &lt;simpleType&gt;
+		 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+		 *                                   &lt;minInclusive value="1"/&gt;
+		 *                                 &lt;/restriction&gt;
+		 *                               &lt;/simpleType&gt;
+		 *                             &lt;/element&gt;
+		 *                             &lt;element name="ReturnUnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
+		 *                             &lt;element name="RefundShippingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+		 *                             &lt;element name="ShippedBy" minOccurs="0"&gt;
+		 *                               &lt;simpleType&gt;
+		 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+		 *                                   &lt;enumeration value="0"/&gt;
+		 *                                   &lt;enumeration value="1"/&gt;
+		 *                                 &lt;/restriction&gt;
+		 *                               &lt;/simpleType&gt;
+		 *                             &lt;/element&gt;
+		 *                             &lt;element name="RefundShipppingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
+		 *                             &lt;element name="RMAReason"&gt;
+		 *                               &lt;simpleType&gt;
+		 *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+		 *                                   &lt;minInclusive value="1"/&gt;
+		 *                                   &lt;maxInclusive value="9"/&gt;
+		 *                                 &lt;/restriction&gt;
+		 *                               &lt;/simpleType&gt;
+		 *                             &lt;/element&gt;
+		 *                             &lt;element name="RMAReasonDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+		 *                           &lt;/all&gt;
+		 *                         &lt;/restriction&gt;
+		 *                       &lt;/complexContent&gt;
+		 *                     &lt;/complexType&gt;
+		 *                   &lt;/element&gt;
+		 *                 &lt;/sequence&gt;
+		 *               &lt;/restriction&gt;
+		 *             &lt;/complexContent&gt;
+		 *           &lt;/complexType&gt;
+		 *         &lt;/element&gt;
+		 *       &lt;/all&gt;
+		 *     &lt;/restriction&gt;
+		 *   &lt;/complexContent&gt;
+		 * &lt;/complexType&gt;
 		 * </pre>
 		 * 
 		 * 
@@ -931,61 +931,61 @@ public class SubmitRMAResponse {
 			 * The following schema fragment specifies the expected content contained within this class.
 			 * 
 			 * <pre>
-			 * &lt;complexType>
-			 *   &lt;complexContent>
-			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-			 *       &lt;sequence maxOccurs="unbounded">
-			 *         &lt;element name="RMATransaction">
-			 *           &lt;complexType>
-			 *             &lt;complexContent>
-			 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-			 *                 &lt;all>
-			 *                   &lt;element name="SellerPartNumber">
-			 *                     &lt;simpleType>
-			 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-			 *                       &lt;/restriction>
-			 *                     &lt;/simpleType>
-			 *                   &lt;/element>
-			 *                   &lt;element name="MfrPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-			 *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-			 *                   &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string"/>
-			 *                   &lt;element name="UnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-			 *                   &lt;element name="ReturnQuantity">
-			 *                     &lt;simpleType>
-			 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-			 *                         &lt;minInclusive value="1"/>
-			 *                       &lt;/restriction>
-			 *                     &lt;/simpleType>
-			 *                   &lt;/element>
-			 *                   &lt;element name="ReturnUnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-			 *                   &lt;element name="RefundShippingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-			 *                   &lt;element name="ShippedBy" minOccurs="0">
-			 *                     &lt;simpleType>
-			 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-			 *                         &lt;enumeration value="0"/>
-			 *                         &lt;enumeration value="1"/>
-			 *                       &lt;/restriction>
-			 *                     &lt;/simpleType>
-			 *                   &lt;/element>
-			 *                   &lt;element name="RefundShipppingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-			 *                   &lt;element name="RMAReason">
-			 *                     &lt;simpleType>
-			 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-			 *                         &lt;minInclusive value="1"/>
-			 *                         &lt;maxInclusive value="9"/>
-			 *                       &lt;/restriction>
-			 *                     &lt;/simpleType>
-			 *                   &lt;/element>
-			 *                   &lt;element name="RMAReasonDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-			 *                 &lt;/all>
-			 *               &lt;/restriction>
-			 *             &lt;/complexContent>
-			 *           &lt;/complexType>
-			 *         &lt;/element>
-			 *       &lt;/sequence>
-			 *     &lt;/restriction>
-			 *   &lt;/complexContent>
-			 * &lt;/complexType>
+			 * &lt;complexType&gt;
+			 *   &lt;complexContent&gt;
+			 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+			 *       &lt;sequence maxOccurs="unbounded"&gt;
+			 *         &lt;element name="RMATransaction"&gt;
+			 *           &lt;complexType&gt;
+			 *             &lt;complexContent&gt;
+			 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+			 *                 &lt;all&gt;
+			 *                   &lt;element name="SellerPartNumber"&gt;
+			 *                     &lt;simpleType&gt;
+			 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+			 *                       &lt;/restriction&gt;
+			 *                     &lt;/simpleType&gt;
+			 *                   &lt;/element&gt;
+			 *                   &lt;element name="MfrPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+			 *                   &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+			 *                   &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+			 *                   &lt;element name="UnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+			 *                   &lt;element name="ReturnQuantity"&gt;
+			 *                     &lt;simpleType&gt;
+			 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+			 *                         &lt;minInclusive value="1"/&gt;
+			 *                       &lt;/restriction&gt;
+			 *                     &lt;/simpleType&gt;
+			 *                   &lt;/element&gt;
+			 *                   &lt;element name="ReturnUnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
+			 *                   &lt;element name="RefundShippingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+			 *                   &lt;element name="ShippedBy" minOccurs="0"&gt;
+			 *                     &lt;simpleType&gt;
+			 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+			 *                         &lt;enumeration value="0"/&gt;
+			 *                         &lt;enumeration value="1"/&gt;
+			 *                       &lt;/restriction&gt;
+			 *                     &lt;/simpleType&gt;
+			 *                   &lt;/element&gt;
+			 *                   &lt;element name="RefundShipppingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
+			 *                   &lt;element name="RMAReason"&gt;
+			 *                     &lt;simpleType&gt;
+			 *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+			 *                         &lt;minInclusive value="1"/&gt;
+			 *                         &lt;maxInclusive value="9"/&gt;
+			 *                       &lt;/restriction&gt;
+			 *                     &lt;/simpleType&gt;
+			 *                   &lt;/element&gt;
+			 *                   &lt;element name="RMAReasonDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+			 *                 &lt;/all&gt;
+			 *               &lt;/restriction&gt;
+			 *             &lt;/complexContent&gt;
+			 *           &lt;/complexType&gt;
+			 *         &lt;/element&gt;
+			 *       &lt;/sequence&gt;
+			 *     &lt;/restriction&gt;
+			 *   &lt;/complexContent&gt;
+			 * &lt;/complexType&gt;
 			 * </pre>
 			 * 
 			 * 
@@ -1013,19 +1013,11 @@ public class SubmitRMAResponse {
 				 * getRMATransaction().add(newItem);
 				 * </pre>
 				 * 
-				 * 
-				 * <p>
+				 * @return
 				 * Objects of the following type(s) are allowed in the list {@link SubmitRMAResponse.ResponseBody.RMAInfo.RMATransactionList.RMATransaction }
 				 * 
 				 * 
-				 */
-				/*public List<RMASubmitResponse.ResponseBody.RMAInfo.RMATransactionList.RMATransaction> getRmaTransaction() {
-					if (rmaTransaction == null) {
-						rmaTransaction = new ArrayList<RMASubmitResponse.ResponseBody.RMAInfo.RMATransactionList.RMATransaction>();
-					}
-					return this.rmaTransaction;
-				}*/
-
+				 */				
 				public SubmitRMAResponse.ResponseBody.RMAInfo.RMATransactionList.RMATransaction getRmaTransaction() {
 					return rmaTransaction;
 				}
@@ -1042,51 +1034,51 @@ public class SubmitRMAResponse {
 				 * The following schema fragment specifies the expected content contained within this class.
 				 * 
 				 * <pre>
-				 * &lt;complexType>
-				 *   &lt;complexContent>
-				 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-				 *       &lt;all>
-				 *         &lt;element name="SellerPartNumber">
-				 *           &lt;simpleType>
-				 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-				 *             &lt;/restriction>
-				 *           &lt;/simpleType>
-				 *         &lt;/element>
-				 *         &lt;element name="MfrPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-				 *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-				 *         &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string"/>
-				 *         &lt;element name="UnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-				 *         &lt;element name="ReturnQuantity">
-				 *           &lt;simpleType>
-				 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-				 *               &lt;minInclusive value="1"/>
-				 *             &lt;/restriction>
-				 *           &lt;/simpleType>
-				 *         &lt;/element>
-				 *         &lt;element name="ReturnUnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-				 *         &lt;element name="RefundShippingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-				 *         &lt;element name="ShippedBy" minOccurs="0">
-				 *           &lt;simpleType>
-				 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-				 *               &lt;enumeration value="0"/>
-				 *               &lt;enumeration value="1"/>
-				 *             &lt;/restriction>
-				 *           &lt;/simpleType>
-				 *         &lt;/element>
-				 *         &lt;element name="RefundShipppingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
-				 *         &lt;element name="RMAReason">
-				 *           &lt;simpleType>
-				 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-				 *               &lt;minInclusive value="1"/>
-				 *               &lt;maxInclusive value="9"/>
-				 *             &lt;/restriction>
-				 *           &lt;/simpleType>
-				 *         &lt;/element>
-				 *         &lt;element name="RMAReasonDescription" type="{http://www.w3.org/2001/XMLSchema}string"/>
-				 *       &lt;/all>
-				 *     &lt;/restriction>
-				 *   &lt;/complexContent>
-				 * &lt;/complexType>
+				 * &lt;complexType&gt;
+				 *   &lt;complexContent&gt;
+				 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+				 *       &lt;all&gt;
+				 *         &lt;element name="SellerPartNumber"&gt;
+				 *           &lt;simpleType&gt;
+				 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+				 *             &lt;/restriction&gt;
+				 *           &lt;/simpleType&gt;
+				 *         &lt;/element&gt;
+				 *         &lt;element name="MfrPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+				 *         &lt;element name="NeweggItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+				 *         &lt;element name="Description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+				 *         &lt;element name="UnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+				 *         &lt;element name="ReturnQuantity"&gt;
+				 *           &lt;simpleType&gt;
+				 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+				 *               &lt;minInclusive value="1"/&gt;
+				 *             &lt;/restriction&gt;
+				 *           &lt;/simpleType&gt;
+				 *         &lt;/element&gt;
+				 *         &lt;element name="ReturnUnitPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
+				 *         &lt;element name="RefundShippingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+				 *         &lt;element name="ShippedBy" minOccurs="0"&gt;
+				 *           &lt;simpleType&gt;
+				 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+				 *               &lt;enumeration value="0"/&gt;
+				 *               &lt;enumeration value="1"/&gt;
+				 *             &lt;/restriction&gt;
+				 *           &lt;/simpleType&gt;
+				 *         &lt;/element&gt;
+				 *         &lt;element name="RefundShipppingPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
+				 *         &lt;element name="RMAReason"&gt;
+				 *           &lt;simpleType&gt;
+				 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+				 *               &lt;minInclusive value="1"/&gt;
+				 *               &lt;maxInclusive value="9"/&gt;
+				 *             &lt;/restriction&gt;
+				 *           &lt;/simpleType&gt;
+				 *         &lt;/element&gt;
+				 *         &lt;element name="RMAReasonDescription" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+				 *       &lt;/all&gt;
+				 *     &lt;/restriction&gt;
+				 *   &lt;/complexContent&gt;
+				 * &lt;/complexType&gt;
 				 * </pre>
 				 * 
 				 * 

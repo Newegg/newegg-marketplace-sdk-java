@@ -29,81 +29,81 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * <p>下列綱要片段會指定此類別中包含的預期內容.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IsSuccess">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="true"/>
- *               &lt;enumeration value="false"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *         &lt;element name="ResponseBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element ref="{}PageInfo"/>
- *                   &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="SettlementSummaryList">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="SettlementSummary" maxOccurs="unbounded">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="SettlementDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="SettlementDateFrom" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                                       &lt;element name="SettlementDateTo" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                                       &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                       &lt;element name="CheckNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="ItemPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="Other" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="TotalOrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="Refunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="ChargeBack" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="MiscellaneousAdjustment" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="TotalRefunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="NeweggCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="NeweggTransactionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="NeweggRefundCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="NeweggMonthlyFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="NeweggStorageFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="NeweggRMABuyoutFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="NeweggPremierFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="NeweggShippingLabelFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="TotalNeweggFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                       &lt;element name="TotalSettlement" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IsSuccess"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="true"/&gt;
+ *               &lt;enumeration value="false"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="OperationType" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *         &lt;element name="ResponseBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element ref="{}PageInfo"/&gt;
+ *                   &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                   &lt;element name="SettlementSummaryList"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="SettlementSummary" maxOccurs="unbounded"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="SettlementDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="SettlementDateFrom" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                                       &lt;element name="SettlementDateTo" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                                       &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *                                       &lt;element name="CheckNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="ItemPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="Other" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="TotalOrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="Refunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="ChargeBack" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="MiscellaneousAdjustment" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="TotalRefunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="NeweggCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="NeweggTransactionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="NeweggRefundCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="NeweggMonthlyFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="NeweggStorageFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="NeweggRMABuyoutFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="NeweggPremierFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="NeweggShippingLabelFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="TotalNeweggFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                       &lt;element name="TotalSettlement" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Memo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -210,7 +210,7 @@ public class GetSettlementSummaryInfoResponse {
      * 
      * @return
      *     possible object is
-     *     {@link NeweggAPIResponse.ResponseBody }
+     *     {@link GetSettlementSummaryInfoResponse.ResponseBody }
      *     
      */
     public GetSettlementSummaryInfoResponse.ResponseBody getResponseBody() {
@@ -222,7 +222,7 @@ public class GetSettlementSummaryInfoResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link NeweggAPIResponse.ResponseBody }
+     *     {@link GetSettlementSummaryInfoResponse.ResponseBody }
      *     
      */
     public void setResponseBody(GetSettlementSummaryInfoResponse.ResponseBody value) {
@@ -260,60 +260,60 @@ public class GetSettlementSummaryInfoResponse {
      * <p>下列綱要片段會指定此類別中包含的預期內容.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element ref="{}PageInfo"/>
-     *         &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="SettlementSummaryList">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="SettlementSummary" maxOccurs="unbounded">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="SettlementDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="SettlementDateFrom" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                             &lt;element name="SettlementDateTo" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                             &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                             &lt;element name="CheckNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="ItemPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="Other" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="TotalOrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="Refunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="ChargeBack" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="MiscellaneousAdjustment" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="TotalRefunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="NeweggCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="NeweggTransactionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="NeweggRefundCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="NeweggMonthlyFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="NeweggStorageFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="NeweggRMABuyoutFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="NeweggPremierFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="NeweggShippingLabelFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="TotalNeweggFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                             &lt;element name="TotalSettlement" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element ref="{}PageInfo"/&gt;
+     *         &lt;element name="RequestID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="RequestDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *         &lt;element name="SettlementSummaryList"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="SettlementSummary" maxOccurs="unbounded"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="SettlementDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="SettlementDateFrom" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *                             &lt;element name="SettlementDateTo" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *                             &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+     *                             &lt;element name="CheckNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="ItemPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="Other" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="TotalOrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="Refunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="ChargeBack" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="MiscellaneousAdjustment" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="TotalRefunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="NeweggCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="NeweggTransactionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="NeweggRefundCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="NeweggMonthlyFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="NeweggStorageFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="NeweggRMABuyoutFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="NeweggPremierFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="NeweggShippingLabelFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="TotalNeweggFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                             &lt;element name="TotalSettlement" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -418,7 +418,7 @@ public class GetSettlementSummaryInfoResponse {
          * 
          * @return
          *     possible object is
-         *     {@link NeweggAPIResponse.ResponseBody.SettlementSummaryList }
+         *     {@link GetSettlementSummaryInfoResponse.ResponseBody.SettlementSummaryList }
          *     
          */
         public GetSettlementSummaryInfoResponse.ResponseBody.SettlementSummaryList getSettlementSummaryList() {
@@ -430,7 +430,7 @@ public class GetSettlementSummaryInfoResponse {
          * 
          * @param value
          *     allowed object is
-         *     {@link NeweggAPIResponse.ResponseBody.SettlementSummaryList }
+         *     {@link GetSettlementSummaryInfoResponse.ResponseBody.SettlementSummaryList }
          *     
          */
         public void setSettlementSummaryList(GetSettlementSummaryInfoResponse.ResponseBody.SettlementSummaryList value) {
@@ -444,47 +444,47 @@ public class GetSettlementSummaryInfoResponse {
          * <p>下列綱要片段會指定此類別中包含的預期內容.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="SettlementSummary" maxOccurs="unbounded">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="SettlementDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="SettlementDateFrom" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *                   &lt;element name="SettlementDateTo" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *                   &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-         *                   &lt;element name="CheckNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="ItemPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="Other" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="TotalOrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="Refunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="ChargeBack" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="MiscellaneousAdjustment" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="TotalRefunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="NeweggCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="NeweggTransactionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="NeweggRefundCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="NeweggMonthlyFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="NeweggStorageFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="NeweggRMABuyoutFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="NeweggPremierFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="NeweggShippingLabelFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="TotalNeweggFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                   &lt;element name="TotalSettlement" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="SettlementSummary" maxOccurs="unbounded"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="SettlementDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="SettlementDateFrom" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+         *                   &lt;element name="SettlementDateTo" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+         *                   &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+         *                   &lt;element name="CheckNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="ItemPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="Other" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="TotalOrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="Refunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="ChargeBack" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="MiscellaneousAdjustment" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="TotalRefunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="NeweggCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="NeweggTransactionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="NeweggRefundCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="NeweggMonthlyFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="NeweggStorageFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="NeweggRMABuyoutFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="NeweggPremierFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="NeweggShippingLabelFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="TotalNeweggFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                   &lt;element name="TotalSettlement" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -517,8 +517,11 @@ public class GetSettlementSummaryInfoResponse {
              * 
              * <p>
              * Objects of the following type(s) are allowed in the list
-             * {@link NeweggAPIResponse.ResponseBody.SettlementSummaryList.SettlementSummary }
+             * {@link GetSettlementSummaryInfoResponse.ResponseBody.SettlementSummaryList.SettlementSummary }
              * 
+             * @return
+             * Objects of the following type(s) are allowed in the list
+             * {@link GetSettlementSummaryInfoResponse.ResponseBody.SettlementSummaryList.SettlementSummary }
              * 
              */
             public List<GetSettlementSummaryInfoResponse.ResponseBody.SettlementSummaryList.SettlementSummary> getSettlementSummary() {
@@ -535,37 +538,37 @@ public class GetSettlementSummaryInfoResponse {
              * <p>下列綱要片段會指定此類別中包含的預期內容.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="SettlementDate" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="SettlementDateFrom" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-             *         &lt;element name="SettlementDateTo" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-             *         &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}int"/>
-             *         &lt;element name="CheckNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="ItemPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="Other" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="TotalOrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="Refunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="ChargeBack" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="MiscellaneousAdjustment" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="TotalRefunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="NeweggCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="NeweggTransactionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="NeweggRefundCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="NeweggMonthlyFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="NeweggStorageFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="NeweggRMABuyoutFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="NeweggPremierFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="NeweggShippingLabelFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="TotalNeweggFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *         &lt;element name="TotalSettlement" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="SettlementDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="SettlementDateFrom" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+             *         &lt;element name="SettlementDateTo" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+             *         &lt;element name="SettlementID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+             *         &lt;element name="CheckNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="ItemPrice" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="Shipping" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="Other" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="TotalOrderAmount" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="Refunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="ChargeBack" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="MiscellaneousAdjustment" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="TotalRefunds" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="NeweggCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="NeweggTransactionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="NeweggRefundCommissionFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="NeweggMonthlyFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="NeweggStorageFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="NeweggRMABuyoutFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="NeweggPremierFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="NeweggShippingLabelFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="TotalNeweggFee" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *         &lt;element name="TotalSettlement" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -742,6 +745,9 @@ public class GetSettlementSummaryInfoResponse {
 
                 /**
                  * 取得 settlementID 特性的值.
+                 * @return
+                 * possible object is 
+                 *     {@link int }
                  * 
                  */
                 public int getSettlementID() {
@@ -750,6 +756,9 @@ public class GetSettlementSummaryInfoResponse {
 
                 /**
                  * 設定 settlementID 特性的值.
+                 * @param value
+                 *     allowed object is
+                 *     {@link  }
                  * 
                  */
                 public void setSettlementID(int value) {

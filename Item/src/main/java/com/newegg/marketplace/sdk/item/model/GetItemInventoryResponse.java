@@ -26,57 +26,57 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="FulfillmentOption">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;enumeration value="0"/>
- *               &lt;enumeration value="1"/>
- *               &lt;enumeration value="2"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="Active">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;enumeration value="0"/>
- *               &lt;enumeration value="1"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="AvailableQuantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="WarehouseAllocation">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="Warehouse" maxOccurs="unbounded" minOccurs="0">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="WarehouseCode" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                             &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="SellerID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="ItemNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="SellerPartNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="FulfillmentOption"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;enumeration value="0"/&gt;
+ *               &lt;enumeration value="1"/&gt;
+ *               &lt;enumeration value="2"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Active"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;enumeration value="0"/&gt;
+ *               &lt;enumeration value="1"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="AvailableQuantity" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="WarehouseAllocation"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="Warehouse" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="WarehouseCode" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                             &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -185,6 +185,9 @@ public class GetItemInventoryResponse {
 
     /**
      * Gets the value of the fulfillmentOption property.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getFulfillmentOption() {
@@ -193,6 +196,9 @@ public class GetItemInventoryResponse {
 
     /**
      * Sets the value of the fulfillmentOption property.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setFulfillmentOption(int value) {
@@ -201,6 +207,9 @@ public class GetItemInventoryResponse {
 
     /**
      * Gets the value of the active property.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getActive() {
@@ -209,6 +218,9 @@ public class GetItemInventoryResponse {
 
     /**
      * Sets the value of the active property.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setActive(int value) {
@@ -217,6 +229,9 @@ public class GetItemInventoryResponse {
 
     /**
      * Gets the value of the availableQuantity property.
+     * @return
+     * possible object is 
+     *     {@link int }
      * 
      */
     public int getAvailableQuantity() {
@@ -225,6 +240,9 @@ public class GetItemInventoryResponse {
 
     /**
      * Sets the value of the availableQuantity property.
+     * @param value
+     *     allowed object is
+     *     {@link  }
      * 
      */
     public void setAvailableQuantity(int value) {
@@ -262,26 +280,26 @@ public class GetItemInventoryResponse {
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="Warehouse" maxOccurs="unbounded" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="WarehouseCode" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                   &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Warehouse" maxOccurs="unbounded" minOccurs="0"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="WarehouseCode" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *                   &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+     *                 &lt;/all&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -316,6 +334,9 @@ public class GetItemInventoryResponse {
          * Objects of the following type(s) are allowed in the list
          * {@link GetItemInventoryResponse.WarehouseAllocation.Warehouse }
          * 
+         * @return
+         * Objects of the following type(s) are allowed in the list
+         * {@link GetItemInventoryResponse.WarehouseAllocation.Warehouse }
          * 
          */
         public List<GetItemInventoryResponse.WarehouseAllocation.Warehouse> getWarehouse() {
@@ -332,16 +353,16 @@ public class GetItemInventoryResponse {
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="WarehouseCode" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *         &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="WarehouseCode" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+         *         &lt;element name="Quantity" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+         *       &lt;/all&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 

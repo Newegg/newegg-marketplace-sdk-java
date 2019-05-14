@@ -17,33 +17,33 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for GuitarsBrandValueList.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
+ * 
  * <pre>
- * &lt;simpleType name="GuitarsBrandValueList">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Silvertone"/>
- *     &lt;enumeration value="eMedia"/>
- *     &lt;enumeration value="Samson"/>
- *     &lt;enumeration value="Vox"/>
- *     &lt;enumeration value="Korg"/>
- *     &lt;enumeration value="Peavey"/>
- *     &lt;enumeration value="Casio"/>
- *     &lt;enumeration value="Behringer"/>
- *     &lt;enumeration value="Stagg"/>
- *     &lt;enumeration value="Bryant"/>
- *     &lt;enumeration value="Pyle"/>
- *     &lt;enumeration value="Zoom"/>
- *     &lt;enumeration value="Spectrum"/>
- *     &lt;enumeration value="Epiphone"/>
- *     &lt;enumeration value="Arcadia"/>
- *     &lt;enumeration value="PylePro"/>
- *     &lt;enumeration value="Nady"/>
- *     &lt;enumeration value="Fretlight"/>
- *     &lt;enumeration value="IK Multimedia"/>
- *     &lt;enumeration value="Audiovox"/>
- *     &lt;enumeration value="Fender"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GuitarsBrandValueList"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Silvertone"/&gt;
+ *     &lt;enumeration value="eMedia"/&gt;
+ *     &lt;enumeration value="Samson"/&gt;
+ *     &lt;enumeration value="Vox"/&gt;
+ *     &lt;enumeration value="Korg"/&gt;
+ *     &lt;enumeration value="Peavey"/&gt;
+ *     &lt;enumeration value="Casio"/&gt;
+ *     &lt;enumeration value="Behringer"/&gt;
+ *     &lt;enumeration value="Stagg"/&gt;
+ *     &lt;enumeration value="Bryant"/&gt;
+ *     &lt;enumeration value="Pyle"/&gt;
+ *     &lt;enumeration value="Zoom"/&gt;
+ *     &lt;enumeration value="Spectrum"/&gt;
+ *     &lt;enumeration value="Epiphone"/&gt;
+ *     &lt;enumeration value="Arcadia"/&gt;
+ *     &lt;enumeration value="PylePro"/&gt;
+ *     &lt;enumeration value="Nady"/&gt;
+ *     &lt;enumeration value="Fretlight"/&gt;
+ *     &lt;enumeration value="IK Multimedia"/&gt;
+ *     &lt;enumeration value="Audiovox"/&gt;
+ *     &lt;enumeration value="Fender"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

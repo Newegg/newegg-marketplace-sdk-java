@@ -26,105 +26,105 @@ import com.fasterxml.jackson.annotation.JsonRootName;
  * <p>下列綱要片段會指定此類別中包含的預期內容.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="IssueUser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="OperationType">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="GetReportStatusRequest"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="RequestBody">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="GetRequestStatus">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="RequestIDList" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="RequestID" maxOccurs="unbounded">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;pattern value="[0-9a-zA-Z]+"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="RequestTypeList" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="RequestType" maxOccurs="unbounded">
- *                                         &lt;simpleType>
- *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                             &lt;enumeration value="ORDER_LIST_REPORT"/>
- *                                             &lt;enumeration value="SETTLEMENT_SUMMARY_REPORT"/>
- *                                             &lt;enumeration value="SETTLEMENT_TRASACTION_REPORT"/>
- *                                             &lt;enumeration value="RMA_LIST_REPORT"/>
- *                                             &lt;enumeration value="ITEM_LOOKUP"/>
- *                                             &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/>
- *                                             &lt;enumeration value="INTERNATIONAL_PRICE_REPORT"/>
- *                                             &lt;enumeration value="PREMIER_ITEM_REPORT"/>
- *                                             &lt;enumeration value="CAPROP65_REPORT"/>
- *                                           &lt;/restriction>
- *                                         &lt;/simpleType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="MaxCount" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *                                   &lt;minInclusive value="0"/>
- *                                   &lt;maxInclusive value="100"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="RequestStatus" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                   &lt;enumeration value="ALL"/>
- *                                   &lt;enumeration value="SUBMITTED"/>
- *                                   &lt;enumeration value="IN_PROGRESS"/>
- *                                   &lt;enumeration value="FINISHED"/>
- *                                   &lt;enumeration value="CANCELLED"/>
- *                                 &lt;/restriction>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                             &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="IssueUser" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="OperationType"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="GetReportStatusRequest"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="RequestBody"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="GetRequestStatus"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="RequestIDList" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="RequestID" maxOccurs="unbounded"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;pattern value="[0-9a-zA-Z]+"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="RequestTypeList" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="RequestType" maxOccurs="unbounded"&gt;
+ *                                         &lt;simpleType&gt;
+ *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                             &lt;enumeration value="ORDER_LIST_REPORT"/&gt;
+ *                                             &lt;enumeration value="SETTLEMENT_SUMMARY_REPORT"/&gt;
+ *                                             &lt;enumeration value="SETTLEMENT_TRASACTION_REPORT"/&gt;
+ *                                             &lt;enumeration value="RMA_LIST_REPORT"/&gt;
+ *                                             &lt;enumeration value="ITEM_LOOKUP"/&gt;
+ *                                             &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/&gt;
+ *                                             &lt;enumeration value="INTERNATIONAL_PRICE_REPORT"/&gt;
+ *                                             &lt;enumeration value="PREMIER_ITEM_REPORT"/&gt;
+ *                                             &lt;enumeration value="CAPROP65_REPORT"/&gt;
+ *                                           &lt;/restriction&gt;
+ *                                         &lt;/simpleType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="MaxCount" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *                                   &lt;minInclusive value="0"/&gt;
+ *                                   &lt;maxInclusive value="100"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="RequestStatus" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                   &lt;enumeration value="ALL"/&gt;
+ *                                   &lt;enumeration value="SUBMITTED"/&gt;
+ *                                   &lt;enumeration value="IN_PROGRESS"/&gt;
+ *                                   &lt;enumeration value="FINISHED"/&gt;
+ *                                   &lt;enumeration value="CANCELLED"/&gt;
+ *                                 &lt;/restriction&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                             &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -200,7 +200,7 @@ public class GetReportStatusRequest {
      * 
      * @return
      *     possible object is
-     *     {@link NeweggAPIRequest.RequestBody }
+     *     {@link GetReportStatusRequest.RequestBody }
      *     
      */
     public GetReportStatusRequest.RequestBody getRequestBody() {
@@ -212,7 +212,7 @@ public class GetReportStatusRequest {
      * 
      * @param value
      *     allowed object is
-     *     {@link NeweggAPIRequest.RequestBody }
+     *     {@link GetReportStatusRequest.RequestBody }
      *     
      */
     public void setRequestBody(GetReportStatusRequest.RequestBody value) {
@@ -226,87 +226,87 @@ public class GetReportStatusRequest {
      * <p>下列綱要片段會指定此類別中包含的預期內容.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="GetRequestStatus">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="RequestIDList" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="RequestID" maxOccurs="unbounded">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;pattern value="[0-9a-zA-Z]+"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="RequestTypeList" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="RequestType" maxOccurs="unbounded">
-     *                               &lt;simpleType>
-     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;enumeration value="ORDER_LIST_REPORT"/>
-     *                                   &lt;enumeration value="SETTLEMENT_SUMMARY_REPORT"/>
-     *                                   &lt;enumeration value="SETTLEMENT_TRASACTION_REPORT"/>
-     *                                   &lt;enumeration value="RMA_LIST_REPORT"/>
-     *                                   &lt;enumeration value="ITEM_LOOKUP"/>
-     *                                   &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/>
-     *                                   &lt;enumeration value="INTERNATIONAL_PRICE_REPORT"/>
-     *                                   &lt;enumeration value="PREMIER_ITEM_REPORT"/>
-     *                                   &lt;enumeration value="CAPROP65_REPORT"/>
-     *                                 &lt;/restriction>
-     *                               &lt;/simpleType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="MaxCount" minOccurs="0">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-     *                         &lt;minInclusive value="0"/>
-     *                         &lt;maxInclusive value="100"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="RequestStatus" minOccurs="0">
-     *                     &lt;simpleType>
-     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                         &lt;enumeration value="ALL"/>
-     *                         &lt;enumeration value="SUBMITTED"/>
-     *                         &lt;enumeration value="IN_PROGRESS"/>
-     *                         &lt;enumeration value="FINISHED"/>
-     *                         &lt;enumeration value="CANCELLED"/>
-     *                       &lt;/restriction>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                   &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="GetRequestStatus"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="RequestIDList" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="RequestID" maxOccurs="unbounded"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;pattern value="[0-9a-zA-Z]+"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="RequestTypeList" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="RequestType" maxOccurs="unbounded"&gt;
+     *                               &lt;simpleType&gt;
+     *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                   &lt;enumeration value="ORDER_LIST_REPORT"/&gt;
+     *                                   &lt;enumeration value="SETTLEMENT_SUMMARY_REPORT"/&gt;
+     *                                   &lt;enumeration value="SETTLEMENT_TRASACTION_REPORT"/&gt;
+     *                                   &lt;enumeration value="RMA_LIST_REPORT"/&gt;
+     *                                   &lt;enumeration value="ITEM_LOOKUP"/&gt;
+     *                                   &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/&gt;
+     *                                   &lt;enumeration value="INTERNATIONAL_PRICE_REPORT"/&gt;
+     *                                   &lt;enumeration value="PREMIER_ITEM_REPORT"/&gt;
+     *                                   &lt;enumeration value="CAPROP65_REPORT"/&gt;
+     *                                 &lt;/restriction&gt;
+     *                               &lt;/simpleType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="MaxCount" minOccurs="0"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+     *                         &lt;minInclusive value="0"/&gt;
+     *                         &lt;maxInclusive value="100"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="RequestStatus" minOccurs="0"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                         &lt;enumeration value="ALL"/&gt;
+     *                         &lt;enumeration value="SUBMITTED"/&gt;
+     *                         &lt;enumeration value="IN_PROGRESS"/&gt;
+     *                         &lt;enumeration value="FINISHED"/&gt;
+     *                         &lt;enumeration value="CANCELLED"/&gt;
+     *                       &lt;/restriction&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                   &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                 &lt;/all&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -326,7 +326,7 @@ public class GetReportStatusRequest {
          * 
          * @return
          *     possible object is
-         *     {@link NeweggAPIRequest.RequestBody.GetRequestStatus }
+         *     {@link GetReportStatusRequest.RequestBody.GetRequestStatus }
          *     
          */
         public GetReportStatusRequest.RequestBody.GetRequestStatus getGetRequestStatus() {
@@ -338,7 +338,7 @@ public class GetReportStatusRequest {
          * 
          * @param value
          *     allowed object is
-         *     {@link NeweggAPIRequest.RequestBody.GetRequestStatus }
+         *     {@link GetReportStatusRequest.RequestBody.GetRequestStatus }
          *     
          */
         public void setGetRequestStatus(GetReportStatusRequest.RequestBody.GetRequestStatus value) {
@@ -352,77 +352,77 @@ public class GetReportStatusRequest {
          * <p>下列綱要片段會指定此類別中包含的預期內容.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="RequestIDList" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="RequestID" maxOccurs="unbounded">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;pattern value="[0-9a-zA-Z]+"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="RequestTypeList" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="RequestType" maxOccurs="unbounded">
-         *                     &lt;simpleType>
-         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;enumeration value="ORDER_LIST_REPORT"/>
-         *                         &lt;enumeration value="SETTLEMENT_SUMMARY_REPORT"/>
-         *                         &lt;enumeration value="SETTLEMENT_TRASACTION_REPORT"/>
-         *                         &lt;enumeration value="RMA_LIST_REPORT"/>
-         *                         &lt;enumeration value="ITEM_LOOKUP"/>
-         *                         &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/>
-         *                         &lt;enumeration value="INTERNATIONAL_PRICE_REPORT"/>
-         *                         &lt;enumeration value="PREMIER_ITEM_REPORT"/>
-         *                         &lt;enumeration value="CAPROP65_REPORT"/>
-         *                       &lt;/restriction>
-         *                     &lt;/simpleType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="MaxCount" minOccurs="0">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
-         *               &lt;minInclusive value="0"/>
-         *               &lt;maxInclusive value="100"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="RequestStatus" minOccurs="0">
-         *           &lt;simpleType>
-         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *               &lt;enumeration value="ALL"/>
-         *               &lt;enumeration value="SUBMITTED"/>
-         *               &lt;enumeration value="IN_PROGRESS"/>
-         *               &lt;enumeration value="FINISHED"/>
-         *               &lt;enumeration value="CANCELLED"/>
-         *             &lt;/restriction>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *         &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="RequestIDList" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="RequestID" maxOccurs="unbounded"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;pattern value="[0-9a-zA-Z]+"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="RequestTypeList" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="RequestType" maxOccurs="unbounded"&gt;
+         *                     &lt;simpleType&gt;
+         *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                         &lt;enumeration value="ORDER_LIST_REPORT"/&gt;
+         *                         &lt;enumeration value="SETTLEMENT_SUMMARY_REPORT"/&gt;
+         *                         &lt;enumeration value="SETTLEMENT_TRASACTION_REPORT"/&gt;
+         *                         &lt;enumeration value="RMA_LIST_REPORT"/&gt;
+         *                         &lt;enumeration value="ITEM_LOOKUP"/&gt;
+         *                         &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/&gt;
+         *                         &lt;enumeration value="INTERNATIONAL_PRICE_REPORT"/&gt;
+         *                         &lt;enumeration value="PREMIER_ITEM_REPORT"/&gt;
+         *                         &lt;enumeration value="CAPROP65_REPORT"/&gt;
+         *                       &lt;/restriction&gt;
+         *                     &lt;/simpleType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="MaxCount" minOccurs="0"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+         *               &lt;minInclusive value="0"/&gt;
+         *               &lt;maxInclusive value="100"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="RequestStatus" minOccurs="0"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *               &lt;enumeration value="ALL"/&gt;
+         *               &lt;enumeration value="SUBMITTED"/&gt;
+         *               &lt;enumeration value="IN_PROGRESS"/&gt;
+         *               &lt;enumeration value="FINISHED"/&gt;
+         *               &lt;enumeration value="CANCELLED"/&gt;
+         *             &lt;/restriction&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="RequestDateFrom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *         &lt;element name="RequestDateTo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *       &lt;/all&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -457,7 +457,7 @@ public class GetReportStatusRequest {
              * 
              * @return
              *     possible object is
-             *     {@link NeweggAPIRequest.RequestBody.GetRequestStatus.RequestIDList }
+             *     {@link GetReportStatusRequest.RequestBody.GetRequestStatus.RequestIDList }
              *     
              */
             public GetReportStatusRequest.RequestBody.GetRequestStatus.RequestIDList getRequestIDList() {
@@ -469,7 +469,7 @@ public class GetReportStatusRequest {
              * 
              * @param value
              *     allowed object is
-             *     {@link NeweggAPIRequest.RequestBody.GetRequestStatus.RequestIDList }
+             *     {@link GetReportStatusRequest.RequestBody.GetRequestStatus.RequestIDList }
              *     
              */
             public void setRequestIDList(GetReportStatusRequest.RequestBody.GetRequestStatus.RequestIDList value) {
@@ -481,7 +481,7 @@ public class GetReportStatusRequest {
              * 
              * @return
              *     possible object is
-             *     {@link NeweggAPIRequest.RequestBody.GetRequestStatus.RequestTypeList }
+             *     {@link GetReportStatusRequest.RequestBody.GetRequestStatus.RequestTypeList }
              *     
              */
             public GetReportStatusRequest.RequestBody.GetRequestStatus.RequestTypeList getRequestTypeList() {
@@ -493,7 +493,7 @@ public class GetReportStatusRequest {
              * 
              * @param value
              *     allowed object is
-             *     {@link NeweggAPIRequest.RequestBody.GetRequestStatus.RequestTypeList }
+             *     {@link GetReportStatusRequest.RequestBody.GetRequestStatus.RequestTypeList }
              *     
              */
             public void setRequestTypeList(GetReportStatusRequest.RequestBody.GetRequestStatus.RequestTypeList value) {
@@ -603,21 +603,21 @@ public class GetReportStatusRequest {
              * <p>下列綱要片段會指定此類別中包含的預期內容.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="RequestID" maxOccurs="unbounded">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;pattern value="[0-9a-zA-Z]+"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="RequestID" maxOccurs="unbounded"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;pattern value="[0-9a-zA-Z]+"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -652,6 +652,9 @@ public class GetReportStatusRequest {
                  * Objects of the following type(s) are allowed in the list
                  * {@link String }
                  * 
+                 * @return
+                 * Objects of the following type(s) are allowed in the list
+                 * {@link String }
                  * 
                  */
                 public List<String> getRequestID() {
@@ -670,29 +673,29 @@ public class GetReportStatusRequest {
              * <p>下列綱要片段會指定此類別中包含的預期內容.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="RequestType" maxOccurs="unbounded">
-             *           &lt;simpleType>
-             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;enumeration value="ORDER_LIST_REPORT"/>
-             *               &lt;enumeration value="SETTLEMENT_SUMMARY_REPORT"/>
-             *               &lt;enumeration value="SETTLEMENT_TRASACTION_REPORT"/>
-             *               &lt;enumeration value="RMA_LIST_REPORT"/>
-             *               &lt;enumeration value="ITEM_LOOKUP"/>
-             *               &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/>
-             *               &lt;enumeration value="INTERNATIONAL_PRICE_REPORT"/>
-             *               &lt;enumeration value="PREMIER_ITEM_REPORT"/>
-             *               &lt;enumeration value="CAPROP65_REPORT"/>
-             *             &lt;/restriction>
-             *           &lt;/simpleType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="RequestType" maxOccurs="unbounded"&gt;
+             *           &lt;simpleType&gt;
+             *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *               &lt;enumeration value="ORDER_LIST_REPORT"/&gt;
+             *               &lt;enumeration value="SETTLEMENT_SUMMARY_REPORT"/&gt;
+             *               &lt;enumeration value="SETTLEMENT_TRASACTION_REPORT"/&gt;
+             *               &lt;enumeration value="RMA_LIST_REPORT"/&gt;
+             *               &lt;enumeration value="ITEM_LOOKUP"/&gt;
+             *               &lt;enumeration value="INTERNATIONAL_INVENTORY_REPORT"/&gt;
+             *               &lt;enumeration value="INTERNATIONAL_PRICE_REPORT"/&gt;
+             *               &lt;enumeration value="PREMIER_ITEM_REPORT"/&gt;
+             *               &lt;enumeration value="CAPROP65_REPORT"/&gt;
+             *             &lt;/restriction&gt;
+             *           &lt;/simpleType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -727,6 +730,9 @@ public class GetReportStatusRequest {
                  * Objects of the following type(s) are allowed in the list
                  * {@link String }
                  * 
+                 * @return
+                 * Objects of the following type(s) are allowed in the list
+                 * {@link String }
                  * 
                  */
                 public List<String> getRequestType() {

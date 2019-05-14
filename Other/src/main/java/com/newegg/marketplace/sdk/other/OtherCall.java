@@ -48,7 +48,7 @@ public class OtherCall {
 	}
 	
 	/**
-	 * </pre>
+	 * <pre>
 	 * Newegg Marketplace API provides an interface in every major service group to allow you to check whether the service you are invoking is available or not. 
 	 * Each major service group is listed in the Parameters section, domain field description.  
 	 * Return each major service group’s availability. 

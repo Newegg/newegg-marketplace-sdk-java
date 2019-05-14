@@ -17,27 +17,27 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for GlobalElectricalOutletPlugTypeValueList.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
+ * 
  * <pre>
- * &lt;simpleType name="GlobalElectricalOutletPlugTypeValueList">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Plug Type ¡§A¡¨ (USA, Canada, Mexico, Japan)"/>
- *     &lt;enumeration value="Plug Type ¡§B¡¨ (USA, Canada, Mexico, Japan)"/>
- *     &lt;enumeration value="Plug Type ¡§C¡¨ (China, Ireland, Greece, Spain)"/>
- *     &lt;enumeration value="Plug Type ¡§D¡¨ (India, Pakistan, Ghana, Bangladesh)"/>
- *     &lt;enumeration value="Plug Type ¡§E¡¨ (Poland, Belgium, France, Slovakia)"/>
- *     &lt;enumeration value="Plug Type ¡§F¡¨ (Netherlands, Germany, Austria)"/>
- *     &lt;enumeration value="Plug Type ¡§G¡¨ (Ireland, UK, Singapore)"/>
- *     &lt;enumeration value="Plug Type ¡§I¡¨ (Australia, New Zealand, Argentina)"/>
- *     &lt;enumeration value="Plug Type ¡§J¡¨ (Switzerland, Jordan, Rwanda)"/>
- *     &lt;enumeration value="Plug Type ¡§K¡¨ (Denmark, Greenland, Senegal)"/>
- *     &lt;enumeration value="Plug Type ¡§L¡¨ (Italy, Syria, Libya, Chile)"/>
- *     &lt;enumeration value="Plug type ¡§M¡¨ (South Africa, Swaziland)"/>
- *     &lt;enumeration value="Plug type ¡§N¡¨ (Brazil)"/>
- *     &lt;enumeration value="Plug Type ¡§O¡¨ (Thailand)"/>
- *     &lt;enumeration value="Amplifier"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GlobalElectricalOutletPlugTypeValueList"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Aï¿½ï¿½ (USA, Canada, Mexico, Japan)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Bï¿½ï¿½ (USA, Canada, Mexico, Japan)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Cï¿½ï¿½ (China, Ireland, Greece, Spain)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Dï¿½ï¿½ (India, Pakistan, Ghana, Bangladesh)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Eï¿½ï¿½ (Poland, Belgium, France, Slovakia)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Fï¿½ï¿½ (Netherlands, Germany, Austria)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Gï¿½ï¿½ (Ireland, UK, Singapore)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Iï¿½ï¿½ (Australia, New Zealand, Argentina)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Jï¿½ï¿½ (Switzerland, Jordan, Rwanda)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Kï¿½ï¿½ (Denmark, Greenland, Senegal)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Lï¿½ï¿½ (Italy, Syria, Libya, Chile)"/&gt;
+ *     &lt;enumeration value="Plug type ï¿½ï¿½Mï¿½ï¿½ (South Africa, Swaziland)"/&gt;
+ *     &lt;enumeration value="Plug type ï¿½ï¿½Nï¿½ï¿½ (Brazil)"/&gt;
+ *     &lt;enumeration value="Plug Type ï¿½ï¿½Oï¿½ï¿½ (Thailand)"/&gt;
+ *     &lt;enumeration value="Amplifier"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

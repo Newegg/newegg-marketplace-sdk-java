@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.newegg.marketplace.sdk</groupId>
-	<artifactId>SDK</artifactId>
-	<version>0.0.1</version>
+	<groupId>com.newegg.marketplace</groupId>
+	<artifactId>sdk</artifactId>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
-
-	<name>SDK</name>
-	<url>http://maven.apache.org</url>
-
+	<description>The SDK for Newegg marketplace API</description>
+	<name>Newegg SDK for Java</name>
+	<url>https://developer.newegg.com/</url>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -17,8 +23,18 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<log4j2.version>2.11.1</log4j2.version>
 		<feign.version>10.1.0</feign.version>
+		<neweggsdk.version>${project.version}</neweggsdk.version>
 	</properties>
-
+	<developers>
+		<developer>
+			<name>Newegg Developer</name>
+			<email>developer@newegg.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<connection>https://github.com/Newegg/newegg-marketplace-sdk-java.git</connection>
+		<url>https://github.com/Newegg/newegg-marketplace-sdk-java</url>
+	</scm>
 	<dependencies>
 		<dependency>
 			<groupId>io.github.openfeign</groupId>
@@ -80,7 +96,7 @@
 			<artifactId>org.eclipse.persistence.moxy</artifactId>
 			<version>2.7.4</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -92,17 +108,18 @@
 	<modules>
 		<module>common</module>
 		<module>Item</module>
-		<module>Seller</module>		
+		<module>Seller</module>
 		<module>Order</module>
-		<module>RMA</module> 
-    	<module>Shipping</module>
-    	<module>Other</module>
-    	<module>SBN</module>
-    	<module>Report</module>
-    <module>DataFeed</module>
-  </modules>
-  
-   	<build>
+		<module>RMA</module>
+		<module>Shipping</module>
+		<module>Other</module>
+		<module>SBN</module>
+		<module>Report</module>
+		<module>DataFeed</module>
+		<module>SDK-ALL</module>
+	</modules>
+
+	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -149,23 +166,75 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M3</version>
 				<configuration>
 					<systemPropertyVariables>
 						<jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.8</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-		
+
 	<distributionManagement>
 		<repository>
-			<id>central</id>
+			<id>ossrh</id>
 			<name>sonatype</name>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</repository>
 		<snapshotRepository>
-			<id>snapshots</id>
+			<id>ossrh</id>
 			<name>sonatype-snapshots</name>
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>

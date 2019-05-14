@@ -17,48 +17,48 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for GroupHeadsetColorValueList.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
+ * 
  * <pre>
- * &lt;simpleType name="GroupHeadsetColorValueList">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="White"/>
- *     &lt;enumeration value="Black"/>
- *     &lt;enumeration value="Aluminum"/>
- *     &lt;enumeration value="Silver"/>
- *     &lt;enumeration value="Neon Orange"/>
- *     &lt;enumeration value="Neon Green"/>
- *     &lt;enumeration value="Platinum"/>
- *     &lt;enumeration value="Ice"/>
- *     &lt;enumeration value="Green"/>
- *     &lt;enumeration value="Orange"/>
- *     &lt;enumeration value="Vintage White"/>
- *     &lt;enumeration value="Whiteout"/>
- *     &lt;enumeration value="Ice Black"/>
- *     &lt;enumeration value="Neon Blue"/>
- *     &lt;enumeration value="PRO"/>
- *     &lt;enumeration value="Pink"/>
- *     &lt;enumeration value="Widget C"/>
- *     &lt;enumeration value="Widget A"/>
- *     &lt;enumeration value="Widget B"/>
- *     &lt;enumeration value="King Bee"/>
- *     &lt;enumeration value="Worker Bee"/>
- *     &lt;enumeration value="BumbleBee"/>
- *     &lt;enumeration value="BeeCaster"/>
- *     &lt;enumeration value="Blackout"/>
- *     &lt;enumeration value="Midnight Blue"/>
- *     &lt;enumeration value="Blackout + Ghost Recon Wild Lands Game Code"/>
- *     &lt;enumeration value="Blackout + Assassins Creed Game Code"/>
- *     &lt;enumeration value="Shadow Grey"/>
- *     &lt;enumeration value="Red Onyx"/>
- *     &lt;enumeration value="Cubano Gold"/>
- *     &lt;enumeration value="Slate"/>
- *     &lt;enumeration value="Teal"/>
- *     &lt;enumeration value="Red"/>
- *     &lt;enumeration value="Blackout + PUBG Bundle"/>
- *     &lt;enumeration value="Blackout + Assassin's Creed Bundle"/>
- *     &lt;enumeration value="Silver + Podcaster Bundle"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GroupHeadsetColorValueList"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="White"/&gt;
+ *     &lt;enumeration value="Black"/&gt;
+ *     &lt;enumeration value="Aluminum"/&gt;
+ *     &lt;enumeration value="Silver"/&gt;
+ *     &lt;enumeration value="Neon Orange"/&gt;
+ *     &lt;enumeration value="Neon Green"/&gt;
+ *     &lt;enumeration value="Platinum"/&gt;
+ *     &lt;enumeration value="Ice"/&gt;
+ *     &lt;enumeration value="Green"/&gt;
+ *     &lt;enumeration value="Orange"/&gt;
+ *     &lt;enumeration value="Vintage White"/&gt;
+ *     &lt;enumeration value="Whiteout"/&gt;
+ *     &lt;enumeration value="Ice Black"/&gt;
+ *     &lt;enumeration value="Neon Blue"/&gt;
+ *     &lt;enumeration value="PRO"/&gt;
+ *     &lt;enumeration value="Pink"/&gt;
+ *     &lt;enumeration value="Widget C"/&gt;
+ *     &lt;enumeration value="Widget A"/&gt;
+ *     &lt;enumeration value="Widget B"/&gt;
+ *     &lt;enumeration value="King Bee"/&gt;
+ *     &lt;enumeration value="Worker Bee"/&gt;
+ *     &lt;enumeration value="BumbleBee"/&gt;
+ *     &lt;enumeration value="BeeCaster"/&gt;
+ *     &lt;enumeration value="Blackout"/&gt;
+ *     &lt;enumeration value="Midnight Blue"/&gt;
+ *     &lt;enumeration value="Blackout + Ghost Recon Wild Lands Game Code"/&gt;
+ *     &lt;enumeration value="Blackout + Assassins Creed Game Code"/&gt;
+ *     &lt;enumeration value="Shadow Grey"/&gt;
+ *     &lt;enumeration value="Red Onyx"/&gt;
+ *     &lt;enumeration value="Cubano Gold"/&gt;
+ *     &lt;enumeration value="Slate"/&gt;
+ *     &lt;enumeration value="Teal"/&gt;
+ *     &lt;enumeration value="Red"/&gt;
+ *     &lt;enumeration value="Blackout + PUBG Bundle"/&gt;
+ *     &lt;enumeration value="Blackout + Assassin's Creed Bundle"/&gt;
+ *     &lt;enumeration value="Silver + Podcaster Bundle"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */
