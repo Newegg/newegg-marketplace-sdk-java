@@ -10,7 +10,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/rma_management/
 <dependency>
     <groupId>com.newegg.marketplace</groupId>
     <artifactId>sdk-rma</artifactId>
-    <version>1.0.0</version>
+    <version>{version}</version>
 </dependency>
 ```
 
@@ -19,7 +19,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/rma_management/
 <dependency>
     <groupId>com.newegg.marketplace</groupId>
     <artifactId>sdk-all</artifactId>
-    <version>1.0.0</version>
+    <version>{version}</version>
     <type>pom</type>
 </dependency>
 ```
@@ -30,7 +30,7 @@ Write your newegg.properties file
 # basic
 newegg.simulation=false
 newegg.platform=USA
-newegg.hosturl=https://apis.newegg.org/marketplace
+newegg.hosturl=https://api.newegg.com/marketplace
 newegg.sellerid=XXXX
 newegg.authorization=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 newegg.secretkey=XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -47,6 +47,14 @@ newegg.rma.retry.period=100
 newegg.rma.retry.maxperiod=1000
 newegg.rma.retry.maxattempts=2
 newegg.rma.loglevel=FULL
+```
+
+- loglevel
+```
+NONE: No logging
+BASIC: Log only the request method and URL and the response status code and execution time
+HEADERS: Log the basic information along with request and response headers
+FULL: Log the headers, body, and metadata for both requests and responses
 ```
 
 ### Sample code

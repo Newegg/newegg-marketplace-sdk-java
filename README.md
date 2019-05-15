@@ -19,13 +19,13 @@ To use the SDK to communicate with the Newegg API, you need to be a registered s
   <parent>
     <groupId>com.newegg.marketplace</groupId>
     <artifactId>sdk-all</artifactId>
-    <version>1.0.0</version>
+    <version>{version}</version>
   </parent>
 	
 	and other that you used
 ```
 ### Project 
-- Write your property   (newegg.properties)
+- Write your property (newegg.properties)
 
 ```properties
 newegg.simulation=false
@@ -46,6 +46,15 @@ newegg.item.retry.maxperiod=1000
 newegg.item.retry.maxattempts=2
 newegg.item.loglevel=FULL
 ```
+
+- loglevel
+```
+NONE: No logging
+BASIC: Log only the request method and URL and the response status code and execution time
+HEADERS: Log the basic information along with request and response headers
+FULL: Log the headers, body, and metadata for both requests and responses
+```
+
 - Write your code
 
 ```java

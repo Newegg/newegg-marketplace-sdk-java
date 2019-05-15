@@ -5,11 +5,11 @@ Newegg Marketplace SDK(Java) is a library to help Java programmer easily integra
 ### Maven
 - Set pom.xml of project
 
-```
+```xml
   <parent>
     <groupId>com.newegg.marketplace</groupId>
     <artifactId>sdk-all</artifactId>
-    <version>1.0.0</version>
+    <version>{version}</version>
   </parent>
 	
 	and other that you used
@@ -17,10 +17,10 @@ Newegg Marketplace SDK(Java) is a library to help Java programmer easily integra
 ### Project 
 - Write your property (newegg.properties)
 
-```
+```properties
 newegg.simulation=false
 newegg.platform=USA
-newegg.hosturl=https://apis.newegg.org/marketplace
+newegg.hosturl=https://api.newegg.com/marketplace
 newegg.sellerid=XXX
 newegg.authorization=XXXXXXXXXXXX
 newegg.secretkey=XXXX-XXXXX-XXXX-XXXX-XXXX
@@ -36,9 +36,18 @@ newegg.item.retry.maxperiod=1000
 newegg.item.retry.maxattempts=2
 newegg.item.loglevel=FULL
 ```
+
+- loglevel
+```
+NONE: No logging
+BASIC: Log only the request method and URL and the response status code and execution time
+HEADERS: Log the basic information along with request and response headers
+FULL: Log the headers, body, and metadata for both requests and responses
+```
+
 - Write your code
 
-```
+```java
 APIConfig.load(ItemConfig.class);	
 ItemCall call=new ItemCall();
 GetVolumeDiscountRequest request=new GetVolumeDiscountRequest();
@@ -69,6 +78,3 @@ You can also specify the full path of the configuration file with this system pr
 Web applications can specify the Log4j configuration file location with a servlet context parameter.
 ```
 
-## Change log
-### 1.0.0
-- initial

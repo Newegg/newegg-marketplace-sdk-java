@@ -10,9 +10,9 @@
 - CAN
 
 ### newegg.hosturl=http://xxx.xxx.xxx/marketplace
-- http://apis.newegg.org/marketplace
+- https://api.newegg.com/marketplace
 
-### newegg.sellerid=Axxx
+### newegg.sellerid=XXXX
 - your seller ID
 
 ### newegg.authorization=none
