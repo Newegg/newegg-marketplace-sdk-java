@@ -1,23 +1,29 @@
 package com.newegg.marketplace.sdk.shipping;
 
 import com.newegg.marketplace.sdk.common.Content;
+import com.newegg.marketplace.sdk.common.Content.PLATFORM;
 import com.newegg.marketplace.sdk.common.PlatformException;
+import com.newegg.marketplace.sdk.shipping.inner.ShipODCaller;
 import com.newegg.marketplace.sdk.shipping.inner.ShipOPCaller;
 import com.newegg.marketplace.sdk.shipping.inner.ShipOTCaller;
-import com.newegg.marketplace.sdk.shipping.model.GetPackageListRequest;
-import com.newegg.marketplace.sdk.shipping.model.GetPackageListResponse;
-import com.newegg.marketplace.sdk.shipping.model.GetShippingLabelRequest;
-import com.newegg.marketplace.sdk.shipping.model.GetShippinLabelResponse;
 import com.newegg.marketplace.sdk.shipping.model.ConfirmShipRequest;
 import com.newegg.marketplace.sdk.shipping.model.ConfirmShipResponse;
+import com.newegg.marketplace.sdk.shipping.model.GetPackageListRequest;
+import com.newegg.marketplace.sdk.shipping.model.GetPackageListResponse;
+import com.newegg.marketplace.sdk.shipping.model.GetShippinLabelResponse;
 import com.newegg.marketplace.sdk.shipping.model.GetShippingDetailRequest;
 import com.newegg.marketplace.sdk.shipping.model.GetShippingDetailResponse;
+import com.newegg.marketplace.sdk.shipping.model.GetShippingLabelRequest;
+import com.newegg.marketplace.sdk.shipping.model.ShippingLabelEstimateRequest;
+import com.newegg.marketplace.sdk.shipping.model.ShippingLabelEstimateResponse;
+import com.newegg.marketplace.sdk.shipping.model.ShippingLabelReprintRequest;
+import com.newegg.marketplace.sdk.shipping.model.ShippingLabelReprintResponse;
+import com.newegg.marketplace.sdk.shipping.model.ShippingNewLabelSubmitRequest;
+import com.newegg.marketplace.sdk.shipping.model.ShippingNewLabelSubmitResponse;
 import com.newegg.marketplace.sdk.shipping.model.SubmitShippingRequest;
 import com.newegg.marketplace.sdk.shipping.model.SubmitShippingResponse;
 import com.newegg.marketplace.sdk.shipping.model.VoidShippingRequest;
 import com.newegg.marketplace.sdk.shipping.model.VoidShippingResponse;
-
-import com.newegg.marketplace.sdk.common.Content.PLATFORM;
 
 /**
 Copyright (c) 2000-present, Newegg Inc.
@@ -45,6 +51,7 @@ public class ShippingCall {
 
 	private ShipOPCaller shipOPCaller;
 	private ShipOTCaller shipOTCaller;
+	private ShipODCaller shipODCaller;
 
 	public ShippingCall() {
 		this(Content.MEDIA_TYPE.XML);
@@ -55,10 +62,12 @@ public class ShippingCall {
 		case JSON:
 			shipOPCaller = ShipOPCaller.buildJSON();
 			shipOTCaller = ShipOTCaller.buildJSON();
+			shipODCaller = ShipODCaller.buildJSON();
 			break;
 		case XML:
 			shipOPCaller = ShipOPCaller.buildXML();
 			shipOTCaller = ShipOTCaller.buildXML();
+			shipODCaller = ShipODCaller.buildXML();
 			break;
 		default:
 			throw new RuntimeException("Never Happened!");
@@ -167,4 +176,39 @@ public class ShippingCall {
 			throw new PlatformException(PLATFORM.CAN.name());
 	}
 
+	/**
+	 * <pre>
+	 * Confirm/ship orders using Newegg Shipping Label Services.
+	 * </pre>
+	 * 
+	 * @param body {@linkplain ShippingNewLabelSubmitRequest}
+	 * @return {@linkplain ShippingNewLabelSubmitResponse}
+	 */
+	public ShippingNewLabelSubmitResponse createShippingLabel(ShippingNewLabelSubmitRequest body) {
+        return shipODCaller.shippingNewLabelSubmitRequest(body);
+	}
+	
+	/**
+     * <pre>
+     * Submit a request for an estimation of the shipping cost for the order using Newegg Shipping Label Service.
+     * </pre>
+     * 
+     * @param body {@linkplain ShippingLabelEstimateRequest}
+     * @return {@linkplain ShippingLabelEstimateResponse}
+     */
+    public ShippingLabelEstimateResponse estimateShippingLabel(ShippingLabelEstimateRequest body) {
+           return shipODCaller.shippingLabelEstimateRequest(body);
+    }
+    
+    /**
+     * <pre>
+     * Reprint the shipping labels and package lists for confirmed orders.
+     * </pre>
+     * 
+     * @param body {@linkplain ShippingLabelReprintRequest}
+     * @return {@linkplain ShippingLabelReprintResponse}
+     */
+    public ShippingLabelReprintResponse reprintShippingLabel(ShippingLabelReprintRequest body) {
+           return shipODCaller.shippingLabelReprintRequest(body);
+    }
 }

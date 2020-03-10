@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <IsSuccess>true</IsSuccess>
+    <OperationType>EstimateShippingLabelResponse</OperationType>
+    <SellerID>A006</SellerID>
+    <ResponseBody>
+        <Shipment>
+            <OrderNumber>2135751360</OrderNumber>
+            <EstimatedDate>12/25/2015</EstimatedDate>
+            <PackageList>
+                <Package>
+                    <PackageWeight>5</PackageWeight>
+                    <PackageLength>5.00</PackageLength>
+                    <PackageHeight>4.00</PackageHeight>
+                    <PackageWidth>3.00</PackageWidth>
+                    <SignatureOptions>Regular</SignatureOptions>
+                    <ProcessResult>Success</ProcessResult>
+                    <ErrorMessage/>
+                    <EstimatedRate>
+                        <EstimatedShipWeight>6.5</EstimatedShipWeight>
+                        <EstimatedArriveBy>12/29/2015</EstimatedArriveBy>
+                        <EstimatedShippingAmount>21.94</EstimatedShippingAmount>
+                        <EstimatedSignatureOptions>4.25</EstimatedSignatureOptions>
+                        <EstimatedTotal>26.19</EstimatedTotal>
+                    </EstimatedRate>
+                </Package>
+                <Package>
+                    <PackageWeight>1.5</PackageWeight>
+                    <PackageLength>2.00</PackageLength>
+                    <PackageHeight>3.00</PackageHeight>
+                    <PackageWidth>4.00</PackageWidth>
+                    <ProcessResult>Success</ProcessResult>
+                    <ErrorMessage/>
+                    <EstimatedRate>
+                        <EstimatedShipWeight>6.5</EstimatedShipWeight>
+                        <EstimatedArriveBy>12/29/2015</EstimatedArriveBy>
+                        <EstimatedShippingAmount>15.50</EstimatedShippingAmount>
+                        <EstimatedSignatureOptions>0.00</EstimatedSignatureOptions>
+                        <EstimatedTotal>15.50</EstimatedTotal>
+                    </EstimatedRate>
+                </Package>
+            </PackageList>
+        </Shipment>
+    </ResponseBody>
+</NeweggAPIResponse>

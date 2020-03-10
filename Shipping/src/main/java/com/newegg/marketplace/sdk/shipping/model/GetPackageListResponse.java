@@ -369,7 +369,7 @@ public class GetPackageListResponse {
         public static class RequestList {
 
             @XmlElement(name = "Request", required = true)
-            @JsonProperty("RequestList")
+            @JsonProperty("Request")
             protected List<GetPackageListResponse.ResponseBody.RequestList.Request> request;
 
             /**

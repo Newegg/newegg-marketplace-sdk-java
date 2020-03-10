@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+    <OperationType>ReprintShippingLabelResponse</OperationType>
+    <SellerID>A006</SellerID>
+    <ResponseBody>
+        <Shipment>
+            <OrderNumber>2135751360</OrderNumber>
+            <OrderStatus>Shipped</OrderStatus>
+            <PackageList>
+                <Package>
+                    <TrackingNumber>1Z8V016A0377769652</TrackingNumber>
+                    <SignatureOptions>Regular</SignatureOptions>
+                    <LabelUrl>http://images10.newegg.com/SBNInbound/UPSShippingLabel/dc395051-a1ba-4c7e-99c9-94025bc7577e.pdf</LabelUrl>
+                    <PackingListUrl>http://images10.newegg.com/SBNInbound/UPSShippingLabel/dc395051-a1ba-4c7e-99c9-94025bc7577e.pdf</PackingListUrl>
+                    <ItemList>
+                        <Item>
+                            <SellerPartNumber>201307220000101</SellerPartNumber>
+                            <Quantity>4</Quantity>
+                        </Item>
+                        <Item>
+                            <SellerPartNumber>SARATEST0118</SellerPartNumber>
+                            <Quantity>1</Quantity>
+                        </Item>
+                    </ItemList>
+                </Package>
+            </PackageList>
+        </Shipment>
+    </ResponseBody>
+</NeweggAPIResponse>

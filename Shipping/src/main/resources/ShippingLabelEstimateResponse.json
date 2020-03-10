@@ -1,0 +1,46 @@
+{
+  "NeweggAPIResponse": {
+    "IsSuccess": "true",
+    "OperationType": "EstimateShippingLabelResponse",
+    "SellerID": "A006",
+    "ResponseBody": {
+      "Shipment": {
+        "OrderNumber": "2135751360",
+        "EstimatedDate": "12/25/2015",
+        "PackageList": {
+          "Package": [
+            {
+              "PackageWeight": "5",
+              "PackageLength": "5.00",
+              "PackageHeight": "4.00",
+              "PackageWidth": "3.00",
+              "SignatureOptions": "Regular",
+              "ProcessResult": "Success",
+              "EstimatedRate": {
+                "EstimatedShipWeight": "6.5",
+                "EstimatedArriveBy": "12/29/2015",
+                "EstimatedShippingAmount": "21.94",
+                "EstimatedSignatureOptions": "4.25",
+                "EstimatedTotal": "26.19"
+              }
+            },
+            {
+              "PackageWeight": "1.5",
+              "PackageLength": "2.00",
+              "PackageHeight": "3.00",
+              "PackageWidth": "4.00",
+              "ProcessResult": "Success",
+              "EstimatedRate": {
+                "EstimatedShipWeight": "6.5",
+                "EstimatedArriveBy": "12/29/2015",
+                "EstimatedShippingAmount": "15.50",
+                "EstimatedSignatureOptions": "0.00",
+                "EstimatedTotal": "15.50"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

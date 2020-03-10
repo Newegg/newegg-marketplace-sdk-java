@@ -1,0 +1,32 @@
+{
+  "NeweggAPIRequest": {
+    "OperationType": "ReprintShippingLabelResponse",
+    "SellerID": "A006",
+    "ResponseBody": {
+      "Shipment": {
+        "OrderNumber": "2135751360",
+        "OrderStatus": "Shipped",
+        "PackageList": {
+          "Package": {
+            "TrackingNumber": "1Z8V016A0377769652",
+            "SignatureOptions": "Regular",
+            "LabelUrl": "http://images10.newegg.com/SBNInbound/UPSShippingLabel/dc395051-a1ba-4c7e-99c9-94025bc7577e.pdf",
+            "PackingListUrl": "http://images10.newegg.com/SBNInbound/UPSShippingLabel/dc395051-a1ba-4c7e-99c9-94025bc7577e.pdf",
+            "ItemList": {
+              "Item": [
+                {
+                  "SellerPartNumber": "201307220000101",
+                  "Quantity": "4"
+                },
+                {
+                  "SellerPartNumber": "SARATEST0118",
+                  "Quantity": "1"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

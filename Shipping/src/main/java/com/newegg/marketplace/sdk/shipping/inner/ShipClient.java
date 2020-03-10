@@ -45,6 +45,9 @@ public class ShipClient extends BaseClient{
 				client=genMockClient(client,"/ShippingVoidResponse.json",HttpMethod.POST,"/shippingservice/shippinglabel/voidshippingrequest?sellerid=" + Content.SellerID);
 				client=genMockClient(client,"/GetPackageListResponse.json",HttpMethod.PUT,"/shippingservice/shippinglabel/packagelist?sellerid=" + Content.SellerID);
 				client=genMockClient(client,"/GetShippingLabelResponse.json",HttpMethod.PUT,"/shippingservice/shippinglabel/shippinglabels?sellerid=" + Content.SellerID);
+				client=genMockClient(client,"/ShippingNewLabelSubmitResponse.json",HttpMethod.POST,"/shippingservice/shippinglabel/createshippinglabel?sellerid=" + Content.SellerID);
+				client=genMockClient(client,"/ShippingLabelEstimateResponse.json",HttpMethod.POST,"/shippingservice/shippinglabel/estimateshippinglabel?sellerid=" + Content.SellerID);
+				client=genMockClient(client,"/ShippingLabelReprintResponse.json",HttpMethod.POST,"/shippingservice/shippinglabel/reprintshippinglabel?sellerid=" + Content.SellerID);
 				break;	
 			case XML:				
 				client=genMockClient(client,"/ShippingSubmitResponse.xml",HttpMethod.POST,"/shippingservice/shippinglabel/shippingrequest?sellerid=" + Content.SellerID);
@@ -53,6 +56,9 @@ public class ShipClient extends BaseClient{
 				client=genMockClient(client,"/ShippingVoidResponse.xml",HttpMethod.POST,"/shippingservice/shippinglabel/voidshippingrequest?sellerid=" + Content.SellerID);
 				client=genMockClient(client,"/GetPackageListResponse.xml",HttpMethod.PUT,"/shippingservice/shippinglabel/packagelist?sellerid=" + Content.SellerID);
 				client=genMockClient(client,"/GetShippingLabelResponse.xml",HttpMethod.PUT,"/shippingservice/shippinglabel/shippinglabels?sellerid=" + Content.SellerID);
+				client=genMockClient(client,"/ShippingNewLabelSubmitResponse.xml",HttpMethod.POST,"/shippingservice/shippinglabel/createshippinglabel?sellerid=" + Content.SellerID);
+                client=genMockClient(client,"/ShippingLabelEstimateResponse.xml",HttpMethod.POST,"/shippingservice/shippinglabel/estimateshippinglabel?sellerid=" + Content.SellerID);
+                client=genMockClient(client,"/ShippingLabelReprintResponse.xml",HttpMethod.POST,"/shippingservice/shippinglabel/reprintshippinglabel?sellerid=" + Content.SellerID);
 				break;
 			}
 		}
