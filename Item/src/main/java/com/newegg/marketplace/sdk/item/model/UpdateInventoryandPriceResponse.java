@@ -105,8 +105,8 @@ public class UpdateInventoryandPriceResponse {
     /*@XmlElement(name = "ShipByNewegg", required = true)
     @JsonProperty("ShipByNewegg")
     protected int ShipByNewegg;*/
-    @XmlElement(name = "ShipByNewegg")
-    @JsonProperty("ShipByNewegg")
+    @XmlElement(name = "FulfillmentOption")
+    @JsonProperty("FulfillmentOption")
     protected int fulfillmentOption;
     @XmlElement(name = "Active")
     @JsonProperty("Active")
@@ -129,6 +129,9 @@ public class UpdateInventoryandPriceResponse {
     @XmlElement(name = "EnableFreeShipping")
     @JsonProperty("EnableFreeShipping")
     protected int enableFreeShipping;
+    @XmlElement(name = "LimitQuantity")
+    @JsonProperty("LimitQuantity")
+    protected int limitQuantity;
 
     /**
      * Gets the value of the result property.
@@ -407,5 +410,13 @@ public class UpdateInventoryandPriceResponse {
     public void setEnableFreeShipping(int value) {
         this.enableFreeShipping = value;
     }
+
+	public int getLimitQuantity() {
+		return limitQuantity;
+	}
+
+	public void setLimitQuantity(int limitQuantity) {
+		this.limitQuantity = limitQuantity;
+	}
 
 }

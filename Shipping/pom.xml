@@ -11,6 +11,7 @@
 	<artifactId>sdk-shipping</artifactId>
 	<name>Newegg SDK for Java - Shipping</name>
 	<url>https://developer.newegg.com/</url>
+	<version>1.1.0</version>
 	<description>Newegg marketplace sellers can take advantage of discounted shipping rates by using the Newegg Shipping Label Service for Newegg Marketplace orders.</description>
 	<dependencies>
 		<dependency>

@@ -22,9 +22,8 @@ import com.newegg.marketplace.sdk.datafeed.model.ItemBasicInformationFeedRequest
 import com.newegg.marketplace.sdk.datafeed.model.ItemBasicInformationFeedRequest.Message.Itemfeed.Item.BasicInfo.Warning.ChokingHazard;
 import com.newegg.marketplace.sdk.datafeed.model.ItemBasicInformationFeedResponse;
 import com.newegg.marketplace.sdk.datafeed.model.ItemCreationOrUpdateFeedRequest;
-import com.newegg.marketplace.sdk.datafeed.model.ItemCreationOrUpdateFeedResponse;
 import com.newegg.marketplace.sdk.datafeed.model.ItemCreationOrUpdateFeedRequest.Message.Itemfeed.Item.SubCategoryProperty;
-import com.newegg.marketplace.sdk.datafeed.model.SubmitFeedResponse;
+import com.newegg.marketplace.sdk.datafeed.model.ItemCreationOrUpdateFeedResponse;
 import com.newegg.marketplace.sdk.datafeed.model.sub.Propertys;
 
 public class SubmitCreationCallerTest {

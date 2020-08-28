@@ -10,57 +10,58 @@
 	<packaging>pom</packaging>
 	<name>Newegg SDK for Java - All Modules</name>
 	<url>https://developer.newegg.com/</url>
+	<version>1.1.0</version>
 	<description>Newegg Marketplace SDK(Java) is a library to help Java programmer easily integrates with Newegg Marketplace API. It provides the definition of the data objects models to help coder create the request and resolve the response. It also provides customize of logger and retry mechanism.</description>
 	<dependencies>
 		<dependency>
 			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-common</artifactId>
-			<version>${neweggsdk.version}</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-item</artifactId>
-			<version>${neweggsdk.version}</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-seller</artifactId>
-			<version>${neweggsdk.version}</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-order</artifactId>
-			<version>${neweggsdk.version}</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-rma</artifactId>
-			<version>${neweggsdk.version}</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-shipping</artifactId>
-			<version>${neweggsdk.version}</version>
+			<version>1.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-other</artifactId>
-			<version>${neweggsdk.version}</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-sbn</artifactId>
-			<version>${neweggsdk.version}</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-report</artifactId>
-			<version>${neweggsdk.version}</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-datafeed</artifactId>
-			<version>${neweggsdk.version}</version>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 </project>

@@ -1331,6 +1331,7 @@ public class ExistingItemCreationFeedRequest {
                     "map",
                     "checkoutMAP",
                     "sellingPrice",
+                    "limitQuantity",
                     "shipping",
                     "inventory",
                     "packsOrSets",
@@ -1936,6 +1937,7 @@ public class ExistingItemCreationFeedRequest {
                         }
 
                     }
+
 
                 }
 

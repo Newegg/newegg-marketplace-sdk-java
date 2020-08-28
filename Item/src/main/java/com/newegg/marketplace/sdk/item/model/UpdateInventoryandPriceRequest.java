@@ -154,6 +154,9 @@ public class UpdateInventoryandPriceRequest {
     @XmlElement(name = "SellingPrice")
     @JsonProperty("SellingPrice")
     protected BigDecimal sellingPrice;
+    @XmlElement(name = "LimitQuantity")
+    @JsonProperty("LimitQuantity")
+    protected int limitQuantity;  
     @XmlElement(name = "EnableFreeShipping")
     @JsonProperty("EnableFreeShipping")
     protected Integer enableFreeShipping;
@@ -428,5 +431,13 @@ public class UpdateInventoryandPriceRequest {
     public void setFulfillmentOption(Integer value) {
         this.fulfillmentOption = value;
     }
+
+	public int getLimitQuantity() {
+		return limitQuantity;
+	}
+
+	public void setLimitQuantity(int limitQuantity) {
+		this.limitQuantity = limitQuantity;
+	}
 
 }

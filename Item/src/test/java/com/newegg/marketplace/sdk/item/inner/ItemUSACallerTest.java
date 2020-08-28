@@ -42,6 +42,7 @@ public class ItemUSACallerTest {
 		e.setCurrency("USD");
 		e.setActive(0);
 		e.setCheckoutMAP(0);
+		e.setLimitQuantity(30);
 		e.setEnableFreeShipping(0);
 		e.setMAP(new BigDecimal("0"));
 		e.setMSRP(new BigDecimal("99.77"));
@@ -67,6 +68,7 @@ public class ItemUSACallerTest {
 		e.setActive(0);
 		e.setCheckoutMAP(0);
 		e.setEnableFreeShipping(0);
+		e.setLimitQuantity(30);
 		e.setMAP(new BigDecimal("0"));
 		e.setMSRP(new BigDecimal("99.77"));
 		e.setSellingPrice(new BigDecimal("99.77"));	

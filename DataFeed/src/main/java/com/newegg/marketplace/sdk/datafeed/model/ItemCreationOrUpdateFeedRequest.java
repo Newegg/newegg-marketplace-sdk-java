@@ -3582,6 +3582,7 @@ public class ItemCreationOrUpdateFeedRequest {
                     "map",
                     "checkoutMAP",
                     "sellingPrice",
+                    "limitQuantity",
                     "shipping",
                     "inventory",
                     "activationMark",
@@ -3630,6 +3631,8 @@ public class ItemCreationOrUpdateFeedRequest {
                     protected String checkoutMAP;
                     @XmlElement(name = "SellingPrice", required = true)
                     protected BigDecimal sellingPrice;
+                    @XmlElement(name = "LimitQuantity")
+                    protected int limitQuantity;                    
                     @XmlElement(name = "Shipping", required = true)
                     protected String shipping;
                     @XmlElement(name = "Inventory")
@@ -5306,6 +5309,15 @@ public class ItemCreationOrUpdateFeedRequest {
                         }
 
                     }
+
+
+					public int getLimitQuantity() {
+						return limitQuantity;
+					}
+
+					public void setLimitQuantity(int limitQuantity) {
+						this.limitQuantity = limitQuantity;
+					}
 
                 }
 

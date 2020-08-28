@@ -615,6 +615,9 @@ public class UpdateItemPriceResponse {
             @XmlElement(name = "SellingPrice", required = true)
             @JsonProperty("SellingPrice")
             protected BigDecimal sellingPrice;
+            @XmlElement(name = "LimitQuantity", required = true)
+            @JsonProperty("LimitQuantity")
+            protected int limitQuantity;
             @XmlElement(name = "EnableFreeShipping", required = true)
             @JsonProperty("EnableFreeShipping")
             protected BigInteger enableFreeShipping;
@@ -810,6 +813,14 @@ public class UpdateItemPriceResponse {
             public void setEnableFreeShipping(BigInteger value) {
                 this.enableFreeShipping = value;
             }
+
+			public int getLimitQuantity() {
+				return limitQuantity;
+			}
+
+			public void setLimitQuantity(int limitQuantity) {
+				this.limitQuantity = limitQuantity;
+			}
 
         }
 

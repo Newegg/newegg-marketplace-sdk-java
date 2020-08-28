@@ -43,7 +43,8 @@ public class ItemCBCallerTest {
 		request.setFulfillmentOption(0);
 		request.setInventory(99);
 		request.setMSRP(new BigDecimal("99.77"));
-		request.setSellingPrice(new BigDecimal("99.77"));		
+		request.setSellingPrice(new BigDecimal("99.77"));
+		request.setLimitQuantity(100);
 		UpdateInventoryandPriceResponse r=call.updateInventoryAndPrice(request);
 		assertTrue(Content.SellerID.equals(r.getSellerID()));
 		assertEquals("Group-By test Item A",r.getSellerPartNumber());
@@ -63,6 +64,7 @@ public class ItemCBCallerTest {
 		request.setInventory(99);
 		request.setMSRP(new BigDecimal("99.77"));
 		request.setSellingPrice(new BigDecimal("99.77"));		
+		request.setLimitQuantity(100);
 		UpdateInventoryandPriceResponse r=call.updateInventoryAndPrice(request);
 		assertTrue(Content.SellerID.equals(r.getSellerID()));
 		assertEquals("Group-By test Item A",r.getSellerPartNumber());
