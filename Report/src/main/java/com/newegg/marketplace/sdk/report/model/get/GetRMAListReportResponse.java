@@ -1260,6 +1260,39 @@ public class GetRMAListReportResponse {
                 @XmlElement(name = "SellerID", required = true)
                 @JsonProperty("SellerID")
                 protected String sellerID;
+                @XmlElement(name = "RMANumber")
+                @JsonProperty("RMANumber")
+                protected BigInteger rmaNumber;
+                @XmlElement(name = "RMATypeDescription")
+                @JsonProperty("RMATypeDescription")
+                protected  String rmaTypeDescription;
+                @XmlElement(name = "RMAType")
+                @JsonProperty("RMAType")
+                protected int rmaType;
+                @XmlElement(name = "SellerRMANumber")
+                @JsonProperty("SellerRMANumber")
+                protected String sellerRMANumber;
+                
+                @XmlElement(name = "RMADate")
+                @JsonProperty("RMADate")
+                protected String rmaDate;
+                
+                @XmlElement(name = "RMAStatus")
+                @JsonProperty("RMAStatus")
+                protected int rmaStatus;
+                
+                @XmlElement(name = "RMAStatusDescription")
+                @JsonProperty("RMAStatusDescription")
+                protected String rmaStatusDescription;
+                
+                @XmlElement(name = "LastEditDate")
+                @JsonProperty("LastEditDate")
+                protected  String lastEditDate;
+                
+                @XmlElement(name = "LastEditUser")
+                @JsonProperty("LastEditUser")
+                protected  String lastEditUser;
+                
                 @XmlElement(name = "OrderNumber", required = true)
                 @JsonProperty("OrderNumber")
                 protected BigInteger orderNumber;
@@ -1269,6 +1302,15 @@ public class GetRMAListReportResponse {
                 @XmlElement(name = "InvoiceNumber", required = true)
                 @JsonProperty("InvoiceNumber")
                 protected BigInteger invoiceNumber;
+                
+                @XmlElement(name = "OrderAmount")
+                @JsonProperty("OrderAmount")
+                protected BigDecimal  orderAmount;
+                
+                @XmlElement(name="RMAProcessedBy")
+                @JsonProperty("RMAProcessedBy")
+                protected String rmaProcessedBy;
+                
                 @XmlElement(name = "OrderDownloaded")
                 @JsonProperty("OrderDownloaded")
                 protected String orderDownloaded;
@@ -1287,6 +1329,31 @@ public class GetRMAListReportResponse {
                 @XmlElement(name = "CustomerPhoneNumber", required = true)
                 @JsonProperty("CustomerPhoneNumber")
                 protected String customerPhoneNumber;
+                
+                @XmlElement(name = "CustomerAddress")
+                @JsonProperty("CustomerAddress")
+                protected String customerAddress;
+                
+                @XmlElement(name = "RMAReceiveDate")
+                @JsonProperty("RMAReceiveDate")
+                protected String rmaReceiveDate;
+                
+                @XmlElement(name = "RMANote")
+                @JsonProperty("RMANote")
+                protected String rmaNote;
+                
+                @XmlElement(name = "RefundGSTorHSTAmount")
+                @JsonProperty("RefundGSTorHSTAmount")
+                protected String refundGSTorHSTAmount;
+                
+                @XmlElement(name = "RefundPSTorQSTAmount")
+                @JsonProperty("RefundPSTorQSTAmount")
+                protected String refundPSTorQSTAmount;
+                
+                @XmlElement(name = "ReplacementOrderNumber")
+                @JsonProperty("ReplacementOrderNumber")
+                protected String replacementOrderNumber;
+                
                 @XmlElement(name = "CustomerEmailAddress", required = true)
                 @JsonProperty("CustomerEmailAddress")
                 protected String customerEmailAddress;
@@ -1362,6 +1429,258 @@ public class GetRMAListReportResponse {
                 @XmlElement(name = "PackageInfoList", required = true)
                 @JsonProperty("PackageInfoList")
                 protected GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.PackageInfoList packageInfoList;
+                
+                @XmlElement(name = "ReturnShippingLabel")
+                @JsonProperty("ReturnShippingLabel")
+                protected GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.ReturnShippingLabel returnShippingLabel;
+                
+                
+                @XmlElement(name = "RMATransactionList")
+                @JsonProperty("RMATransactionList")
+                protected GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.RMATransactionList rmaTransactionList;
+                
+                @XmlAccessorType(XmlAccessType.FIELD)
+                @XmlType(name = "", propOrder = {
+                   
+                })
+                public static class RMATransactionList {
+                	 @XmlElement(name = "RMATransaction")
+                     @JsonProperty("RMATransaction")
+                     protected List<GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.RMATransactionList.RMATransaction> rmaTransaction;
+                	 
+                     
+                     @XmlAccessorType(XmlAccessType.FIELD)
+                     @XmlType(name = "", propOrder = {
+                        
+                     })
+                	 public static class RMATransaction{
+                    	 @XmlElement(name = "SellerPartNumber")
+                    	 @JsonProperty("SellerPartNumber")
+                		 protected String sellerPartNumber;
+                    	 
+                    	 @XmlElement(name = "MfrPartNumber")
+                    	 @JsonProperty("MfrPartNumber")
+                    	 protected String mfrPartNumber;
+                    	 
+                    	 @XmlElement(name = "NeweggItemNumber")
+                    	 @JsonProperty("NeweggItemNumber")
+                    	 protected String neweggItemNumber;
+                    	 
+                    	 @XmlElement(name = "Description")
+                    	 @JsonProperty("Description")
+                    	 protected String description;
+                    	 
+                    	 @XmlElement(name = "UnitPrice")
+                    	 @JsonProperty("UnitPrice")
+                    	 protected BigDecimal unitPrice;
+                    	 
+                    	 @XmlElement(name = "RefundInfo")
+                    	 @JsonProperty("RefundInfo")
+                    	 protected GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.RMATransactionList.RMATransaction.RefundInfo refundInfo;
+
+                    	 
+                    	  @XmlAccessorType(XmlAccessType.FIELD)
+                          @XmlType(name = "", propOrder = {
+                             
+                          })
+                    	 public static class RefundInfo{
+                    		 @XmlElement(name = "ItemReturnQty")
+                    		 @JsonProperty("ItemReturnQty")
+                    		 protected int itemReturnQty;
+                    		 
+                    		 @XmlElement(name = "ItemRefundPerQty")
+                    		 @JsonProperty("ItemRefundPerQty")
+                    		 protected BigDecimal itemRefundPerQty;
+                    		 
+                    		 @XmlElement(name = "ItemShippingRefund")
+                    		 @JsonProperty("ItemShippingRefund")
+                    		 protected BigDecimal itemShippingRefund;
+                    		 
+                      		 @XmlElement(name = "RMATotalRefund")
+                    		 @JsonProperty("RMATotalRefund")
+                    		 protected BigDecimal rmaTotalRefund;
+                      		 
+                      		 @XmlElement(name = "RefundReason")
+                      		 @JsonProperty("RefundReason")
+                      		 protected String refundReason;
+                      		 
+                      		 @XmlElement(name = "RefundReasonDescription")
+                      		 @JsonProperty("RefundReasonDescription")
+                      		 protected String refundReasonDescription;
+
+
+							public BigDecimal getItemRefundPerQty() {
+								return itemRefundPerQty;
+							}
+
+							public void setItemRefundPerQty(BigDecimal itemRefundPerQty) {
+								this.itemRefundPerQty = itemRefundPerQty;
+							}
+
+							public BigDecimal getItemShippingRefund() {
+								return itemShippingRefund;
+							}
+
+							public void setItemShippingRefund(BigDecimal itemShippingRefund) {
+								this.itemShippingRefund = itemShippingRefund;
+							}
+
+							public BigDecimal getRmaTotalRefund() {
+								return rmaTotalRefund;
+							}
+
+							public void setRmaTotalRefund(BigDecimal rmaTotalRefund) {
+								this.rmaTotalRefund = rmaTotalRefund;
+							}
+
+							public String getRefundReason() {
+								return refundReason;
+							}
+
+							public void setRefundReason(String refundReason) {
+								this.refundReason = refundReason;
+							}
+
+							public String getRefundReasonDescription() {
+								return refundReasonDescription;
+							}
+
+							public void setRefundReasonDescription(String refundReasonDescription) {
+								this.refundReasonDescription = refundReasonDescription;
+							}
+
+							public int getItemReturnQty() {
+								return itemReturnQty;
+							}
+
+							public void setItemReturnQty(int itemReturnQty) {
+								this.itemReturnQty = itemReturnQty;
+							}
+                    	 }
+                    	 
+						public String getSellerPartNumber() {
+							return sellerPartNumber;
+						}
+
+						public void setSellerPartNumber(String sellerPartNumber) {
+							this.sellerPartNumber = sellerPartNumber;
+						}
+
+						public String getMfrPartNumber() {
+							return mfrPartNumber;
+						}
+
+						public void setMfrPartNumber(String mfrPartNumber) {
+							this.mfrPartNumber = mfrPartNumber;
+						}
+
+						public String getNeweggItemNumber() {
+							return neweggItemNumber;
+						}
+
+						public void setNeweggItemNumber(String neweggItemNumber) {
+							this.neweggItemNumber = neweggItemNumber;
+						}
+
+						public String getDescription() {
+							return description;
+						}
+
+						public void setDescription(String description) {
+							this.description = description;
+						}
+
+						public BigDecimal getUnitPrice() {
+							return unitPrice;
+						}
+
+						public void setUnitPrice(BigDecimal unitPrice) {
+							this.unitPrice = unitPrice;
+						}
+
+						public GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.RMATransactionList.RMATransaction.RefundInfo getRefundInfo() {
+							return refundInfo;
+						}
+
+						public void setRefundInfo(
+								GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.RMATransactionList.RMATransaction.RefundInfo refundInfo) {
+							this.refundInfo = refundInfo;
+						}
+                	 }
+
+
+					public List<GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.RMATransactionList.RMATransaction> getRmaTransaction() {
+						return rmaTransaction;
+					}
+
+
+					public void setRmaTransaction(
+							List<GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.RMATransactionList.RMATransaction> rmaTransaction) {
+						this.rmaTransaction = rmaTransaction;
+					}
+                	
+                }
+                
+                @XmlAccessorType(XmlAccessType.FIELD)
+                @XmlType(name = "", propOrder = {
+                   
+                })
+                public static class ReturnShippingLabel {
+                    @XmlElement(name = "Label")
+                    @JsonProperty("Label")
+                    protected List<GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.ReturnShippingLabel.Label> label;
+                    
+                    @XmlAccessorType(XmlAccessType.FIELD)
+                    @XmlType(name = "", propOrder = {
+
+                    })
+                    public static class Label{
+                    	@XmlElement(name = "TrackingNumber")
+                    	@JsonProperty("TrackingNumber")
+                    	protected String trackingNumber;
+                    	@XmlElement(name = "TrackingURL")
+                    	@JsonProperty("TrackingURL")
+                    	protected String trackingURL;
+                    	@XmlElement(name = "LabelEstimateCost")
+                    	@JsonProperty("LabelEstimateCost")
+                    	protected BigDecimal labelEstimateCost;
+                    	@XmlElement(name = "PaidBy")
+                    	@JsonProperty("PaidBy")
+                    	protected String paidBy;
+						public String getTrackingNumber() {
+							return trackingNumber;
+						}
+						public void setTrackingNumber(String trackingNumber) {
+							this.trackingNumber = trackingNumber;
+						}
+						public String getTrackingURL() {
+							return trackingURL;
+						}
+						public void setTrackingURL(String trackingURL) {
+							this.trackingURL = trackingURL;
+						}
+						public BigDecimal getLabelEstimateCost() {
+							return labelEstimateCost;
+						}
+						public void setLabelEstimateCost(BigDecimal labelEstimateCost) {
+							this.labelEstimateCost = labelEstimateCost;
+						}
+						public String getPaidBy() {
+							return paidBy;
+						}
+						public void setPaidBy(String paidBy) {
+							this.paidBy = paidBy;
+						}
+                    }
+
+					public List<GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.ReturnShippingLabel.Label> getLabel() {
+						return label;
+					}
+
+					public void setLabel(List<GetRMAListReportResponse.ResponseBody.RMAInfoList.RMAInfo.ReturnShippingLabel.Label> label) {
+						this.label = label;
+					}
+                }
 
                 /**
                  * 取得 sellerID 特性的值.
@@ -3265,6 +3584,152 @@ public class GetRMAListReportResponse {
                     }
 
                 }
+
+
+				public BigInteger getRmaNumber() {
+					return rmaNumber;
+				}
+
+				public void setRmaNumber(BigInteger rmaNumber) {
+					this.rmaNumber = rmaNumber;
+				}
+
+				public String getRmaTypeDescription() {
+					return rmaTypeDescription;
+				}
+
+				public void setRmaTypeDescription(String rmaTypeDescription) {
+					this.rmaTypeDescription = rmaTypeDescription;
+				}
+
+				public int getRmaType() {
+					return rmaType;
+				}
+
+				public void setRmaType(int rmaType) {
+					this.rmaType = rmaType;
+				}
+
+				public String getSellerRMANumber() {
+					return sellerRMANumber;
+				}
+
+				public void setSellerRMANumber(String sellerRMANumber) {
+					this.sellerRMANumber = sellerRMANumber;
+				}
+
+				public String getRmaDate() {
+					return rmaDate;
+				}
+
+				public void setRmaDate(String rmaDate) {
+					this.rmaDate = rmaDate;
+				}
+
+				public int getRmaStatus() {
+					return rmaStatus;
+				}
+
+				public void setRmaStatus(int rmaStatus) {
+					this.rmaStatus = rmaStatus;
+				}
+
+				public String getRmaStatusDescription() {
+					return rmaStatusDescription;
+				}
+
+				public void setRmaStatusDescription(String rmaStatusDescription) {
+					this.rmaStatusDescription = rmaStatusDescription;
+				}
+
+				public String getLastEditDate() {
+					return lastEditDate;
+				}
+
+				public void setLastEditDate(String lastEditDate) {
+					this.lastEditDate = lastEditDate;
+				}
+
+				public String getLastEditUser() {
+					return lastEditUser;
+				}
+
+				public void setLastEditUser(String lastEditUser) {
+					this.lastEditUser = lastEditUser;
+				}
+
+				public BigDecimal getOrderAmount() {
+					return orderAmount;
+				}
+
+				public void setOrderAmount(BigDecimal orderAmount) {
+					this.orderAmount = orderAmount;
+				}
+
+				public String getRmaProcessedBy() {
+					return rmaProcessedBy;
+				}
+
+				public void setRmaProcessedBy(String rmaProcessedBy) {
+					this.rmaProcessedBy = rmaProcessedBy;
+				}
+
+				public String getCustomerAddress() {
+					return customerAddress;
+				}
+
+				public void setCustomerAddress(String customerAddress) {
+					this.customerAddress = customerAddress;
+				}
+
+				public String getRmaReceiveDate() {
+					return rmaReceiveDate;
+				}
+
+				public void setRmaReceiveDate(String rmaReceiveDate) {
+					this.rmaReceiveDate = rmaReceiveDate;
+				}
+
+				public String getRmaNote() {
+					return rmaNote;
+				}
+
+				public void setRmaNote(String rmaNote) {
+					this.rmaNote = rmaNote;
+				}
+
+				public String getRefundGSTorHSTAmount() {
+					return refundGSTorHSTAmount;
+				}
+
+				public void setRefundGSTorHSTAmount(String refundGSTorHSTAmount) {
+					this.refundGSTorHSTAmount = refundGSTorHSTAmount;
+				}
+
+				public String getRefundPSTorQSTAmount() {
+					return refundPSTorQSTAmount;
+				}
+
+				public void setRefundPSTorQSTAmount(String refundPSTorQSTAmount) {
+					this.refundPSTorQSTAmount = refundPSTorQSTAmount;
+				}
+
+				public String getReplacementOrderNumber() {
+					return replacementOrderNumber;
+				}
+
+				public void setReplacementOrderNumber(String replacementOrderNumber) {
+					this.replacementOrderNumber = replacementOrderNumber;
+				}
+
+				public BigDecimal getVatTotal() {
+					return vatTotal;
+				}
+
+				public void setVatTotal(BigDecimal vatTotal) {
+					this.vatTotal = vatTotal;
+				}
+
 
             }
 

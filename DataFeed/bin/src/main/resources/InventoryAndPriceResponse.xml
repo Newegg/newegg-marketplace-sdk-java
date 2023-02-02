@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<NeweggAPIResponse>
+	<IsSuccess>true</IsSuccess>
+	<OperationType>SubmitFeedResponse</OperationType>
+	<SellerID>A006</SellerID>
+	<ResponseBody>
+		<ResponseList>
+			<ResponseInfo>
+				<RequestId>23J9KC7M3JY0J</RequestId>
+				<RequestType>INVENTORY_AND_PRICE_DATA</RequestType>
+				<RequestDate>03/05/2019 17:33:05</RequestDate>
+				<RequestStatus>SUBMITTED</RequestStatus>
+			</ResponseInfo>
+		</ResponseList>
+	</ResponseBody>
+</NeweggAPIResponse>

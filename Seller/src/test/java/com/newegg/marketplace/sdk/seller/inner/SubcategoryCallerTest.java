@@ -1,26 +1,34 @@
 package com.newegg.marketplace.sdk.seller.inner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.newegg.marketplace.sdk.common.APIConfig;
 import com.newegg.marketplace.sdk.common.Content;
+import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.common.Content.PLATFORM;
 import com.newegg.marketplace.sdk.seller.SellerConfig;
 import com.newegg.marketplace.sdk.seller.Variables;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesResponse;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertiesRequest;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertiesResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryResponse;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusRequest;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory.IndustryCodeList;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusRequest.RequestBody.GetItemSubcategory.SubcategoryIDList;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryRequest;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusV1Request;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusV1Response;
 
 public class SubcategoryCallerTest {
 
@@ -28,6 +36,16 @@ public class SubcategoryCallerTest {
 	public static void setUpBeforeClass() throws Exception {
 		APIConfig.load(SellerConfig.class);
 	}
+	@Before
+	public void before() {
+		Variables.SimulationEnabled = true;
+	}
+	
+	@After
+	public void After() {
+		Variables.SimulationEnabled = false;
+	}
+
 
 	@Test
 	public void testGetSubcategoryPropertyValues_XML() {
@@ -100,6 +118,30 @@ public class SubcategoryCallerTest {
 		assertTrue(r.getIsSuccess());
 		assertTrue("USA".equals(r.getResponseBody().getCountryCode()));
 		assertTrue(r.getResponseBody().getSubcategoryList().getSubcategory().size()>0);
+	}
+	
+	@Test
+	public void testGetSubcategoryStatusV1_JSON() {
+		Variables.MediaType = MEDIA_TYPE.JSON;
+//		Variables.SimulationEnabled = true;
+		PLATFORM tmp=Content.Platform;
+		Content.Platform=PLATFORM.USA;
+		SubcategoryCaller call=SubcategoryCaller.buildJSON();
+		
+		GetSubcategoryStatusV1Request body=new GetSubcategoryStatusV1Request();
+		GetSubcategoryStatusV1Request.RequestBody requestBody=new GetSubcategoryStatusV1Request.RequestBody();
+		body.setRequestBody(requestBody);
+		GetSubcategoryStatusV1Request.RequestBody.GetItemSubcategory getItemSubcategory=new 		GetSubcategoryStatusV1Request.RequestBody.GetItemSubcategory();
+		requestBody.setGetItemSubcategory(getItemSubcategory);
+		
+		GetSubcategoryStatusV1Request.RequestBody.GetItemSubcategory.SubcategoryIDList subcategoryIDList=new GetSubcategoryStatusV1Request.RequestBody.GetItemSubcategory.SubcategoryIDList();
+		List<Integer> webSiteCategoryIDList=new ArrayList<>();
+		webSiteCategoryIDList.add(402);
+		subcategoryIDList.setWebSiteCategoryID(webSiteCategoryIDList);
+		subcategoryIDList.setWebSiteCatalogName("CH");
+		getItemSubcategory.setSubcategoryIDList(subcategoryIDList);
+		GetSubcategoryStatusV1Response res = call.getSubcategoryStatusV1(body);
+		System.out.println(res);
 	}
 	
 	@Test

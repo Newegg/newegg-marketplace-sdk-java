@@ -50,6 +50,8 @@ public class SellerClient extends BaseClient{
 				client=genMockClient(client,"/GetSubcatetoryResponseV2.json",HttpMethod.PUT,"/sellermgmt/seller/subcategory/V2?sellerid=" + Content.SellerID);
 				client=genMockClient(client,"/GetSubcatetoryPropertiesResponse.json",HttpMethod.PUT,"/sellermgmt/seller/subcategoryproperty?sellerid=" + Content.SellerID);
 				client=genMockClient(client,"/GetSubcategoryPropertyValueResponse.json",HttpMethod.PUT,"/sellermgmt/seller/propertyvalue?sellerid=" + Content.SellerID);
+				client=genMockClient(client,"/getSubcategoryStatusV1Response.json",HttpMethod.PUT,"/sellermgmt/seller/subcategory/v1.1?sellerid=" + Content.SellerID);
+				client=genMockClient(client,"/GetWarehouseResponse.json",HttpMethod.GET,"/sellermgmt/seller/warehouse?sellerid=" + Content.SellerID);
 				break;	
 			case XML:
 				if (Content.Platform == Content.PLATFORM.USA) {

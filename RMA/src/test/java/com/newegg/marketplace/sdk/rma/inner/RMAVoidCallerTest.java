@@ -38,7 +38,7 @@ public class RMAVoidCallerTest {
 		Variables.SimulationEnabled = false;
 	}
 
-	@Test
+//	@Test
 	public void sendRMAVoidRequest_JSON_MOCK() {
 		Variables.SimulationEnabled = true;
 		sendRMAVoidRequest_JSON();

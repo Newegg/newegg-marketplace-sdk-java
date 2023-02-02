@@ -11,6 +11,8 @@ import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertiesResponse;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusRequest;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryRequest;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusV1Request;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusV1Response;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryResponse;
 
 import feign.Headers;
@@ -51,6 +53,19 @@ public interface SubcategoryCaller {
 			return getSubcategoryStatusJSON(Content.SellerID,body);			
 		case XML:
 			return getSubcategoryStatusXML(Content.SellerID,body);			
+		default:
+			throw new RuntimeException("Never Happened!");
+		}
+	}
+	
+	@Headers({"Accept: application/json","Content-Type: application/json"})
+	@RequestLine("PUT /sellermgmt/seller/subcategory/v1.1?sellerid={sellerid}")
+	GetSubcategoryStatusV1Response getSubcategoryStatusV1JSON(@Param("sellerid") String sellerID,GetSubcategoryStatusV1Request body);	
+	
+	default GetSubcategoryStatusV1Response getSubcategoryStatusV1(GetSubcategoryStatusV1Request body) {
+		switch(Variables.MediaType){
+		case JSON:			
+			return getSubcategoryStatusV1JSON(Content.SellerID,body);			
 		default:
 			throw new RuntimeException("Never Happened!");
 		}

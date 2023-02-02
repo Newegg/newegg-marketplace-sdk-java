@@ -4,21 +4,24 @@ import java.io.File;
 import java.util.Optional;
 
 import com.newegg.marketplace.sdk.common.Content;
-import com.newegg.marketplace.sdk.common.PlatformException;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
+import com.newegg.marketplace.sdk.common.PlatformException;
 import com.newegg.marketplace.sdk.seller.inner.SellerCaller;
 import com.newegg.marketplace.sdk.seller.inner.SubcategoryCaller;
-import com.newegg.marketplace.sdk.seller.model.GetIndustryListResponse;
 import com.newegg.marketplace.sdk.seller.model.DownloadFeedSchemaRequest;
-import com.newegg.marketplace.sdk.seller.model.SellerStatusCheckResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesResponse;
+import com.newegg.marketplace.sdk.seller.model.GetIndustryListResponse;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertiesRequest;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertiesResponse;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryPropertyValuesResponse;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryRequest;
-import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusResponse;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusRequest;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusResponse;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusV1Request;
+import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusV1Response;
+import com.newegg.marketplace.sdk.seller.model.GetWarehouseResponse;
+import com.newegg.marketplace.sdk.seller.model.SellerStatusCheckResponse;
 
 /**
 Copyright (c) 2000-present, Newegg Inc.
@@ -80,6 +83,10 @@ public class SellerCall {
 		return caller.sellerStatus();
 	}
 	
+	public GetWarehouseResponse getWarehouseList() {
+		return caller.getWarehouseList();
+	}
+	
 	/**
 	 * <pre>
 	 * Get the list of industry that is currently on Newegg Marketplace. 
@@ -114,6 +121,10 @@ public class SellerCall {
 	 */
 	public GetSubcategoryStatusResponse getSubcategoryStatus(GetSubcategoryStatusRequest body) {
 		return subcategoryCaller.getSubcategoryStatus(body);
+	}
+	
+	public GetSubcategoryStatusV1Response getSubcategoryStatusV1(GetSubcategoryStatusV1Request body) {
+		return subcategoryCaller.getSubcategoryStatusV1(body);
 	}
 
 	/**

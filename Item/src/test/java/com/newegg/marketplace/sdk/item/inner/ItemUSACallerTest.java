@@ -1,10 +1,14 @@
 package com.newegg.marketplace.sdk.item.inner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -12,22 +16,66 @@ import com.newegg.marketplace.sdk.common.APIConfig;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.item.ItemConfig;
 import com.newegg.marketplace.sdk.item.Variables;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceListRequest;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceListResponse;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceRequest;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceResponse;
+import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryListRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryListResponse;
 import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryRequest;
 import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryRequest.WarehouseList;
 import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryResponse;
 import com.newegg.marketplace.sdk.item.model.UpdateInventoryRequest;
 import com.newegg.marketplace.sdk.item.model.UpdateInventoryRequest.InventoryList;
-import com.newegg.marketplace.sdk.item.model.UpdateItemPriceRequest;
-import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceRequest;
-import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceResponse;
 import com.newegg.marketplace.sdk.item.model.UpdateInventoryResponse;
+import com.newegg.marketplace.sdk.item.model.UpdateItemPriceRequest;
 import com.newegg.marketplace.sdk.item.model.UpdateItemPriceResponse;
 
 public class ItemUSACallerTest {
+	
+	@Before
+	public  void before() {
+		Variables.SimulationEnabled=true;
+	}
+	
+	@After
+	public  void after() {
+		Variables.SimulationEnabled=false;
+	}
+	
+	
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		APIConfig.load(ItemConfig.class);
+	}
+	
+	@Test
+	public void testMockGetInternationalItemPriceList_JSON() {
+		Variables.SimulationEnabled=true;
+		ItemUSACaller call=ItemUSACaller.buildJSON();
+		GetInternationalItemPriceListRequest request =new GetInternationalItemPriceListRequest();
+		request.setType(0);
+		List<String> values=new ArrayList<>();
+		values.add("9SIAE1AJPX3007");
+		request.setValues(values);
+		
+		List<String> countryList=new ArrayList<>();
+		countryList.add("USA");
+		request.setCountryList(countryList);
+		
+		GetInternationalItemPriceListResponse r = call.getInternationalItemPriceList(request);
+		Variables.SimulationEnabled=false;
+
+	    assertTrue(r.isSuccess());
+	    assertTrue(r.getResponseBody().getTotalCount()==3);
+	    
+	    assertTrue(r.getResponseBody().getItemList().get(0).getItemNumber().equals("9SIA00603V5190"));
+	    assertTrue(r.getResponseBody().getItemList().get(0).getPriceList().get(0).getMap().toPlainString().equals("25.99"));
+	    assertTrue(r.getResponseBody().getItemList().get(0).getPriceList().get(0).getCountryCode().equals("USA"));
+		Variables.SimulationEnabled=false;
+
+		
 	}
 
 	@Test
@@ -118,11 +166,13 @@ public class ItemUSACallerTest {
 	
 	@Test
 	public void testGetItemPrice_XML() {
+		Variables.SimulationEnabled=true;
 		ItemUSACaller call=ItemUSACaller.buildXML();
 		GetInternationalItemPriceRequest request =new GetInternationalItemPriceRequest();
 		request.setType(0);
 		request.setValue("9SIA0062TT3677");
 		GetInternationalItemPriceResponse r=call.getItemPrice(request);
+		Variables.SimulationEnabled=false;
 		assertTrue(Content.SellerID.equals(r.getSellerID()));
 		assertTrue(r.getPriceList().getPrice().size()>0);
 		
@@ -130,17 +180,20 @@ public class ItemUSACallerTest {
 	
 	@Test
 	public void testGetItemPrice_JSON() {
+		Variables.SimulationEnabled=true;
 		ItemUSACaller call=ItemUSACaller.buildJSON();
 		GetInternationalItemPriceRequest request =new GetInternationalItemPriceRequest();
 		request.setType(0);
 		request.setValue("9SIA0062TT3677");
 		GetInternationalItemPriceResponse r=call.getItemPrice(request);
+		Variables.SimulationEnabled=false;
 		assertTrue(Content.SellerID.equals(r.getSellerID()));
 		assertTrue(r.getPriceList().getPrice().size()>0);
 	}
 	
 	@Test
 	public void testGetItemInventory_XML() {
+		Variables.SimulationEnabled=true;
 		ItemUSACaller call=ItemUSACaller.buildXML();
 		GetItemInternationalInventoryRequest request=new GetItemInternationalInventoryRequest();		
 		request.setType(0);
@@ -150,12 +203,14 @@ public class ItemUSACallerTest {
 		w1.getWarehouseLocation().add("AUS");
 		request.setWarehouseList(w1);
 		GetItemInternationalInventoryResponse r=call.getItemInventory(request);
+		Variables.SimulationEnabled=false;
 		assertTrue(Content.SellerID.equals(r.getSellerID()));
 		assertTrue(r.getInventoryAllocation().getInventory().size()>0);
 	}
 
 	@Test
 	public void testGetItemInventory_JSON() {
+		Variables.SimulationEnabled=true;
 		ItemUSACaller call=ItemUSACaller.buildJSON();
 		GetItemInternationalInventoryRequest request=new GetItemInternationalInventoryRequest();		
 		request.setType(0);
@@ -165,6 +220,7 @@ public class ItemUSACallerTest {
 		w1.getWarehouseLocation().add("AUS");
 		request.setWarehouseList(w1);
 		GetItemInternationalInventoryResponse r=call.getItemInventory(request);
+		Variables.SimulationEnabled=true;
 		assertTrue(Content.SellerID.equals(r.getSellerID()));
 		assertTrue(r.getInventoryAllocation().getInventory().size()>0);
 	}
@@ -320,5 +376,26 @@ public class ItemUSACallerTest {
 		assertTrue(Content.SellerID.equals(r.getSellerID()));
 		assertTrue("Group-By test Item A".equals(r.getSellerPartNumber()));
 		assertTrue(r.getPriceList().getPrice().size()>0);
+	}
+	
+	@Test
+	public void testMockGetItemInternationalInventoryList_JSON() {
+		Variables.SimulationEnabled=true;
+		ItemUSACaller call=ItemUSACaller.buildJSON();
+		
+		 GetItemInternationalInventoryListRequest body=new GetItemInternationalInventoryListRequest();
+		 body.setType("0");
+		 List<String> values=new  ArrayList<>();
+		 values.add("9SIA1EA0K66589");
+		 body.setValues(values);
+		 List<String>warehouseList=new ArrayList<String>();
+		 warehouseList.add("USA");
+		 body.setWarehouseList(warehouseList);
+
+		 GetItemInternationalInventoryListResponse r = call.getItemInternationalInventoryList(body);
+	    assertTrue(r.isSuccess());
+	    assertTrue(r.getResponseBody().getTotalCount()==3);
+		Variables.SimulationEnabled=false;
+		
 	}
 }

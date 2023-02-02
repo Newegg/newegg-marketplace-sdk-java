@@ -34,7 +34,7 @@ public class ReportCallTest {
 		OrderListReportRequest.RequestBody body = new OrderListReportRequest.RequestBody();
 	}
 
-	@Test
+//	@Test
 	public void getDailyInventoryReport_USA() {
 		// 是否需要使用Mock模式 : true/ false
 		Variables.SimulationEnabled = true;

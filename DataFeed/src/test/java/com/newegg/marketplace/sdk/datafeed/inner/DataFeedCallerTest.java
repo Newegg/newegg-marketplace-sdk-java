@@ -45,8 +45,10 @@ public class DataFeedCallerTest {
 
 	@Test
 	public void testGetFeedResult_XML() {
+		Variables.SimulationEnabled = true;
 		DataFeedCaller call = DataFeedCaller.buildXML();
 		ProcessingReportResponse r = call.getFeedResult("Z98EUQG1FUGC");
+		Variables.SimulationEnabled = false;
 		assertEquals("ProcessingReport", r.getMessageType());
 		assertTrue(r.getMessage().getProcessingReport().getProcessingSummary().getProcessedCount() > 0);
 		assertTrue(r.getMessage().getProcessingReport().getResult().get(0).getErrorList().getErrorDescription().size() > 0);

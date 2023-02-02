@@ -4,11 +4,15 @@ import com.newegg.marketplace.sdk.common.CallerFactory;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.item.Variables;
+import com.newegg.marketplace.sdk.item.model.GetItemInventoryListRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemInventoryListResponse;
 import com.newegg.marketplace.sdk.item.model.GetItemInventoryRequest;
 import com.newegg.marketplace.sdk.item.model.GetItemInventoryResponse;
-import com.newegg.marketplace.sdk.item.model.UpdateInventoryandPriceRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemPriceListRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemPriceListResponse;
 import com.newegg.marketplace.sdk.item.model.GetItemPriceRequest;
 import com.newegg.marketplace.sdk.item.model.GetItemPriceResponse;
+import com.newegg.marketplace.sdk.item.model.UpdateInventoryandPriceRequest;
 import com.newegg.marketplace.sdk.item.model.UpdateInventoryandPriceResponse;
 
 import feign.Headers;
@@ -37,6 +41,32 @@ limitations under the License.
  *
  */
 public interface ItemCBCaller {
+
+	
+	@Headers({"Accept: application/json","Content-Type: application/json"})
+	@RequestLine("POST /contentmgmt/item/Pricelist?sellerid={sellerid}")
+	GetItemPriceListResponse getItemPriceListJSON(@Param("sellerid")String sellerID, GetItemPriceListRequest body);
+	default GetItemPriceListResponse getItemPriceList(GetItemPriceListRequest body) {
+		switch(Variables.MediaType){
+		case JSON:			
+			return getItemPriceListJSON(Content.SellerID,body);			
+		default:
+			throw new RuntimeException("Sorry, the new version of the service only supports JSON requests.");
+		}
+	}
+	
+	@Headers({"Accept: application/json","Content-Type: application/json"})
+	@RequestLine("POST /contentmgmt/item/inventorylist?sellerid={sellerid}")
+	GetItemInventoryListResponse getItemInventoryListJSON(@Param("sellerid")String sellerID, GetItemInventoryListRequest body);
+	default GetItemInventoryListResponse getItemInventoryList(GetItemInventoryListRequest body) {
+		switch(Variables.MediaType){
+		case JSON:			
+			return getItemInventoryListJSON(Content.SellerID,body);			
+		default:
+			throw new RuntimeException("Sorry, the new version of the service only supports JSON requests.");
+		}
+	}
+	
 
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /contentmgmt/item/inventory?sellerid={sellerid}&version=304")

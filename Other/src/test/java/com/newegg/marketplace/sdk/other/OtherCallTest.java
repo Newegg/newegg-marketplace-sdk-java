@@ -18,8 +18,10 @@ public class OtherCallTest {
 
 	@Test
 	public void testVerifyServiceStatus() {
+		Variables.SimulationEnabled=true;
 		OtherCall s=new OtherCall();
 		VerifyServiceStatusResponse r=s.verifyServiceStatus(ServiceDomain.datafeedmgmt);
+		Variables.SimulationEnabled=false;
 		assertTrue(r.getIsSuccess());
 		assertTrue(r.getResponseBody().getTimestamp().length()>0);
 	}

@@ -1,5 +1,4 @@
-{
-    "NeweggAPIResponse": {
+ {
         "IsSuccess": "true",
         "SellerID": "A09D",
         "OperationType": "GetSettlementSummaryInfoResponse",
@@ -40,4 +39,3 @@
             }
         }
     }
-}

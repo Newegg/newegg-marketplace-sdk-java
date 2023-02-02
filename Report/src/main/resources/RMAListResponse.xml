@@ -1,18 +1,65 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <NeweggAPIResponse>
     <IsSuccess>true</IsSuccess>
     <OperationType>GetRMAListInfoResponse</OperationType>
-    <SellerID>A006</SellerID>
+    <SellerID>A2GS</SellerID>
     <ResponseBody>
         <PageInfo>
-            <TotalCount>0</TotalCount>
-            <TotalPageCount>0</TotalPageCount>
+            <TotalCount>1</TotalCount>
+            <TotalPageCount>1</TotalPageCount>
             <PageIndex>1</PageIndex>
-            <PageSize>10</PageSize>
+            <PageSize>100</PageSize>
         </PageInfo>
-        <RequestID>27UMQ2D8D3CZY</RequestID>
-        <RequestDate>03/10/2019 19:23:44</RequestDate>
-        <RMAInfoList/>
+        <RequestID>237F788KK8LS0</RequestID>
+        <RequestDate>03/05/2020 22:20:08</RequestDate>
+        <RMAInfoList>
+            <RMAInfo>
+                <SellerID>A2GS</SellerID>
+                <RMANumber>22187609</RMANumber>
+                <SellerRMANumber>TestRMAA2GS202001231001</SellerRMANumber>
+                <RMAType>2</RMAType>
+                <RMATypeDescription>Refund</RMATypeDescription>
+                <RMADate>01/19/2020 19:24:46</RMADate>
+                <RMAStatus>1</RMAStatus>
+                <RMAStatusDescription>Open</RMAStatusDescription>
+                <LastEditDate>01/22/2020 17:30:39</LastEditDate>
+                <LastEditUser>Seller</LastEditUser>
+                <OrderNumber>461654091</OrderNumber>
+                <OrderDate>11/01/2019 23:36:12</OrderDate>
+                <InvoiceNumber>172997652</InvoiceNumber>
+                <OrderAmount>0.05</OrderAmount>
+                <RMAProcessedBy>Seller</RMAProcessedBy>
+                <CustomerName>Jian Qin</CustomerName>
+                <CustomerPhoneNumber>626-347-5618</CustomerPhoneNumber>
+                <CustomerAddress>17708 Rowland St, Rowland Heights, CA, 91748-1119, USA</CustomerAddress>
+                <RMANote>Test Test TestRMAA2GS202001231001 your note here</RMANote>
+                <ReturnShippingLabel>
+                    <Label>
+                        <TrackingNumber>1ZA813779097504156</TrackingNumber>
+                        <TrackingURL>http://www.newegg.com/info/trackOrder.aspx?trackingnumber=1ZA813779097504156&amp;Type=1</TrackingURL>
+                        <LabelEstimateCost>6.19</LabelEstimateCost>
+                        <PaidBy>Customer</PaidBy>
+                    </Label>
+                </ReturnShippingLabel>
+                <RMATransactionList>
+                    <RMATransaction>
+                        <SellerPartNumber>Test_SPA2GS_20190930_3002</SellerPartNumber>
+                        <MfrPartNumber>TestMP#A2GS190930_32</MfrPartNumber>
+                        <NeweggItemNumber>9SIA2GSAAK6919</NeweggItemNumber>
+                        <Description>Test_Item Website Short Title A2GS 20190930 30002</Description>
+                        <UnitPrice>0.01</UnitPrice>
+                        <RefundInfo>
+                            <ItemReturnQty>1</ItemReturnQty>
+                            <ItemRefundPerQty>0.01</ItemRefundPerQty>
+                            <ItemShippingRefund>0.00</ItemShippingRefund>
+                            <RMATotalRefund>0.01</RMATotalRefund>
+                            <RefundReason>1</RefundReason>
+                            <RefundReasonDescription>Carrier damage</RefundReasonDescription>
+                        </RefundInfo>
+                    </RMATransaction>
+                </RMATransactionList>
+            </RMAInfo>
+        </RMAInfoList>
     </ResponseBody>
-    <ResponseDate>03/10/2019 23:36:32</ResponseDate>
+    <ResponseDate>03/05/2020 22:43:20</ResponseDate>
 </NeweggAPIResponse>

@@ -27,6 +27,15 @@ public class WarrantyCallerTest {
 		APIConfig.load(ItemConfig.class);
 	}
 	
+	@Before
+	public  void before() {
+		Variables.SimulationEnabled=true;
+	}
+	
+	@After
+	public  void after() {
+		Variables.SimulationEnabled=false;
+	}
 
 	@Test
 	public void testXMLSubmitItemWarrantyRequest() {		

@@ -1,11 +1,10 @@
 package com.newegg.marketplace.sdk.seller.inner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,9 +14,10 @@ import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.Content.MEDIA_TYPE;
 import com.newegg.marketplace.sdk.seller.SellerConfig;
 import com.newegg.marketplace.sdk.seller.Variables;
-import com.newegg.marketplace.sdk.seller.model.GetIndustryListResponse;
 import com.newegg.marketplace.sdk.seller.model.DownloadFeedSchemaRequest;
 import com.newegg.marketplace.sdk.seller.model.DownloadFeedSchemaRequest.RequestBody.GetFeedSchema;
+import com.newegg.marketplace.sdk.seller.model.GetIndustryListResponse;
+import com.newegg.marketplace.sdk.seller.model.GetWarehouseResponse;
 import com.newegg.marketplace.sdk.seller.model.SellerStatusCheckResponse;
 
 public class SellerCallerTest {
@@ -26,6 +26,16 @@ public class SellerCallerTest {
 	public static void setUpBeforeClass() throws Exception {
 		APIConfig.load(SellerConfig.class);
 	}
+	@Before
+	public void before() {
+		Variables.SimulationEnabled = true;
+	}
+	
+	@After
+	public void After() {
+		Variables.SimulationEnabled = false;
+	}
+
 
 	@Test
 	public void testDownloadFeedSchema_XML(){
@@ -62,10 +72,18 @@ public class SellerCallerTest {
 		SellerCaller call=SellerCaller.buildJSON();
 		SellerStatusCheckResponse r=call.sellerStatus();		
 		assertTrue(r.getIsSuccess());
-		assertTrue("Test_SandBox_MKTPLS".equals(r.getResponseBody().getSellerName()));		
+		assertTrue("Test_MKTPLS".equals(r.getResponseBody().getSellerName()));		
 		GetIndustryListResponse r1=call.getIndustryList("");
 		assertTrue(r1.getIsSuccess());
 		assertTrue(r1.getResponseBody().getIndustryList().getIndustry().size()>0);
+	}
+	
+	@Test
+	public void testgetWarehouseList_JSON() {
+//		Variables.SimulationEnabled=true;		
+		SellerCaller call=SellerCaller.buildJSON();
+	 GetWarehouseResponse r = call.getWarehouseList();
+	 System.out.println(r);
 	}
 
 	@Test
@@ -73,7 +91,7 @@ public class SellerCallerTest {
 		SellerCaller call=SellerCaller.buildXML();
 		SellerStatusCheckResponse r=call.sellerStatus();		
 		assertTrue(r.getIsSuccess());
-		assertTrue("Test_SandBox_MKTPLS".equals(r.getResponseBody().getSellerName()));		
+		assertTrue("Test_MKTPLS".equalsIgnoreCase(r.getResponseBody().getSellerName().trim()));		
 		GetIndustryListResponse r1=call.getIndustryList("");
 		assertTrue(r1.getIsSuccess());
 	}
@@ -94,7 +112,7 @@ public class SellerCallerTest {
 		Content.SecretKey=SecretKey;
 		Content.SellerID=SellerID;
 		assertTrue(r.getIsSuccess());
-		assertTrue("Test_fortestonly fortest012412".equals(r.getResponseBody().getSellerName()));
+		assertTrue("Test_MKTPLS".equals(r.getResponseBody().getSellerName()));
 	}
 	
 	@Test
@@ -113,7 +131,7 @@ public class SellerCallerTest {
 		Content.SecretKey=SecretKey;
 		Content.SellerID=SellerID;
 		assertTrue(r.getIsSuccess());
-		assertTrue("Test_fortestonly fortest012412".equals(r.getResponseBody().getSellerName()));
+		assertTrue("Test_MKTPLS".equalsIgnoreCase(r.getResponseBody().getSellerName().trim()));
 	}
 	
 	@Test

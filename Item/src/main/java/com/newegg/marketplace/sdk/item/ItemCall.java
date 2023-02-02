@@ -8,12 +8,20 @@ import com.newegg.marketplace.sdk.item.inner.ItemUSACaller;
 import com.newegg.marketplace.sdk.item.inner.ManufacturerCaller;
 import com.newegg.marketplace.sdk.item.inner.VolumeDiscountCaller;
 import com.newegg.marketplace.sdk.item.inner.WarrantyCaller;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceListRequest;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceListResponse;
 import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceRequest;
 import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceResponse;
+import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryListRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryListResponse;
 import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryRequest;
 import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryResponse;
+import com.newegg.marketplace.sdk.item.model.GetItemInventoryListRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemInventoryListResponse;
 import com.newegg.marketplace.sdk.item.model.GetItemInventoryRequest;
 import com.newegg.marketplace.sdk.item.model.GetItemInventoryResponse;
+import com.newegg.marketplace.sdk.item.model.GetItemPriceListRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemPriceListResponse;
 import com.newegg.marketplace.sdk.item.model.GetItemPriceRequest;
 import com.newegg.marketplace.sdk.item.model.GetItemPriceResponse;
 import com.newegg.marketplace.sdk.item.model.GetManufacturerRequestStatusRequest;
@@ -91,6 +99,37 @@ public class ItemCall {
 		}
 	}
 	
+	/**
+	 * @param body {@linkplain GetInternationalItemPriceListRequest} 
+	 * @return {@linkplain GetInternationalItemPriceListResponse} 
+	 */
+	public GetItemPriceListResponse getItemPriceList(GetItemPriceListRequest body) {
+		return itemCBCaller.getItemPriceList(body);
+	}
+	
+	/**
+	 * @param body {@linkplain GetInternationalItemPriceListRequest} 
+	 * @return {@linkplain GetInternationalItemPriceListResponse} 
+	 */
+	public GetInternationalItemPriceListResponse getInternationalItemPriceList(GetInternationalItemPriceListRequest body) {
+		return itemUSACaller.getInternationalItemPriceList(body);
+	}
+	
+	/**
+	 * @param body {@linkplain GetItemInventoryListRequest} 
+	 * @return {@linkplain GetItemInventoryListResponse} 
+	 */
+	public GetItemInventoryListResponse getItemInventoryList(GetItemInventoryListRequest body) {
+		return itemCBCaller.getItemInventoryList(body);
+	}
+	
+	/**
+	 * @param body {@linkplain GetItemInternationalInventoryListRequest} 
+	 * @return {@linkplain GetItemInternationalInventoryListResponse} 
+	 */
+	public GetItemInternationalInventoryListResponse getItemInternationalInventoryList(GetItemInternationalInventoryListRequest body) {
+		return itemUSACaller.getItemInternationalInventoryList(body);
+	}
 	
 	/**
 	 * @param body {@linkplain GetVolumeDiscountRequestResultRequest} 

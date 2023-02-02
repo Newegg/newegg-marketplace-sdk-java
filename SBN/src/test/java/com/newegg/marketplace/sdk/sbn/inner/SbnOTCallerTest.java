@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.math.BigInteger;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -22,7 +24,16 @@ public class SbnOTCallerTest {
 	public static void setUpBeforeClass() throws Exception {
 		APIConfig.load(SbnConfig.class);
 	}
-
+	
+	@Before
+	public void before() {
+		Variables.SimulationEnabled = true;
+	}
+	
+	@After
+	public void After() {
+		Variables.SimulationEnabled = false;
+	}
 	@Test
 	public void testGetInboundShipmentList_XML() {
 		SbnOTCaller call=SbnOTCaller.buildXML();

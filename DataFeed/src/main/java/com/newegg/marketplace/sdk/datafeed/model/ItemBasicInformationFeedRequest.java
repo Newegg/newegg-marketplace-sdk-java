@@ -2723,7 +2723,7 @@ public class ItemBasicInformationFeedRequest {
                     "productDescription",
                     "itemDimension",
                     "itemWeight",
-                    "limitQuantity",
+//                    "limitQuantity",
                     "activationMark",
                     "itemImages",
                     "warning"

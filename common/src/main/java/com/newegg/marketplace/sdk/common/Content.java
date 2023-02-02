@@ -1,7 +1,11 @@
 package com.newegg.marketplace.sdk.common;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 import feign.Logger;
 import feign.Retryer;
@@ -52,7 +56,12 @@ public class Content {
 	public static final String AUTHORIZATION_NAME="Authorization";
 	public static final String SECRET_KEY_NAME="SecretKey";	
 	public static final ObjectMapper JSON_MAPPER = new ObjectMapper()
-	        .setSerializationInclusion(JsonInclude.Include.NON_NULL);
+	        .setSerializationInclusion(JsonInclude.Include.NON_NULL)
+	        .configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true)
+	        .configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
+	        .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+	        .setDefaultPropertyInclusion(JsonInclude.Include.NON_NULL)
+	        .enable(JsonParser.Feature.ALLOW_COMMENTS);
 	public static final JAXBContextFactory JAXB_FACTORY = new JAXBContextFactory.Builder()
 		    .withMarshallerJAXBEncoding("UTF-8")			   
 		    .build();	

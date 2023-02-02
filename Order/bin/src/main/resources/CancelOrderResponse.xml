@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UpdateOrderStatusInfo>
+    <IsSuccess>true</IsSuccess>
+    <Result>
+        <OrderNumber>159243598</OrderNumber>
+        <SellerID>A006</SellerID>
+        <OrderStatus>Void</OrderStatus>
+    </Result>
+</UpdateOrderStatusInfo>

@@ -35,8 +35,10 @@ public class OrderInfoCallerTest {
 		
 		switch (p) {
 		case USA:
-			orderList.getOrderNumber().add(126239540);
-			criteria.setOrderNumberList(orderList);
+			orderList.getOrderNumber().add(348459749);
+			sellerList.getSellerOrderNumber().add("348441549");
+			criteria.setSellerOrderNumberList(sellerList);
+//			criteria.setOrderNumberList(orderList);
 			criteria.setStatus(3);
 			criteria.setType(0);
 			criteria.setOrderDateFrom("2018-01-01 09:30:47");
@@ -155,7 +157,7 @@ public class OrderInfoCallerTest {
 		
 
 		RequireSetting.authKeySetting("A2GS");
-		sendOrderInfo(false, MEDIA_TYPE.XML, PLATFORM.USA,"304");
+		sendOrderInfo(true, MEDIA_TYPE.XML, PLATFORM.USA,"304");
 	}
 	
 	@Test
@@ -183,10 +185,10 @@ public class OrderInfoCallerTest {
 		sendOrderInfo(true, MEDIA_TYPE.XML, PLATFORM.CAN,"304");
 	}
 	
-	//@Test
+	@Test
 	public void testSendOrderInfoRequest_JSON() {
-		RequireSetting.authKeySetting("A2GS");
-		sendOrderInfo(false, MEDIA_TYPE.JSON, PLATFORM.USA,"304");
+//		RequireSetting.authKeySetting("A2GS");
+		sendOrderInfo(true, MEDIA_TYPE.JSON, PLATFORM.USA,"310");
 	}
 	
 	//@Test

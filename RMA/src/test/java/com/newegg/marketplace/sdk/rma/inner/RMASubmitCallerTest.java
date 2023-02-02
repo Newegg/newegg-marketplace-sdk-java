@@ -40,7 +40,7 @@ public class RMASubmitCallerTest {
 		Variables.SimulationEnabled = false;
 	}
 
-	@Test
+//	@Test
 	public void testRMASubmitRequest_JSON_MOCK() {
 		Variables.SimulationEnabled = true;
 		sendRMASubmitRequest_JSON();

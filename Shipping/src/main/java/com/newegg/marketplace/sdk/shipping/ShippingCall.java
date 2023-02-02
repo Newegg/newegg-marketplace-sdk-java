@@ -84,6 +84,7 @@ public class ShippingCall {
 	 *            {@linkplain SubmitShippingRequest}
 	 * @return {@linkplain SubmitShippingResponse}
 	 */
+	@Deprecated
 	public SubmitShippingResponse submitShippingRequest(SubmitShippingRequest body) {
 		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOPCaller.submitShippingRequest(body);
@@ -100,6 +101,7 @@ public class ShippingCall {
 	 *            {@linkplain GetShippingDetailRequest}
 	 * @return {@linkplain GetShippingDetailResponse}
 	 */
+	@Deprecated
 	public GetShippingDetailResponse getShippingRequestDetail(GetShippingDetailRequest body) {
 		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOPCaller.getShippingRequestDetail(body);
@@ -121,6 +123,7 @@ public class ShippingCall {
 	 *            {@linkplain ConfirmShipRequest}
 	 * @return {@linkplain ConfirmShipResponse}
 	 */
+	@Deprecated
 	public ConfirmShipResponse confirmShippingRequest(ConfirmShipRequest body) {
 		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOPCaller.confirmShippingRequest(body);
@@ -137,6 +140,7 @@ public class ShippingCall {
 	 *            {@linkplain VoidShippingRequest}
 	 * @return {@linkplain VoidShippingResponse}
 	 */
+	@Deprecated
 	public VoidShippingResponse voidShippingRequest(VoidShippingRequest body) {// TODO
 		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOPCaller.voidShippingRequest(body);
@@ -148,11 +152,11 @@ public class ShippingCall {
 	 * <pre>
 	 * When you are ready to ship an order, you can request a package list using this function.
 	 * </pre>
-	 * 
 	 * @param body
 	 *            {@linkplain GetPackageListRequest}
 	 * @return {@linkplain GetPackageListResponse}
 	 */
+	@Deprecated
 	public GetPackageListResponse getPackageLis(GetPackageListRequest body) {
 		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOTCaller.getPackageLis(body);
@@ -164,11 +168,11 @@ public class ShippingCall {
 	 * <pre>
 	 * When you are ready to ship an order, you can request a shipping label for a confirmed shipping request.
 	 * </pre>
-	 * 
 	 * @param body
 	 *            {@linkplain GetShippingLabelRequest}
 	 * @return {@linkplain GetShippinLabelResponse}
 	 */
+	@Deprecated
 	public GetShippinLabelResponse getShippingLabel(GetShippingLabelRequest body) {
 		if (Content.Platform == Content.PLATFORM.USB || Content.Platform == Content.PLATFORM.USA)
 			return shipOTCaller.getShippingLabel(body);
@@ -180,7 +184,7 @@ public class ShippingCall {
 	 * <pre>
 	 * Confirm/ship orders using Newegg Shipping Label Services.
 	 * </pre>
-	 * 
+	 * {@link Deprecated, change to 3PL API}
 	 * @param body {@linkplain ShippingNewLabelSubmitRequest}
 	 * @return {@linkplain ShippingNewLabelSubmitResponse}
 	 */

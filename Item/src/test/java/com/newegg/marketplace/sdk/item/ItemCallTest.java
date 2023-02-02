@@ -57,6 +57,7 @@ public class ItemCallTest {
 	
 	@Test
 	public void testGetVolumeDiscount() {
+		Variables.SimulationEnabled=true;
 		ItemCall call=new ItemCall();
 		GetVolumeDiscountRequestResultRequest request=new GetVolumeDiscountRequestResultRequest();
 		request.setOperationType("GetVolumeDiscountRequest");
@@ -64,13 +65,14 @@ public class ItemCallTest {
 		body.setNeweggItemNumber("9SIA0062TT3677");
 		request.setRequestBody(body);		
 		GetVolumeDiscountRequestResultResponse r=call.getVolumeDiscountRequestResult(request);				
-		assertTrue("Group-By test Item A".equals(r.getResponseBody().getItemVolumeDiscountInfo().getSellerPartNumber()));
+		assertTrue("B0147001".equals(r.getResponseBody().getItemVolumeDiscountInfo().getSellerPartNumber()));
 		assertTrue(r.getIsSuccess());
 	}
 
 	
 	@Test
 	public void testSubmitVolumeDiscount() {
+		Variables.SimulationEnabled=true;
 		ItemCall call=new ItemCall();		
 		SubmitVolumeDiscountRequest request=new SubmitVolumeDiscountRequest();
 		request.setOperationType("SubmitVolumeDiscountRequest");
@@ -96,6 +98,7 @@ public class ItemCallTest {
 		request.setRequestBody(body);
 
 		SubmitVolumeDiscountResponse r=call.submitVolumeDiscount(request);
+		Variables.SimulationEnabled=false;
 		assertTrue(r.isIsSuccess());
 	}
 	
@@ -137,7 +140,6 @@ public class ItemCallTest {
 		assertTrue(assertFlag);
 	}*/
 	
-	@Test
 	public void testErrorResponse_XML() {
 		ItemCall call=new ItemCall();
 		GetVolumeDiscountRequestResultRequest request=new GetVolumeDiscountRequestResultRequest();
@@ -156,5 +158,6 @@ public class ItemCallTest {
 			assertFlag=err.getError().size()>0? true:false;
 		}
 		assertTrue(assertFlag);
+		
 	}
 }

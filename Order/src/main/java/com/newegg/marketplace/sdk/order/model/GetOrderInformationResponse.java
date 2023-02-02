@@ -692,7 +692,7 @@ public class GetOrderInformationResponse {
         @JsonProperty("OrderInfoList")
         @JsonUnwrapped
         protected GetOrderInformationResponse.ResponseBody.OrderInfoList orderInfoList;
-
+        
         /**
          * 取得 pageInfo 特性的值.
          * 
@@ -1276,6 +1276,9 @@ public class GetOrderInformationResponse {
                 @XmlElement(name = "DiscountAmount", required = true)
                 @JsonProperty("DiscountAmount")
                 protected BigDecimal discountAmount;
+                @XmlElement(name = "RecyclingFeeAmount")
+                @JsonProperty("RecyclingFeeAmount")
+                protected BigDecimal recyclingFeeAmount;
                 @XmlElement(name = "OrderQty", required = true)
                 @JsonProperty("OrderQty")
                 protected BigInteger orderQty;
@@ -2328,6 +2331,9 @@ public class GetOrderInformationResponse {
                         @XmlElement(name = "StatusDescription")
                         @JsonProperty("StatusDescription")
                         protected String statusDescription;
+                        @XmlElement(name = "AutoRegWarranty")
+                        @JsonProperty("AutoRegWarranty")
+                        protected  String autoRegWarranty;
 
                         /**
                          * 取得 sellerPartNumber 特性的值.
@@ -2688,6 +2694,22 @@ public class GetOrderInformationResponse {
                         public void setStatusDescription(String value) {
                             this.statusDescription = value;
                         }
+
+						public String getUpcCode() {
+							return upcCode;
+						}
+
+						public void setUpcCode(String upcCode) {
+							this.upcCode = upcCode;
+						}
+
+						public String getAutoRegWarranty() {
+							return autoRegWarranty;
+						}
+
+						public void setAutoRegWarranty(String autoRegWarranty) {
+							this.autoRegWarranty = autoRegWarranty;
+						}
 
                     }
 
@@ -3213,6 +3235,23 @@ public class GetOrderInformationResponse {
                     }
 
                 }
+
+
+				public BigDecimal getVatTotal() {
+					return vatTotal;
+				}
+
+				public void setVatTotal(BigDecimal vatTotal) {
+					this.vatTotal = vatTotal;
+				}
+
+				public BigDecimal getRecyclingFeeAmount() {
+					return recyclingFeeAmount;
+				}
+
+				public void setRecyclingFeeAmount(BigDecimal recyclingFeeAmount) {
+					this.recyclingFeeAmount = recyclingFeeAmount;
+				}
 
             }
 

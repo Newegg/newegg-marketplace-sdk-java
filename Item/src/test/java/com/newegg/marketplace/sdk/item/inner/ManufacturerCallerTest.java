@@ -29,6 +29,16 @@ public class ManufacturerCallerTest {
 	public static void setUpBeforeClass() throws Exception {
 		APIConfig.load(ItemConfig.class);
 	}
+	
+	@Before
+	public  void before() {
+		Variables.SimulationEnabled=true;
+	}
+	
+	@After
+	public  void after() {
+		Variables.SimulationEnabled=false;
+	}
 
 	@Test
 	public void testXMLGetManufacturerRequestStatus() {

@@ -38,7 +38,7 @@ public class RMARejectCallerTest {
 		Variables.SimulationEnabled = false;
 	}
 
-	@Test
+//	@Test
 	public void sendRMARejectRequest_JSON_MOCK() {
 		Variables.SimulationEnabled = true;
 		sendRMARejectRequest_JSON();

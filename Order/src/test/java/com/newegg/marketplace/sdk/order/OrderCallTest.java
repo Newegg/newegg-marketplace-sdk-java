@@ -2,6 +2,8 @@ package com.newegg.marketplace.sdk.order;
 
 import static org.junit.Assert.fail;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -15,24 +17,34 @@ public class OrderCallTest {
 		APIConfig.load(OrderConfig.class);
 	}
 	
-	@Test
-	public void testOrderConfirmation() {
-		fail("Not yet implemented");
+//	@Test
+//	public void testOrderConfirmation() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testGetOrderStatus() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testCancelOrder() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testGetAdditionalOrderInformation() {
+//		fail("Not yet implemented");
+//	}
+	
+	@Before
+	public  void before() {
+		Variables.SimulationEnabled=true;
 	}
-
-	@Test
-	public void testGetOrderStatus() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testCancelOrder() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetAdditionalOrderInformation() {
-		fail("Not yet implemented");
+	
+	@After
+	public  void after() {
+		Variables.SimulationEnabled=false;
 	}
 
 	@Test
@@ -45,19 +57,19 @@ public class OrderCallTest {
 		//ShipOrderResponse response = call.shipOrder(request);
 	}
 
-	@Test
-	public void testGetOrderInformation() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetSBNOrderCancellationRequestResult() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testRemoveItem() {
-		fail("Not yet implemented");
-	}
+//	@Test
+//	public void testGetOrderInformation() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testGetSBNOrderCancellationRequestResult() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testRemoveItem() {
+//		fail("Not yet implemented");
+//	}
 
 }

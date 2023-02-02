@@ -2,6 +2,8 @@ package com.newegg.marketplace.sdk.other.inner;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -19,7 +21,15 @@ public class OtherCallerTest {
 	public static void setUpBeforeClass() throws Exception {
 		APIConfig.load(OtherConfig.class);
 	}
-
+	@Before
+	public  void before() {
+		Variables.SimulationEnabled=true;
+	}
+	
+	@After
+	public  void after() {
+		Variables.SimulationEnabled=false;
+	}
 	@Test
 	public void testVerifyServiceStatus_XML() {
 		OtherCaller call=OtherCaller.buildXML();

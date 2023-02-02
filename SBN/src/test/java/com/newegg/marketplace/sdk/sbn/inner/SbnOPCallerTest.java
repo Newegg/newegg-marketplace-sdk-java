@@ -6,6 +6,8 @@ import static org.junit.Assert.assertTrue;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -34,6 +36,16 @@ public class SbnOPCallerTest {
 	public static void setUpBeforeClass() throws Exception {
 		APIConfig.load(SbnConfig.class);
 		b = new ConfBack();
+	}
+	
+	@Before
+	public void before() {
+		Variables.SimulationEnabled = true;
+	}
+	
+	@After
+	public void After() {
+		Variables.SimulationEnabled = false;
 	}
 
 	@Test

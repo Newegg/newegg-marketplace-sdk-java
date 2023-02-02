@@ -1,16 +1,70 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <NeweggAPIResponse>
     <IsSuccess>true</IsSuccess>
+    <SellerID>V006</SellerID>
     <OperationType>GetOrderInfoResponse</OperationType>
-    <SellerID>A006</SellerID>
     <ResponseBody>
         <PageInfo>
-            <TotalCount>0</TotalCount>
-            <TotalPageCount>0</TotalPageCount>
-            <PageIndex>2</PageIndex>
+            <TotalCount>20</TotalCount>
+            <TotalPageCount>20</TotalPageCount>
             <PageSize>10</PageSize>
+            <PageIndex>1</PageIndex>
         </PageInfo>
-        <RequestID>23NPUG2D8V21U</RequestID>
-        <RequestDate>03/05/2019 23:01:54</RequestDate>
+        <RequestID>2PQBYWH4V68ZP</RequestID>
+        <RequestDate>2/21/2012 14:38:17</RequestDate>
+        <OrderInfoList>
+            <OrderInfo>
+                <SellerID>V006</SellerID>
+                <OrderNumber>155738158</OrderNumber>
+                <SellerOrderNumber>2153930</SellerOrderNumber>
+                <InvoiceNumber>0</InvoiceNumber>
+                <OrderDownloaded>false</OrderDownloaded>
+                <OrderDate>12/21/2011 1:47:24</OrderDate>
+                <OrderStatus>4</OrderStatus>
+                <OrderStatusDescription>Voided</OrderStatusDescription>
+                <CustomerName>Richard Chen</CustomerName>
+                <CustomerPhoneNumber>626-277-1420</CustomerPhoneNumber>
+                <CustomerEmailAddress>cq3fw1aierwat94fm@marketplace.newegg.com</CustomerEmailAddress>
+                <ShipToAddress1>17708 Rowland St</ShipToAddress1>
+                <ShipToAddress2 />
+                <ShipToCityName>Rowland Heights</ShipToCityName>
+                <ShipToStateCode>DC</ShipToStateCode>
+                <ShipToZipCode>20001</ShipToZipCode>
+                <ShipToCountryCode>USA</ShipToCountryCode>
+                <ShipService>Media Mail (7-14 business days)</ShipService>
+                <ShipToFirstName>Richard</ShipToFirstName>
+                <ShipToLastName>Chen</ShipToLastName>
+                <ShipToCompany />
+                <OrderItemAmount>0.00</OrderItemAmount>
+                <ShippingAmount>3.00</ShippingAmount>
+                <DiscountAmount>-5.00</DiscountAmount>
+                <RefundAmount>0.00</RefundAmount>
+                <RecyclingFeeAmount>0.00</RecyclingFeeAmount>
+                <OrderTotalAmount>8.00</OrderTotalAmount>
+                <OrderQty>1</OrderQty>
+                <IsAutoVoid>false</IsAutoVoid>
+                <SalesChannel>0</SalesChannel>
+                <FulfillmentOption>1</FulfillmentOption>
+                <ItemInfoList>
+                    <ItemInfo>
+                        <SellerPartNumber>Mike_A006_101478-151</SellerPartNumber>
+                        <NeweggItemNumber>9SIA00607Y6664</NeweggItemNumber>
+                        <MfrPartNumber>Mike_A006_10114-151</MfrPartNumber>
+                        <UPCCode>410997000004</UPCCode>
+                        <Description>Tungsten Ladies' Dome Ring w/ CZ</Description>
+                        <OrderedQty>1</OrderedQty>
+                        <ShippedQty>0</ShippedQty>
+                        <UnitPrice>5.00</UnitPrice>
+                        <ExtendUnitPrice>1.03</ExtendUnitPrice>
+                        <UnitShippingCharge>1.03</UnitShippingCharge>
+                        <ExtendShippingCharge>1.03</ExtendShippingCharge>
+                        <Status>3</Status>
+                        <StatusDescription>Canceled</StatusDescription>
+                        <AutoRegWarranty>false</AutoRegWarranty>
+                    </ItemInfo>
+                </ItemInfoList>
+            </OrderInfo>
+        </OrderInfoList>
     </ResponseBody>
+    <Memo />
 </NeweggAPIResponse>

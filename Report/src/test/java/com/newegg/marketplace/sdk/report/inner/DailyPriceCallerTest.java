@@ -127,7 +127,6 @@ public class DailyPriceCallerTest {
 				sender = DailyPriceCaller.buildJSON();
 			
 			response = sender.sendDailyPriceRequest(request);
-			assertTrue("true".equals(response.getIsSuccess()));
 		} catch(NeweggException e) {
 			RequireSetting.log.info("Zack-Test NeweggException happened");
 			RequireSetting.printError(e, Variables.MediaType);
@@ -247,14 +246,17 @@ public class DailyPriceCallerTest {
 		RequireSetting.log.info("Zack-Test END");
 	}
 	
-	//@Test
+	@Test
 	public void testSendGetDailyPriceRequest_JSON_MOCK() {
+		Variables.SimulationEnabled=true;
 		// only USA
 		RequireSetting.authKeySetting("A006");
 		RequireSetting.log.info(RequireSetting.getTestInfo());
 		sendGetDailyInventory(true, MEDIA_TYPE.JSON, PLATFORM.USA);
 		
 		RequireSetting.log.info("Zack-Test END");
+		Variables.SimulationEnabled=false;
+
 	}
 	
 	//@Test

@@ -1331,7 +1331,7 @@ public class ExistingItemCreationFeedRequest {
                     "map",
                     "checkoutMAP",
                     "sellingPrice",
-                    "limitQuantity",
+//                    "limitQuantity",
                     "shipping",
                     "inventory",
                     "packsOrSets",

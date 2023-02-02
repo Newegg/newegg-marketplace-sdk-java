@@ -132,6 +132,7 @@ public class DataFeedCall {
 	 * @param body {@linkplain ItemChinaTaxSettingFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
+	@Deprecated
 	public ItemChinaTaxSettingFeedResponse submitFeed_ItemChinaTaxSettingFeed(ItemChinaTaxSettingFeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB||Content.Platform==Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
@@ -173,6 +174,7 @@ public class DataFeedCall {
 	 * @param body {@linkplain ItemPromotionFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
+	@Deprecated
 	public ItemPromotionFeedResponse submitFeed_ItemPromotionFeed(ItemPromotionFeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB||Content.Platform==Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
@@ -190,6 +192,7 @@ public class DataFeedCall {
 	 * @param body {@linkplain ItemPremierMarkFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
+	@Deprecated
 	public ItemPremierMarkFeedResponse submitFeed_ItemPremierMarkFeed(ItemPremierMarkFeedRequest body) {
 		if(Content.Platform==Content.PLATFORM.USB||Content.Platform==Content.PLATFORM.CAN)
 			throw new PlatformException(PLATFORM.USB.name()+","+PLATFORM.CAN.name());
@@ -210,6 +213,7 @@ public class DataFeedCall {
 	 * @param body {@linkplain ItemSubscriptionFeedRequest} 
 	 * @return {@linkplain SubmitFeedResponse} 
 	 */
+	@Deprecated
 	public ItemSubscriptionFeedResponse submitFeed_ItemSubscriptionFeed(ItemSubscriptionFeedRequest body) {
 		return submitOtherCaller.itemSubscriptionFeed(body);
 	}

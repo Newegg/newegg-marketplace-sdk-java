@@ -1,0 +1,14 @@
+{
+  "NeweggAPIResponse": {
+    "IsSuccess": "true",
+    "SellerID": "A006",
+    "OperationType": "ItemBasicInfoReportResponse",
+    "ResponseBody": {
+      "RequestID": "245VV9QOCM6BK",
+      "RequestType": "ITEM_BASIC_INFO_REPORT",
+      "RequestDate": "2/21/2012 15:32:57",
+      "ReportFileURL": "ftp://KUXTMPPH:01250442@mktpftp.newegg.com/ApiItemBaseInfoReport_245VV9QOCM6BK.zip"
+    },
+    "Memo": null
+  }
+}

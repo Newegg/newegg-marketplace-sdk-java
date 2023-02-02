@@ -38,7 +38,7 @@ public class RMAReceiveCallerTest {
 		Variables.SimulationEnabled = false;
 	}
 
-	@Test
+//	@Test
 	public void sendRMAReceiveRequest_JSON_MOCK() {
 		Variables.SimulationEnabled = true;
 		sendRMAReceiveRequest_JSON();

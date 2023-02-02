@@ -43,6 +43,7 @@ public class ItemClient extends BaseClient{
 			log.debug("SimulationEnabled:{}",Variables.SimulationEnabled);
 			switch(Variables.MediaType){//UpdateInventoryAndPriceResult
 			case JSON:
+				client=genMockClient(client,"/GetItemPriceListResponse.json",HttpMethod.POST,"/contentmgmt/item/Pricelist?sellerid=" + Content.SellerID);
 				client=genMockClient(client,"/GetVolumeDiscountResponse.json",HttpMethod.PUT,"/contentmgmt/item/volumediscount?sellerid=" + Content.SellerID);
 				client=genMockClient(client,"/SubmitVolumeDiscountResponse.json",HttpMethod.POST,"/contentmgmt/item/volumediscount?sellerid=" + Content.SellerID);
 				client=genMockClient(client,"/AddManufacturerResponse.json",HttpMethod.POST,"/contentmgmt/manufacturer/creationrequest?sellerid=" + Content.SellerID);
@@ -57,6 +58,9 @@ public class ItemClient extends BaseClient{
 				client=genMockClient(client,"/InventoryResultV2.json",HttpMethod.POST,"/contentmgmt/item/inventory?sellerid=" + Content.SellerID+"&version=304");
 				client=genMockClient(client,"/PriceResultV2.json",HttpMethod.POST,"/contentmgmt/item/price?sellerid=" + Content.SellerID);
 				client=genMockClient(client,"/UpdateInventoryAndPriceResult.json",HttpMethod.PUT,"/contentmgmt/item/inventoryandprice?sellerid=" + Content.SellerID);
+				client=genMockClient(client,"/GetItemInternationalInventoryListResponse.json",HttpMethod.POST,"/contentmgmt/item/international/inventorylist?sellerid=" + Content.SellerID);
+				client=genMockClient(client,"/GetItemInventoryListResponse.json",HttpMethod.POST,"/contentmgmt/item/inventorylist?sellerid=" + Content.SellerID);
+				client=genMockClient(client,"/GetInternationalItemPriceListResponse.json",HttpMethod.POST,"/contentmgmt/item/international/Pricelist?sellerid=" + Content.SellerID);
 				break;	
 			case XML:
 				client=genMockClient(client,"/GetVolumeDiscountResponse.xml",HttpMethod.PUT,"/contentmgmt/item/volumediscount?sellerid=" + Content.SellerID);

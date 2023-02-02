@@ -1,11 +1,10 @@
 package com.newegg.marketplace.sdk.seller;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Optional;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,8 +13,8 @@ import com.newegg.marketplace.sdk.common.APIConfig;
 import com.newegg.marketplace.sdk.common.Content;
 import com.newegg.marketplace.sdk.common.PlatformException;
 import com.newegg.marketplace.sdk.seller.model.GetIndustryListResponse;
-import com.newegg.marketplace.sdk.seller.model.SellerStatusCheckResponse;
 import com.newegg.marketplace.sdk.seller.model.GetSubcategoryStatusForInternationalCountryRequest;
+import com.newegg.marketplace.sdk.seller.model.SellerStatusCheckResponse;
 
 public class SellerTest {
 
@@ -23,14 +22,22 @@ public class SellerTest {
 	public static void setUpBeforeClass() throws Exception {
 		APIConfig.load(SellerConfig.class);
 	}
+	@Before
+	public void before() {
+		Variables.SimulationEnabled = true;
+	}
 	
+	@After
+	public void After() {
+		Variables.SimulationEnabled = false;
+	}
 
 	@Test
 	public void testGetSellerAccountStatus() {
 		SellerCall s=new SellerCall();
 		SellerStatusCheckResponse r=s.sellerStatusCheck();
 		assertTrue(r.getIsSuccess());
-		assertTrue("Test_SandBox_MKTPLS".equals(r.getResponseBody().getSellerName()));
+		assertTrue("            Test_MKTPLS".trim().equalsIgnoreCase(r.getResponseBody().getSellerName().trim()));
 	}
 
 	

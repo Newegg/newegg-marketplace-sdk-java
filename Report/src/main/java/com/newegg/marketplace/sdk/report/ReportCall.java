@@ -6,6 +6,7 @@ import com.newegg.marketplace.sdk.report.inner.CAPropSixtyFiveReportCaller;
 import com.newegg.marketplace.sdk.report.inner.DailyInventBtoBCANCaller;
 import com.newegg.marketplace.sdk.report.inner.DailyInventoryCaller;
 import com.newegg.marketplace.sdk.report.inner.DailyPriceCaller;
+import com.newegg.marketplace.sdk.report.inner.ItemBasicInformatioCaller;
 import com.newegg.marketplace.sdk.report.inner.ItemChinaTaxSettingCaller;
 import com.newegg.marketplace.sdk.report.inner.ItemLookupCaller;
 import com.newegg.marketplace.sdk.report.inner.OrderListReportCaller;
@@ -22,6 +23,8 @@ import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportReques
 import com.newegg.marketplace.sdk.report.model.get.GetDailyInventoryReportResponse;
 import com.newegg.marketplace.sdk.report.model.get.GetDailyPriceReportRequest;
 import com.newegg.marketplace.sdk.report.model.get.GetDailyPriceReportResponse;
+import com.newegg.marketplace.sdk.report.model.get.GetItemBasicInformationReportRequest;
+import com.newegg.marketplace.sdk.report.model.get.GetItemBasicInformationReportResponse;
 import com.newegg.marketplace.sdk.report.model.get.GetItemLookupReportRequest;
 import com.newegg.marketplace.sdk.report.model.get.GetItemLookupReportResponse;
 import com.newegg.marketplace.sdk.report.model.get.GetNeweggPremierItemReportRequest;
@@ -54,6 +57,8 @@ import com.newegg.marketplace.sdk.report.model.submit.SettlementSummaryReportReq
 import com.newegg.marketplace.sdk.report.model.submit.SettlementSummaryReportResponse;
 import com.newegg.marketplace.sdk.report.model.submit.SettlementTransactionRequest;
 import com.newegg.marketplace.sdk.report.model.submit.SettlementTransactionResponse;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitItemBasicInformationReportRequest;
+import com.newegg.marketplace.sdk.report.model.submit.SubmitItemBasicInformationReportResponse;
 import com.newegg.marketplace.sdk.report.model.submit.SubmitOrderListReportRequest;
 import com.newegg.marketplace.sdk.report.model.submit.SubmitOrderListReportResponse;
 import com.newegg.marketplace.sdk.report.model.submit.SubmitRMAListReportRequest;
@@ -93,6 +98,8 @@ public class ReportCall {
 	private PremierItemCaller premierItemCaller = null;
 	private CAPropSixtyFiveReportCaller CAPSFCaller = null;
 	private ItemChinaTaxSettingCaller itemChinaTaxSetCaller = null;
+	
+	private ItemBasicInformatioCaller itemBasicInformatioCaller=null;
 			
 	public ReportCall() {
 		this(Content.MEDIA_TYPE.XML);
@@ -114,6 +121,7 @@ public class ReportCall {
 			premierItemCaller = PremierItemCaller.buildXML();
 			CAPSFCaller = CAPropSixtyFiveReportCaller.buildXML();
 			itemChinaTaxSetCaller = ItemChinaTaxSettingCaller.buildXML();
+			itemBasicInformatioCaller=ItemBasicInformatioCaller.buildXML();
 			break;
 			
 		case JSON:
@@ -129,11 +137,20 @@ public class ReportCall {
 			premierItemCaller = PremierItemCaller.buildJSON();
 			CAPSFCaller = CAPropSixtyFiveReportCaller.buildJSON();
 			itemChinaTaxSetCaller = ItemChinaTaxSettingCaller.buildJSON();
+			itemBasicInformatioCaller=ItemBasicInformatioCaller.buildJSON();
 			break;
 			
 		default:
 			throw new RuntimeException("Never Happened!");
 		}
+	}
+	public SubmitItemBasicInformationReportResponse submitItemBasicInformationReportJSON(SubmitItemBasicInformationReportRequest body) {
+		SubmitItemBasicInformationReportResponse r = itemBasicInformatioCaller.submitItemBasicInformationReport(body);
+		return r;
+	}
+	public GetItemBasicInformationReportResponse getItemBasicInformationReport(GetItemBasicInformationReportRequest body) {
+		GetItemBasicInformationReportResponse r = itemBasicInformatioCaller.getItemBasicInformationReport(body);
+		return r;
 	}
 	
 	/**
@@ -196,6 +213,7 @@ public class ReportCall {
 		}
 	}
 	
+	@Deprecated
 	public GetNeweggPremierItemReportResponse getNeweggPremierItemReport(GetNeweggPremierItemReportRequest body) {
 		if (Content.Platform ==  Content.PLATFORM.USA) {
 			return premierItemCaller.sendPremierItemRequest(body);
@@ -212,6 +230,7 @@ public class ReportCall {
 		}
 	}
 	
+	@Deprecated
 	public GetTaxSettingReportResponse getTaxSettingReportforItemsEnabledforChina(GetTaxSettingReportRequest body) {
 		if (Content.Platform ==  Content.PLATFORM.USA) {
 			return itemChinaTaxSetCaller.sendItemChinaTaxSettingRequest(body);
@@ -266,6 +285,7 @@ public class ReportCall {
 		}
 	}
 	
+	@Deprecated
 	public PremierItemReportResponse submitNeweggPremierItemReport(PremierItemReportRequest body) {
 		if (Content.Platform == Content.PLATFORM.USA) {
 			return premierItemCaller.sendSubmitPremierItemRequest(body);
@@ -282,6 +302,7 @@ public class ReportCall {
 		}
 	}
 	
+	@Deprecated
 	public ItemChinaTaxSettingReportResponse submitTaxSettingReportforItemsEnabledforChina(ItemChinaTaxSettingReportRequest body) {
 		if (Content.Platform == Content.PLATFORM.USA) {
 			return itemChinaTaxSetCaller.sendSubmitItemChinaTaxSettingRequest(body);

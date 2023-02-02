@@ -575,29 +575,6 @@ public class GetSettlementSummaryInfoResponse {
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
-                "settlementDate",
-                "settlementDateFrom",
-                "settlementDateTo",
-                "settlementID",
-                "checkNumber",
-                "itemPrice",
-                "shipping",
-                "other",
-                "totalOrderAmount",
-                "refunds",
-                "chargeBack",
-                "miscellaneousAdjustment",
-                "totalRefunds",
-                "neweggCommissionFee",
-                "neweggTransactionFee",
-                "neweggRefundCommissionFee",
-                "neweggMonthlyFee",
-                "neweggStorageFee",
-                "neweggRMABuyoutFee",
-                "neweggPremierFee",
-                "neweggShippingLabelFee",
-                "totalNeweggFee",
-                "totalSettlement"
             })
             public static class SettlementSummary {
 
@@ -622,6 +599,33 @@ public class GetSettlementSummaryInfoResponse {
                 @XmlElement(name = "Shipping", required = true)
                 @JsonProperty("Shipping")
                 protected String shipping;
+                @XmlElement(name = "GSTTotal")
+                @JsonProperty("GSTTotal")
+                protected BigDecimal gstTotal;
+                @XmlElement(name = "HSTTotal")
+                @JsonProperty("HSTTotal")
+                protected BigDecimal hstTotal;
+                @XmlElement(name = "TaxDuty")
+                @JsonProperty("TaxDuty")
+                protected BigDecimal taxDuty;
+                @XmlElement(name = "GSTAndHST")
+                @JsonProperty("GSTAndHST")
+                protected BigDecimal gstAndhst;
+                @XmlElement(name = "PSTTotal")
+                @JsonProperty("PSTTotal")
+                protected BigDecimal pstTotal;
+                @XmlElement(name = "PSTAndQST")
+                @JsonProperty("PSTAndQST")
+                protected BigDecimal pstAndqst;
+                @XmlElement(name = "EHFTotal")
+                @JsonProperty("EHFTotal")
+                protected BigDecimal eHfTotal;
+                @XmlElement(name = "RecyclingFeeTotal")
+                @JsonProperty("RecyclingFeeTotal")
+                protected BigDecimal recyclingFeeTotal;
+                @XmlElement(name = "CourtesyRefund")
+                @JsonProperty("CourtesyRefund")
+                protected BigDecimal courtesyRefund;                
                 @XmlElement(name = "Other", required = true)
                 @JsonProperty("Other")
                 protected String other;
@@ -658,19 +662,42 @@ public class GetSettlementSummaryInfoResponse {
                 @XmlElement(name = "NeweggRMABuyoutFee", required = true)
                 @JsonProperty("NeweggRMABuyoutFee")
                 protected BigDecimal neweggRMABuyoutFee;
+                @XmlElement(name = "NeweggServiceFeeTax")
+                @JsonProperty("NeweggServiceFeeTax")
+                protected BigDecimal neweggServiceFeeTax;
                 @XmlElement(name = "NeweggPremierFee", required = true)
                 @JsonProperty("NeweggPremierFee")
                 protected BigDecimal neweggPremierFee;
                 @XmlElement(name = "NeweggShippingLabelFee", required = true)
                 @JsonProperty("NeweggShippingLabelFee")
                 protected BigDecimal neweggShippingLabelFee;
+                @XmlElement(name = "CreditCardPayment")
+                @JsonProperty("CreditCardPayment")
+                protected BigDecimal creditCardPayment;
+                @XmlElement(name = "FulfillmentByNeweggFee")
+                @JsonProperty("FulfillmentByNeweggFee")
+                protected BigDecimal fulfillmentByNeweggFee;
+                @XmlElement(name = "MultiChannelFee")
+                @JsonProperty("MultiChannelFee")
+                protected BigDecimal multiChannelFee;
+                @XmlElement(name = "AdjustmentFee")
+                @JsonProperty("AdjustmentFee")
+                protected BigDecimal adjustmentFee;
+                @XmlElement(name = "MerchandisingFee")
+                @JsonProperty("MerchandisingFee")
+                protected BigDecimal merchandisingFee;
                 @XmlElement(name = "TotalNeweggFee", required = true)
                 @JsonProperty("TotalNeweggFee")
                 protected BigDecimal totalNeweggFee;
                 @XmlElement(name = "TotalSettlement", required = true)
                 @JsonProperty("TotalSettlement")
                 protected BigDecimal totalSettlement;
-
+                @XmlElement(name = "ReservedBalance")
+                @JsonProperty("ReservedBalance")
+                protected BigDecimal reservedBalance;
+                @XmlElement(name = "PreviousReservedBalance")
+                @JsonProperty("PreviousReservedBalance")
+                protected BigDecimal previousReservedBalance;
                 /**
                  * 取得 settlementDate 特性的值.
                  * 
@@ -1221,7 +1248,149 @@ public class GetSettlementSummaryInfoResponse {
                     this.totalSettlement = value;
                 }
 
+				public BigDecimal getGstTotal() {
+					return gstTotal;
+				}
+
+				public void setGstTotal(BigDecimal gstTotal) {
+					this.gstTotal = gstTotal;
+				}
+
+				public BigDecimal getHstTotal() {
+					return hstTotal;
+				}
+
+				public void setHstTotal(BigDecimal hstTotal) {
+					this.hstTotal = hstTotal;
+				}
+
+				public BigDecimal getTaxDuty() {
+					return taxDuty;
+				}
+
+				public void setTaxDuty(BigDecimal taxDuty) {
+					this.taxDuty = taxDuty;
+				}
+
+				public BigDecimal getGstAndhst() {
+					return gstAndhst;
+				}
+
+				public void setGstAndhst(BigDecimal gstAndhst) {
+					this.gstAndhst = gstAndhst;
+				}
+
+				public BigDecimal getPstTotal() {
+					return pstTotal;
+				}
+
+				public void setPstTotal(BigDecimal pstTotal) {
+					this.pstTotal = pstTotal;
+				}
+
+				public BigDecimal getPstAndqst() {
+					return pstAndqst;
+				}
+
+				public void setPstAndqst(BigDecimal pstAndqst) {
+					this.pstAndqst = pstAndqst;
+				}
+
+				public BigDecimal geteHfTotal() {
+					return eHfTotal;
+				}
+
+				public void seteHfTotal(BigDecimal eHfTotal) {
+					this.eHfTotal = eHfTotal;
+				}
+
+				public BigDecimal getRecyclingFeeTotal() {
+					return recyclingFeeTotal;
+				}
+
+				public void setRecyclingFeeTotal(BigDecimal recyclingFeeTotal) {
+					this.recyclingFeeTotal = recyclingFeeTotal;
+				}
+
+				public BigDecimal getCourtesyRefund() {
+					return courtesyRefund;
+				}
+
+				public void setCourtesyRefund(BigDecimal courtesyRefund) {
+					this.courtesyRefund = courtesyRefund;
+				}
+
+				public BigDecimal getNeweggServiceFeeTax() {
+					return neweggServiceFeeTax;
+				}
+
+				public void setNeweggServiceFeeTax(BigDecimal neweggServiceFeeTax) {
+					this.neweggServiceFeeTax = neweggServiceFeeTax;
+				}
+
+				public BigDecimal getCreditCardPayment() {
+					return creditCardPayment;
+				}
+
+				public void setCreditCardPayment(BigDecimal creditCardPayment) {
+					this.creditCardPayment = creditCardPayment;
+				}
+
+				public BigDecimal getFulfillmentByNeweggFee() {
+					return fulfillmentByNeweggFee;
+				}
+
+				public void setFulfillmentByNeweggFee(BigDecimal fulfillmentByNeweggFee) {
+					this.fulfillmentByNeweggFee = fulfillmentByNeweggFee;
+				}
+
+				public BigDecimal getMultiChannelFee() {
+					return multiChannelFee;
+				}
+
+				public void setMultiChannelFee(BigDecimal multiChannelFee) {
+					this.multiChannelFee = multiChannelFee;
+				}
+
+				public BigDecimal getAdjustmentFee() {
+					return adjustmentFee;
+				}
+
+				public void setAdjustmentFee(BigDecimal adjustmentFee) {
+					this.adjustmentFee = adjustmentFee;
+				}
+
+				public BigDecimal getMerchandisingFee() {
+					return merchandisingFee;
+				}
+
+				public void setMerchandisingFee(BigDecimal merchandisingFee) {
+					this.merchandisingFee = merchandisingFee;
+				}
+
+				public BigDecimal getReservedBalance() {
+					return reservedBalance;
+				}
+
+				public void setReservedBalance(BigDecimal reservedBalance) {
+					this.reservedBalance = reservedBalance;
+				}
+
+				public BigDecimal getPreviousReservedBalance() {
+					return previousReservedBalance;
+				}
+
+				public void setPreviousReservedBalance(BigDecimal previousReservedBalance) {
+					this.previousReservedBalance = previousReservedBalance;
+				}
+
             }
+
+
+			public void setSettlementSummary(
+					List<GetSettlementSummaryInfoResponse.ResponseBody.SettlementSummaryList.SettlementSummary> settlementSummary) {
+				this.settlementSummary = settlementSummary;
+			}
 
         }
 

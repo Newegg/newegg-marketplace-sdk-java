@@ -246,7 +246,7 @@ public class SettlementSummaryCallerTest {
 	}
 	
 	
-	//@Test
+	@Test
 	public void testGetSettlementSummary_JSON_MOCK() {
 		RequireSetting.authKeySetting("A006");
 		RequireSetting.log.info(RequireSetting.getTestInfo());

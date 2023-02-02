@@ -42,6 +42,10 @@ public class ReportClient extends BaseClient {
 			switch (Variables.MediaType) {
 			case JSON: 
 				switch (Variables.URIHash) {
+				case ITEM_BASIC:
+					client = genMockClient(client, "/GetItemBasicInformationReportResponse.json", HttpMethod.PUT, "/reportmgmt/report/result?sellerid=" + Content.SellerID);
+					client = genMockClient(client, "/SubmitItemBasicInformationReport.json", HttpMethod.POST, "/reportmgmt/report/submitrequest?sellerid=" + Content.SellerID);
+					break;
 				case REPORT_STATUS:
 					client = genMockClient(client, "/GetReportStatusResponse.json", HttpMethod.PUT, "/reportmgmt/report/status?sellerid=" + Content.SellerID);
 					break;

@@ -8,6 +8,10 @@ import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryReques
 import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryResponse;
 import com.newegg.marketplace.sdk.item.model.UpdateInventoryRequest;
 import com.newegg.marketplace.sdk.item.model.UpdateItemPriceRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryListRequest;
+import com.newegg.marketplace.sdk.item.model.GetItemInternationalInventoryListResponse;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceListRequest;
+import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceListResponse;
 import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceRequest;
 import com.newegg.marketplace.sdk.item.model.GetInternationalItemPriceResponse;
 import com.newegg.marketplace.sdk.item.model.UpdateInventoryResponse;
@@ -39,6 +43,34 @@ limitations under the License.
  */
 public interface ItemUSACaller {
 
+	
+	@Headers({"Accept: application/json","Content-Type: application/json"})
+	@RequestLine("POST /contentmgmt/item/international/Pricelist?sellerid={sellerid}")
+	GetInternationalItemPriceListResponse getInternationalItemPriceListJSON(@Param("sellerid") String sellerID,GetInternationalItemPriceListRequest body);
+	default GetInternationalItemPriceListResponse  getInternationalItemPriceList(GetInternationalItemPriceListRequest body) {
+		switch(Variables.MediaType){
+		case JSON:			
+			return getInternationalItemPriceListJSON(Content.SellerID,body);			
+		default:
+			throw new RuntimeException("Sorry, the new version of the service only supports JSON requests.");
+		}
+	}
+	
+	
+	
+	@Headers({"Accept: application/json","Content-Type: application/json"})
+	@RequestLine("POST /contentmgmt/item/international/inventorylist?sellerid={sellerid}")
+	GetItemInternationalInventoryListResponse getItemInternationalInventoryListJSON(@Param("sellerid") String sellerID,GetItemInternationalInventoryListRequest body);
+	default GetItemInternationalInventoryListResponse  getItemInternationalInventoryList(GetItemInternationalInventoryListRequest batchInventoryRequest) {
+		switch(Variables.MediaType){
+		case JSON:			
+			return getItemInternationalInventoryListJSON(Content.SellerID,batchInventoryRequest);			
+		default:
+			throw new RuntimeException("Sorry, the new version of the service only supports JSON requests.");
+		}
+	}
+	
+	
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("PUT /contentmgmt/item/international/inventory?sellerid={sellerid}")
 	GetItemInternationalInventoryResponse getItemInventoryJSON(@Param("sellerid") String sellerID,GetItemInternationalInventoryRequest body);	
@@ -77,6 +109,7 @@ public interface ItemUSACaller {
 				
 	}
 	
+
 	@Headers({"Accept: application/json","Content-Type: application/json"})
 	@RequestLine("POST /contentmgmt/item/international/inventory?sellerid={sellerid}")
 	UpdateInventoryResponse updateItemInventoryJSON(@Param("sellerid") String sellerID,UpdateInventoryRequest body);

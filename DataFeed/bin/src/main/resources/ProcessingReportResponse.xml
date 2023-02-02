@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<NeweggEnvelope>
+	<Header>
+		<DocumentVersion>1.0</DocumentVersion>
+	</Header>
+	<MessageType>ProcessingReport</MessageType>
+	<Message>
+		<ProcessingReport>
+			<OriginalMessageName>
+<![CDATA[Test_Alex.k.wang_APIAutoFile.xml]]>
+			</OriginalMessageName>
+			<StatusCode>ProcessReport</StatusCode>
+			<ProcessingSummary>
+				<ProcessedCount>3</ProcessedCount>
+				<SuccessCount>2</SuccessCount>
+				<WithErrorCount>1</WithErrorCount>
+			</ProcessingSummary>
+			<Result>
+				<AdditionalInfo>
+					<SubCategoryID>1508</SubCategoryID>
+					<SellerPartNumber>Test_SP190306081022666</SellerPartNumber>
+					<ManufacturerPartsNumber>Test190306081022666</ManufacturerPartsNumber>
+					<UPCOrISBN />
+				</AdditionalInfo>
+				<ErrorList>
+					<ErrorDescription>
+<![CDATA[Item Created with Image error(s).]]>
+					</ErrorDescription>
+					<ErrorDescription>
+<![CDATA[Please check ItemImages Url again!!(image failed),URL:http://images17.newegg.com/is/image/newegg/17-182-073-TS?$S640W$;]]>
+					</ErrorDescription>
+				</ErrorList>
+			</Result>
+		</ProcessingReport>
+	</Message>
+</NeweggEnvelope>

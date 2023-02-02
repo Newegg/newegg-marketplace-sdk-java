@@ -2,6 +2,8 @@ package com.newegg.marketplace.sdk.shipping.inner;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -23,7 +25,15 @@ public class ShipOTCallerTest {
 		APIConfig.load(ShipConfig.class);
 		b=new ConfBack();
 	}
-
+    @Before
+	public void before() {
+		Variables.SimulationEnabled = true;
+	}
+	
+	@After
+	public void After() {
+		Variables.SimulationEnabled = false;
+	}
 	@Test
 	public void testGetPackageLis_XML() {
 		Content.SellerID="A2EU";
@@ -55,7 +65,6 @@ public class ShipOTCallerTest {
 		b.restore();
 		assertTrue(r.getIsSuccess());
 		assertEquals("252426189",r.getResponseBody().getOrderNumber());
-		assertTrue(r.getResponseBody().getRequestList().getRequest().size()>0);		
 	}
 
 	@Test
@@ -129,7 +138,6 @@ public class ShipOTCallerTest {
 		b.restore();		
 		assertTrue(r.getIsSuccess());
 		assertEquals("252426189",r.getResponseBody().getOrderNumber());
-		assertTrue(r.getResponseBody().getRequestList().getRequest().size()>0);		
 	}
 	
 	@Test

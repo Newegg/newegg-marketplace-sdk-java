@@ -1342,6 +1342,9 @@ public class OrderListReportResponse {
                 @XmlElement(name = "RefundAmount", required = true)
                 @JsonProperty("RefundAmount")
                 protected BigDecimal refundAmount;
+                @XmlElement(name = "RecyclingFeeAmount")
+                @JsonProperty("RecyclingFeeAmount")
+                protected BigDecimal  recyclingFeeAmount;
                 @XmlElement(name = "OrderTotalAmount", required = true)
                 @JsonProperty("OrderTotalAmount")
                 protected BigDecimal orderTotalAmount;
@@ -2388,7 +2391,9 @@ public class OrderListReportResponse {
                         @XmlElement(name = "StatusDescription")
                         @JsonProperty("StatusDescription")
                         protected String statusDescription;
-
+                        @XmlElement(name = "AutoRegWarranty")
+                        @JsonProperty("AutoRegWarranty")                        
+                        protected String autoRegWarranty;
                         /**
                          * 取得 sellerPartNumber 特性的值.
                          * 
@@ -2748,6 +2753,22 @@ public class OrderListReportResponse {
                         public void setStatusDescription(String value) {
                             this.statusDescription = value;
                         }
+
+						public String getUpcCode() {
+							return upcCode;
+						}
+
+						public void setUpcCode(String upcCode) {
+							this.upcCode = upcCode;
+						}
+
+						public String getAutoRegWarranty() {
+							return autoRegWarranty;
+						}
+
+						public void setAutoRegWarranty(String autoRegWarranty) {
+							this.autoRegWarranty = autoRegWarranty;
+						}
 
                     }
 
@@ -3273,6 +3294,23 @@ public class OrderListReportResponse {
                     }
 
                 }
+
+
+				public BigDecimal getVatTotal() {
+					return vatTotal;
+				}
+
+				public void setVatTotal(BigDecimal vatTotal) {
+					this.vatTotal = vatTotal;
+				}
+
+				public BigDecimal getRecyclingFeeAmount() {
+					return recyclingFeeAmount;
+				}
+
+				public void setRecyclingFeeAmount(BigDecimal recyclingFeeAmount) {
+					this.recyclingFeeAmount = recyclingFeeAmount;
+				}
 
             }
 

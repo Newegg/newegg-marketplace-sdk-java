@@ -1,44 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <NeweggAPIResponse>
     <IsSuccess>true</IsSuccess>
-    <SellerID>A09D</SellerID>
+    <SellerID>BFUS</SellerID>
     <OperationType>GetSettlementSummaryInfoResponse</OperationType>
     <ResponseBody>
         <PageInfo>
-            <TotalCount>1</TotalCount>
+            <TotalCount>2</TotalCount>
             <TotalPageCount>1</TotalPageCount>
-            <PageSize>10</PageSize>
             <PageIndex>1</PageIndex>
+            <PageSize>10</PageSize>
         </PageInfo>
-        <RequestID>2PQBZMZTL3DYF</RequestID>
-        <RequestDate>2/21/2012 15:12:55</RequestDate>
+        <RequestID>24L8PVM11WG8S</RequestID>
+        <RequestDate>04/27/2020 02:49:09</RequestDate>
         <SettlementSummaryList>
             <SettlementSummary>
-                <SettlementDate>2/21/2012 12:00:00</SettlementDate>
-                <SettlementDateFrom>8/5/2011 12:00:00</SettlementDateFrom>
-                <SettlementDateTo>2/21/2012 12:00:00</SettlementDateTo>
+                <SettlementDate>10/16/2019 00:00:00</SettlementDate>
+                <SettlementDateFrom>05/14/2012 00:00:00</SettlementDateFrom>
+                <SettlementDateTo>10/16/2019 00:00:00</SettlementDateTo>
                 <SettlementID>0</SettlementID>
-                <CheckNumber />
-                <ItemPrice>71.00</ItemPrice>
-                <Shipping>31.95</Shipping>
+                <CheckNumber></CheckNumber>
+                <ItemPrice>1256.46</ItemPrice>
+                <Shipping>611.90</Shipping>
+                <GSTTotal>41.00</GSTTotal>
+                <HSTTotal>0.00</HSTTotal>
+                <PSTTotal>0.00</PSTTotal>
+                <EHFTotal>0.00</EHFTotal>
                 <Other>0.00</Other>
-                <TotalOrderAmount>102.95</TotalOrderAmount>
-                <Refunds>-1.98</Refunds>
+                <TotalOrderAmount>1909.36</TotalOrderAmount>
+                <Refunds>-36.50</Refunds>
                 <ChargeBack>0.00</ChargeBack>
-                <MiscellaneousAdjustment>-182.53</MiscellaneousAdjustment>
-                <TotalRefunds>-184.51</TotalRefunds>
-                <NeweggCommissionFee>-7.71</NeweggCommissionFee>
+                <MiscellaneousAdjustment>-75.67</MiscellaneousAdjustment>
+                <TotalRefunds>-112.17</TotalRefunds>
+                <NeweggCommissionFee>-186.85</NeweggCommissionFee>
                 <NeweggTransactionFee>0.00</NeweggTransactionFee>
-                <NeweggRefundCommissionFee>0.15</NeweggRefundCommissionFee>
+                <NeweggRefundCommissionFee>3.65</NeweggRefundCommissionFee>
+                <NeweggMonthlyFee>-19.99</NeweggMonthlyFee>
+                <NeweggStorageFee>-6.98</NeweggStorageFee>
+                <NeweggRMABuyoutFee>0.00</NeweggRMABuyoutFee>
+                <NeweggServiceFeeTax>0.00</NeweggServiceFeeTax>
+                <TotalNeweggFee>-263.29</TotalNeweggFee>
+                <TotalSettlement>1533.90</TotalSettlement>
+        <ReservedBalance>12.22</ReservedBalance>
+        <PreviousReservedBalance>1.22</PreviousReservedBalance>
+            </SettlementSummary>
+            <SettlementSummary>
+                <SettlementDate>04/22/2020 00:00:00</SettlementDate>
+                <SettlementDateFrom>11/19/2013 00:00:00</SettlementDateFrom>
+                <SettlementDateTo>04/22/2020 00:00:00</SettlementDateTo>
+                <SettlementID>0</SettlementID>
+                <CheckNumber></CheckNumber>
+                <ItemPrice>1256.46</ItemPrice>
+                <Shipping>611.90</Shipping>
+                <GSTTotal>41.00</GSTTotal>
+                <HSTTotal>0.00</HSTTotal>
+                <PSTTotal>0.00</PSTTotal>
+                <EHFTotal>0.00</EHFTotal>
+                <Other>0.00</Other>
+                <TotalOrderAmount>1930.36</TotalOrderAmount>
+                <Refunds>-36.50</Refunds>
+                <ChargeBack>0.00</ChargeBack>
+                <MiscellaneousAdjustment>-75.67</MiscellaneousAdjustment>
+                <TotalRefunds>-112.17</TotalRefunds>
+                <NeweggCommissionFee>-186.85</NeweggCommissionFee>
+                <NeweggTransactionFee>0.00</NeweggTransactionFee>
+                <NeweggRefundCommissionFee>3.65</NeweggRefundCommissionFee>
                 <NeweggMonthlyFee>0.00</NeweggMonthlyFee>
-                <NeweggStorageFee>-59.05</NeweggStorageFee>
-                <NeweggRMABuyoutFee>-0.72</NeweggRMABuyoutFee>
-                <NeweggPremierFee>0.00</NeweggPremierFee>
-                <NeweggShippingLabelFee>0.00</NeweggShippingLabelFee>
-                <TotalNeweggFee>-638.63</TotalNeweggFee>
-                <TotalSettlement>-720.19</TotalSettlement>
+                <NeweggStorageFee>0.00</NeweggStorageFee>
+                <NeweggRMABuyoutFee>0.00</NeweggRMABuyoutFee>
+                <NeweggServiceFeeTax>-2.52</NeweggServiceFeeTax>
+                <TotalNeweggFee>-200.79</TotalNeweggFee>
+                <TotalSettlement>1617.40</TotalSettlement>
+                <ReservedBalance>12.22</ReservedBalance>
+                <PreviousReservedBalance>1.22</PreviousReservedBalance>
             </SettlementSummary>
         </SettlementSummaryList>
     </ResponseBody>
-    <Memo />
+    <Memo></Memo>
 </NeweggAPIResponse>
