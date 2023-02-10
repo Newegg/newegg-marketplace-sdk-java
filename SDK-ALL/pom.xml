@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.newegg.marketplace</groupId>
+		<groupId>newegg.marketplace</groupId>
 		<artifactId>sdk</artifactId>
 		<version>1.0.0</version>
 	</parent>
@@ -14,52 +14,52 @@
 	<description>Newegg Marketplace SDK(Java) is a library to help Java programmer easily integrates with Newegg Marketplace API. It provides the definition of the data objects models to help coder create the request and resolve the response. It also provides customize of logger and retry mechanism.</description>
 	<dependencies>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-common</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-item</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-seller</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-order</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-rma</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-shipping</artifactId>
 			<version>1.1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-other</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-sbn</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-report</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-datafeed</artifactId>
 			<version>1.0.0</version>
 		</dependency>

@@ -7,7 +7,7 @@ Newegg Marketplace SDK(Java) is a library to help Java programmer easily integra
 
 ```xml
   <parent>
-    <groupId>com.newegg.marketplace</groupId>
+    <groupId>newegg.marketplace</groupId>
     <artifactId>sdk-all</artifactId>
     <version>{version}</version>
   </parent>

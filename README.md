@@ -17,7 +17,7 @@ To use the SDK to communicate with the Newegg API, you need to be a registered s
 
 ```xml
   <parent>
-    <groupId>com.newegg.marketplace</groupId>
+    <groupId>newegg.marketplace</groupId>
     <artifactId>sdk-all</artifactId>
     <version>{version}</version>
   </parent>

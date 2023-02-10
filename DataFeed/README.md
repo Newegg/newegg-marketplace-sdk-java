@@ -9,7 +9,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/datafeed_manage
 - Set pom.xml of project using module dependency
 ```xml
 <dependency>
-    <groupId>com.newegg.marketplace</groupId>
+    <groupId>newegg.marketplace</groupId>
     <artifactId>sdk-datafeed</artifactId>
     <version>{version}</version>
 </dependency>
@@ -18,7 +18,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/datafeed_manage
 - Or you can set pom.xml of project using sdk-all dependency import all sdk modules
 ```xml
 <dependency>
-    <groupId>com.newegg.marketplace</groupId>
+    <groupId>newegg.marketplace</groupId>
     <artifactId>sdk-all</artifactId>
     <version>{version}</version>
     <type>pom</type>

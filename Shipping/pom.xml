@@ -4,7 +4,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.newegg.marketplace</groupId>
+		<groupId>newegg.marketplace</groupId>
 		<artifactId>sdk</artifactId>
 		<version>1.0.0</version>
 	</parent>
@@ -15,7 +15,7 @@
 	<description>Newegg marketplace sellers can take advantage of discounted shipping rates by using the Newegg Shipping Label Service for Newegg Marketplace orders.</description>
 	<dependencies>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-common</artifactId>
 			<version>${neweggsdk.version}</version>
 		</dependency>

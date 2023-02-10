@@ -4,7 +4,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.newegg.marketplace</groupId>
+		<groupId>newegg.marketplace</groupId>
 		<artifactId>sdk</artifactId>
 		<version>1.0.0</version>
 	</parent>
@@ -14,7 +14,7 @@
 	<description>Newegg Marketplace API provides an interface in every major service group to allow you to check whether the service you are invoking is available or not.</description>
 	<dependencies>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-common</artifactId>
 			<version>${neweggsdk.version}</version>
 		</dependency>

@@ -4,7 +4,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.newegg.marketplace</groupId>
+		<groupId>newegg.marketplace</groupId>
 		<artifactId>sdk</artifactId>
 		<version>1.0.0</version>
 	</parent>
@@ -14,7 +14,7 @@
 	<description>The Newegg DataFeed API lets you batch manage items which consist of creating items, updating items and shipping orders. In addition, batch manage other applicable Newegg services.</description>
 	<dependencies>
 		<dependency>
-			<groupId>com.newegg.marketplace</groupId>
+			<groupId>newegg.marketplace</groupId>
 			<artifactId>sdk-common</artifactId>
 			<version>${neweggsdk.version}</version>
 		</dependency>
