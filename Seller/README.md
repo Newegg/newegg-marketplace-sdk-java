@@ -8,7 +8,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/seller_manageme
 - Set pom.xml of project using module dependency
 ```xml
 <dependency>
-    <groupId>newegg.marketplace</groupId>
+    <groupId>com.newegg.marketplace</groupId>
     <artifactId>sdk-seller</artifactId>
     <version>{version}</version>
 </dependency>
@@ -17,7 +17,7 @@ Please see: [https://developer.newegg.com/newegg_marketplace_api/seller_manageme
 - Or you can set pom.xml of project using sdk-all dependency import all sdk modules
 ```xml
 <dependency>
-    <groupId>newegg.marketplace</groupId>
+    <groupId>com.newegg.marketplace</groupId>
     <artifactId>sdk-all</artifactId>
     <version>{version}</version>
     <type>pom</type>

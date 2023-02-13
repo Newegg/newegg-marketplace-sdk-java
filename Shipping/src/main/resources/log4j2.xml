@@ -7,7 +7,7 @@
 		</Console>
 	</Appenders>
 	<Loggers>
-		<Logger name="newegg.marketplace.sdk.shipping"
+		<Logger name="com.newegg.marketplace.sdk.shipping"
 			level="info" additivity="false">
 			<AppenderRef ref="Console" />
 		</Logger>

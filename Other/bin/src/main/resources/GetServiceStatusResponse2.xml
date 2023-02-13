@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NeweggAPIResponse>
+	<IsSuccess>true</IsSuccess>
+	<OperationType>GetServiceStatus</OperationType>
+	<SellerID>A006</SellerID>
+	<ResponseBody>
+		<Status>0</Status>
+		<Timestamp>2/15/2012 14:50:38</Timestamp>
+		<Message>The service is unavailable or experiencing extremely high
+			error rates.
+		</Message>
+	</ResponseBody>
+</NeweggAPIResponse> 

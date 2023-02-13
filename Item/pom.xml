@@ -4,7 +4,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>newegg.marketplace</groupId>
+		<groupId>com.newegg.marketplace</groupId>
 		<artifactId>sdk</artifactId>
 		<version>1.0.0</version>
 	</parent>
@@ -14,7 +14,7 @@
 	<description>The Item Management service group contains functions that will allow you to perform simple item related updates such as Update Item Inventory, Price, Shipping and Status.</description>
 	<dependencies>
 		<dependency>
-			<groupId>newegg.marketplace</groupId>
+			<groupId>com.newegg.marketplace</groupId>
 			<artifactId>sdk-common</artifactId>
 			<version>${neweggsdk.version}</version>
 		</dependency>
