@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.newegg.marketplace</groupId>
 		<artifactId>sdk</artifactId>
-		<version>1.0.0</version>
+		<version>2.0.0</version>
 	</parent>
 	<artifactId>sdk-seller</artifactId>
 	<name>Newegg SDK for Java - Seller</name>
