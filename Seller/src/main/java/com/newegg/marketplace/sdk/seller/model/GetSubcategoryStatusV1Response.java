@@ -21,7 +21,66 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * 
+ * &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ * &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"&gt;
+ *	&lt;xs:element name="NeweggAPIResponse"&gt;
+ *		&lt;xs:annotation&gt;
+ *			&lt;xs:documentation&gt;Comment describing your root element&lt;/xs:documentation&gt;
+ *		&lt;/xs:annotation&gt;
+ *		&lt;xs:complexType&gt;
+ *			&lt;xs:all&gt;
+ *				&lt;xs:element name="IsSuccess"&gt;
+ *					&lt;xs:simpleType&gt;
+ *						&lt;xs:restriction base="xs:string"&gt;
+ *							&lt;xs:enumeration value="true"/&gt;
+ *						&lt;/xs:restriction&gt;
+ *					&lt;/xs:simpleType&gt;
+ *				&lt;/xs:element&gt;
+ *				&lt;xs:element name="OperationType"&gt;
+ *					&lt;xs:simpleType&gt;
+ *						&lt;xs:restriction base="xs:string"&gt;
+ *							&lt;xs:enumeration value="GetSellerSubcategoryResponse"/&gt;
+ *						&lt;/xs:restriction&gt;
+ *					&lt;/xs:simpleType&gt;
+ *				&lt;/xs:element&gt;
+ *				&lt;xs:element name="SellerID" type="xs:string"/&gt;
+ *				&lt;xs:element name="ResponseBody"&gt;
+ *					&lt;xs:complexType&gt;
+ *						&lt;xs:sequence&gt;
+ *							&lt;xs:element name="SubcategoryList"&gt;
+ *								&lt;xs:complexType&gt;
+ *									&lt;xs:sequence&gt;
+ *										&lt;xs:element name="Subcategory" maxOccurs="unbounded"&gt;
+ *											&lt;xs:complexType&gt;
+ *												&lt;xs:all&gt;
+ *													&lt;xs:element name="IndustryCode" type="xs:string"/&gt;
+ *													&lt;xs:element name="IndustryName" type="xs:string"/&gt;
+ *													&lt;xs:element name="SubcategoryID" type="xs:int"/&gt;
+ *													&lt;xs:element name="SubcategoryName" type="xs:string"/&gt;
+ *													&lt;xs:element name="Enabled"&gt;
+ *														&lt;xs:simpleType&gt;
+ *															&lt;xs:restriction base="xs:int"&gt;
+ *																&lt;xs:minInclusive value="0"/&gt;
+ *																&lt;xs:maxInclusive value="1"/&gt;
+ *															&lt;/xs:restriction&gt;
+ *														&lt;/xs:simpleType&gt;
+ *													&lt;/xs:element&gt;
+ *													&lt;xs:element name="WebSiteCategoryID" type="xs:int"/&gt;
+ *													&lt;xs:element name="WebSiteCatalogName" type="xs:string"/&gt;
+ *												&lt;/xs:all&gt;
+ *											&lt;/xs:complexType&gt;
+ *										&lt;/xs:element&gt;
+ *									&lt;/xs:sequence&gt;
+ *								&lt;/xs:complexType&gt;
+ *							&lt;/xs:element&gt;
+ *						&lt;/xs:sequence&gt;
+ *					&lt;/xs:complexType&gt;
+ *				&lt;/xs:element&gt;
+ *			&lt;/xs:all&gt;
+ *		&lt;/xs:complexType&gt;
+ *	&lt;/xs:element&gt;
+ *&lt;/xs:schema&gt; 
+ * </pre>
  * 
  */
 public class GetSubcategoryStatusV1Response {

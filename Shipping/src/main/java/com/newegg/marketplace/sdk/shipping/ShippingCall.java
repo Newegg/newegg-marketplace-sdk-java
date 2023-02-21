@@ -184,7 +184,7 @@ public class ShippingCall {
 	 * <pre>
 	 * Confirm/ship orders using Newegg Shipping Label Services.
 	 * </pre>
-	 * {@link Deprecated, change to 3PL API}
+	 * 
 	 * @param body {@linkplain ShippingNewLabelSubmitRequest}
 	 * @return {@linkplain ShippingNewLabelSubmitResponse}
 	 */
