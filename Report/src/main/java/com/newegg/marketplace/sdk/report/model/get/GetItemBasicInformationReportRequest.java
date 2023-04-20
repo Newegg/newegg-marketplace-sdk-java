@@ -18,11 +18,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * 下列綱要片段會指定此類別中包含的預期內容.
  * 
  * <pre>
-*PUT https://api.newegg.com/marketplace/reportmgmt/report/result?sellerid={sellerid}
-*Authorization: 720ddc067f4d115bd544aff46bc75634
-*SecretKey: 21EC2020-3AEA-1069-A2DD-08002B30309D
-*Content-Type: application/json
-*Accept: application/json
 *{
 *    "OperationType": "ItemBasicInfoReportRequest",
 *    "RequestBody": {
