@@ -421,11 +421,11 @@ public class SubmitManufacturerRequest {
 			/**
 			 * Sets the value of the countryCode property.
 			 * 
-			 * @param value allowed object is {@link String }
+			 * @param countryCode allowed object is Country String
 			 * 
 			 */
-			public void setCountryCode(String value) {
-				this.countryCode = value;
+			public void setCountryCode(String countryCode) {
+				this.countryCode = countryCode;
 			}
 
 			/**
