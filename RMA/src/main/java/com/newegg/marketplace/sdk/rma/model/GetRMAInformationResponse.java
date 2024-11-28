@@ -1049,6 +1049,10 @@ public class GetRMAInformationResponse {
 				@JsonProperty("ReplacementOrderNumber")
 				protected String replacementOrderNumber;
 
+				@XmlElement(name = "ReturnShippingLabel", required = true)
+				@JsonProperty("ReturnShippingLabel")
+				protected GetRMAInformationResponse.ResponseBody.RMAInfoList.RMAInfo.ReturnShippingLabel returnShippingLabel;
+
 				@XmlElement(name = "RMATransactionList", required = true)
 				@JsonProperty("RMATransactionList")
 				protected GetRMAInformationResponse.ResponseBody.RMAInfoList.RMAInfo.RMATransactionList rmaTransactionList;
@@ -1309,12 +1313,90 @@ public class GetRMAInformationResponse {
 					this.replacementOrderNumber = replacementOrderNumber;
 				}
 
+				public GetRMAInformationResponse.ResponseBody.RMAInfoList.RMAInfo.ReturnShippingLabel getReturnShippingLabel() {
+					return returnShippingLabel;
+				}
+
+				public void setReturnShippingLabel(GetRMAInformationResponse.ResponseBody.RMAInfoList.RMAInfo.ReturnShippingLabel returnShippingLabel) {
+					this.returnShippingLabel = returnShippingLabel;
+				}
+
 				public GetRMAInformationResponse.ResponseBody.RMAInfoList.RMAInfo.RMATransactionList getRmaTransactionList() {
 					return rmaTransactionList;
 				}
 
 				public void setRmaTransactionList(GetRMAInformationResponse.ResponseBody.RMAInfoList.RMAInfo.RMATransactionList rmaTransactionList) {
 					this.rmaTransactionList = rmaTransactionList;
+				}
+
+				@XmlAccessorType(XmlAccessType.FIELD)
+				@XmlType(name = "", propOrder = {
+						"label"
+				})
+				public static class ReturnShippingLabel {
+
+					@XmlElement(name = "Label")
+					@JsonProperty("Label")
+					protected GetRMAInformationResponse.ResponseBody.RMAInfoList.RMAInfo.ReturnShippingLabel.Label label;
+
+					public GetRMAInformationResponse.ResponseBody.RMAInfoList.RMAInfo.ReturnShippingLabel.Label getLabel() {
+						return this.label;
+					}
+
+					@XmlAccessorType(XmlAccessType.FIELD)
+					@XmlType(name = "", propOrder = {
+
+					})
+					public static class Label {
+						@XmlElement(name = "TrackingNumber", required = true)
+						@JsonProperty("TrackingNumber")
+						protected String trackingNumber;
+
+						@XmlElement(name = "TrackingURL", required = true)
+						@JsonProperty("TrackingURL")
+						protected String trackingURL;
+
+						@XmlElement(name = "LabelEstimateCost", required = true)
+						@JsonProperty("LabelEstimateCost")
+						protected BigDecimal labelEstimateCost;
+
+						@XmlElement(name = "PaidBy", required = true)
+						@JsonProperty("PaidBy")
+						protected String paidBy;
+
+						public String getTrackingNumber() {
+							return trackingNumber;
+						}
+
+						public void setTrackingNumber(String trackingNumber) {
+							this.trackingNumber = trackingNumber;
+						}
+
+						public String getTrackingURL() {
+							return trackingURL;
+						}
+
+						public void setTrackingURL(String trackingURL) {
+							this.trackingURL = trackingURL;
+						}
+
+						public BigDecimal getLabelCost() {
+							return this.labelEstimateCost;
+						}
+
+						public void setLabelCost(BigDecimal labelCost) {
+							this.labelEstimateCost = labelCost;
+						}
+
+						public String getLabelCostOwner() {
+							return paidBy;
+						}
+
+						public void setLabelCostOwner(String labelCostOwner) {
+							this.paidBy = labelCostOwner;
+						}
+					}
+
 				}
 
 				/**
