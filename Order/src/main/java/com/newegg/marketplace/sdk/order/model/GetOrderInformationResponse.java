@@ -11,11 +11,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -1297,6 +1293,12 @@ public class GetOrderInformationResponse {
                 @XmlElement(name = "FulfillmentOption")
                 @JsonProperty("FulfillmentOption")
                 protected Integer fulfillmentOption;
+                @XmlElement(name = "OnTimeShipDueDate")
+                @JsonProperty("OnTimeShipDueDate")
+                protected String onTimeShipDueDate;
+                @XmlElement(name = "DeliverDueDate")
+                @JsonProperty("DeliverDueDate")
+                protected String deliverDueDate;
                 @XmlElement(name = "ItemInfoList", required = true)
                 @JsonProperty("ItemInfoList")
                 protected GetOrderInformationResponse.ResponseBody.OrderInfoList.OrderInfo.ItemInfoList itemInfoList;
@@ -2094,6 +2096,54 @@ public class GetOrderInformationResponse {
                  */
                 public void setFulfillmentOption(Integer value) {
                     this.fulfillmentOption = value;
+                }
+
+                /**
+                 * 取得 OnTimeShipDueDate 特性的值.
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *     
+                 */
+                public String getOnTimeShipDueDate() {
+                    return onTimeShipDueDate;
+                }
+
+                /**
+                 * 設定 OnTimeShipDueDate 特性的值.
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *     
+                 */
+                public void setOnTimeShipDueDate(String value) {
+                    this.onTimeShipDueDate = value;
+                }
+
+                /**
+                 * 取得 DeliverDueDate 特性的值.
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *     
+                 */
+                public String getDeliverDueDate() {
+                    return this.deliverDueDate;
+                }
+
+                /**
+                 * 設定 DeliverDueDate 特性的值.
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *     
+                 */
+                public void setDeliverDueDate(String value) {
+                    this.deliverDueDate = value;
                 }
 
                 /**
