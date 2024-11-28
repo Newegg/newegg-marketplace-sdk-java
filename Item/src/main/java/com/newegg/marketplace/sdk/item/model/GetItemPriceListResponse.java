@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class GetItemPriceListResponse {
 	@JsonProperty("IsSuccess")
 	protected boolean success;
@@ -75,6 +77,10 @@ public class GetItemPriceListResponse {
 		private String currency;
 		@JsonProperty("Active")
 		private int active;
+
+		@XmlElement(name = "MSRP", required = true)
+		@JsonProperty("MSRP")
+		protected BigDecimal msrp;
 		@JsonProperty("MAP")
 		private BigDecimal map;
 		@JsonProperty("CheckoutMAP")
@@ -106,6 +112,30 @@ public class GetItemPriceListResponse {
 		}
 		public void setActive(int active) {
 			this.active = active;
+		}
+
+		/**
+		 * Gets the value of the msrp property.
+		 *
+		 * @return
+		 *     possible object is
+		 *     {@link BigDecimal }
+		 *
+		 */
+		public BigDecimal getMSRP() {
+			return msrp;
+		}
+
+		/**
+		 * Sets the value of the msrp property.
+		 *
+		 * @param value
+		 *     allowed object is
+		 *     {@link BigDecimal }
+		 *
+		 */
+		public void setMSRP(BigDecimal value) {
+			this.msrp = value;
 		}
 		public BigDecimal getMap() {
 			return map;
