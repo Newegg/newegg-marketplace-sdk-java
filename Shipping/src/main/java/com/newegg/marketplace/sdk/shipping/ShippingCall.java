@@ -57,8 +57,8 @@ public class ShippingCall {
 		this(Content.MEDIA_TYPE.XML);
 	}
 
-	private ShippingCall(Content.MEDIA_TYPE mrdiaType) {
-		switch (mrdiaType) {
+	private ShippingCall(Content.MEDIA_TYPE mediaType) {
+		switch (mediaType) {
 		case JSON:
 			shipOPCaller = ShipOPCaller.buildJSON();
 			shipOTCaller = ShipOTCaller.buildJSON();
