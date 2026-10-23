@@ -144,7 +144,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class GetInternationalItemPriceRequest {
 
 	@XmlElement(name = "Condition", defaultValue = "1")
-	@JsonProperty("Quantity")
+	@JsonProperty("Condition")
 	protected Integer condition;
 	@XmlElement(name = "Type")
 	@JsonProperty("Type")
